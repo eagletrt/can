@@ -152,39 +152,10 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 705:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_CELLBOARD_0_VERSION_COMPONENT_BUILD_TIME);
-		snprintf(v[1], string_size, HV_CELLBOARD_0_VERSION_CANLIB_BUILD_TIME);
-
-		return 0;
-	case 706:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_CELLBOARD_1_VERSION_COMPONENT_BUILD_TIME);
-		snprintf(v[1], string_size, HV_CELLBOARD_1_VERSION_CANLIB_BUILD_TIME);
-
-		return 0;
-	case 707:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_CELLBOARD_2_VERSION_COMPONENT_BUILD_TIME);
-		snprintf(v[1], string_size, HV_CELLBOARD_2_VERSION_CANLIB_BUILD_TIME);
-
-		return 0;
-	case 708:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_CELLBOARD_3_VERSION_COMPONENT_BUILD_TIME);
-		snprintf(v[1], string_size, HV_CELLBOARD_3_VERSION_CANLIB_BUILD_TIME);
-
-		return 0;
-	case 709:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_CELLBOARD_4_VERSION_COMPONENT_BUILD_TIME);
-		snprintf(v[1], string_size, HV_CELLBOARD_4_VERSION_CANLIB_BUILD_TIME);
-
-		return 0;
-	case 710:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_CELLBOARD_5_VERSION_COMPONENT_BUILD_TIME);
-		snprintf(v[1], string_size, HV_CELLBOARD_5_VERSION_CANLIB_BUILD_TIME);
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_CELLBOARD_VERSION_CELLBOARD_ID);
+		snprintf(v[1], string_size, HV_CELLBOARD_VERSION_COMPONENT_VERSION);
+		snprintf(v[2], string_size, HV_CELLBOARD_VERSION_CANLIB_BUILD_TIME);
 
 		return 0;
 	case 24:
@@ -770,18 +741,28 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
     switch(enum_id)
     {
 	case 0:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_cellboard_version_cellboard_id_cellboard_0");
+		snprintf(v[1], string_size, "primary_hv_cellboard_version_cellboard_id_cellboard_1");
+		snprintf(v[2], string_size, "primary_hv_cellboard_version_cellboard_id_cellboard_2");
+		snprintf(v[3], string_size, "primary_hv_cellboard_version_cellboard_id_cellboard_3");
+		snprintf(v[4], string_size, "primary_hv_cellboard_version_cellboard_id_cellboard_4");
+		snprintf(v[5], string_size, "primary_hv_cellboard_version_cellboard_id_cellboard_5");
+
+		return 0;
+	case 1:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_fans_status_fans_override_off");
 		snprintf(v[1], string_size, "primary_hv_fans_status_fans_override_on");
 
 		return 0;
-	case 1:
+	case 2:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_fans_status_handcart_fans_override_off");
 		snprintf(v[1], string_size, "primary_hv_set_fans_status_handcart_fans_override_on");
 
 		return 0;
-	case 2:
+	case 3:
 		if(7 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_status_status_init");
 		snprintf(v[1], string_size, "primary_hv_status_status_idle");
@@ -792,19 +773,19 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[6], string_size, "primary_hv_status_status_fatal_error");
 
 		return 0;
-	case 3:
+	case 4:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_status_ecu_hv_status_set_off");
 		snprintf(v[1], string_size, "primary_hv_set_status_ecu_hv_status_set_on");
 
 		return 0;
-	case 4:
+	case 5:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_status_handcart_hv_status_set_off");
 		snprintf(v[1], string_size, "primary_hv_set_status_handcart_hv_status_set_on");
 
 		return 0;
-	case 5:
+	case 6:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_0");
 		snprintf(v[1], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_1");
@@ -814,19 +795,19 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[5], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_5");
 
 		return 0;
-	case 6:
+	case 7:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_balancing_status_balancing_status_off");
 		snprintf(v[1], string_size, "primary_hv_balancing_status_balancing_status_on");
 
 		return 0;
-	case 7:
+	case 8:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_balancing_status_handcart_set_balancing_status_off");
 		snprintf(v[1], string_size, "primary_hv_set_balancing_status_handcart_set_balancing_status_on");
 
 		return 0;
-	case 8:
+	case 9:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_status_status_init");
 		snprintf(v[1], string_size, "primary_lv_status_status_idle");
@@ -836,43 +817,43 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[5], string_size, "primary_lv_status_status_error");
 
 		return 0;
-	case 9:
+	case 10:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_inverter_connection_status_status_on");
 
 		return 0;
-	case 10:
+	case 11:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_set_inverter_connection_status_status_on");
 
 		return 0;
-	case 11:
+	case 12:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_status_status_on");
 
 		return 0;
-	case 12:
+	case 13:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_set_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_set_status_status_on");
 
 		return 0;
-	case 13:
+	case 14:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_status_connected_off");
 		snprintf(v[1], string_size, "primary_handcart_status_connected_on");
 
 		return 0;
-	case 14:
+	case 15:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_settings_fans_override_on");
 
 		return 0;
-	case 15:
+	case 16:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_settings_status_check");
@@ -885,13 +866,13 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_settings_status_error");
 
 		return 0;
-	case 16:
+	case 17:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_fans_override_on");
 
 		return 0;
-	case 17:
+	case 18:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_status_check");
@@ -904,7 +885,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_set_settings_status_error");
 
 		return 0;
-	case 18:
+	case 19:
 		if(13 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_status_status_init");
 		snprintf(v[1], string_size, "primary_ecu_status_status_enable_inv_updates");
@@ -921,14 +902,14 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[12], string_size, "primary_ecu_status_status_fatal_error");
 
 		return 0;
-	case 19:
+	case 20:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_status_status_idle");
 		snprintf(v[1], string_size, "primary_ecu_set_status_status_ready");
 		snprintf(v[2], string_size, "primary_ecu_set_status_status_drive");
 
 		return 0;
-	case 20:
+	case 21:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rl_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rl_rfe_on");
@@ -936,7 +917,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rl_enabled");
 
 		return 0;
-	case 21:
+	case 22:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rr_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rr_rfe_on");
@@ -944,13 +925,13 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rr_enabled");
 
 		return 0;
-	case 22:
+	case 23:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_ptt_status_status_on");
 
 		return 0;
-	case 23:
+	case 24:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_ptt_status_status_on");
@@ -1472,111 +1453,25 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 705:
 	{
-		primary_hv_cellboard_0_version_t tmp;
-		primary_hv_cellboard_0_version_converted_t tmp_converted;
-		uint32_t r_component_build_time;
+		primary_hv_cellboard_version_t tmp;
+		primary_hv_cellboard_version_converted_t tmp_converted;
+		uint8_t r_cellboard_id;
+		uint16_t r_component_version;
 		uint32_t r_canlib_build_time;
 
-		sscanf(s, "%" SCNu32 "," 
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu16 "," 
 			"%" SCNu32 "," ,
-			&r_component_build_time,
+			&r_cellboard_id,
+			&r_component_version,
 			&r_canlib_build_time);
-		tmp_converted.component_build_time = (uint32_t)r_component_build_time;
+		tmp_converted.cellboard_id = (primary_hv_cellboard_version_cellboard_id)r_cellboard_id;
+		tmp_converted.component_version = (uint16_t)r_component_version;
 		tmp_converted.canlib_build_time = (uint32_t)r_canlib_build_time;
 
-		primary_hv_cellboard_0_version_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_HV_CELLBOARD_0_VERSION_BYTE_SIZE;
-		return primary_hv_cellboard_0_version_pack(data, &tmp, PRIMARY_HV_CELLBOARD_0_VERSION_BYTE_SIZE);
-	}
-	case 706:
-	{
-		primary_hv_cellboard_1_version_t tmp;
-		primary_hv_cellboard_1_version_converted_t tmp_converted;
-		uint32_t r_component_build_time;
-		uint32_t r_canlib_build_time;
-
-		sscanf(s, "%" SCNu32 "," 
-			"%" SCNu32 "," ,
-			&r_component_build_time,
-			&r_canlib_build_time);
-		tmp_converted.component_build_time = (uint32_t)r_component_build_time;
-		tmp_converted.canlib_build_time = (uint32_t)r_canlib_build_time;
-
-		primary_hv_cellboard_1_version_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_HV_CELLBOARD_1_VERSION_BYTE_SIZE;
-		return primary_hv_cellboard_1_version_pack(data, &tmp, PRIMARY_HV_CELLBOARD_1_VERSION_BYTE_SIZE);
-	}
-	case 707:
-	{
-		primary_hv_cellboard_2_version_t tmp;
-		primary_hv_cellboard_2_version_converted_t tmp_converted;
-		uint32_t r_component_build_time;
-		uint32_t r_canlib_build_time;
-
-		sscanf(s, "%" SCNu32 "," 
-			"%" SCNu32 "," ,
-			&r_component_build_time,
-			&r_canlib_build_time);
-		tmp_converted.component_build_time = (uint32_t)r_component_build_time;
-		tmp_converted.canlib_build_time = (uint32_t)r_canlib_build_time;
-
-		primary_hv_cellboard_2_version_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_HV_CELLBOARD_2_VERSION_BYTE_SIZE;
-		return primary_hv_cellboard_2_version_pack(data, &tmp, PRIMARY_HV_CELLBOARD_2_VERSION_BYTE_SIZE);
-	}
-	case 708:
-	{
-		primary_hv_cellboard_3_version_t tmp;
-		primary_hv_cellboard_3_version_converted_t tmp_converted;
-		uint32_t r_component_build_time;
-		uint32_t r_canlib_build_time;
-
-		sscanf(s, "%" SCNu32 "," 
-			"%" SCNu32 "," ,
-			&r_component_build_time,
-			&r_canlib_build_time);
-		tmp_converted.component_build_time = (uint32_t)r_component_build_time;
-		tmp_converted.canlib_build_time = (uint32_t)r_canlib_build_time;
-
-		primary_hv_cellboard_3_version_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_HV_CELLBOARD_3_VERSION_BYTE_SIZE;
-		return primary_hv_cellboard_3_version_pack(data, &tmp, PRIMARY_HV_CELLBOARD_3_VERSION_BYTE_SIZE);
-	}
-	case 709:
-	{
-		primary_hv_cellboard_4_version_t tmp;
-		primary_hv_cellboard_4_version_converted_t tmp_converted;
-		uint32_t r_component_build_time;
-		uint32_t r_canlib_build_time;
-
-		sscanf(s, "%" SCNu32 "," 
-			"%" SCNu32 "," ,
-			&r_component_build_time,
-			&r_canlib_build_time);
-		tmp_converted.component_build_time = (uint32_t)r_component_build_time;
-		tmp_converted.canlib_build_time = (uint32_t)r_canlib_build_time;
-
-		primary_hv_cellboard_4_version_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_HV_CELLBOARD_4_VERSION_BYTE_SIZE;
-		return primary_hv_cellboard_4_version_pack(data, &tmp, PRIMARY_HV_CELLBOARD_4_VERSION_BYTE_SIZE);
-	}
-	case 710:
-	{
-		primary_hv_cellboard_5_version_t tmp;
-		primary_hv_cellboard_5_version_converted_t tmp_converted;
-		uint32_t r_component_build_time;
-		uint32_t r_canlib_build_time;
-
-		sscanf(s, "%" SCNu32 "," 
-			"%" SCNu32 "," ,
-			&r_component_build_time,
-			&r_canlib_build_time);
-		tmp_converted.component_build_time = (uint32_t)r_component_build_time;
-		tmp_converted.canlib_build_time = (uint32_t)r_canlib_build_time;
-
-		primary_hv_cellboard_5_version_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_HV_CELLBOARD_5_VERSION_BYTE_SIZE;
-		return primary_hv_cellboard_5_version_pack(data, &tmp, PRIMARY_HV_CELLBOARD_5_VERSION_BYTE_SIZE);
+		primary_hv_cellboard_version_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_CELLBOARD_VERSION_BYTE_SIZE;
+		return primary_hv_cellboard_version_pack(data, &tmp, PRIMARY_HV_CELLBOARD_VERSION_BYTE_SIZE);
 	}
 	case 24:
 	{
@@ -3535,12 +3430,7 @@ int primary_n_fields_from_id(int id)
 		case 703: return 2;
 		case 704: return 2;
 		case 702: return 2;
-		case 705: return 2;
-		case 706: return 2;
-		case 707: return 2;
-		case 708: return 2;
-		case 709: return 2;
-		case 710: return 2;
+		case 705: return 3;
 		case 24: return 16;
 		case 512: return 36;
 		case 1536: return 2;
@@ -3748,35 +3638,11 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[1] = e_primary_uint32_t;
 		return 2;
 	case 705:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_uint32_t;
-		fields_types[1] = e_primary_uint32_t;
-		return 2;
-	case 706:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_uint32_t;
-		fields_types[1] = e_primary_uint32_t;
-		return 2;
-	case 707:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_uint32_t;
-		fields_types[1] = e_primary_uint32_t;
-		return 2;
-	case 708:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_uint32_t;
-		fields_types[1] = e_primary_uint32_t;
-		return 2;
-	case 709:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_uint32_t;
-		fields_types[1] = e_primary_uint32_t;
-		return 2;
-	case 710:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_uint32_t;
-		fields_types[1] = e_primary_uint32_t;
-		return 2;
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_primary_hv_cellboard_version_cellboard_id;
+		fields_types[1] = e_primary_uint16_t;
+		fields_types[2] = e_primary_uint32_t;
+		return 3;
 	case 24:
 		if(fields_types_size < 16) return 0;
 		fields_types[0] = e_primary_uint8_t;
@@ -4293,6 +4159,19 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 }
 int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
 {
+	if(!strcmp(msg_name, "HV_CELLBOARD_VERSION"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "cellboard_0");
+			sprintf(v[1], "cellboard_1");
+			sprintf(v[2], "cellboard_2");
+			sprintf(v[3], "cellboard_3");
+			sprintf(v[4], "cellboard_4");
+			sprintf(v[5], "cellboard_5");
+			return 6;
+		}
+	}
 	if(!strcmp(msg_name, "HV_FANS_STATUS"))
 	{
 		if(!strcmp(sgn_name, "fans_override"))

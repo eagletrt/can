@@ -759,81 +759,19 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->hv_cellboard_0_version_size(); i++){
+    for(int i = 0; i < pack->hv_cellboard_version_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_cellboard_0_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_cellboard_0_version(i)._inner_timestamp();
-        (*net_signals)["HV_CELLBOARD_0_VERSION"]["_timestamp"].push(pack->hv_cellboard_0_version(i)._inner_timestamp());
+        if(pack->hv_cellboard_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cellboard_version(i)._inner_timestamp();
+        (*net_signals)["HV_CELLBOARD_VERSION"]["_timestamp"].push(pack->hv_cellboard_version(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HV_CELLBOARD_0_VERSION"]["component_build_time"].push(pack->hv_cellboard_0_version(i).component_build_time());
-		(*net_signals)["HV_CELLBOARD_0_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_0_version(i).canlib_build_time());
-
-    }
-
-    for(int i = 0; i < pack->hv_cellboard_1_version_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->hv_cellboard_1_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_cellboard_1_version(i)._inner_timestamp();
-        (*net_signals)["HV_CELLBOARD_1_VERSION"]["_timestamp"].push(pack->hv_cellboard_1_version(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["HV_CELLBOARD_1_VERSION"]["component_build_time"].push(pack->hv_cellboard_1_version(i).component_build_time());
-		(*net_signals)["HV_CELLBOARD_1_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_1_version(i).canlib_build_time());
-
-    }
-
-    for(int i = 0; i < pack->hv_cellboard_2_version_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->hv_cellboard_2_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_cellboard_2_version(i)._inner_timestamp();
-        (*net_signals)["HV_CELLBOARD_2_VERSION"]["_timestamp"].push(pack->hv_cellboard_2_version(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["HV_CELLBOARD_2_VERSION"]["component_build_time"].push(pack->hv_cellboard_2_version(i).component_build_time());
-		(*net_signals)["HV_CELLBOARD_2_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_2_version(i).canlib_build_time());
-
-    }
-
-    for(int i = 0; i < pack->hv_cellboard_3_version_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->hv_cellboard_3_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_cellboard_3_version(i)._inner_timestamp();
-        (*net_signals)["HV_CELLBOARD_3_VERSION"]["_timestamp"].push(pack->hv_cellboard_3_version(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["HV_CELLBOARD_3_VERSION"]["component_build_time"].push(pack->hv_cellboard_3_version(i).component_build_time());
-		(*net_signals)["HV_CELLBOARD_3_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_3_version(i).canlib_build_time());
-
-    }
-
-    for(int i = 0; i < pack->hv_cellboard_4_version_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->hv_cellboard_4_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_cellboard_4_version(i)._inner_timestamp();
-        (*net_signals)["HV_CELLBOARD_4_VERSION"]["_timestamp"].push(pack->hv_cellboard_4_version(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["HV_CELLBOARD_4_VERSION"]["component_build_time"].push(pack->hv_cellboard_4_version(i).component_build_time());
-		(*net_signals)["HV_CELLBOARD_4_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_4_version(i).canlib_build_time());
-
-    }
-
-    for(int i = 0; i < pack->hv_cellboard_5_version_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->hv_cellboard_5_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_cellboard_5_version(i)._inner_timestamp();
-        (*net_signals)["HV_CELLBOARD_5_VERSION"]["_timestamp"].push(pack->hv_cellboard_5_version(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["HV_CELLBOARD_5_VERSION"]["component_build_time"].push(pack->hv_cellboard_5_version(i).component_build_time());
-		(*net_signals)["HV_CELLBOARD_5_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_5_version(i).canlib_build_time());
+		(*net_enums)["HV_CELLBOARD_VERSION"]["cellboard_id"].push(pack->hv_cellboard_version(i).cellboard_id());
+		primary_hv_cellboard_version_cellboard_id_enum_to_string((primary_hv_cellboard_version_cellboard_id)pack->hv_cellboard_version(i).cellboard_id(), buffer);
+		(*net_strings)["HV_CELLBOARD_VERSION"]["cellboard_id"].push(buffer);
+		(*net_signals)["HV_CELLBOARD_VERSION"]["component_version"].push(pack->hv_cellboard_version(i).component_version());
+		(*net_signals)["HV_CELLBOARD_VERSION"]["canlib_build_time"].push(pack->hv_cellboard_version(i).canlib_build_time());
 
     }
 
@@ -2403,69 +2341,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 705: {
-            primary_hv_cellboard_0_version_t* msg = (primary_hv_cellboard_0_version_t*)(device->message);
-            primary::HV_CELLBOARD_0_VERSION* proto_msg = pack->add_hv_cellboard_0_version();
-			proto_msg->set_component_build_time(msg->component_build_time);
-			proto_msg->set_canlib_build_time(msg->canlib_build_time);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 706: {
-            primary_hv_cellboard_1_version_t* msg = (primary_hv_cellboard_1_version_t*)(device->message);
-            primary::HV_CELLBOARD_1_VERSION* proto_msg = pack->add_hv_cellboard_1_version();
-			proto_msg->set_component_build_time(msg->component_build_time);
-			proto_msg->set_canlib_build_time(msg->canlib_build_time);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 707: {
-            primary_hv_cellboard_2_version_t* msg = (primary_hv_cellboard_2_version_t*)(device->message);
-            primary::HV_CELLBOARD_2_VERSION* proto_msg = pack->add_hv_cellboard_2_version();
-			proto_msg->set_component_build_time(msg->component_build_time);
-			proto_msg->set_canlib_build_time(msg->canlib_build_time);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 708: {
-            primary_hv_cellboard_3_version_t* msg = (primary_hv_cellboard_3_version_t*)(device->message);
-            primary::HV_CELLBOARD_3_VERSION* proto_msg = pack->add_hv_cellboard_3_version();
-			proto_msg->set_component_build_time(msg->component_build_time);
-			proto_msg->set_canlib_build_time(msg->canlib_build_time);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 709: {
-            primary_hv_cellboard_4_version_t* msg = (primary_hv_cellboard_4_version_t*)(device->message);
-            primary::HV_CELLBOARD_4_VERSION* proto_msg = pack->add_hv_cellboard_4_version();
-			proto_msg->set_component_build_time(msg->component_build_time);
-			proto_msg->set_canlib_build_time(msg->canlib_build_time);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 710: {
-            primary_hv_cellboard_5_version_t* msg = (primary_hv_cellboard_5_version_t*)(device->message);
-            primary::HV_CELLBOARD_5_VERSION* proto_msg = pack->add_hv_cellboard_5_version();
-			proto_msg->set_component_build_time(msg->component_build_time);
+            primary_hv_cellboard_version_t* msg = (primary_hv_cellboard_version_t*)(device->message);
+            primary::HV_CELLBOARD_VERSION* proto_msg = pack->add_hv_cellboard_version();
+			proto_msg->set_cellboard_id((primary::primary_hv_cellboard_version_cellboard_id)msg->cellboard_id);
+			proto_msg->set_component_version(msg->component_version);
 			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP

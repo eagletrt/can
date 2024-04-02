@@ -258,6 +258,90 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us) {
     char buffer[1024];
     
+    for(int i = 0; i < pack->fs_datalogger_reserved_6_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->fs_datalogger_reserved_6(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->fs_datalogger_reserved_6(i)._inner_timestamp();
+        (*net_signals)["FS_DATALOGGER_RESERVED_6"]["_timestamp"].push(pack->fs_datalogger_reserved_6(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->fs_datalogger_reserved_5_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->fs_datalogger_reserved_5(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->fs_datalogger_reserved_5(i)._inner_timestamp();
+        (*net_signals)["FS_DATALOGGER_RESERVED_5"]["_timestamp"].push(pack->fs_datalogger_reserved_5(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->fs_datalogger_reserved_4_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->fs_datalogger_reserved_4(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->fs_datalogger_reserved_4(i)._inner_timestamp();
+        (*net_signals)["FS_DATALOGGER_RESERVED_4"]["_timestamp"].push(pack->fs_datalogger_reserved_4(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->fs_datalogger_reserved_3_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->fs_datalogger_reserved_3(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->fs_datalogger_reserved_3(i)._inner_timestamp();
+        (*net_signals)["FS_DATALOGGER_RESERVED_3"]["_timestamp"].push(pack->fs_datalogger_reserved_3(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->fs_datalogger_reserved_2_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->fs_datalogger_reserved_2(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->fs_datalogger_reserved_2(i)._inner_timestamp();
+        (*net_signals)["FS_DATALOGGER_RESERVED_2"]["_timestamp"].push(pack->fs_datalogger_reserved_2(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->fs_datalogger_reserved_1_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->fs_datalogger_reserved_1(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->fs_datalogger_reserved_1(i)._inner_timestamp();
+        (*net_signals)["FS_DATALOGGER_RESERVED_1"]["_timestamp"].push(pack->fs_datalogger_reserved_1(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->fs_datalogger_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->fs_datalogger_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->fs_datalogger_status(i)._inner_timestamp();
+        (*net_signals)["FS_DATALOGGER_STATUS"]["_timestamp"].push(pack->fs_datalogger_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["FS_DATALOGGER_STATUS"]["msgcnt"].push(pack->fs_datalogger_status(i).msgcnt());
+		(*net_signals)["FS_DATALOGGER_STATUS"]["status_ready"].push(pack->fs_datalogger_status(i).status_ready());
+		(*net_signals)["FS_DATALOGGER_STATUS"]["status_logging"].push(pack->fs_datalogger_status(i).status_logging());
+		(*net_signals)["FS_DATALOGGER_STATUS"]["status_triggered_voltage"].push(pack->fs_datalogger_status(i).status_triggered_voltage());
+		(*net_signals)["FS_DATALOGGER_STATUS"]["status_triggered_current"].push(pack->fs_datalogger_status(i).status_triggered_current());
+		(*net_signals)["FS_DATALOGGER_STATUS"]["voltage"].push(pack->fs_datalogger_status(i).voltage());
+		(*net_signals)["FS_DATALOGGER_STATUS"]["current"].push(pack->fs_datalogger_status(i).current());
+
+    }
+
     for(int i = 0; i < pack->imu_angular_rate_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -686,16 +770,16 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->link_deformation_fl_size(); i++){
+    for(int i = 0; i < pack->link_deformation_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->link_deformation_fl(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->link_deformation_fl(i)._inner_timestamp();
-        (*net_signals)["LINK_DEFORMATION_FL"]["_timestamp"].push(pack->link_deformation_fl(i)._inner_timestamp());
+        if(pack->link_deformation(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->link_deformation(i)._inner_timestamp();
+        (*net_signals)["LINK_DEFORMATION"]["_timestamp"].push(pack->link_deformation(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LINK_DEFORMATION_FL"]["rod_id"].push(pack->link_deformation_fl(i).rod_id());
-		(*net_signals)["LINK_DEFORMATION_FL"]["deformation"].push(pack->link_deformation_fl(i).deformation());
+		(*net_signals)["LINK_DEFORMATION"]["rod_id"].push(pack->link_deformation(i).rod_id());
+		(*net_signals)["LINK_DEFORMATION"]["deformation"].push(pack->link_deformation(i).deformation());
 
     }
 
@@ -738,6 +822,83 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
 
     switch(id) {
         
+        case 1877: {
+            secondary_fs_datalogger_reserved_6_t* msg = (secondary_fs_datalogger_reserved_6_t*)(device->message);
+            secondary::FS_DATALOGGER_RESERVED_6* proto_msg = pack->add_fs_datalogger_reserved_6();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1876: {
+            secondary_fs_datalogger_reserved_5_t* msg = (secondary_fs_datalogger_reserved_5_t*)(device->message);
+            secondary::FS_DATALOGGER_RESERVED_5* proto_msg = pack->add_fs_datalogger_reserved_5();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1875: {
+            secondary_fs_datalogger_reserved_4_t* msg = (secondary_fs_datalogger_reserved_4_t*)(device->message);
+            secondary::FS_DATALOGGER_RESERVED_4* proto_msg = pack->add_fs_datalogger_reserved_4();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1874: {
+            secondary_fs_datalogger_reserved_3_t* msg = (secondary_fs_datalogger_reserved_3_t*)(device->message);
+            secondary::FS_DATALOGGER_RESERVED_3* proto_msg = pack->add_fs_datalogger_reserved_3();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1873: {
+            secondary_fs_datalogger_reserved_2_t* msg = (secondary_fs_datalogger_reserved_2_t*)(device->message);
+            secondary::FS_DATALOGGER_RESERVED_2* proto_msg = pack->add_fs_datalogger_reserved_2();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1872: {
+            secondary_fs_datalogger_reserved_1_t* msg = (secondary_fs_datalogger_reserved_1_t*)(device->message);
+            secondary::FS_DATALOGGER_RESERVED_1* proto_msg = pack->add_fs_datalogger_reserved_1();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1072: {
+            secondary_fs_datalogger_status_t* msg = (secondary_fs_datalogger_status_t*)(device->message);
+            secondary::FS_DATALOGGER_STATUS* proto_msg = pack->add_fs_datalogger_status();
+			proto_msg->set_msgcnt(msg->msgcnt);
+			proto_msg->set_status_ready(msg->status_ready);
+			proto_msg->set_status_logging(msg->status_logging);
+			proto_msg->set_status_triggered_voltage(msg->status_triggered_voltage);
+			proto_msg->set_status_triggered_current(msg->status_triggered_current);
+			proto_msg->set_voltage(msg->voltage);
+			proto_msg->set_current(msg->current);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
         case 1260: {
             secondary_imu_angular_rate_converted_t* msg = (secondary_imu_angular_rate_converted_t*)(device->message);
             secondary::IMU_ANGULAR_RATE* proto_msg = pack->add_imu_angular_rate();
@@ -1137,8 +1298,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1632: {
-            secondary_link_deformation_fl_converted_t* msg = (secondary_link_deformation_fl_converted_t*)(device->message);
-            secondary::LINK_DEFORMATION_FL* proto_msg = pack->add_link_deformation_fl();
+            secondary_link_deformation_converted_t* msg = (secondary_link_deformation_converted_t*)(device->message);
+            secondary::LINK_DEFORMATION* proto_msg = pack->add_link_deformation();
 			proto_msg->set_rod_id(msg->rod_id);
 			proto_msg->set_deformation(msg->deformation);
 

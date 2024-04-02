@@ -13,6 +13,48 @@ extern "C" {
 #endif
 
 /* START */
+#define FS_DATALOGGER_RESERVED_6 "FS_DATALOGGER_RESERVED_6"
+
+/* END */
+
+/* START */
+#define FS_DATALOGGER_RESERVED_5 "FS_DATALOGGER_RESERVED_5"
+
+/* END */
+
+/* START */
+#define FS_DATALOGGER_RESERVED_4 "FS_DATALOGGER_RESERVED_4"
+
+/* END */
+
+/* START */
+#define FS_DATALOGGER_RESERVED_3 "FS_DATALOGGER_RESERVED_3"
+
+/* END */
+
+/* START */
+#define FS_DATALOGGER_RESERVED_2 "FS_DATALOGGER_RESERVED_2"
+
+/* END */
+
+/* START */
+#define FS_DATALOGGER_RESERVED_1 "FS_DATALOGGER_RESERVED_1"
+
+/* END */
+
+/* START */
+#define FS_DATALOGGER_STATUS "FS_DATALOGGER_STATUS"
+
+#define FS_DATALOGGER_STATUS_MSGCNT "fs_datalogger_status_msgcnt"
+#define FS_DATALOGGER_STATUS_STATUS_READY "fs_datalogger_status_status_ready"
+#define FS_DATALOGGER_STATUS_STATUS_LOGGING "fs_datalogger_status_status_logging"
+#define FS_DATALOGGER_STATUS_STATUS_TRIGGERED_VOLTAGE "fs_datalogger_status_status_triggered_voltage"
+#define FS_DATALOGGER_STATUS_STATUS_TRIGGERED_CURRENT "fs_datalogger_status_status_triggered_current"
+#define FS_DATALOGGER_STATUS_VOLTAGE "fs_datalogger_status_voltage"
+#define FS_DATALOGGER_STATUS_CURRENT "fs_datalogger_status_current"
+/* END */
+
+/* START */
 #define IMU_ANGULAR_RATE "IMU_ANGULAR_RATE"
 
 #define IMU_ANGULAR_RATE_X "imu_angular_rate_x"
@@ -261,10 +303,10 @@ extern "C" {
 /* END */
 
 /* START */
-#define LINK_DEFORMATION_FL "LINK_DEFORMATION_FL"
+#define LINK_DEFORMATION "LINK_DEFORMATION"
 
-#define LINK_DEFORMATION_FL_ROD_ID "link_deformation_fl_rod_id"
-#define LINK_DEFORMATION_FL_DEFORMATION "link_deformation_fl_deformation"
+#define LINK_DEFORMATION_ROD_ID "link_deformation_rod_id"
+#define LINK_DEFORMATION_DEFORMATION "link_deformation_deformation"
 /* END */
 
 /* START */
@@ -286,12 +328,13 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint16_t = -6,
-	e_secondary_int16_t,
-	e_secondary_uint8_t,
+	e_secondary_int8_t = -7,
+	e_secondary_uint64_t,
+	e_secondary_uint16_t,
 	e_secondary_float,
 	e_secondary_uint32_t,
-	e_secondary_uint64_t,
+	e_secondary_uint8_t,
+	e_secondary_int16_t,
 
 	
 };

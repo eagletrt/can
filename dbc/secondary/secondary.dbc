@@ -33,8 +33,29 @@ NS_ :
 
 BS_:
 
-BU_: ACQUISINATOR IRTS_RL IRTS_RL TLM IRTS_FL TLM IRTS_FR ACQUISINATOR IRTS_FR TLM IRTS_FL ECU IRTS_FR TLM IRTS_FL TLM ECU IRTS_FL TLM IMU ECU IRTS_RR IMU ECU TLM IRTS_RR TLM IRTS_RR IRTS_RL ACQUISINATOR IRTS_RR IRTS_RL IRTS_FR
+BU_: ACQUISINATOR ECU TLM TLM TLM TLM IRTS_FR TLM IRTS_FR ECU IRTS_FL IRTS_FR TLM IRTS_FL IRTS_RL IRTS_RR IRTS_FL IRTS_RL IRTS_RR IRTS_FL IRTS_RL TLM ACQUISINATOR ECU IRTS_RR IMU ACQUISINATOR IRTS_RR TLM IRTS_RL ECU IRTS_FR IMU
 
+
+BO_ 1877 FS_Datalogger_Reserved_6: 8 Vector__XXX
+
+BO_ 1876 FS_Datalogger_Reserved_5: 8 Vector__XXX
+
+BO_ 1875 FS_Datalogger_Reserved_4: 8 Vector__XXX
+
+BO_ 1874 FS_Datalogger_Reserved_3: 8 Vector__XXX
+
+BO_ 1873 FS_Datalogger_Reserved_2: 8 Vector__XXX
+
+BO_ 1872 FS_Datalogger_Reserved_1: 8 Vector__XXX
+
+BO_ 1072 FS_Datalogger_Status: 6 FS_Datalogger
+ SG_ Current : 32|16@1+ (64,0) [0|4194240] "mA" Vector__XXX
+ SG_ Voltage : 16|16@1+ (16,0) [0|1048560] "mV" Vector__XXX
+ SG_ Status_Triggered_Current : 11|1@1- (1,0) [0|0] "" Vector__XXX
+ SG_ Status_Triggered_Voltage : 10|1@1- (1,0) [0|0] "" Vector__XXX
+ SG_ Status_Logging : 9|1@1- (1,0) [0|0] "" Vector__XXX
+ SG_ Status_Ready : 8|1@1- (1,0) [0|0] "" Vector__XXX
+ SG_ MsgCnt : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
 BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
  SG_ z : 39|16@0- (0.1,0) [0|245] "" Vector__XXX
@@ -194,7 +215,7 @@ BO_ 1624 AMMO_COMPRESSION: 16 Vector__XXX
  SG_ rr : 32|32@1+ (1.629814505956558e-08,-50) [-50|20] "" Vector__XXX
  SG_ rl : 0|32@1+ (1.629814505956558e-08,-50) [-50|20] "" Vector__XXX
 
-BO_ 1632 LINK_DEFORMATION_FL: 5 Vector__XXX
+BO_ 1632 LINK_DEFORMATION: 5 Vector__XXX
  SG_ deformation : 8|32@1+ (1.3969838622484784e-09,-3.0) [-3.0|3.0] "" Vector__XXX
  SG_ rod_id : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
@@ -215,22 +236,22 @@ BO_ 1648 COOLING_TEMP: 8 Vector__XXX
 
 CM_ BO_ 1260 "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed";
 CM_ BO_ 1261 "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed";
-CM_ BO_ 1456 "Front Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1457 "Front Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1458 "Front Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1459 "Front Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1464 "Front Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1465 "Front Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1466 "Front Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1467 "Front Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1468 "Rear Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1469 "Rear Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1470 "Rear Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1471 "Rear Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1200 "Rear Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1201 "Rear Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1202 "Rear Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
-CM_ BO_ 1203 "Rear Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1456 "Front Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1457 "Front Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1458 "Front Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1459 "Front Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1464 "Front Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1465 "Front Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1466 "Front Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1467 "Front Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1468 "Rear Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1469 "Rear Left wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1470 "Rear Left wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1471 "Rear Left wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1200 "Rear Right wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1201 "Rear Right wheel InfraRed Temperature Sensor data, channels 5 through 8. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1202 "Rear Right wheel InfraRed Temperature Sensor data, channels 9 through 12. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
+CM_ BO_ 1203 "Rear Right wheel InfraRed Temperature Sensor data, channels 13 through 16. 0.1ËšC per bit, -100ËšC offset, Big-Endian, 16bit Total, unsigned.";
 CM_ BO_ 1536 "Coordinates received from GPS";
 CM_ BO_ 1544 "Speed received from GPS";
 CM_ BO_ 1552 "Encoder and inverter speed in rad/sec";
@@ -246,7 +267,9 @@ CM_ BO_ 1624 "Position of the ammos";
 CM_ BO_ 1632 "Message for the arm deformation";
 CM_ BO_ 1640 "Debug signals";
 CM_ BO_ 1648 "Cooling temperature";
+BA_DEF_  "BusType" STRING ;
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
+BA_DEF_DEF_  "BusType" "CAN";
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 BA_ "GenMsgCycleTime" BO_ 1552 10;
 BA_ "GenMsgCycleTime" BO_ 1560 10;

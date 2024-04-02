@@ -600,86 +600,17 @@
             }
         },
         {
-            "name": "HV_CELLBOARD_0_VERSION",
+            "name": "HV_CELLBOARD_VERSION",
             "fixed_id": 705,
-            "interval": 1000,
             "sending": [
                 "HV"
             ],
             "receiving": [],
-            "description": "Hv cellboard number 0 version: build-time timestamp and canlib build-time timestamp",
-            "contents": {
-                "component_build_time": "uint32",
-                "canlib_build_time": "uint32"
-            }
-        },
-        {
-            "name": "HV_CELLBOARD_1_VERSION",
-            "fixed_id": 706,
+            "description": "Hv cellboard version: build-time timestamp and canlib build-time timestamp",
             "interval": 1000,
-            "sending": [
-                "HV"
-            ],
-            "receiving": [],
-            "description": "Hv cellboard number 1 version: build-time timestamp and canlib build-time timestamp",
             "contents": {
-                "component_build_time": "uint32",
-                "canlib_build_time": "uint32"
-            }
-        },
-        {
-            "name": "HV_CELLBOARD_2_VERSION",
-            "fixed_id": 707,
-            "interval": 1000,
-            "sending": [
-                "HV"
-            ],
-            "receiving": [],
-            "description": "Hv cellboard number 2 version: build-time timestamp and canlib build-time timestamp",
-            "contents": {
-                "component_build_time": "uint32",
-                "canlib_build_time": "uint32"
-            }
-        },
-        {
-            "name": "HV_CELLBOARD_3_VERSION",
-            "fixed_id": 708,
-            "interval": 1000,
-            "sending": [
-                "HV"
-            ],
-            "receiving": [],
-            "description": "Hv cellboard number 3 version: build-time timestamp and canlib build-time timestamp",
-            "contents": {
-                "component_build_time": "uint32",
-                "canlib_build_time": "uint32"
-            }
-        },
-        {
-            "name": "HV_CELLBOARD_4_VERSION",
-            "fixed_id": 709,
-            "interval": 1000,
-            "sending": [
-                "HV"
-            ],
-            "receiving": [],
-            "description": "Hv cellboard number 4 version: build-time timestamp and canlib build-time timestamp",
-            "contents": {
-                "component_build_time": "uint32",
-                "canlib_build_time": "uint32"
-            }
-        },
-        {
-            "name": "HV_CELLBOARD_5_VERSION",
-            "fixed_id": 710,
-            "interval": 1000,
-            "sending": [
-                "HV"
-            ],
-            "receiving": [],
-            "description": "Hv cellboard number 5 version: build-time timestamp and canlib build-time timestamp",
-            "contents": {
-                "component_build_time": "uint32",
+                "cellboard_id": "HvCellboardId",
+                "component_version": "uint16",
                 "canlib_build_time": "uint32"
             }
         },

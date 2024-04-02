@@ -7,12 +7,7 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 701: return PRIMARY_INTERVAL_ECU_VERSION;
        case 703: return PRIMARY_INTERVAL_LV_VERSION;
        case 702: return PRIMARY_INTERVAL_HV_MAINBOARD_VERSION;
-       case 705: return PRIMARY_INTERVAL_HV_CELLBOARD_0_VERSION;
-       case 706: return PRIMARY_INTERVAL_HV_CELLBOARD_1_VERSION;
-       case 707: return PRIMARY_INTERVAL_HV_CELLBOARD_2_VERSION;
-       case 708: return PRIMARY_INTERVAL_HV_CELLBOARD_3_VERSION;
-       case 709: return PRIMARY_INTERVAL_HV_CELLBOARD_4_VERSION;
-       case 710: return PRIMARY_INTERVAL_HV_CELLBOARD_5_VERSION;
+       case 705: return PRIMARY_INTERVAL_HV_CELLBOARD_VERSION;
        case 24: return PRIMARY_INTERVAL_HV_ERRORS;
        case 512: return PRIMARY_INTERVAL_HV_DEBUG_SIGNALS;
        case 1536: return PRIMARY_INTERVAL_HV_FANS_STATUS;
@@ -112,12 +107,7 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 703: return PRIMARY_INDEX_LV_VERSION;
        case 704: return PRIMARY_INDEX_TLM_VERSION;
        case 702: return PRIMARY_INDEX_HV_MAINBOARD_VERSION;
-       case 705: return PRIMARY_INDEX_HV_CELLBOARD_0_VERSION;
-       case 706: return PRIMARY_INDEX_HV_CELLBOARD_1_VERSION;
-       case 707: return PRIMARY_INDEX_HV_CELLBOARD_2_VERSION;
-       case 708: return PRIMARY_INDEX_HV_CELLBOARD_3_VERSION;
-       case 709: return PRIMARY_INDEX_HV_CELLBOARD_4_VERSION;
-       case 710: return PRIMARY_INDEX_HV_CELLBOARD_5_VERSION;
+       case 705: return PRIMARY_INDEX_HV_CELLBOARD_VERSION;
        case 24: return PRIMARY_INDEX_HV_ERRORS;
        case 512: return PRIMARY_INDEX_HV_DEBUG_SIGNALS;
        case 1536: return PRIMARY_INDEX_HV_FANS_STATUS;
@@ -195,7 +185,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 109 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 104 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -236,45 +226,10 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
     }
 
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELLBOARD_0_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLBOARD_0_VERSION] > PRIMARY_INTERVAL_HV_CELLBOARD_0_VERSION * 3
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELLBOARD_VERSION)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLBOARD_VERSION] > PRIMARY_INTERVAL_HV_CELLBOARD_VERSION * 3
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLBOARD_0_VERSION);
-    }
-
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELLBOARD_1_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLBOARD_1_VERSION] > PRIMARY_INTERVAL_HV_CELLBOARD_1_VERSION * 3
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLBOARD_1_VERSION);
-    }
-
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELLBOARD_2_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLBOARD_2_VERSION] > PRIMARY_INTERVAL_HV_CELLBOARD_2_VERSION * 3
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLBOARD_2_VERSION);
-    }
-
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELLBOARD_3_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLBOARD_3_VERSION] > PRIMARY_INTERVAL_HV_CELLBOARD_3_VERSION * 3
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLBOARD_3_VERSION);
-    }
-
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELLBOARD_4_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLBOARD_4_VERSION] > PRIMARY_INTERVAL_HV_CELLBOARD_4_VERSION * 3
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLBOARD_4_VERSION);
-    }
-
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_CELLBOARD_5_VERSION)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLBOARD_5_VERSION] > PRIMARY_INTERVAL_HV_CELLBOARD_5_VERSION * 3
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLBOARD_5_VERSION);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLBOARD_VERSION);
     }
 
     if (

@@ -292,45 +292,11 @@ extern "C" {
 /* END */
 
 /* START */
-#define HV_CELLBOARD_0_VERSION "HV_CELLBOARD_0_VERSION"
+#define HV_CELLBOARD_VERSION "HV_CELLBOARD_VERSION"
 
-#define HV_CELLBOARD_0_VERSION_COMPONENT_BUILD_TIME "hv_cellboard_0_version_component_build_time"
-#define HV_CELLBOARD_0_VERSION_CANLIB_BUILD_TIME "hv_cellboard_0_version_canlib_build_time"
-/* END */
-
-/* START */
-#define HV_CELLBOARD_1_VERSION "HV_CELLBOARD_1_VERSION"
-
-#define HV_CELLBOARD_1_VERSION_COMPONENT_BUILD_TIME "hv_cellboard_1_version_component_build_time"
-#define HV_CELLBOARD_1_VERSION_CANLIB_BUILD_TIME "hv_cellboard_1_version_canlib_build_time"
-/* END */
-
-/* START */
-#define HV_CELLBOARD_2_VERSION "HV_CELLBOARD_2_VERSION"
-
-#define HV_CELLBOARD_2_VERSION_COMPONENT_BUILD_TIME "hv_cellboard_2_version_component_build_time"
-#define HV_CELLBOARD_2_VERSION_CANLIB_BUILD_TIME "hv_cellboard_2_version_canlib_build_time"
-/* END */
-
-/* START */
-#define HV_CELLBOARD_3_VERSION "HV_CELLBOARD_3_VERSION"
-
-#define HV_CELLBOARD_3_VERSION_COMPONENT_BUILD_TIME "hv_cellboard_3_version_component_build_time"
-#define HV_CELLBOARD_3_VERSION_CANLIB_BUILD_TIME "hv_cellboard_3_version_canlib_build_time"
-/* END */
-
-/* START */
-#define HV_CELLBOARD_4_VERSION "HV_CELLBOARD_4_VERSION"
-
-#define HV_CELLBOARD_4_VERSION_COMPONENT_BUILD_TIME "hv_cellboard_4_version_component_build_time"
-#define HV_CELLBOARD_4_VERSION_CANLIB_BUILD_TIME "hv_cellboard_4_version_canlib_build_time"
-/* END */
-
-/* START */
-#define HV_CELLBOARD_5_VERSION "HV_CELLBOARD_5_VERSION"
-
-#define HV_CELLBOARD_5_VERSION_COMPONENT_BUILD_TIME "hv_cellboard_5_version_component_build_time"
-#define HV_CELLBOARD_5_VERSION_CANLIB_BUILD_TIME "hv_cellboard_5_version_canlib_build_time"
+#define HV_CELLBOARD_VERSION_CELLBOARD_ID "hv_cellboard_version_cellboard_id"
+#define HV_CELLBOARD_VERSION_COMPONENT_VERSION "hv_cellboard_version_component_version"
+#define HV_CELLBOARD_VERSION_CANLIB_BUILD_TIME "hv_cellboard_version_canlib_build_time"
 /* END */
 
 /* START */
@@ -982,11 +948,13 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint32_t = -4,
-	e_primary_float,
-	e_primary_uint8_t,
+	e_primary_uint8_t = -5,
+	e_primary_uint16_t,
 	e_primary_uint64_t,
+	e_primary_float,
+	e_primary_uint32_t,
 
+	e_primary_hv_cellboard_version_cellboard_id,
 	e_primary_hv_fans_status_fans_override,
 	e_primary_hv_set_fans_status_handcart_fans_override,
 	e_primary_hv_status_status,

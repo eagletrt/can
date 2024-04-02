@@ -5,6 +5,17 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 {
 	switch(id)
     {
+	case 1072:
+		if(7 > fields_size) return 1;
+		snprintf(v[0], string_size, FS_DATALOGGER_STATUS_MSGCNT);
+		snprintf(v[1], string_size, FS_DATALOGGER_STATUS_STATUS_READY);
+		snprintf(v[2], string_size, FS_DATALOGGER_STATUS_STATUS_LOGGING);
+		snprintf(v[3], string_size, FS_DATALOGGER_STATUS_STATUS_TRIGGERED_VOLTAGE);
+		snprintf(v[4], string_size, FS_DATALOGGER_STATUS_STATUS_TRIGGERED_CURRENT);
+		snprintf(v[5], string_size, FS_DATALOGGER_STATUS_VOLTAGE);
+		snprintf(v[6], string_size, FS_DATALOGGER_STATUS_CURRENT);
+
+		return 0;
 	case 1260:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, IMU_ANGULAR_RATE_X);
@@ -225,8 +236,8 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		return 0;
 	case 1632:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, LINK_DEFORMATION_FL_ROD_ID);
-		snprintf(v[1], string_size, LINK_DEFORMATION_FL_DEFORMATION);
+		snprintf(v[0], string_size, LINK_DEFORMATION_ROD_ID);
+		snprintf(v[1], string_size, LINK_DEFORMATION_DEFORMATION);
 
 		return 0;
 	case 1640:
@@ -261,6 +272,44 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 {
     switch(id)
     {
+	case 1072:
+	{
+		secondary_fs_datalogger_status_t tmp;
+		secondary_fs_datalogger_status_converted_t tmp_converted;
+		uint8_t r_msgcnt;
+		int8_t r_status_ready;
+		int8_t r_status_logging;
+		int8_t r_status_triggered_voltage;
+		int8_t r_status_triggered_current;
+		uint16_t r_voltage;
+		uint16_t r_current;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNi8 ","  
+			"%" SCNi8 ","  
+			"%" SCNi8 ","  
+			"%" SCNi8 ","  
+			"%" SCNu16 "," 
+			"%" SCNu16 "," ,
+			&r_msgcnt,
+			&r_status_ready,
+			&r_status_logging,
+			&r_status_triggered_voltage,
+			&r_status_triggered_current,
+			&r_voltage,
+			&r_current);
+		tmp_converted.msgcnt = (uint8_t)r_msgcnt;
+		tmp_converted.status_ready = (int8_t)r_status_ready;
+		tmp_converted.status_logging = (int8_t)r_status_logging;
+		tmp_converted.status_triggered_voltage = (int8_t)r_status_triggered_voltage;
+		tmp_converted.status_triggered_current = (int8_t)r_status_triggered_current;
+		tmp_converted.voltage = (uint16_t)r_voltage;
+		tmp_converted.current = (uint16_t)r_current;
+
+		secondary_fs_datalogger_status_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_FS_DATALOGGER_STATUS_BYTE_SIZE;
+		return secondary_fs_datalogger_status_pack(data, &tmp, SECONDARY_FS_DATALOGGER_STATUS_BYTE_SIZE);
+	}
 	case 1260:
 	{
 		secondary_imu_angular_rate_t tmp;
@@ -955,8 +1004,8 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 1632:
 	{
-		secondary_link_deformation_fl_t tmp;
-		secondary_link_deformation_fl_converted_t tmp_converted;
+		secondary_link_deformation_t tmp;
+		secondary_link_deformation_converted_t tmp_converted;
 		uint8_t r_rod_id;
 		float r_deformation;
 
@@ -967,9 +1016,9 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.rod_id = (uint8_t)r_rod_id;
 		tmp_converted.deformation = (float)r_deformation;
 
-		secondary_link_deformation_fl_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = SECONDARY_LINK_DEFORMATION_FL_BYTE_SIZE;
-		return secondary_link_deformation_fl_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_FL_BYTE_SIZE);
+		secondary_link_deformation_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_LINK_DEFORMATION_BYTE_SIZE;
+		return secondary_link_deformation_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_BYTE_SIZE);
 	}
 	case 1640:
 	{
@@ -1031,6 +1080,13 @@ int secondary_n_fields_from_id(int id)
 {
 	switch(id)
     {
+		case 1877: return 0;
+		case 1876: return 0;
+		case 1875: return 0;
+		case 1874: return 0;
+		case 1873: return 0;
+		case 1872: return 0;
+		case 1072: return 7;
 		case 1260: return 3;
 		case 1261: return 4;
 		case 1456: return 4;
@@ -1071,6 +1127,16 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 {
     switch(id)
     {
+	case 1072:
+		if(fields_types_size < 7) return 0;
+		fields_types[0] = e_secondary_uint8_t;
+		fields_types[1] = e_secondary_int8_t;
+		fields_types[2] = e_secondary_int8_t;
+		fields_types[3] = e_secondary_int8_t;
+		fields_types[4] = e_secondary_int8_t;
+		fields_types[5] = e_secondary_uint16_t;
+		fields_types[6] = e_secondary_uint16_t;
+		return 7;
 	case 1260:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_secondary_float;
