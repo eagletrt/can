@@ -268,20 +268,19 @@
             "name": "HV_JMP_TO_BLT",
             "fixed_id": 0,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
                 "HV"
             ],
-            "contents": {
-                "forward": "Toggle",
-                "cellboard_id": "HvCellboardId"
-            }
+            "contents": {}
         },
         {
             "name": "HV_FLASH_MAINBOARD_TX",
             "fixed_id": 1,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -293,6 +292,7 @@
             "name": "HV_FLASH_MAINBOARD_RX",
             "fixed_id": 2,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -302,8 +302,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_0_TX",
-            "fixed_id": 3,
+            "fixed_id": 4,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -313,8 +314,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_0_RX",
-            "fixed_id": 4,
+            "fixed_id": 5,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -324,8 +326,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_1_TX",
-            "fixed_id": 5,
+            "fixed_id": 6,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -335,8 +338,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_1_RX",
-            "fixed_id": 6,
+            "fixed_id": 7,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -346,8 +350,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_2_TX",
-            "fixed_id": 7,
+            "fixed_id": 8,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -357,8 +362,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_2_RX",
-            "fixed_id": 8,
+            "fixed_id": 9,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -368,8 +374,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_3_TX",
-            "fixed_id": 9,
+            "fixed_id": 10,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -379,8 +386,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_3_RX",
-            "fixed_id": 10,
+            "fixed_id": 11,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -390,8 +398,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_4_TX",
-            "fixed_id": 11,
+            "fixed_id": 12,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -401,8 +410,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_4_RX",
-            "fixed_id": 12,
+            "fixed_id": 13,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -412,8 +422,9 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_5_TX",
-            "fixed_id": 13,
+            "fixed_id": 14,
             "sending": [
+                "HANDCART",
                 "TLM"
             ],
             "receiving": [
