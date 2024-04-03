@@ -273,7 +273,10 @@
             "receiving": [
                 "HV"
             ],
-            "contents": {}
+            "contents": {
+                "forward": "Toggle",
+                "cellboard_id": "HvCellboardId"
+            }
         },
         {
             "name": "HV_FLASH_MAINBOARD_TX",
