@@ -1,5 +1,5 @@
-#ifndef hv_current_WATCHDOG_H
-#define hv_current_WATCHDOG_H
+#ifndef ivts_WATCHDOG_H
+#define ivts_WATCHDOG_H
 
 #include <inttypes.h>
 #include <string.h>
@@ -54,16 +54,16 @@ typedef void (*canlib_watchdog_callback)(int);
 
 
 
-#define HV_CURRENT_INDEX_IVT_MSG_RESULT_WH 0
-#define HV_CURRENT_INDEX_IVT_MSG_RESULT_AS 1
-#define HV_CURRENT_INDEX_IVT_MSG_RESULT_W 2
-#define HV_CURRENT_INDEX_IVT_MSG_RESPONSE 3
-#define HV_CURRENT_INDEX_IVT_MSG_RESULT_T 4
-#define HV_CURRENT_INDEX_IVT_MSG_RESULT_U3 5
-#define HV_CURRENT_INDEX_IVT_MSG_RESULT_U2 6
-#define HV_CURRENT_INDEX_IVT_MSG_RESULT_U1 7
-#define HV_CURRENT_INDEX_IVT_MSG_RESULT_I 8
-#define HV_CURRENT_INDEX_IVT_MSG_CMD 9
+#define IVTS_INDEX_IVT_MSG_RESULT_WH 0
+#define IVTS_INDEX_IVT_MSG_RESULT_AS 1
+#define IVTS_INDEX_IVT_MSG_RESULT_W 2
+#define IVTS_INDEX_IVT_MSG_RESPONSE 3
+#define IVTS_INDEX_IVT_MSG_RESULT_T 4
+#define IVTS_INDEX_IVT_MSG_RESULT_U3 5
+#define IVTS_INDEX_IVT_MSG_RESULT_U2 6
+#define IVTS_INDEX_IVT_MSG_RESULT_U1 7
+#define IVTS_INDEX_IVT_MSG_RESULT_I 8
+#define IVTS_INDEX_IVT_MSG_CMD 9
 
 
 
@@ -71,14 +71,14 @@ typedef struct {
     uint8_t activated[2];
     uint8_t timeout[2];
     canlib_watchdog_timestamp last_reset[10];
-} hv_current_watchdog;
+} ivts_watchdog;
 
-int hv_current_watchdog_interval_from_id(uint16_t message_id);
-int hv_current_watchdog_index_from_id(uint16_t message_id);
-void hv_current_watchdog_free(hv_current_watchdog *watchdog);
-void hv_current_watchdog_reset(hv_current_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
-void hv_current_watchdog_reset_all(hv_current_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
-void hv_current_watchdog_timeout(hv_current_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+int ivts_watchdog_interval_from_id(uint16_t message_id);
+int ivts_watchdog_index_from_id(uint16_t message_id);
+void ivts_watchdog_free(ivts_watchdog *watchdog);
+void ivts_watchdog_reset(ivts_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp);
+void ivts_watchdog_reset_all(ivts_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
+void ivts_watchdog_timeout(ivts_watchdog *watchdog, canlib_watchdog_timestamp timestamp);
 
 
 
@@ -86,4 +86,4 @@ void hv_current_watchdog_timeout(hv_current_watchdog *watchdog, canlib_watchdog_
 }
 #endif
 
-#endif // hv_current_NETWORK_H
+#endif // ivts_NETWORK_H

@@ -1,12 +1,12 @@
-#ifndef hv_current_UTILS_H
-#define hv_current_UTILS_H
+#ifndef ivts_UTILS_H
+#define ivts_UTILS_H
 
 #include <inttypes.h>
 #include <string.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
-#include "hv_current_network.h"
+#include "ivts_network.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -324,63 +324,63 @@ extern "C" {
 #define IVT_MSG_CMD__5F_GET_CAN_ID_SN_RESPONSE "ivt_msg_cmd__5f_get_can_id_sn_response"
 /* END */
 
-enum hv_current_types_id{
-	e_hv_current_float = -8,
-	e_hv_current_uint64_t,
-	e_hv_current_uint16_t,
-	e_hv_current_uint32_t,
-	e_hv_current_int16_t,
-	e_hv_current_uint8_t,
-	e_hv_current_int32_t,
-	e_hv_current_int8_t,
+enum ivts_types_id{
+	e_ivts_uint8_t = -8,
+	e_ivts_uint16_t,
+	e_ivts_uint32_t,
+	e_ivts_int32_t,
+	e_ivts_int16_t,
+	e_ivts_float,
+	e_ivts_uint64_t,
+	e_ivts_int8_t,
 
-	e_hv_current_ivt_msg_result_wh_ivt_id_result_wh,
-	e_hv_current_ivt_msg_result_as_ivt_id_result_as,
-	e_hv_current_ivt_msg_result_w_ivt_id_result_w,
-	e_hv_current_ivt_msg_response_ivt_id_response,
-	e_hv_current_ivt_msg_response__80_resp_measerror_item,
-	e_hv_current_ivt_msg_response__81_resp_systemerror_item,
-	e_hv_current_ivt_msg_response__82_resp_alllogdata_item,
-	e_hv_current_ivt_msg_response__83_resp_logdata_item,
-	e_hv_current_ivt_msg_response__b0_resp_reset_item,
-	e_hv_current_ivt_msg_response__b9_resp_device_type,
-	e_hv_current_ivt_msg_response__a0_resp_triggermode_i,
-	e_hv_current_ivt_msg_response__a1_resp_triggermode_u1,
-	e_hv_current_ivt_msg_response__a2_resp_triggermode_u2,
-	e_hv_current_ivt_msg_response__a3_resp_triggermode_u3,
-	e_hv_current_ivt_msg_response__a4_resp_triggermode_t,
-	e_hv_current_ivt_msg_response__a5_resp_triggermode_w,
-	e_hv_current_ivt_msg_response__a6_resp_triggermode_as,
-	e_hv_current_ivt_msg_response__a7_resp_triggermode_wh,
-	e_hv_current_ivt_msg_response__b4_resp_actual_mode,
-	e_hv_current_ivt_msg_response__b9_resp_device_current,
-	e_hv_current_ivt_msg_response__b4_resp_startup_mode,
-	e_hv_current_ivt_msg_response__b9_resp_device_voltage_chan,
-	e_hv_current_ivt_msg_response__b9_resp_device_toi,
-	e_hv_current_ivt_msg_response__b9_resp_device_com,
-	e_hv_current_ivt_msg_response__b9_resp_device_v_supply,
-	e_hv_current_ivt_msg_result_t_ivt_id_result_t,
-	e_hv_current_ivt_msg_result_u3_ivt_id_result_u3,
-	e_hv_current_ivt_msg_result_u2_ivt_id_result_u2,
-	e_hv_current_ivt_msg_result_u1_ivt_id_result_u1,
-	e_hv_current_ivt_msg_result_i_ivt_id_result_i,
-	e_hv_current_ivt_msg_cmd_ivt_id_cmd,
-	e_hv_current_ivt_msg_cmd__30_reset_item,
-	e_hv_current_ivt_msg_cmd__3a_restart_to_bitrate,
-	e_hv_current_ivt_msg_cmd__40_get_measerror_item,
-	e_hv_current_ivt_msg_cmd__41_get_systemerror_item,
-	e_hv_current_ivt_msg_cmd__42_get_alllogdata_item,
-	e_hv_current_ivt_msg_cmd__43_get_logdata_item,
-	e_hv_current_ivt_msg_cmd__20_conf_triggermode_i,
-	e_hv_current_ivt_msg_cmd__21_conf_triggermode_u1,
-	e_hv_current_ivt_msg_cmd__22_conf_triggermode_u2,
-	e_hv_current_ivt_msg_cmd__23_conf_triggermode_u3,
-	e_hv_current_ivt_msg_cmd__24_conf_triggermode_t,
-	e_hv_current_ivt_msg_cmd__25_conf_triggermode_w,
-	e_hv_current_ivt_msg_cmd__26_conf_triggermode_as,
-	e_hv_current_ivt_msg_cmd__27_conf_triggermode_wh,
-	e_hv_current_ivt_msg_cmd__34_actual_mode,
-	e_hv_current_ivt_msg_cmd__34_startup_mode
+	e_ivts_ivt_msg_result_wh_ivt_id_result_wh,
+	e_ivts_ivt_msg_result_as_ivt_id_result_as,
+	e_ivts_ivt_msg_result_w_ivt_id_result_w,
+	e_ivts_ivt_msg_response_ivt_id_response,
+	e_ivts_ivt_msg_response__80_resp_measerror_item,
+	e_ivts_ivt_msg_response__81_resp_systemerror_item,
+	e_ivts_ivt_msg_response__82_resp_alllogdata_item,
+	e_ivts_ivt_msg_response__83_resp_logdata_item,
+	e_ivts_ivt_msg_response__b0_resp_reset_item,
+	e_ivts_ivt_msg_response__b9_resp_device_type,
+	e_ivts_ivt_msg_response__a0_resp_triggermode_i,
+	e_ivts_ivt_msg_response__a1_resp_triggermode_u1,
+	e_ivts_ivt_msg_response__a2_resp_triggermode_u2,
+	e_ivts_ivt_msg_response__a3_resp_triggermode_u3,
+	e_ivts_ivt_msg_response__a4_resp_triggermode_t,
+	e_ivts_ivt_msg_response__a5_resp_triggermode_w,
+	e_ivts_ivt_msg_response__a6_resp_triggermode_as,
+	e_ivts_ivt_msg_response__a7_resp_triggermode_wh,
+	e_ivts_ivt_msg_response__b4_resp_actual_mode,
+	e_ivts_ivt_msg_response__b9_resp_device_current,
+	e_ivts_ivt_msg_response__b4_resp_startup_mode,
+	e_ivts_ivt_msg_response__b9_resp_device_voltage_chan,
+	e_ivts_ivt_msg_response__b9_resp_device_toi,
+	e_ivts_ivt_msg_response__b9_resp_device_com,
+	e_ivts_ivt_msg_response__b9_resp_device_v_supply,
+	e_ivts_ivt_msg_result_t_ivt_id_result_t,
+	e_ivts_ivt_msg_result_u3_ivt_id_result_u3,
+	e_ivts_ivt_msg_result_u2_ivt_id_result_u2,
+	e_ivts_ivt_msg_result_u1_ivt_id_result_u1,
+	e_ivts_ivt_msg_result_i_ivt_id_result_i,
+	e_ivts_ivt_msg_cmd_ivt_id_cmd,
+	e_ivts_ivt_msg_cmd__30_reset_item,
+	e_ivts_ivt_msg_cmd__3a_restart_to_bitrate,
+	e_ivts_ivt_msg_cmd__40_get_measerror_item,
+	e_ivts_ivt_msg_cmd__41_get_systemerror_item,
+	e_ivts_ivt_msg_cmd__42_get_alllogdata_item,
+	e_ivts_ivt_msg_cmd__43_get_logdata_item,
+	e_ivts_ivt_msg_cmd__20_conf_triggermode_i,
+	e_ivts_ivt_msg_cmd__21_conf_triggermode_u1,
+	e_ivts_ivt_msg_cmd__22_conf_triggermode_u2,
+	e_ivts_ivt_msg_cmd__23_conf_triggermode_u3,
+	e_ivts_ivt_msg_cmd__24_conf_triggermode_t,
+	e_ivts_ivt_msg_cmd__25_conf_triggermode_w,
+	e_ivts_ivt_msg_cmd__26_conf_triggermode_as,
+	e_ivts_ivt_msg_cmd__27_conf_triggermode_wh,
+	e_ivts_ivt_msg_cmd__34_actual_mode,
+	e_ivts_ivt_msg_cmd__34_startup_mode
 };
 
 /**
@@ -393,7 +393,7 @@ enum hv_current_types_id{
  * 
  * @return 0 if ok 1 otherwise
 */
-int hv_current_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size);
+int ivts_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size);
 
 /**
  * @brief get the fields of an enum given the id of the enum (get the id from fields_types_from_id)
@@ -405,7 +405,7 @@ int hv_current_fields_string_from_id(int id, char **v, size_t fields_size, size_
  * 
  * @return 0 if ok 1 otherwise
 */
-int hv_current_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_size);
+int ivts_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_size);
 
 /**
  * @brief serialize to a data pointer from a message id
@@ -417,7 +417,7 @@ int hv_current_enum_fields(int enum_id, char **v, size_t fields_size, size_t str
  * 
  * @return Size of packed data, or negative error code.
 */
-int hv_current_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+int ivts_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
 
 /**
  * @brief get the number of signals in the message
@@ -426,7 +426,7 @@ int hv_current_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
  * 
  * @return return the number of the signals
 */
-int hv_current_n_fields_from_id(int id);
+int ivts_n_fields_from_id(int id);
 
 /**
  * @brief get the types of the signals in the message
@@ -437,7 +437,7 @@ int hv_current_n_fields_from_id(int id);
  * 
  * @return the number of types set, 0 if the id is invalid or fields_types_size is too small
 */
-int hv_current_fields_types_from_id(int id, int* fields_types, int fields_types_size);
+int ivts_fields_types_from_id(int id, int* fields_types, int fields_types_size);
 
 /**
  * @brief get the fields of an enum given the name of the message and the name of the signal
@@ -448,7 +448,7 @@ int hv_current_fields_types_from_id(int id, int* fields_types, int fields_types_
  * 
  * @return the number of fields or 0 if the signal is not an enum
 */
-int hv_current_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v);
+int ivts_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v);
 
 
 #ifdef __cplusplus

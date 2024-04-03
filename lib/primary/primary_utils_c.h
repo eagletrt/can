@@ -139,6 +139,8 @@ extern "C" {
 /* START */
 #define HV_JMP_TO_BLT "HV_JMP_TO_BLT"
 
+#define HV_JMP_TO_BLT_FORWARD "hv_jmp_to_blt_forward"
+#define HV_JMP_TO_BLT_CELLBOARD_ID "hv_jmp_to_blt_cellboard_id"
 /* END */
 
 /* START */
@@ -499,10 +501,17 @@ extern "C" {
 /* END */
 
 /* START */
-#define HV_SET_BALANCING_STATUS "HV_SET_BALANCING_STATUS"
+#define HV_SET_BALANCING_STATUS_HANDCART "HV_SET_BALANCING_STATUS_HANDCART"
 
-#define HV_SET_BALANCING_STATUS_SET_BALANCING_STATUS "hv_set_balancing_status_set_balancing_status"
-#define HV_SET_BALANCING_STATUS_BALANCING_THRESHOLD "hv_set_balancing_status_balancing_threshold"
+#define HV_SET_BALANCING_STATUS_HANDCART_SET_BALANCING_STATUS "hv_set_balancing_status_handcart_set_balancing_status"
+#define HV_SET_BALANCING_STATUS_HANDCART_BALANCING_THRESHOLD "hv_set_balancing_status_handcart_balancing_threshold"
+/* END */
+
+/* START */
+#define HV_SET_BALANCING_STATUS_STEERING_WHEEL "HV_SET_BALANCING_STATUS_STEERING_WHEEL"
+
+#define HV_SET_BALANCING_STATUS_STEERING_WHEEL_SET_BALANCING_STATUS "hv_set_balancing_status_steering_wheel_set_balancing_status"
+#define HV_SET_BALANCING_STATUS_STEERING_WHEEL_BALANCING_THRESHOLD "hv_set_balancing_status_steering_wheel_balancing_threshold"
 /* END */
 
 /* START */
@@ -603,7 +612,12 @@ extern "C" {
 /* END */
 
 /* START */
-#define LV_CAN_FLASH_REQ "LV_CAN_FLASH_REQ"
+#define LV_CAN_FLASH_REQ_TLM "LV_CAN_FLASH_REQ_TLM"
+
+/* END */
+
+/* START */
+#define LV_CAN_FLASH_REQ_STEERING_WHEEL "LV_CAN_FLASH_REQ_STEERING_WHEEL"
 
 /* END */
 
@@ -949,11 +963,13 @@ extern "C" {
 
 enum primary_types_id{
 	e_primary_uint32_t = -5,
+	e_primary_uint8_t,
+	e_primary_uint16_t,
 	e_primary_float,
 	e_primary_uint64_t,
-	e_primary_uint16_t,
-	e_primary_uint8_t,
 
+	e_primary_hv_jmp_to_blt_forward,
+	e_primary_hv_jmp_to_blt_cellboard_id,
 	e_primary_hv_cellboard_version_cellboard_id,
 	e_primary_hv_fans_status_fans_override,
 	e_primary_hv_set_fans_status_fans_override,
@@ -962,7 +978,8 @@ enum primary_types_id{
 	e_primary_hv_set_status_handcart_hv_status_set,
 	e_primary_hv_balancing_status_cellboard_id,
 	e_primary_hv_balancing_status_balancing_status,
-	e_primary_hv_set_balancing_status_set_balancing_status,
+	e_primary_hv_set_balancing_status_handcart_set_balancing_status,
+	e_primary_hv_set_balancing_status_steering_wheel_set_balancing_status,
 	e_primary_lv_status_status,
 	e_primary_lv_inverter_connection_status_status,
 	e_primary_lv_set_inverter_connection_status_status,

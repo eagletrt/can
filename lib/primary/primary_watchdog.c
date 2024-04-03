@@ -32,14 +32,14 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 624: return PRIMARY_INTERVAL_HANDCART_STATUS;
        case 1592: return PRIMARY_INTERVAL_HANDCART_SETTINGS;
        case 632: return PRIMARY_INTERVAL_ECU_STATUS;
-       case 1072: return PRIMARY_INTERVAL_ECU_INVERTER_STATUS;
+       case 1080: return PRIMARY_INTERVAL_ECU_INVERTER_STATUS;
        case 640: return PRIMARY_INTERVAL_ECU_CONTROL_STATUS;
        case 648: return PRIMARY_INTERVAL_ECU_ERRORS;
        case 656: return PRIMARY_INTERVAL_ECU_FEEDBACKS;
        case 664: return PRIMARY_INTERVAL_ECU_POWER_MAPS;
-       case 80: return PRIMARY_INTERVAL_ECU_SET_POWER_MAPS;
+       case 88: return PRIMARY_INTERVAL_ECU_SET_POWER_MAPS;
        case 1600: return PRIMARY_INTERVAL_ECU_PTT_STATUS;
-       case 1080: return PRIMARY_INTERVAL_ECU_SET_PTT_STATUS;
+       case 1088: return PRIMARY_INTERVAL_ECU_SET_PTT_STATUS;
        case 513: return PRIMARY_INTERVAL_INV_L_REQUEST;
        case 672: return PRIMARY_INTERVAL_CONTROL_OUTPUT;
        case 680: return PRIMARY_INTERVAL_CONTROL_STATUS;
@@ -121,36 +121,38 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 32: return PRIMARY_INDEX_HV_SET_STATUS_ECU;
        case 40: return PRIMARY_INDEX_HV_SET_STATUS_HANDCART;
        case 1544: return PRIMARY_INDEX_HV_BALANCING_STATUS;
-       case 1032: return PRIMARY_INDEX_HV_SET_BALANCING_STATUS;
+       case 1032: return PRIMARY_INDEX_HV_SET_BALANCING_STATUS_HANDCART;
+       case 1040: return PRIMARY_INDEX_HV_SET_BALANCING_STATUS_STEERING_WHEEL;
        case 568: return PRIMARY_INDEX_LV_STATUS;
        case 1568: return PRIMARY_INDEX_LV_RADIATOR_SPEED;
        case 1576: return PRIMARY_INDEX_LV_PUMPS_SPEED;
-       case 1040: return PRIMARY_INDEX_LV_SET_RADIATOR_SPEED;
-       case 1048: return PRIMARY_INDEX_LV_SET_PUMPS_SPEED;
+       case 1048: return PRIMARY_INDEX_LV_SET_RADIATOR_SPEED;
+       case 1056: return PRIMARY_INDEX_LV_SET_PUMPS_SPEED;
        case 576: return PRIMARY_INDEX_LV_ERRORS;
        case 584: return PRIMARY_INDEX_LV_FEEDBACK_TS_VOLTAGE;
        case 592: return PRIMARY_INDEX_LV_FEEDBACK_SD_VOLTAGE;
        case 600: return PRIMARY_INDEX_LV_FEEDBACK_ENCLOSURE_VOLTAGE;
        case 608: return PRIMARY_INDEX_LV_FEEDBACK_GPIO_EXTENDER;
-       case 48: return PRIMARY_INDEX_LV_CAN_FLASH_REQ;
-       case 56: return PRIMARY_INDEX_LV_CAN_FLASH_ACK;
+       case 48: return PRIMARY_INDEX_LV_CAN_FLASH_REQ_TLM;
+       case 56: return PRIMARY_INDEX_LV_CAN_FLASH_REQ_STEERING_WHEEL;
+       case 64: return PRIMARY_INDEX_LV_CAN_FLASH_ACK;
        case 616: return PRIMARY_INDEX_LV_INVERTER_CONNECTION_STATUS;
-       case 64: return PRIMARY_INDEX_LV_SET_INVERTER_CONNECTION_STATUS;
+       case 72: return PRIMARY_INDEX_LV_SET_INVERTER_CONNECTION_STATUS;
        case 1584: return PRIMARY_INDEX_TLM_STATUS;
-       case 1056: return PRIMARY_INDEX_TLM_SET_STATUS;
+       case 1064: return PRIMARY_INDEX_TLM_SET_STATUS;
        case 624: return PRIMARY_INDEX_HANDCART_STATUS;
        case 1592: return PRIMARY_INDEX_HANDCART_SETTINGS;
-       case 1064: return PRIMARY_INDEX_HANDCART_SET_SETTINGS;
+       case 1072: return PRIMARY_INDEX_HANDCART_SET_SETTINGS;
        case 632: return PRIMARY_INDEX_ECU_STATUS;
-       case 72: return PRIMARY_INDEX_ECU_SET_STATUS;
-       case 1072: return PRIMARY_INDEX_ECU_INVERTER_STATUS;
+       case 80: return PRIMARY_INDEX_ECU_SET_STATUS;
+       case 1080: return PRIMARY_INDEX_ECU_INVERTER_STATUS;
        case 640: return PRIMARY_INDEX_ECU_CONTROL_STATUS;
        case 648: return PRIMARY_INDEX_ECU_ERRORS;
        case 656: return PRIMARY_INDEX_ECU_FEEDBACKS;
        case 664: return PRIMARY_INDEX_ECU_POWER_MAPS;
-       case 80: return PRIMARY_INDEX_ECU_SET_POWER_MAPS;
+       case 88: return PRIMARY_INDEX_ECU_SET_POWER_MAPS;
        case 1600: return PRIMARY_INDEX_ECU_PTT_STATUS;
-       case 1080: return PRIMARY_INDEX_ECU_SET_PTT_STATUS;
+       case 1088: return PRIMARY_INDEX_ECU_SET_PTT_STATUS;
        case 513: return PRIMARY_INDEX_INV_L_REQUEST;
        case 672: return PRIMARY_INDEX_CONTROL_OUTPUT;
        case 680: return PRIMARY_INDEX_CONTROL_STATUS;
@@ -185,7 +187,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 104 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 106 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }

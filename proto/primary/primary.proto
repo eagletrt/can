@@ -2,6 +2,18 @@ syntax = "proto3";
 package primary;
 
 
+enum primary_hv_jmp_to_blt_forward {
+	primary_hv_jmp_to_blt_forward_off = 0;
+	primary_hv_jmp_to_blt_forward_on = 1;
+}
+enum primary_hv_jmp_to_blt_cellboard_id {
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_0 = 0;
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_1 = 1;
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_2 = 2;
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_3 = 3;
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_4 = 4;
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_5 = 5;
+}
 enum primary_hv_cellboard_version_cellboard_id {
 	primary_hv_cellboard_version_cellboard_id_cellboard_0 = 0;
 	primary_hv_cellboard_version_cellboard_id_cellboard_1 = 1;
@@ -47,9 +59,13 @@ enum primary_hv_balancing_status_balancing_status {
 	primary_hv_balancing_status_balancing_status_off = 0;
 	primary_hv_balancing_status_balancing_status_on = 1;
 }
-enum primary_hv_set_balancing_status_set_balancing_status {
-	primary_hv_set_balancing_status_set_balancing_status_off = 0;
-	primary_hv_set_balancing_status_set_balancing_status_on = 1;
+enum primary_hv_set_balancing_status_handcart_set_balancing_status {
+	primary_hv_set_balancing_status_handcart_set_balancing_status_off = 0;
+	primary_hv_set_balancing_status_handcart_set_balancing_status_on = 1;
+}
+enum primary_hv_set_balancing_status_steering_wheel_set_balancing_status {
+	primary_hv_set_balancing_status_steering_wheel_set_balancing_status_off = 0;
+	primary_hv_set_balancing_status_steering_wheel_set_balancing_status_on = 1;
 }
 enum primary_lv_status_status {
 	primary_lv_status_status_init = 0;
@@ -260,7 +276,9 @@ message NLG5_CTL{
 	uint64 _inner_timestamp = 8;
 }
 message HV_JMP_TO_BLT{
-	uint64 _inner_timestamp = 1;
+	primary_hv_jmp_to_blt_forward forward = 1;
+	primary_hv_jmp_to_blt_cellboard_id cellboard_id = 2;
+	uint64 _inner_timestamp = 3;
 }
 message HV_FLASH_MAINBOARD_TX{
 	uint64 _inner_timestamp = 1;
@@ -535,8 +553,13 @@ message HV_BALANCING_STATUS{
 	bool balancing_cells_cell17 = 29;
 	uint64 _inner_timestamp = 30;
 }
-message HV_SET_BALANCING_STATUS{
-	primary_hv_set_balancing_status_set_balancing_status set_balancing_status = 1;
+message HV_SET_BALANCING_STATUS_HANDCART{
+	primary_hv_set_balancing_status_handcart_set_balancing_status set_balancing_status = 1;
+	uint32 balancing_threshold = 2;
+	uint64 _inner_timestamp = 3;
+}
+message HV_SET_BALANCING_STATUS_STEERING_WHEEL{
+	primary_hv_set_balancing_status_steering_wheel_set_balancing_status set_balancing_status = 1;
 	uint32 balancing_threshold = 2;
 	uint64 _inner_timestamp = 3;
 }
@@ -617,7 +640,10 @@ message LV_FEEDBACK_GPIO_EXTENDER{
 	bool feedback_autonomous_system_actuation = 7;
 	uint64 _inner_timestamp = 8;
 }
-message LV_CAN_FLASH_REQ{
+message LV_CAN_FLASH_REQ_TLM{
+	uint64 _inner_timestamp = 1;
+}
+message LV_CAN_FLASH_REQ_STEERING_WHEEL{
 	uint64 _inner_timestamp = 1;
 }
 message LV_CAN_FLASH_ACK{
@@ -932,58 +958,60 @@ message Pack{
 	repeated HV_SET_STATUS_ECU HV_SET_STATUS_ECU = 49;
 	repeated HV_SET_STATUS_HANDCART HV_SET_STATUS_HANDCART = 50;
 	repeated HV_BALANCING_STATUS HV_BALANCING_STATUS = 51;
-	repeated HV_SET_BALANCING_STATUS HV_SET_BALANCING_STATUS = 52;
-	repeated LV_STATUS LV_STATUS = 53;
-	repeated LV_RADIATOR_SPEED LV_RADIATOR_SPEED = 54;
-	repeated LV_PUMPS_SPEED LV_PUMPS_SPEED = 55;
-	repeated LV_SET_RADIATOR_SPEED LV_SET_RADIATOR_SPEED = 56;
-	repeated LV_SET_PUMPS_SPEED LV_SET_PUMPS_SPEED = 57;
-	repeated LV_ERRORS LV_ERRORS = 58;
-	repeated LV_FEEDBACK_TS_VOLTAGE LV_FEEDBACK_TS_VOLTAGE = 59;
-	repeated LV_FEEDBACK_SD_VOLTAGE LV_FEEDBACK_SD_VOLTAGE = 60;
-	repeated LV_FEEDBACK_ENCLOSURE_VOLTAGE LV_FEEDBACK_ENCLOSURE_VOLTAGE = 61;
-	repeated LV_FEEDBACK_GPIO_EXTENDER LV_FEEDBACK_GPIO_EXTENDER = 62;
-	repeated LV_CAN_FLASH_REQ LV_CAN_FLASH_REQ = 63;
-	repeated LV_CAN_FLASH_ACK LV_CAN_FLASH_ACK = 64;
-	repeated LV_INVERTER_CONNECTION_STATUS LV_INVERTER_CONNECTION_STATUS = 65;
-	repeated LV_SET_INVERTER_CONNECTION_STATUS LV_SET_INVERTER_CONNECTION_STATUS = 66;
-	repeated TLM_STATUS TLM_STATUS = 67;
-	repeated TLM_SET_STATUS TLM_SET_STATUS = 68;
-	repeated HANDCART_STATUS HANDCART_STATUS = 69;
-	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 70;
-	repeated HANDCART_SET_SETTINGS HANDCART_SET_SETTINGS = 71;
-	repeated ECU_STATUS ECU_STATUS = 72;
-	repeated ECU_SET_STATUS ECU_SET_STATUS = 73;
-	repeated ECU_INVERTER_STATUS ECU_INVERTER_STATUS = 74;
-	repeated ECU_CONTROL_STATUS ECU_CONTROL_STATUS = 75;
-	repeated ECU_ERRORS ECU_ERRORS = 76;
-	repeated ECU_FEEDBACKS ECU_FEEDBACKS = 77;
-	repeated ECU_POWER_MAPS ECU_POWER_MAPS = 78;
-	repeated ECU_SET_POWER_MAPS ECU_SET_POWER_MAPS = 79;
-	repeated ECU_PTT_STATUS ECU_PTT_STATUS = 80;
-	repeated ECU_SET_PTT_STATUS ECU_SET_PTT_STATUS = 81;
-	repeated INV_L_REQUEST INV_L_REQUEST = 82;
-	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 83;
-	repeated CONTROL_STATUS CONTROL_STATUS = 84;
-	repeated INV_R_REQUEST INV_R_REQUEST = 85;
-	repeated INV_L_RESPONSE INV_L_RESPONSE = 86;
-	repeated INV_R_RESPONSE INV_R_RESPONSE = 87;
-	repeated LV_CURRENT_BATTERY LV_CURRENT_BATTERY = 88;
-	repeated LV_CURRENT_CHARGER LV_CURRENT_CHARGER = 89;
-	repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 90;
-	repeated LV_CELLS_VOLTAGE LV_CELLS_VOLTAGE = 91;
-	repeated LV_CELLS_VOLTAGE_STATS LV_CELLS_VOLTAGE_STATS = 92;
-	repeated LV_CELLS_TEMP LV_CELLS_TEMP = 93;
-	repeated LV_CELLS_TEMP_STATS LV_CELLS_TEMP_STATS = 94;
-	repeated HV_CURRENT HV_CURRENT = 95;
-	repeated HV_POWER HV_POWER = 96;
-	repeated HV_ENERGY HV_ENERGY = 97;
-	repeated HV_SOC HV_SOC = 98;
-	repeated HV_TOTAL_VOLTAGE HV_TOTAL_VOLTAGE = 99;
-	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 100;
-	repeated HV_CELLS_VOLTAGE_STATS HV_CELLS_VOLTAGE_STATS = 101;
-	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 102;
-	repeated HV_CELLS_TEMP_STATS HV_CELLS_TEMP_STATS = 103;
-	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 104;
+	repeated HV_SET_BALANCING_STATUS_HANDCART HV_SET_BALANCING_STATUS_HANDCART = 52;
+	repeated HV_SET_BALANCING_STATUS_STEERING_WHEEL HV_SET_BALANCING_STATUS_STEERING_WHEEL = 53;
+	repeated LV_STATUS LV_STATUS = 54;
+	repeated LV_RADIATOR_SPEED LV_RADIATOR_SPEED = 55;
+	repeated LV_PUMPS_SPEED LV_PUMPS_SPEED = 56;
+	repeated LV_SET_RADIATOR_SPEED LV_SET_RADIATOR_SPEED = 57;
+	repeated LV_SET_PUMPS_SPEED LV_SET_PUMPS_SPEED = 58;
+	repeated LV_ERRORS LV_ERRORS = 59;
+	repeated LV_FEEDBACK_TS_VOLTAGE LV_FEEDBACK_TS_VOLTAGE = 60;
+	repeated LV_FEEDBACK_SD_VOLTAGE LV_FEEDBACK_SD_VOLTAGE = 61;
+	repeated LV_FEEDBACK_ENCLOSURE_VOLTAGE LV_FEEDBACK_ENCLOSURE_VOLTAGE = 62;
+	repeated LV_FEEDBACK_GPIO_EXTENDER LV_FEEDBACK_GPIO_EXTENDER = 63;
+	repeated LV_CAN_FLASH_REQ_TLM LV_CAN_FLASH_REQ_TLM = 64;
+	repeated LV_CAN_FLASH_REQ_STEERING_WHEEL LV_CAN_FLASH_REQ_STEERING_WHEEL = 65;
+	repeated LV_CAN_FLASH_ACK LV_CAN_FLASH_ACK = 66;
+	repeated LV_INVERTER_CONNECTION_STATUS LV_INVERTER_CONNECTION_STATUS = 67;
+	repeated LV_SET_INVERTER_CONNECTION_STATUS LV_SET_INVERTER_CONNECTION_STATUS = 68;
+	repeated TLM_STATUS TLM_STATUS = 69;
+	repeated TLM_SET_STATUS TLM_SET_STATUS = 70;
+	repeated HANDCART_STATUS HANDCART_STATUS = 71;
+	repeated HANDCART_SETTINGS HANDCART_SETTINGS = 72;
+	repeated HANDCART_SET_SETTINGS HANDCART_SET_SETTINGS = 73;
+	repeated ECU_STATUS ECU_STATUS = 74;
+	repeated ECU_SET_STATUS ECU_SET_STATUS = 75;
+	repeated ECU_INVERTER_STATUS ECU_INVERTER_STATUS = 76;
+	repeated ECU_CONTROL_STATUS ECU_CONTROL_STATUS = 77;
+	repeated ECU_ERRORS ECU_ERRORS = 78;
+	repeated ECU_FEEDBACKS ECU_FEEDBACKS = 79;
+	repeated ECU_POWER_MAPS ECU_POWER_MAPS = 80;
+	repeated ECU_SET_POWER_MAPS ECU_SET_POWER_MAPS = 81;
+	repeated ECU_PTT_STATUS ECU_PTT_STATUS = 82;
+	repeated ECU_SET_PTT_STATUS ECU_SET_PTT_STATUS = 83;
+	repeated INV_L_REQUEST INV_L_REQUEST = 84;
+	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 85;
+	repeated CONTROL_STATUS CONTROL_STATUS = 86;
+	repeated INV_R_REQUEST INV_R_REQUEST = 87;
+	repeated INV_L_RESPONSE INV_L_RESPONSE = 88;
+	repeated INV_R_RESPONSE INV_R_RESPONSE = 89;
+	repeated LV_CURRENT_BATTERY LV_CURRENT_BATTERY = 90;
+	repeated LV_CURRENT_CHARGER LV_CURRENT_CHARGER = 91;
+	repeated LV_TOTAL_VOLTAGE LV_TOTAL_VOLTAGE = 92;
+	repeated LV_CELLS_VOLTAGE LV_CELLS_VOLTAGE = 93;
+	repeated LV_CELLS_VOLTAGE_STATS LV_CELLS_VOLTAGE_STATS = 94;
+	repeated LV_CELLS_TEMP LV_CELLS_TEMP = 95;
+	repeated LV_CELLS_TEMP_STATS LV_CELLS_TEMP_STATS = 96;
+	repeated HV_CURRENT HV_CURRENT = 97;
+	repeated HV_POWER HV_POWER = 98;
+	repeated HV_ENERGY HV_ENERGY = 99;
+	repeated HV_SOC HV_SOC = 100;
+	repeated HV_TOTAL_VOLTAGE HV_TOTAL_VOLTAGE = 101;
+	repeated HV_CELLS_VOLTAGE HV_CELLS_VOLTAGE = 102;
+	repeated HV_CELLS_VOLTAGE_STATS HV_CELLS_VOLTAGE_STATS = 103;
+	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 104;
+	repeated HV_CELLS_TEMP_STATS HV_CELLS_TEMP_STATS = 105;
+	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 106;
 }
 

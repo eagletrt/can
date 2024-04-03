@@ -438,6 +438,12 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_JMP_TO_BLT"]["_timestamp"].push(pack->hv_jmp_to_blt(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["HV_JMP_TO_BLT"]["forward"].push(pack->hv_jmp_to_blt(i).forward());
+		primary_hv_jmp_to_blt_forward_enum_to_string((primary_hv_jmp_to_blt_forward)pack->hv_jmp_to_blt(i).forward(), buffer);
+		(*net_strings)["HV_JMP_TO_BLT"]["forward"].push(buffer);
+		(*net_enums)["HV_JMP_TO_BLT"]["cellboard_id"].push(pack->hv_jmp_to_blt(i).cellboard_id());
+		primary_hv_jmp_to_blt_cellboard_id_enum_to_string((primary_hv_jmp_to_blt_cellboard_id)pack->hv_jmp_to_blt(i).cellboard_id(), buffer);
+		(*net_strings)["HV_JMP_TO_BLT"]["cellboard_id"].push(buffer);
 
     }
 
@@ -1066,18 +1072,33 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->hv_set_balancing_status_size(); i++){
+    for(int i = 0; i < pack->hv_set_balancing_status_handcart_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->hv_set_balancing_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->hv_set_balancing_status(i)._inner_timestamp();
-        (*net_signals)["HV_SET_BALANCING_STATUS"]["_timestamp"].push(pack->hv_set_balancing_status(i)._inner_timestamp());
+        if(pack->hv_set_balancing_status_handcart(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_set_balancing_status_handcart(i)._inner_timestamp();
+        (*net_signals)["HV_SET_BALANCING_STATUS_HANDCART"]["_timestamp"].push(pack->hv_set_balancing_status_handcart(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_SET_BALANCING_STATUS"]["set_balancing_status"].push(pack->hv_set_balancing_status(i).set_balancing_status());
-		primary_hv_set_balancing_status_set_balancing_status_enum_to_string((primary_hv_set_balancing_status_set_balancing_status)pack->hv_set_balancing_status(i).set_balancing_status(), buffer);
-		(*net_strings)["HV_SET_BALANCING_STATUS"]["set_balancing_status"].push(buffer);
-		(*net_signals)["HV_SET_BALANCING_STATUS"]["balancing_threshold"].push(pack->hv_set_balancing_status(i).balancing_threshold());
+		(*net_enums)["HV_SET_BALANCING_STATUS_HANDCART"]["set_balancing_status"].push(pack->hv_set_balancing_status_handcart(i).set_balancing_status());
+		primary_hv_set_balancing_status_handcart_set_balancing_status_enum_to_string((primary_hv_set_balancing_status_handcart_set_balancing_status)pack->hv_set_balancing_status_handcart(i).set_balancing_status(), buffer);
+		(*net_strings)["HV_SET_BALANCING_STATUS_HANDCART"]["set_balancing_status"].push(buffer);
+		(*net_signals)["HV_SET_BALANCING_STATUS_HANDCART"]["balancing_threshold"].push(pack->hv_set_balancing_status_handcart(i).balancing_threshold());
+
+    }
+
+    for(int i = 0; i < pack->hv_set_balancing_status_steering_wheel_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_set_balancing_status_steering_wheel(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_set_balancing_status_steering_wheel(i)._inner_timestamp();
+        (*net_signals)["HV_SET_BALANCING_STATUS_STEERING_WHEEL"]["_timestamp"].push(pack->hv_set_balancing_status_steering_wheel(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["HV_SET_BALANCING_STATUS_STEERING_WHEEL"]["set_balancing_status"].push(pack->hv_set_balancing_status_steering_wheel(i).set_balancing_status());
+		primary_hv_set_balancing_status_steering_wheel_set_balancing_status_enum_to_string((primary_hv_set_balancing_status_steering_wheel_set_balancing_status)pack->hv_set_balancing_status_steering_wheel(i).set_balancing_status(), buffer);
+		(*net_strings)["HV_SET_BALANCING_STATUS_STEERING_WHEEL"]["set_balancing_status"].push(buffer);
+		(*net_signals)["HV_SET_BALANCING_STATUS_STEERING_WHEEL"]["balancing_threshold"].push(pack->hv_set_balancing_status_steering_wheel(i).balancing_threshold());
 
     }
 
@@ -1240,12 +1261,23 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->lv_can_flash_req_size(); i++){
+    for(int i = 0; i < pack->lv_can_flash_req_tlm_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->lv_can_flash_req(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->lv_can_flash_req(i)._inner_timestamp();
-        (*net_signals)["LV_CAN_FLASH_REQ"]["_timestamp"].push(pack->lv_can_flash_req(i)._inner_timestamp());
+        if(pack->lv_can_flash_req_tlm(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_can_flash_req_tlm(i)._inner_timestamp();
+        (*net_signals)["LV_CAN_FLASH_REQ_TLM"]["_timestamp"].push(pack->lv_can_flash_req_tlm(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->lv_can_flash_req_steering_wheel_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->lv_can_flash_req_steering_wheel(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_can_flash_req_steering_wheel(i)._inner_timestamp();
+        (*net_signals)["LV_CAN_FLASH_REQ_STEERING_WHEEL"]["_timestamp"].push(pack->lv_can_flash_req_steering_wheel(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
@@ -2043,6 +2075,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 0: {
             primary_hv_jmp_to_blt_t* msg = (primary_hv_jmp_to_blt_t*)(device->message);
             primary::HV_JMP_TO_BLT* proto_msg = pack->add_hv_jmp_to_blt();
+			proto_msg->set_forward((primary::primary_hv_jmp_to_blt_forward)msg->forward);
+			proto_msg->set_cellboard_id((primary::primary_hv_jmp_to_blt_cellboard_id)msg->cellboard_id);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2618,9 +2652,21 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1032: {
-            primary_hv_set_balancing_status_t* msg = (primary_hv_set_balancing_status_t*)(device->message);
-            primary::HV_SET_BALANCING_STATUS* proto_msg = pack->add_hv_set_balancing_status();
-			proto_msg->set_set_balancing_status((primary::primary_hv_set_balancing_status_set_balancing_status)msg->set_balancing_status);
+            primary_hv_set_balancing_status_handcart_t* msg = (primary_hv_set_balancing_status_handcart_t*)(device->message);
+            primary::HV_SET_BALANCING_STATUS_HANDCART* proto_msg = pack->add_hv_set_balancing_status_handcart();
+			proto_msg->set_set_balancing_status((primary::primary_hv_set_balancing_status_handcart_set_balancing_status)msg->set_balancing_status);
+			proto_msg->set_balancing_threshold(msg->balancing_threshold);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1040: {
+            primary_hv_set_balancing_status_steering_wheel_t* msg = (primary_hv_set_balancing_status_steering_wheel_t*)(device->message);
+            primary::HV_SET_BALANCING_STATUS_STEERING_WHEEL* proto_msg = pack->add_hv_set_balancing_status_steering_wheel();
+			proto_msg->set_set_balancing_status((primary::primary_hv_set_balancing_status_steering_wheel_set_balancing_status)msg->set_balancing_status);
 			proto_msg->set_balancing_threshold(msg->balancing_threshold);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2662,7 +2708,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1040: {
+        case 1048: {
             primary_lv_set_radiator_speed_converted_t* msg = (primary_lv_set_radiator_speed_converted_t*)(device->message);
             primary::LV_SET_RADIATOR_SPEED* proto_msg = pack->add_lv_set_radiator_speed();
 			proto_msg->set_radiator_speed(msg->radiator_speed);
@@ -2673,7 +2719,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1048: {
+        case 1056: {
             primary_lv_set_pumps_speed_converted_t* msg = (primary_lv_set_pumps_speed_converted_t*)(device->message);
             primary::LV_SET_PUMPS_SPEED* proto_msg = pack->add_lv_set_pumps_speed();
 			proto_msg->set_pumps_speed(msg->pumps_speed);
@@ -2777,8 +2823,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 48: {
-            primary_lv_can_flash_req_t* msg = (primary_lv_can_flash_req_t*)(device->message);
-            primary::LV_CAN_FLASH_REQ* proto_msg = pack->add_lv_can_flash_req();
+            primary_lv_can_flash_req_tlm_t* msg = (primary_lv_can_flash_req_tlm_t*)(device->message);
+            primary::LV_CAN_FLASH_REQ_TLM* proto_msg = pack->add_lv_can_flash_req_tlm();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2787,6 +2833,16 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 56: {
+            primary_lv_can_flash_req_steering_wheel_t* msg = (primary_lv_can_flash_req_steering_wheel_t*)(device->message);
+            primary::LV_CAN_FLASH_REQ_STEERING_WHEEL* proto_msg = pack->add_lv_can_flash_req_steering_wheel();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 64: {
             primary_lv_can_flash_ack_t* msg = (primary_lv_can_flash_ack_t*)(device->message);
             primary::LV_CAN_FLASH_ACK* proto_msg = pack->add_lv_can_flash_ack();
 
@@ -2807,7 +2863,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 64: {
+        case 72: {
             primary_lv_set_inverter_connection_status_t* msg = (primary_lv_set_inverter_connection_status_t*)(device->message);
             primary::LV_SET_INVERTER_CONNECTION_STATUS* proto_msg = pack->add_lv_set_inverter_connection_status();
 			proto_msg->set_status((primary::primary_lv_set_inverter_connection_status_status)msg->status);
@@ -2829,7 +2885,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1056: {
+        case 1064: {
             primary_tlm_set_status_t* msg = (primary_tlm_set_status_t*)(device->message);
             primary::TLM_SET_STATUS* proto_msg = pack->add_tlm_set_status();
 			proto_msg->set_status((primary::primary_tlm_set_status_status)msg->status);
@@ -2867,7 +2923,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1064: {
+        case 1072: {
             primary_handcart_set_settings_converted_t* msg = (primary_handcart_set_settings_converted_t*)(device->message);
             primary::HANDCART_SET_SETTINGS* proto_msg = pack->add_handcart_set_settings();
 			proto_msg->set_target_voltage(msg->target_voltage);
@@ -2894,7 +2950,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 72: {
+        case 80: {
             primary_ecu_set_status_t* msg = (primary_ecu_set_status_t*)(device->message);
             primary::ECU_SET_STATUS* proto_msg = pack->add_ecu_set_status();
 			proto_msg->set_status((primary::primary_ecu_set_status_status)msg->status);
@@ -2905,7 +2961,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1072: {
+        case 1080: {
             primary_ecu_inverter_status_t* msg = (primary_ecu_inverter_status_t*)(device->message);
             primary::ECU_INVERTER_STATUS* proto_msg = pack->add_ecu_inverter_status();
 			proto_msg->set_rl((primary::primary_ecu_inverter_status_rl)msg->rl);
@@ -2981,7 +3037,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 80: {
+        case 88: {
             primary_ecu_set_power_maps_converted_t* msg = (primary_ecu_set_power_maps_converted_t*)(device->message);
             primary::ECU_SET_POWER_MAPS* proto_msg = pack->add_ecu_set_power_maps();
 			proto_msg->set_map_pw(msg->map_pw);
@@ -3005,7 +3061,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1080: {
+        case 1088: {
             primary_ecu_set_ptt_status_t* msg = (primary_ecu_set_ptt_status_t*)(device->message);
             primary::ECU_SET_PTT_STATUS* proto_msg = pack->add_ecu_set_ptt_status();
 			proto_msg->set_status((primary::primary_ecu_set_ptt_status_status)msg->status);
