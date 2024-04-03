@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: LV ECU LV HANDCART LV HV LV ECU HV HANDCART TLM HV HV HV ECU HANDCART HV HANDCART HV HV HV ECU HV HV HANDCART HANDCART HV HV TLM HV HV ECU HANDCART ECU HANDCART TLM STEERING_WHEEL ECU HV TLM HV HANDCART ECU HANDCART TLM ECU HV HV ANY HV HANDCART ANY ECU TLM ANY HANDCART HV STEERING_WHEEL HANDCART HV HV TLM LV HV ECU HANDCART HV HV TLM ECU HV HANDCART HANDCART LV TLM STEERING_WHEEL HV LV HANDCART STEERING_WHEEL TLM LV TLM HV LV HANDCART ECU TLM LV HV ECU HANDCART LV TLM ECU HV LV HANDCART ECU TLM LV HV ECU TLM TLM HV STEERING_WHEEL TLM LV LV LV TLM LV LV ECU TLM ECU LV HANDCART LV TLM TLM ECU STEERING_WHEEL TLM HANDCART ECU HANDCART TLM TLM ECU HANDCART TLM ECU STEERING_WHEEL STEERING_WHEEL TLM ECU HANDCART STEERING_WHEEL ECU TLM ECU STEERING_WHEEL ECU STEERING_WHEEL ECU TLM ECU ECU STEERING_WHEEL LV ECU TLM ECU HV STEERING_WHEEL HV ECU HV ECU ECU INVERTER_L HANDCART TLM HV ECU ECU TLM HANDCART ECU HV ECU ECU INVERTER_L HANDCART INVERTER_L HANDCART ECU HV INVERTER_L HV ECU ECU LV TLM LV HANDCART HV LV
+BU_: HV TLM HV ECU HANDCART ECU HV ANY HV HV ANY ECU ANY HANDCART HV STEERING_WHEEL HV LV ECU HV TLM HV ECU TLM HANDCART HV HV LV TLM STEERING_WHEEL HV LV TLM STEERING_WHEEL HV LV TLM LV HV ECU TLM LV HV TLM ECU TLM LV HV ECU TLM LV TLM HV ECU TLM LV HV ECU TLM TLM HV STEERING_WHEEL TLM LV LV LV TLM TLM LV LV ECU TLM ECU LV LV TLM TLM ECU STEERING_WHEEL TLM HANDCART ECU HANDCART TLM TLM ECU HANDCART TLM ECU STEERING_WHEEL STEERING_WHEEL TLM ECU STEERING_WHEEL ECU TLM ECU STEERING_WHEEL ECU STEERING_WHEEL ECU TLM ECU ECU STEERING_WHEEL LV ECU TLM ECU HV STEERING_WHEEL HV ECU HV ECU ECU INVERTER_L HANDCART TLM HV ECU ECU TLM HANDCART ECU HV ECU ECU INVERTER_L HANDCART INVERTER_L HANDCART ECU HV INVERTER_L HV ECU ECU LV HANDCART LV HV LV ECU LV TLM HANDCART LV HV LV ECU LV HANDCART HV HV HV ECU HV HANDCART HANDCART HV HV HV ECU HV HANDCART HV HV HV ECU HV TLM ECU HV ECU STEERING_WHEEL
 
 
 BO_ 1818 NLG5_DIAG_TX: 8 NLG5
@@ -138,79 +138,51 @@ BO_ 1560 NLG5_CTL: 7 Control
 
 BO_ 0 HV_JMP_TO_BLT: 0 Vector__XXX
 
-BO_ 0 HV_JMP_TO_BLT: 0 Vector__XXX
-
 BO_ 1 HV_FLASH_MAINBOARD_TX: 0 Vector__XXX
-
-BO_ 1 HV_FLASH_MAINBOARD_TX: 0 Vector__XXX
-
-BO_ 2 HV_FLASH_MAINBOARD_RX: 0 Vector__XXX
 
 BO_ 2 HV_FLASH_MAINBOARD_RX: 0 Vector__XXX
 
 BO_ 4 HV_FLASH_CELLBOARD_0_TX: 0 Vector__XXX
 
-BO_ 4 HV_FLASH_CELLBOARD_0_TX: 0 Vector__XXX
-
 BO_ 5 HV_FLASH_CELLBOARD_0_RX: 0 Vector__XXX
-
-BO_ 5 HV_FLASH_CELLBOARD_0_RX: 0 Vector__XXX
-
-BO_ 6 HV_FLASH_CELLBOARD_1_TX: 0 Vector__XXX
 
 BO_ 6 HV_FLASH_CELLBOARD_1_TX: 0 Vector__XXX
 
 BO_ 7 HV_FLASH_CELLBOARD_1_RX: 0 Vector__XXX
 
-BO_ 7 HV_FLASH_CELLBOARD_1_RX: 0 Vector__XXX
-
 BO_ 8 HV_FLASH_CELLBOARD_2_TX: 0 Vector__XXX
-
-BO_ 8 HV_FLASH_CELLBOARD_2_TX: 0 Vector__XXX
-
-BO_ 9 HV_FLASH_CELLBOARD_2_RX: 0 Vector__XXX
 
 BO_ 9 HV_FLASH_CELLBOARD_2_RX: 0 Vector__XXX
 
 BO_ 10 HV_FLASH_CELLBOARD_3_TX: 0 Vector__XXX
 
-BO_ 10 HV_FLASH_CELLBOARD_3_TX: 0 Vector__XXX
-
 BO_ 11 HV_FLASH_CELLBOARD_3_RX: 0 Vector__XXX
-
-BO_ 11 HV_FLASH_CELLBOARD_3_RX: 0 Vector__XXX
-
-BO_ 12 HV_FLASH_CELLBOARD_4_TX: 0 Vector__XXX
 
 BO_ 12 HV_FLASH_CELLBOARD_4_TX: 0 Vector__XXX
 
 BO_ 13 HV_FLASH_CELLBOARD_4_RX: 0 Vector__XXX
 
-BO_ 13 HV_FLASH_CELLBOARD_4_RX: 0 Vector__XXX
-
 BO_ 14 HV_FLASH_CELLBOARD_5_TX: 0 Vector__XXX
 
-BO_ 14 HV_FLASH_CELLBOARD_5_TX: 0 Vector__XXX
+BO_ 15 HV_FLASH_CELLBOARD_5_RX: 0 Vector__XXX
 
-BO_ 14 HV_FLASH_CELLBOARD_5_RX: 0 Vector__XXX
+BO_ 16 LV_JMP_TO_BLT: 0 Vector__XXX
 
-BO_ 15 LV_JMP_TO_BLT: 0 Vector__XXX
+BO_ 17 LV_FLASH_TX: 0 Vector__XXX
 
-BO_ 16 LV_FLASH_TX: 0 Vector__XXX
+BO_ 18 LV_FLASH_RX: 0 Vector__XXX
 
-BO_ 17 LV_FLASH_RX: 0 Vector__XXX
+BO_ 19 ECU_JMP_TO_BLT: 0 Vector__XXX
 
-BO_ 18 ECU_JMP_TO_BLT: 0 Vector__XXX
+BO_ 20 ECU_FLASH_TX: 0 Vector__XXX
 
-BO_ 19 ECU_FLASH_TX: 0 Vector__XXX
+BO_ 21 ECU_FLASH_RX: 0 Vector__XXX
 
-BO_ 20 ECU_FLASH_RX: 0 Vector__XXX
+BO_ 22 STEERING_WHEEL_JMP_TO_BLT: 0 Vector__XXX
 
-BO_ 21 STEERING_WHEEL_JMP_TO_BLT: 0 Vector__XXX
+BO_ 23 STEERING_WHEEL_FLASH_TX: 0 Vector__XXX
 
-BO_ 22 STEERING_WHEEL_FLASH_TX: 0 Vector__XXX
-
-BO_ 23 STEERING_WHEEL_FLASH_RX: 0 Vector__XXX
+BO_ 24 STEERING_WHEEL_FLASH_RX: 0 Vector__XXX
 
 BO_ 700 STEERING_WHEEL_VERSION: 8 Vector__XXX
  SG_ canlib_build_time : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
@@ -237,7 +209,7 @@ BO_ 705 HV_CELLBOARD_VERSION: 7 Vector__XXX
  SG_ component_version : 3|16@1+ (1,0) [0|65535] "" Vector__XXX
  SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 24 HV_ERRORS: 2 Vector__XXX
+BO_ 32 HV_ERRORS: 2 Vector__XXX
  SG_ errors_eeprom_write : 15|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ errors_eeprom_comm : 14|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ errors_feedback_circuitry : 13|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -360,10 +332,10 @@ BO_ 552 HV_IMD_STATUS: 24 Vector__XXX
 BO_ 560 HV_STATUS: 1 Vector__XXX
  SG_ status : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 32 HV_SET_STATUS_ECU: 1 Vector__XXX
+BO_ 40 HV_SET_STATUS_ECU: 1 Vector__XXX
  SG_ hv_status_set : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 40 HV_SET_STATUS_HANDCART: 1 Vector__XXX
+BO_ 48 HV_SET_STATUS_HANDCART: 1 Vector__XXX
  SG_ hv_status_set : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 1544 HV_BALANCING_STATUS: 4 Vector__XXX
@@ -472,16 +444,16 @@ BO_ 608 LV_FEEDBACK_GPIO_EXTENDER: 1 Vector__XXX
  SG_ feedback_pcbs : 1|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ feedback_inverters : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 48 LV_CAN_FLASH_REQ_TLM: 0 Vector__XXX
+BO_ 56 LV_CAN_FLASH_REQ_TLM: 0 Vector__XXX
 
-BO_ 56 LV_CAN_FLASH_REQ_STEERING_WHEEL: 0 Vector__XXX
+BO_ 64 LV_CAN_FLASH_REQ_STEERING_WHEEL: 0 Vector__XXX
 
-BO_ 64 LV_CAN_FLASH_ACK: 0 Vector__XXX
+BO_ 72 LV_CAN_FLASH_ACK: 0 Vector__XXX
 
 BO_ 616 LV_INVERTER_CONNECTION_STATUS: 1 Vector__XXX
  SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 72 LV_SET_INVERTER_CONNECTION_STATUS: 1 Vector__XXX
+BO_ 80 LV_SET_INVERTER_CONNECTION_STATUS: 1 Vector__XXX
  SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 1584 TLM_STATUS: 1 Vector__XXX
@@ -512,7 +484,7 @@ BO_ 1072 HANDCART_SET_SETTINGS: 5 Vector__XXX
 BO_ 632 ECU_STATUS: 1 Vector__XXX
  SG_ status : 0|4@1+ (1,0) [0|15] "" Vector__XXX
 
-BO_ 80 ECU_SET_STATUS: 1 Vector__XXX
+BO_ 88 ECU_SET_STATUS: 1 Vector__XXX
  SG_ status : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
 BO_ 1080 ECU_INVERTER_STATUS: 1 Vector__XXX
@@ -551,7 +523,7 @@ BO_ 664 ECU_POWER_MAPS: 3 Vector__XXX
  SG_ map_sc : 8|8@1+ (0.01,0) [0|1] "" Vector__XXX
  SG_ map_pw : 0|8@1+ (0.01,-0.5) [-0.5|1] "" Vector__XXX
 
-BO_ 88 ECU_SET_POWER_MAPS: 3 Vector__XXX
+BO_ 96 ECU_SET_POWER_MAPS: 3 Vector__XXX
  SG_ map_tv : 16|8@1+ (0.01,0) [0|1] "" Vector__XXX
  SG_ map_sc : 8|8@1+ (0.01,0) [0|1] "" Vector__XXX
  SG_ map_pw : 0|8@1+ (0.01,-0.5) [-0.5|1] "" Vector__XXX
@@ -811,33 +783,18 @@ CM_ SG_ 1560 NLG5_C_CP_V "special signal to tell a charging station equipped wit
 CM_ SG_ 1560 NLG5_C_C_EL "cycle this value 0-1-0 to clear all latched charger errors ";
 CM_ SG_ 1560 NLG5_C_C_EN "Must be ON to enable power stage of the charger";
 CM_ BO_ 0 "";
-CM_ BO_ 0 "";
-CM_ BO_ 1 "";
 CM_ BO_ 1 "";
 CM_ BO_ 2 "";
-CM_ BO_ 2 "";
-CM_ BO_ 4 "";
 CM_ BO_ 4 "";
 CM_ BO_ 5 "";
-CM_ BO_ 5 "";
-CM_ BO_ 6 "";
 CM_ BO_ 6 "";
 CM_ BO_ 7 "";
-CM_ BO_ 7 "";
-CM_ BO_ 8 "";
 CM_ BO_ 8 "";
 CM_ BO_ 9 "";
-CM_ BO_ 9 "";
-CM_ BO_ 10 "";
 CM_ BO_ 10 "";
 CM_ BO_ 11 "";
-CM_ BO_ 11 "";
-CM_ BO_ 12 "";
 CM_ BO_ 12 "";
 CM_ BO_ 13 "";
-CM_ BO_ 13 "";
-CM_ BO_ 14 "";
-CM_ BO_ 14 "";
 CM_ BO_ 14 "";
 CM_ BO_ 15 "";
 CM_ BO_ 16 "";
@@ -848,13 +805,14 @@ CM_ BO_ 20 "";
 CM_ BO_ 21 "";
 CM_ BO_ 22 "";
 CM_ BO_ 23 "";
+CM_ BO_ 24 "";
 CM_ BO_ 700 "Steering wheel version: build-time timestamp and canlib build-time timestamp";
 CM_ BO_ 701 "Ecu version: build-time timestamp and canlib build-time timestamp";
 CM_ BO_ 703 "Telemetry version: build-time timestamp and canlib build-time timestamp";
 CM_ BO_ 704 "Telemetry version: build-time timestamp and canlib build-time timestamp";
 CM_ BO_ 702 "Hv mainboard version: build-time timestamp and canlib build-time timestamp";
 CM_ BO_ 705 "Hv cellboard version: build-time timestamp and canlib build-time timestamp";
-CM_ BO_ 24 "";
+CM_ BO_ 32 "";
 CM_ BO_ 512 "";
 CM_ BO_ 1536 "";
 CM_ BO_ 1024 "";
@@ -864,8 +822,8 @@ CM_ BO_ 536 "";
 CM_ BO_ 544 "";
 CM_ BO_ 552 "";
 CM_ BO_ 560 "Bms hv status";
-CM_ BO_ 32 "";
 CM_ BO_ 40 "";
+CM_ BO_ 48 "";
 CM_ BO_ 1544 "";
 CM_ BO_ 1032 "";
 CM_ BO_ 1040 "";
@@ -879,24 +837,24 @@ CM_ BO_ 584 "";
 CM_ BO_ 592 "";
 CM_ BO_ 600 "";
 CM_ BO_ 608 "";
-CM_ BO_ 48 "";
 CM_ BO_ 56 "";
 CM_ BO_ 64 "";
-CM_ BO_ 616 "";
 CM_ BO_ 72 "";
+CM_ BO_ 616 "";
+CM_ BO_ 80 "";
 CM_ BO_ 1584 "";
 CM_ BO_ 1064 "";
 CM_ BO_ 624 "";
 CM_ BO_ 1592 "";
 CM_ BO_ 1072 "";
 CM_ BO_ 632 "";
-CM_ BO_ 80 "";
+CM_ BO_ 88 "";
 CM_ BO_ 1080 "";
 CM_ BO_ 640 "";
 CM_ BO_ 648 "";
 CM_ BO_ 656 "";
 CM_ BO_ 664 "";
-CM_ BO_ 88 "";
+CM_ BO_ 96 "";
 CM_ BO_ 1600 "";
 CM_ BO_ 1088 "";
 CM_ BO_ 513 "";
@@ -950,7 +908,7 @@ BA_ "GenMsgCycleTime" BO_ 701 1000;
 BA_ "GenMsgCycleTime" BO_ 703 1000;
 BA_ "GenMsgCycleTime" BO_ 702 1000;
 BA_ "GenMsgCycleTime" BO_ 705 1000;
-BA_ "GenMsgCycleTime" BO_ 24 20;
+BA_ "GenMsgCycleTime" BO_ 32 20;
 BA_ "GenMsgCycleTime" BO_ 512 500;
 BA_ "GenMsgCycleTime" BO_ 1536 200;
 BA_ "GenMsgCycleTime" BO_ 1024 200;
@@ -979,7 +937,7 @@ BA_ "GenMsgCycleTime" BO_ 640 50;
 BA_ "GenMsgCycleTime" BO_ 648 20;
 BA_ "GenMsgCycleTime" BO_ 656 50;
 BA_ "GenMsgCycleTime" BO_ 664 200;
-BA_ "GenMsgCycleTime" BO_ 88 200;
+BA_ "GenMsgCycleTime" BO_ 96 200;
 BA_ "GenMsgCycleTime" BO_ 1600 200;
 BA_ "GenMsgCycleTime" BO_ 1088 200;
 BA_ "GenMsgCycleTime" BO_ 513 10;
@@ -1015,15 +973,15 @@ VAL_ 705 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboa
 VAL_ 1536 fans_override 0 "off" 1 "on" ;
 VAL_ 1024 fans_override 0 "off" 1 "on" ;
 VAL_ 560 status 0 "init" 1 "idle" 2 "airn_close" 3 "precharge" 4 "airp_close" 5 "ts_on" 6 "fatal_error" ;
-VAL_ 32 hv_status_set 0 "off" 1 "on" ;
 VAL_ 40 hv_status_set 0 "off" 1 "on" ;
+VAL_ 48 hv_status_set 0 "off" 1 "on" ;
 VAL_ 1544 balancing_status 0 "off" 1 "on" ;
 VAL_ 1544 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 1032 set_balancing_status 0 "off" 1 "on" ;
 VAL_ 1040 set_balancing_status 0 "off" 1 "on" ;
 VAL_ 568 status 0 "init" 1 "idle" 2 "tson" 3 "run" 4 "flashing" 5 "error" ;
 VAL_ 616 status 0 "off" 1 "on" ;
-VAL_ 72 status 0 "off" 1 "on" ;
+VAL_ 80 status 0 "off" 1 "on" ;
 VAL_ 1584 status 0 "off" 1 "on" ;
 VAL_ 1064 status 0 "off" 1 "on" ;
 VAL_ 624 connected 0 "off" 1 "on" ;
@@ -1032,7 +990,7 @@ VAL_ 1592 fans_override 0 "off" 1 "on" ;
 VAL_ 1072 status 0 "none" 1 "check" 2 "idle" 3 "precharge" 4 "ready" 5 "charge" 6 "charge_done" 7 "balancing" 8 "error" ;
 VAL_ 1072 fans_override 0 "off" 1 "on" ;
 VAL_ 632 status 0 "init" 1 "enable_inv_updates" 2 "check_inv_settings" 3 "idle" 4 "start_ts_precharge" 5 "wait_ts_precharge" 6 "wait_driver" 7 "enable_inv_drive" 8 "drive" 9 "disable_inv_drive" 10 "start_ts_discharge" 11 "wait_ts_discharge" 12 "fatal_error" ;
-VAL_ 80 status 0 "idle" 1 "ready" 2 "drive" ;
+VAL_ 88 status 0 "idle" 1 "ready" 2 "drive" ;
 VAL_ 1080 rr 0 "disabled" 1 "rfe_on" 2 "frg_on" 3 "enabled" ;
 VAL_ 1080 rl 0 "disabled" 1 "rfe_on" 2 "frg_on" 3 "enabled" ;
 VAL_ 1600 status 0 "off" 1 "on" ;

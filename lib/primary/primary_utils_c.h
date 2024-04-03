@@ -142,22 +142,7 @@ extern "C" {
 /* END */
 
 /* START */
-#define HV_JMP_TO_BLT "HV_JMP_TO_BLT"
-
-/* END */
-
-/* START */
 #define HV_FLASH_MAINBOARD_TX "HV_FLASH_MAINBOARD_TX"
-
-/* END */
-
-/* START */
-#define HV_FLASH_MAINBOARD_TX "HV_FLASH_MAINBOARD_TX"
-
-/* END */
-
-/* START */
-#define HV_FLASH_MAINBOARD_RX "HV_FLASH_MAINBOARD_RX"
 
 /* END */
 
@@ -172,22 +157,7 @@ extern "C" {
 /* END */
 
 /* START */
-#define HV_FLASH_CELLBOARD_0_TX "HV_FLASH_CELLBOARD_0_TX"
-
-/* END */
-
-/* START */
 #define HV_FLASH_CELLBOARD_0_RX "HV_FLASH_CELLBOARD_0_RX"
-
-/* END */
-
-/* START */
-#define HV_FLASH_CELLBOARD_0_RX "HV_FLASH_CELLBOARD_0_RX"
-
-/* END */
-
-/* START */
-#define HV_FLASH_CELLBOARD_1_TX "HV_FLASH_CELLBOARD_1_TX"
 
 /* END */
 
@@ -202,22 +172,7 @@ extern "C" {
 /* END */
 
 /* START */
-#define HV_FLASH_CELLBOARD_1_RX "HV_FLASH_CELLBOARD_1_RX"
-
-/* END */
-
-/* START */
 #define HV_FLASH_CELLBOARD_2_TX "HV_FLASH_CELLBOARD_2_TX"
-
-/* END */
-
-/* START */
-#define HV_FLASH_CELLBOARD_2_TX "HV_FLASH_CELLBOARD_2_TX"
-
-/* END */
-
-/* START */
-#define HV_FLASH_CELLBOARD_2_RX "HV_FLASH_CELLBOARD_2_RX"
 
 /* END */
 
@@ -232,16 +187,6 @@ extern "C" {
 /* END */
 
 /* START */
-#define HV_FLASH_CELLBOARD_3_TX "HV_FLASH_CELLBOARD_3_TX"
-
-/* END */
-
-/* START */
-#define HV_FLASH_CELLBOARD_3_RX "HV_FLASH_CELLBOARD_3_RX"
-
-/* END */
-
-/* START */
 #define HV_FLASH_CELLBOARD_3_RX "HV_FLASH_CELLBOARD_3_RX"
 
 /* END */
@@ -252,22 +197,7 @@ extern "C" {
 /* END */
 
 /* START */
-#define HV_FLASH_CELLBOARD_4_TX "HV_FLASH_CELLBOARD_4_TX"
-
-/* END */
-
-/* START */
 #define HV_FLASH_CELLBOARD_4_RX "HV_FLASH_CELLBOARD_4_RX"
-
-/* END */
-
-/* START */
-#define HV_FLASH_CELLBOARD_4_RX "HV_FLASH_CELLBOARD_4_RX"
-
-/* END */
-
-/* START */
-#define HV_FLASH_CELLBOARD_5_TX "HV_FLASH_CELLBOARD_5_TX"
 
 /* END */
 
@@ -1076,10 +1006,10 @@ extern "C" {
 
 enum primary_types_id{
 	e_primary_uint32_t = -5,
-	e_primary_float,
+	e_primary_uint64_t,
 	e_primary_uint8_t,
 	e_primary_uint16_t,
-	e_primary_uint64_t,
+	e_primary_float,
 
 	e_primary_hv_cellboard_version_cellboard_id,
 	e_primary_hv_fans_status_fans_override,
