@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
-#include "primary_network.h"
+#include "secondary_network.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -286,12 +286,12 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint16_t = -6,
-	e_secondary_uint32_t,
-	e_secondary_int16_t,
+	e_secondary_float = -6,
 	e_secondary_uint64_t,
+	e_secondary_int16_t,
+	e_secondary_uint16_t,
 	e_secondary_uint8_t,
-	e_secondary_float,
+	e_secondary_uint32_t,
 
 	
 };

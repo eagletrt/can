@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
-#include "primary_network.h"
+#include "simulator_network.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -83,8 +83,8 @@ extern "C" {
 /* END */
 
 enum simulator_types_id{
-	e_simulator_float = -2,
-	e_simulator_int16_t,
+	e_simulator_int16_t = -2,
+	e_simulator_float,
 
 	
 };

@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stddef.h>
-#include "primary_network.h"
+#include "bms_network.h"
 
 #ifdef __cplusplus
 extern "C" {
