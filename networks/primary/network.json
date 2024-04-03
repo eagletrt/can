@@ -444,7 +444,7 @@
             "contents": {}
         },
         {
-            "name": "LV_FLASH_BMS_TX",
+            "name": "LV_FLASH_TX",
             "fixed_id": 16,
             "sending": [
                 "TLM"
@@ -455,7 +455,7 @@
             "contents": {}
         },
         {
-            "name": "LV_FLASH_BMS_RX",
+            "name": "LV_FLASH_RX",
             "fixed_id": 17,
             "sending": [
                 "TLM"
