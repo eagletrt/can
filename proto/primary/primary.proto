@@ -2,6 +2,18 @@ syntax = "proto3";
 package primary;
 
 
+enum primary_hv_jmp_to_blt_forward {
+	primary_hv_jmp_to_blt_forward_off = 0;
+	primary_hv_jmp_to_blt_forward_on = 1;
+}
+enum primary_hv_jmp_to_blt_cellboard_id {
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_0 = 0;
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_1 = 1;
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_2 = 2;
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_3 = 3;
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_4 = 4;
+	primary_hv_jmp_to_blt_cellboard_id_cellboard_5 = 5;
+}
 enum primary_hv_cellboard_version_cellboard_id {
 	primary_hv_cellboard_version_cellboard_id_cellboard_0 = 0;
 	primary_hv_cellboard_version_cellboard_id_cellboard_1 = 1;
@@ -276,7 +288,9 @@ message NLG5_CTL{
 	uint64 _inner_timestamp = 8;
 }
 message HV_JMP_TO_BLT{
-	uint64 _inner_timestamp = 1;
+	primary_hv_jmp_to_blt_forward forward = 1;
+	primary_hv_jmp_to_blt_cellboard_id cellboard_id = 2;
+	uint64 _inner_timestamp = 3;
 }
 message HV_FLASH_MAINBOARD_TX{
 	uint64 _inner_timestamp = 1;

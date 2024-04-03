@@ -438,6 +438,12 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_JMP_TO_BLT"]["_timestamp"].push(pack->hv_jmp_to_blt(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["HV_JMP_TO_BLT"]["forward"].push(pack->hv_jmp_to_blt(i).forward());
+		primary_hv_jmp_to_blt_forward_enum_to_string((primary_hv_jmp_to_blt_forward)pack->hv_jmp_to_blt(i).forward(), buffer);
+		(*net_strings)["HV_JMP_TO_BLT"]["forward"].push(buffer);
+		(*net_enums)["HV_JMP_TO_BLT"]["cellboard_id"].push(pack->hv_jmp_to_blt(i).cellboard_id());
+		primary_hv_jmp_to_blt_cellboard_id_enum_to_string((primary_hv_jmp_to_blt_cellboard_id)pack->hv_jmp_to_blt(i).cellboard_id(), buffer);
+		(*net_strings)["HV_JMP_TO_BLT"]["cellboard_id"].push(buffer);
 
     }
 
@@ -2156,6 +2162,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 0: {
             primary_hv_jmp_to_blt_t* msg = (primary_hv_jmp_to_blt_t*)(device->message);
             primary::HV_JMP_TO_BLT* proto_msg = pack->add_hv_jmp_to_blt();
+			proto_msg->set_forward((primary::primary_hv_jmp_to_blt_forward)msg->forward);
+			proto_msg->set_cellboard_id((primary::primary_hv_jmp_to_blt_cellboard_id)msg->cellboard_id);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

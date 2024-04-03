@@ -139,6 +139,8 @@ extern "C" {
 /* START */
 #define HV_JMP_TO_BLT "HV_JMP_TO_BLT"
 
+#define HV_JMP_TO_BLT_FORWARD "hv_jmp_to_blt_forward"
+#define HV_JMP_TO_BLT_CELLBOARD_ID "hv_jmp_to_blt_cellboard_id"
 /* END */
 
 /* START */
@@ -1005,12 +1007,14 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint32_t = -5,
-	e_primary_uint64_t,
+	e_primary_uint16_t = -5,
 	e_primary_uint8_t,
-	e_primary_uint16_t,
 	e_primary_float,
+	e_primary_uint64_t,
+	e_primary_uint32_t,
 
+	e_primary_hv_jmp_to_blt_forward,
+	e_primary_hv_jmp_to_blt_cellboard_id,
 	e_primary_hv_cellboard_version_cellboard_id,
 	e_primary_hv_fans_status_fans_override,
 	e_primary_hv_set_fans_status_fans_override,
