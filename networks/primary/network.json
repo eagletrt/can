@@ -2243,6 +2243,96 @@
             }
         },
         {
+            "name": "ECU_STEER_ACTUATOR_STATUS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 200,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [],
+            "contents": {
+                "status": "Toggle"
+            }
+        },
+        {
+            "name": "ECU_SET_STEER_ACTUATOR_STATUS",
+            "topic": "HYDRA",
+            "priority": 2,
+            "interval": 200,
+            "sending": [
+                "STEERING_WHEEL",
+                "TLM"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "status": "Toggle",
+                "target": {
+                    "type": "float32",
+                    "range": [
+                        -0.1,
+                        1
+                    ],
+                    "precision": 0.1
+                }
+            }
+        },
+        {
+            "name": "ECU_STEER_ACTUATOR_CURRENT",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 200,
+            "sending": [
+                "ECU"
+            ],
+            "receiving": [],
+            "contents": {
+                "current": {
+                    "type": "float32",
+                    "range": [
+                        -25,
+                        25
+                    ],
+                    "force": "uint8"
+                }
+            }
+        },
+        {
+            "name": "DEBUG_SIGNAL_CRASH_DEBUG",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 10,
+            "sending": [
+                "ANY"
+            ],
+            "receiving": [],
+            "contents": {
+                "seq_number": "uint8",
+                "byte_1": "uint8",
+                "byte_2": "uint8",
+                "byte_3": "uint8",
+                "byte_4": "uint8",
+                "byte_5": "uint8",
+                "byte_6": "uint8",
+                "byte_7": "uint8"
+            }
+        },
+        {
+            "name": "DEBUG_SIGNAL_CRASH_DEBUG_ACK",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 10,
+            "sending": [
+                "ANY"
+            ],
+            "receiving": [],
+            "contents": {
+                "seq_number": "uint8"
+            }
+        },
+        {
             "name": "DEBUG_SIGNAL_1",
             "topic": "HYDRA",
             "priority": 3,
