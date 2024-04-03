@@ -268,7 +268,6 @@
             "name": "HV_JMP_TO_BLT",
             "fixed_id": 0,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -280,7 +279,6 @@
             "name": "HV_FLASH_MAINBOARD_TX",
             "fixed_id": 1,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -292,7 +290,6 @@
             "name": "HV_FLASH_MAINBOARD_RX",
             "fixed_id": 2,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -304,7 +301,6 @@
             "name": "HV_FLASH_CELLBOARD_0_TX",
             "fixed_id": 4,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -316,7 +312,6 @@
             "name": "HV_FLASH_CELLBOARD_0_RX",
             "fixed_id": 5,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -328,7 +323,6 @@
             "name": "HV_FLASH_CELLBOARD_1_TX",
             "fixed_id": 6,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -340,7 +334,6 @@
             "name": "HV_FLASH_CELLBOARD_1_RX",
             "fixed_id": 7,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -352,7 +345,6 @@
             "name": "HV_FLASH_CELLBOARD_2_TX",
             "fixed_id": 8,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -364,7 +356,6 @@
             "name": "HV_FLASH_CELLBOARD_2_RX",
             "fixed_id": 9,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -376,7 +367,6 @@
             "name": "HV_FLASH_CELLBOARD_3_TX",
             "fixed_id": 10,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -388,7 +378,6 @@
             "name": "HV_FLASH_CELLBOARD_3_RX",
             "fixed_id": 11,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -400,7 +389,6 @@
             "name": "HV_FLASH_CELLBOARD_4_TX",
             "fixed_id": 12,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -412,7 +400,6 @@
             "name": "HV_FLASH_CELLBOARD_4_RX",
             "fixed_id": 13,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -424,7 +411,6 @@
             "name": "HV_FLASH_CELLBOARD_5_TX",
             "fixed_id": 14,
             "sending": [
-                "HANDCART",
                 "TLM"
             ],
             "receiving": [
@@ -434,7 +420,7 @@
         },
         {
             "name": "HV_FLASH_CELLBOARD_5_RX",
-            "fixed_id": 14,
+            "fixed_id": 15,
             "sending": [
                 "TLM"
             ],
@@ -445,17 +431,6 @@
         },
         {
             "name": "LV_JMP_TO_BLT",
-            "fixed_id": 15,
-            "sending": [
-                "TLM"
-            ],
-            "receiving": [
-                "LV"
-            ],
-            "contents": {}
-        },
-        {
-            "name": "LV_FLASH_TX",
             "fixed_id": 16,
             "sending": [
                 "TLM"
@@ -466,7 +441,7 @@
             "contents": {}
         },
         {
-            "name": "LV_FLASH_RX",
+            "name": "LV_FLASH_TX",
             "fixed_id": 17,
             "sending": [
                 "TLM"
@@ -477,18 +452,18 @@
             "contents": {}
         },
         {
-            "name": "ECU_JMP_TO_BLT",
+            "name": "LV_FLASH_RX",
             "fixed_id": 18,
             "sending": [
                 "TLM"
             ],
             "receiving": [
-                "ECU"
+                "LV"
             ],
             "contents": {}
         },
         {
-            "name": "ECU_FLASH_TX",
+            "name": "ECU_JMP_TO_BLT",
             "fixed_id": 19,
             "sending": [
                 "TLM"
@@ -499,7 +474,7 @@
             "contents": {}
         },
         {
-            "name": "ECU_FLASH_RX",
+            "name": "ECU_FLASH_TX",
             "fixed_id": 20,
             "sending": [
                 "TLM"
@@ -510,18 +485,18 @@
             "contents": {}
         },
         {
-            "name": "STEERING_WHEEL_JMP_TO_BLT",
+            "name": "ECU_FLASH_RX",
             "fixed_id": 21,
             "sending": [
                 "TLM"
             ],
             "receiving": [
-                "STEERING_WHEEL"
+                "ECU"
             ],
             "contents": {}
         },
         {
-            "name": "STEERING_WHEEL_FLASH_TX",
+            "name": "STEERING_WHEEL_JMP_TO_BLT",
             "fixed_id": 22,
             "sending": [
                 "TLM"
@@ -532,8 +507,19 @@
             "contents": {}
         },
         {
-            "name": "STEERING_WHEEL_FLASH_RX",
+            "name": "STEERING_WHEEL_FLASH_TX",
             "fixed_id": 23,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "STEERING_WHEEL"
+            ],
+            "contents": {}
+        },
+        {
+            "name": "STEERING_WHEEL_FLASH_RX",
+            "fixed_id": 24,
             "sending": [
                 "TLM"
             ],
