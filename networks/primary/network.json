@@ -273,7 +273,10 @@
             "receiving": [
                 "HV"
             ],
-            "contents": {}
+            "contents": {
+                "forward": "Toggle",
+                "cellboard_id": "HvCellboardId"
+            }
         },
         {
             "name": "HV_FLASH_MAINBOARD_TX",
@@ -913,7 +916,8 @@
             "topic": "HYDRA",
             "priority": 2,
             "sending": [
-                "ECU"
+                "HANDCART",
+                "STEERING_WHEEL"
             ],
             "receiving": [
                 "HV"
@@ -1203,7 +1207,8 @@
             "topic": "HYDRA",
             "priority": 0,
             "sending": [
-                "TLM"
+                "TLM",
+                "STEERING_WHEEL"
             ],
             "receiving": [
                 "LV"
