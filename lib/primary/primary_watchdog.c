@@ -62,7 +62,13 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 1712: return PRIMARY_INTERVAL_HV_CELLS_VOLTAGE_STATS;
        case 1720: return PRIMARY_INTERVAL_HV_CELLS_TEMP;
        case 1728: return PRIMARY_INTERVAL_HV_CELLS_TEMP_STATS;
-       case 1736: return PRIMARY_INTERVAL_DEBUG_SIGNAL_1;
+       case 1736: return PRIMARY_INTERVAL_ECU_STEER_ACTUATOR_STATUS;
+       case 1096: return PRIMARY_INTERVAL_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL;
+       case 1104: return PRIMARY_INTERVAL_ECU_SET_STEER_ACTUATOR_STATUS_TLM;
+       case 1744: return PRIMARY_INTERVAL_ECU_STEER_ACTUATOR_CURRENT;
+       case 1752: return PRIMARY_INTERVAL_DEBUG_SIGNAL_CRASH_DEBUG;
+       case 1760: return PRIMARY_INTERVAL_DEBUG_SIGNAL_CRASH_DEBUG_ACK;
+       case 1768: return PRIMARY_INTERVAL_DEBUG_SIGNAL_1;
 
     }
     return -1;
@@ -79,23 +85,37 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 1552: return PRIMARY_INDEX_NLG5_ST;
        case 1560: return PRIMARY_INDEX_NLG5_CTL;
        case 0: return PRIMARY_INDEX_HV_JMP_TO_BLT;
+       case 0: return PRIMARY_INDEX_HV_JMP_TO_BLT;
+       case 1: return PRIMARY_INDEX_HV_FLASH_MAINBOARD_TX;
        case 1: return PRIMARY_INDEX_HV_FLASH_MAINBOARD_TX;
        case 2: return PRIMARY_INDEX_HV_FLASH_MAINBOARD_RX;
-       case 3: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_0_TX;
-       case 4: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_0_RX;
-       case 5: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_1_TX;
-       case 6: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_1_RX;
-       case 7: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_2_TX;
-       case 8: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_2_RX;
-       case 9: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_3_TX;
-       case 10: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_3_RX;
-       case 11: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_4_TX;
-       case 12: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_4_RX;
-       case 13: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_5_TX;
+       case 2: return PRIMARY_INDEX_HV_FLASH_MAINBOARD_RX;
+       case 4: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_0_TX;
+       case 4: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_0_TX;
+       case 5: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_0_RX;
+       case 5: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_0_RX;
+       case 6: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_1_TX;
+       case 6: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_1_TX;
+       case 7: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_1_RX;
+       case 7: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_1_RX;
+       case 8: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_2_TX;
+       case 8: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_2_TX;
+       case 9: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_2_RX;
+       case 9: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_2_RX;
+       case 10: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_3_TX;
+       case 10: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_3_TX;
+       case 11: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_3_RX;
+       case 11: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_3_RX;
+       case 12: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_4_TX;
+       case 12: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_4_TX;
+       case 13: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_4_RX;
+       case 13: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_4_RX;
+       case 14: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_5_TX;
+       case 14: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_5_TX;
        case 14: return PRIMARY_INDEX_HV_FLASH_CELLBOARD_5_RX;
        case 15: return PRIMARY_INDEX_LV_JMP_TO_BLT;
-       case 16: return PRIMARY_INDEX_LV_FLASH_BMS_TX;
-       case 17: return PRIMARY_INDEX_LV_FLASH_BMS_RX;
+       case 16: return PRIMARY_INDEX_LV_FLASH_TX;
+       case 17: return PRIMARY_INDEX_LV_FLASH_RX;
        case 18: return PRIMARY_INDEX_ECU_JMP_TO_BLT;
        case 19: return PRIMARY_INDEX_ECU_FLASH_TX;
        case 20: return PRIMARY_INDEX_ECU_FLASH_RX;
@@ -175,7 +195,13 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 1712: return PRIMARY_INDEX_HV_CELLS_VOLTAGE_STATS;
        case 1720: return PRIMARY_INDEX_HV_CELLS_TEMP;
        case 1728: return PRIMARY_INDEX_HV_CELLS_TEMP_STATS;
-       case 1736: return PRIMARY_INDEX_DEBUG_SIGNAL_1;
+       case 1736: return PRIMARY_INDEX_ECU_STEER_ACTUATOR_STATUS;
+       case 1096: return PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL;
+       case 1104: return PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_TLM;
+       case 1744: return PRIMARY_INDEX_ECU_STEER_ACTUATOR_CURRENT;
+       case 1752: return PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG;
+       case 1760: return PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG_ACK;
+       case 1768: return PRIMARY_INDEX_DEBUG_SIGNAL_1;
 
     }
     return -1;
@@ -187,7 +213,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 106 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 126 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -610,6 +636,48 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLS_TEMP_STATS] > PRIMARY_INTERVAL_HV_CELLS_TEMP_STATS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLS_TEMP_STATS);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_ECU_STEER_ACTUATOR_STATUS)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_ECU_STEER_ACTUATOR_STATUS] > PRIMARY_INTERVAL_ECU_STEER_ACTUATOR_STATUS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_ECU_STEER_ACTUATOR_STATUS);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL] > PRIMARY_INTERVAL_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_TLM)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_TLM] > PRIMARY_INTERVAL_ECU_SET_STEER_ACTUATOR_STATUS_TLM * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_TLM);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_ECU_STEER_ACTUATOR_CURRENT)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_ECU_STEER_ACTUATOR_CURRENT] > PRIMARY_INTERVAL_ECU_STEER_ACTUATOR_CURRENT * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_ECU_STEER_ACTUATOR_CURRENT);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG] > PRIMARY_INTERVAL_DEBUG_SIGNAL_CRASH_DEBUG * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG_ACK)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG_ACK] > PRIMARY_INTERVAL_DEBUG_SIGNAL_CRASH_DEBUG_ACK * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG_ACK);
     }
 
     if (

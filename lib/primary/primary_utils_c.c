@@ -121,12 +121,6 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[6], string_size, NLG5_CTL_NLG5_OC_COM);
 
 		return 0;
-	case 0:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_JMP_TO_BLT_FORWARD);
-		snprintf(v[1], string_size, HV_JMP_TO_BLT_CELLBOARD_ID);
-
-		return 0;
 	case 700:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, STEERING_WHEEL_VERSION_COMPONENT_BUILD_TIME);
@@ -737,6 +731,45 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 1736:
+		if(1 > fields_size) return 1;
+		snprintf(v[0], string_size, ECU_STEER_ACTUATOR_STATUS_STATUS);
+
+		return 0;
+	case 1096:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_STATUS);
+		snprintf(v[1], string_size, ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_TARGET);
+
+		return 0;
+	case 1104:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, ECU_SET_STEER_ACTUATOR_STATUS_TLM_STATUS);
+		snprintf(v[1], string_size, ECU_SET_STEER_ACTUATOR_STATUS_TLM_TARGET);
+
+		return 0;
+	case 1744:
+		if(1 > fields_size) return 1;
+		snprintf(v[0], string_size, ECU_STEER_ACTUATOR_CURRENT_CURRENT);
+
+		return 0;
+	case 1752:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, DEBUG_SIGNAL_CRASH_DEBUG_SEQ_NUMBER);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_CRASH_DEBUG_BYTE_1);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_CRASH_DEBUG_BYTE_2);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_CRASH_DEBUG_BYTE_3);
+		snprintf(v[4], string_size, DEBUG_SIGNAL_CRASH_DEBUG_BYTE_4);
+		snprintf(v[5], string_size, DEBUG_SIGNAL_CRASH_DEBUG_BYTE_5);
+		snprintf(v[6], string_size, DEBUG_SIGNAL_CRASH_DEBUG_BYTE_6);
+		snprintf(v[7], string_size, DEBUG_SIGNAL_CRASH_DEBUG_BYTE_7);
+
+		return 0;
+	case 1760:
+		if(1 > fields_size) return 1;
+		snprintf(v[0], string_size, DEBUG_SIGNAL_CRASH_DEBUG_ACK_SEQ_NUMBER);
+
+		return 0;
+	case 1768:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_1_FIELD_1);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_1_FIELD_2);
@@ -753,22 +786,6 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
     switch(enum_id)
     {
 	case 0:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_jmp_to_blt_forward_off");
-		snprintf(v[1], string_size, "primary_hv_jmp_to_blt_forward_on");
-
-		return 0;
-	case 1:
-		if(6 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_0");
-		snprintf(v[1], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_1");
-		snprintf(v[2], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_2");
-		snprintf(v[3], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_3");
-		snprintf(v[4], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_4");
-		snprintf(v[5], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_5");
-
-		return 0;
-	case 2:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_cellboard_version_cellboard_id_cellboard_0");
 		snprintf(v[1], string_size, "primary_hv_cellboard_version_cellboard_id_cellboard_1");
@@ -778,19 +795,19 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[5], string_size, "primary_hv_cellboard_version_cellboard_id_cellboard_5");
 
 		return 0;
-	case 3:
+	case 1:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_fans_status_fans_override_off");
 		snprintf(v[1], string_size, "primary_hv_fans_status_fans_override_on");
 
 		return 0;
-	case 4:
+	case 2:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_fans_status_fans_override_off");
 		snprintf(v[1], string_size, "primary_hv_set_fans_status_fans_override_on");
 
 		return 0;
-	case 5:
+	case 3:
 		if(7 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_status_status_init");
 		snprintf(v[1], string_size, "primary_hv_status_status_idle");
@@ -801,19 +818,19 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[6], string_size, "primary_hv_status_status_fatal_error");
 
 		return 0;
-	case 6:
+	case 4:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_status_ecu_hv_status_set_off");
 		snprintf(v[1], string_size, "primary_hv_set_status_ecu_hv_status_set_on");
 
 		return 0;
-	case 7:
+	case 5:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_status_handcart_hv_status_set_off");
 		snprintf(v[1], string_size, "primary_hv_set_status_handcart_hv_status_set_on");
 
 		return 0;
-	case 8:
+	case 6:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_0");
 		snprintf(v[1], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_1");
@@ -823,25 +840,25 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[5], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_5");
 
 		return 0;
-	case 9:
+	case 7:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_balancing_status_balancing_status_off");
 		snprintf(v[1], string_size, "primary_hv_balancing_status_balancing_status_on");
 
 		return 0;
-	case 10:
+	case 8:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_balancing_status_handcart_set_balancing_status_off");
 		snprintf(v[1], string_size, "primary_hv_set_balancing_status_handcart_set_balancing_status_on");
 
 		return 0;
-	case 11:
+	case 9:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_balancing_status_steering_wheel_set_balancing_status_off");
 		snprintf(v[1], string_size, "primary_hv_set_balancing_status_steering_wheel_set_balancing_status_on");
 
 		return 0;
-	case 12:
+	case 10:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_status_status_init");
 		snprintf(v[1], string_size, "primary_lv_status_status_idle");
@@ -851,43 +868,43 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[5], string_size, "primary_lv_status_status_error");
 
 		return 0;
-	case 13:
+	case 11:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_inverter_connection_status_status_on");
 
 		return 0;
-	case 14:
+	case 12:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_set_inverter_connection_status_status_on");
 
 		return 0;
-	case 15:
+	case 13:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_status_status_on");
 
 		return 0;
-	case 16:
+	case 14:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_set_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_set_status_status_on");
 
 		return 0;
-	case 17:
+	case 15:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_status_connected_off");
 		snprintf(v[1], string_size, "primary_handcart_status_connected_on");
 
 		return 0;
-	case 18:
+	case 16:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_settings_fans_override_on");
 
 		return 0;
-	case 19:
+	case 17:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_settings_status_check");
@@ -900,13 +917,13 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_settings_status_error");
 
 		return 0;
-	case 20:
+	case 18:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_fans_override_on");
 
 		return 0;
-	case 21:
+	case 19:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_status_check");
@@ -919,7 +936,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_set_settings_status_error");
 
 		return 0;
-	case 22:
+	case 20:
 		if(13 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_status_status_init");
 		snprintf(v[1], string_size, "primary_ecu_status_status_enable_inv_updates");
@@ -936,14 +953,14 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[12], string_size, "primary_ecu_status_status_fatal_error");
 
 		return 0;
-	case 23:
+	case 21:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_status_status_idle");
 		snprintf(v[1], string_size, "primary_ecu_set_status_status_ready");
 		snprintf(v[2], string_size, "primary_ecu_set_status_status_drive");
 
 		return 0;
-	case 24:
+	case 22:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rl_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rl_rfe_on");
@@ -951,7 +968,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rl_enabled");
 
 		return 0;
-	case 25:
+	case 23:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rr_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rr_rfe_on");
@@ -959,16 +976,34 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rr_enabled");
 
 		return 0;
-	case 26:
+	case 24:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_ptt_status_status_on");
 
 		return 0;
-	case 27:
+	case 25:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_ptt_status_status_on");
+
+		return 0;
+	case 26:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_ecu_steer_actuator_status_status_off");
+		snprintf(v[1], string_size, "primary_ecu_steer_actuator_status_status_on");
+
+		return 0;
+	case 27:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_off");
+		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_on");
+
+		return 0;
+	case 28:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_off");
+		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_on");
 
 		return 0;
 
@@ -1394,24 +1429,6 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		primary_nlg5_ctl_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_NLG5_CTL_BYTE_SIZE;
 		return primary_nlg5_ctl_pack(data, &tmp, PRIMARY_NLG5_CTL_BYTE_SIZE);
-	}
-	case 0:
-	{
-		primary_hv_jmp_to_blt_t tmp;
-		primary_hv_jmp_to_blt_converted_t tmp_converted;
-		uint8_t r_forward;
-		uint8_t r_cellboard_id;
-
-		sscanf(s, "%" SCNu8 ","  
-			"%" SCNu8 ","  ,
-			&r_forward,
-			&r_cellboard_id);
-		tmp_converted.forward = (primary_hv_jmp_to_blt_forward)r_forward;
-		tmp_converted.cellboard_id = (primary_hv_jmp_to_blt_cellboard_id)r_cellboard_id;
-
-		primary_hv_jmp_to_blt_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_HV_JMP_TO_BLT_BYTE_SIZE;
-		return primary_hv_jmp_to_blt_pack(data, &tmp, PRIMARY_HV_JMP_TO_BLT_BYTE_SIZE);
 	}
 	case 700:
 	{
@@ -3431,6 +3448,126 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 1736:
 	{
+		primary_ecu_steer_actuator_status_t tmp;
+		primary_ecu_steer_actuator_status_converted_t tmp_converted;
+		uint8_t r_status;
+
+		sscanf(s, "%" SCNu8 ","  ,
+			&r_status);
+		tmp_converted.status = (primary_ecu_steer_actuator_status_status)r_status;
+
+		primary_ecu_steer_actuator_status_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_ECU_STEER_ACTUATOR_STATUS_BYTE_SIZE;
+		return primary_ecu_steer_actuator_status_pack(data, &tmp, PRIMARY_ECU_STEER_ACTUATOR_STATUS_BYTE_SIZE);
+	}
+	case 1096:
+	{
+		primary_ecu_set_steer_actuator_status_steering_wheel_t tmp;
+		primary_ecu_set_steer_actuator_status_steering_wheel_converted_t tmp_converted;
+		uint8_t r_status;
+		float r_target;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       ,
+			&r_status,
+			&r_target);
+		tmp_converted.status = (primary_ecu_set_steer_actuator_status_steering_wheel_status)r_status;
+		tmp_converted.target = (float)r_target;
+
+		primary_ecu_set_steer_actuator_status_steering_wheel_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_BYTE_SIZE;
+		return primary_ecu_set_steer_actuator_status_steering_wheel_pack(data, &tmp, PRIMARY_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_BYTE_SIZE);
+	}
+	case 1104:
+	{
+		primary_ecu_set_steer_actuator_status_tlm_t tmp;
+		primary_ecu_set_steer_actuator_status_tlm_converted_t tmp_converted;
+		uint8_t r_status;
+		float r_target;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       ,
+			&r_status,
+			&r_target);
+		tmp_converted.status = (primary_ecu_set_steer_actuator_status_tlm_status)r_status;
+		tmp_converted.target = (float)r_target;
+
+		primary_ecu_set_steer_actuator_status_tlm_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_ECU_SET_STEER_ACTUATOR_STATUS_TLM_BYTE_SIZE;
+		return primary_ecu_set_steer_actuator_status_tlm_pack(data, &tmp, PRIMARY_ECU_SET_STEER_ACTUATOR_STATUS_TLM_BYTE_SIZE);
+	}
+	case 1744:
+	{
+		primary_ecu_steer_actuator_current_t tmp;
+		primary_ecu_steer_actuator_current_converted_t tmp_converted;
+		float r_current;
+
+		sscanf(s, "%f,"       ,
+			&r_current);
+		tmp_converted.current = (float)r_current;
+
+		primary_ecu_steer_actuator_current_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_ECU_STEER_ACTUATOR_CURRENT_BYTE_SIZE;
+		return primary_ecu_steer_actuator_current_pack(data, &tmp, PRIMARY_ECU_STEER_ACTUATOR_CURRENT_BYTE_SIZE);
+	}
+	case 1752:
+	{
+		primary_debug_signal_crash_debug_t tmp;
+		primary_debug_signal_crash_debug_converted_t tmp_converted;
+		uint8_t r_seq_number;
+		uint8_t r_byte_1;
+		uint8_t r_byte_2;
+		uint8_t r_byte_3;
+		uint8_t r_byte_4;
+		uint8_t r_byte_5;
+		uint8_t r_byte_6;
+		uint8_t r_byte_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_seq_number,
+			&r_byte_1,
+			&r_byte_2,
+			&r_byte_3,
+			&r_byte_4,
+			&r_byte_5,
+			&r_byte_6,
+			&r_byte_7);
+		tmp_converted.seq_number = (uint8_t)r_seq_number;
+		tmp_converted.byte_1 = (uint8_t)r_byte_1;
+		tmp_converted.byte_2 = (uint8_t)r_byte_2;
+		tmp_converted.byte_3 = (uint8_t)r_byte_3;
+		tmp_converted.byte_4 = (uint8_t)r_byte_4;
+		tmp_converted.byte_5 = (uint8_t)r_byte_5;
+		tmp_converted.byte_6 = (uint8_t)r_byte_6;
+		tmp_converted.byte_7 = (uint8_t)r_byte_7;
+
+		primary_debug_signal_crash_debug_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_DEBUG_SIGNAL_CRASH_DEBUG_BYTE_SIZE;
+		return primary_debug_signal_crash_debug_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_CRASH_DEBUG_BYTE_SIZE);
+	}
+	case 1760:
+	{
+		primary_debug_signal_crash_debug_ack_t tmp;
+		primary_debug_signal_crash_debug_ack_converted_t tmp_converted;
+		uint8_t r_seq_number;
+
+		sscanf(s, "%" SCNu8 ","  ,
+			&r_seq_number);
+		tmp_converted.seq_number = (uint8_t)r_seq_number;
+
+		primary_debug_signal_crash_debug_ack_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_DEBUG_SIGNAL_CRASH_DEBUG_ACK_BYTE_SIZE;
+		return primary_debug_signal_crash_debug_ack_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_CRASH_DEBUG_ACK_BYTE_SIZE);
+	}
+	case 1768:
+	{
 		primary_debug_signal_1_t tmp;
 		primary_debug_signal_1_converted_t tmp_converted;
 		float r_field_1;
@@ -3471,20 +3608,34 @@ int primary_n_fields_from_id(int id)
 		case 1553: return 4;
 		case 1552: return 25;
 		case 1560: return 7;
-		case 0: return 2;
+		case 0: return 0;
+		case 0: return 0;
+		case 1: return 0;
 		case 1: return 0;
 		case 2: return 0;
-		case 3: return 0;
+		case 2: return 0;
+		case 4: return 0;
 		case 4: return 0;
 		case 5: return 0;
+		case 5: return 0;
+		case 6: return 0;
 		case 6: return 0;
 		case 7: return 0;
+		case 7: return 0;
+		case 8: return 0;
 		case 8: return 0;
 		case 9: return 0;
+		case 9: return 0;
+		case 10: return 0;
 		case 10: return 0;
 		case 11: return 0;
+		case 11: return 0;
+		case 12: return 0;
 		case 12: return 0;
 		case 13: return 0;
+		case 13: return 0;
+		case 14: return 0;
+		case 14: return 0;
 		case 14: return 0;
 		case 15: return 0;
 		case 16: return 0;
@@ -3568,7 +3719,13 @@ int primary_n_fields_from_id(int id)
 		case 1712: return 4;
 		case 1720: return 5;
 		case 1728: return 3;
-		case 1736: return 4;
+		case 1736: return 1;
+		case 1096: return 2;
+		case 1104: return 2;
+		case 1744: return 1;
+		case 1752: return 8;
+		case 1760: return 1;
+		case 1768: return 4;
     }
     return 0;
 }
@@ -3684,11 +3841,6 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[5] = e_primary_float;
 		fields_types[6] = e_primary_float;
 		return 7;
-	case 0:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_hv_jmp_to_blt_forward;
-		fields_types[1] = e_primary_hv_jmp_to_blt_cellboard_id;
-		return 2;
 	case 700:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_primary_uint32_t;
@@ -4229,6 +4381,39 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[2] = e_primary_float;
 		return 3;
 	case 1736:
+		if(fields_types_size < 1) return 0;
+		fields_types[0] = e_primary_ecu_steer_actuator_status_status;
+		return 1;
+	case 1096:
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_primary_ecu_set_steer_actuator_status_steering_wheel_status;
+		fields_types[1] = e_primary_float;
+		return 2;
+	case 1104:
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_primary_ecu_set_steer_actuator_status_tlm_status;
+		fields_types[1] = e_primary_float;
+		return 2;
+	case 1744:
+		if(fields_types_size < 1) return 0;
+		fields_types[0] = e_primary_float;
+		return 1;
+	case 1752:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 1760:
+		if(fields_types_size < 1) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		return 1;
+	case 1768:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_primary_float;
 		fields_types[1] = e_primary_float;
@@ -4241,25 +4426,6 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 }
 int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
 {
-	if(!strcmp(msg_name, "HV_JMP_TO_BLT"))
-	{
-		if(!strcmp(sgn_name, "forward"))
-		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
-		}
-		if(!strcmp(sgn_name, "cellboard_id"))
-		{
-			sprintf(v[0], "cellboard_0");
-			sprintf(v[1], "cellboard_1");
-			sprintf(v[2], "cellboard_2");
-			sprintf(v[3], "cellboard_3");
-			sprintf(v[4], "cellboard_4");
-			sprintf(v[5], "cellboard_5");
-			return 6;
-		}
-	}
 	if(!strcmp(msg_name, "HV_CELLBOARD_VERSION"))
 	{
 		if(!strcmp(sgn_name, "cellboard_id"))
@@ -4521,6 +4687,33 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 		}
 	}
 	if(!strcmp(msg_name, "ECU_SET_PTT_STATUS"))
+	{
+		if(!strcmp(sgn_name, "status"))
+		{
+			sprintf(v[0], "off");
+			sprintf(v[1], "on");
+			return 2;
+		}
+	}
+	if(!strcmp(msg_name, "ECU_STEER_ACTUATOR_STATUS"))
+	{
+		if(!strcmp(sgn_name, "status"))
+		{
+			sprintf(v[0], "off");
+			sprintf(v[1], "on");
+			return 2;
+		}
+	}
+	if(!strcmp(msg_name, "ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"))
+	{
+		if(!strcmp(sgn_name, "status"))
+		{
+			sprintf(v[0], "off");
+			sprintf(v[1], "on");
+			return 2;
+		}
+	}
+	if(!strcmp(msg_name, "ECU_SET_STEER_ACTUATOR_STATUS_TLM"))
 	{
 		if(!strcmp(sgn_name, "status"))
 		{

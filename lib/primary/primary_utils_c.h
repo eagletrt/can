@@ -139,12 +139,25 @@ extern "C" {
 /* START */
 #define HV_JMP_TO_BLT "HV_JMP_TO_BLT"
 
-#define HV_JMP_TO_BLT_FORWARD "hv_jmp_to_blt_forward"
-#define HV_JMP_TO_BLT_CELLBOARD_ID "hv_jmp_to_blt_cellboard_id"
+/* END */
+
+/* START */
+#define HV_JMP_TO_BLT "HV_JMP_TO_BLT"
+
 /* END */
 
 /* START */
 #define HV_FLASH_MAINBOARD_TX "HV_FLASH_MAINBOARD_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_MAINBOARD_TX "HV_FLASH_MAINBOARD_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_MAINBOARD_RX "HV_FLASH_MAINBOARD_RX"
 
 /* END */
 
@@ -159,7 +172,22 @@ extern "C" {
 /* END */
 
 /* START */
+#define HV_FLASH_CELLBOARD_0_TX "HV_FLASH_CELLBOARD_0_TX"
+
+/* END */
+
+/* START */
 #define HV_FLASH_CELLBOARD_0_RX "HV_FLASH_CELLBOARD_0_RX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_0_RX "HV_FLASH_CELLBOARD_0_RX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_1_TX "HV_FLASH_CELLBOARD_1_TX"
 
 /* END */
 
@@ -174,7 +202,22 @@ extern "C" {
 /* END */
 
 /* START */
+#define HV_FLASH_CELLBOARD_1_RX "HV_FLASH_CELLBOARD_1_RX"
+
+/* END */
+
+/* START */
 #define HV_FLASH_CELLBOARD_2_TX "HV_FLASH_CELLBOARD_2_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_2_TX "HV_FLASH_CELLBOARD_2_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_2_RX "HV_FLASH_CELLBOARD_2_RX"
 
 /* END */
 
@@ -189,6 +232,16 @@ extern "C" {
 /* END */
 
 /* START */
+#define HV_FLASH_CELLBOARD_3_TX "HV_FLASH_CELLBOARD_3_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_3_RX "HV_FLASH_CELLBOARD_3_RX"
+
+/* END */
+
+/* START */
 #define HV_FLASH_CELLBOARD_3_RX "HV_FLASH_CELLBOARD_3_RX"
 
 /* END */
@@ -199,7 +252,22 @@ extern "C" {
 /* END */
 
 /* START */
+#define HV_FLASH_CELLBOARD_4_TX "HV_FLASH_CELLBOARD_4_TX"
+
+/* END */
+
+/* START */
 #define HV_FLASH_CELLBOARD_4_RX "HV_FLASH_CELLBOARD_4_RX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_4_RX "HV_FLASH_CELLBOARD_4_RX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_5_TX "HV_FLASH_CELLBOARD_5_TX"
 
 /* END */
 
@@ -219,12 +287,12 @@ extern "C" {
 /* END */
 
 /* START */
-#define LV_FLASH_BMS_TX "LV_FLASH_BMS_TX"
+#define LV_FLASH_TX "LV_FLASH_TX"
 
 /* END */
 
 /* START */
-#define LV_FLASH_BMS_RX "LV_FLASH_BMS_RX"
+#define LV_FLASH_RX "LV_FLASH_RX"
 
 /* END */
 
@@ -953,6 +1021,51 @@ extern "C" {
 /* END */
 
 /* START */
+#define ECU_STEER_ACTUATOR_STATUS "ECU_STEER_ACTUATOR_STATUS"
+
+#define ECU_STEER_ACTUATOR_STATUS_STATUS "ecu_steer_actuator_status_status"
+/* END */
+
+/* START */
+#define ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL "ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"
+
+#define ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_STATUS "ecu_set_steer_actuator_status_steering_wheel_status"
+#define ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_TARGET "ecu_set_steer_actuator_status_steering_wheel_target"
+/* END */
+
+/* START */
+#define ECU_SET_STEER_ACTUATOR_STATUS_TLM "ECU_SET_STEER_ACTUATOR_STATUS_TLM"
+
+#define ECU_SET_STEER_ACTUATOR_STATUS_TLM_STATUS "ecu_set_steer_actuator_status_tlm_status"
+#define ECU_SET_STEER_ACTUATOR_STATUS_TLM_TARGET "ecu_set_steer_actuator_status_tlm_target"
+/* END */
+
+/* START */
+#define ECU_STEER_ACTUATOR_CURRENT "ECU_STEER_ACTUATOR_CURRENT"
+
+#define ECU_STEER_ACTUATOR_CURRENT_CURRENT "ecu_steer_actuator_current_current"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_CRASH_DEBUG "DEBUG_SIGNAL_CRASH_DEBUG"
+
+#define DEBUG_SIGNAL_CRASH_DEBUG_SEQ_NUMBER "debug_signal_crash_debug_seq_number"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_1 "debug_signal_crash_debug_byte_1"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_2 "debug_signal_crash_debug_byte_2"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_3 "debug_signal_crash_debug_byte_3"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_4 "debug_signal_crash_debug_byte_4"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_5 "debug_signal_crash_debug_byte_5"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_6 "debug_signal_crash_debug_byte_6"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_7 "debug_signal_crash_debug_byte_7"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_CRASH_DEBUG_ACK "DEBUG_SIGNAL_CRASH_DEBUG_ACK"
+
+#define DEBUG_SIGNAL_CRASH_DEBUG_ACK_SEQ_NUMBER "debug_signal_crash_debug_ack_seq_number"
+/* END */
+
+/* START */
 #define DEBUG_SIGNAL_1 "DEBUG_SIGNAL_1"
 
 #define DEBUG_SIGNAL_1_FIELD_1 "debug_signal_1_field_1"
@@ -963,13 +1076,11 @@ extern "C" {
 
 enum primary_types_id{
 	e_primary_uint32_t = -5,
+	e_primary_float,
 	e_primary_uint8_t,
 	e_primary_uint16_t,
-	e_primary_float,
 	e_primary_uint64_t,
 
-	e_primary_hv_jmp_to_blt_forward,
-	e_primary_hv_jmp_to_blt_cellboard_id,
 	e_primary_hv_cellboard_version_cellboard_id,
 	e_primary_hv_fans_status_fans_override,
 	e_primary_hv_set_fans_status_fans_override,
@@ -995,7 +1106,10 @@ enum primary_types_id{
 	e_primary_ecu_inverter_status_rl,
 	e_primary_ecu_inverter_status_rr,
 	e_primary_ecu_ptt_status_status,
-	e_primary_ecu_set_ptt_status_status
+	e_primary_ecu_set_ptt_status_status,
+	e_primary_ecu_steer_actuator_status_status,
+	e_primary_ecu_set_steer_actuator_status_steering_wheel_status,
+	e_primary_ecu_set_steer_actuator_status_tlm_status
 };
 
 /**
