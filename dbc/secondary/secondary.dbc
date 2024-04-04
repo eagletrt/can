@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: IRTS_RR ECU TLM IRTS_RL IRTS_RR IRTS_RR IRTS_RL TLM IRTS_RR IRTS_RL IRTS_FR TLM IRTS_RL ACQUISINATOR IRTS_FR ACQUISINATOR IRTS_FL TLM IRTS_FR ACQUISINATOR IRTS_FR TLM IMU ECU IRTS_FL TLM IRTS_FL TLM TLM IRTS_FL ECU IMU ECU
+BU_: IRTS_RR IRTS_RL TLM IRTS_RR IRTS_RL IRTS_FR ACQUISINATOR IRTS_RL ACQUISINATOR IRTS_RL TLM IRTS_FL TLM IRTS_FR ACQUISINATOR IRTS_FR TLM IRTS_FL ECU IRTS_FR TLM IRTS_FL TLM ECU IRTS_FL TLM IMU ECU IRTS_RR IMU ECU TLM IRTS_RR TLM
 
 
 BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
@@ -188,23 +188,29 @@ BO_ 1616 TLM_LAPS_STATS: 6 Vector__XXX
  SG_ best_time : 16|16@1+ (0.015259021896696421,0) [0|1000] "" Vector__XXX
  SG_ lap_number : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
 
-BO_ 1624 AMMO_COMPRESSION: 16 Vector__XXX
- SG_ fr : 96|32@1+ (1.629814505956558e-08,-20) [-20|50] "" Vector__XXX
- SG_ fl : 64|32@1+ (1.629814505956558e-08,-20) [-20|50] "" Vector__XXX
- SG_ rr : 32|32@1+ (1.629814505956558e-08,-50) [-50|20] "" Vector__XXX
- SG_ rl : 0|32@1+ (1.629814505956558e-08,-50) [-50|20] "" Vector__XXX
+BO_ 1624 AMMO_COMPRESSION: 8 Vector__XXX
+ SG_ fr : 48|16@1+ (0.0010681315327687496,-20) [-20|50] "" Vector__XXX
+ SG_ fl : 32|16@1+ (0.0010681315327687496,-20) [-20|50] "" Vector__XXX
+ SG_ rr : 16|16@1+ (0.0010681315327687496,-50) [-50|20] "" Vector__XXX
+ SG_ rl : 0|16@1+ (0.0010681315327687496,-50) [-50|20] "" Vector__XXX
 
 BO_ 1632 LINK_DEFORMATION: 5 Vector__XXX
  SG_ deformation : 8|32@1+ (1.3969838622484784e-09,-3.0) [-3.0|3.0] "" Vector__XXX
  SG_ rod_id : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1640 DEBUG_SIGNAL_2: 8 Vector__XXX
+BO_ 1640 DEBUG_SIGNAL_1: 8 Vector__XXX
  SG_ field_4 : 48|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_3 : 32|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_2 : 16|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_1 : 0|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
 
-BO_ 1648 COOLING_TEMP: 8 Vector__XXX
+BO_ 1648 DEBUG_SIGNAL_2: 8 Vector__XXX
+ SG_ field_4 : 48|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
+ SG_ field_3 : 32|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
+ SG_ field_2 : 16|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
+ SG_ field_1 : 0|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
+
+BO_ 1656 COOLING_TEMP: 8 Vector__XXX
  SG_ bottom_right : 48|16@1+ (0.0018310826276035706,-10) [-10|110] "" Vector__XXX
  SG_ top_right : 32|16@1+ (0.0018310826276035706,-10) [-10|110] "" Vector__XXX
  SG_ bottom_left : 16|16@1+ (0.0018310826276035706,-10) [-10|110] "" Vector__XXX
@@ -245,7 +251,8 @@ CM_ BO_ 1616 "";
 CM_ BO_ 1624 "Position of the ammos";
 CM_ BO_ 1632 "Message for the arm deformation";
 CM_ BO_ 1640 "Debug signals";
-CM_ BO_ 1648 "Cooling temperature";
+CM_ BO_ 1648 "Debug signals";
+CM_ BO_ 1656 "Cooling temperature";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 BA_ "GenMsgCycleTime" BO_ 1552 10;
@@ -257,7 +264,8 @@ BA_ "GenMsgCycleTime" BO_ 1616 1000;
 BA_ "GenMsgCycleTime" BO_ 1624 10;
 BA_ "GenMsgCycleTime" BO_ 1632 10;
 BA_ "GenMsgCycleTime" BO_ 1640 10;
-BA_ "GenMsgCycleTime" BO_ 1648 500;
+BA_ "GenMsgCycleTime" BO_ 1648 10;
+BA_ "GenMsgCycleTime" BO_ 1656 500;
 
 
 

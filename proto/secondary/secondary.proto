@@ -186,16 +186,23 @@ message TLM_LAPS_STATS{
 	uint64 _inner_timestamp = 4;
 }
 message AMMO_COMPRESSION{
-	float rl = 1;
-	float rr = 2;
-	float fl = 3;
-	float fr = 4;
+	double rl = 1;
+	double rr = 2;
+	double fl = 3;
+	double fr = 4;
 	uint64 _inner_timestamp = 5;
 }
 message LINK_DEFORMATION{
 	uint32 rod_id = 1;
 	float deformation = 2;
 	uint64 _inner_timestamp = 3;
+}
+message DEBUG_SIGNAL_1{
+	double field_1 = 1;
+	double field_2 = 2;
+	double field_3 = 3;
+	double field_4 = 4;
+	uint64 _inner_timestamp = 5;
 }
 message DEBUG_SIGNAL_2{
 	double field_1 = 1;
@@ -245,7 +252,8 @@ message Pack{
 	repeated TLM_LAPS_STATS TLM_LAPS_STATS = 29;
 	repeated AMMO_COMPRESSION AMMO_COMPRESSION = 30;
 	repeated LINK_DEFORMATION LINK_DEFORMATION = 31;
-	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 32;
-	repeated COOLING_TEMP COOLING_TEMP = 33;
+	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 32;
+	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 33;
+	repeated COOLING_TEMP COOLING_TEMP = 34;
 }
 

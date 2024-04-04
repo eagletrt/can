@@ -789,10 +789,9 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_ERRORS"]["_timestamp"].push(pack->hv_errors(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["HV_ERRORS"]["errors_cell_low_voltage"].push(pack->hv_errors(i).errors_cell_low_voltage());
 		(*net_enums)["HV_ERRORS"]["errors_cell_under_voltage"].push(pack->hv_errors(i).errors_cell_under_voltage());
 		(*net_enums)["HV_ERRORS"]["errors_cell_over_voltage"].push(pack->hv_errors(i).errors_cell_over_voltage());
-		(*net_enums)["HV_ERRORS"]["errors_cell_high_temperature"].push(pack->hv_errors(i).errors_cell_high_temperature());
+		(*net_enums)["HV_ERRORS"]["errors_cell_under_temperature"].push(pack->hv_errors(i).errors_cell_under_temperature());
 		(*net_enums)["HV_ERRORS"]["errors_cell_over_temperature"].push(pack->hv_errors(i).errors_cell_over_temperature());
 		(*net_enums)["HV_ERRORS"]["errors_over_current"].push(pack->hv_errors(i).errors_over_current());
 		(*net_enums)["HV_ERRORS"]["errors_can"].push(pack->hv_errors(i).errors_can());
@@ -836,10 +835,9 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_sd_in"].push(pack->hv_debug_signals(i).feedbacks_sd_in());
 		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_sd_bms"].push(pack->hv_debug_signals(i).feedbacks_sd_bms());
 		(*net_enums)["HV_DEBUG_SIGNALS"]["feedbacks_sd_imd"].push(pack->hv_debug_signals(i).feedbacks_sd_imd());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_low_voltage"].push(pack->hv_debug_signals(i).errors_cell_low_voltage());
 		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_under_voltage"].push(pack->hv_debug_signals(i).errors_cell_under_voltage());
 		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_over_voltage"].push(pack->hv_debug_signals(i).errors_cell_over_voltage());
-		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_high_temperature"].push(pack->hv_debug_signals(i).errors_cell_high_temperature());
+		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_under_temperature"].push(pack->hv_debug_signals(i).errors_cell_under_temperature());
 		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_cell_over_temperature"].push(pack->hv_debug_signals(i).errors_cell_over_temperature());
 		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_over_current"].push(pack->hv_debug_signals(i).errors_over_current());
 		(*net_enums)["HV_DEBUG_SIGNALS"]["errors_can"].push(pack->hv_debug_signals(i).errors_can());
@@ -977,8 +975,10 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["HV_IMD_STATUS"]["_timestamp"].push(pack->hv_imd_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["HV_IMD_STATUS"]["imd_fault"].push(pack->hv_imd_status(i).imd_fault());
-		(*net_signals)["HV_IMD_STATUS"]["imd_status"].push(pack->hv_imd_status(i).imd_status());
+		(*net_enums)["HV_IMD_STATUS"]["imd_fault"].push(pack->hv_imd_status(i).imd_fault());
+		(*net_enums)["HV_IMD_STATUS"]["imd_status"].push(pack->hv_imd_status(i).imd_status());
+		primary_hv_imd_status_imd_status_enum_to_string((primary_hv_imd_status_imd_status)pack->hv_imd_status(i).imd_status(), buffer);
+		(*net_strings)["HV_IMD_STATUS"]["imd_status"].push(buffer);
 		(*net_signals)["HV_IMD_STATUS"]["imd_details"].push(pack->hv_imd_status(i).imd_details());
 		(*net_signals)["HV_IMD_STATUS"]["imd_duty_cycle"].push(pack->hv_imd_status(i).imd_duty_cycle());
 		(*net_signals)["HV_IMD_STATUS"]["imd_freq"].push(pack->hv_imd_status(i).imd_freq());
@@ -1986,6 +1986,21 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
+    for(int i = 0; i < pack->debug_signal_2_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->debug_signal_2(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal_2(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL_2"]["_timestamp"].push(pack->debug_signal_2(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["DEBUG_SIGNAL_2"]["field_1"].push(pack->debug_signal_2(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL_2"]["field_2"].push(pack->debug_signal_2(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL_2"]["field_3"].push(pack->debug_signal_2(i).field_3());
+		(*net_signals)["DEBUG_SIGNAL_2"]["field_4"].push(pack->debug_signal_2(i).field_4());
+
+    }
+
 }
 
 void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, device_t* device) {
@@ -2477,10 +2492,9 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 32: {
             primary_hv_errors_t* msg = (primary_hv_errors_t*)(device->message);
             primary::HV_ERRORS* proto_msg = pack->add_hv_errors();
-			proto_msg->set_errors_cell_low_voltage(msg->errors_cell_low_voltage);
 			proto_msg->set_errors_cell_under_voltage(msg->errors_cell_under_voltage);
 			proto_msg->set_errors_cell_over_voltage(msg->errors_cell_over_voltage);
-			proto_msg->set_errors_cell_high_temperature(msg->errors_cell_high_temperature);
+			proto_msg->set_errors_cell_under_temperature(msg->errors_cell_under_temperature);
 			proto_msg->set_errors_cell_over_temperature(msg->errors_cell_over_temperature);
 			proto_msg->set_errors_over_current(msg->errors_over_current);
 			proto_msg->set_errors_can(msg->errors_can);
@@ -2523,10 +2537,9 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 			proto_msg->set_feedbacks_sd_in(msg->feedbacks_sd_in);
 			proto_msg->set_feedbacks_sd_bms(msg->feedbacks_sd_bms);
 			proto_msg->set_feedbacks_sd_imd(msg->feedbacks_sd_imd);
-			proto_msg->set_errors_cell_low_voltage(msg->errors_cell_low_voltage);
 			proto_msg->set_errors_cell_under_voltage(msg->errors_cell_under_voltage);
 			proto_msg->set_errors_cell_over_voltage(msg->errors_cell_over_voltage);
-			proto_msg->set_errors_cell_high_temperature(msg->errors_cell_high_temperature);
+			proto_msg->set_errors_cell_under_temperature(msg->errors_cell_under_temperature);
 			proto_msg->set_errors_cell_over_temperature(msg->errors_cell_over_temperature);
 			proto_msg->set_errors_over_current(msg->errors_over_current);
 			proto_msg->set_errors_can(msg->errors_can);
@@ -2618,7 +2631,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 536: {
-            primary_hv_feedback_misc_voltage_t* msg = (primary_hv_feedback_misc_voltage_t*)(device->message);
+            primary_hv_feedback_misc_voltage_converted_t* msg = (primary_hv_feedback_misc_voltage_converted_t*)(device->message);
             primary::HV_FEEDBACK_MISC_VOLTAGE* proto_msg = pack->add_hv_feedback_misc_voltage();
 			proto_msg->set_implausibility_detected(msg->implausibility_detected);
 			proto_msg->set_imd_cockpit(msg->imd_cockpit);
@@ -2636,7 +2649,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 544: {
-            primary_hv_feedback_sd_voltage_t* msg = (primary_hv_feedback_sd_voltage_t*)(device->message);
+            primary_hv_feedback_sd_voltage_converted_t* msg = (primary_hv_feedback_sd_voltage_converted_t*)(device->message);
             primary::HV_FEEDBACK_SD_VOLTAGE* proto_msg = pack->add_hv_feedback_sd_voltage();
 			proto_msg->set_sd_end(msg->sd_end);
 			proto_msg->set_sd_out(msg->sd_out);
@@ -2654,7 +2667,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary_hv_imd_status_t* msg = (primary_hv_imd_status_t*)(device->message);
             primary::HV_IMD_STATUS* proto_msg = pack->add_hv_imd_status();
 			proto_msg->set_imd_fault(msg->imd_fault);
-			proto_msg->set_imd_status(msg->imd_status);
+			proto_msg->set_imd_status((primary::primary_hv_imd_status_imd_status)msg->imd_status);
 			proto_msg->set_imd_details(msg->imd_details);
 			proto_msg->set_imd_duty_cycle(msg->imd_duty_cycle);
 			proto_msg->set_imd_freq(msg->imd_freq);
@@ -3538,6 +3551,20 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 1768: {
             primary_debug_signal_1_converted_t* msg = (primary_debug_signal_1_converted_t*)(device->message);
             primary::DEBUG_SIGNAL_1* proto_msg = pack->add_debug_signal_1();
+			proto_msg->set_field_1(msg->field_1);
+			proto_msg->set_field_2(msg->field_2);
+			proto_msg->set_field_3(msg->field_3);
+			proto_msg->set_field_4(msg->field_4);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1776: {
+            primary_debug_signal_2_converted_t* msg = (primary_debug_signal_2_converted_t*)(device->message);
+            primary::DEBUG_SIGNAL_2* proto_msg = pack->add_debug_signal_2();
 			proto_msg->set_field_1(msg->field_1);
 			proto_msg->set_field_2(msg->field_2);
 			proto_msg->set_field_3(msg->field_3);

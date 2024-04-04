@@ -304,10 +304,9 @@ extern "C" {
 /* START */
 #define HV_ERRORS "HV_ERRORS"
 
-#define HV_ERRORS_ERRORS_CELL_LOW_VOLTAGE "hv_errors_errors_cell_low_voltage"
 #define HV_ERRORS_ERRORS_CELL_UNDER_VOLTAGE "hv_errors_errors_cell_under_voltage"
 #define HV_ERRORS_ERRORS_CELL_OVER_VOLTAGE "hv_errors_errors_cell_over_voltage"
-#define HV_ERRORS_ERRORS_CELL_HIGH_TEMPERATURE "hv_errors_errors_cell_high_temperature"
+#define HV_ERRORS_ERRORS_CELL_UNDER_TEMPERATURE "hv_errors_errors_cell_under_temperature"
 #define HV_ERRORS_ERRORS_CELL_OVER_TEMPERATURE "hv_errors_errors_cell_over_temperature"
 #define HV_ERRORS_ERRORS_OVER_CURRENT "hv_errors_errors_over_current"
 #define HV_ERRORS_ERRORS_CAN "hv_errors_errors_can"
@@ -345,10 +344,9 @@ extern "C" {
 #define HV_DEBUG_SIGNALS_FEEDBACKS_SD_IN "hv_debug_signals_feedbacks_sd_in"
 #define HV_DEBUG_SIGNALS_FEEDBACKS_SD_BMS "hv_debug_signals_feedbacks_sd_bms"
 #define HV_DEBUG_SIGNALS_FEEDBACKS_SD_IMD "hv_debug_signals_feedbacks_sd_imd"
-#define HV_DEBUG_SIGNALS_ERRORS_CELL_LOW_VOLTAGE "hv_debug_signals_errors_cell_low_voltage"
 #define HV_DEBUG_SIGNALS_ERRORS_CELL_UNDER_VOLTAGE "hv_debug_signals_errors_cell_under_voltage"
 #define HV_DEBUG_SIGNALS_ERRORS_CELL_OVER_VOLTAGE "hv_debug_signals_errors_cell_over_voltage"
-#define HV_DEBUG_SIGNALS_ERRORS_CELL_HIGH_TEMPERATURE "hv_debug_signals_errors_cell_high_temperature"
+#define HV_DEBUG_SIGNALS_ERRORS_CELL_UNDER_TEMPERATURE "hv_debug_signals_errors_cell_under_temperature"
 #define HV_DEBUG_SIGNALS_ERRORS_CELL_OVER_TEMPERATURE "hv_debug_signals_errors_cell_over_temperature"
 #define HV_DEBUG_SIGNALS_ERRORS_OVER_CURRENT "hv_debug_signals_errors_over_current"
 #define HV_DEBUG_SIGNALS_ERRORS_CAN "hv_debug_signals_errors_can"
@@ -1006,11 +1004,20 @@ extern "C" {
 #define DEBUG_SIGNAL_1_FIELD_4 "debug_signal_1_field_4"
 /* END */
 
+/* START */
+#define DEBUG_SIGNAL_2 "DEBUG_SIGNAL_2"
+
+#define DEBUG_SIGNAL_2_FIELD_1 "debug_signal_2_field_1"
+#define DEBUG_SIGNAL_2_FIELD_2 "debug_signal_2_field_2"
+#define DEBUG_SIGNAL_2_FIELD_3 "debug_signal_2_field_3"
+#define DEBUG_SIGNAL_2_FIELD_4 "debug_signal_2_field_4"
+/* END */
+
 enum primary_types_id{
-	e_primary_float = -5,
+	e_primary_uint16_t = -5,
 	e_primary_uint8_t,
 	e_primary_uint64_t,
-	e_primary_uint16_t,
+	e_primary_float,
 	e_primary_uint32_t,
 
 	e_primary_hv_jmp_to_blt_forward,
@@ -1018,6 +1025,7 @@ enum primary_types_id{
 	e_primary_hv_cellboard_version_cellboard_id,
 	e_primary_hv_fans_status_fans_override,
 	e_primary_hv_set_fans_status_fans_override,
+	e_primary_hv_imd_status_imd_status,
 	e_primary_hv_status_status,
 	e_primary_hv_set_status_ecu_hv_status_set,
 	e_primary_hv_set_status_handcart_hv_status_set,

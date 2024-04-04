@@ -231,13 +231,21 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		return 0;
 	case 1640:
 		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, DEBUG_SIGNAL_1_FIELD_1);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_1_FIELD_2);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_1_FIELD_3);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_1_FIELD_4);
+
+		return 0;
+	case 1648:
+		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_2_FIELD_1);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_2_FIELD_2);
 		snprintf(v[2], string_size, DEBUG_SIGNAL_2_FIELD_3);
 		snprintf(v[3], string_size, DEBUG_SIGNAL_2_FIELD_4);
 
 		return 0;
-	case 1648:
+	case 1656:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, COOLING_TEMP_TOP_LEFT);
 		snprintf(v[1], string_size, COOLING_TEMP_BOTTOM_LEFT);
@@ -973,6 +981,32 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 1640:
 	{
+		secondary_debug_signal_1_t tmp;
+		secondary_debug_signal_1_converted_t tmp_converted;
+		float r_field_1;
+		float r_field_2;
+		float r_field_3;
+		float r_field_4;
+
+		sscanf(s, "%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_field_1,
+			&r_field_2,
+			&r_field_3,
+			&r_field_4);
+		tmp_converted.field_1 = (float)r_field_1;
+		tmp_converted.field_2 = (float)r_field_2;
+		tmp_converted.field_3 = (float)r_field_3;
+		tmp_converted.field_4 = (float)r_field_4;
+
+		secondary_debug_signal_1_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_DEBUG_SIGNAL_1_BYTE_SIZE;
+		return secondary_debug_signal_1_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_1_BYTE_SIZE);
+	}
+	case 1648:
+	{
 		secondary_debug_signal_2_t tmp;
 		secondary_debug_signal_2_converted_t tmp_converted;
 		float r_field_1;
@@ -997,7 +1031,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_DEBUG_SIGNAL_2_BYTE_SIZE;
 		return secondary_debug_signal_2_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_2_BYTE_SIZE);
 	}
-	case 1648:
+	case 1656:
 	{
 		secondary_cooling_temp_t tmp;
 		secondary_cooling_temp_converted_t tmp_converted;
@@ -1064,6 +1098,7 @@ int secondary_n_fields_from_id(int id)
 		case 1632: return 2;
 		case 1640: return 4;
 		case 1648: return 4;
+		case 1656: return 4;
     }
     return 0;
 }
@@ -1272,6 +1307,13 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[3] = e_secondary_float;
 		return 4;
 	case 1648:
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_secondary_float;
+		fields_types[1] = e_secondary_float;
+		fields_types[2] = e_secondary_float;
+		fields_types[3] = e_secondary_float;
+		return 4;
+	case 1656:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;

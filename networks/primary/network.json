@@ -132,10 +132,9 @@
         "HvErrors": {
             "type": "bitset",
             "items": [
-                "cell_low_voltage",
                 "cell_under_voltage",
                 "cell_over_voltage",
-                "cell_high_temperature",
+                "cell_under_temperature",
                 "cell_over_temperature",
                 "over_current",
                 "can",
@@ -160,6 +159,17 @@
                 "airp_close",
                 "ts_on",
                 "fatal_error"
+            ]
+        },
+        "HvImdStatus": {
+            "type": "enum",
+            "items": [
+                "sc",
+                "normal",
+                "under_voltage",
+                "start_measure",
+                "device_error",
+                "earth_fault"
             ]
         },
         "LvStatus": {
@@ -578,6 +588,7 @@
         {
             "name": "TLM_VERSION",
             "fixed_id": 704,
+            "interval": 1000,
             "sending": [
                 "TLM"
             ],
@@ -797,14 +808,70 @@
                 "HANDCART"
             ],
             "contents": {
-                "implausibility_detected": "float32",
-                "imd_cockpit": "float32",
-                "tsal_green_fault_latched": "float32",
-                "bms_cockpit": "float32",
-                "ext_latched": "float32",
-                "tsal_green": "float32",
-                "imd_fault": "float32",
-                "check_mux": "float32"
+                "implausibility_detected": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "imd_cockpit": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "tsal_green_fault_latched": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "bms_cockpit": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "ext_latched": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "tsal_green": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "imd_fault": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "check_mux": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                }
             }
         },
         {
@@ -820,11 +887,46 @@
                 "HANDCART"
             ],
             "contents": {
-                "sd_end": "float32",
-                "sd_out": "float32",
-                "sd_in": "float32",
-                "sd_bms": "float32",
-                "sd_imd": "float32"
+                "sd_end": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "sd_out": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "sd_in": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "sd_bms": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                },
+                "sd_imd": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        3.3
+                    ],
+                    "force": "uint8"
+                }
             }
         },
         {
@@ -840,12 +942,12 @@
                 "HANDCART"
             ],
             "contents": {
-                "imd_fault": "float32",
-                "imd_status": "float32",
-                "imd_details": "float32",
-                "imd_duty_cycle": "float32",
-                "imd_freq": "float32",
-                "imd_period": "float32"
+                "imd_fault": "bool",
+                "imd_status": "HvImdStatus",
+                "imd_details": "uint16",
+                "imd_duty_cycle": "uint8",
+                "imd_freq": "uint8",
+                "imd_period": "uint8"
             }
         },
         {
@@ -868,6 +970,7 @@
         {
             "name": "HV_SET_STATUS_ECU",
             "topic": "HYDRA",
+            "interval": 50,
             "priority": 0,
             "sending": [
                 "ECU"
@@ -883,6 +986,7 @@
             "name": "HV_SET_STATUS_HANDCART",
             "topic": "HYDRA",
             "priority": 0,
+            "interval": 50,
             "sending": [
                 "HANDCART"
             ],
@@ -915,6 +1019,7 @@
             "name": "HV_SET_BALANCING_STATUS",
             "topic": "HYDRA",
             "priority": 2,
+            "interval": 200,
             "sending": [
                 "HANDCART",
                 "STEERING_WHEEL"
@@ -995,6 +1100,7 @@
             "name": "LV_SET_RADIATOR_SPEED",
             "topic": "HYDRA",
             "priority": 2,
+            "interval": 200,
             "sending": [
                 "STEERING_WHEEL"
             ],
@@ -1016,6 +1122,7 @@
             "name": "LV_SET_PUMPS_SPEED",
             "topic": "HYDRA",
             "priority": 2,
+            "interval": 200,
             "sending": [
                 "STEERING_WHEEL"
             ],
@@ -1244,6 +1351,7 @@
             "name": "LV_SET_INVERTER_CONNECTION_STATUS",
             "topic": "HYDRA",
             "priority": 0,
+            "interval": 50,
             "sending": [
                 "ECU"
             ],
@@ -1271,6 +1379,7 @@
             "name": "TLM_SET_STATUS",
             "topic": "HYDRA",
             "priority": 2,
+            "interval": 200,
             "sending": [
                 "STEERING_WHEEL"
             ],
@@ -1342,6 +1451,7 @@
             "name": "HANDCART_SET_SETTINGS",
             "topic": "HYDRA",
             "priority": 2,
+            "interval": 200,
             "sending": [
                 "TLM"
             ],
@@ -1402,6 +1512,7 @@
             "name": "ECU_SET_STATUS",
             "topic": "HYDRA",
             "priority": 0,
+            "interval": 50,
             "sending": [
                 "STEERING_WHEEL"
             ],
@@ -1619,7 +1730,7 @@
                 "torque_max_l": {
                     "type": "float32",
                     "range": [
-                        0,
+                        -100,
                         100
                     ],
                     "force": "uint8"
@@ -1627,7 +1738,7 @@
                 "torque_max_r": {
                     "type": "float32",
                     "range": [
-                        0,
+                        -100,
                         100
                     ],
                     "force": "uint8"
@@ -1635,7 +1746,7 @@
                 "torque_l": {
                     "type": "float32",
                     "range": [
-                        0,
+                        -100,
                         100
                     ],
                     "force": "uint16"
@@ -1643,7 +1754,7 @@
                 "torque_r": {
                     "type": "float32",
                     "range": [
-                        0,
+                        -100,
                         100
                     ],
                     "force": "uint16"
@@ -2334,6 +2445,50 @@
         },
         {
             "name": "DEBUG_SIGNAL_1",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 20,
+            "sending": [
+                "ANY"
+            ],
+            "receiving": [],
+            "contents": {
+                "field_1": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                },
+                "field_2": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                },
+                "field_3": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                },
+                "field_4": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "DEBUG_SIGNAL_2",
             "topic": "HYDRA",
             "priority": 3,
             "interval": 20,

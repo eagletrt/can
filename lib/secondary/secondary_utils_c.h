@@ -268,6 +268,15 @@ extern "C" {
 /* END */
 
 /* START */
+#define DEBUG_SIGNAL_1 "DEBUG_SIGNAL_1"
+
+#define DEBUG_SIGNAL_1_FIELD_1 "debug_signal_1_field_1"
+#define DEBUG_SIGNAL_1_FIELD_2 "debug_signal_1_field_2"
+#define DEBUG_SIGNAL_1_FIELD_3 "debug_signal_1_field_3"
+#define DEBUG_SIGNAL_1_FIELD_4 "debug_signal_1_field_4"
+/* END */
+
+/* START */
 #define DEBUG_SIGNAL_2 "DEBUG_SIGNAL_2"
 
 #define DEBUG_SIGNAL_2_FIELD_1 "debug_signal_2_field_1"
@@ -286,12 +295,12 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint32_t = -6,
-	e_secondary_int16_t,
-	e_secondary_uint16_t,
-	e_secondary_uint8_t,
-	e_secondary_float,
+	e_secondary_uint16_t = -6,
+	e_secondary_uint32_t,
 	e_secondary_uint64_t,
+	e_secondary_uint8_t,
+	e_secondary_int16_t,
+	e_secondary_float,
 
 	
 };

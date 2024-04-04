@@ -6,6 +6,7 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 700: return PRIMARY_INTERVAL_STEERING_WHEEL_VERSION;
        case 701: return PRIMARY_INTERVAL_ECU_VERSION;
        case 703: return PRIMARY_INTERVAL_LV_VERSION;
+       case 704: return PRIMARY_INTERVAL_TLM_VERSION;
        case 702: return PRIMARY_INTERVAL_HV_MAINBOARD_VERSION;
        case 705: return PRIMARY_INTERVAL_HV_CELLBOARD_VERSION;
        case 32: return PRIMARY_INTERVAL_HV_ERRORS;
@@ -18,20 +19,30 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 544: return PRIMARY_INTERVAL_HV_FEEDBACK_SD_VOLTAGE;
        case 552: return PRIMARY_INTERVAL_HV_IMD_STATUS;
        case 560: return PRIMARY_INTERVAL_HV_STATUS;
+       case 40: return PRIMARY_INTERVAL_HV_SET_STATUS_ECU;
+       case 48: return PRIMARY_INTERVAL_HV_SET_STATUS_HANDCART;
        case 1544: return PRIMARY_INTERVAL_HV_BALANCING_STATUS;
+       case 1032: return PRIMARY_INTERVAL_HV_SET_BALANCING_STATUS_HANDCART;
+       case 1040: return PRIMARY_INTERVAL_HV_SET_BALANCING_STATUS_STEERING_WHEEL;
        case 568: return PRIMARY_INTERVAL_LV_STATUS;
        case 1568: return PRIMARY_INTERVAL_LV_RADIATOR_SPEED;
        case 1576: return PRIMARY_INTERVAL_LV_PUMPS_SPEED;
+       case 1048: return PRIMARY_INTERVAL_LV_SET_RADIATOR_SPEED;
+       case 1056: return PRIMARY_INTERVAL_LV_SET_PUMPS_SPEED;
        case 576: return PRIMARY_INTERVAL_LV_ERRORS;
        case 584: return PRIMARY_INTERVAL_LV_FEEDBACK_TS_VOLTAGE;
        case 592: return PRIMARY_INTERVAL_LV_FEEDBACK_SD_VOLTAGE;
        case 600: return PRIMARY_INTERVAL_LV_FEEDBACK_ENCLOSURE_VOLTAGE;
        case 608: return PRIMARY_INTERVAL_LV_FEEDBACK_GPIO_EXTENDER;
        case 616: return PRIMARY_INTERVAL_LV_INVERTER_CONNECTION_STATUS;
+       case 80: return PRIMARY_INTERVAL_LV_SET_INVERTER_CONNECTION_STATUS;
        case 1584: return PRIMARY_INTERVAL_TLM_STATUS;
+       case 1064: return PRIMARY_INTERVAL_TLM_SET_STATUS;
        case 624: return PRIMARY_INTERVAL_HANDCART_STATUS;
        case 1592: return PRIMARY_INTERVAL_HANDCART_SETTINGS;
+       case 1072: return PRIMARY_INTERVAL_HANDCART_SET_SETTINGS;
        case 632: return PRIMARY_INTERVAL_ECU_STATUS;
+       case 88: return PRIMARY_INTERVAL_ECU_SET_STATUS;
        case 1080: return PRIMARY_INTERVAL_ECU_INVERTER_STATUS;
        case 640: return PRIMARY_INTERVAL_ECU_CONTROL_STATUS;
        case 648: return PRIMARY_INTERVAL_ECU_ERRORS;
@@ -69,6 +80,7 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 1752: return PRIMARY_INTERVAL_DEBUG_SIGNAL_CRASH_DEBUG;
        case 1760: return PRIMARY_INTERVAL_DEBUG_SIGNAL_CRASH_DEBUG_ACK;
        case 1768: return PRIMARY_INTERVAL_DEBUG_SIGNAL_1;
+       case 1776: return PRIMARY_INTERVAL_DEBUG_SIGNAL_2;
 
     }
     return -1;
@@ -188,6 +200,7 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 1752: return PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG;
        case 1760: return PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG_ACK;
        case 1768: return PRIMARY_INDEX_DEBUG_SIGNAL_1;
+       case 1776: return PRIMARY_INDEX_DEBUG_SIGNAL_2;
 
     }
     return -1;
@@ -199,7 +212,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 112 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 113 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -230,6 +243,13 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_VERSION] > PRIMARY_INTERVAL_LV_VERSION * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_VERSION);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_TLM_VERSION)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TLM_VERSION] > PRIMARY_INTERVAL_TLM_VERSION * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_TLM_VERSION);
     }
 
     if (
@@ -317,10 +337,38 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
     }
 
     if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_SET_STATUS_ECU)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_SET_STATUS_ECU] > PRIMARY_INTERVAL_HV_SET_STATUS_ECU * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_SET_STATUS_ECU);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_SET_STATUS_HANDCART)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_SET_STATUS_HANDCART] > PRIMARY_INTERVAL_HV_SET_STATUS_HANDCART * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_SET_STATUS_HANDCART);
+    }
+
+    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_BALANCING_STATUS)
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_BALANCING_STATUS] > PRIMARY_INTERVAL_HV_BALANCING_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_BALANCING_STATUS);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_SET_BALANCING_STATUS_HANDCART)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_SET_BALANCING_STATUS_HANDCART] > PRIMARY_INTERVAL_HV_SET_BALANCING_STATUS_HANDCART * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_SET_BALANCING_STATUS_HANDCART);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_SET_BALANCING_STATUS_STEERING_WHEEL)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_SET_BALANCING_STATUS_STEERING_WHEEL] > PRIMARY_INTERVAL_HV_SET_BALANCING_STATUS_STEERING_WHEEL * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_SET_BALANCING_STATUS_STEERING_WHEEL);
     }
 
     if (
@@ -342,6 +390,20 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_PUMPS_SPEED] > PRIMARY_INTERVAL_LV_PUMPS_SPEED * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_PUMPS_SPEED);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_SET_RADIATOR_SPEED)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_SET_RADIATOR_SPEED] > PRIMARY_INTERVAL_LV_SET_RADIATOR_SPEED * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_SET_RADIATOR_SPEED);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_SET_PUMPS_SPEED)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_SET_PUMPS_SPEED] > PRIMARY_INTERVAL_LV_SET_PUMPS_SPEED * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_SET_PUMPS_SPEED);
     }
 
     if (
@@ -387,10 +449,24 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
     }
 
     if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_LV_SET_INVERTER_CONNECTION_STATUS)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_LV_SET_INVERTER_CONNECTION_STATUS] > PRIMARY_INTERVAL_LV_SET_INVERTER_CONNECTION_STATUS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_LV_SET_INVERTER_CONNECTION_STATUS);
+    }
+
+    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_TLM_STATUS)
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_TLM_STATUS] > PRIMARY_INTERVAL_TLM_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_TLM_STATUS);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_TLM_SET_STATUS)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_TLM_SET_STATUS] > PRIMARY_INTERVAL_TLM_SET_STATUS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_TLM_SET_STATUS);
     }
 
     if (
@@ -408,10 +484,24 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
     }
 
     if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HANDCART_SET_SETTINGS)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HANDCART_SET_SETTINGS] > PRIMARY_INTERVAL_HANDCART_SET_SETTINGS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HANDCART_SET_SETTINGS);
+    }
+
+    if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_ECU_STATUS)
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_ECU_STATUS] > PRIMARY_INTERVAL_ECU_STATUS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_ECU_STATUS);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_ECU_SET_STATUS)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_ECU_SET_STATUS] > PRIMARY_INTERVAL_ECU_SET_STATUS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_ECU_SET_STATUS);
     }
 
     if (
@@ -671,6 +761,13 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_DEBUG_SIGNAL_1] > PRIMARY_INTERVAL_DEBUG_SIGNAL_1 * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DEBUG_SIGNAL_1);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_DEBUG_SIGNAL_2)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DEBUG_SIGNAL_2] > PRIMARY_INTERVAL_DEBUG_SIGNAL_2 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DEBUG_SIGNAL_2);
     }
 
 }

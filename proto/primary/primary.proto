@@ -30,6 +30,14 @@ enum primary_hv_set_fans_status_fans_override {
 	primary_hv_set_fans_status_fans_override_off = 0;
 	primary_hv_set_fans_status_fans_override_on = 1;
 }
+enum primary_hv_imd_status_imd_status {
+	primary_hv_imd_status_imd_status_sc = 0;
+	primary_hv_imd_status_imd_status_normal = 1;
+	primary_hv_imd_status_imd_status_under_voltage = 2;
+	primary_hv_imd_status_imd_status_start_measure = 3;
+	primary_hv_imd_status_imd_status_device_error = 4;
+	primary_hv_imd_status_imd_status_earth_fault = 5;
+}
 enum primary_hv_status_status {
 	primary_hv_status_status_init = 0;
 	primary_hv_status_status_idle = 1;
@@ -393,23 +401,22 @@ message HV_CELLBOARD_VERSION{
 	uint64 _inner_timestamp = 4;
 }
 message HV_ERRORS{
-	bool errors_cell_low_voltage = 1;
-	bool errors_cell_under_voltage = 2;
-	bool errors_cell_over_voltage = 3;
-	bool errors_cell_high_temperature = 4;
-	bool errors_cell_over_temperature = 5;
-	bool errors_over_current = 6;
-	bool errors_can = 7;
-	bool errors_int_voltage_mismatch = 8;
-	bool errors_cellboard_comm = 9;
-	bool errors_cellboard_internal = 10;
-	bool errors_connector_disconnected = 11;
-	bool errors_fans_disconnected = 12;
-	bool errors_feedback = 13;
-	bool errors_feedback_circuitry = 14;
-	bool errors_eeprom_comm = 15;
-	bool errors_eeprom_write = 16;
-	uint64 _inner_timestamp = 17;
+	bool errors_cell_under_voltage = 1;
+	bool errors_cell_over_voltage = 2;
+	bool errors_cell_under_temperature = 3;
+	bool errors_cell_over_temperature = 4;
+	bool errors_over_current = 5;
+	bool errors_can = 6;
+	bool errors_int_voltage_mismatch = 7;
+	bool errors_cellboard_comm = 8;
+	bool errors_cellboard_internal = 9;
+	bool errors_connector_disconnected = 10;
+	bool errors_fans_disconnected = 11;
+	bool errors_feedback = 12;
+	bool errors_feedback_circuitry = 13;
+	bool errors_eeprom_comm = 14;
+	bool errors_eeprom_write = 15;
+	uint64 _inner_timestamp = 16;
 }
 message HV_DEBUG_SIGNALS{
 	bool feedbacks_implausibility_detected = 1;
@@ -432,23 +439,22 @@ message HV_DEBUG_SIGNALS{
 	bool feedbacks_sd_in = 18;
 	bool feedbacks_sd_bms = 19;
 	bool feedbacks_sd_imd = 20;
-	bool errors_cell_low_voltage = 21;
-	bool errors_cell_under_voltage = 22;
-	bool errors_cell_over_voltage = 23;
-	bool errors_cell_high_temperature = 24;
-	bool errors_cell_over_temperature = 25;
-	bool errors_over_current = 26;
-	bool errors_can = 27;
-	bool errors_int_voltage_mismatch = 28;
-	bool errors_cellboard_comm = 29;
-	bool errors_cellboard_internal = 30;
-	bool errors_connector_disconnected = 31;
-	bool errors_fans_disconnected = 32;
-	bool errors_feedback = 33;
-	bool errors_feedback_circuitry = 34;
-	bool errors_eeprom_comm = 35;
-	bool errors_eeprom_write = 36;
-	uint64 _inner_timestamp = 37;
+	bool errors_cell_under_voltage = 21;
+	bool errors_cell_over_voltage = 22;
+	bool errors_cell_under_temperature = 23;
+	bool errors_cell_over_temperature = 24;
+	bool errors_over_current = 25;
+	bool errors_can = 26;
+	bool errors_int_voltage_mismatch = 27;
+	bool errors_cellboard_comm = 28;
+	bool errors_cellboard_internal = 29;
+	bool errors_connector_disconnected = 30;
+	bool errors_fans_disconnected = 31;
+	bool errors_feedback = 32;
+	bool errors_feedback_circuitry = 33;
+	bool errors_eeprom_comm = 34;
+	bool errors_eeprom_write = 35;
+	uint64 _inner_timestamp = 36;
 }
 message HV_FANS_STATUS{
 	primary_hv_fans_status_fans_override fans_override = 1;
@@ -494,27 +500,27 @@ message HV_FEEDBACK_TS_VOLTAGE{
 	uint64 _inner_timestamp = 8;
 }
 message HV_FEEDBACK_MISC_VOLTAGE{
-	uint32 implausibility_detected = 1;
-	uint32 imd_cockpit = 2;
-	uint32 tsal_green_fault_latched = 3;
-	uint32 bms_cockpit = 4;
-	uint32 ext_latched = 5;
-	uint32 tsal_green = 6;
-	uint32 imd_fault = 7;
-	uint32 check_mux = 8;
+	double implausibility_detected = 1;
+	double imd_cockpit = 2;
+	double tsal_green_fault_latched = 3;
+	double bms_cockpit = 4;
+	double ext_latched = 5;
+	double tsal_green = 6;
+	double imd_fault = 7;
+	double check_mux = 8;
 	uint64 _inner_timestamp = 9;
 }
 message HV_FEEDBACK_SD_VOLTAGE{
-	uint32 sd_end = 1;
-	uint32 sd_out = 2;
-	uint32 sd_in = 3;
-	uint32 sd_bms = 4;
-	uint32 sd_imd = 5;
+	double sd_end = 1;
+	double sd_out = 2;
+	double sd_in = 3;
+	double sd_bms = 4;
+	double sd_imd = 5;
 	uint64 _inner_timestamp = 6;
 }
 message HV_IMD_STATUS{
-	uint32 imd_fault = 1;
-	uint32 imd_status = 2;
+	bool imd_fault = 1;
+	primary_hv_imd_status_imd_status imd_status = 2;
 	uint32 imd_details = 3;
 	uint32 imd_duty_cycle = 4;
 	uint32 imd_freq = 5;
@@ -949,6 +955,13 @@ message DEBUG_SIGNAL_1{
 	double field_4 = 4;
 	uint64 _inner_timestamp = 5;
 }
+message DEBUG_SIGNAL_2{
+	double field_1 = 1;
+	double field_2 = 2;
+	double field_3 = 3;
+	double field_4 = 4;
+	uint64 _inner_timestamp = 5;
+}
 
 
 message Pack{
@@ -1064,5 +1077,6 @@ message Pack{
 	repeated DEBUG_SIGNAL_CRASH_DEBUG DEBUG_SIGNAL_CRASH_DEBUG = 110;
 	repeated DEBUG_SIGNAL_CRASH_DEBUG_ACK DEBUG_SIGNAL_CRASH_DEBUG_ACK = 111;
 	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 112;
+	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 113;
 }
 

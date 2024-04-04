@@ -165,27 +165,26 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 32:
-		if(16 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_ERRORS_ERRORS_CELL_LOW_VOLTAGE);
-		snprintf(v[1], string_size, HV_ERRORS_ERRORS_CELL_UNDER_VOLTAGE);
-		snprintf(v[2], string_size, HV_ERRORS_ERRORS_CELL_OVER_VOLTAGE);
-		snprintf(v[3], string_size, HV_ERRORS_ERRORS_CELL_HIGH_TEMPERATURE);
-		snprintf(v[4], string_size, HV_ERRORS_ERRORS_CELL_OVER_TEMPERATURE);
-		snprintf(v[5], string_size, HV_ERRORS_ERRORS_OVER_CURRENT);
-		snprintf(v[6], string_size, HV_ERRORS_ERRORS_CAN);
-		snprintf(v[7], string_size, HV_ERRORS_ERRORS_INT_VOLTAGE_MISMATCH);
-		snprintf(v[8], string_size, HV_ERRORS_ERRORS_CELLBOARD_COMM);
-		snprintf(v[9], string_size, HV_ERRORS_ERRORS_CELLBOARD_INTERNAL);
-		snprintf(v[10], string_size, HV_ERRORS_ERRORS_CONNECTOR_DISCONNECTED);
-		snprintf(v[11], string_size, HV_ERRORS_ERRORS_FANS_DISCONNECTED);
-		snprintf(v[12], string_size, HV_ERRORS_ERRORS_FEEDBACK);
-		snprintf(v[13], string_size, HV_ERRORS_ERRORS_FEEDBACK_CIRCUITRY);
-		snprintf(v[14], string_size, HV_ERRORS_ERRORS_EEPROM_COMM);
-		snprintf(v[15], string_size, HV_ERRORS_ERRORS_EEPROM_WRITE);
+		if(15 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_ERRORS_ERRORS_CELL_UNDER_VOLTAGE);
+		snprintf(v[1], string_size, HV_ERRORS_ERRORS_CELL_OVER_VOLTAGE);
+		snprintf(v[2], string_size, HV_ERRORS_ERRORS_CELL_UNDER_TEMPERATURE);
+		snprintf(v[3], string_size, HV_ERRORS_ERRORS_CELL_OVER_TEMPERATURE);
+		snprintf(v[4], string_size, HV_ERRORS_ERRORS_OVER_CURRENT);
+		snprintf(v[5], string_size, HV_ERRORS_ERRORS_CAN);
+		snprintf(v[6], string_size, HV_ERRORS_ERRORS_INT_VOLTAGE_MISMATCH);
+		snprintf(v[7], string_size, HV_ERRORS_ERRORS_CELLBOARD_COMM);
+		snprintf(v[8], string_size, HV_ERRORS_ERRORS_CELLBOARD_INTERNAL);
+		snprintf(v[9], string_size, HV_ERRORS_ERRORS_CONNECTOR_DISCONNECTED);
+		snprintf(v[10], string_size, HV_ERRORS_ERRORS_FANS_DISCONNECTED);
+		snprintf(v[11], string_size, HV_ERRORS_ERRORS_FEEDBACK);
+		snprintf(v[12], string_size, HV_ERRORS_ERRORS_FEEDBACK_CIRCUITRY);
+		snprintf(v[13], string_size, HV_ERRORS_ERRORS_EEPROM_COMM);
+		snprintf(v[14], string_size, HV_ERRORS_ERRORS_EEPROM_WRITE);
 
 		return 0;
 	case 512:
-		if(36 > fields_size) return 1;
+		if(35 > fields_size) return 1;
 		snprintf(v[0], string_size, HV_DEBUG_SIGNALS_FEEDBACKS_IMPLAUSIBILITY_DETECTED);
 		snprintf(v[1], string_size, HV_DEBUG_SIGNALS_FEEDBACKS_IMD_COCKPIT);
 		snprintf(v[2], string_size, HV_DEBUG_SIGNALS_FEEDBACKS_TSAL_GREEN_FAULT_LATCHED);
@@ -206,22 +205,21 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[17], string_size, HV_DEBUG_SIGNALS_FEEDBACKS_SD_IN);
 		snprintf(v[18], string_size, HV_DEBUG_SIGNALS_FEEDBACKS_SD_BMS);
 		snprintf(v[19], string_size, HV_DEBUG_SIGNALS_FEEDBACKS_SD_IMD);
-		snprintf(v[20], string_size, HV_DEBUG_SIGNALS_ERRORS_CELL_LOW_VOLTAGE);
-		snprintf(v[21], string_size, HV_DEBUG_SIGNALS_ERRORS_CELL_UNDER_VOLTAGE);
-		snprintf(v[22], string_size, HV_DEBUG_SIGNALS_ERRORS_CELL_OVER_VOLTAGE);
-		snprintf(v[23], string_size, HV_DEBUG_SIGNALS_ERRORS_CELL_HIGH_TEMPERATURE);
-		snprintf(v[24], string_size, HV_DEBUG_SIGNALS_ERRORS_CELL_OVER_TEMPERATURE);
-		snprintf(v[25], string_size, HV_DEBUG_SIGNALS_ERRORS_OVER_CURRENT);
-		snprintf(v[26], string_size, HV_DEBUG_SIGNALS_ERRORS_CAN);
-		snprintf(v[27], string_size, HV_DEBUG_SIGNALS_ERRORS_INT_VOLTAGE_MISMATCH);
-		snprintf(v[28], string_size, HV_DEBUG_SIGNALS_ERRORS_CELLBOARD_COMM);
-		snprintf(v[29], string_size, HV_DEBUG_SIGNALS_ERRORS_CELLBOARD_INTERNAL);
-		snprintf(v[30], string_size, HV_DEBUG_SIGNALS_ERRORS_CONNECTOR_DISCONNECTED);
-		snprintf(v[31], string_size, HV_DEBUG_SIGNALS_ERRORS_FANS_DISCONNECTED);
-		snprintf(v[32], string_size, HV_DEBUG_SIGNALS_ERRORS_FEEDBACK);
-		snprintf(v[33], string_size, HV_DEBUG_SIGNALS_ERRORS_FEEDBACK_CIRCUITRY);
-		snprintf(v[34], string_size, HV_DEBUG_SIGNALS_ERRORS_EEPROM_COMM);
-		snprintf(v[35], string_size, HV_DEBUG_SIGNALS_ERRORS_EEPROM_WRITE);
+		snprintf(v[20], string_size, HV_DEBUG_SIGNALS_ERRORS_CELL_UNDER_VOLTAGE);
+		snprintf(v[21], string_size, HV_DEBUG_SIGNALS_ERRORS_CELL_OVER_VOLTAGE);
+		snprintf(v[22], string_size, HV_DEBUG_SIGNALS_ERRORS_CELL_UNDER_TEMPERATURE);
+		snprintf(v[23], string_size, HV_DEBUG_SIGNALS_ERRORS_CELL_OVER_TEMPERATURE);
+		snprintf(v[24], string_size, HV_DEBUG_SIGNALS_ERRORS_OVER_CURRENT);
+		snprintf(v[25], string_size, HV_DEBUG_SIGNALS_ERRORS_CAN);
+		snprintf(v[26], string_size, HV_DEBUG_SIGNALS_ERRORS_INT_VOLTAGE_MISMATCH);
+		snprintf(v[27], string_size, HV_DEBUG_SIGNALS_ERRORS_CELLBOARD_COMM);
+		snprintf(v[28], string_size, HV_DEBUG_SIGNALS_ERRORS_CELLBOARD_INTERNAL);
+		snprintf(v[29], string_size, HV_DEBUG_SIGNALS_ERRORS_CONNECTOR_DISCONNECTED);
+		snprintf(v[30], string_size, HV_DEBUG_SIGNALS_ERRORS_FANS_DISCONNECTED);
+		snprintf(v[31], string_size, HV_DEBUG_SIGNALS_ERRORS_FEEDBACK);
+		snprintf(v[32], string_size, HV_DEBUG_SIGNALS_ERRORS_FEEDBACK_CIRCUITRY);
+		snprintf(v[33], string_size, HV_DEBUG_SIGNALS_ERRORS_EEPROM_COMM);
+		snprintf(v[34], string_size, HV_DEBUG_SIGNALS_ERRORS_EEPROM_WRITE);
 
 		return 0;
 	case 1536:
@@ -783,6 +781,14 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[3], string_size, DEBUG_SIGNAL_1_FIELD_4);
 
 		return 0;
+	case 1776:
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, DEBUG_SIGNAL_2_FIELD_1);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_2_FIELD_2);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_2_FIELD_3);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_2_FIELD_4);
+
+		return 0;
 
     }
     return 0;
@@ -830,6 +836,16 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 
 		return 0;
 	case 5:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_imd_status_imd_status_sc");
+		snprintf(v[1], string_size, "primary_hv_imd_status_imd_status_normal");
+		snprintf(v[2], string_size, "primary_hv_imd_status_imd_status_under_voltage");
+		snprintf(v[3], string_size, "primary_hv_imd_status_imd_status_start_measure");
+		snprintf(v[4], string_size, "primary_hv_imd_status_imd_status_device_error");
+		snprintf(v[5], string_size, "primary_hv_imd_status_imd_status_earth_fault");
+
+		return 0;
+	case 6:
 		if(7 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_status_status_init");
 		snprintf(v[1], string_size, "primary_hv_status_status_idle");
@@ -840,19 +856,19 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[6], string_size, "primary_hv_status_status_fatal_error");
 
 		return 0;
-	case 6:
+	case 7:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_status_ecu_hv_status_set_off");
 		snprintf(v[1], string_size, "primary_hv_set_status_ecu_hv_status_set_on");
 
 		return 0;
-	case 7:
+	case 8:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_status_handcart_hv_status_set_off");
 		snprintf(v[1], string_size, "primary_hv_set_status_handcart_hv_status_set_on");
 
 		return 0;
-	case 8:
+	case 9:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_0");
 		snprintf(v[1], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_1");
@@ -862,25 +878,25 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[5], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_5");
 
 		return 0;
-	case 9:
+	case 10:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_balancing_status_balancing_status_off");
 		snprintf(v[1], string_size, "primary_hv_balancing_status_balancing_status_on");
 
 		return 0;
-	case 10:
+	case 11:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_balancing_status_handcart_set_balancing_status_off");
 		snprintf(v[1], string_size, "primary_hv_set_balancing_status_handcart_set_balancing_status_on");
 
 		return 0;
-	case 11:
+	case 12:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_balancing_status_steering_wheel_set_balancing_status_off");
 		snprintf(v[1], string_size, "primary_hv_set_balancing_status_steering_wheel_set_balancing_status_on");
 
 		return 0;
-	case 12:
+	case 13:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_status_status_init");
 		snprintf(v[1], string_size, "primary_lv_status_status_idle");
@@ -890,43 +906,43 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[5], string_size, "primary_lv_status_status_error");
 
 		return 0;
-	case 13:
+	case 14:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_inverter_connection_status_status_on");
 
 		return 0;
-	case 14:
+	case 15:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_set_inverter_connection_status_status_on");
 
 		return 0;
-	case 15:
+	case 16:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_status_status_on");
 
 		return 0;
-	case 16:
+	case 17:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_set_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_set_status_status_on");
 
 		return 0;
-	case 17:
+	case 18:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_status_connected_off");
 		snprintf(v[1], string_size, "primary_handcart_status_connected_on");
 
 		return 0;
-	case 18:
+	case 19:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_settings_fans_override_on");
 
 		return 0;
-	case 19:
+	case 20:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_settings_status_check");
@@ -939,13 +955,13 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_settings_status_error");
 
 		return 0;
-	case 20:
+	case 21:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_fans_override_on");
 
 		return 0;
-	case 21:
+	case 22:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_status_check");
@@ -958,7 +974,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_set_settings_status_error");
 
 		return 0;
-	case 22:
+	case 23:
 		if(13 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_status_status_init");
 		snprintf(v[1], string_size, "primary_ecu_status_status_enable_inv_updates");
@@ -975,14 +991,14 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[12], string_size, "primary_ecu_status_status_fatal_error");
 
 		return 0;
-	case 23:
+	case 24:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_status_status_idle");
 		snprintf(v[1], string_size, "primary_ecu_set_status_status_ready");
 		snprintf(v[2], string_size, "primary_ecu_set_status_status_drive");
 
 		return 0;
-	case 24:
+	case 25:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rl_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rl_rfe_on");
@@ -990,7 +1006,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rl_enabled");
 
 		return 0;
-	case 25:
+	case 26:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rr_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rr_rfe_on");
@@ -998,31 +1014,31 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rr_enabled");
 
 		return 0;
-	case 26:
+	case 27:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_ptt_status_status_on");
 
 		return 0;
-	case 27:
+	case 28:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_ptt_status_status_on");
 
 		return 0;
-	case 28:
+	case 29:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_steer_actuator_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_steer_actuator_status_status_on");
 
 		return 0;
-	case 29:
+	case 30:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_on");
 
 		return 0;
-	case 30:
+	case 31:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_on");
@@ -1586,10 +1602,9 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_hv_errors_t tmp;
 		primary_hv_errors_converted_t tmp_converted;
-		uint8_t r_errors_cell_low_voltage;
 		uint8_t r_errors_cell_under_voltage;
 		uint8_t r_errors_cell_over_voltage;
-		uint8_t r_errors_cell_high_temperature;
+		uint8_t r_errors_cell_under_temperature;
 		uint8_t r_errors_cell_over_temperature;
 		uint8_t r_errors_over_current;
 		uint8_t r_errors_can;
@@ -1617,12 +1632,10 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
-			"%" SCNu8 ","  
 			"%" SCNu8 ","  ,
-			&r_errors_cell_low_voltage,
 			&r_errors_cell_under_voltage,
 			&r_errors_cell_over_voltage,
-			&r_errors_cell_high_temperature,
+			&r_errors_cell_under_temperature,
 			&r_errors_cell_over_temperature,
 			&r_errors_over_current,
 			&r_errors_can,
@@ -1635,10 +1648,9 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			&r_errors_feedback_circuitry,
 			&r_errors_eeprom_comm,
 			&r_errors_eeprom_write);
-		tmp_converted.errors_cell_low_voltage = (uint8_t)r_errors_cell_low_voltage;
 		tmp_converted.errors_cell_under_voltage = (uint8_t)r_errors_cell_under_voltage;
 		tmp_converted.errors_cell_over_voltage = (uint8_t)r_errors_cell_over_voltage;
-		tmp_converted.errors_cell_high_temperature = (uint8_t)r_errors_cell_high_temperature;
+		tmp_converted.errors_cell_under_temperature = (uint8_t)r_errors_cell_under_temperature;
 		tmp_converted.errors_cell_over_temperature = (uint8_t)r_errors_cell_over_temperature;
 		tmp_converted.errors_over_current = (uint8_t)r_errors_over_current;
 		tmp_converted.errors_can = (uint8_t)r_errors_can;
@@ -1680,10 +1692,9 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_feedbacks_sd_in;
 		uint8_t r_feedbacks_sd_bms;
 		uint8_t r_feedbacks_sd_imd;
-		uint8_t r_errors_cell_low_voltage;
 		uint8_t r_errors_cell_under_voltage;
 		uint8_t r_errors_cell_over_voltage;
-		uint8_t r_errors_cell_high_temperature;
+		uint8_t r_errors_cell_under_temperature;
 		uint8_t r_errors_cell_over_temperature;
 		uint8_t r_errors_over_current;
 		uint8_t r_errors_can;
@@ -1698,7 +1709,6 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_errors_eeprom_write;
 
 		sscanf(s, "%" SCNu8 ","  
-			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -1753,10 +1763,9 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			&r_feedbacks_sd_in,
 			&r_feedbacks_sd_bms,
 			&r_feedbacks_sd_imd,
-			&r_errors_cell_low_voltage,
 			&r_errors_cell_under_voltage,
 			&r_errors_cell_over_voltage,
-			&r_errors_cell_high_temperature,
+			&r_errors_cell_under_temperature,
 			&r_errors_cell_over_temperature,
 			&r_errors_over_current,
 			&r_errors_can,
@@ -1789,10 +1798,9 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.feedbacks_sd_in = (uint8_t)r_feedbacks_sd_in;
 		tmp_converted.feedbacks_sd_bms = (uint8_t)r_feedbacks_sd_bms;
 		tmp_converted.feedbacks_sd_imd = (uint8_t)r_feedbacks_sd_imd;
-		tmp_converted.errors_cell_low_voltage = (uint8_t)r_errors_cell_low_voltage;
 		tmp_converted.errors_cell_under_voltage = (uint8_t)r_errors_cell_under_voltage;
 		tmp_converted.errors_cell_over_voltage = (uint8_t)r_errors_cell_over_voltage;
-		tmp_converted.errors_cell_high_temperature = (uint8_t)r_errors_cell_high_temperature;
+		tmp_converted.errors_cell_under_temperature = (uint8_t)r_errors_cell_under_temperature;
 		tmp_converted.errors_cell_over_temperature = (uint8_t)r_errors_cell_over_temperature;
 		tmp_converted.errors_over_current = (uint8_t)r_errors_over_current;
 		tmp_converted.errors_can = (uint8_t)r_errors_can;
@@ -1978,23 +1986,23 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_hv_feedback_misc_voltage_t tmp;
 		primary_hv_feedback_misc_voltage_converted_t tmp_converted;
-		uint32_t r_implausibility_detected;
-		uint32_t r_imd_cockpit;
-		uint32_t r_tsal_green_fault_latched;
-		uint32_t r_bms_cockpit;
-		uint32_t r_ext_latched;
-		uint32_t r_tsal_green;
-		uint32_t r_imd_fault;
-		uint32_t r_check_mux;
+		float r_implausibility_detected;
+		float r_imd_cockpit;
+		float r_tsal_green_fault_latched;
+		float r_bms_cockpit;
+		float r_ext_latched;
+		float r_tsal_green;
+		float r_imd_fault;
+		float r_check_mux;
 
-		sscanf(s, "%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," ,
+		sscanf(s, "%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
 			&r_implausibility_detected,
 			&r_imd_cockpit,
 			&r_tsal_green_fault_latched,
@@ -2003,14 +2011,14 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			&r_tsal_green,
 			&r_imd_fault,
 			&r_check_mux);
-		tmp_converted.implausibility_detected = (uint32_t)r_implausibility_detected;
-		tmp_converted.imd_cockpit = (uint32_t)r_imd_cockpit;
-		tmp_converted.tsal_green_fault_latched = (uint32_t)r_tsal_green_fault_latched;
-		tmp_converted.bms_cockpit = (uint32_t)r_bms_cockpit;
-		tmp_converted.ext_latched = (uint32_t)r_ext_latched;
-		tmp_converted.tsal_green = (uint32_t)r_tsal_green;
-		tmp_converted.imd_fault = (uint32_t)r_imd_fault;
-		tmp_converted.check_mux = (uint32_t)r_check_mux;
+		tmp_converted.implausibility_detected = (float)r_implausibility_detected;
+		tmp_converted.imd_cockpit = (float)r_imd_cockpit;
+		tmp_converted.tsal_green_fault_latched = (float)r_tsal_green_fault_latched;
+		tmp_converted.bms_cockpit = (float)r_bms_cockpit;
+		tmp_converted.ext_latched = (float)r_ext_latched;
+		tmp_converted.tsal_green = (float)r_tsal_green;
+		tmp_converted.imd_fault = (float)r_imd_fault;
+		tmp_converted.check_mux = (float)r_check_mux;
 
 		primary_hv_feedback_misc_voltage_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_HV_FEEDBACK_MISC_VOLTAGE_BYTE_SIZE;
@@ -2020,27 +2028,27 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_hv_feedback_sd_voltage_t tmp;
 		primary_hv_feedback_sd_voltage_converted_t tmp_converted;
-		uint32_t r_sd_end;
-		uint32_t r_sd_out;
-		uint32_t r_sd_in;
-		uint32_t r_sd_bms;
-		uint32_t r_sd_imd;
+		float r_sd_end;
+		float r_sd_out;
+		float r_sd_in;
+		float r_sd_bms;
+		float r_sd_imd;
 
-		sscanf(s, "%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," ,
+		sscanf(s, "%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
 			&r_sd_end,
 			&r_sd_out,
 			&r_sd_in,
 			&r_sd_bms,
 			&r_sd_imd);
-		tmp_converted.sd_end = (uint32_t)r_sd_end;
-		tmp_converted.sd_out = (uint32_t)r_sd_out;
-		tmp_converted.sd_in = (uint32_t)r_sd_in;
-		tmp_converted.sd_bms = (uint32_t)r_sd_bms;
-		tmp_converted.sd_imd = (uint32_t)r_sd_imd;
+		tmp_converted.sd_end = (float)r_sd_end;
+		tmp_converted.sd_out = (float)r_sd_out;
+		tmp_converted.sd_in = (float)r_sd_in;
+		tmp_converted.sd_bms = (float)r_sd_bms;
+		tmp_converted.sd_imd = (float)r_sd_imd;
 
 		primary_hv_feedback_sd_voltage_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_HV_FEEDBACK_SD_VOLTAGE_BYTE_SIZE;
@@ -2050,31 +2058,31 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_hv_imd_status_t tmp;
 		primary_hv_imd_status_converted_t tmp_converted;
-		uint32_t r_imd_fault;
-		uint32_t r_imd_status;
-		uint32_t r_imd_details;
-		uint32_t r_imd_duty_cycle;
-		uint32_t r_imd_freq;
-		uint32_t r_imd_period;
+		uint8_t r_imd_fault;
+		uint8_t r_imd_status;
+		uint16_t r_imd_details;
+		uint8_t r_imd_duty_cycle;
+		uint8_t r_imd_freq;
+		uint8_t r_imd_period;
 
-		sscanf(s, "%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," 
-			"%" SCNu32 "," ,
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu16 "," 
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
 			&r_imd_fault,
 			&r_imd_status,
 			&r_imd_details,
 			&r_imd_duty_cycle,
 			&r_imd_freq,
 			&r_imd_period);
-		tmp_converted.imd_fault = (uint32_t)r_imd_fault;
-		tmp_converted.imd_status = (uint32_t)r_imd_status;
-		tmp_converted.imd_details = (uint32_t)r_imd_details;
-		tmp_converted.imd_duty_cycle = (uint32_t)r_imd_duty_cycle;
-		tmp_converted.imd_freq = (uint32_t)r_imd_freq;
-		tmp_converted.imd_period = (uint32_t)r_imd_period;
+		tmp_converted.imd_fault = (uint8_t)r_imd_fault;
+		tmp_converted.imd_status = (primary_hv_imd_status_imd_status)r_imd_status;
+		tmp_converted.imd_details = (uint16_t)r_imd_details;
+		tmp_converted.imd_duty_cycle = (uint8_t)r_imd_duty_cycle;
+		tmp_converted.imd_freq = (uint8_t)r_imd_freq;
+		tmp_converted.imd_period = (uint8_t)r_imd_period;
 
 		primary_hv_imd_status_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_HV_IMD_STATUS_BYTE_SIZE;
@@ -3632,6 +3640,32 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_DEBUG_SIGNAL_1_BYTE_SIZE;
 		return primary_debug_signal_1_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_1_BYTE_SIZE);
 	}
+	case 1776:
+	{
+		primary_debug_signal_2_t tmp;
+		primary_debug_signal_2_converted_t tmp_converted;
+		float r_field_1;
+		float r_field_2;
+		float r_field_3;
+		float r_field_4;
+
+		sscanf(s, "%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_field_1,
+			&r_field_2,
+			&r_field_3,
+			&r_field_4);
+		tmp_converted.field_1 = (float)r_field_1;
+		tmp_converted.field_2 = (float)r_field_2;
+		tmp_converted.field_3 = (float)r_field_3;
+		tmp_converted.field_4 = (float)r_field_4;
+
+		primary_debug_signal_2_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_DEBUG_SIGNAL_2_BYTE_SIZE;
+		return primary_debug_signal_2_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_2_BYTE_SIZE);
+	}
 
     }
     return 0;
@@ -3678,8 +3712,8 @@ int primary_n_fields_from_id(int id)
 		case 704: return 2;
 		case 702: return 2;
 		case 705: return 3;
-		case 32: return 16;
-		case 512: return 36;
+		case 32: return 15;
+		case 512: return 35;
 		case 1536: return 2;
 		case 1024: return 2;
 		case 520: return 20;
@@ -3752,6 +3786,7 @@ int primary_n_fields_from_id(int id)
 		case 1752: return 8;
 		case 1760: return 1;
 		case 1768: return 4;
+		case 1776: return 4;
     }
     return 0;
 }
@@ -3904,7 +3939,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[2] = e_primary_uint32_t;
 		return 3;
 	case 32:
-		if(fields_types_size < 16) return 0;
+		if(fields_types_size < 15) return 0;
 		fields_types[0] = e_primary_uint8_t;
 		fields_types[1] = e_primary_uint8_t;
 		fields_types[2] = e_primary_uint8_t;
@@ -3920,10 +3955,9 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[12] = e_primary_uint8_t;
 		fields_types[13] = e_primary_uint8_t;
 		fields_types[14] = e_primary_uint8_t;
-		fields_types[15] = e_primary_uint8_t;
-		return 16;
+		return 15;
 	case 512:
-		if(fields_types_size < 36) return 0;
+		if(fields_types_size < 35) return 0;
 		fields_types[0] = e_primary_uint8_t;
 		fields_types[1] = e_primary_uint8_t;
 		fields_types[2] = e_primary_uint8_t;
@@ -3959,8 +3993,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[32] = e_primary_uint8_t;
 		fields_types[33] = e_primary_uint8_t;
 		fields_types[34] = e_primary_uint8_t;
-		fields_types[35] = e_primary_uint8_t;
-		return 36;
+		return 35;
 	case 1536:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_primary_hv_fans_status_fans_override;
@@ -4006,31 +4039,31 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		return 7;
 	case 536:
 		if(fields_types_size < 8) return 0;
-		fields_types[0] = e_primary_uint32_t;
-		fields_types[1] = e_primary_uint32_t;
-		fields_types[2] = e_primary_uint32_t;
-		fields_types[3] = e_primary_uint32_t;
-		fields_types[4] = e_primary_uint32_t;
-		fields_types[5] = e_primary_uint32_t;
-		fields_types[6] = e_primary_uint32_t;
-		fields_types[7] = e_primary_uint32_t;
+		fields_types[0] = e_primary_float;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_float;
+		fields_types[3] = e_primary_float;
+		fields_types[4] = e_primary_float;
+		fields_types[5] = e_primary_float;
+		fields_types[6] = e_primary_float;
+		fields_types[7] = e_primary_float;
 		return 8;
 	case 544:
 		if(fields_types_size < 5) return 0;
-		fields_types[0] = e_primary_uint32_t;
-		fields_types[1] = e_primary_uint32_t;
-		fields_types[2] = e_primary_uint32_t;
-		fields_types[3] = e_primary_uint32_t;
-		fields_types[4] = e_primary_uint32_t;
+		fields_types[0] = e_primary_float;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_float;
+		fields_types[3] = e_primary_float;
+		fields_types[4] = e_primary_float;
 		return 5;
 	case 552:
 		if(fields_types_size < 6) return 0;
-		fields_types[0] = e_primary_uint32_t;
-		fields_types[1] = e_primary_uint32_t;
-		fields_types[2] = e_primary_uint32_t;
-		fields_types[3] = e_primary_uint32_t;
-		fields_types[4] = e_primary_uint32_t;
-		fields_types[5] = e_primary_uint32_t;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_hv_imd_status_imd_status;
+		fields_types[2] = e_primary_uint16_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
 		return 6;
 	case 560:
 		if(fields_types_size < 1) return 0;
@@ -4451,6 +4484,13 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[2] = e_primary_float;
 		fields_types[3] = e_primary_float;
 		return 4;
+	case 1776:
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_primary_float;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_float;
+		fields_types[3] = e_primary_float;
+		return 4;
 
     }
     return 0;
@@ -4505,6 +4545,19 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 			sprintf(v[0], "off");
 			sprintf(v[1], "on");
 			return 2;
+		}
+	}
+	if(!strcmp(msg_name, "HV_IMD_STATUS"))
+	{
+		if(!strcmp(sgn_name, "imd_status"))
+		{
+			sprintf(v[0], "sc");
+			sprintf(v[1], "normal");
+			sprintf(v[2], "under_voltage");
+			sprintf(v[3], "start_measure");
+			sprintf(v[4], "device_error");
+			sprintf(v[5], "earth_fault");
+			return 6;
 		}
 	}
 	if(!strcmp(msg_name, "HV_STATUS"))
