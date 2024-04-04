@@ -187,10 +187,10 @@ extern "C" {
 /* END */
 
 /* START */
-#define SPEED "SPEED"
+#define ANGULAR_VELOCITY "ANGULAR_VELOCITY"
 
-#define SPEED_FL "speed_fl"
-#define SPEED_FR "speed_fr"
+#define ANGULAR_VELOCITY_FL "angular_velocity_fl"
+#define ANGULAR_VELOCITY_FR "angular_velocity_fr"
 /* END */
 
 /* START */
@@ -286,11 +286,11 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint8_t = -6,
-	e_secondary_float,
-	e_secondary_uint32_t,
+	e_secondary_uint32_t = -6,
 	e_secondary_int16_t,
 	e_secondary_uint16_t,
+	e_secondary_uint8_t,
+	e_secondary_float,
 	e_secondary_uint64_t,
 
 	

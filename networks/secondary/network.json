@@ -883,7 +883,7 @@
       }
     },
     {
-      "name": "SPEED",
+      "name": "ANGULAR_VELOCITY",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [

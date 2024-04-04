@@ -552,16 +552,16 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->speed_size(); i++){
+    for(int i = 0; i < pack->angular_velocity_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->speed(i)._inner_timestamp();
-        (*net_signals)["SPEED"]["_timestamp"].push(pack->speed(i)._inner_timestamp());
+        if(pack->angular_velocity(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->angular_velocity(i)._inner_timestamp();
+        (*net_signals)["ANGULAR_VELOCITY"]["_timestamp"].push(pack->angular_velocity(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["SPEED"]["fl"].push(pack->speed(i).fl());
-		(*net_signals)["SPEED"]["fr"].push(pack->speed(i).fr());
+		(*net_signals)["ANGULAR_VELOCITY"]["fl"].push(pack->angular_velocity(i).fl());
+		(*net_signals)["ANGULAR_VELOCITY"]["fr"].push(pack->angular_velocity(i).fr());
 
     }
 
@@ -1013,8 +1013,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1552: {
-            secondary_speed_converted_t* msg = (secondary_speed_converted_t*)(device->message);
-            secondary::SPEED* proto_msg = pack->add_speed();
+            secondary_angular_velocity_converted_t* msg = (secondary_angular_velocity_converted_t*)(device->message);
+            secondary::ANGULAR_VELOCITY* proto_msg = pack->add_angular_velocity();
 			proto_msg->set_fl(msg->fl);
 			proto_msg->set_fr(msg->fr);
 

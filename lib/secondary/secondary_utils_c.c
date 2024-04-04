@@ -161,8 +161,8 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		return 0;
 	case 1552:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, SPEED_FL);
-		snprintf(v[1], string_size, SPEED_FR);
+		snprintf(v[0], string_size, ANGULAR_VELOCITY_FL);
+		snprintf(v[1], string_size, ANGULAR_VELOCITY_FR);
 
 		return 0;
 	case 1560:
@@ -759,8 +759,8 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 1552:
 	{
-		secondary_speed_t tmp;
-		secondary_speed_converted_t tmp_converted;
+		secondary_angular_velocity_t tmp;
+		secondary_angular_velocity_converted_t tmp_converted;
 		float r_fl;
 		float r_fr;
 
@@ -771,9 +771,9 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.fl = (float)r_fl;
 		tmp_converted.fr = (float)r_fr;
 
-		secondary_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = SECONDARY_SPEED_BYTE_SIZE;
-		return secondary_speed_pack(data, &tmp, SECONDARY_SPEED_BYTE_SIZE);
+		secondary_angular_velocity_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_ANGULAR_VELOCITY_BYTE_SIZE;
+		return secondary_angular_velocity_pack(data, &tmp, SECONDARY_ANGULAR_VELOCITY_BYTE_SIZE);
 	}
 	case 1560:
 	{

@@ -3,7 +3,7 @@
 
 int secondary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
-       case 1552: return SECONDARY_INTERVAL_SPEED;
+       case 1552: return SECONDARY_INTERVAL_ANGULAR_VELOCITY;
        case 1560: return SECONDARY_INTERVAL_PEDAL_THROTTLE;
        case 1568: return SECONDARY_INTERVAL_PEDAL_BRAKES_PRESSURE;
        case 1576: return SECONDARY_INTERVAL_STEER_ANGLE;
@@ -40,7 +40,7 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1203: return SECONDARY_INDEX_IRTS_RR_3;
        case 1536: return SECONDARY_INDEX_GPS_COORDS;
        case 1544: return SECONDARY_INDEX_GPS_SPEED;
-       case 1552: return SECONDARY_INDEX_SPEED;
+       case 1552: return SECONDARY_INDEX_ANGULAR_VELOCITY;
        case 1560: return SECONDARY_INDEX_PEDAL_THROTTLE;
        case 1568: return SECONDARY_INDEX_PEDAL_BRAKES_PRESSURE;
        case 1576: return SECONDARY_INDEX_STEER_ANGLE;
@@ -77,10 +77,10 @@ void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_
 void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
 
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_SPEED)
-        && timestamp - watchdog->last_reset[SECONDARY_INDEX_SPEED] > SECONDARY_INTERVAL_SPEED * 3
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_ANGULAR_VELOCITY)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_ANGULAR_VELOCITY] > SECONDARY_INTERVAL_ANGULAR_VELOCITY * 3
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_SPEED);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_ANGULAR_VELOCITY);
     }
 
     if (
