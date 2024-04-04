@@ -1149,7 +1149,7 @@
             -50,
             20
           ],
-          "force": "uint32"
+          "force": "uint16"
         },
         "rr": {
           "type": "float32",
@@ -1157,7 +1157,7 @@
             -50,
             20
           ],
-          "force": "uint32"
+          "force": "uint16"
         },
         "fl": {
           "type": "float32",
@@ -1165,7 +1165,7 @@
             -20,
             50
           ],
-          "force": "uint32"
+          "force": "uint16"
         },
         "fr": {
           "type": "float32",
@@ -1173,7 +1173,7 @@
             -20,
             50
           ],
-          "force": "uint32"
+          "force": "uint16"
         }
       }
     },
@@ -1196,6 +1196,51 @@
             3.0
           ],
           "force": "uint32"
+        }
+      }
+    },
+    {
+      "name": "DEBUG_SIGNAL_1",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "Debug signals",
+      "interval": 10,
+      "contents": {
+        "field_1": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        },
+        "field_2": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        },
+        "field_3": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        },
+        "field_4": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
         }
       }
     },
