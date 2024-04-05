@@ -83,21 +83,25 @@ enum primary_lv_status_status {
 	primary_lv_status_status_flashing = 4;
 	primary_lv_status_status_error = 5;
 }
-enum primary_lv_radiator_speed_auto_mode {
-	primary_lv_radiator_speed_auto_mode_off = 0;
-	primary_lv_radiator_speed_auto_mode_on = 1;
+enum primary_lv_radiator_speed_status {
+	primary_lv_radiator_speed_status_off = 0;
+	primary_lv_radiator_speed_status_auto = 1;
+	primary_lv_radiator_speed_status_manual = 2;
 }
-enum primary_lv_pumps_speed_auto_mode {
-	primary_lv_pumps_speed_auto_mode_off = 0;
-	primary_lv_pumps_speed_auto_mode_on = 1;
+enum primary_lv_pumps_speed_status {
+	primary_lv_pumps_speed_status_off = 0;
+	primary_lv_pumps_speed_status_auto = 1;
+	primary_lv_pumps_speed_status_manual = 2;
 }
-enum primary_lv_set_radiator_speed_auto_mode {
-	primary_lv_set_radiator_speed_auto_mode_off = 0;
-	primary_lv_set_radiator_speed_auto_mode_on = 1;
+enum primary_lv_set_radiator_speed_status {
+	primary_lv_set_radiator_speed_status_off = 0;
+	primary_lv_set_radiator_speed_status_auto = 1;
+	primary_lv_set_radiator_speed_status_manual = 2;
 }
-enum primary_lv_set_pumps_speed_auto_mode {
-	primary_lv_set_pumps_speed_auto_mode_off = 0;
-	primary_lv_set_pumps_speed_auto_mode_on = 1;
+enum primary_lv_set_pumps_speed_status {
+	primary_lv_set_pumps_speed_status_off = 0;
+	primary_lv_set_pumps_speed_status_auto = 1;
+	primary_lv_set_pumps_speed_status_manual = 2;
 }
 enum primary_lv_inverter_connection_status_status {
 	primary_lv_inverter_connection_status_status_off = 0;
@@ -602,22 +606,22 @@ message LV_STATUS{
 	uint64 _inner_timestamp = 2;
 }
 message LV_RADIATOR_SPEED{
-	primary_lv_radiator_speed_auto_mode auto_mode = 1;
+	primary_lv_radiator_speed_status status = 1;
 	double radiator_speed = 2;
 	uint64 _inner_timestamp = 3;
 }
 message LV_PUMPS_SPEED{
-	primary_lv_pumps_speed_auto_mode auto_mode = 1;
+	primary_lv_pumps_speed_status status = 1;
 	double pumps_speed = 2;
 	uint64 _inner_timestamp = 3;
 }
 message LV_SET_RADIATOR_SPEED{
-	primary_lv_set_radiator_speed_auto_mode auto_mode = 1;
+	primary_lv_set_radiator_speed_status status = 1;
 	double radiator_speed = 2;
 	uint64 _inner_timestamp = 3;
 }
 message LV_SET_PUMPS_SPEED{
-	primary_lv_set_pumps_speed_auto_mode auto_mode = 1;
+	primary_lv_set_pumps_speed_status status = 1;
 	double pumps_speed = 2;
 	uint64 _inner_timestamp = 3;
 }

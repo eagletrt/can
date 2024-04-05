@@ -9,6 +9,14 @@
                 "feedback_state_high"
             ]
         },
+        "CoolingStatus": {
+            "type": "enum",
+            "items": [
+                "off",
+                "auto",
+                "manual"
+            ]
+        },
         "LvErrors": {
             "type": "bitset",
             "items": [
@@ -1066,7 +1074,7 @@
                 "HANDCART"
             ],
             "contents": {
-                "auto_mode": "Toggle",
+                "status": "CoolingStatus",
                 "radiator_speed": {
                     "type": "float32",
                     "range": [
@@ -1087,7 +1095,7 @@
             ],
             "receiving": [],
             "contents": {
-                "auto_mode": "Toggle",
+                "status": "CoolingStatus",
                 "pumps_speed": {
                     "type": "float32",
                     "range": [
@@ -1110,7 +1118,7 @@
                 "LV"
             ],
             "contents": {
-                "auto_mode": "Toggle",
+                "status": "CoolingStatus",
                 "radiator_speed": {
                     "type": "float32",
                     "range": [
@@ -1133,7 +1141,7 @@
                 "LV"
             ],
             "contents": {
-                "auto_mode": "Toggle",
+                "status": "CoolingStatus",
                 "pumps_speed": {
                     "type": "float32",
                     "range": [
