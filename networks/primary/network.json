@@ -1066,10 +1066,11 @@
                 "HANDCART"
             ],
             "contents": {
+                "auto_mode": "Toggle",
                 "radiator_speed": {
                     "type": "float32",
                     "range": [
-                        -1,
+                        0,
                         1
                     ],
                     "precision": 0.1
@@ -1086,10 +1087,11 @@
             ],
             "receiving": [],
             "contents": {
+                "auto_mode": "Toggle",
                 "pumps_speed": {
                     "type": "float32",
                     "range": [
-                        -1,
+                        0,
                         1
                     ],
                     "precision": 0.1
@@ -1108,10 +1110,11 @@
                 "LV"
             ],
             "contents": {
+                "auto_mode": "Toggle",
                 "radiator_speed": {
                     "type": "float32",
                     "range": [
-                        -1,
+                        0,
                         1
                     ],
                     "precision": 0.1
@@ -1130,10 +1133,11 @@
                 "LV"
             ],
             "contents": {
+                "auto_mode": "Toggle",
                 "pumps_speed": {
                     "type": "float32",
                     "range": [
-                        -1,
+                        0,
                         1
                     ],
                     "precision": 0.1
