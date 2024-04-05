@@ -521,24 +521,28 @@ extern "C" {
 /* START */
 #define LV_RADIATOR_SPEED "LV_RADIATOR_SPEED"
 
+#define LV_RADIATOR_SPEED_AUTO_MODE "lv_radiator_speed_auto_mode"
 #define LV_RADIATOR_SPEED_RADIATOR_SPEED "lv_radiator_speed_radiator_speed"
 /* END */
 
 /* START */
 #define LV_PUMPS_SPEED "LV_PUMPS_SPEED"
 
+#define LV_PUMPS_SPEED_AUTO_MODE "lv_pumps_speed_auto_mode"
 #define LV_PUMPS_SPEED_PUMPS_SPEED "lv_pumps_speed_pumps_speed"
 /* END */
 
 /* START */
 #define LV_SET_RADIATOR_SPEED "LV_SET_RADIATOR_SPEED"
 
+#define LV_SET_RADIATOR_SPEED_AUTO_MODE "lv_set_radiator_speed_auto_mode"
 #define LV_SET_RADIATOR_SPEED_RADIATOR_SPEED "lv_set_radiator_speed_radiator_speed"
 /* END */
 
 /* START */
 #define LV_SET_PUMPS_SPEED "LV_SET_PUMPS_SPEED"
 
+#define LV_SET_PUMPS_SPEED_AUTO_MODE "lv_set_pumps_speed_auto_mode"
 #define LV_SET_PUMPS_SPEED_PUMPS_SPEED "lv_set_pumps_speed_pumps_speed"
 /* END */
 
@@ -1014,11 +1018,11 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint16_t = -5,
-	e_primary_uint8_t,
+	e_primary_uint32_t = -5,
 	e_primary_uint64_t,
+	e_primary_uint16_t,
+	e_primary_uint8_t,
 	e_primary_float,
-	e_primary_uint32_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,
@@ -1034,6 +1038,10 @@ enum primary_types_id{
 	e_primary_hv_set_balancing_status_handcart_set_balancing_status,
 	e_primary_hv_set_balancing_status_steering_wheel_set_balancing_status,
 	e_primary_lv_status_status,
+	e_primary_lv_radiator_speed_auto_mode,
+	e_primary_lv_pumps_speed_auto_mode,
+	e_primary_lv_set_radiator_speed_auto_mode,
+	e_primary_lv_set_pumps_speed_auto_mode,
 	e_primary_lv_inverter_connection_status_status,
 	e_primary_lv_set_inverter_connection_status_status,
 	e_primary_tlm_status_status,

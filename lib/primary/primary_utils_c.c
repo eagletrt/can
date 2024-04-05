@@ -366,23 +366,27 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 1568:
-		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, LV_RADIATOR_SPEED_RADIATOR_SPEED);
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, LV_RADIATOR_SPEED_AUTO_MODE);
+		snprintf(v[1], string_size, LV_RADIATOR_SPEED_RADIATOR_SPEED);
 
 		return 0;
 	case 1576:
-		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, LV_PUMPS_SPEED_PUMPS_SPEED);
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, LV_PUMPS_SPEED_AUTO_MODE);
+		snprintf(v[1], string_size, LV_PUMPS_SPEED_PUMPS_SPEED);
 
 		return 0;
 	case 1048:
-		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, LV_SET_RADIATOR_SPEED_RADIATOR_SPEED);
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, LV_SET_RADIATOR_SPEED_AUTO_MODE);
+		snprintf(v[1], string_size, LV_SET_RADIATOR_SPEED_RADIATOR_SPEED);
 
 		return 0;
 	case 1056:
-		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, LV_SET_PUMPS_SPEED_PUMPS_SPEED);
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, LV_SET_PUMPS_SPEED_AUTO_MODE);
+		snprintf(v[1], string_size, LV_SET_PUMPS_SPEED_PUMPS_SPEED);
 
 		return 0;
 	case 576:
@@ -908,41 +912,65 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		return 0;
 	case 14:
 		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_lv_radiator_speed_auto_mode_off");
+		snprintf(v[1], string_size, "primary_lv_radiator_speed_auto_mode_on");
+
+		return 0;
+	case 15:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_lv_pumps_speed_auto_mode_off");
+		snprintf(v[1], string_size, "primary_lv_pumps_speed_auto_mode_on");
+
+		return 0;
+	case 16:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_lv_set_radiator_speed_auto_mode_off");
+		snprintf(v[1], string_size, "primary_lv_set_radiator_speed_auto_mode_on");
+
+		return 0;
+	case 17:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_lv_set_pumps_speed_auto_mode_off");
+		snprintf(v[1], string_size, "primary_lv_set_pumps_speed_auto_mode_on");
+
+		return 0;
+	case 18:
+		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_inverter_connection_status_status_on");
 
 		return 0;
-	case 15:
+	case 19:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_set_inverter_connection_status_status_on");
 
 		return 0;
-	case 16:
+	case 20:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_status_status_on");
 
 		return 0;
-	case 17:
+	case 21:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_set_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_set_status_status_on");
 
 		return 0;
-	case 18:
+	case 22:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_status_connected_off");
 		snprintf(v[1], string_size, "primary_handcart_status_connected_on");
 
 		return 0;
-	case 19:
+	case 23:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_settings_fans_override_on");
 
 		return 0;
-	case 20:
+	case 24:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_settings_status_check");
@@ -955,13 +983,13 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_settings_status_error");
 
 		return 0;
-	case 21:
+	case 25:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_fans_override_on");
 
 		return 0;
-	case 22:
+	case 26:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_status_check");
@@ -974,7 +1002,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_set_settings_status_error");
 
 		return 0;
-	case 23:
+	case 27:
 		if(13 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_status_status_init");
 		snprintf(v[1], string_size, "primary_ecu_status_status_enable_inv_updates");
@@ -991,14 +1019,14 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[12], string_size, "primary_ecu_status_status_fatal_error");
 
 		return 0;
-	case 24:
+	case 28:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_status_status_idle");
 		snprintf(v[1], string_size, "primary_ecu_set_status_status_ready");
 		snprintf(v[2], string_size, "primary_ecu_set_status_status_drive");
 
 		return 0;
-	case 25:
+	case 29:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rl_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rl_rfe_on");
@@ -1006,7 +1034,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rl_enabled");
 
 		return 0;
-	case 26:
+	case 30:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rr_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rr_rfe_on");
@@ -1014,31 +1042,31 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rr_enabled");
 
 		return 0;
-	case 27:
+	case 31:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_ptt_status_status_on");
 
 		return 0;
-	case 28:
+	case 32:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_ptt_status_status_on");
 
 		return 0;
-	case 29:
+	case 33:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_steer_actuator_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_steer_actuator_status_status_on");
 
 		return 0;
-	case 30:
+	case 34:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_on");
 
 		return 0;
-	case 31:
+	case 35:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_on");
@@ -2310,10 +2338,14 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_lv_radiator_speed_t tmp;
 		primary_lv_radiator_speed_converted_t tmp_converted;
+		uint8_t r_auto_mode;
 		float r_radiator_speed;
 
-		sscanf(s, "%f,"       ,
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       ,
+			&r_auto_mode,
 			&r_radiator_speed);
+		tmp_converted.auto_mode = (primary_lv_radiator_speed_auto_mode)r_auto_mode;
 		tmp_converted.radiator_speed = (float)r_radiator_speed;
 
 		primary_lv_radiator_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -2324,10 +2356,14 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_lv_pumps_speed_t tmp;
 		primary_lv_pumps_speed_converted_t tmp_converted;
+		uint8_t r_auto_mode;
 		float r_pumps_speed;
 
-		sscanf(s, "%f,"       ,
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       ,
+			&r_auto_mode,
 			&r_pumps_speed);
+		tmp_converted.auto_mode = (primary_lv_pumps_speed_auto_mode)r_auto_mode;
 		tmp_converted.pumps_speed = (float)r_pumps_speed;
 
 		primary_lv_pumps_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -2338,10 +2374,14 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_lv_set_radiator_speed_t tmp;
 		primary_lv_set_radiator_speed_converted_t tmp_converted;
+		uint8_t r_auto_mode;
 		float r_radiator_speed;
 
-		sscanf(s, "%f,"       ,
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       ,
+			&r_auto_mode,
 			&r_radiator_speed);
+		tmp_converted.auto_mode = (primary_lv_set_radiator_speed_auto_mode)r_auto_mode;
 		tmp_converted.radiator_speed = (float)r_radiator_speed;
 
 		primary_lv_set_radiator_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -2352,10 +2392,14 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_lv_set_pumps_speed_t tmp;
 		primary_lv_set_pumps_speed_converted_t tmp_converted;
+		uint8_t r_auto_mode;
 		float r_pumps_speed;
 
-		sscanf(s, "%f,"       ,
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       ,
+			&r_auto_mode,
 			&r_pumps_speed);
+		tmp_converted.auto_mode = (primary_lv_set_pumps_speed_auto_mode)r_auto_mode;
 		tmp_converted.pumps_speed = (float)r_pumps_speed;
 
 		primary_lv_set_pumps_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -3728,10 +3772,10 @@ int primary_n_fields_from_id(int id)
 		case 1032: return 2;
 		case 1040: return 2;
 		case 568: return 1;
-		case 1568: return 1;
-		case 1576: return 1;
-		case 1048: return 1;
-		case 1056: return 1;
+		case 1568: return 2;
+		case 1576: return 2;
+		case 1048: return 2;
+		case 1056: return 2;
 		case 576: return 23;
 		case 584: return 4;
 		case 592: return 4;
@@ -4124,21 +4168,25 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[0] = e_primary_lv_status_status;
 		return 1;
 	case 1568:
-		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_primary_float;
-		return 1;
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_primary_lv_radiator_speed_auto_mode;
+		fields_types[1] = e_primary_float;
+		return 2;
 	case 1576:
-		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_primary_float;
-		return 1;
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_primary_lv_pumps_speed_auto_mode;
+		fields_types[1] = e_primary_float;
+		return 2;
 	case 1048:
-		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_primary_float;
-		return 1;
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_primary_lv_set_radiator_speed_auto_mode;
+		fields_types[1] = e_primary_float;
+		return 2;
 	case 1056:
-		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_primary_float;
-		return 1;
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_primary_lv_set_pumps_speed_auto_mode;
+		fields_types[1] = e_primary_float;
+		return 2;
 	case 576:
 		if(fields_types_size < 23) return 0;
 		fields_types[0] = e_primary_uint8_t;
@@ -4640,6 +4688,42 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 			sprintf(v[4], "flashing");
 			sprintf(v[5], "error");
 			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "LV_RADIATOR_SPEED"))
+	{
+		if(!strcmp(sgn_name, "auto_mode"))
+		{
+			sprintf(v[0], "off");
+			sprintf(v[1], "on");
+			return 2;
+		}
+	}
+	if(!strcmp(msg_name, "LV_PUMPS_SPEED"))
+	{
+		if(!strcmp(sgn_name, "auto_mode"))
+		{
+			sprintf(v[0], "off");
+			sprintf(v[1], "on");
+			return 2;
+		}
+	}
+	if(!strcmp(msg_name, "LV_SET_RADIATOR_SPEED"))
+	{
+		if(!strcmp(sgn_name, "auto_mode"))
+		{
+			sprintf(v[0], "off");
+			sprintf(v[1], "on");
+			return 2;
+		}
+	}
+	if(!strcmp(msg_name, "LV_SET_PUMPS_SPEED"))
+	{
+		if(!strcmp(sgn_name, "auto_mode"))
+		{
+			sprintf(v[0], "off");
+			sprintf(v[1], "on");
+			return 2;
 		}
 	}
 	if(!strcmp(msg_name, "LV_INVERTER_CONNECTION_STATUS"))

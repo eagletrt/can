@@ -1124,6 +1124,9 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["LV_RADIATOR_SPEED"]["_timestamp"].push(pack->lv_radiator_speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["LV_RADIATOR_SPEED"]["auto_mode"].push(pack->lv_radiator_speed(i).auto_mode());
+		primary_lv_radiator_speed_auto_mode_enum_to_string((primary_lv_radiator_speed_auto_mode)pack->lv_radiator_speed(i).auto_mode(), buffer);
+		(*net_strings)["LV_RADIATOR_SPEED"]["auto_mode"].push(buffer);
 		(*net_signals)["LV_RADIATOR_SPEED"]["radiator_speed"].push(pack->lv_radiator_speed(i).radiator_speed());
 
     }
@@ -1136,6 +1139,9 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["LV_PUMPS_SPEED"]["_timestamp"].push(pack->lv_pumps_speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["LV_PUMPS_SPEED"]["auto_mode"].push(pack->lv_pumps_speed(i).auto_mode());
+		primary_lv_pumps_speed_auto_mode_enum_to_string((primary_lv_pumps_speed_auto_mode)pack->lv_pumps_speed(i).auto_mode(), buffer);
+		(*net_strings)["LV_PUMPS_SPEED"]["auto_mode"].push(buffer);
 		(*net_signals)["LV_PUMPS_SPEED"]["pumps_speed"].push(pack->lv_pumps_speed(i).pumps_speed());
 
     }
@@ -1148,6 +1154,9 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["LV_SET_RADIATOR_SPEED"]["_timestamp"].push(pack->lv_set_radiator_speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["LV_SET_RADIATOR_SPEED"]["auto_mode"].push(pack->lv_set_radiator_speed(i).auto_mode());
+		primary_lv_set_radiator_speed_auto_mode_enum_to_string((primary_lv_set_radiator_speed_auto_mode)pack->lv_set_radiator_speed(i).auto_mode(), buffer);
+		(*net_strings)["LV_SET_RADIATOR_SPEED"]["auto_mode"].push(buffer);
 		(*net_signals)["LV_SET_RADIATOR_SPEED"]["radiator_speed"].push(pack->lv_set_radiator_speed(i).radiator_speed());
 
     }
@@ -1160,6 +1169,9 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["LV_SET_PUMPS_SPEED"]["_timestamp"].push(pack->lv_set_pumps_speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["LV_SET_PUMPS_SPEED"]["auto_mode"].push(pack->lv_set_pumps_speed(i).auto_mode());
+		primary_lv_set_pumps_speed_auto_mode_enum_to_string((primary_lv_set_pumps_speed_auto_mode)pack->lv_set_pumps_speed(i).auto_mode(), buffer);
+		(*net_strings)["LV_SET_PUMPS_SPEED"]["auto_mode"].push(buffer);
 		(*net_signals)["LV_SET_PUMPS_SPEED"]["pumps_speed"].push(pack->lv_set_pumps_speed(i).pumps_speed());
 
     }
@@ -2789,6 +2801,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 1568: {
             primary_lv_radiator_speed_converted_t* msg = (primary_lv_radiator_speed_converted_t*)(device->message);
             primary::LV_RADIATOR_SPEED* proto_msg = pack->add_lv_radiator_speed();
+			proto_msg->set_auto_mode((primary::primary_lv_radiator_speed_auto_mode)msg->auto_mode);
 			proto_msg->set_radiator_speed(msg->radiator_speed);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2800,6 +2813,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 1576: {
             primary_lv_pumps_speed_converted_t* msg = (primary_lv_pumps_speed_converted_t*)(device->message);
             primary::LV_PUMPS_SPEED* proto_msg = pack->add_lv_pumps_speed();
+			proto_msg->set_auto_mode((primary::primary_lv_pumps_speed_auto_mode)msg->auto_mode);
 			proto_msg->set_pumps_speed(msg->pumps_speed);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2811,6 +2825,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 1048: {
             primary_lv_set_radiator_speed_converted_t* msg = (primary_lv_set_radiator_speed_converted_t*)(device->message);
             primary::LV_SET_RADIATOR_SPEED* proto_msg = pack->add_lv_set_radiator_speed();
+			proto_msg->set_auto_mode((primary::primary_lv_set_radiator_speed_auto_mode)msg->auto_mode);
 			proto_msg->set_radiator_speed(msg->radiator_speed);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2822,6 +2837,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 1056: {
             primary_lv_set_pumps_speed_converted_t* msg = (primary_lv_set_pumps_speed_converted_t*)(device->message);
             primary::LV_SET_PUMPS_SPEED* proto_msg = pack->add_lv_set_pumps_speed();
+			proto_msg->set_auto_mode((primary::primary_lv_set_pumps_speed_auto_mode)msg->auto_mode);
 			proto_msg->set_pumps_speed(msg->pumps_speed);
 
 #ifdef CANLIB_TIMESTAMP
