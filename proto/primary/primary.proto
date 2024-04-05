@@ -30,6 +30,106 @@ enum primary_hv_set_fans_status_fans_override {
 	primary_hv_set_fans_status_fans_override_off = 0;
 	primary_hv_set_fans_status_fans_override_on = 1;
 }
+enum primary_hv_feedback_status_feedback_implausibility_detected {
+	primary_hv_feedback_status_feedback_implausibility_detected_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_implausibility_detected_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_implausibility_detected_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_imd_cockpit {
+	primary_hv_feedback_status_feedback_imd_cockpit_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_imd_cockpit_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_imd_cockpit_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_tsal_green_fault_latched {
+	primary_hv_feedback_status_feedback_tsal_green_fault_latched_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_tsal_green_fault_latched_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_tsal_green_fault_latched_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_bms_cockpit {
+	primary_hv_feedback_status_feedback_bms_cockpit_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_bms_cockpit_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_bms_cockpit_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_ext_latched {
+	primary_hv_feedback_status_feedback_ext_latched_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_ext_latched_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_ext_latched_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_tsal_green {
+	primary_hv_feedback_status_feedback_tsal_green_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_tsal_green_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_tsal_green_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_ts_over_60v_status {
+	primary_hv_feedback_status_feedback_ts_over_60v_status_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_ts_over_60v_status_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_ts_over_60v_status_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_airn_status {
+	primary_hv_feedback_status_feedback_airn_status_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_airn_status_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_airn_status_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_airp_status {
+	primary_hv_feedback_status_feedback_airp_status_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_airp_status_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_airp_status_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_airp_gate {
+	primary_hv_feedback_status_feedback_airp_gate_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_airp_gate_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_airp_gate_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_airn_gate {
+	primary_hv_feedback_status_feedback_airn_gate_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_airn_gate_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_airn_gate_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_precharge_status {
+	primary_hv_feedback_status_feedback_precharge_status_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_precharge_status_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_precharge_status_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_tsp_over_60v_status {
+	primary_hv_feedback_status_feedback_tsp_over_60v_status_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_tsp_over_60v_status_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_tsp_over_60v_status_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_imd_fault {
+	primary_hv_feedback_status_feedback_imd_fault_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_imd_fault_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_imd_fault_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_check_mux {
+	primary_hv_feedback_status_feedback_check_mux_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_check_mux_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_check_mux_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_sd_end {
+	primary_hv_feedback_status_feedback_sd_end_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_sd_end_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_sd_end_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_sd_out {
+	primary_hv_feedback_status_feedback_sd_out_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_sd_out_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_sd_out_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_sd_in {
+	primary_hv_feedback_status_feedback_sd_in_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_sd_in_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_sd_in_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_sd_bms {
+	primary_hv_feedback_status_feedback_sd_bms_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_sd_bms_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_sd_bms_feedback_state_high = 2;
+}
+enum primary_hv_feedback_status_feedback_sd_imd {
+	primary_hv_feedback_status_feedback_sd_imd_feedback_state_low = 0;
+	primary_hv_feedback_status_feedback_sd_imd_feedback_state_error = 1;
+	primary_hv_feedback_status_feedback_sd_imd_feedback_state_high = 2;
+}
 enum primary_hv_imd_status_imd_status {
 	primary_hv_imd_status_imd_status_sc = 0;
 	primary_hv_imd_status_imd_status_normal = 1;
@@ -487,26 +587,26 @@ message HV_SET_FANS_STATUS{
 	uint64 _inner_timestamp = 3;
 }
 message HV_FEEDBACK_STATUS{
-	bool feedbacks_implausibility_detected = 1;
-	bool feedbacks_imd_cockpit = 2;
-	bool feedbacks_tsal_green_fault_latched = 3;
-	bool feedbacks_bms_cockpit = 4;
-	bool feedbacks_ext_latched = 5;
-	bool feedbacks_tsal_green = 6;
-	bool feedbacks_ts_over_60v_status = 7;
-	bool feedbacks_airn_status = 8;
-	bool feedbacks_airp_status = 9;
-	bool feedbacks_airp_gate = 10;
-	bool feedbacks_airn_gate = 11;
-	bool feedbacks_precharge_status = 12;
-	bool feedbacks_tsp_over_60v_status = 13;
-	bool feedbacks_imd_fault = 14;
-	bool feedbacks_check_mux = 15;
-	bool feedbacks_sd_end = 16;
-	bool feedbacks_sd_out = 17;
-	bool feedbacks_sd_in = 18;
-	bool feedbacks_sd_bms = 19;
-	bool feedbacks_sd_imd = 20;
+	primary_hv_feedback_status_feedback_implausibility_detected feedback_implausibility_detected = 1;
+	primary_hv_feedback_status_feedback_imd_cockpit feedback_imd_cockpit = 2;
+	primary_hv_feedback_status_feedback_tsal_green_fault_latched feedback_tsal_green_fault_latched = 3;
+	primary_hv_feedback_status_feedback_bms_cockpit feedback_bms_cockpit = 4;
+	primary_hv_feedback_status_feedback_ext_latched feedback_ext_latched = 5;
+	primary_hv_feedback_status_feedback_tsal_green feedback_tsal_green = 6;
+	primary_hv_feedback_status_feedback_ts_over_60v_status feedback_ts_over_60v_status = 7;
+	primary_hv_feedback_status_feedback_airn_status feedback_airn_status = 8;
+	primary_hv_feedback_status_feedback_airp_status feedback_airp_status = 9;
+	primary_hv_feedback_status_feedback_airp_gate feedback_airp_gate = 10;
+	primary_hv_feedback_status_feedback_airn_gate feedback_airn_gate = 11;
+	primary_hv_feedback_status_feedback_precharge_status feedback_precharge_status = 12;
+	primary_hv_feedback_status_feedback_tsp_over_60v_status feedback_tsp_over_60v_status = 13;
+	primary_hv_feedback_status_feedback_imd_fault feedback_imd_fault = 14;
+	primary_hv_feedback_status_feedback_check_mux feedback_check_mux = 15;
+	primary_hv_feedback_status_feedback_sd_end feedback_sd_end = 16;
+	primary_hv_feedback_status_feedback_sd_out feedback_sd_out = 17;
+	primary_hv_feedback_status_feedback_sd_in feedback_sd_in = 18;
+	primary_hv_feedback_status_feedback_sd_bms feedback_sd_bms = 19;
+	primary_hv_feedback_status_feedback_sd_imd feedback_sd_imd = 20;
 	uint64 _inner_timestamp = 21;
 }
 message HV_FEEDBACK_TS_VOLTAGE{

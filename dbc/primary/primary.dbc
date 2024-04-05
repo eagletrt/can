@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: HV HANDCART HV HV HV HV ECU HV HANDCART HV HV HV ECU HV HANDCART HV HV HV ECU ECU HANDCART STEERING_WHEEL ECU TLM HV ECU HANDCART ECU HV ANY HV ANY ECU ANY HANDCART HV TLM ANY STEERING_WHEEL HV LV ECU HV TLM HV ECU TLM HANDCART HV LV TLM TLM STEERING_WHEEL HV LV HV TLM STEERING_WHEEL HV LV TLM LV HV ECU TLM LV HV ECU TLM LV HV ECU TLM LV HV ECU TLM LV HV ECU TLM TLM HV STEERING_WHEEL TLM LV TLM LV LV TLM LV LV ECU TLM ECU LV LV TLM TLM ECU STEERING_WHEEL TLM TLM HANDCART ECU HANDCART TLM TLM ECU HANDCART TLM ECU STEERING_WHEEL STEERING_WHEEL TLM ECU STEERING_WHEEL ECU TLM ECU STEERING_WHEEL ECU STEERING_WHEEL ECU TLM ECU ECU STEERING_WHEEL LV ECU TLM ECU HV HV STEERING_WHEEL HV HV ECU HV ECU ECU INVERTER_L HANDCART TLM HV ECU ECU TLM HANDCART ECU HV ECU ECU INVERTER_L HANDCART INVERTER_L HANDCART ECU HV INVERTER_L HV ECU ECU LV HANDCART LV HV LV ECU LV HANDCART LV HV LV TLM ECU LV
+BU_: ECU LV ECU LV TLM ECU TLM LV ECU STEERING_WHEEL LV STEERING_WHEEL ECU ECU ECU TLM TLM ECU STEERING_WHEEL ECU ECU STEERING_WHEEL HV ECU HANDCART ECU LV ECU LV STEERING_WHEEL LV HV LV LV TLM LV ECU LV ECU LV LV TLM HV STEERING_WHEEL TLM HV TLM TLM HV HV HV ECU HV TLM HANDCART HV HANDCART HV TLM STEERING_WHEEL HV HANDCART HV TLM HV TLM HANDCART HV ECU HV ECU STEERING_WHEEL TLM ECU HANDCART TLM TLM HV ECU HV ECU ECU ECU TLM HV HANDCART HV ANY HV ANY ECU ANY HANDCART TLM ANY TLM HV HV ECU ECU TLM HANDCART TLM HV ECU HV HANDCART ECU LV HV HANDCART TLM HV HV ECU ECU ECU HANDCART TLM TLM STEERING_WHEEL HV TLM LV ECU LV HV ECU HANDCART TLM LV ECU ECU HV TLM ECU HANDCART INVERTER_L ECU HV TLM HV HV ECU TLM ECU TLM ECU INVERTER_L ECU HV INVERTER_L STEERING_WHEEL ECU INVERTER_L ECU LV LV HV LV HV HV HV HANDCART HV HANDCART STEERING_WHEEL HV STEERING_WHEEL HV LV LV STEERING_WHEEL TLM TLM LV LV
 
 
 BO_ 1818 NLG5_DIAG_TX: 8 NLG5
@@ -273,27 +273,27 @@ BO_ 1024 HV_SET_FANS_STATUS: 3 Vector__XXX
  SG_ fans_speed : 1|16@1+ (1.5259021896696422e-05,0) [0|1] "" Vector__XXX
  SG_ fans_override : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 520 HV_FEEDBACK_STATUS: 3 Vector__XXX
- SG_ feedbacks_sd_imd : 19|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_sd_bms : 18|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_sd_in : 17|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_sd_out : 16|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_sd_end : 15|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_check_mux : 14|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_imd_fault : 13|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_tsp_over_60v_status : 12|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_precharge_status : 11|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_airn_gate : 10|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_airp_gate : 9|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_airp_status : 8|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_airn_status : 7|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_ts_over_60v_status : 6|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_tsal_green : 5|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_ext_latched : 4|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_bms_cockpit : 3|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_tsal_green_fault_latched : 2|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_imd_cockpit : 1|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ feedbacks_implausibility_detected : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+BO_ 520 HV_FEEDBACK_STATUS: 5 Vector__XXX
+ SG_ feedback_sd_imd : 38|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_sd_bms : 36|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_sd_in : 34|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_sd_out : 32|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_sd_end : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_check_mux : 28|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_imd_fault : 26|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_tsp_over_60v_status : 24|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_precharge_status : 22|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_airn_gate : 20|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_airp_gate : 18|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_airp_status : 16|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_airn_status : 14|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_ts_over_60v_status : 12|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_tsal_green : 10|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_ext_latched : 8|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_bms_cockpit : 6|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_tsal_green_fault_latched : 4|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_imd_cockpit : 2|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ feedback_implausibility_detected : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
 BO_ 528 HV_FEEDBACK_TS_VOLTAGE: 7 Vector__XXX
  SG_ tsp_over_60v_status : 48|8@1+ (0.012941176470588235,0) [0|3.3] "" Vector__XXX
@@ -997,6 +997,26 @@ VAL_ 0 forward 0 "off" 1 "on" ;
 VAL_ 705 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 1536 fans_override 0 "off" 1 "on" ;
 VAL_ 1024 fans_override 0 "off" 1 "on" ;
+VAL_ 520 feedback_sd_imd 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_sd_bms 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_sd_in 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_sd_out 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_sd_end 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_check_mux 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_imd_fault 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_tsp_over_60v_status 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_precharge_status 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_airn_gate 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_airp_gate 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_airp_status 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_airn_status 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_ts_over_60v_status 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_tsal_green 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_ext_latched 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_bms_cockpit 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_tsal_green_fault_latched 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_imd_cockpit 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
+VAL_ 520 feedback_implausibility_detected 0 "feedback_state_low" 1 "feedback_state_error" 2 "feedback_state_high" ;
 VAL_ 552 imd_status 0 "sc" 1 "normal" 2 "under_voltage" 3 "start_measure" 4 "device_error" 5 "earth_fault" ;
 VAL_ 560 status 0 "init" 1 "idle" 2 "airn_close" 3 "precharge" 4 "airp_close" 5 "ts_on" 6 "fatal_error" ;
 VAL_ 40 hv_status_set 0 "off" 1 "on" ;
