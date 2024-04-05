@@ -729,7 +729,26 @@
                 "HANDCART"
             ],
             "contents": {
-                "feedbacks": "HvFeedbacks"
+                "feedback_implausibility_detected": "HvFeedbackStatus",
+                "feedback_imd_cockpit": "HvFeedbackStatus",
+                "feedback_tsal_green_fault_latched": "HvFeedbackStatus",
+                "feedback_bms_cockpit": "HvFeedbackStatus",
+                "feedback_ext_latched": "HvFeedbackStatus",
+                "feedback_tsal_green": "HvFeedbackStatus",
+                "feedback_ts_over_60v_status": "HvFeedbackStatus",
+                "feedback_airn_status": "HvFeedbackStatus",
+                "feedback_airp_status": "HvFeedbackStatus",
+                "feedback_airp_gate": "HvFeedbackStatus",
+                "feedback_airn_gate": "HvFeedbackStatus",
+                "feedback_precharge_status": "HvFeedbackStatus",
+                "feedback_tsp_over_60v_status": "HvFeedbackStatus",
+                "feedback_imd_fault": "HvFeedbackStatus",
+                "feedback_check_mux": "HvFeedbackStatus",
+                "feedback_sd_end": "HvFeedbackStatus",
+                "feedback_sd_out": "HvFeedbackStatus",
+                "feedback_sd_in": "HvFeedbackStatus",
+                "feedback_sd_bms": "HvFeedbackStatus",
+                "feedback_sd_imd": "HvFeedbackStatus"
             }
         },
         {
