@@ -1667,7 +1667,7 @@ message INV_R_SEND{
 	inverters_inv_r_send_send_mux Send_Mux = 1;
 	inverters_inv_r_send_read_id Read_ID = 2;
 	bool KM_rsvd_0 = 3;
-	int32 M_setdig__Iq = 4;
+	double M_setdig__Iq = 4;
 	inverters_inv_r_send_def_din_1 def_DIN_1 = 5;
 	inverters_inv_r_send_def_end_1 def_END_1 = 6;
 	double I_max_pk = 7;

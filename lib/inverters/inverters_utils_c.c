@@ -2594,7 +2594,7 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_send_mux;
 		uint8_t r_read_id;
 		uint8_t r_km_rsvd_0;
-		int16_t r_m_setdig__iq;
+		float r_m_setdig__iq;
 		uint16_t r_def_din_1;
 		uint16_t r_def_end_1;
 		float r_i_max_pk;
@@ -2625,7 +2625,7 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		sscanf(s, "%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
-			"%" SCNi16 "," 
+			"%f,"       
 			"%" SCNu16 "," 
 			"%" SCNu16 "," 
 			"%f,"       
@@ -2685,7 +2685,7 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.send_mux = (inverters_inv_r_send_send_mux)r_send_mux;
 		tmp_converted.read_id = (inverters_inv_r_send_read_id)r_read_id;
 		tmp_converted.km_rsvd_0 = (uint8_t)r_km_rsvd_0;
-		tmp_converted.m_setdig__iq = (int16_t)r_m_setdig__iq;
+		tmp_converted.m_setdig__iq = (float)r_m_setdig__iq;
 		tmp_converted.def_din_1 = (inverters_inv_r_send_def_din_1)r_def_din_1;
 		tmp_converted.def_end_1 = (inverters_inv_r_send_def_end_1)r_def_end_1;
 		tmp_converted.i_max_pk = (float)r_i_max_pk;
@@ -3472,7 +3472,7 @@ int inverters_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[0] = e_inverters_inv_r_send_send_mux;
 		fields_types[1] = e_inverters_inv_r_send_read_id;
 		fields_types[2] = e_inverters_uint8_t;
-		fields_types[3] = e_inverters_int16_t;
+		fields_types[3] = e_inverters_float;
 		fields_types[4] = e_inverters_inv_r_send_def_din_1;
 		fields_types[5] = e_inverters_inv_r_send_def_end_1;
 		fields_types[6] = e_inverters_float;
