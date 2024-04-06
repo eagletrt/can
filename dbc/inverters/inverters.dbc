@@ -63,7 +63,7 @@ BO_ 513 INV_L_SEND: 5 Vector__XXX
  SG_ I_max_pk m196 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
  SG_ def_END_1 m190 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
  SG_ def_DIN_1 m192 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
- SG_ M_setdig__Iq m144 : 8|16@1- (1,0) [-32768|32767] "" Vector__XXX
+ SG_ M_setdig__Iq m144 : 8|16@1- (1.0000001192092896,0) [-32768|32767] "" Vector__XXX
  SG_ KM_rsvd_0 m81 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ Read_ID m61 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ Send_Mux M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
