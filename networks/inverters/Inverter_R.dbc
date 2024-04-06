@@ -34,7 +34,7 @@ SG_ KM_rsvd_12 m81 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ KM_rsvd_13 m81 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ KM_PSEUDO_ENABLE m81 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ KM_DEBUG_TEST m81 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ M_setdig__Iq m144 : 8|16@1- (1,0) [-32768|32767] "" Vector__XXX
+SG_ M_setdig__Iq m144 : 8|16@1- (1.00000011920928955078125,0) [-32768|32767] "" Vector__XXX
 SG_ Active192 m192 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ def_DIN_1 m192 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
 SG_ Active190 m190 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
