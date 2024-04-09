@@ -1200,6 +1200,30 @@
       }
     },
     {
+      "name": "LINK_DEFORMATION_SET_CALIBRATION",
+      "topic": "HYDRA",
+      "priority": 0,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "description": "Calibration command for link deformation",
+      "interval": "oneshot",
+      "contents": {
+        "rod_id": "uint8",
+        "deformation": {
+          "type": "float32",
+          "range": [
+            -3.0,
+            3.0
+          ],
+          "force": "uint32"
+        }
+      }
+    },
+    {
       "name": "DEBUG_SIGNAL_1",
       "topic": "HYDRA",
       "priority": 3,

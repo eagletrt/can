@@ -268,6 +268,13 @@ extern "C" {
 /* END */
 
 /* START */
+#define LINK_DEFORMATION_SET_CALIBRATION "LINK_DEFORMATION_SET_CALIBRATION"
+
+#define LINK_DEFORMATION_SET_CALIBRATION_ROD_ID "link_deformation_set_calibration_rod_id"
+#define LINK_DEFORMATION_SET_CALIBRATION_DEFORMATION "link_deformation_set_calibration_deformation"
+/* END */
+
+/* START */
 #define DEBUG_SIGNAL_1 "DEBUG_SIGNAL_1"
 
 #define DEBUG_SIGNAL_1_FIELD_1 "debug_signal_1_field_1"
@@ -295,12 +302,12 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint8_t = -6,
-	e_secondary_uint64_t,
+	e_secondary_uint64_t = -6,
 	e_secondary_uint16_t,
-	e_secondary_float,
-	e_secondary_int16_t,
+	e_secondary_uint8_t,
 	e_secondary_uint32_t,
+	e_secondary_int16_t,
+	e_secondary_float,
 
 	
 };

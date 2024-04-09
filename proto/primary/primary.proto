@@ -780,7 +780,10 @@ message LV_FEEDBACK_GPIO_EXTENDER{
 	bool feedback_shutdown = 5;
 	bool feedback_hv_fans = 6;
 	bool feedback_autonomous_system_actuation = 7;
-	uint64 _inner_timestamp = 8;
+	bool feedback_rfe = 8;
+	bool feedback_frg = 9;
+	bool feedback_discharge = 10;
+	uint64 _inner_timestamp = 11;
 }
 message LV_CAN_FLASH_REQ_TLM{
 	uint64 _inner_timestamp = 1;

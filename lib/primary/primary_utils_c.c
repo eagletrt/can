@@ -441,7 +441,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 608:
-		if(7 > fields_size) return 1;
+		if(10 > fields_size) return 1;
 		snprintf(v[0], string_size, LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_INVERTERS);
 		snprintf(v[1], string_size, LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_PCBS);
 		snprintf(v[2], string_size, LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_PUMPS);
@@ -449,6 +449,9 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[4], string_size, LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_SHUTDOWN);
 		snprintf(v[5], string_size, LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_HV_FANS);
 		snprintf(v[6], string_size, LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_AUTONOMOUS_SYSTEM_ACTUATION);
+		snprintf(v[7], string_size, LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_RFE);
+		snprintf(v[8], string_size, LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_FRG);
+		snprintf(v[9], string_size, LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_DISCHARGE);
 
 		return 0;
 	case 616:
@@ -2741,8 +2744,14 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_feedback_shutdown;
 		uint8_t r_feedback_hv_fans;
 		uint8_t r_feedback_autonomous_system_actuation;
+		uint8_t r_feedback_rfe;
+		uint8_t r_feedback_frg;
+		uint8_t r_feedback_discharge;
 
 		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -2755,7 +2764,10 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			&r_feedback_radiators,
 			&r_feedback_shutdown,
 			&r_feedback_hv_fans,
-			&r_feedback_autonomous_system_actuation);
+			&r_feedback_autonomous_system_actuation,
+			&r_feedback_rfe,
+			&r_feedback_frg,
+			&r_feedback_discharge);
 		tmp_converted.feedback_inverters = (uint8_t)r_feedback_inverters;
 		tmp_converted.feedback_pcbs = (uint8_t)r_feedback_pcbs;
 		tmp_converted.feedback_pumps = (uint8_t)r_feedback_pumps;
@@ -2763,6 +2775,9 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.feedback_shutdown = (uint8_t)r_feedback_shutdown;
 		tmp_converted.feedback_hv_fans = (uint8_t)r_feedback_hv_fans;
 		tmp_converted.feedback_autonomous_system_actuation = (uint8_t)r_feedback_autonomous_system_actuation;
+		tmp_converted.feedback_rfe = (uint8_t)r_feedback_rfe;
+		tmp_converted.feedback_frg = (uint8_t)r_feedback_frg;
+		tmp_converted.feedback_discharge = (uint8_t)r_feedback_discharge;
 
 		primary_lv_feedback_gpio_extender_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_LV_FEEDBACK_GPIO_EXTENDER_BYTE_SIZE;
@@ -3924,7 +3939,7 @@ int primary_n_fields_from_id(int id)
 		case 584: return 4;
 		case 592: return 4;
 		case 600: return 4;
-		case 608: return 7;
+		case 608: return 10;
 		case 56: return 0;
 		case 64: return 0;
 		case 72: return 0;
@@ -4379,7 +4394,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[3] = e_primary_float;
 		return 4;
 	case 608:
-		if(fields_types_size < 7) return 0;
+		if(fields_types_size < 10) return 0;
 		fields_types[0] = e_primary_uint8_t;
 		fields_types[1] = e_primary_uint8_t;
 		fields_types[2] = e_primary_uint8_t;
@@ -4387,7 +4402,10 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[4] = e_primary_uint8_t;
 		fields_types[5] = e_primary_uint8_t;
 		fields_types[6] = e_primary_uint8_t;
-		return 7;
+		fields_types[7] = e_primary_uint8_t;
+		fields_types[8] = e_primary_uint8_t;
+		fields_types[9] = e_primary_uint8_t;
+		return 10;
 	case 616:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_lv_inverter_connection_status_status;

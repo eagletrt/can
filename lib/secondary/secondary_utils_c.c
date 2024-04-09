@@ -229,6 +229,12 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[1], string_size, LINK_DEFORMATION_DEFORMATION);
 
 		return 0;
+	case 0:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, LINK_DEFORMATION_SET_CALIBRATION_ROD_ID);
+		snprintf(v[1], string_size, LINK_DEFORMATION_SET_CALIBRATION_DEFORMATION);
+
+		return 0;
 	case 1640:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_1_FIELD_1);
@@ -979,6 +985,24 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_LINK_DEFORMATION_BYTE_SIZE;
 		return secondary_link_deformation_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_BYTE_SIZE);
 	}
+	case 0:
+	{
+		secondary_link_deformation_set_calibration_t tmp;
+		secondary_link_deformation_set_calibration_converted_t tmp_converted;
+		uint8_t r_rod_id;
+		float r_deformation;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       ,
+			&r_rod_id,
+			&r_deformation);
+		tmp_converted.rod_id = (uint8_t)r_rod_id;
+		tmp_converted.deformation = (float)r_deformation;
+
+		secondary_link_deformation_set_calibration_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_LINK_DEFORMATION_SET_CALIBRATION_BYTE_SIZE;
+		return secondary_link_deformation_set_calibration_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_SET_CALIBRATION_BYTE_SIZE);
+	}
 	case 1640:
 	{
 		secondary_debug_signal_1_t tmp;
@@ -1096,6 +1120,7 @@ int secondary_n_fields_from_id(int id)
 		case 1616: return 3;
 		case 1624: return 4;
 		case 1632: return 2;
+		case 0: return 2;
 		case 1640: return 4;
 		case 1648: return 4;
 		case 1656: return 4;
@@ -1295,6 +1320,11 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[3] = e_secondary_float;
 		return 4;
 	case 1632:
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_secondary_uint8_t;
+		fields_types[1] = e_secondary_float;
+		return 2;
+	case 0:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_uint8_t;
 		fields_types[1] = e_secondary_float;

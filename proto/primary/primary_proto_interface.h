@@ -1310,6 +1310,9 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_shutdown"].push(pack->lv_feedback_gpio_extender(i).feedback_shutdown());
 		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_hv_fans"].push(pack->lv_feedback_gpio_extender(i).feedback_hv_fans());
 		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_autonomous_system_actuation"].push(pack->lv_feedback_gpio_extender(i).feedback_autonomous_system_actuation());
+		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_rfe"].push(pack->lv_feedback_gpio_extender(i).feedback_rfe());
+		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_frg"].push(pack->lv_feedback_gpio_extender(i).feedback_frg());
+		(*net_enums)["LV_FEEDBACK_GPIO_EXTENDER"]["feedback_discharge"].push(pack->lv_feedback_gpio_extender(i).feedback_discharge());
 
     }
 
@@ -2971,6 +2974,9 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 			proto_msg->set_feedback_shutdown(msg->feedback_shutdown);
 			proto_msg->set_feedback_hv_fans(msg->feedback_hv_fans);
 			proto_msg->set_feedback_autonomous_system_actuation(msg->feedback_autonomous_system_actuation);
+			proto_msg->set_feedback_rfe(msg->feedback_rfe);
+			proto_msg->set_feedback_frg(msg->feedback_frg);
+			proto_msg->set_feedback_discharge(msg->feedback_discharge);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

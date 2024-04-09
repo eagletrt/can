@@ -96,16 +96,17 @@ typedef void (*canlib_watchdog_callback)(int);
 #define SECONDARY_INDEX_TLM_LAPS_STATS 28
 #define SECONDARY_INDEX_AMMO_COMPRESSION 29
 #define SECONDARY_INDEX_LINK_DEFORMATION 30
-#define SECONDARY_INDEX_DEBUG_SIGNAL_1 31
-#define SECONDARY_INDEX_DEBUG_SIGNAL_2 32
-#define SECONDARY_INDEX_COOLING_TEMP 33
+#define SECONDARY_INDEX_LINK_DEFORMATION_SET_CALIBRATION 31
+#define SECONDARY_INDEX_DEBUG_SIGNAL_1 32
+#define SECONDARY_INDEX_DEBUG_SIGNAL_2 33
+#define SECONDARY_INDEX_COOLING_TEMP 34
 
 
 
 typedef struct {
     uint8_t activated[5];
     uint8_t timeout[5];
-    canlib_watchdog_timestamp last_reset[34];
+    canlib_watchdog_timestamp last_reset[35];
 } secondary_watchdog;
 
 int secondary_watchdog_interval_from_id(uint16_t message_id);

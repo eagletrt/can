@@ -611,6 +611,9 @@ extern "C" {
 #define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_SHUTDOWN "lv_feedback_gpio_extender_feedback_shutdown"
 #define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_HV_FANS "lv_feedback_gpio_extender_feedback_hv_fans"
 #define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_AUTONOMOUS_SYSTEM_ACTUATION "lv_feedback_gpio_extender_feedback_autonomous_system_actuation"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_RFE "lv_feedback_gpio_extender_feedback_rfe"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_FRG "lv_feedback_gpio_extender_feedback_frg"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_DISCHARGE "lv_feedback_gpio_extender_feedback_discharge"
 /* END */
 
 /* START */
@@ -1018,11 +1021,11 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint16_t = -5,
-	e_primary_uint8_t,
+	e_primary_uint32_t = -5,
 	e_primary_uint64_t,
 	e_primary_float,
-	e_primary_uint32_t,
+	e_primary_uint8_t,
+	e_primary_uint16_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,

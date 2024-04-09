@@ -197,6 +197,11 @@ message LINK_DEFORMATION{
 	float deformation = 2;
 	uint64 _inner_timestamp = 3;
 }
+message LINK_DEFORMATION_SET_CALIBRATION{
+	uint32 rod_id = 1;
+	float deformation = 2;
+	uint64 _inner_timestamp = 3;
+}
 message DEBUG_SIGNAL_1{
 	double field_1 = 1;
 	double field_2 = 2;
@@ -252,8 +257,9 @@ message Pack{
 	repeated TLM_LAPS_STATS TLM_LAPS_STATS = 29;
 	repeated AMMO_COMPRESSION AMMO_COMPRESSION = 30;
 	repeated LINK_DEFORMATION LINK_DEFORMATION = 31;
-	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 32;
-	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 33;
-	repeated COOLING_TEMP COOLING_TEMP = 34;
+	repeated LINK_DEFORMATION_SET_CALIBRATION LINK_DEFORMATION_SET_CALIBRATION = 32;
+	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 33;
+	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 34;
+	repeated COOLING_TEMP COOLING_TEMP = 35;
 }
 
