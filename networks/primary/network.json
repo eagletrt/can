@@ -200,7 +200,10 @@
                 "radiators",
                 "shutdown",
                 "hv_fans",
-                "autonomous_system_actuation"
+                "autonomous_system_actuation",
+                "rfe",
+                "frg",
+                "discharge"
             ]
         },
         "EcuStatus": {
@@ -1100,7 +1103,7 @@
                         0,
                         1
                     ],
-                    "precision": 0.1
+                    "precision": 0.01
                 }
             }
         },
@@ -1121,7 +1124,7 @@
                         0,
                         1
                     ],
-                    "precision": 0.1
+                    "precision": 0.01
                 }
             }
         },
@@ -1144,7 +1147,7 @@
                         0,
                         1
                     ],
-                    "precision": 0.1
+                    "precision": 0.01
                 }
             }
         },
@@ -1167,7 +1170,7 @@
                         0,
                         1
                     ],
-                    "precision": 0.1
+                    "precision": 0.01
                 }
             }
         },
@@ -1802,7 +1805,7 @@
             "receiving": [
                 "ECU"
             ],
-            "description": "Power maps used by the control algotirhm. (ECU checks if are coherent with the ones in the ECU)",
+            "description": "Power maps used by the control algorithm. (ECU checks if are coherent with the ones in the ECU)",
             "interval": 20,
             "contents": {
                 "map_pw": {
@@ -1910,9 +1913,10 @@
                 "lv_current": {
                     "type": "float32",
                     "range": [
-                        -10,
-                        50
-                    ]
+                        -20,
+                        20
+                    ],
+                    "precision": 0.1
                 }
             }
         },
@@ -1929,9 +1933,10 @@
                 "charger_current": {
                     "type": "float32",
                     "range": [
-                        -10,
-                        50
-                    ]
+                        -20,
+                        20
+                    ],
+                    "precision": 0.1
                 }
             }
         },
