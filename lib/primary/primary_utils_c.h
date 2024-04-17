@@ -519,6 +519,12 @@ extern "C" {
 /* END */
 
 /* START */
+#define LV_CHARGING_STATUS "LV_CHARGING_STATUS"
+
+#define LV_CHARGING_STATUS_STATUS "lv_charging_status_status"
+/* END */
+
+/* START */
 #define LV_RADIATOR_SPEED "LV_RADIATOR_SPEED"
 
 #define LV_RADIATOR_SPEED_STATUS "lv_radiator_speed_status"
@@ -572,6 +578,19 @@ extern "C" {
 #define LV_ERRORS_HEALTH_SIGNALS_CHARGER_CURRENT "lv_errors_health_signals_charger_current"
 #define LV_ERRORS_HEALTH_SIGNALS_BATTERY_CURRENT "lv_errors_health_signals_battery_current"
 #define LV_ERRORS_HEALTH_SIGNALS_SIGN_BATTERY_CURRENT "lv_errors_health_signals_sign_battery_current"
+/* END */
+
+/* START */
+#define LV_FEEDBACK "LV_FEEDBACK"
+
+#define LV_FEEDBACK_FEEDBACKS_BSPD "lv_feedback_feedbacks_bspd"
+#define LV_FEEDBACK_FEEDBACKS_HVD "lv_feedback_feedbacks_hvd"
+#define LV_FEEDBACK_FEEDBACKS_INVC_INTERLOCK "lv_feedback_feedbacks_invc_interlock"
+#define LV_FEEDBACK_FEEDBACKS_AMS "lv_feedback_feedbacks_ams"
+#define LV_FEEDBACK_FEEDBACKS_SD_END "lv_feedback_feedbacks_sd_end"
+#define LV_FEEDBACK_FEEDBACKS_LVMS "lv_feedback_feedbacks_lvms"
+#define LV_FEEDBACK_FEEDBACKS_INTERLOCK "lv_feedback_feedbacks_interlock"
+#define LV_FEEDBACK_FEEDBACKS_SD_START "lv_feedback_feedbacks_sd_start"
 /* END */
 
 /* START */
@@ -1021,11 +1040,11 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint32_t = -5,
-	e_primary_uint64_t,
+	e_primary_uint16_t = -5,
 	e_primary_float,
+	e_primary_uint32_t,
 	e_primary_uint8_t,
-	e_primary_uint16_t,
+	e_primary_uint64_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,
@@ -1061,6 +1080,7 @@ enum primary_types_id{
 	e_primary_hv_set_balancing_status_handcart_set_balancing_status,
 	e_primary_hv_set_balancing_status_steering_wheel_set_balancing_status,
 	e_primary_lv_status_status,
+	e_primary_lv_charging_status_status,
 	e_primary_lv_radiator_speed_status,
 	e_primary_lv_pumps_speed_status,
 	e_primary_lv_set_radiator_speed_status,
