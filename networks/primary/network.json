@@ -268,6 +268,19 @@
                 "sd_ctrl_pin"
             ]
         },
+        "LvFeedbacks": {
+            "type": "bitset",
+            "items": [
+                "bspd",
+                "hvd",
+                "invc_interlock",
+                "ams",
+                "sd_end",
+                "lvms",
+                "interlock",
+                "sd_start"
+            ]
+        },
         "EcuControlErrors": {
             "type": "bitset",
             "items": [
@@ -1084,6 +1097,19 @@
             }
         },
         {
+            "name": "LV_CHARGING_STATUS",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 200,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "status": "Toggle"
+            }
+        },
+        {
             "name": "LV_RADIATOR_SPEED",
             "topic": "HYDRA",
             "priority": 3,
@@ -1188,6 +1214,19 @@
             "contents": {
                 "errors": "LvErrors",
                 "health_signals": "LvHealthSignals"
+            }
+        },
+        {
+            "name": "LV_FEEDBACK",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "feedbacks": "LvFeedbacks"
             }
         },
         {
