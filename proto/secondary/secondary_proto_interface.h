@@ -258,6 +258,40 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums* net_enums, network_signals* net_signals, network_strings* net_strings, uint64_t resample_us) {
     char buffer[1024];
     
+    for(int i = 0; i < pack->acquisinator_jmp_to_blt_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_jmp_to_blt(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_jmp_to_blt(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_JMP_TO_BLT"]["_timestamp"].push(pack->acquisinator_jmp_to_blt(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["ACQUISINATOR_JMP_TO_BLT"]["acquisinatore_id"].push(pack->acquisinator_jmp_to_blt(i).acquisinatore_id());
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_TX"]["_timestamp"].push(pack->acquisinator_flash_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_RX"]["_timestamp"].push(pack->acquisinator_flash_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
     for(int i = 0; i < pack->imu_angular_rate_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -766,6 +800,37 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
 
     switch(id) {
         
+        case 0: {
+            secondary_acquisinator_jmp_to_blt_t* msg = (secondary_acquisinator_jmp_to_blt_t*)(device->message);
+            secondary::ACQUISINATOR_JMP_TO_BLT* proto_msg = pack->add_acquisinator_jmp_to_blt();
+			proto_msg->set_acquisinatore_id(msg->acquisinatore_id);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1: {
+            secondary_acquisinator_flash_tx_t* msg = (secondary_acquisinator_flash_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_TX* proto_msg = pack->add_acquisinator_flash_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 2: {
+            secondary_acquisinator_flash_rx_t* msg = (secondary_acquisinator_flash_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_RX* proto_msg = pack->add_acquisinator_flash_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
         case 1260: {
             secondary_imu_angular_rate_converted_t* msg = (secondary_imu_angular_rate_converted_t*)(device->message);
             secondary::IMU_ANGULAR_RATE* proto_msg = pack->add_imu_angular_rate();
@@ -1176,7 +1241,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 0: {
+        case 8: {
             secondary_link_deformation_set_calibration_converted_t* msg = (secondary_link_deformation_set_calibration_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_SET_CALIBRATION* proto_msg = pack->add_link_deformation_set_calibration();
 			proto_msg->set_rod_id(msg->rod_id);

@@ -33,8 +33,15 @@ NS_ :
 
 BS_:
 
-BU_: TLM IRTS_FL IRTS_FR ACQUISINATOR IRTS_FR IRTS_FL ACQUISINATOR IRTS_FR TLM IRTS_RL ACQUISINATOR IRTS_RL TLM IRTS_RL TLM IRTS_RL ACQUISINATOR IRTS_RR IRTS_FR IRTS_RR IRTS_RR IRTS_RR TLM IRTS_FL TLM ECU IMU ECU IRTS_FL ECU ECU TLM IMU TLM TLM TLM
+BU_: IMU ECU IRTS_FL ACQUISINATOR TLM IRTS_FL TLM IRTS_FL TLM IRTS_FL TLM IRTS_FR TLM IRTS_FR ACQUISINATOR IRTS_FR IMU ACQUISINATOR IRTS_FR TLM IRTS_RL ACQUISINATOR IRTS_RL TLM IRTS_RL TLM TLM IRTS_RL ACQUISINATOR IRTS_RR ACQUISINATOR IRTS_RR TLM IRTS_RR IRTS_RR TLM TLM TLM ECU ECU ECU ACQUISINATOR
 
+
+BO_ 0 ACQUISINATOR_JMP_TO_BLT: 1 Vector__XXX
+ SG_ acquisinatore_id : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 1 ACQUISINATOR_FLASH_TX: 0 Vector__XXX
+
+BO_ 2 ACQUISINATOR_FLASH_RX: 0 Vector__XXX
 
 BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
  SG_ z : 39|16@0- (0.1,0) [0|245] "" Vector__XXX
@@ -198,7 +205,7 @@ BO_ 1632 LINK_DEFORMATION: 5 Vector__XXX
  SG_ deformation : 8|32@1+ (1.3969838622484784e-09,-3.0) [-3.0|3.0] "" Vector__XXX
  SG_ rod_id : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 0 LINK_DEFORMATION_SET_CALIBRATION: 5 Vector__XXX
+BO_ 8 LINK_DEFORMATION_SET_CALIBRATION: 5 Vector__XXX
  SG_ deformation : 8|32@1+ (1.3969838622484784e-09,-3.0) [-3.0|3.0] "" Vector__XXX
  SG_ rod_id : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
@@ -223,6 +230,9 @@ BO_ 1656 COOLING_TEMP: 8 Vector__XXX
 
 
 
+CM_ BO_ 0 "";
+CM_ BO_ 1 "";
+CM_ BO_ 2 "";
 CM_ BO_ 1260 "Inertial Measurement Unit [x,y,z]-axis angular rate value. 0.01dps per bit, Big-Endian, 16bit Total, signed";
 CM_ BO_ 1261 "Inertial Measurement Unit [x,y,z]-axis acceleration value. 0.01g per bit, Big-Endian, 16bit Total, signed";
 CM_ BO_ 1456 "Front Left wheel InfraRed Temperature Sensor data, channels 1 through 4. 0.1˚C per bit, -100˚C offset, Big-Endian, 16bit Total, unsigned.";
@@ -254,7 +264,7 @@ CM_ BO_ 1608 "";
 CM_ BO_ 1616 "";
 CM_ BO_ 1624 "Position of the ammos";
 CM_ BO_ 1632 "Message for the arm deformation";
-CM_ BO_ 0 "Calibration command for link deformation";
+CM_ BO_ 8 "Calibration command for link deformation";
 CM_ BO_ 1640 "Debug signals";
 CM_ BO_ 1648 "Debug signals";
 CM_ BO_ 1656 "Cooling temperature";

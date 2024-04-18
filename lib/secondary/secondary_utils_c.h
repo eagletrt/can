@@ -13,6 +13,22 @@ extern "C" {
 #endif
 
 /* START */
+#define ACQUISINATOR_JMP_TO_BLT "ACQUISINATOR_JMP_TO_BLT"
+
+#define ACQUISINATOR_JMP_TO_BLT_ACQUISINATORE_ID "acquisinator_jmp_to_blt_acquisinatore_id"
+/* END */
+
+/* START */
+#define ACQUISINATOR_FLASH_TX "ACQUISINATOR_FLASH_TX"
+
+/* END */
+
+/* START */
+#define ACQUISINATOR_FLASH_RX "ACQUISINATOR_FLASH_RX"
+
+/* END */
+
+/* START */
 #define IMU_ANGULAR_RATE "IMU_ANGULAR_RATE"
 
 #define IMU_ANGULAR_RATE_X "imu_angular_rate_x"
@@ -302,12 +318,12 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_int16_t = -6,
-	e_secondary_uint64_t,
+	e_secondary_uint64_t = -6,
 	e_secondary_float,
-	e_secondary_uint16_t,
-	e_secondary_uint8_t,
 	e_secondary_uint32_t,
+	e_secondary_uint8_t,
+	e_secondary_int16_t,
+	e_secondary_uint16_t,
 
 	
 };

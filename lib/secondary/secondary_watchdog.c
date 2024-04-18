@@ -21,6 +21,9 @@ int secondary_watchdog_interval_from_id(uint16_t message_id) {
 
 int secondary_watchdog_index_from_id(uint16_t message_id) {
     switch (message_id) {
+       case 0: return SECONDARY_INDEX_ACQUISINATOR_JMP_TO_BLT;
+       case 1: return SECONDARY_INDEX_ACQUISINATOR_FLASH_TX;
+       case 2: return SECONDARY_INDEX_ACQUISINATOR_FLASH_RX;
        case 1260: return SECONDARY_INDEX_IMU_ANGULAR_RATE;
        case 1261: return SECONDARY_INDEX_IMU_ACCELERATION;
        case 1456: return SECONDARY_INDEX_IRTS_FL_0;
@@ -52,7 +55,7 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1616: return SECONDARY_INDEX_TLM_LAPS_STATS;
        case 1624: return SECONDARY_INDEX_AMMO_COMPRESSION;
        case 1632: return SECONDARY_INDEX_LINK_DEFORMATION;
-       case 0: return SECONDARY_INDEX_LINK_DEFORMATION_SET_CALIBRATION;
+       case 8: return SECONDARY_INDEX_LINK_DEFORMATION_SET_CALIBRATION;
        case 1640: return SECONDARY_INDEX_DEBUG_SIGNAL_1;
        case 1648: return SECONDARY_INDEX_DEBUG_SIGNAL_2;
        case 1656: return SECONDARY_INDEX_COOLING_TEMP;
@@ -67,7 +70,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 35 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 38 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }

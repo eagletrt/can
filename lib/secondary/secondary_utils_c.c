@@ -5,6 +5,11 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 {
 	switch(id)
     {
+	case 0:
+		if(1 > fields_size) return 1;
+		snprintf(v[0], string_size, ACQUISINATOR_JMP_TO_BLT_ACQUISINATORE_ID);
+
+		return 0;
 	case 1260:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, IMU_ANGULAR_RATE_X);
@@ -229,7 +234,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[1], string_size, LINK_DEFORMATION_DEFORMATION);
 
 		return 0;
-	case 0:
+	case 8:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_SET_CALIBRATION_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_SET_CALIBRATION_DEFORMATION);
@@ -275,6 +280,20 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 {
     switch(id)
     {
+	case 0:
+	{
+		secondary_acquisinator_jmp_to_blt_t tmp;
+		secondary_acquisinator_jmp_to_blt_converted_t tmp_converted;
+		uint8_t r_acquisinatore_id;
+
+		sscanf(s, "%" SCNu8 ","  ,
+			&r_acquisinatore_id);
+		tmp_converted.acquisinatore_id = (uint8_t)r_acquisinatore_id;
+
+		secondary_acquisinator_jmp_to_blt_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_ACQUISINATOR_JMP_TO_BLT_BYTE_SIZE;
+		return secondary_acquisinator_jmp_to_blt_pack(data, &tmp, SECONDARY_ACQUISINATOR_JMP_TO_BLT_BYTE_SIZE);
+	}
 	case 1260:
 	{
 		secondary_imu_angular_rate_t tmp;
@@ -985,7 +1004,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_LINK_DEFORMATION_BYTE_SIZE;
 		return secondary_link_deformation_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_BYTE_SIZE);
 	}
-	case 0:
+	case 8:
 	{
 		secondary_link_deformation_set_calibration_t tmp;
 		secondary_link_deformation_set_calibration_converted_t tmp_converted;
@@ -1089,6 +1108,9 @@ int secondary_n_fields_from_id(int id)
 {
 	switch(id)
     {
+		case 0: return 1;
+		case 1: return 0;
+		case 2: return 0;
 		case 1260: return 3;
 		case 1261: return 4;
 		case 1456: return 4;
@@ -1120,7 +1142,7 @@ int secondary_n_fields_from_id(int id)
 		case 1616: return 3;
 		case 1624: return 4;
 		case 1632: return 2;
-		case 0: return 2;
+		case 8: return 2;
 		case 1640: return 4;
 		case 1648: return 4;
 		case 1656: return 4;
@@ -1131,6 +1153,10 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 {
     switch(id)
     {
+	case 0:
+		if(fields_types_size < 1) return 0;
+		fields_types[0] = e_secondary_uint8_t;
+		return 1;
 	case 1260:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_secondary_float;
@@ -1324,7 +1350,7 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[0] = e_secondary_uint8_t;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 0:
+	case 8:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_uint8_t;
 		fields_types[1] = e_secondary_float;
