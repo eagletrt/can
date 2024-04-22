@@ -1,5 +1,4 @@
-#include "secondary_utils_c.h"
-
+#include "secondary_utils.h"
 
 int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size)
 {

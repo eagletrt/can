@@ -1,5 +1,4 @@
-#include "simulator_utils_c.h"
-
+#include "simulator_utils.h"
 
 int simulator_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size)
 {

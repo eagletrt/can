@@ -1,5 +1,4 @@
-#include "primary_utils_c.h"
-
+#include "primary_utils.hpp"
 
 int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size)
 {
@@ -4801,527 +4800,530 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
     }
     return 0;
 }
-int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
+std::vector<std::string> primary_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name)
 {
-	if(!strcmp(msg_name, "HV_JMP_TO_BLT"))
+	std::vector<std::string> ret;
+
+	if(msg_name == HV_JMP_TO_BLT)
 	{
-		if(!strcmp(sgn_name, "forward"))
+		if(sgn_name == "forward")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "cellboard_id"))
+		if(sgn_name == "cellboard_id")
 		{
-			sprintf(v[0], "cellboard_0");
-			sprintf(v[1], "cellboard_1");
-			sprintf(v[2], "cellboard_2");
-			sprintf(v[3], "cellboard_3");
-			sprintf(v[4], "cellboard_4");
-			sprintf(v[5], "cellboard_5");
-			return 6;
+			ret.push_back("cellboard_0");
+			ret.push_back("cellboard_1");
+			ret.push_back("cellboard_2");
+			ret.push_back("cellboard_3");
+			ret.push_back("cellboard_4");
+			ret.push_back("cellboard_5");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_CELLBOARD_VERSION"))
+	if(msg_name == HV_CELLBOARD_VERSION)
 	{
-		if(!strcmp(sgn_name, "cellboard_id"))
+		if(sgn_name == "cellboard_id")
 		{
-			sprintf(v[0], "cellboard_0");
-			sprintf(v[1], "cellboard_1");
-			sprintf(v[2], "cellboard_2");
-			sprintf(v[3], "cellboard_3");
-			sprintf(v[4], "cellboard_4");
-			sprintf(v[5], "cellboard_5");
-			return 6;
+			ret.push_back("cellboard_0");
+			ret.push_back("cellboard_1");
+			ret.push_back("cellboard_2");
+			ret.push_back("cellboard_3");
+			ret.push_back("cellboard_4");
+			ret.push_back("cellboard_5");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_FANS_STATUS"))
+	if(msg_name == HV_FANS_STATUS)
 	{
-		if(!strcmp(sgn_name, "fans_override"))
+		if(sgn_name == "fans_override")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_SET_FANS_STATUS"))
+	if(msg_name == HV_SET_FANS_STATUS)
 	{
-		if(!strcmp(sgn_name, "fans_override"))
+		if(sgn_name == "fans_override")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_FEEDBACK_STATUS"))
+	if(msg_name == HV_FEEDBACK_STATUS)
 	{
-		if(!strcmp(sgn_name, "feedback_implausibility_detected"))
+		if(sgn_name == "feedback_implausibility_detected")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_imd_cockpit"))
+		if(sgn_name == "feedback_imd_cockpit")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_tsal_green_fault_latched"))
+		if(sgn_name == "feedback_tsal_green_fault_latched")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_bms_cockpit"))
+		if(sgn_name == "feedback_bms_cockpit")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_ext_latched"))
+		if(sgn_name == "feedback_ext_latched")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_tsal_green"))
+		if(sgn_name == "feedback_tsal_green")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_ts_over_60v_status"))
+		if(sgn_name == "feedback_ts_over_60v_status")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_airn_status"))
+		if(sgn_name == "feedback_airn_status")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_airp_status"))
+		if(sgn_name == "feedback_airp_status")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_airp_gate"))
+		if(sgn_name == "feedback_airp_gate")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_airn_gate"))
+		if(sgn_name == "feedback_airn_gate")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_precharge_status"))
+		if(sgn_name == "feedback_precharge_status")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_tsp_over_60v_status"))
+		if(sgn_name == "feedback_tsp_over_60v_status")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_imd_fault"))
+		if(sgn_name == "feedback_imd_fault")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_check_mux"))
+		if(sgn_name == "feedback_check_mux")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_sd_end"))
+		if(sgn_name == "feedback_sd_end")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_sd_out"))
+		if(sgn_name == "feedback_sd_out")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_sd_in"))
+		if(sgn_name == "feedback_sd_in")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_sd_bms"))
+		if(sgn_name == "feedback_sd_bms")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "feedback_sd_imd"))
+		if(sgn_name == "feedback_sd_imd")
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
+			ret.push_back("feedback_state_low");
+			ret.push_back("feedback_state_error");
+			ret.push_back("feedback_state_high");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_IMD_STATUS"))
+	if(msg_name == HV_IMD_STATUS)
 	{
-		if(!strcmp(sgn_name, "imd_status"))
+		if(sgn_name == "imd_status")
 		{
-			sprintf(v[0], "sc");
-			sprintf(v[1], "normal");
-			sprintf(v[2], "under_voltage");
-			sprintf(v[3], "start_measure");
-			sprintf(v[4], "device_error");
-			sprintf(v[5], "earth_fault");
-			return 6;
+			ret.push_back("sc");
+			ret.push_back("normal");
+			ret.push_back("under_voltage");
+			ret.push_back("start_measure");
+			ret.push_back("device_error");
+			ret.push_back("earth_fault");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_STATUS"))
+	if(msg_name == HV_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "init");
-			sprintf(v[1], "idle");
-			sprintf(v[2], "airn_close");
-			sprintf(v[3], "precharge");
-			sprintf(v[4], "airp_close");
-			sprintf(v[5], "ts_on");
-			sprintf(v[6], "fatal_error");
-			return 7;
+			ret.push_back("init");
+			ret.push_back("idle");
+			ret.push_back("airn_close");
+			ret.push_back("precharge");
+			ret.push_back("airp_close");
+			ret.push_back("ts_on");
+			ret.push_back("fatal_error");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_SET_STATUS_ECU"))
+	if(msg_name == HV_SET_STATUS_ECU)
 	{
-		if(!strcmp(sgn_name, "hv_status_set"))
+		if(sgn_name == "hv_status_set")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_SET_STATUS_HANDCART"))
+	if(msg_name == HV_SET_STATUS_HANDCART)
 	{
-		if(!strcmp(sgn_name, "hv_status_set"))
+		if(sgn_name == "hv_status_set")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_BALANCING_STATUS"))
+	if(msg_name == HV_BALANCING_STATUS)
 	{
-		if(!strcmp(sgn_name, "cellboard_id"))
+		if(sgn_name == "cellboard_id")
 		{
-			sprintf(v[0], "cellboard_0");
-			sprintf(v[1], "cellboard_1");
-			sprintf(v[2], "cellboard_2");
-			sprintf(v[3], "cellboard_3");
-			sprintf(v[4], "cellboard_4");
-			sprintf(v[5], "cellboard_5");
-			return 6;
+			ret.push_back("cellboard_0");
+			ret.push_back("cellboard_1");
+			ret.push_back("cellboard_2");
+			ret.push_back("cellboard_3");
+			ret.push_back("cellboard_4");
+			ret.push_back("cellboard_5");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "balancing_status"))
+		if(sgn_name == "balancing_status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_SET_BALANCING_STATUS_HANDCART"))
+	if(msg_name == HV_SET_BALANCING_STATUS_HANDCART)
 	{
-		if(!strcmp(sgn_name, "set_balancing_status"))
+		if(sgn_name == "set_balancing_status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HV_SET_BALANCING_STATUS_STEERING_WHEEL"))
+	if(msg_name == HV_SET_BALANCING_STATUS_STEERING_WHEEL)
 	{
-		if(!strcmp(sgn_name, "set_balancing_status"))
+		if(sgn_name == "set_balancing_status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "LV_STATUS"))
+	if(msg_name == LV_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "init");
-			sprintf(v[1], "idle");
-			sprintf(v[2], "tson");
-			sprintf(v[3], "run");
-			sprintf(v[4], "flashing");
-			sprintf(v[5], "error");
-			return 6;
+			ret.push_back("init");
+			ret.push_back("idle");
+			ret.push_back("tson");
+			ret.push_back("run");
+			ret.push_back("flashing");
+			ret.push_back("error");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "LV_CHARGING_STATUS"))
+	if(msg_name == LV_CHARGING_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "LV_RADIATOR_SPEED"))
+	if(msg_name == LV_RADIATOR_SPEED)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "auto");
-			sprintf(v[2], "manual");
-			return 3;
+			ret.push_back("off");
+			ret.push_back("auto");
+			ret.push_back("manual");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "LV_PUMPS_SPEED"))
+	if(msg_name == LV_PUMPS_SPEED)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "auto");
-			sprintf(v[2], "manual");
-			return 3;
+			ret.push_back("off");
+			ret.push_back("auto");
+			ret.push_back("manual");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "LV_SET_RADIATOR_SPEED"))
+	if(msg_name == LV_SET_RADIATOR_SPEED)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "auto");
-			sprintf(v[2], "manual");
-			return 3;
+			ret.push_back("off");
+			ret.push_back("auto");
+			ret.push_back("manual");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "LV_SET_PUMPS_SPEED"))
+	if(msg_name == LV_SET_PUMPS_SPEED)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "auto");
-			sprintf(v[2], "manual");
-			return 3;
+			ret.push_back("off");
+			ret.push_back("auto");
+			ret.push_back("manual");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "LV_INVERTER_CONNECTION_STATUS"))
+	if(msg_name == LV_INVERTER_CONNECTION_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "LV_SET_INVERTER_CONNECTION_STATUS"))
+	if(msg_name == LV_SET_INVERTER_CONNECTION_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "TLM_STATUS"))
+	if(msg_name == TLM_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "TLM_SET_STATUS"))
+	if(msg_name == TLM_SET_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HANDCART_STATUS"))
+	if(msg_name == HANDCART_STATUS)
 	{
-		if(!strcmp(sgn_name, "connected"))
+		if(sgn_name == "connected")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HANDCART_SETTINGS"))
+	if(msg_name == HANDCART_SETTINGS)
 	{
-		if(!strcmp(sgn_name, "fans_override"))
+		if(sgn_name == "fans_override")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "none");
-			sprintf(v[1], "check");
-			sprintf(v[2], "idle");
-			sprintf(v[3], "precharge");
-			sprintf(v[4], "ready");
-			sprintf(v[5], "charge");
-			sprintf(v[6], "charge_done");
-			sprintf(v[7], "balancing");
-			sprintf(v[8], "error");
-			return 9;
+			ret.push_back("none");
+			ret.push_back("check");
+			ret.push_back("idle");
+			ret.push_back("precharge");
+			ret.push_back("ready");
+			ret.push_back("charge");
+			ret.push_back("charge_done");
+			ret.push_back("balancing");
+			ret.push_back("error");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "HANDCART_SET_SETTINGS"))
+	if(msg_name == HANDCART_SET_SETTINGS)
 	{
-		if(!strcmp(sgn_name, "fans_override"))
+		if(sgn_name == "fans_override")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "none");
-			sprintf(v[1], "check");
-			sprintf(v[2], "idle");
-			sprintf(v[3], "precharge");
-			sprintf(v[4], "ready");
-			sprintf(v[5], "charge");
-			sprintf(v[6], "charge_done");
-			sprintf(v[7], "balancing");
-			sprintf(v[8], "error");
-			return 9;
+			ret.push_back("none");
+			ret.push_back("check");
+			ret.push_back("idle");
+			ret.push_back("precharge");
+			ret.push_back("ready");
+			ret.push_back("charge");
+			ret.push_back("charge_done");
+			ret.push_back("balancing");
+			ret.push_back("error");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "ECU_STATUS"))
+	if(msg_name == ECU_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "init");
-			sprintf(v[1], "enable_inv_updates");
-			sprintf(v[2], "check_inv_settings");
-			sprintf(v[3], "idle");
-			sprintf(v[4], "start_ts_precharge");
-			sprintf(v[5], "wait_ts_precharge");
-			sprintf(v[6], "wait_driver");
-			sprintf(v[7], "enable_inv_drive");
-			sprintf(v[8], "drive");
-			sprintf(v[9], "disable_inv_drive");
-			sprintf(v[10], "start_ts_discharge");
-			sprintf(v[11], "wait_ts_discharge");
-			sprintf(v[12], "fatal_error");
-			return 13;
+			ret.push_back("init");
+			ret.push_back("enable_inv_updates");
+			ret.push_back("check_inv_settings");
+			ret.push_back("idle");
+			ret.push_back("start_ts_precharge");
+			ret.push_back("wait_ts_precharge");
+			ret.push_back("wait_driver");
+			ret.push_back("enable_inv_drive");
+			ret.push_back("drive");
+			ret.push_back("disable_inv_drive");
+			ret.push_back("start_ts_discharge");
+			ret.push_back("wait_ts_discharge");
+			ret.push_back("fatal_error");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "ECU_SET_STATUS"))
+	if(msg_name == ECU_SET_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "idle");
-			sprintf(v[1], "ready");
-			sprintf(v[2], "drive");
-			return 3;
+			ret.push_back("idle");
+			ret.push_back("ready");
+			ret.push_back("drive");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "ECU_INVERTER_STATUS"))
+	if(msg_name == ECU_INVERTER_STATUS)
 	{
-		if(!strcmp(sgn_name, "rl"))
+		if(sgn_name == "rl")
 		{
-			sprintf(v[0], "disabled");
-			sprintf(v[1], "rfe_on");
-			sprintf(v[2], "frg_on");
-			sprintf(v[3], "enabled");
-			return 4;
+			ret.push_back("disabled");
+			ret.push_back("rfe_on");
+			ret.push_back("frg_on");
+			ret.push_back("enabled");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "rr"))
+		if(sgn_name == "rr")
 		{
-			sprintf(v[0], "disabled");
-			sprintf(v[1], "rfe_on");
-			sprintf(v[2], "frg_on");
-			sprintf(v[3], "enabled");
-			return 4;
+			ret.push_back("disabled");
+			ret.push_back("rfe_on");
+			ret.push_back("frg_on");
+			ret.push_back("enabled");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "ECU_PTT_STATUS"))
+	if(msg_name == ECU_PTT_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "ECU_SET_PTT_STATUS"))
+	if(msg_name == ECU_SET_PTT_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "ECU_STEER_ACTUATOR_STATUS"))
+	if(msg_name == ECU_STEER_ACTUATOR_STATUS)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"))
+	if(msg_name == ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "ECU_SET_STEER_ACTUATOR_STATUS_TLM"))
+	if(msg_name == ECU_SET_STEER_ACTUATOR_STATUS_TLM)
 	{
-		if(!strcmp(sgn_name, "status"))
+		if(sgn_name == "status")
 		{
-			sprintf(v[0], "off");
-			sprintf(v[1], "on");
-			return 2;
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
 		}
 	}
-	return 0;
+
+	return ret;
 }

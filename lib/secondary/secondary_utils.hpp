@@ -1,16 +1,12 @@
-#ifndef secondary_UTILS_H
-#define secondary_UTILS_H
+#ifndef secondary_UTILS_HPP
+#define secondary_UTILS_HPP
 
 #include <inttypes.h>
-#include <string.h>
 #include <stdlib.h>
-#include <string.h>
 #include <stddef.h>
+#include <vector>
+#include <string>
 #include "secondary_network.h"
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /* START */
 #define ACQUISINATOR_JMP_TO_BLT "ACQUISINATOR_JMP_TO_BLT"
@@ -318,12 +314,12 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint64_t = -6,
-	e_secondary_float,
+	e_secondary_int16_t = -6,
 	e_secondary_uint32_t,
 	e_secondary_uint8_t,
-	e_secondary_int16_t,
+	e_secondary_float,
 	e_secondary_uint16_t,
+	e_secondary_uint64_t,
 
 	
 };
@@ -382,22 +378,17 @@ int secondary_n_fields_from_id(int id);
  * 
  * @return the number of types set, 0 if the id is invalid or fields_types_size is too small
 */
-int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_size);
+int secondary_fields_types_from_id(int id, int *fields_types, int fields_types_size);
 
 /**
  * @brief get the fields of an enum given the name of the message and the name of the signal
  * 
  * @param[in] msg_name name of the message to find
  * @param[in] sgn_name name of the signal to find
- * @param[out] v array of strings containing the enum fields
  * 
- * @return the number of fields or 0 if the signal is not an enum
+ * @return fields' strings vector
 */
-int secondary_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v);
+std::vector<std::string> secondary_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name);
 
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif

@@ -1,16 +1,12 @@
-#ifndef inverters_UTILS_H
-#define inverters_UTILS_H
+#ifndef inverters_UTILS_HPP
+#define inverters_UTILS_HPP
 
 #include <inttypes.h>
-#include <string.h>
 #include <stdlib.h>
-#include <string.h>
 #include <stddef.h>
+#include <vector>
+#include <string>
 #include "inverters_network.h"
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /* START */
 #define INV_L_SEND "INV_L_SEND"
@@ -367,9 +363,9 @@ extern "C" {
 /* END */
 
 enum inverters_types_id{
-	e_inverters_float = -4,
+	e_inverters_uint8_t = -4,
+	e_inverters_float,
 	e_inverters_uint16_t,
-	e_inverters_uint8_t,
 	e_inverters_int16_t,
 
 	e_inverters_inv_l_send_send_mux,
@@ -452,22 +448,17 @@ int inverters_n_fields_from_id(int id);
  * 
  * @return the number of types set, 0 if the id is invalid or fields_types_size is too small
 */
-int inverters_fields_types_from_id(int id, int* fields_types, int fields_types_size);
+int inverters_fields_types_from_id(int id, int *fields_types, int fields_types_size);
 
 /**
  * @brief get the fields of an enum given the name of the message and the name of the signal
  * 
  * @param[in] msg_name name of the message to find
  * @param[in] sgn_name name of the signal to find
- * @param[out] v array of strings containing the enum fields
  * 
- * @return the number of fields or 0 if the signal is not an enum
+ * @return fields' strings vector
 */
-int inverters_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v);
+std::vector<std::string> inverters_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name);
 
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif

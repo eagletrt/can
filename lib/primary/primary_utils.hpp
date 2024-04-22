@@ -1,16 +1,12 @@
-#ifndef primary_UTILS_H
-#define primary_UTILS_H
+#ifndef primary_UTILS_HPP
+#define primary_UTILS_HPP
 
 #include <inttypes.h>
-#include <string.h>
 #include <stdlib.h>
-#include <string.h>
 #include <stddef.h>
+#include <vector>
+#include <string>
 #include "primary_network.h"
-
-#ifdef __cplusplus
-extern "C" {
-#endif
 
 /* START */
 #define NLG5_DIAG_TX "NLG5_DIAG_TX"
@@ -1040,11 +1036,11 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint16_t = -5,
-	e_primary_uint32_t,
-	e_primary_uint64_t,
-	e_primary_uint8_t,
+	e_primary_uint64_t = -5,
 	e_primary_float,
+	e_primary_uint32_t,
+	e_primary_uint16_t,
+	e_primary_uint8_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,
@@ -1159,22 +1155,17 @@ int primary_n_fields_from_id(int id);
  * 
  * @return the number of types set, 0 if the id is invalid or fields_types_size is too small
 */
-int primary_fields_types_from_id(int id, int* fields_types, int fields_types_size);
+int primary_fields_types_from_id(int id, int *fields_types, int fields_types_size);
 
 /**
  * @brief get the fields of an enum given the name of the message and the name of the signal
  * 
  * @param[in] msg_name name of the message to find
  * @param[in] sgn_name name of the signal to find
- * @param[out] v array of strings containing the enum fields
  * 
- * @return the number of fields or 0 if the signal is not an enum
+ * @return fields' strings vector
 */
-int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v);
+std::vector<std::string> primary_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name);
 
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif

@@ -1,5 +1,4 @@
-#include "bms_utils_c.h"
-
+#include "bms_utils.h"
 
 int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size)
 {

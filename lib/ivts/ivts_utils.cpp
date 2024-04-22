@@ -1,5 +1,4 @@
-#include "ivts_utils_c.h"
-
+#include "ivts_utils.hpp"
 
 int ivts_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size)
 {
@@ -2466,711 +2465,714 @@ int ivts_fields_types_from_id(int id, int* fields_types, int fields_types_size)
     }
     return 0;
 }
-int ivts_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
+std::vector<std::string> ivts_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name)
 {
-	if(!strcmp(msg_name, "IVT_MSG_RESULT_WH"))
+	std::vector<std::string> ret;
+
+	if(msg_name == IVT_MSG_RESULT_WH)
 	{
-		if(!strcmp(sgn_name, "ivt_id_result_wh"))
+		if(sgn_name == "ivt_id_result_wh")
 		{
-			sprintf(v[0], "Vt_Result_Wh");
-			return 1;
+			ret.push_back("Vt_Result_Wh");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "IVT_MSG_RESULT_AS"))
+	if(msg_name == IVT_MSG_RESULT_AS)
 	{
-		if(!strcmp(sgn_name, "ivt_id_result_as"))
+		if(sgn_name == "ivt_id_result_as")
 		{
-			sprintf(v[0], "Vt_Result_As");
-			return 1;
+			ret.push_back("Vt_Result_As");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "IVT_MSG_RESULT_W"))
+	if(msg_name == IVT_MSG_RESULT_W)
 	{
-		if(!strcmp(sgn_name, "ivt_id_result_w"))
+		if(sgn_name == "ivt_id_result_w")
 		{
-			sprintf(v[0], "Vt_Result_W");
-			return 1;
+			ret.push_back("Vt_Result_W");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "IVT_MSG_RESPONSE"))
+	if(msg_name == IVT_MSG_RESPONSE)
 	{
-		if(!strcmp(sgn_name, "ivt_id_response"))
+		if(sgn_name == "ivt_id_response")
 		{
-			sprintf(v[0], "Resp_Cmd_Wrong_Command");
-			sprintf(v[1], "Resp_Get_Set_ALIVE");
-			sprintf(v[2], "Resp_Get_Set_ArtNr");
-			sprintf(v[3], "Resp_Get_Set_Serialnumber");
-			sprintf(v[4], "Resp_Get_Set_SW_VERSION");
-			sprintf(v[5], "Resp_Get_Set_DEVICE_ID");
-			sprintf(v[6], "Resp_Get_Set_THRESHOLD_NEG");
-			sprintf(v[7], "Resp_Get_Set_THRESHOLD_POS");
-			sprintf(v[8], "Resp_Get_Set_MODE");
-			sprintf(v[9], "Resp_Get_Set_OC_TEST_TIME");
-			sprintf(v[10], "Resp_Get_Set_STORE");
-			sprintf(v[11], "Resp_Get_Set_TRIGGER");
-			sprintf(v[12], "Resp_Get_Set_Reset_Error_Logdata");
-			sprintf(v[13], "Resp_Config_Result_Wh");
-			sprintf(v[14], "Resp_Config_Result_As");
-			sprintf(v[15], "Resp_Config_Result_W");
-			sprintf(v[16], "Resp_Config_Result_T");
-			sprintf(v[17], "Resp_Config_Result_U3");
-			sprintf(v[18], "Resp_Config_Result_U2");
-			sprintf(v[19], "Resp_Config_Result_U1");
-			sprintf(v[20], "Resp_Config_Result_I");
-			sprintf(v[21], "Resp_CAN_ID_Response");
-			sprintf(v[22], "Resp_CAN_ID_Command");
-			sprintf(v[23], "Resp_CAN_ID_Res_Wh");
-			sprintf(v[24], "Resp_CAN_ID_Res_As");
-			sprintf(v[25], "Resp_CAN_ID_Res_W");
-			sprintf(v[26], "Resp_CAN_ID_Res_I");
-			sprintf(v[27], "Resp_CAN_ID_Res_T");
-			sprintf(v[28], "Resp_CAN_ID_Res_U3");
-			sprintf(v[29], "Resp_CAN_ID_Res_U2");
-			sprintf(v[30], "Resp_CAN_ID_Res_U1");
-			sprintf(v[31], "Resp_Error_Log_Logdata_Since_Res");
-			sprintf(v[32], "Resp_Error_Log_Overall_Logdata");
-			sprintf(v[33], "Resp_Error_Log_System_Error");
-			sprintf(v[34], "Resp_Error_Log_Measurement_Error");
-			return 35;
+			ret.push_back("Resp_Cmd_Wrong_Command");
+			ret.push_back("Resp_Get_Set_ALIVE");
+			ret.push_back("Resp_Get_Set_ArtNr");
+			ret.push_back("Resp_Get_Set_Serialnumber");
+			ret.push_back("Resp_Get_Set_SW_VERSION");
+			ret.push_back("Resp_Get_Set_DEVICE_ID");
+			ret.push_back("Resp_Get_Set_THRESHOLD_NEG");
+			ret.push_back("Resp_Get_Set_THRESHOLD_POS");
+			ret.push_back("Resp_Get_Set_MODE");
+			ret.push_back("Resp_Get_Set_OC_TEST_TIME");
+			ret.push_back("Resp_Get_Set_STORE");
+			ret.push_back("Resp_Get_Set_TRIGGER");
+			ret.push_back("Resp_Get_Set_Reset_Error_Logdata");
+			ret.push_back("Resp_Config_Result_Wh");
+			ret.push_back("Resp_Config_Result_As");
+			ret.push_back("Resp_Config_Result_W");
+			ret.push_back("Resp_Config_Result_T");
+			ret.push_back("Resp_Config_Result_U3");
+			ret.push_back("Resp_Config_Result_U2");
+			ret.push_back("Resp_Config_Result_U1");
+			ret.push_back("Resp_Config_Result_I");
+			ret.push_back("Resp_CAN_ID_Response");
+			ret.push_back("Resp_CAN_ID_Command");
+			ret.push_back("Resp_CAN_ID_Res_Wh");
+			ret.push_back("Resp_CAN_ID_Res_As");
+			ret.push_back("Resp_CAN_ID_Res_W");
+			ret.push_back("Resp_CAN_ID_Res_I");
+			ret.push_back("Resp_CAN_ID_Res_T");
+			ret.push_back("Resp_CAN_ID_Res_U3");
+			ret.push_back("Resp_CAN_ID_Res_U2");
+			ret.push_back("Resp_CAN_ID_Res_U1");
+			ret.push_back("Resp_Error_Log_Logdata_Since_Res");
+			ret.push_back("Resp_Error_Log_Overall_Logdata");
+			ret.push_back("Resp_Error_Log_System_Error");
+			ret.push_back("Resp_Error_Log_Measurement_Error");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_80_resp_measerror_item"))
+		if(sgn_name == "_80_resp_measerror_item")
 		{
-			sprintf(v[0], "Resp_error_calibration_data");
-			sprintf(v[1], "Resp_error_ntc_I_OpenCirc");
-			sprintf(v[2], "Resp_error_ntc_h_OpenCirc");
-			sprintf(v[3], "Resp_error_meas_U3_OpenCirc");
-			sprintf(v[4], "Resp_error_meas_U2_OpenCirc");
-			sprintf(v[5], "Resp_error_meas_U1_OpenCirc");
-			sprintf(v[6], "Resp_error_meas_I1_OpenCirc");
-			sprintf(v[7], "Resp__error_therm_EMF_correction");
-			sprintf(v[8], "Resp_error_cur_meas_implausible");
-			sprintf(v[9], "Resp_error_Vref");
-			sprintf(v[10], "Resp_error_Underflow_ADC_ch_2");
-			sprintf(v[11], "Resp_error_Overflow_ADC_ch_2");
-			sprintf(v[12], "Resp_error_Underflow_ADC_ch_1");
-			sprintf(v[13], "Reso_error_Overflow_ADC_ch_1");
-			sprintf(v[14], "Resp_error_ADC_interrupt");
-			sprintf(v[15], "Resonse_all_meas_errors");
-			return 16;
+			ret.push_back("Resp_error_calibration_data");
+			ret.push_back("Resp_error_ntc_I_OpenCirc");
+			ret.push_back("Resp_error_ntc_h_OpenCirc");
+			ret.push_back("Resp_error_meas_U3_OpenCirc");
+			ret.push_back("Resp_error_meas_U2_OpenCirc");
+			ret.push_back("Resp_error_meas_U1_OpenCirc");
+			ret.push_back("Resp_error_meas_I1_OpenCirc");
+			ret.push_back("Resp__error_therm_EMF_correction");
+			ret.push_back("Resp_error_cur_meas_implausible");
+			ret.push_back("Resp_error_Vref");
+			ret.push_back("Resp_error_Underflow_ADC_ch_2");
+			ret.push_back("Resp_error_Overflow_ADC_ch_2");
+			ret.push_back("Resp_error_Underflow_ADC_ch_1");
+			ret.push_back("Reso_error_Overflow_ADC_ch_1");
+			ret.push_back("Resp_error_ADC_interrupt");
+			ret.push_back("Resonse_all_meas_errors");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_81_resp_systemerror_item"))
+		if(sgn_name == "_81_resp_systemerror_item")
 		{
-			sprintf(v[0], "Resp_error_Reset_EMC");
-			sprintf(v[1], "Resp_error_Reset_Watchdog");
-			sprintf(v[2], "Resp_error_Reset_illegal_opcode");
-			sprintf(v[3], "Resp_error_ADC_Clock");
-			sprintf(v[4], "Resp_error_eeprom_rw");
-			sprintf(v[5], "Resp_error_Overcurrent_detection");
-			sprintf(v[6], "Resp_error_Configuration");
-			sprintf(v[7], "Resp_error_System_Init");
-			sprintf(v[8], "Resp_error_System_Clock");
-			sprintf(v[9], "Resp_error_Power_failure");
-			sprintf(v[10], "Resp_error_Undertemp");
-			sprintf(v[11], "Resp_error_Overtemp");
-			sprintf(v[12], "Resp_error_CAN_bus_transmit_Data");
-			sprintf(v[13], "Resp_error_CAN_bus_receive_Data");
-			sprintf(v[14], "Resp_error_Parameter_CRC");
-			sprintf(v[15], "Resp_error_code_CRC");
-			sprintf(v[16], "Resonse_all_SystemErrors");
-			return 17;
+			ret.push_back("Resp_error_Reset_EMC");
+			ret.push_back("Resp_error_Reset_Watchdog");
+			ret.push_back("Resp_error_Reset_illegal_opcode");
+			ret.push_back("Resp_error_ADC_Clock");
+			ret.push_back("Resp_error_eeprom_rw");
+			ret.push_back("Resp_error_Overcurrent_detection");
+			ret.push_back("Resp_error_Configuration");
+			ret.push_back("Resp_error_System_Init");
+			ret.push_back("Resp_error_System_Clock");
+			ret.push_back("Resp_error_Power_failure");
+			ret.push_back("Resp_error_Undertemp");
+			ret.push_back("Resp_error_Overtemp");
+			ret.push_back("Resp_error_CAN_bus_transmit_Data");
+			ret.push_back("Resp_error_CAN_bus_receive_Data");
+			ret.push_back("Resp_error_Parameter_CRC");
+			ret.push_back("Resp_error_code_CRC");
+			ret.push_back("Resonse_all_SystemErrors");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_82_resp_alllogdata_item"))
+		if(sgn_name == "_82_resp_alllogdata_item")
 		{
-			sprintf(v[0], "Resp_temp_minimum");
-			sprintf(v[1], "Resp_temp_maxmimum");
-			sprintf(v[2], "Resp_U3_minimum");
-			sprintf(v[3], "Resp_U3_maximum");
-			sprintf(v[4], "Resp_U2_minimum");
-			sprintf(v[5], "Resp_U2_maxmimum");
-			sprintf(v[6], "Resp_U1_minimum");
-			sprintf(v[7], "Resp_U1_maximum");
-			sprintf(v[8], "Resp_current_minimum");
-			sprintf(v[9], "Resp_current_maximum");
-			sprintf(v[10], "Resp_oc_negative_activated");
-			sprintf(v[11], "Resp_oc_positive_activated");
-			sprintf(v[12], "Resp_run_temp_out_spec_limits");
-			sprintf(v[13], "Resp_run_temp_in_spec_limits");
-			sprintf(v[14], "Resp_run_volt_3_out_spec_limits");
-			sprintf(v[15], "Resp_run_volt_3_in_spec_limits");
-			sprintf(v[16], "Resp_run_volt_2_out_spec_limits");
-			sprintf(v[17], "Resp_run_volt_2_in_spec_limits");
-			sprintf(v[18], "Resp_run_volt_1_out_spec_limits");
-			sprintf(v[19], "Resp_run_volt_1_in_spec_limits");
-			sprintf(v[20], "Resp_run_cur_out_spec_limits");
-			sprintf(v[21], "Resp_run_cur_in_spec_limits");
-			sprintf(v[22], "Resp_run_overall");
-			sprintf(v[23], "Resp_energy_counter_discharging");
-			sprintf(v[24], "Resp_energy_counter_charging");
-			sprintf(v[25], "Resp_energy_counter_overall");
-			sprintf(v[26], "Resp_Ah_counter_discharging");
-			sprintf(v[27], "Resp_Ah_counter_charging");
-			sprintf(v[28], "Resp_Ah_counter_overall");
-			sprintf(v[29], "Response_on_Overall_Logdata");
-			return 30;
+			ret.push_back("Resp_temp_minimum");
+			ret.push_back("Resp_temp_maxmimum");
+			ret.push_back("Resp_U3_minimum");
+			ret.push_back("Resp_U3_maximum");
+			ret.push_back("Resp_U2_minimum");
+			ret.push_back("Resp_U2_maxmimum");
+			ret.push_back("Resp_U1_minimum");
+			ret.push_back("Resp_U1_maximum");
+			ret.push_back("Resp_current_minimum");
+			ret.push_back("Resp_current_maximum");
+			ret.push_back("Resp_oc_negative_activated");
+			ret.push_back("Resp_oc_positive_activated");
+			ret.push_back("Resp_run_temp_out_spec_limits");
+			ret.push_back("Resp_run_temp_in_spec_limits");
+			ret.push_back("Resp_run_volt_3_out_spec_limits");
+			ret.push_back("Resp_run_volt_3_in_spec_limits");
+			ret.push_back("Resp_run_volt_2_out_spec_limits");
+			ret.push_back("Resp_run_volt_2_in_spec_limits");
+			ret.push_back("Resp_run_volt_1_out_spec_limits");
+			ret.push_back("Resp_run_volt_1_in_spec_limits");
+			ret.push_back("Resp_run_cur_out_spec_limits");
+			ret.push_back("Resp_run_cur_in_spec_limits");
+			ret.push_back("Resp_run_overall");
+			ret.push_back("Resp_energy_counter_discharging");
+			ret.push_back("Resp_energy_counter_charging");
+			ret.push_back("Resp_energy_counter_overall");
+			ret.push_back("Resp_Ah_counter_discharging");
+			ret.push_back("Resp_Ah_counter_charging");
+			ret.push_back("Resp_Ah_counter_overall");
+			ret.push_back("Response_on_Overall_Logdata");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_83_resp_logdata_item"))
+		if(sgn_name == "_83_resp_logdata_item")
 		{
-			sprintf(v[0], "Resp_temp_minimum");
-			sprintf(v[1], "Resp_temp_maxmimum");
-			sprintf(v[2], "Resp_U3_minimum");
-			sprintf(v[3], "Resp_U3_maximum");
-			sprintf(v[4], "Resp_U2_minimum");
-			sprintf(v[5], "Resp_U2_maxmimum");
-			sprintf(v[6], "Resp_U1_minimum");
-			sprintf(v[7], "Resp_U1_maximum");
-			sprintf(v[8], "Resp_current_minimum");
-			sprintf(v[9], "Resp_current_maximum");
-			sprintf(v[10], "Resp_oc_negative_activated");
-			sprintf(v[11], "Resp_oc_positive_activated");
-			sprintf(v[12], "Resp_run_temp_out_spec_limits");
-			sprintf(v[13], "Resp_run_temp_in_spec_limits");
-			sprintf(v[14], "Resp_run_volt_3_out_spec_limits");
-			sprintf(v[15], "Resp_run_volt_3_in_spec_limits");
-			sprintf(v[16], "Resp_run_volt_2_out_spec_limits");
-			sprintf(v[17], "Resp_run_volt_2_in_spec_limits");
-			sprintf(v[18], "Resp_run_volt_1_out_spec_limits");
-			sprintf(v[19], "Resp_run_volt_1_in_spec_limits");
-			sprintf(v[20], "Resp_run_cur_out_spec_limits");
-			sprintf(v[21], "Resp_run_cur_in_spec_limits");
-			sprintf(v[22], "Resp_run_overall");
-			sprintf(v[23], "Resp_energy_counter_discharging");
-			sprintf(v[24], "Resp_energy_counter_charging");
-			sprintf(v[25], "Resp_energy_counter_overall");
-			sprintf(v[26], "Resp_Ah_counter_discharging");
-			sprintf(v[27], "Resp_Ah_counter_charging");
-			sprintf(v[28], "Resp_Ah_counter_overall");
-			sprintf(v[29], "Response_all_Logdata_SinceReset");
-			return 30;
+			ret.push_back("Resp_temp_minimum");
+			ret.push_back("Resp_temp_maxmimum");
+			ret.push_back("Resp_U3_minimum");
+			ret.push_back("Resp_U3_maximum");
+			ret.push_back("Resp_U2_minimum");
+			ret.push_back("Resp_U2_maxmimum");
+			ret.push_back("Resp_U1_minimum");
+			ret.push_back("Resp_U1_maximum");
+			ret.push_back("Resp_current_minimum");
+			ret.push_back("Resp_current_maximum");
+			ret.push_back("Resp_oc_negative_activated");
+			ret.push_back("Resp_oc_positive_activated");
+			ret.push_back("Resp_run_temp_out_spec_limits");
+			ret.push_back("Resp_run_temp_in_spec_limits");
+			ret.push_back("Resp_run_volt_3_out_spec_limits");
+			ret.push_back("Resp_run_volt_3_in_spec_limits");
+			ret.push_back("Resp_run_volt_2_out_spec_limits");
+			ret.push_back("Resp_run_volt_2_in_spec_limits");
+			ret.push_back("Resp_run_volt_1_out_spec_limits");
+			ret.push_back("Resp_run_volt_1_in_spec_limits");
+			ret.push_back("Resp_run_cur_out_spec_limits");
+			ret.push_back("Resp_run_cur_in_spec_limits");
+			ret.push_back("Resp_run_overall");
+			ret.push_back("Resp_energy_counter_discharging");
+			ret.push_back("Resp_energy_counter_charging");
+			ret.push_back("Resp_energy_counter_overall");
+			ret.push_back("Resp_Ah_counter_discharging");
+			ret.push_back("Resp_Ah_counter_charging");
+			ret.push_back("Resp_Ah_counter_overall");
+			ret.push_back("Response_all_Logdata_SinceReset");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_b0_resp_reset_item"))
+		if(sgn_name == "_b0_resp_reset_item")
 		{
-			sprintf(v[0], "Reset_temp_minimum");
-			sprintf(v[1], "Reset_temp_maximum");
-			sprintf(v[2], "Reset_U3_minimum");
-			sprintf(v[3], "Reset_U3_maximum");
-			sprintf(v[4], "Reset_U2_minimum");
-			sprintf(v[5], "Reset_U2_maximum");
-			sprintf(v[6], "Reset_U1_minimum");
-			sprintf(v[7], "Reset_U1_maximum");
-			sprintf(v[8], "Reset_Current_minimum");
-			sprintf(v[9], "Reset_Current_maximum");
-			sprintf(v[10], "Reset_Run_overcur_neg_activated");
-			sprintf(v[11], "Reset_Run_overcur_pos_activated");
-			sprintf(v[12], "Reset_Run_temp_out_spec_limits");
-			sprintf(v[13], "Reset_Run_temp_in_spec_limits");
-			sprintf(v[14], "Reset_Run_volt_3_out_spec_limits");
-			sprintf(v[15], "Reset_Run_volt_3_in_spec_limits");
-			sprintf(v[16], "Reset_Run_volt_2_out_spec_limits");
-			sprintf(v[17], "Reset_Run_volt_2_in_spec_limits");
-			sprintf(v[18], "Reset_Run_volt_1_out_spec_limits");
-			sprintf(v[19], "Reset_Run_volt_1_in_spec_limits");
-			sprintf(v[20], "Reset_Run_cur_out_spec_limits");
-			sprintf(v[21], "Reset_Run_cur_in_spec_limits");
-			sprintf(v[22], "Reset_Runtime_overall");
-			sprintf(v[23], "Reset_Energy_counter_discharging");
-			sprintf(v[24], "Reset_Energy_counter_charging");
-			sprintf(v[25], "Reset_Energy_counter_overall");
-			sprintf(v[26], "Reset_Ah_counter_discharging");
-			sprintf(v[27], "Reset_Ah_counter_charging");
-			sprintf(v[28], "Reset_Ah_counter_overall");
-			sprintf(v[29], "Reset_all_Logdata_Since_Reset");
-			sprintf(v[30], "Reset_Reset_EMC");
-			sprintf(v[31], "Reset_Reset_Watchdog");
-			sprintf(v[32], "Reset_illegal_opcode");
-			sprintf(v[33], "Reset_ADC_Clock");
-			sprintf(v[34], "Reset_eeprom_rw");
-			sprintf(v[35], "Reset_overcurrent_detection");
-			sprintf(v[36], "Reset_configuration");
-			sprintf(v[37], "Reset_system_init");
-			sprintf(v[38], "Reset_system_clock");
-			sprintf(v[39], "Reset_power_failure");
-			sprintf(v[40], "Reset_undertemp");
-			sprintf(v[41], "Reset_overtemp");
-			sprintf(v[42], "Reset_CAN_bus_transmit_Data");
-			sprintf(v[43], "Reset_CAN_bus_receive_Data");
-			sprintf(v[44], "Reset_Parameter_CRC");
-			sprintf(v[45], "Reset_Code_CRC");
-			sprintf(v[46], "Reset_all_System_errors");
-			sprintf(v[47], "Reset_calibration_data_");
-			sprintf(v[48], "Reset_ntc_I_OpenCircuit");
-			sprintf(v[49], "Reset_ntc_h_OpenCircuit");
-			sprintf(v[50], "Reset_voltage_measU3_OpenCircuit");
-			sprintf(v[51], "Reset_voltage_measU2_OpenCircuit");
-			sprintf(v[52], "Reset_voltage_measU1_OpenCircuit");
-			sprintf(v[53], "Reset_current_measI1_OpenCircuit");
-			sprintf(v[54], "Reset_thermal_EMF_correction");
-			sprintf(v[55], "Reset_error_current_implausible");
-			sprintf(v[56], "Reset_error_Vref");
-			sprintf(v[57], "Reset_error_Underflow_ADC_ch2");
-			sprintf(v[58], "Reset_error_Overflow_ADC_ch2");
-			sprintf(v[59], "Reset_error_Underflow_ADC_ch1");
-			sprintf(v[60], "Reset_error_Overflow_ADC_ch1");
-			sprintf(v[61], "Reset_error_ADC_interrupt");
-			sprintf(v[62], "Reset_all_measurement_errors");
-			return 63;
+			ret.push_back("Reset_temp_minimum");
+			ret.push_back("Reset_temp_maximum");
+			ret.push_back("Reset_U3_minimum");
+			ret.push_back("Reset_U3_maximum");
+			ret.push_back("Reset_U2_minimum");
+			ret.push_back("Reset_U2_maximum");
+			ret.push_back("Reset_U1_minimum");
+			ret.push_back("Reset_U1_maximum");
+			ret.push_back("Reset_Current_minimum");
+			ret.push_back("Reset_Current_maximum");
+			ret.push_back("Reset_Run_overcur_neg_activated");
+			ret.push_back("Reset_Run_overcur_pos_activated");
+			ret.push_back("Reset_Run_temp_out_spec_limits");
+			ret.push_back("Reset_Run_temp_in_spec_limits");
+			ret.push_back("Reset_Run_volt_3_out_spec_limits");
+			ret.push_back("Reset_Run_volt_3_in_spec_limits");
+			ret.push_back("Reset_Run_volt_2_out_spec_limits");
+			ret.push_back("Reset_Run_volt_2_in_spec_limits");
+			ret.push_back("Reset_Run_volt_1_out_spec_limits");
+			ret.push_back("Reset_Run_volt_1_in_spec_limits");
+			ret.push_back("Reset_Run_cur_out_spec_limits");
+			ret.push_back("Reset_Run_cur_in_spec_limits");
+			ret.push_back("Reset_Runtime_overall");
+			ret.push_back("Reset_Energy_counter_discharging");
+			ret.push_back("Reset_Energy_counter_charging");
+			ret.push_back("Reset_Energy_counter_overall");
+			ret.push_back("Reset_Ah_counter_discharging");
+			ret.push_back("Reset_Ah_counter_charging");
+			ret.push_back("Reset_Ah_counter_overall");
+			ret.push_back("Reset_all_Logdata_Since_Reset");
+			ret.push_back("Reset_Reset_EMC");
+			ret.push_back("Reset_Reset_Watchdog");
+			ret.push_back("Reset_illegal_opcode");
+			ret.push_back("Reset_ADC_Clock");
+			ret.push_back("Reset_eeprom_rw");
+			ret.push_back("Reset_overcurrent_detection");
+			ret.push_back("Reset_configuration");
+			ret.push_back("Reset_system_init");
+			ret.push_back("Reset_system_clock");
+			ret.push_back("Reset_power_failure");
+			ret.push_back("Reset_undertemp");
+			ret.push_back("Reset_overtemp");
+			ret.push_back("Reset_CAN_bus_transmit_Data");
+			ret.push_back("Reset_CAN_bus_receive_Data");
+			ret.push_back("Reset_Parameter_CRC");
+			ret.push_back("Reset_Code_CRC");
+			ret.push_back("Reset_all_System_errors");
+			ret.push_back("Reset_calibration_data_");
+			ret.push_back("Reset_ntc_I_OpenCircuit");
+			ret.push_back("Reset_ntc_h_OpenCircuit");
+			ret.push_back("Reset_voltage_measU3_OpenCircuit");
+			ret.push_back("Reset_voltage_measU2_OpenCircuit");
+			ret.push_back("Reset_voltage_measU1_OpenCircuit");
+			ret.push_back("Reset_current_measI1_OpenCircuit");
+			ret.push_back("Reset_thermal_EMF_correction");
+			ret.push_back("Reset_error_current_implausible");
+			ret.push_back("Reset_error_Vref");
+			ret.push_back("Reset_error_Underflow_ADC_ch2");
+			ret.push_back("Reset_error_Overflow_ADC_ch2");
+			ret.push_back("Reset_error_Underflow_ADC_ch1");
+			ret.push_back("Reset_error_Overflow_ADC_ch1");
+			ret.push_back("Reset_error_ADC_interrupt");
+			ret.push_back("Reset_all_measurement_errors");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_b9_resp_device_type"))
+		if(sgn_name == "_b9_resp_device_type")
 		{
-			sprintf(v[0], "IVT_S");
-			sprintf(v[1], "IVT_Mod");
-			return 2;
+			ret.push_back("IVT_S");
+			ret.push_back("IVT_Mod");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_a0_resp_triggermode_i"))
+		if(sgn_name == "_a0_resp_triggermode_i")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_a1_resp_triggermode_u1"))
+		if(sgn_name == "_a1_resp_triggermode_u1")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_a2_resp_triggermode_u2"))
+		if(sgn_name == "_a2_resp_triggermode_u2")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_a3_resp_triggermode_u3"))
+		if(sgn_name == "_a3_resp_triggermode_u3")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_a4_resp_triggermode_t"))
+		if(sgn_name == "_a4_resp_triggermode_t")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_a5_resp_triggermode_w"))
+		if(sgn_name == "_a5_resp_triggermode_w")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_a6_resp_triggermode_as"))
+		if(sgn_name == "_a6_resp_triggermode_as")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_a7_resp_triggermode_wh"))
+		if(sgn_name == "_a7_resp_triggermode_wh")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_b4_resp_actual_mode"))
+		if(sgn_name == "_b4_resp_actual_mode")
 		{
-			sprintf(v[0], "RUN");
-			sprintf(v[1], "STOP");
-			return 2;
+			ret.push_back("RUN");
+			ret.push_back("STOP");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_b9_resp_device_current"))
+		if(sgn_name == "_b9_resp_device_current")
 		{
-			sprintf(v[0], "2500_A");
-			sprintf(v[1], "1000_A");
-			sprintf(v[2], "500_A");
-			sprintf(v[3], "300_A");
-			sprintf(v[4], "100_A");
-			return 5;
+			ret.push_back("2500_A");
+			ret.push_back("1000_A");
+			ret.push_back("500_A");
+			ret.push_back("300_A");
+			ret.push_back("100_A");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_b4_resp_startup_mode"))
+		if(sgn_name == "_b4_resp_startup_mode")
 		{
-			sprintf(v[0], "Run");
-			sprintf(v[1], "Stop");
-			return 2;
+			ret.push_back("Run");
+			ret.push_back("Stop");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_b9_resp_device_voltage_chan"))
+		if(sgn_name == "_b9_resp_device_voltage_chan")
 		{
-			sprintf(v[0], "3_Channels");
-			sprintf(v[1], "0_Channels");
-			return 2;
+			ret.push_back("3_Channels");
+			ret.push_back("0_Channels");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_b9_resp_device_toi"))
+		if(sgn_name == "_b9_resp_device_toi")
 		{
-			sprintf(v[0], "I");
-			return 1;
+			ret.push_back("I");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_b9_resp_device_com"))
+		if(sgn_name == "_b9_resp_device_com")
 		{
-			sprintf(v[0], "CAN_2___not_terminated");
-			sprintf(v[1], "CAN_1___terminated");
-			sprintf(v[2], "none");
-			return 3;
+			ret.push_back("CAN_2___not_terminated");
+			ret.push_back("CAN_1___terminated");
+			ret.push_back("none");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_b9_resp_device_v_supply"))
+		if(sgn_name == "_b9_resp_device_v_supply")
 		{
-			sprintf(v[0], "12__24_V_nominal_supply_voltage");
-			return 1;
+			ret.push_back("12__24_V_nominal_supply_voltage");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "IVT_MSG_RESULT_T"))
+	if(msg_name == IVT_MSG_RESULT_T)
 	{
-		if(!strcmp(sgn_name, "ivt_id_result_t"))
+		if(sgn_name == "ivt_id_result_t")
 		{
-			sprintf(v[0], "Vt_Result_T");
-			return 1;
+			ret.push_back("Vt_Result_T");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "IVT_MSG_RESULT_U3"))
+	if(msg_name == IVT_MSG_RESULT_U3)
 	{
-		if(!strcmp(sgn_name, "ivt_id_result_u3"))
+		if(sgn_name == "ivt_id_result_u3")
 		{
-			sprintf(v[0], "Vt_Result_U3");
-			return 1;
+			ret.push_back("Vt_Result_U3");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "IVT_MSG_RESULT_U2"))
+	if(msg_name == IVT_MSG_RESULT_U2)
 	{
-		if(!strcmp(sgn_name, "ivt_id_result_u2"))
+		if(sgn_name == "ivt_id_result_u2")
 		{
-			sprintf(v[0], "Vt_Result_U2");
-			return 1;
+			ret.push_back("Vt_Result_U2");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "IVT_MSG_RESULT_U1"))
+	if(msg_name == IVT_MSG_RESULT_U1)
 	{
-		if(!strcmp(sgn_name, "ivt_id_result_u1"))
+		if(sgn_name == "ivt_id_result_u1")
 		{
-			sprintf(v[0], "Vt_Result_U1");
-			return 1;
+			ret.push_back("Vt_Result_U1");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "IVT_MSG_RESULT_I"))
+	if(msg_name == IVT_MSG_RESULT_I)
 	{
-		if(!strcmp(sgn_name, "ivt_id_result_i"))
+		if(sgn_name == "ivt_id_result_i")
 		{
-			sprintf(v[0], "Vt_Result_I");
-			return 1;
+			ret.push_back("Vt_Result_I");
+			return ret;
 		}
 	}
-	if(!strcmp(msg_name, "IVT_MSG_CMD"))
+	if(msg_name == IVT_MSG_CMD)
 	{
-		if(!strcmp(sgn_name, "ivt_id_cmd"))
+		if(sgn_name == "ivt_id_cmd")
 		{
-			sprintf(v[0], "Get_cmd_and_info_ArtNr");
-			sprintf(v[1], "Get_cmd_and_info_SN");
-			sprintf(v[2], "Get_cmd_and_info_SW_Version");
-			sprintf(v[3], "Get_cmd_and_info_DEVICE_ID");
-			sprintf(v[4], "Get_cmd_and_info_THRESHOLD_NEG");
-			sprintf(v[5], "Get_cmd_and_info_THRESHOLD_POS");
-			sprintf(v[6], "Get_cmd_and_info_MODE");
-			sprintf(v[7], "Get_cmd_and_info_OC_TEST_TIME");
-			sprintf(v[8], "Get_Config_Res_Wh");
-			sprintf(v[9], "Get_Config_Res_As");
-			sprintf(v[10], "Get_Config_Res_W");
-			sprintf(v[11], "Get_Config_Res_T");
-			sprintf(v[12], "Get_Config_Res_U3");
-			sprintf(v[13], "Get_Config_Res_U2");
-			sprintf(v[14], "Get_Config_Res_U1");
-			sprintf(v[15], "Get_Config_Res_I");
-			sprintf(v[16], "Get_CAN_ID_Response");
-			sprintf(v[17], "Get_CAN_ID_Command");
-			sprintf(v[18], "Get_CAN_ID_Res_Wh");
-			sprintf(v[19], "Get_CAN_ID_Res_As");
-			sprintf(v[20], "Get_CAN_ID_Res_W");
-			sprintf(v[21], "Get_CAN_ID_Res_T");
-			sprintf(v[22], "Get_CAN_ID_Res_U3");
-			sprintf(v[23], "Get_CAN_ID_Res_U2");
-			sprintf(v[24], "Get_CAN_ID_Res_U1");
-			sprintf(v[25], "Get_CAN_ID_Res_I");
-			sprintf(v[26], "Get_Logdata_Since_Reset");
-			sprintf(v[27], "Get_Overall_Logdata");
-			sprintf(v[28], "Get_System_Errors");
-			sprintf(v[29], "Get_Measurement_Errors");
-			sprintf(v[30], "Set_RESTART");
-			sprintf(v[31], "Set_RESTART_to_default");
-			sprintf(v[32], "RESTART_to_Bitrate");
-			sprintf(v[33], "Set_THRESHOLD_neg");
-			sprintf(v[34], "Set_THRESHOLD_pos");
-			sprintf(v[35], "Set_MODE_Result_I");
-			sprintf(v[36], "Set_CAN_ID_Result_I");
-			sprintf(v[37], "Set_MODE");
-			sprintf(v[38], "START_OC_TEST");
-			sprintf(v[39], "STORE");
-			sprintf(v[40], "TRIGGER");
-			sprintf(v[41], "Reset_Err_Log");
-			sprintf(v[42], "Set_MODE_Result_Wh");
-			sprintf(v[43], "Set_MODE_Result_As");
-			sprintf(v[44], "Set_MODE_Result_W");
-			sprintf(v[45], "Set_CAN_ID_Result_Wh");
-			sprintf(v[46], "Set_CAN_ID_Result_As");
-			sprintf(v[47], "Set_CAN_ID_Result_W");
-			sprintf(v[48], "Set_CAN_ID_Result_T");
-			sprintf(v[49], "Set_MODE_Result_U3");
-			sprintf(v[50], "Set_CAN_ID_Response");
-			sprintf(v[51], "Set_CAN_ID_Cmd");
-			sprintf(v[52], "Set_CAN_ID_Result_U3");
-			sprintf(v[53], "Set_CAN_ID_Result_U2");
-			sprintf(v[54], "Set_MODE_Result_T");
-			sprintf(v[55], "Set_MODE_Result_U2");
-			sprintf(v[56], "Set_MODE_Result_U1");
-			sprintf(v[57], "Set_CAN_ID_Result_U1");
-			return 58;
+			ret.push_back("Get_cmd_and_info_ArtNr");
+			ret.push_back("Get_cmd_and_info_SN");
+			ret.push_back("Get_cmd_and_info_SW_Version");
+			ret.push_back("Get_cmd_and_info_DEVICE_ID");
+			ret.push_back("Get_cmd_and_info_THRESHOLD_NEG");
+			ret.push_back("Get_cmd_and_info_THRESHOLD_POS");
+			ret.push_back("Get_cmd_and_info_MODE");
+			ret.push_back("Get_cmd_and_info_OC_TEST_TIME");
+			ret.push_back("Get_Config_Res_Wh");
+			ret.push_back("Get_Config_Res_As");
+			ret.push_back("Get_Config_Res_W");
+			ret.push_back("Get_Config_Res_T");
+			ret.push_back("Get_Config_Res_U3");
+			ret.push_back("Get_Config_Res_U2");
+			ret.push_back("Get_Config_Res_U1");
+			ret.push_back("Get_Config_Res_I");
+			ret.push_back("Get_CAN_ID_Response");
+			ret.push_back("Get_CAN_ID_Command");
+			ret.push_back("Get_CAN_ID_Res_Wh");
+			ret.push_back("Get_CAN_ID_Res_As");
+			ret.push_back("Get_CAN_ID_Res_W");
+			ret.push_back("Get_CAN_ID_Res_T");
+			ret.push_back("Get_CAN_ID_Res_U3");
+			ret.push_back("Get_CAN_ID_Res_U2");
+			ret.push_back("Get_CAN_ID_Res_U1");
+			ret.push_back("Get_CAN_ID_Res_I");
+			ret.push_back("Get_Logdata_Since_Reset");
+			ret.push_back("Get_Overall_Logdata");
+			ret.push_back("Get_System_Errors");
+			ret.push_back("Get_Measurement_Errors");
+			ret.push_back("Set_RESTART");
+			ret.push_back("Set_RESTART_to_default");
+			ret.push_back("RESTART_to_Bitrate");
+			ret.push_back("Set_THRESHOLD_neg");
+			ret.push_back("Set_THRESHOLD_pos");
+			ret.push_back("Set_MODE_Result_I");
+			ret.push_back("Set_CAN_ID_Result_I");
+			ret.push_back("Set_MODE");
+			ret.push_back("START_OC_TEST");
+			ret.push_back("STORE");
+			ret.push_back("TRIGGER");
+			ret.push_back("Reset_Err_Log");
+			ret.push_back("Set_MODE_Result_Wh");
+			ret.push_back("Set_MODE_Result_As");
+			ret.push_back("Set_MODE_Result_W");
+			ret.push_back("Set_CAN_ID_Result_Wh");
+			ret.push_back("Set_CAN_ID_Result_As");
+			ret.push_back("Set_CAN_ID_Result_W");
+			ret.push_back("Set_CAN_ID_Result_T");
+			ret.push_back("Set_MODE_Result_U3");
+			ret.push_back("Set_CAN_ID_Response");
+			ret.push_back("Set_CAN_ID_Cmd");
+			ret.push_back("Set_CAN_ID_Result_U3");
+			ret.push_back("Set_CAN_ID_Result_U2");
+			ret.push_back("Set_MODE_Result_T");
+			ret.push_back("Set_MODE_Result_U2");
+			ret.push_back("Set_MODE_Result_U1");
+			ret.push_back("Set_CAN_ID_Result_U1");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_30_reset_item"))
+		if(sgn_name == "_30_reset_item")
 		{
-			sprintf(v[0], "Reset_temp_minimum");
-			sprintf(v[1], "Reset_temp_maximum");
-			sprintf(v[2], "Reset_U3_minimum");
-			sprintf(v[3], "Reset_U3_maximum");
-			sprintf(v[4], "Reset_U2_minimum");
-			sprintf(v[5], "Reset_U2_maximum");
-			sprintf(v[6], "Reset_U1_minimum");
-			sprintf(v[7], "Reset_U1_maximum");
-			sprintf(v[8], "Reset_Current_minimum");
-			sprintf(v[9], "Reset_Current_maximum");
-			sprintf(v[10], "Reset_Run_overcur_neg_activated");
-			sprintf(v[11], "Reset_Run_overcur_pos_activated");
-			sprintf(v[12], "Reset_Run_temp_out_spec_limits");
-			sprintf(v[13], "Reset_Run_temp_in_spec_limits");
-			sprintf(v[14], "Reset_Run_volt_3_out_spec_limits");
-			sprintf(v[15], "Reset_Run_volt_3_in_spec_limits");
-			sprintf(v[16], "Reset_Run_volt_2_out_spec_limits");
-			sprintf(v[17], "Reset_Run_volt_2_in_spec_limits");
-			sprintf(v[18], "Reset_Run_volt_1_out_spec_limits");
-			sprintf(v[19], "Reset_Run_volt_1_in_spec_limits");
-			sprintf(v[20], "Reset_Run_cur_out_spec_limits");
-			sprintf(v[21], "Reset_Run_cur_in_spec_limits");
-			sprintf(v[22], "Reset_Runtime_overall");
-			sprintf(v[23], "Reset_Energy_counter_discharging");
-			sprintf(v[24], "Reset_Energy_counter_charging");
-			sprintf(v[25], "Reset_Energy_counter_overall");
-			sprintf(v[26], "Reset_Ah_counter_discharging");
-			sprintf(v[27], "Reset_Ah_counter_charging");
-			sprintf(v[28], "Reset_Ah_counter_overall");
-			sprintf(v[29], "Reset_all_Logdata_Since_Reset");
-			sprintf(v[30], "Reset_Reset_EMC");
-			sprintf(v[31], "Reset_Reset_Watchdog");
-			sprintf(v[32], "Reset_illegal_opcode");
-			sprintf(v[33], "Reset_ADC_Clock");
-			sprintf(v[34], "Reset_eeprom_rw");
-			sprintf(v[35], "Reset_overcurrent_detection");
-			sprintf(v[36], "Reset_configuration");
-			sprintf(v[37], "Reset_system_init");
-			sprintf(v[38], "Reset_system_clock");
-			sprintf(v[39], "Reset_power_failure");
-			sprintf(v[40], "Reset_undertemp");
-			sprintf(v[41], "Reset_overtemp");
-			sprintf(v[42], "Reset_CAN_bus_transmit_Data");
-			sprintf(v[43], "Reset_CAN_bus_receive_Data");
-			sprintf(v[44], "Reset_Parameter_CRC");
-			sprintf(v[45], "Reset_Code_CRC");
-			sprintf(v[46], "Reset_all_System_errors");
-			sprintf(v[47], "Reset_calibration_data_");
-			sprintf(v[48], "Reset_ntc_I_OpenCircuit");
-			sprintf(v[49], "Reset_ntc_h_OpenCircuit");
-			sprintf(v[50], "Reset_voltage_measU3_OpenCircuit");
-			sprintf(v[51], "Reset_voltage_measU2_OpenCircuit");
-			sprintf(v[52], "Reset_voltage_measU1_OpenCircuit");
-			sprintf(v[53], "Reset_current_measI1_OpenCircuit");
-			sprintf(v[54], "Reset_thermal_EMF_correction");
-			sprintf(v[55], "Reset_error_current_implausible");
-			sprintf(v[56], "Reset_error_Vref");
-			sprintf(v[57], "Reset_error_Underflow_ADC_ch2");
-			sprintf(v[58], "Reset_error_Overflow_ADC_ch2");
-			sprintf(v[59], "Reset_error_Underflow_ADC_ch1");
-			sprintf(v[60], "Reset_error_Overflow_ADC_ch1");
-			sprintf(v[61], "Reset_error_ADC_interrupt");
-			sprintf(v[62], "Reset_all_measurement_errors");
-			return 63;
+			ret.push_back("Reset_temp_minimum");
+			ret.push_back("Reset_temp_maximum");
+			ret.push_back("Reset_U3_minimum");
+			ret.push_back("Reset_U3_maximum");
+			ret.push_back("Reset_U2_minimum");
+			ret.push_back("Reset_U2_maximum");
+			ret.push_back("Reset_U1_minimum");
+			ret.push_back("Reset_U1_maximum");
+			ret.push_back("Reset_Current_minimum");
+			ret.push_back("Reset_Current_maximum");
+			ret.push_back("Reset_Run_overcur_neg_activated");
+			ret.push_back("Reset_Run_overcur_pos_activated");
+			ret.push_back("Reset_Run_temp_out_spec_limits");
+			ret.push_back("Reset_Run_temp_in_spec_limits");
+			ret.push_back("Reset_Run_volt_3_out_spec_limits");
+			ret.push_back("Reset_Run_volt_3_in_spec_limits");
+			ret.push_back("Reset_Run_volt_2_out_spec_limits");
+			ret.push_back("Reset_Run_volt_2_in_spec_limits");
+			ret.push_back("Reset_Run_volt_1_out_spec_limits");
+			ret.push_back("Reset_Run_volt_1_in_spec_limits");
+			ret.push_back("Reset_Run_cur_out_spec_limits");
+			ret.push_back("Reset_Run_cur_in_spec_limits");
+			ret.push_back("Reset_Runtime_overall");
+			ret.push_back("Reset_Energy_counter_discharging");
+			ret.push_back("Reset_Energy_counter_charging");
+			ret.push_back("Reset_Energy_counter_overall");
+			ret.push_back("Reset_Ah_counter_discharging");
+			ret.push_back("Reset_Ah_counter_charging");
+			ret.push_back("Reset_Ah_counter_overall");
+			ret.push_back("Reset_all_Logdata_Since_Reset");
+			ret.push_back("Reset_Reset_EMC");
+			ret.push_back("Reset_Reset_Watchdog");
+			ret.push_back("Reset_illegal_opcode");
+			ret.push_back("Reset_ADC_Clock");
+			ret.push_back("Reset_eeprom_rw");
+			ret.push_back("Reset_overcurrent_detection");
+			ret.push_back("Reset_configuration");
+			ret.push_back("Reset_system_init");
+			ret.push_back("Reset_system_clock");
+			ret.push_back("Reset_power_failure");
+			ret.push_back("Reset_undertemp");
+			ret.push_back("Reset_overtemp");
+			ret.push_back("Reset_CAN_bus_transmit_Data");
+			ret.push_back("Reset_CAN_bus_receive_Data");
+			ret.push_back("Reset_Parameter_CRC");
+			ret.push_back("Reset_Code_CRC");
+			ret.push_back("Reset_all_System_errors");
+			ret.push_back("Reset_calibration_data_");
+			ret.push_back("Reset_ntc_I_OpenCircuit");
+			ret.push_back("Reset_ntc_h_OpenCircuit");
+			ret.push_back("Reset_voltage_measU3_OpenCircuit");
+			ret.push_back("Reset_voltage_measU2_OpenCircuit");
+			ret.push_back("Reset_voltage_measU1_OpenCircuit");
+			ret.push_back("Reset_current_measI1_OpenCircuit");
+			ret.push_back("Reset_thermal_EMF_correction");
+			ret.push_back("Reset_error_current_implausible");
+			ret.push_back("Reset_error_Vref");
+			ret.push_back("Reset_error_Underflow_ADC_ch2");
+			ret.push_back("Reset_error_Overflow_ADC_ch2");
+			ret.push_back("Reset_error_Underflow_ADC_ch1");
+			ret.push_back("Reset_error_Overflow_ADC_ch1");
+			ret.push_back("Reset_error_ADC_interrupt");
+			ret.push_back("Reset_all_measurement_errors");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_3a_restart_to_bitrate"))
+		if(sgn_name == "_3a_restart_to_bitrate")
 		{
-			sprintf(v[0], "250k");
-			sprintf(v[1], "500k");
-			sprintf(v[2], "1000k");
-			return 3;
+			ret.push_back("250k");
+			ret.push_back("500k");
+			ret.push_back("1000k");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_40_get_measerror_item"))
+		if(sgn_name == "_40_get_measerror_item")
 		{
-			sprintf(v[0], "Get_error_calibration_data");
-			sprintf(v[1], "Get_error_ntc_I_OpenCirc");
-			sprintf(v[2], "Get_error_ntc_h_OpenCirc");
-			sprintf(v[3], "Get_error_volt_meas_U3_OpenCirc");
-			sprintf(v[4], "Get_error_volt_meas_U2_OpenCirc");
-			sprintf(v[5], "Get_error_volt_meas_U1_OpenCirc");
-			sprintf(v[6], "Get_error_cur_meas_I1_OpenCirc");
-			sprintf(v[7], "Get_error_thermal_EMF_correction");
-			sprintf(v[8], "Get_error_cur_meas_implausible");
-			sprintf(v[9], "Get_error_Vref");
-			sprintf(v[10], "Get_error_Underflow_ADC_ch_2");
-			sprintf(v[11], "Get_error_Overflow_ADC_ch_2");
-			sprintf(v[12], "Get_error_Underflow_ADC_ch_1");
-			sprintf(v[13], "Get_error_Overflow_ADC_ch_1");
-			sprintf(v[14], "Get_error_ADC_interrupt");
-			sprintf(v[15], "Get_all_meas_Errors");
-			return 16;
+			ret.push_back("Get_error_calibration_data");
+			ret.push_back("Get_error_ntc_I_OpenCirc");
+			ret.push_back("Get_error_ntc_h_OpenCirc");
+			ret.push_back("Get_error_volt_meas_U3_OpenCirc");
+			ret.push_back("Get_error_volt_meas_U2_OpenCirc");
+			ret.push_back("Get_error_volt_meas_U1_OpenCirc");
+			ret.push_back("Get_error_cur_meas_I1_OpenCirc");
+			ret.push_back("Get_error_thermal_EMF_correction");
+			ret.push_back("Get_error_cur_meas_implausible");
+			ret.push_back("Get_error_Vref");
+			ret.push_back("Get_error_Underflow_ADC_ch_2");
+			ret.push_back("Get_error_Overflow_ADC_ch_2");
+			ret.push_back("Get_error_Underflow_ADC_ch_1");
+			ret.push_back("Get_error_Overflow_ADC_ch_1");
+			ret.push_back("Get_error_ADC_interrupt");
+			ret.push_back("Get_all_meas_Errors");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_41_get_systemerror_item"))
+		if(sgn_name == "_41_get_systemerror_item")
 		{
-			sprintf(v[0], "Get_error_reset_EMC");
-			sprintf(v[1], "Get_error_reset_Watchdog");
-			sprintf(v[2], "Get_error_reset_illegal_opcode");
-			sprintf(v[3], "Get_error_ADC_clock");
-			sprintf(v[4], "Get_error_eeprom_rw");
-			sprintf(v[5], "Get_error_overcurrent_detection");
-			sprintf(v[6], "Get_error_configuration");
-			sprintf(v[7], "Get_error_system_init");
-			sprintf(v[8], "Get_error_system_clock");
-			sprintf(v[9], "Get_error_power_failure");
-			sprintf(v[10], "Get_error_undertemp");
-			sprintf(v[11], "Get_error_overtemp");
-			sprintf(v[12], "Get_error_CAN_bus_transmit_Data");
-			sprintf(v[13], "Get_error_CAN__bus_receive_Data");
-			sprintf(v[14], "Get_error_Code_Parameter_CRC");
-			sprintf(v[15], "Get_error_Code_CRC");
-			sprintf(v[16], "Get_all_System_errors");
-			return 17;
+			ret.push_back("Get_error_reset_EMC");
+			ret.push_back("Get_error_reset_Watchdog");
+			ret.push_back("Get_error_reset_illegal_opcode");
+			ret.push_back("Get_error_ADC_clock");
+			ret.push_back("Get_error_eeprom_rw");
+			ret.push_back("Get_error_overcurrent_detection");
+			ret.push_back("Get_error_configuration");
+			ret.push_back("Get_error_system_init");
+			ret.push_back("Get_error_system_clock");
+			ret.push_back("Get_error_power_failure");
+			ret.push_back("Get_error_undertemp");
+			ret.push_back("Get_error_overtemp");
+			ret.push_back("Get_error_CAN_bus_transmit_Data");
+			ret.push_back("Get_error_CAN__bus_receive_Data");
+			ret.push_back("Get_error_Code_Parameter_CRC");
+			ret.push_back("Get_error_Code_CRC");
+			ret.push_back("Get_all_System_errors");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_42_get_alllogdata_item"))
+		if(sgn_name == "_42_get_alllogdata_item")
 		{
-			sprintf(v[0], "Get_Temperature_minimum");
-			sprintf(v[1], "Get_Temperature_maximum");
-			sprintf(v[2], "Get_U3_minimum");
-			sprintf(v[3], "Get_U3_maxmimum_");
-			sprintf(v[4], "Get_U2_minimum");
-			sprintf(v[5], "Get_U2_maximum");
-			sprintf(v[6], "Get_U1_minimum");
-			sprintf(v[7], "Get_U1_maxmimum");
-			sprintf(v[8], "Get_current_minimum");
-			sprintf(v[9], "Get_current_maximum");
-			sprintf(v[10], "Get_run_overcur_neg_activated");
-			sprintf(v[11], "Get_run_overcur_pos_activated");
-			sprintf(v[12], "Get_run_temp_out_spec_limits");
-			sprintf(v[13], "Get_run_temp_in_spec_limits");
-			sprintf(v[14], "Get_run_volt3_out_spec_limits");
-			sprintf(v[15], "Get_run_volt3_in_spec_limits");
-			sprintf(v[16], "Get_run_volt2_out_spec_limits");
-			sprintf(v[17], "Get_run_volt2_in_spec_limits");
-			sprintf(v[18], "Get_run_volt1_out_spec_limits");
-			sprintf(v[19], "Get_run_volt1_in_spec_limits");
-			sprintf(v[20], "Get_run_cur_out_spec_limits");
-			sprintf(v[21], "Get_Run_cur_in_spec_limits");
-			sprintf(v[22], "Get_Runtime_overall");
-			sprintf(v[23], "Get_Energy_counter_discharging");
-			sprintf(v[24], "Get_Energy_counter_charging");
-			sprintf(v[25], "Get_Energy_counter_overall");
-			sprintf(v[26], "Get_Ah_counter_discharging");
-			sprintf(v[27], "Get_Ah_counter_charging");
-			sprintf(v[28], "Get_Ah_counter_overall");
-			sprintf(v[29], "Get_Overall_Logdata");
-			return 30;
+			ret.push_back("Get_Temperature_minimum");
+			ret.push_back("Get_Temperature_maximum");
+			ret.push_back("Get_U3_minimum");
+			ret.push_back("Get_U3_maxmimum_");
+			ret.push_back("Get_U2_minimum");
+			ret.push_back("Get_U2_maximum");
+			ret.push_back("Get_U1_minimum");
+			ret.push_back("Get_U1_maxmimum");
+			ret.push_back("Get_current_minimum");
+			ret.push_back("Get_current_maximum");
+			ret.push_back("Get_run_overcur_neg_activated");
+			ret.push_back("Get_run_overcur_pos_activated");
+			ret.push_back("Get_run_temp_out_spec_limits");
+			ret.push_back("Get_run_temp_in_spec_limits");
+			ret.push_back("Get_run_volt3_out_spec_limits");
+			ret.push_back("Get_run_volt3_in_spec_limits");
+			ret.push_back("Get_run_volt2_out_spec_limits");
+			ret.push_back("Get_run_volt2_in_spec_limits");
+			ret.push_back("Get_run_volt1_out_spec_limits");
+			ret.push_back("Get_run_volt1_in_spec_limits");
+			ret.push_back("Get_run_cur_out_spec_limits");
+			ret.push_back("Get_Run_cur_in_spec_limits");
+			ret.push_back("Get_Runtime_overall");
+			ret.push_back("Get_Energy_counter_discharging");
+			ret.push_back("Get_Energy_counter_charging");
+			ret.push_back("Get_Energy_counter_overall");
+			ret.push_back("Get_Ah_counter_discharging");
+			ret.push_back("Get_Ah_counter_charging");
+			ret.push_back("Get_Ah_counter_overall");
+			ret.push_back("Get_Overall_Logdata");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_43_get_logdata_item"))
+		if(sgn_name == "_43_get_logdata_item")
 		{
-			sprintf(v[0], "Get_Temperature_minimum");
-			sprintf(v[1], "Get_Temperature_maximum");
-			sprintf(v[2], "Get_U3_minimum");
-			sprintf(v[3], "Get_U3_maxmimum_");
-			sprintf(v[4], "Get_U2_minimum");
-			sprintf(v[5], "Get_U2_maximum");
-			sprintf(v[6], "Get_U1_minimum");
-			sprintf(v[7], "Get_U1_maxmimum");
-			sprintf(v[8], "Get_current_minimum");
-			sprintf(v[9], "Get_current_maximum");
-			sprintf(v[10], "Get_run_overcur_neg_activated");
-			sprintf(v[11], "Get_run_overcur_pos_activated");
-			sprintf(v[12], "Get_run_temp_out_spec_limits");
-			sprintf(v[13], "Get_run_temp_in_spec_limits");
-			sprintf(v[14], "Get_run_volt3_out_spec_limits");
-			sprintf(v[15], "Get_run_volt3_in_spec_limits");
-			sprintf(v[16], "Get_run_volt2_out_spec_limits");
-			sprintf(v[17], "Get_run_volt2_in_spec_limits");
-			sprintf(v[18], "Get_run_volt1_out_spec_limits");
-			sprintf(v[19], "Get_run_volt1_in_spec_limits");
-			sprintf(v[20], "Get_run_cur_out_spec_limits");
-			sprintf(v[21], "Get_Run_cur_in_spec_limits");
-			sprintf(v[22], "Get_Runtime_overall");
-			sprintf(v[23], "Get_Energy_counter_discharging");
-			sprintf(v[24], "Get_Energy_counter_charging");
-			sprintf(v[25], "Get_Energy_counter_overall");
-			sprintf(v[26], "Get_Ah_counter_discharging");
-			sprintf(v[27], "Get_Ah_counter_charging");
-			sprintf(v[28], "Get_Ah_counter_overall");
-			sprintf(v[29], "Get_Overall_Logdata");
-			return 30;
+			ret.push_back("Get_Temperature_minimum");
+			ret.push_back("Get_Temperature_maximum");
+			ret.push_back("Get_U3_minimum");
+			ret.push_back("Get_U3_maxmimum_");
+			ret.push_back("Get_U2_minimum");
+			ret.push_back("Get_U2_maximum");
+			ret.push_back("Get_U1_minimum");
+			ret.push_back("Get_U1_maxmimum");
+			ret.push_back("Get_current_minimum");
+			ret.push_back("Get_current_maximum");
+			ret.push_back("Get_run_overcur_neg_activated");
+			ret.push_back("Get_run_overcur_pos_activated");
+			ret.push_back("Get_run_temp_out_spec_limits");
+			ret.push_back("Get_run_temp_in_spec_limits");
+			ret.push_back("Get_run_volt3_out_spec_limits");
+			ret.push_back("Get_run_volt3_in_spec_limits");
+			ret.push_back("Get_run_volt2_out_spec_limits");
+			ret.push_back("Get_run_volt2_in_spec_limits");
+			ret.push_back("Get_run_volt1_out_spec_limits");
+			ret.push_back("Get_run_volt1_in_spec_limits");
+			ret.push_back("Get_run_cur_out_spec_limits");
+			ret.push_back("Get_Run_cur_in_spec_limits");
+			ret.push_back("Get_Runtime_overall");
+			ret.push_back("Get_Energy_counter_discharging");
+			ret.push_back("Get_Energy_counter_charging");
+			ret.push_back("Get_Energy_counter_overall");
+			ret.push_back("Get_Ah_counter_discharging");
+			ret.push_back("Get_Ah_counter_charging");
+			ret.push_back("Get_Ah_counter_overall");
+			ret.push_back("Get_Overall_Logdata");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_20_conf_triggermode_i"))
+		if(sgn_name == "_20_conf_triggermode_i")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_21_conf_triggermode_u1"))
+		if(sgn_name == "_21_conf_triggermode_u1")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_22_conf_triggermode_u2"))
+		if(sgn_name == "_22_conf_triggermode_u2")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_23_conf_triggermode_u3"))
+		if(sgn_name == "_23_conf_triggermode_u3")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_24_conf_triggermode_t"))
+		if(sgn_name == "_24_conf_triggermode_t")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_25_conf_triggermode_w"))
+		if(sgn_name == "_25_conf_triggermode_w")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_26_conf_triggermode_as"))
+		if(sgn_name == "_26_conf_triggermode_as")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_27_conf_triggermode_wh"))
+		if(sgn_name == "_27_conf_triggermode_wh")
 		{
-			sprintf(v[0], "CYCLIC");
-			sprintf(v[1], "TRIGGERED");
-			sprintf(v[2], "DISABLED");
-			return 3;
+			ret.push_back("CYCLIC");
+			ret.push_back("TRIGGERED");
+			ret.push_back("DISABLED");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_34_actual_mode"))
+		if(sgn_name == "_34_actual_mode")
 		{
-			sprintf(v[0], "START");
-			sprintf(v[1], "STOP");
-			return 2;
+			ret.push_back("START");
+			ret.push_back("STOP");
+			return ret;
 		}
-		if(!strcmp(sgn_name, "_34_startup_mode"))
+		if(sgn_name == "_34_startup_mode")
 		{
-			sprintf(v[0], "START");
-			sprintf(v[1], "STOP");
-			return 2;
+			ret.push_back("START");
+			ret.push_back("STOP");
+			return ret;
 		}
 	}
-	return 0;
+
+	return ret;
 }
