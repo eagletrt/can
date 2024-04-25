@@ -325,14 +325,14 @@ extern "C" {
 /* END */
 
 enum ivts_types_id{
-	e_ivts_uint8_t = -8,
-	e_ivts_int32_t,
-	e_ivts_int16_t,
+	e_ivts_uint32_t = -8,
+	e_ivts_uint64_t,
+	e_ivts_int8_t,
 	e_ivts_float,
 	e_ivts_uint16_t,
-	e_ivts_int8_t,
-	e_ivts_uint32_t,
-	e_ivts_uint64_t,
+	e_ivts_int16_t,
+	e_ivts_uint8_t,
+	e_ivts_int32_t,
 
 	e_ivts_ivt_msg_result_wh_ivt_id_result_wh,
 	e_ivts_ivt_msg_result_as_ivt_id_result_as,
