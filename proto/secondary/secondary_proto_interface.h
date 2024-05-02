@@ -1388,6 +1388,22 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->tlm_network_interface_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->tlm_network_interface(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->tlm_network_interface(i)._inner_timestamp();
+        (*net_signals)["TLM_NETWORK_INTERFACE"]["_timestamp"].push(pack->tlm_network_interface(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["TLM_NETWORK_INTERFACE"]["iname_0"].push(pack->tlm_network_interface(i).iname_0());
+		(*net_signals)["TLM_NETWORK_INTERFACE"]["iname_1"].push(pack->tlm_network_interface(i).iname_1());
+		(*net_signals)["TLM_NETWORK_INTERFACE"]["iname_2"].push(pack->tlm_network_interface(i).iname_2());
+		(*net_signals)["TLM_NETWORK_INTERFACE"]["iname_3"].push(pack->tlm_network_interface(i).iname_3());
+		(*net_signals)["TLM_NETWORK_INTERFACE"]["ip_address"].push(pack->tlm_network_interface(i).ip_address());
+
+    }
+
     for(int i = 0; i < pack->ammo_compression_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -2529,6 +2545,21 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1624: {
+            secondary_tlm_network_interface_t* msg = (secondary_tlm_network_interface_t*)(device->message);
+            secondary::TLM_NETWORK_INTERFACE* proto_msg = pack->add_tlm_network_interface();
+			proto_msg->set_iname_0(msg->iname_0);
+			proto_msg->set_iname_1(msg->iname_1);
+			proto_msg->set_iname_2(msg->iname_2);
+			proto_msg->set_iname_3(msg->iname_3);
+			proto_msg->set_ip_address(msg->ip_address);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1632: {
             secondary_ammo_compression_converted_t* msg = (secondary_ammo_compression_converted_t*)(device->message);
             secondary::AMMO_COMPRESSION* proto_msg = pack->add_ammo_compression();
 			proto_msg->set_rl(msg->rl);
@@ -2542,7 +2573,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1632: {
+        case 1640: {
             secondary_link_deformation_converted_t* msg = (secondary_link_deformation_converted_t*)(device->message);
             secondary::LINK_DEFORMATION* proto_msg = pack->add_link_deformation();
 			proto_msg->set_rod_id(msg->rod_id);
@@ -2566,7 +2597,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1640: {
+        case 1648: {
             secondary_debug_signal_1_converted_t* msg = (secondary_debug_signal_1_converted_t*)(device->message);
             secondary::DEBUG_SIGNAL_1* proto_msg = pack->add_debug_signal_1();
 			proto_msg->set_field_1(msg->field_1);
@@ -2580,7 +2611,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1648: {
+        case 1656: {
             secondary_debug_signal_2_converted_t* msg = (secondary_debug_signal_2_converted_t*)(device->message);
             secondary::DEBUG_SIGNAL_2* proto_msg = pack->add_debug_signal_2();
 			proto_msg->set_field_1(msg->field_1);
@@ -2594,7 +2625,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1656: {
+        case 1664: {
             secondary_cooling_temp_pumps_converted_t* msg = (secondary_cooling_temp_pumps_converted_t*)(device->message);
             secondary::COOLING_TEMP_PUMPS* proto_msg = pack->add_cooling_temp_pumps();
 			proto_msg->set_input(msg->input);
@@ -2606,7 +2637,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1664: {
+        case 1672: {
             secondary_cooling_temp_radiators_converted_t* msg = (secondary_cooling_temp_radiators_converted_t*)(device->message);
             secondary::COOLING_TEMP_RADIATORS* proto_msg = pack->add_cooling_temp_radiators();
 			proto_msg->set_air_temp(msg->air_temp);

@@ -574,6 +574,16 @@
 /* END */
 
 /* START */
+#define TLM_NETWORK_INTERFACE "TLM_NETWORK_INTERFACE"
+
+#define TLM_NETWORK_INTERFACE_INAME_0 "tlm_network_interface_iname_0"
+#define TLM_NETWORK_INTERFACE_INAME_1 "tlm_network_interface_iname_1"
+#define TLM_NETWORK_INTERFACE_INAME_2 "tlm_network_interface_iname_2"
+#define TLM_NETWORK_INTERFACE_INAME_3 "tlm_network_interface_iname_3"
+#define TLM_NETWORK_INTERFACE_IP_ADDRESS "tlm_network_interface_ip_address"
+/* END */
+
+/* START */
 #define AMMO_COMPRESSION "AMMO_COMPRESSION"
 
 #define AMMO_COMPRESSION_RL "ammo_compression_rl"
@@ -628,12 +638,12 @@
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint16_t = -6,
+	e_secondary_uint8_t = -6,
+	e_secondary_float,
+	e_secondary_uint16_t,
+	e_secondary_uint32_t,
 	e_secondary_int16_t,
 	e_secondary_uint64_t,
-	e_secondary_uint32_t,
-	e_secondary_uint8_t,
-	e_secondary_float,
 
 	
 };

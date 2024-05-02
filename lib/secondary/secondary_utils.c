@@ -220,6 +220,15 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 
 		return 0;
 	case 1624:
+		if(5 > fields_size) return 1;
+		snprintf(v[0], string_size, TLM_NETWORK_INTERFACE_INAME_0);
+		snprintf(v[1], string_size, TLM_NETWORK_INTERFACE_INAME_1);
+		snprintf(v[2], string_size, TLM_NETWORK_INTERFACE_INAME_2);
+		snprintf(v[3], string_size, TLM_NETWORK_INTERFACE_INAME_3);
+		snprintf(v[4], string_size, TLM_NETWORK_INTERFACE_IP_ADDRESS);
+
+		return 0;
+	case 1632:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, AMMO_COMPRESSION_RL);
 		snprintf(v[1], string_size, AMMO_COMPRESSION_RR);
@@ -227,7 +236,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, AMMO_COMPRESSION_FR);
 
 		return 0;
-	case 1632:
+	case 1640:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_DEFORMATION);
@@ -239,7 +248,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[1], string_size, LINK_DEFORMATION_SET_CALIBRATION_DEFORMATION);
 
 		return 0;
-	case 1640:
+	case 1648:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_1_FIELD_1);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_1_FIELD_2);
@@ -247,7 +256,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, DEBUG_SIGNAL_1_FIELD_4);
 
 		return 0;
-	case 1648:
+	case 1656:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_2_FIELD_1);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_2_FIELD_2);
@@ -255,13 +264,13 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, DEBUG_SIGNAL_2_FIELD_4);
 
 		return 0;
-	case 1656:
+	case 1664:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, COOLING_TEMP_PUMPS_INPUT);
 		snprintf(v[1], string_size, COOLING_TEMP_PUMPS_OUTPUT);
 
 		return 0;
-	case 1664:
+	case 1672:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, COOLING_TEMP_RADIATORS_AIR_TEMP);
 
@@ -964,6 +973,36 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 1624:
 	{
+		secondary_tlm_network_interface_t tmp;
+		secondary_tlm_network_interface_converted_t tmp_converted;
+		uint8_t r_iname_0;
+		uint8_t r_iname_1;
+		uint8_t r_iname_2;
+		uint8_t r_iname_3;
+		uint32_t r_ip_address;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu32 "," ,
+			&r_iname_0,
+			&r_iname_1,
+			&r_iname_2,
+			&r_iname_3,
+			&r_ip_address);
+		tmp_converted.iname_0 = (uint8_t)r_iname_0;
+		tmp_converted.iname_1 = (uint8_t)r_iname_1;
+		tmp_converted.iname_2 = (uint8_t)r_iname_2;
+		tmp_converted.iname_3 = (uint8_t)r_iname_3;
+		tmp_converted.ip_address = (uint32_t)r_ip_address;
+
+		secondary_tlm_network_interface_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_TLM_NETWORK_INTERFACE_BYTE_SIZE;
+		return secondary_tlm_network_interface_pack(data, &tmp, SECONDARY_TLM_NETWORK_INTERFACE_BYTE_SIZE);
+	}
+	case 1632:
+	{
 		secondary_ammo_compression_t tmp;
 		secondary_ammo_compression_converted_t tmp_converted;
 		float r_rl;
@@ -988,7 +1027,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_AMMO_COMPRESSION_BYTE_SIZE;
 		return secondary_ammo_compression_pack(data, &tmp, SECONDARY_AMMO_COMPRESSION_BYTE_SIZE);
 	}
-	case 1632:
+	case 1640:
 	{
 		secondary_link_deformation_t tmp;
 		secondary_link_deformation_converted_t tmp_converted;
@@ -1024,7 +1063,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_LINK_DEFORMATION_SET_CALIBRATION_BYTE_SIZE;
 		return secondary_link_deformation_set_calibration_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_SET_CALIBRATION_BYTE_SIZE);
 	}
-	case 1640:
+	case 1648:
 	{
 		secondary_debug_signal_1_t tmp;
 		secondary_debug_signal_1_converted_t tmp_converted;
@@ -1050,7 +1089,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_DEBUG_SIGNAL_1_BYTE_SIZE;
 		return secondary_debug_signal_1_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_1_BYTE_SIZE);
 	}
-	case 1648:
+	case 1656:
 	{
 		secondary_debug_signal_2_t tmp;
 		secondary_debug_signal_2_converted_t tmp_converted;
@@ -1076,7 +1115,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_DEBUG_SIGNAL_2_BYTE_SIZE;
 		return secondary_debug_signal_2_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_2_BYTE_SIZE);
 	}
-	case 1656:
+	case 1664:
 	{
 		secondary_cooling_temp_pumps_t tmp;
 		secondary_cooling_temp_pumps_converted_t tmp_converted;
@@ -1094,7 +1133,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_COOLING_TEMP_PUMPS_BYTE_SIZE;
 		return secondary_cooling_temp_pumps_pack(data, &tmp, SECONDARY_COOLING_TEMP_PUMPS_BYTE_SIZE);
 	}
-	case 1664:
+	case 1672:
 	{
 		secondary_cooling_temp_radiators_t tmp;
 		secondary_cooling_temp_radiators_converted_t tmp_converted;
@@ -1210,13 +1249,14 @@ int secondary_n_fields_from_id(int id)
 		case 1600: return 1;
 		case 1608: return 2;
 		case 1616: return 3;
-		case 1624: return 4;
-		case 1632: return 2;
+		case 1624: return 5;
+		case 1632: return 4;
+		case 1640: return 2;
 		case 72: return 2;
-		case 1640: return 4;
 		case 1648: return 4;
-		case 1656: return 2;
-		case 1664: return 1;
+		case 1656: return 4;
+		case 1664: return 2;
+		case 1672: return 1;
     }
     return 0;
 }
@@ -1410,13 +1450,21 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[2] = e_secondary_float;
 		return 3;
 	case 1624:
+		if(fields_types_size < 5) return 0;
+		fields_types[0] = e_secondary_uint8_t;
+		fields_types[1] = e_secondary_uint8_t;
+		fields_types[2] = e_secondary_uint8_t;
+		fields_types[3] = e_secondary_uint8_t;
+		fields_types[4] = e_secondary_uint32_t;
+		return 5;
+	case 1632:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
-	case 1632:
+	case 1640:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_uint8_t;
 		fields_types[1] = e_secondary_float;
@@ -1426,13 +1474,6 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[0] = e_secondary_uint8_t;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1640:
-		if(fields_types_size < 4) return 0;
-		fields_types[0] = e_secondary_float;
-		fields_types[1] = e_secondary_float;
-		fields_types[2] = e_secondary_float;
-		fields_types[3] = e_secondary_float;
-		return 4;
 	case 1648:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_float;
@@ -1441,11 +1482,18 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[3] = e_secondary_float;
 		return 4;
 	case 1656:
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_secondary_float;
+		fields_types[1] = e_secondary_float;
+		fields_types[2] = e_secondary_float;
+		fields_types[3] = e_secondary_float;
+		return 4;
+	case 1664:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1664:
+	case 1672:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_secondary_float;
 		return 1;

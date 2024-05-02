@@ -1850,6 +1850,24 @@
       }
     },
     {
+      "name": "TLM_NETWORK_INTERFACE",
+      "topic": "HYDRA",
+      "description": "Network interface from telemetry device, only IPV4",
+      "priority": 3,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "interval": 1000,
+      "contents": {
+        "iname_0": "uint8",
+        "iname_1": "uint8",
+        "iname_2": "uint8",
+        "iname_3": "uint8",
+        "ip_address": "uint32"
+      }
+    },
+    {
       "name": "AMMO_COMPRESSION",
       "topic": "HYDRA",
       "priority": 3,
