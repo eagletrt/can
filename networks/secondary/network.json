@@ -1860,10 +1860,10 @@
       "receiving": [],
       "interval": 1000,
       "contents": {
-        "iname_0": "char",
-        "iname_1": "char",
-        "iname_2": "char",
-        "iname_3": "char",
+        "iname_0": "uint8",
+        "iname_1": "uint8",
+        "iname_2": "uint8",
+        "iname_3": "uint8",
         "ip_address": "uint32"
       }
     },
