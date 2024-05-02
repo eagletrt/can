@@ -13,7 +13,8 @@ int secondary_watchdog_interval_from_id(uint16_t message_id) {
        case 1632: return SECONDARY_INTERVAL_LINK_DEFORMATION;
        case 1640: return SECONDARY_INTERVAL_DEBUG_SIGNAL_1;
        case 1648: return SECONDARY_INTERVAL_DEBUG_SIGNAL_2;
-       case 1656: return SECONDARY_INTERVAL_COOLING_TEMP;
+       case 1656: return SECONDARY_INTERVAL_COOLING_TEMP_PUMPS;
+       case 1664: return SECONDARY_INTERVAL_COOLING_TEMP_RADIATORS;
 
     }
     return -1;
@@ -22,8 +23,70 @@ int secondary_watchdog_interval_from_id(uint16_t message_id) {
 int secondary_watchdog_index_from_id(uint16_t message_id) {
     switch (message_id) {
        case 0: return SECONDARY_INDEX_ACQUISINATOR_JMP_TO_BLT;
-       case 1: return SECONDARY_INDEX_ACQUISINATOR_FLASH_TX;
-       case 2: return SECONDARY_INDEX_ACQUISINATOR_FLASH_RX;
+       case 1: return SECONDARY_INDEX_ACQUISINATOR_FLASH_0_TX;
+       case 2: return SECONDARY_INDEX_ACQUISINATOR_FLASH_0_RX;
+       case 3: return SECONDARY_INDEX_ACQUISINATOR_FLASH_1_TX;
+       case 4: return SECONDARY_INDEX_ACQUISINATOR_FLASH_1_RX;
+       case 5: return SECONDARY_INDEX_ACQUISINATOR_FLASH_2_TX;
+       case 6: return SECONDARY_INDEX_ACQUISINATOR_FLASH_2_RX;
+       case 7: return SECONDARY_INDEX_ACQUISINATOR_FLASH_3_TX;
+       case 8: return SECONDARY_INDEX_ACQUISINATOR_FLASH_3_RX;
+       case 9: return SECONDARY_INDEX_ACQUISINATOR_FLASH_4_TX;
+       case 10: return SECONDARY_INDEX_ACQUISINATOR_FLASH_4_RX;
+       case 11: return SECONDARY_INDEX_ACQUISINATOR_FLASH_5_TX;
+       case 12: return SECONDARY_INDEX_ACQUISINATOR_FLASH_5_RX;
+       case 13: return SECONDARY_INDEX_ACQUISINATOR_FLASH_6_TX;
+       case 14: return SECONDARY_INDEX_ACQUISINATOR_FLASH_6_RX;
+       case 15: return SECONDARY_INDEX_ACQUISINATOR_FLASH_7_TX;
+       case 16: return SECONDARY_INDEX_ACQUISINATOR_FLASH_7_RX;
+       case 17: return SECONDARY_INDEX_ACQUISINATOR_FLASH_8_TX;
+       case 18: return SECONDARY_INDEX_ACQUISINATOR_FLASH_8_RX;
+       case 19: return SECONDARY_INDEX_ACQUISINATOR_FLASH_9_TX;
+       case 20: return SECONDARY_INDEX_ACQUISINATOR_FLASH_9_RX;
+       case 21: return SECONDARY_INDEX_ACQUISINATOR_FLASH_10_TX;
+       case 22: return SECONDARY_INDEX_ACQUISINATOR_FLASH_10_RX;
+       case 23: return SECONDARY_INDEX_ACQUISINATOR_FLASH_11_TX;
+       case 24: return SECONDARY_INDEX_ACQUISINATOR_FLASH_11_RX;
+       case 25: return SECONDARY_INDEX_ACQUISINATOR_FLASH_12_TX;
+       case 26: return SECONDARY_INDEX_ACQUISINATOR_FLASH_12_RX;
+       case 27: return SECONDARY_INDEX_ACQUISINATOR_FLASH_13_TX;
+       case 28: return SECONDARY_INDEX_ACQUISINATOR_FLASH_13_RX;
+       case 29: return SECONDARY_INDEX_ACQUISINATOR_FLASH_14_TX;
+       case 30: return SECONDARY_INDEX_ACQUISINATOR_FLASH_14_RX;
+       case 31: return SECONDARY_INDEX_ACQUISINATOR_FLASH_15_TX;
+       case 32: return SECONDARY_INDEX_ACQUISINATOR_FLASH_15_RX;
+       case 33: return SECONDARY_INDEX_ACQUISINATOR_FLASH_16_TX;
+       case 34: return SECONDARY_INDEX_ACQUISINATOR_FLASH_16_RX;
+       case 35: return SECONDARY_INDEX_ACQUISINATOR_FLASH_17_TX;
+       case 36: return SECONDARY_INDEX_ACQUISINATOR_FLASH_17_RX;
+       case 37: return SECONDARY_INDEX_ACQUISINATOR_FLASH_18_TX;
+       case 38: return SECONDARY_INDEX_ACQUISINATOR_FLASH_18_RX;
+       case 39: return SECONDARY_INDEX_ACQUISINATOR_FLASH_19_TX;
+       case 40: return SECONDARY_INDEX_ACQUISINATOR_FLASH_19_RX;
+       case 41: return SECONDARY_INDEX_ACQUISINATOR_FLASH_20_TX;
+       case 42: return SECONDARY_INDEX_ACQUISINATOR_FLASH_20_RX;
+       case 43: return SECONDARY_INDEX_ACQUISINATOR_FLASH_21_TX;
+       case 44: return SECONDARY_INDEX_ACQUISINATOR_FLASH_21_RX;
+       case 45: return SECONDARY_INDEX_ACQUISINATOR_FLASH_22_TX;
+       case 46: return SECONDARY_INDEX_ACQUISINATOR_FLASH_22_RX;
+       case 47: return SECONDARY_INDEX_ACQUISINATOR_FLASH_23_TX;
+       case 48: return SECONDARY_INDEX_ACQUISINATOR_FLASH_23_RX;
+       case 49: return SECONDARY_INDEX_ACQUISINATOR_FLASH_24_TX;
+       case 50: return SECONDARY_INDEX_ACQUISINATOR_FLASH_24_RX;
+       case 51: return SECONDARY_INDEX_ACQUISINATOR_FLASH_25_TX;
+       case 52: return SECONDARY_INDEX_ACQUISINATOR_FLASH_25_RX;
+       case 53: return SECONDARY_INDEX_ACQUISINATOR_FLASH_26_TX;
+       case 54: return SECONDARY_INDEX_ACQUISINATOR_FLASH_26_RX;
+       case 55: return SECONDARY_INDEX_ACQUISINATOR_FLASH_27_TX;
+       case 56: return SECONDARY_INDEX_ACQUISINATOR_FLASH_27_RX;
+       case 57: return SECONDARY_INDEX_ACQUISINATOR_FLASH_28_TX;
+       case 58: return SECONDARY_INDEX_ACQUISINATOR_FLASH_28_RX;
+       case 59: return SECONDARY_INDEX_ACQUISINATOR_FLASH_29_TX;
+       case 60: return SECONDARY_INDEX_ACQUISINATOR_FLASH_29_RX;
+       case 61: return SECONDARY_INDEX_ACQUISINATOR_FLASH_30_TX;
+       case 62: return SECONDARY_INDEX_ACQUISINATOR_FLASH_30_RX;
+       case 63: return SECONDARY_INDEX_ACQUISINATOR_FLASH_31_TX;
+       case 64: return SECONDARY_INDEX_ACQUISINATOR_FLASH_31_RX;
        case 1260: return SECONDARY_INDEX_IMU_ANGULAR_RATE;
        case 1261: return SECONDARY_INDEX_IMU_ACCELERATION;
        case 1456: return SECONDARY_INDEX_IRTS_FL_0;
@@ -55,10 +118,11 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1616: return SECONDARY_INDEX_TLM_LAPS_STATS;
        case 1624: return SECONDARY_INDEX_AMMO_COMPRESSION;
        case 1632: return SECONDARY_INDEX_LINK_DEFORMATION;
-       case 8: return SECONDARY_INDEX_LINK_DEFORMATION_SET_CALIBRATION;
+       case 72: return SECONDARY_INDEX_LINK_DEFORMATION_SET_CALIBRATION;
        case 1640: return SECONDARY_INDEX_DEBUG_SIGNAL_1;
        case 1648: return SECONDARY_INDEX_DEBUG_SIGNAL_2;
-       case 1656: return SECONDARY_INDEX_COOLING_TEMP;
+       case 1656: return SECONDARY_INDEX_COOLING_TEMP_PUMPS;
+       case 1664: return SECONDARY_INDEX_COOLING_TEMP_RADIATORS;
 
     }
     return -1;
@@ -70,7 +134,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 38 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 101 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -153,10 +217,17 @@ void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_ti
     }
 
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_COOLING_TEMP)
-        && timestamp - watchdog->last_reset[SECONDARY_INDEX_COOLING_TEMP] > SECONDARY_INTERVAL_COOLING_TEMP * 3
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_COOLING_TEMP_PUMPS)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_COOLING_TEMP_PUMPS] > SECONDARY_INTERVAL_COOLING_TEMP_PUMPS * 3
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_COOLING_TEMP);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_COOLING_TEMP_PUMPS);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_COOLING_TEMP_RADIATORS)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_COOLING_TEMP_RADIATORS] > SECONDARY_INTERVAL_COOLING_TEMP_RADIATORS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_COOLING_TEMP_RADIATORS);
     }
 
 }

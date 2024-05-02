@@ -271,23 +271,705 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->acquisinator_flash_tx_size(); i++){
+    for(int i = 0; i < pack->acquisinator_flash_0_tx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->acquisinator_flash_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->acquisinator_flash_tx(i)._inner_timestamp();
-        (*net_signals)["ACQUISINATOR_FLASH_TX"]["_timestamp"].push(pack->acquisinator_flash_tx(i)._inner_timestamp());
+        if(pack->acquisinator_flash_0_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_0_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_0_TX"]["_timestamp"].push(pack->acquisinator_flash_0_tx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
     }
 
-    for(int i = 0; i < pack->acquisinator_flash_rx_size(); i++){
+    for(int i = 0; i < pack->acquisinator_flash_0_rx_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->acquisinator_flash_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->acquisinator_flash_rx(i)._inner_timestamp();
-        (*net_signals)["ACQUISINATOR_FLASH_RX"]["_timestamp"].push(pack->acquisinator_flash_rx(i)._inner_timestamp());
+        if(pack->acquisinator_flash_0_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_0_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_0_RX"]["_timestamp"].push(pack->acquisinator_flash_0_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_1_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_1_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_1_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_1_TX"]["_timestamp"].push(pack->acquisinator_flash_1_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_1_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_1_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_1_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_1_RX"]["_timestamp"].push(pack->acquisinator_flash_1_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_2_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_2_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_2_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_2_TX"]["_timestamp"].push(pack->acquisinator_flash_2_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_2_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_2_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_2_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_2_RX"]["_timestamp"].push(pack->acquisinator_flash_2_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_3_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_3_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_3_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_3_TX"]["_timestamp"].push(pack->acquisinator_flash_3_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_3_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_3_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_3_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_3_RX"]["_timestamp"].push(pack->acquisinator_flash_3_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_4_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_4_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_4_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_4_TX"]["_timestamp"].push(pack->acquisinator_flash_4_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_4_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_4_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_4_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_4_RX"]["_timestamp"].push(pack->acquisinator_flash_4_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_5_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_5_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_5_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_5_TX"]["_timestamp"].push(pack->acquisinator_flash_5_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_5_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_5_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_5_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_5_RX"]["_timestamp"].push(pack->acquisinator_flash_5_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_6_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_6_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_6_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_6_TX"]["_timestamp"].push(pack->acquisinator_flash_6_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_6_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_6_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_6_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_6_RX"]["_timestamp"].push(pack->acquisinator_flash_6_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_7_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_7_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_7_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_7_TX"]["_timestamp"].push(pack->acquisinator_flash_7_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_7_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_7_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_7_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_7_RX"]["_timestamp"].push(pack->acquisinator_flash_7_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_8_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_8_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_8_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_8_TX"]["_timestamp"].push(pack->acquisinator_flash_8_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_8_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_8_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_8_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_8_RX"]["_timestamp"].push(pack->acquisinator_flash_8_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_9_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_9_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_9_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_9_TX"]["_timestamp"].push(pack->acquisinator_flash_9_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_9_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_9_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_9_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_9_RX"]["_timestamp"].push(pack->acquisinator_flash_9_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_10_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_10_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_10_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_10_TX"]["_timestamp"].push(pack->acquisinator_flash_10_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_10_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_10_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_10_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_10_RX"]["_timestamp"].push(pack->acquisinator_flash_10_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_11_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_11_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_11_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_11_TX"]["_timestamp"].push(pack->acquisinator_flash_11_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_11_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_11_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_11_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_11_RX"]["_timestamp"].push(pack->acquisinator_flash_11_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_12_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_12_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_12_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_12_TX"]["_timestamp"].push(pack->acquisinator_flash_12_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_12_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_12_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_12_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_12_RX"]["_timestamp"].push(pack->acquisinator_flash_12_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_13_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_13_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_13_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_13_TX"]["_timestamp"].push(pack->acquisinator_flash_13_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_13_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_13_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_13_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_13_RX"]["_timestamp"].push(pack->acquisinator_flash_13_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_14_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_14_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_14_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_14_TX"]["_timestamp"].push(pack->acquisinator_flash_14_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_14_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_14_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_14_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_14_RX"]["_timestamp"].push(pack->acquisinator_flash_14_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_15_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_15_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_15_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_15_TX"]["_timestamp"].push(pack->acquisinator_flash_15_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_15_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_15_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_15_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_15_RX"]["_timestamp"].push(pack->acquisinator_flash_15_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_16_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_16_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_16_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_16_TX"]["_timestamp"].push(pack->acquisinator_flash_16_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_16_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_16_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_16_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_16_RX"]["_timestamp"].push(pack->acquisinator_flash_16_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_17_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_17_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_17_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_17_TX"]["_timestamp"].push(pack->acquisinator_flash_17_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_17_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_17_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_17_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_17_RX"]["_timestamp"].push(pack->acquisinator_flash_17_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_18_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_18_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_18_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_18_TX"]["_timestamp"].push(pack->acquisinator_flash_18_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_18_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_18_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_18_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_18_RX"]["_timestamp"].push(pack->acquisinator_flash_18_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_19_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_19_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_19_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_19_TX"]["_timestamp"].push(pack->acquisinator_flash_19_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_19_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_19_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_19_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_19_RX"]["_timestamp"].push(pack->acquisinator_flash_19_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_20_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_20_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_20_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_20_TX"]["_timestamp"].push(pack->acquisinator_flash_20_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_20_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_20_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_20_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_20_RX"]["_timestamp"].push(pack->acquisinator_flash_20_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_21_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_21_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_21_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_21_TX"]["_timestamp"].push(pack->acquisinator_flash_21_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_21_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_21_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_21_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_21_RX"]["_timestamp"].push(pack->acquisinator_flash_21_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_22_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_22_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_22_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_22_TX"]["_timestamp"].push(pack->acquisinator_flash_22_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_22_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_22_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_22_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_22_RX"]["_timestamp"].push(pack->acquisinator_flash_22_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_23_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_23_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_23_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_23_TX"]["_timestamp"].push(pack->acquisinator_flash_23_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_23_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_23_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_23_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_23_RX"]["_timestamp"].push(pack->acquisinator_flash_23_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_24_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_24_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_24_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_24_TX"]["_timestamp"].push(pack->acquisinator_flash_24_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_24_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_24_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_24_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_24_RX"]["_timestamp"].push(pack->acquisinator_flash_24_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_25_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_25_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_25_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_25_TX"]["_timestamp"].push(pack->acquisinator_flash_25_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_25_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_25_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_25_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_25_RX"]["_timestamp"].push(pack->acquisinator_flash_25_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_26_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_26_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_26_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_26_TX"]["_timestamp"].push(pack->acquisinator_flash_26_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_26_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_26_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_26_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_26_RX"]["_timestamp"].push(pack->acquisinator_flash_26_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_27_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_27_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_27_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_27_TX"]["_timestamp"].push(pack->acquisinator_flash_27_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_27_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_27_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_27_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_27_RX"]["_timestamp"].push(pack->acquisinator_flash_27_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_28_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_28_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_28_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_28_TX"]["_timestamp"].push(pack->acquisinator_flash_28_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_28_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_28_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_28_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_28_RX"]["_timestamp"].push(pack->acquisinator_flash_28_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_29_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_29_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_29_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_29_TX"]["_timestamp"].push(pack->acquisinator_flash_29_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_29_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_29_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_29_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_29_RX"]["_timestamp"].push(pack->acquisinator_flash_29_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_30_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_30_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_30_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_30_TX"]["_timestamp"].push(pack->acquisinator_flash_30_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_30_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_30_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_30_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_30_RX"]["_timestamp"].push(pack->acquisinator_flash_30_rx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_31_tx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_31_tx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_31_tx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_31_TX"]["_timestamp"].push(pack->acquisinator_flash_31_tx(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+
+    }
+
+    for(int i = 0; i < pack->acquisinator_flash_31_rx_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_flash_31_rx(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_flash_31_rx(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_FLASH_31_RX"]["_timestamp"].push(pack->acquisinator_flash_31_rx(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
@@ -777,18 +1459,28 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->cooling_temp_size(); i++){
+    for(int i = 0; i < pack->cooling_temp_pumps_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->cooling_temp(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->cooling_temp(i)._inner_timestamp();
-        (*net_signals)["COOLING_TEMP"]["_timestamp"].push(pack->cooling_temp(i)._inner_timestamp());
+        if(pack->cooling_temp_pumps(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->cooling_temp_pumps(i)._inner_timestamp();
+        (*net_signals)["COOLING_TEMP_PUMPS"]["_timestamp"].push(pack->cooling_temp_pumps(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["COOLING_TEMP"]["top_left"].push(pack->cooling_temp(i).top_left());
-		(*net_signals)["COOLING_TEMP"]["bottom_left"].push(pack->cooling_temp(i).bottom_left());
-		(*net_signals)["COOLING_TEMP"]["top_right"].push(pack->cooling_temp(i).top_right());
-		(*net_signals)["COOLING_TEMP"]["bottom_right"].push(pack->cooling_temp(i).bottom_right());
+		(*net_signals)["COOLING_TEMP_PUMPS"]["input"].push(pack->cooling_temp_pumps(i).input());
+		(*net_signals)["COOLING_TEMP_PUMPS"]["output"].push(pack->cooling_temp_pumps(i).output());
+
+    }
+
+    for(int i = 0; i < pack->cooling_temp_radiators_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->cooling_temp_radiators(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->cooling_temp_radiators(i)._inner_timestamp();
+        (*net_signals)["COOLING_TEMP_RADIATORS"]["_timestamp"].push(pack->cooling_temp_radiators(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["COOLING_TEMP_RADIATORS"]["air_temp"].push(pack->cooling_temp_radiators(i).air_temp());
 
     }
 
@@ -813,8 +1505,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1: {
-            secondary_acquisinator_flash_tx_t* msg = (secondary_acquisinator_flash_tx_t*)(device->message);
-            secondary::ACQUISINATOR_FLASH_TX* proto_msg = pack->add_acquisinator_flash_tx();
+            secondary_acquisinator_flash_0_tx_t* msg = (secondary_acquisinator_flash_0_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_0_TX* proto_msg = pack->add_acquisinator_flash_0_tx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -823,8 +1515,628 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 2: {
-            secondary_acquisinator_flash_rx_t* msg = (secondary_acquisinator_flash_rx_t*)(device->message);
-            secondary::ACQUISINATOR_FLASH_RX* proto_msg = pack->add_acquisinator_flash_rx();
+            secondary_acquisinator_flash_0_rx_t* msg = (secondary_acquisinator_flash_0_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_0_RX* proto_msg = pack->add_acquisinator_flash_0_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 3: {
+            secondary_acquisinator_flash_1_tx_t* msg = (secondary_acquisinator_flash_1_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_1_TX* proto_msg = pack->add_acquisinator_flash_1_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 4: {
+            secondary_acquisinator_flash_1_rx_t* msg = (secondary_acquisinator_flash_1_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_1_RX* proto_msg = pack->add_acquisinator_flash_1_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 5: {
+            secondary_acquisinator_flash_2_tx_t* msg = (secondary_acquisinator_flash_2_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_2_TX* proto_msg = pack->add_acquisinator_flash_2_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 6: {
+            secondary_acquisinator_flash_2_rx_t* msg = (secondary_acquisinator_flash_2_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_2_RX* proto_msg = pack->add_acquisinator_flash_2_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 7: {
+            secondary_acquisinator_flash_3_tx_t* msg = (secondary_acquisinator_flash_3_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_3_TX* proto_msg = pack->add_acquisinator_flash_3_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 8: {
+            secondary_acquisinator_flash_3_rx_t* msg = (secondary_acquisinator_flash_3_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_3_RX* proto_msg = pack->add_acquisinator_flash_3_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 9: {
+            secondary_acquisinator_flash_4_tx_t* msg = (secondary_acquisinator_flash_4_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_4_TX* proto_msg = pack->add_acquisinator_flash_4_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 10: {
+            secondary_acquisinator_flash_4_rx_t* msg = (secondary_acquisinator_flash_4_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_4_RX* proto_msg = pack->add_acquisinator_flash_4_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 11: {
+            secondary_acquisinator_flash_5_tx_t* msg = (secondary_acquisinator_flash_5_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_5_TX* proto_msg = pack->add_acquisinator_flash_5_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 12: {
+            secondary_acquisinator_flash_5_rx_t* msg = (secondary_acquisinator_flash_5_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_5_RX* proto_msg = pack->add_acquisinator_flash_5_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 13: {
+            secondary_acquisinator_flash_6_tx_t* msg = (secondary_acquisinator_flash_6_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_6_TX* proto_msg = pack->add_acquisinator_flash_6_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 14: {
+            secondary_acquisinator_flash_6_rx_t* msg = (secondary_acquisinator_flash_6_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_6_RX* proto_msg = pack->add_acquisinator_flash_6_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 15: {
+            secondary_acquisinator_flash_7_tx_t* msg = (secondary_acquisinator_flash_7_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_7_TX* proto_msg = pack->add_acquisinator_flash_7_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 16: {
+            secondary_acquisinator_flash_7_rx_t* msg = (secondary_acquisinator_flash_7_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_7_RX* proto_msg = pack->add_acquisinator_flash_7_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 17: {
+            secondary_acquisinator_flash_8_tx_t* msg = (secondary_acquisinator_flash_8_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_8_TX* proto_msg = pack->add_acquisinator_flash_8_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 18: {
+            secondary_acquisinator_flash_8_rx_t* msg = (secondary_acquisinator_flash_8_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_8_RX* proto_msg = pack->add_acquisinator_flash_8_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 19: {
+            secondary_acquisinator_flash_9_tx_t* msg = (secondary_acquisinator_flash_9_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_9_TX* proto_msg = pack->add_acquisinator_flash_9_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 20: {
+            secondary_acquisinator_flash_9_rx_t* msg = (secondary_acquisinator_flash_9_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_9_RX* proto_msg = pack->add_acquisinator_flash_9_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 21: {
+            secondary_acquisinator_flash_10_tx_t* msg = (secondary_acquisinator_flash_10_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_10_TX* proto_msg = pack->add_acquisinator_flash_10_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 22: {
+            secondary_acquisinator_flash_10_rx_t* msg = (secondary_acquisinator_flash_10_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_10_RX* proto_msg = pack->add_acquisinator_flash_10_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 23: {
+            secondary_acquisinator_flash_11_tx_t* msg = (secondary_acquisinator_flash_11_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_11_TX* proto_msg = pack->add_acquisinator_flash_11_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 24: {
+            secondary_acquisinator_flash_11_rx_t* msg = (secondary_acquisinator_flash_11_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_11_RX* proto_msg = pack->add_acquisinator_flash_11_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 25: {
+            secondary_acquisinator_flash_12_tx_t* msg = (secondary_acquisinator_flash_12_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_12_TX* proto_msg = pack->add_acquisinator_flash_12_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 26: {
+            secondary_acquisinator_flash_12_rx_t* msg = (secondary_acquisinator_flash_12_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_12_RX* proto_msg = pack->add_acquisinator_flash_12_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 27: {
+            secondary_acquisinator_flash_13_tx_t* msg = (secondary_acquisinator_flash_13_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_13_TX* proto_msg = pack->add_acquisinator_flash_13_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 28: {
+            secondary_acquisinator_flash_13_rx_t* msg = (secondary_acquisinator_flash_13_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_13_RX* proto_msg = pack->add_acquisinator_flash_13_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 29: {
+            secondary_acquisinator_flash_14_tx_t* msg = (secondary_acquisinator_flash_14_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_14_TX* proto_msg = pack->add_acquisinator_flash_14_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 30: {
+            secondary_acquisinator_flash_14_rx_t* msg = (secondary_acquisinator_flash_14_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_14_RX* proto_msg = pack->add_acquisinator_flash_14_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 31: {
+            secondary_acquisinator_flash_15_tx_t* msg = (secondary_acquisinator_flash_15_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_15_TX* proto_msg = pack->add_acquisinator_flash_15_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 32: {
+            secondary_acquisinator_flash_15_rx_t* msg = (secondary_acquisinator_flash_15_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_15_RX* proto_msg = pack->add_acquisinator_flash_15_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 33: {
+            secondary_acquisinator_flash_16_tx_t* msg = (secondary_acquisinator_flash_16_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_16_TX* proto_msg = pack->add_acquisinator_flash_16_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 34: {
+            secondary_acquisinator_flash_16_rx_t* msg = (secondary_acquisinator_flash_16_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_16_RX* proto_msg = pack->add_acquisinator_flash_16_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 35: {
+            secondary_acquisinator_flash_17_tx_t* msg = (secondary_acquisinator_flash_17_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_17_TX* proto_msg = pack->add_acquisinator_flash_17_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 36: {
+            secondary_acquisinator_flash_17_rx_t* msg = (secondary_acquisinator_flash_17_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_17_RX* proto_msg = pack->add_acquisinator_flash_17_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 37: {
+            secondary_acquisinator_flash_18_tx_t* msg = (secondary_acquisinator_flash_18_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_18_TX* proto_msg = pack->add_acquisinator_flash_18_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 38: {
+            secondary_acquisinator_flash_18_rx_t* msg = (secondary_acquisinator_flash_18_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_18_RX* proto_msg = pack->add_acquisinator_flash_18_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 39: {
+            secondary_acquisinator_flash_19_tx_t* msg = (secondary_acquisinator_flash_19_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_19_TX* proto_msg = pack->add_acquisinator_flash_19_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 40: {
+            secondary_acquisinator_flash_19_rx_t* msg = (secondary_acquisinator_flash_19_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_19_RX* proto_msg = pack->add_acquisinator_flash_19_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 41: {
+            secondary_acquisinator_flash_20_tx_t* msg = (secondary_acquisinator_flash_20_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_20_TX* proto_msg = pack->add_acquisinator_flash_20_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 42: {
+            secondary_acquisinator_flash_20_rx_t* msg = (secondary_acquisinator_flash_20_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_20_RX* proto_msg = pack->add_acquisinator_flash_20_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 43: {
+            secondary_acquisinator_flash_21_tx_t* msg = (secondary_acquisinator_flash_21_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_21_TX* proto_msg = pack->add_acquisinator_flash_21_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 44: {
+            secondary_acquisinator_flash_21_rx_t* msg = (secondary_acquisinator_flash_21_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_21_RX* proto_msg = pack->add_acquisinator_flash_21_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 45: {
+            secondary_acquisinator_flash_22_tx_t* msg = (secondary_acquisinator_flash_22_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_22_TX* proto_msg = pack->add_acquisinator_flash_22_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 46: {
+            secondary_acquisinator_flash_22_rx_t* msg = (secondary_acquisinator_flash_22_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_22_RX* proto_msg = pack->add_acquisinator_flash_22_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 47: {
+            secondary_acquisinator_flash_23_tx_t* msg = (secondary_acquisinator_flash_23_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_23_TX* proto_msg = pack->add_acquisinator_flash_23_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 48: {
+            secondary_acquisinator_flash_23_rx_t* msg = (secondary_acquisinator_flash_23_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_23_RX* proto_msg = pack->add_acquisinator_flash_23_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 49: {
+            secondary_acquisinator_flash_24_tx_t* msg = (secondary_acquisinator_flash_24_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_24_TX* proto_msg = pack->add_acquisinator_flash_24_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 50: {
+            secondary_acquisinator_flash_24_rx_t* msg = (secondary_acquisinator_flash_24_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_24_RX* proto_msg = pack->add_acquisinator_flash_24_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 51: {
+            secondary_acquisinator_flash_25_tx_t* msg = (secondary_acquisinator_flash_25_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_25_TX* proto_msg = pack->add_acquisinator_flash_25_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 52: {
+            secondary_acquisinator_flash_25_rx_t* msg = (secondary_acquisinator_flash_25_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_25_RX* proto_msg = pack->add_acquisinator_flash_25_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 53: {
+            secondary_acquisinator_flash_26_tx_t* msg = (secondary_acquisinator_flash_26_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_26_TX* proto_msg = pack->add_acquisinator_flash_26_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 54: {
+            secondary_acquisinator_flash_26_rx_t* msg = (secondary_acquisinator_flash_26_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_26_RX* proto_msg = pack->add_acquisinator_flash_26_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 55: {
+            secondary_acquisinator_flash_27_tx_t* msg = (secondary_acquisinator_flash_27_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_27_TX* proto_msg = pack->add_acquisinator_flash_27_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 56: {
+            secondary_acquisinator_flash_27_rx_t* msg = (secondary_acquisinator_flash_27_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_27_RX* proto_msg = pack->add_acquisinator_flash_27_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 57: {
+            secondary_acquisinator_flash_28_tx_t* msg = (secondary_acquisinator_flash_28_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_28_TX* proto_msg = pack->add_acquisinator_flash_28_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 58: {
+            secondary_acquisinator_flash_28_rx_t* msg = (secondary_acquisinator_flash_28_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_28_RX* proto_msg = pack->add_acquisinator_flash_28_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 59: {
+            secondary_acquisinator_flash_29_tx_t* msg = (secondary_acquisinator_flash_29_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_29_TX* proto_msg = pack->add_acquisinator_flash_29_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 60: {
+            secondary_acquisinator_flash_29_rx_t* msg = (secondary_acquisinator_flash_29_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_29_RX* proto_msg = pack->add_acquisinator_flash_29_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 61: {
+            secondary_acquisinator_flash_30_tx_t* msg = (secondary_acquisinator_flash_30_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_30_TX* proto_msg = pack->add_acquisinator_flash_30_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 62: {
+            secondary_acquisinator_flash_30_rx_t* msg = (secondary_acquisinator_flash_30_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_30_RX* proto_msg = pack->add_acquisinator_flash_30_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 63: {
+            secondary_acquisinator_flash_31_tx_t* msg = (secondary_acquisinator_flash_31_tx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_31_TX* proto_msg = pack->add_acquisinator_flash_31_tx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 64: {
+            secondary_acquisinator_flash_31_rx_t* msg = (secondary_acquisinator_flash_31_rx_t*)(device->message);
+            secondary::ACQUISINATOR_FLASH_31_RX* proto_msg = pack->add_acquisinator_flash_31_rx();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -1242,7 +2554,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 8: {
+        case 72: {
             secondary_link_deformation_set_calibration_converted_t* msg = (secondary_link_deformation_set_calibration_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_SET_CALIBRATION* proto_msg = pack->add_link_deformation_set_calibration();
 			proto_msg->set_rod_id(msg->rod_id);
@@ -1283,12 +2595,21 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1656: {
-            secondary_cooling_temp_converted_t* msg = (secondary_cooling_temp_converted_t*)(device->message);
-            secondary::COOLING_TEMP* proto_msg = pack->add_cooling_temp();
-			proto_msg->set_top_left(msg->top_left);
-			proto_msg->set_bottom_left(msg->bottom_left);
-			proto_msg->set_top_right(msg->top_right);
-			proto_msg->set_bottom_right(msg->bottom_right);
+            secondary_cooling_temp_pumps_converted_t* msg = (secondary_cooling_temp_pumps_converted_t*)(device->message);
+            secondary::COOLING_TEMP_PUMPS* proto_msg = pack->add_cooling_temp_pumps();
+			proto_msg->set_input(msg->input);
+			proto_msg->set_output(msg->output);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1664: {
+            secondary_cooling_temp_radiators_converted_t* msg = (secondary_cooling_temp_radiators_converted_t*)(device->message);
+            secondary::COOLING_TEMP_RADIATORS* proto_msg = pack->add_cooling_temp_radiators();
+			proto_msg->set_air_temp(msg->air_temp);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

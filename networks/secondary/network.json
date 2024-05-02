@@ -16,7 +16,7 @@
       }
     },
     {
-      "name": "ACQUISINATOR_FLASH_TX",
+      "name": "ACQUISINATOR_FLASH_0_TX",
       "fixed_id": 1,
       "sending": [
         "TLM"
@@ -27,8 +27,690 @@
       "contents": {}
     },
     {
-      "name": "ACQUISINATOR_FLASH_RX",
+      "name": "ACQUISINATOR_FLASH_0_RX",
       "fixed_id": 2,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_1_TX",
+      "fixed_id": 3,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_1_RX",
+      "fixed_id": 4,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_2_TX",
+      "fixed_id": 5,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_2_RX",
+      "fixed_id": 6,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_3_TX",
+      "fixed_id": 7,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_3_RX",
+      "fixed_id": 8,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_4_TX",
+      "fixed_id": 9,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_4_RX",
+      "fixed_id": 10,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_5_TX",
+      "fixed_id": 11,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_5_RX",
+      "fixed_id": 12,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_6_TX",
+      "fixed_id": 13,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_6_RX",
+      "fixed_id": 14,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_7_TX",
+      "fixed_id": 15,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_7_RX",
+      "fixed_id": 16,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_8_TX",
+      "fixed_id": 17,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_8_RX",
+      "fixed_id": 18,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_9_TX",
+      "fixed_id": 19,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_9_RX",
+      "fixed_id": 20,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_10_TX",
+      "fixed_id": 21,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_10_RX",
+      "fixed_id": 22,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_11_TX",
+      "fixed_id": 23,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_11_RX",
+      "fixed_id": 24,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_12_TX",
+      "fixed_id": 25,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_12_RX",
+      "fixed_id": 26,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_13_TX",
+      "fixed_id": 27,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_13_RX",
+      "fixed_id": 28,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_14_TX",
+      "fixed_id": 29,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_14_RX",
+      "fixed_id": 30,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_15_TX",
+      "fixed_id": 31,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_15_RX",
+      "fixed_id": 32,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_16_TX",
+      "fixed_id": 33,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_16_RX",
+      "fixed_id": 34,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_17_TX",
+      "fixed_id": 35,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_17_RX",
+      "fixed_id": 36,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_18_TX",
+      "fixed_id": 37,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_18_RX",
+      "fixed_id": 38,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_19_TX",
+      "fixed_id": 39,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_19_RX",
+      "fixed_id": 40,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_20_TX",
+      "fixed_id": 41,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_20_RX",
+      "fixed_id": 42,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_21_TX",
+      "fixed_id": 43,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_21_RX",
+      "fixed_id": 44,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_22_TX",
+      "fixed_id": 45,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_22_RX",
+      "fixed_id": 46,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_23_TX",
+      "fixed_id": 47,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_23_RX",
+      "fixed_id": 48,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_24_TX",
+      "fixed_id": 49,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_24_RX",
+      "fixed_id": 50,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_25_TX",
+      "fixed_id": 51,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_25_RX",
+      "fixed_id": 52,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_26_TX",
+      "fixed_id": 53,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_26_RX",
+      "fixed_id": 54,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_27_TX",
+      "fixed_id": 55,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_27_RX",
+      "fixed_id": 56,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_28_TX",
+      "fixed_id": 57,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_28_RX",
+      "fixed_id": 58,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_29_TX",
+      "fixed_id": 59,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_29_RX",
+      "fixed_id": 60,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_30_TX",
+      "fixed_id": 61,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_30_RX",
+      "fixed_id": 62,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_31_TX",
+      "fixed_id": 63,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ACQUISINATOR"
+      ],
+      "contents": {}
+    },
+    {
+      "name": "ACQUISINATOR_FLASH_31_RX",
+      "fixed_id": 64,
       "sending": [
         "TLM"
       ],
@@ -1349,17 +2031,17 @@
       }
     },
     {
-      "name": "COOLING_TEMP",
+      "name": "COOLING_TEMP_PUMPS",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [
         "ACQUISINATOR"
       ],
       "receiving": [],
-      "description": "Cooling temperature",
+      "description": "Temperature of pumps input to the radiator and output",
       "interval": 500,
       "contents": {
-        "top_left": {
+        "input": {
           "type": "float16",
           "range": [
             -10,
@@ -1367,23 +2049,28 @@
           ],
           "force": "uint16"
         },
-        "bottom_left": {
+        "output": {
           "type": "float16",
           "range": [
             -10,
             110
           ],
           "force": "uint16"
-        },
-        "top_right": {
-          "type": "float16",
-          "range": [
-            -10,
-            110
-          ],
-          "force": "uint16"
-        },
-        "bottom_right": {
+        }
+      }
+    },
+    {
+      "name": "COOLING_TEMP_RADIATORS",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ACQUISINATOR"
+      ],
+      "receiving": [],
+      "description": "Air temperature outside the radiator",
+      "interval": 500,
+      "contents": {
+        "air_temp": {
           "type": "float16",
           "range": [
             -10,

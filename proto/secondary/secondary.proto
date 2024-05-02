@@ -8,10 +8,196 @@ message ACQUISINATOR_JMP_TO_BLT{
 	uint32 acquisinatore_id = 1;
 	uint64 _inner_timestamp = 2;
 }
-message ACQUISINATOR_FLASH_TX{
+message ACQUISINATOR_FLASH_0_TX{
 	uint64 _inner_timestamp = 1;
 }
-message ACQUISINATOR_FLASH_RX{
+message ACQUISINATOR_FLASH_0_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_1_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_1_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_2_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_2_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_3_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_3_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_4_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_4_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_5_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_5_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_6_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_6_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_7_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_7_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_8_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_8_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_9_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_9_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_10_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_10_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_11_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_11_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_12_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_12_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_13_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_13_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_14_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_14_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_15_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_15_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_16_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_16_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_17_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_17_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_18_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_18_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_19_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_19_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_20_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_20_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_21_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_21_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_22_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_22_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_23_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_23_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_24_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_24_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_25_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_25_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_26_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_26_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_27_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_27_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_28_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_28_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_29_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_29_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_30_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_30_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_31_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_31_RX{
 	uint64 _inner_timestamp = 1;
 }
 message IMU_ANGULAR_RATE{
@@ -226,53 +412,118 @@ message DEBUG_SIGNAL_2{
 	double field_4 = 4;
 	uint64 _inner_timestamp = 5;
 }
-message COOLING_TEMP{
-	double top_left = 1;
-	double bottom_left = 2;
-	double top_right = 3;
-	double bottom_right = 4;
-	uint64 _inner_timestamp = 5;
+message COOLING_TEMP_PUMPS{
+	double input = 1;
+	double output = 2;
+	uint64 _inner_timestamp = 3;
+}
+message COOLING_TEMP_RADIATORS{
+	double air_temp = 1;
+	uint64 _inner_timestamp = 2;
 }
 
 
 message Pack{
 	repeated ACQUISINATOR_JMP_TO_BLT ACQUISINATOR_JMP_TO_BLT = 1;
-	repeated ACQUISINATOR_FLASH_TX ACQUISINATOR_FLASH_TX = 2;
-	repeated ACQUISINATOR_FLASH_RX ACQUISINATOR_FLASH_RX = 3;
-	repeated IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 4;
-	repeated IMU_ACCELERATION IMU_ACCELERATION = 5;
-	repeated IRTS_FL_0 IRTS_FL_0 = 6;
-	repeated IRTS_FL_1 IRTS_FL_1 = 7;
-	repeated IRTS_FL_2 IRTS_FL_2 = 8;
-	repeated IRTS_FL_3 IRTS_FL_3 = 9;
-	repeated IRTS_FR_0 IRTS_FR_0 = 10;
-	repeated IRTS_FR_1 IRTS_FR_1 = 11;
-	repeated IRTS_FR_2 IRTS_FR_2 = 12;
-	repeated IRTS_FR_3 IRTS_FR_3 = 13;
-	repeated IRTS_RL_0 IRTS_RL_0 = 14;
-	repeated IRTS_RL_1 IRTS_RL_1 = 15;
-	repeated IRTS_RL_2 IRTS_RL_2 = 16;
-	repeated IRTS_RL_3 IRTS_RL_3 = 17;
-	repeated IRTS_RR_0 IRTS_RR_0 = 18;
-	repeated IRTS_RR_1 IRTS_RR_1 = 19;
-	repeated IRTS_RR_2 IRTS_RR_2 = 20;
-	repeated IRTS_RR_3 IRTS_RR_3 = 21;
-	repeated GPS_COORDS GPS_COORDS = 22;
-	repeated GPS_SPEED GPS_SPEED = 23;
-	repeated ANGULAR_VELOCITY ANGULAR_VELOCITY = 24;
-	repeated PEDAL_THROTTLE PEDAL_THROTTLE = 25;
-	repeated PEDAL_BRAKES_PRESSURE PEDAL_BRAKES_PRESSURE = 26;
-	repeated STEER_ANGLE STEER_ANGLE = 27;
-	repeated TPMS_PRESSURE TPMS_PRESSURE = 28;
-	repeated TPMS_TEMPERATURE TPMS_TEMPERATURE = 29;
-	repeated TLM_UNIX_TIMESTAMP TLM_UNIX_TIMESTAMP = 30;
-	repeated TLM_LAP_TIME TLM_LAP_TIME = 31;
-	repeated TLM_LAPS_STATS TLM_LAPS_STATS = 32;
-	repeated AMMO_COMPRESSION AMMO_COMPRESSION = 33;
-	repeated LINK_DEFORMATION LINK_DEFORMATION = 34;
-	repeated LINK_DEFORMATION_SET_CALIBRATION LINK_DEFORMATION_SET_CALIBRATION = 35;
-	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 36;
-	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 37;
-	repeated COOLING_TEMP COOLING_TEMP = 38;
+	repeated ACQUISINATOR_FLASH_0_TX ACQUISINATOR_FLASH_0_TX = 2;
+	repeated ACQUISINATOR_FLASH_0_RX ACQUISINATOR_FLASH_0_RX = 3;
+	repeated ACQUISINATOR_FLASH_1_TX ACQUISINATOR_FLASH_1_TX = 4;
+	repeated ACQUISINATOR_FLASH_1_RX ACQUISINATOR_FLASH_1_RX = 5;
+	repeated ACQUISINATOR_FLASH_2_TX ACQUISINATOR_FLASH_2_TX = 6;
+	repeated ACQUISINATOR_FLASH_2_RX ACQUISINATOR_FLASH_2_RX = 7;
+	repeated ACQUISINATOR_FLASH_3_TX ACQUISINATOR_FLASH_3_TX = 8;
+	repeated ACQUISINATOR_FLASH_3_RX ACQUISINATOR_FLASH_3_RX = 9;
+	repeated ACQUISINATOR_FLASH_4_TX ACQUISINATOR_FLASH_4_TX = 10;
+	repeated ACQUISINATOR_FLASH_4_RX ACQUISINATOR_FLASH_4_RX = 11;
+	repeated ACQUISINATOR_FLASH_5_TX ACQUISINATOR_FLASH_5_TX = 12;
+	repeated ACQUISINATOR_FLASH_5_RX ACQUISINATOR_FLASH_5_RX = 13;
+	repeated ACQUISINATOR_FLASH_6_TX ACQUISINATOR_FLASH_6_TX = 14;
+	repeated ACQUISINATOR_FLASH_6_RX ACQUISINATOR_FLASH_6_RX = 15;
+	repeated ACQUISINATOR_FLASH_7_TX ACQUISINATOR_FLASH_7_TX = 16;
+	repeated ACQUISINATOR_FLASH_7_RX ACQUISINATOR_FLASH_7_RX = 17;
+	repeated ACQUISINATOR_FLASH_8_TX ACQUISINATOR_FLASH_8_TX = 18;
+	repeated ACQUISINATOR_FLASH_8_RX ACQUISINATOR_FLASH_8_RX = 19;
+	repeated ACQUISINATOR_FLASH_9_TX ACQUISINATOR_FLASH_9_TX = 20;
+	repeated ACQUISINATOR_FLASH_9_RX ACQUISINATOR_FLASH_9_RX = 21;
+	repeated ACQUISINATOR_FLASH_10_TX ACQUISINATOR_FLASH_10_TX = 22;
+	repeated ACQUISINATOR_FLASH_10_RX ACQUISINATOR_FLASH_10_RX = 23;
+	repeated ACQUISINATOR_FLASH_11_TX ACQUISINATOR_FLASH_11_TX = 24;
+	repeated ACQUISINATOR_FLASH_11_RX ACQUISINATOR_FLASH_11_RX = 25;
+	repeated ACQUISINATOR_FLASH_12_TX ACQUISINATOR_FLASH_12_TX = 26;
+	repeated ACQUISINATOR_FLASH_12_RX ACQUISINATOR_FLASH_12_RX = 27;
+	repeated ACQUISINATOR_FLASH_13_TX ACQUISINATOR_FLASH_13_TX = 28;
+	repeated ACQUISINATOR_FLASH_13_RX ACQUISINATOR_FLASH_13_RX = 29;
+	repeated ACQUISINATOR_FLASH_14_TX ACQUISINATOR_FLASH_14_TX = 30;
+	repeated ACQUISINATOR_FLASH_14_RX ACQUISINATOR_FLASH_14_RX = 31;
+	repeated ACQUISINATOR_FLASH_15_TX ACQUISINATOR_FLASH_15_TX = 32;
+	repeated ACQUISINATOR_FLASH_15_RX ACQUISINATOR_FLASH_15_RX = 33;
+	repeated ACQUISINATOR_FLASH_16_TX ACQUISINATOR_FLASH_16_TX = 34;
+	repeated ACQUISINATOR_FLASH_16_RX ACQUISINATOR_FLASH_16_RX = 35;
+	repeated ACQUISINATOR_FLASH_17_TX ACQUISINATOR_FLASH_17_TX = 36;
+	repeated ACQUISINATOR_FLASH_17_RX ACQUISINATOR_FLASH_17_RX = 37;
+	repeated ACQUISINATOR_FLASH_18_TX ACQUISINATOR_FLASH_18_TX = 38;
+	repeated ACQUISINATOR_FLASH_18_RX ACQUISINATOR_FLASH_18_RX = 39;
+	repeated ACQUISINATOR_FLASH_19_TX ACQUISINATOR_FLASH_19_TX = 40;
+	repeated ACQUISINATOR_FLASH_19_RX ACQUISINATOR_FLASH_19_RX = 41;
+	repeated ACQUISINATOR_FLASH_20_TX ACQUISINATOR_FLASH_20_TX = 42;
+	repeated ACQUISINATOR_FLASH_20_RX ACQUISINATOR_FLASH_20_RX = 43;
+	repeated ACQUISINATOR_FLASH_21_TX ACQUISINATOR_FLASH_21_TX = 44;
+	repeated ACQUISINATOR_FLASH_21_RX ACQUISINATOR_FLASH_21_RX = 45;
+	repeated ACQUISINATOR_FLASH_22_TX ACQUISINATOR_FLASH_22_TX = 46;
+	repeated ACQUISINATOR_FLASH_22_RX ACQUISINATOR_FLASH_22_RX = 47;
+	repeated ACQUISINATOR_FLASH_23_TX ACQUISINATOR_FLASH_23_TX = 48;
+	repeated ACQUISINATOR_FLASH_23_RX ACQUISINATOR_FLASH_23_RX = 49;
+	repeated ACQUISINATOR_FLASH_24_TX ACQUISINATOR_FLASH_24_TX = 50;
+	repeated ACQUISINATOR_FLASH_24_RX ACQUISINATOR_FLASH_24_RX = 51;
+	repeated ACQUISINATOR_FLASH_25_TX ACQUISINATOR_FLASH_25_TX = 52;
+	repeated ACQUISINATOR_FLASH_25_RX ACQUISINATOR_FLASH_25_RX = 53;
+	repeated ACQUISINATOR_FLASH_26_TX ACQUISINATOR_FLASH_26_TX = 54;
+	repeated ACQUISINATOR_FLASH_26_RX ACQUISINATOR_FLASH_26_RX = 55;
+	repeated ACQUISINATOR_FLASH_27_TX ACQUISINATOR_FLASH_27_TX = 56;
+	repeated ACQUISINATOR_FLASH_27_RX ACQUISINATOR_FLASH_27_RX = 57;
+	repeated ACQUISINATOR_FLASH_28_TX ACQUISINATOR_FLASH_28_TX = 58;
+	repeated ACQUISINATOR_FLASH_28_RX ACQUISINATOR_FLASH_28_RX = 59;
+	repeated ACQUISINATOR_FLASH_29_TX ACQUISINATOR_FLASH_29_TX = 60;
+	repeated ACQUISINATOR_FLASH_29_RX ACQUISINATOR_FLASH_29_RX = 61;
+	repeated ACQUISINATOR_FLASH_30_TX ACQUISINATOR_FLASH_30_TX = 62;
+	repeated ACQUISINATOR_FLASH_30_RX ACQUISINATOR_FLASH_30_RX = 63;
+	repeated ACQUISINATOR_FLASH_31_TX ACQUISINATOR_FLASH_31_TX = 64;
+	repeated ACQUISINATOR_FLASH_31_RX ACQUISINATOR_FLASH_31_RX = 65;
+	repeated IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 66;
+	repeated IMU_ACCELERATION IMU_ACCELERATION = 67;
+	repeated IRTS_FL_0 IRTS_FL_0 = 68;
+	repeated IRTS_FL_1 IRTS_FL_1 = 69;
+	repeated IRTS_FL_2 IRTS_FL_2 = 70;
+	repeated IRTS_FL_3 IRTS_FL_3 = 71;
+	repeated IRTS_FR_0 IRTS_FR_0 = 72;
+	repeated IRTS_FR_1 IRTS_FR_1 = 73;
+	repeated IRTS_FR_2 IRTS_FR_2 = 74;
+	repeated IRTS_FR_3 IRTS_FR_3 = 75;
+	repeated IRTS_RL_0 IRTS_RL_0 = 76;
+	repeated IRTS_RL_1 IRTS_RL_1 = 77;
+	repeated IRTS_RL_2 IRTS_RL_2 = 78;
+	repeated IRTS_RL_3 IRTS_RL_3 = 79;
+	repeated IRTS_RR_0 IRTS_RR_0 = 80;
+	repeated IRTS_RR_1 IRTS_RR_1 = 81;
+	repeated IRTS_RR_2 IRTS_RR_2 = 82;
+	repeated IRTS_RR_3 IRTS_RR_3 = 83;
+	repeated GPS_COORDS GPS_COORDS = 84;
+	repeated GPS_SPEED GPS_SPEED = 85;
+	repeated ANGULAR_VELOCITY ANGULAR_VELOCITY = 86;
+	repeated PEDAL_THROTTLE PEDAL_THROTTLE = 87;
+	repeated PEDAL_BRAKES_PRESSURE PEDAL_BRAKES_PRESSURE = 88;
+	repeated STEER_ANGLE STEER_ANGLE = 89;
+	repeated TPMS_PRESSURE TPMS_PRESSURE = 90;
+	repeated TPMS_TEMPERATURE TPMS_TEMPERATURE = 91;
+	repeated TLM_UNIX_TIMESTAMP TLM_UNIX_TIMESTAMP = 92;
+	repeated TLM_LAP_TIME TLM_LAP_TIME = 93;
+	repeated TLM_LAPS_STATS TLM_LAPS_STATS = 94;
+	repeated AMMO_COMPRESSION AMMO_COMPRESSION = 95;
+	repeated LINK_DEFORMATION LINK_DEFORMATION = 96;
+	repeated LINK_DEFORMATION_SET_CALIBRATION LINK_DEFORMATION_SET_CALIBRATION = 97;
+	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 98;
+	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 99;
+	repeated COOLING_TEMP_PUMPS COOLING_TEMP_PUMPS = 100;
+	repeated COOLING_TEMP_RADIATORS COOLING_TEMP_RADIATORS = 101;
 }
 

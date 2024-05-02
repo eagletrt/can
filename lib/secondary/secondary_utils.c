@@ -233,7 +233,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[1], string_size, LINK_DEFORMATION_DEFORMATION);
 
 		return 0;
-	case 8:
+	case 72:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_SET_CALIBRATION_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_SET_CALIBRATION_DEFORMATION);
@@ -256,11 +256,14 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 
 		return 0;
 	case 1656:
-		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, COOLING_TEMP_TOP_LEFT);
-		snprintf(v[1], string_size, COOLING_TEMP_BOTTOM_LEFT);
-		snprintf(v[2], string_size, COOLING_TEMP_TOP_RIGHT);
-		snprintf(v[3], string_size, COOLING_TEMP_BOTTOM_RIGHT);
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, COOLING_TEMP_PUMPS_INPUT);
+		snprintf(v[1], string_size, COOLING_TEMP_PUMPS_OUTPUT);
+
+		return 0;
+	case 1664:
+		if(1 > fields_size) return 1;
+		snprintf(v[0], string_size, COOLING_TEMP_RADIATORS_AIR_TEMP);
 
 		return 0;
 
@@ -1003,7 +1006,7 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_LINK_DEFORMATION_BYTE_SIZE;
 		return secondary_link_deformation_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_BYTE_SIZE);
 	}
-	case 8:
+	case 72:
 	{
 		secondary_link_deformation_set_calibration_t tmp;
 		secondary_link_deformation_set_calibration_converted_t tmp_converted;
@@ -1075,29 +1078,35 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 1656:
 	{
-		secondary_cooling_temp_t tmp;
-		secondary_cooling_temp_converted_t tmp_converted;
-		float r_top_left;
-		float r_bottom_left;
-		float r_top_right;
-		float r_bottom_right;
+		secondary_cooling_temp_pumps_t tmp;
+		secondary_cooling_temp_pumps_converted_t tmp_converted;
+		float r_input;
+		float r_output;
 
 		sscanf(s, "%f,"       
-			"%f,"       
-			"%f,"       
 			"%f,"       ,
-			&r_top_left,
-			&r_bottom_left,
-			&r_top_right,
-			&r_bottom_right);
-		tmp_converted.top_left = (float)r_top_left;
-		tmp_converted.bottom_left = (float)r_bottom_left;
-		tmp_converted.top_right = (float)r_top_right;
-		tmp_converted.bottom_right = (float)r_bottom_right;
+			&r_input,
+			&r_output);
+		tmp_converted.input = (float)r_input;
+		tmp_converted.output = (float)r_output;
 
-		secondary_cooling_temp_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = SECONDARY_COOLING_TEMP_BYTE_SIZE;
-		return secondary_cooling_temp_pack(data, &tmp, SECONDARY_COOLING_TEMP_BYTE_SIZE);
+		secondary_cooling_temp_pumps_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_COOLING_TEMP_PUMPS_BYTE_SIZE;
+		return secondary_cooling_temp_pumps_pack(data, &tmp, SECONDARY_COOLING_TEMP_PUMPS_BYTE_SIZE);
+	}
+	case 1664:
+	{
+		secondary_cooling_temp_radiators_t tmp;
+		secondary_cooling_temp_radiators_converted_t tmp_converted;
+		float r_air_temp;
+
+		sscanf(s, "%f,"       ,
+			&r_air_temp);
+		tmp_converted.air_temp = (float)r_air_temp;
+
+		secondary_cooling_temp_radiators_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_COOLING_TEMP_RADIATORS_BYTE_SIZE;
+		return secondary_cooling_temp_radiators_pack(data, &tmp, SECONDARY_COOLING_TEMP_RADIATORS_BYTE_SIZE);
 	}
 
     }
@@ -1110,6 +1119,68 @@ int secondary_n_fields_from_id(int id)
 		case 0: return 1;
 		case 1: return 0;
 		case 2: return 0;
+		case 3: return 0;
+		case 4: return 0;
+		case 5: return 0;
+		case 6: return 0;
+		case 7: return 0;
+		case 8: return 0;
+		case 9: return 0;
+		case 10: return 0;
+		case 11: return 0;
+		case 12: return 0;
+		case 13: return 0;
+		case 14: return 0;
+		case 15: return 0;
+		case 16: return 0;
+		case 17: return 0;
+		case 18: return 0;
+		case 19: return 0;
+		case 20: return 0;
+		case 21: return 0;
+		case 22: return 0;
+		case 23: return 0;
+		case 24: return 0;
+		case 25: return 0;
+		case 26: return 0;
+		case 27: return 0;
+		case 28: return 0;
+		case 29: return 0;
+		case 30: return 0;
+		case 31: return 0;
+		case 32: return 0;
+		case 33: return 0;
+		case 34: return 0;
+		case 35: return 0;
+		case 36: return 0;
+		case 37: return 0;
+		case 38: return 0;
+		case 39: return 0;
+		case 40: return 0;
+		case 41: return 0;
+		case 42: return 0;
+		case 43: return 0;
+		case 44: return 0;
+		case 45: return 0;
+		case 46: return 0;
+		case 47: return 0;
+		case 48: return 0;
+		case 49: return 0;
+		case 50: return 0;
+		case 51: return 0;
+		case 52: return 0;
+		case 53: return 0;
+		case 54: return 0;
+		case 55: return 0;
+		case 56: return 0;
+		case 57: return 0;
+		case 58: return 0;
+		case 59: return 0;
+		case 60: return 0;
+		case 61: return 0;
+		case 62: return 0;
+		case 63: return 0;
+		case 64: return 0;
 		case 1260: return 3;
 		case 1261: return 4;
 		case 1456: return 4;
@@ -1141,10 +1212,11 @@ int secondary_n_fields_from_id(int id)
 		case 1616: return 3;
 		case 1624: return 4;
 		case 1632: return 2;
-		case 8: return 2;
+		case 72: return 2;
 		case 1640: return 4;
 		case 1648: return 4;
-		case 1656: return 4;
+		case 1656: return 2;
+		case 1664: return 1;
     }
     return 0;
 }
@@ -1349,7 +1421,7 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[0] = e_secondary_uint8_t;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 8:
+	case 72:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_uint8_t;
 		fields_types[1] = e_secondary_float;
@@ -1369,12 +1441,14 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[3] = e_secondary_float;
 		return 4;
 	case 1656:
-		if(fields_types_size < 4) return 0;
+		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
-		fields_types[2] = e_secondary_float;
-		fields_types[3] = e_secondary_float;
-		return 4;
+		return 2;
+	case 1664:
+		if(fields_types_size < 1) return 0;
+		fields_types[0] = e_secondary_float;
+		return 1;
 
     }
     return 0;
