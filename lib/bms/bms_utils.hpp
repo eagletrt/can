@@ -165,10 +165,10 @@
 /* END */
 
 enum bms_types_id{
-	e_bms_uint32_t = -4,
-	e_bms_float,
+	e_bms_uint16_t = -4,
+	e_bms_uint32_t,
 	e_bms_uint8_t,
-	e_bms_uint16_t,
+	e_bms_float,
 
 	e_bms_board_status_cellboard_id,
 	e_bms_board_status_balancing_status,
@@ -238,6 +238,16 @@ int bms_n_fields_from_id(int id);
 int bms_fields_types_from_id(int id, int *fields_types, int fields_types_size);
 
 /**
+ * @brief get the fields of a message that are enums
+ * 
+ * @param[in] msg_name name of the message to find
+ * @param[in] sgn_name name of the signal to find
+ * 
+ * @return fields' strings vector
+*/
+std::vector<std::string> bms_enum_fields_from_message(const std::string& msg_name);
+
+/**
  * @brief get the fields of an enum given the name of the message and the name of the signal
  * 
  * @param[in] msg_name name of the message to find
@@ -245,7 +255,7 @@ int bms_fields_types_from_id(int id, int *fields_types, int fields_types_size);
  * 
  * @return fields' strings vector
 */
-std::vector<std::string> bms_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name);
+std::vector<std::string> bms_enum_names_from_fields(const std::string& msg_name, const std::string& sgn_name);
 
 
 #endif

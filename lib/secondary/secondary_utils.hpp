@@ -516,6 +516,22 @@
 /* END */
 
 /* START */
+#define HV_SOC_ESTIMATION_STATE "HV_SOC_ESTIMATION_STATE"
+
+#define HV_SOC_ESTIMATION_STATE_SOC "hv_soc_estimation_state_soc"
+#define HV_SOC_ESTIMATION_STATE_RC1 "hv_soc_estimation_state_rc1"
+#define HV_SOC_ESTIMATION_STATE_RC2 "hv_soc_estimation_state_rc2"
+/* END */
+
+/* START */
+#define HV_SOC_ESTIMATION_COVARIANCE "HV_SOC_ESTIMATION_COVARIANCE"
+
+#define HV_SOC_ESTIMATION_COVARIANCE_SOC "hv_soc_estimation_covariance_soc"
+#define HV_SOC_ESTIMATION_COVARIANCE_RC1 "hv_soc_estimation_covariance_rc1"
+#define HV_SOC_ESTIMATION_COVARIANCE_RC2 "hv_soc_estimation_covariance_rc2"
+/* END */
+
+/* START */
 #define PEDAL_THROTTLE "PEDAL_THROTTLE"
 
 #define PEDAL_THROTTLE_THROTTLE "pedal_throttle_throttle"
@@ -638,12 +654,12 @@
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint8_t = -6,
+	e_secondary_uint64_t = -6,
 	e_secondary_float,
+	e_secondary_int16_t,
 	e_secondary_uint16_t,
 	e_secondary_uint32_t,
-	e_secondary_int16_t,
-	e_secondary_uint64_t,
+	e_secondary_uint8_t,
 
 	
 };
@@ -705,6 +721,16 @@ int secondary_n_fields_from_id(int id);
 int secondary_fields_types_from_id(int id, int *fields_types, int fields_types_size);
 
 /**
+ * @brief get the fields of a message that are enums
+ * 
+ * @param[in] msg_name name of the message to find
+ * @param[in] sgn_name name of the signal to find
+ * 
+ * @return fields' strings vector
+*/
+std::vector<std::string> secondary_enum_fields_from_message(const std::string& msg_name);
+
+/**
  * @brief get the fields of an enum given the name of the message and the name of the signal
  * 
  * @param[in] msg_name name of the message to find
@@ -712,7 +738,7 @@ int secondary_fields_types_from_id(int id, int *fields_types, int fields_types_s
  * 
  * @return fields' strings vector
 */
-std::vector<std::string> secondary_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name);
+std::vector<std::string> secondary_enum_names_from_fields(const std::string& msg_name, const std::string& sgn_name);
 
 
 #endif

@@ -351,7 +351,14 @@ int simulator_fields_types_from_id(int id, int* fields_types, int fields_types_s
     }
     return 0;
 }
-std::vector<std::string> simulator_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name)
+std::vector<std::string> simulator_enum_fields_from_message(const std::string& msg_name)
+{
+	std::vector<std::string> ret;
+
+
+	return ret;
+}
+std::vector<std::string> simulator_enum_names_from_fields(const std::string& msg_name, const std::string& sgn_name)
 {
 	std::vector<std::string> ret;
 

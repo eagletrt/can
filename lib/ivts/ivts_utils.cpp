@@ -2465,7 +2465,81 @@ int ivts_fields_types_from_id(int id, int* fields_types, int fields_types_size)
     }
     return 0;
 }
-std::vector<std::string> ivts_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name)
+std::vector<std::string> ivts_enum_fields_from_message(const std::string& msg_name)
+{
+	std::vector<std::string> ret;
+
+	if(msg_name == IVT_MSG_RESULT_WH) {
+		ret.push_back("ivt_id_result_wh");
+	}
+	if(msg_name == IVT_MSG_RESULT_AS) {
+		ret.push_back("ivt_id_result_as");
+	}
+	if(msg_name == IVT_MSG_RESULT_W) {
+		ret.push_back("ivt_id_result_w");
+	}
+	if(msg_name == IVT_MSG_RESPONSE) {
+		ret.push_back("ivt_id_response");
+		ret.push_back("_80_resp_measerror_item");
+		ret.push_back("_81_resp_systemerror_item");
+		ret.push_back("_82_resp_alllogdata_item");
+		ret.push_back("_83_resp_logdata_item");
+		ret.push_back("_b0_resp_reset_item");
+		ret.push_back("_b9_resp_device_type");
+		ret.push_back("_a0_resp_triggermode_i");
+		ret.push_back("_a1_resp_triggermode_u1");
+		ret.push_back("_a2_resp_triggermode_u2");
+		ret.push_back("_a3_resp_triggermode_u3");
+		ret.push_back("_a4_resp_triggermode_t");
+		ret.push_back("_a5_resp_triggermode_w");
+		ret.push_back("_a6_resp_triggermode_as");
+		ret.push_back("_a7_resp_triggermode_wh");
+		ret.push_back("_b4_resp_actual_mode");
+		ret.push_back("_b9_resp_device_current");
+		ret.push_back("_b4_resp_startup_mode");
+		ret.push_back("_b9_resp_device_voltage_chan");
+		ret.push_back("_b9_resp_device_toi");
+		ret.push_back("_b9_resp_device_com");
+		ret.push_back("_b9_resp_device_v_supply");
+	}
+	if(msg_name == IVT_MSG_RESULT_T) {
+		ret.push_back("ivt_id_result_t");
+	}
+	if(msg_name == IVT_MSG_RESULT_U3) {
+		ret.push_back("ivt_id_result_u3");
+	}
+	if(msg_name == IVT_MSG_RESULT_U2) {
+		ret.push_back("ivt_id_result_u2");
+	}
+	if(msg_name == IVT_MSG_RESULT_U1) {
+		ret.push_back("ivt_id_result_u1");
+	}
+	if(msg_name == IVT_MSG_RESULT_I) {
+		ret.push_back("ivt_id_result_i");
+	}
+	if(msg_name == IVT_MSG_CMD) {
+		ret.push_back("ivt_id_cmd");
+		ret.push_back("_30_reset_item");
+		ret.push_back("_3a_restart_to_bitrate");
+		ret.push_back("_40_get_measerror_item");
+		ret.push_back("_41_get_systemerror_item");
+		ret.push_back("_42_get_alllogdata_item");
+		ret.push_back("_43_get_logdata_item");
+		ret.push_back("_20_conf_triggermode_i");
+		ret.push_back("_21_conf_triggermode_u1");
+		ret.push_back("_22_conf_triggermode_u2");
+		ret.push_back("_23_conf_triggermode_u3");
+		ret.push_back("_24_conf_triggermode_t");
+		ret.push_back("_25_conf_triggermode_w");
+		ret.push_back("_26_conf_triggermode_as");
+		ret.push_back("_27_conf_triggermode_wh");
+		ret.push_back("_34_actual_mode");
+		ret.push_back("_34_startup_mode");
+	}
+
+	return ret;
+}
+std::vector<std::string> ivts_enum_names_from_fields(const std::string& msg_name, const std::string& sgn_name)
 {
 	std::vector<std::string> ret;
 

@@ -1282,6 +1282,34 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->hv_soc_estimation_state_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_soc_estimation_state(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_soc_estimation_state(i)._inner_timestamp();
+        (*net_signals)["HV_SOC_ESTIMATION_STATE"]["_timestamp"].push(pack->hv_soc_estimation_state(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_SOC_ESTIMATION_STATE"]["soc"].push(pack->hv_soc_estimation_state(i).soc());
+		(*net_signals)["HV_SOC_ESTIMATION_STATE"]["rc1"].push(pack->hv_soc_estimation_state(i).rc1());
+		(*net_signals)["HV_SOC_ESTIMATION_STATE"]["rc2"].push(pack->hv_soc_estimation_state(i).rc2());
+
+    }
+
+    for(int i = 0; i < pack->hv_soc_estimation_covariance_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_soc_estimation_covariance(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_soc_estimation_covariance(i)._inner_timestamp();
+        (*net_signals)["HV_SOC_ESTIMATION_COVARIANCE"]["_timestamp"].push(pack->hv_soc_estimation_covariance(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_SOC_ESTIMATION_COVARIANCE"]["soc"].push(pack->hv_soc_estimation_covariance(i).soc());
+		(*net_signals)["HV_SOC_ESTIMATION_COVARIANCE"]["rc1"].push(pack->hv_soc_estimation_covariance(i).rc1());
+		(*net_signals)["HV_SOC_ESTIMATION_COVARIANCE"]["rc2"].push(pack->hv_soc_estimation_covariance(i).rc2());
+
+    }
+
     for(int i = 0; i < pack->pedal_throttle_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -2447,6 +2475,32 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1560: {
+            secondary_hv_soc_estimation_state_converted_t* msg = (secondary_hv_soc_estimation_state_converted_t*)(device->message);
+            secondary::HV_SOC_ESTIMATION_STATE* proto_msg = pack->add_hv_soc_estimation_state();
+			proto_msg->set_soc(msg->soc);
+			proto_msg->set_rc1(msg->rc1);
+			proto_msg->set_rc2(msg->rc2);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1568: {
+            secondary_hv_soc_estimation_covariance_converted_t* msg = (secondary_hv_soc_estimation_covariance_converted_t*)(device->message);
+            secondary::HV_SOC_ESTIMATION_COVARIANCE* proto_msg = pack->add_hv_soc_estimation_covariance();
+			proto_msg->set_soc(msg->soc);
+			proto_msg->set_rc1(msg->rc1);
+			proto_msg->set_rc2(msg->rc2);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1576: {
             secondary_pedal_throttle_converted_t* msg = (secondary_pedal_throttle_converted_t*)(device->message);
             secondary::PEDAL_THROTTLE* proto_msg = pack->add_pedal_throttle();
 			proto_msg->set_throttle(msg->throttle);
@@ -2457,7 +2511,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1568: {
+        case 1584: {
             secondary_pedal_brakes_pressure_converted_t* msg = (secondary_pedal_brakes_pressure_converted_t*)(device->message);
             secondary::PEDAL_BRAKES_PRESSURE* proto_msg = pack->add_pedal_brakes_pressure();
 			proto_msg->set_front(msg->front);
@@ -2469,7 +2523,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1576: {
+        case 1592: {
             secondary_steer_angle_converted_t* msg = (secondary_steer_angle_converted_t*)(device->message);
             secondary::STEER_ANGLE* proto_msg = pack->add_steer_angle();
 			proto_msg->set_angle(msg->angle);
@@ -2480,7 +2534,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1584: {
+        case 1600: {
             secondary_tpms_pressure_t* msg = (secondary_tpms_pressure_t*)(device->message);
             secondary::TPMS_PRESSURE* proto_msg = pack->add_tpms_pressure();
 			proto_msg->set_fl(msg->fl);
@@ -2494,7 +2548,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1592: {
+        case 1608: {
             secondary_tpms_temperature_t* msg = (secondary_tpms_temperature_t*)(device->message);
             secondary::TPMS_TEMPERATURE* proto_msg = pack->add_tpms_temperature();
 			proto_msg->set_fl(msg->fl);
@@ -2508,7 +2562,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1600: {
+        case 1616: {
             secondary_tlm_unix_timestamp_t* msg = (secondary_tlm_unix_timestamp_t*)(device->message);
             secondary::TLM_UNIX_TIMESTAMP* proto_msg = pack->add_tlm_unix_timestamp();
 			proto_msg->set_timestamp(msg->timestamp);
@@ -2519,7 +2573,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1608: {
+        case 1624: {
             secondary_tlm_lap_time_converted_t* msg = (secondary_tlm_lap_time_converted_t*)(device->message);
             secondary::TLM_LAP_TIME* proto_msg = pack->add_tlm_lap_time();
 			proto_msg->set_lap_count(msg->lap_count);
@@ -2531,7 +2585,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1616: {
+        case 1632: {
             secondary_tlm_laps_stats_converted_t* msg = (secondary_tlm_laps_stats_converted_t*)(device->message);
             secondary::TLM_LAPS_STATS* proto_msg = pack->add_tlm_laps_stats();
 			proto_msg->set_lap_number(msg->lap_number);
@@ -2544,7 +2598,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1624: {
+        case 1640: {
             secondary_tlm_network_interface_t* msg = (secondary_tlm_network_interface_t*)(device->message);
             secondary::TLM_NETWORK_INTERFACE* proto_msg = pack->add_tlm_network_interface();
 			proto_msg->set_iname_0(msg->iname_0);
@@ -2559,7 +2613,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1632: {
+        case 1648: {
             secondary_ammo_compression_converted_t* msg = (secondary_ammo_compression_converted_t*)(device->message);
             secondary::AMMO_COMPRESSION* proto_msg = pack->add_ammo_compression();
 			proto_msg->set_rl(msg->rl);
@@ -2573,7 +2627,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1640: {
+        case 1656: {
             secondary_link_deformation_converted_t* msg = (secondary_link_deformation_converted_t*)(device->message);
             secondary::LINK_DEFORMATION* proto_msg = pack->add_link_deformation();
 			proto_msg->set_rod_id(msg->rod_id);
@@ -2597,7 +2651,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1648: {
+        case 1664: {
             secondary_debug_signal_1_converted_t* msg = (secondary_debug_signal_1_converted_t*)(device->message);
             secondary::DEBUG_SIGNAL_1* proto_msg = pack->add_debug_signal_1();
 			proto_msg->set_field_1(msg->field_1);
@@ -2611,7 +2665,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1656: {
+        case 1672: {
             secondary_debug_signal_2_converted_t* msg = (secondary_debug_signal_2_converted_t*)(device->message);
             secondary::DEBUG_SIGNAL_2* proto_msg = pack->add_debug_signal_2();
 			proto_msg->set_field_1(msg->field_1);
@@ -2625,7 +2679,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1664: {
+        case 1680: {
             secondary_cooling_temp_pumps_converted_t* msg = (secondary_cooling_temp_pumps_converted_t*)(device->message);
             secondary::COOLING_TEMP_PUMPS* proto_msg = pack->add_cooling_temp_pumps();
 			proto_msg->set_input(msg->input);
@@ -2637,7 +2691,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1672: {
+        case 1688: {
             secondary_cooling_temp_radiators_converted_t* msg = (secondary_cooling_temp_radiators_converted_t*)(device->message);
             secondary::COOLING_TEMP_RADIATORS* proto_msg = pack->add_cooling_temp_radiators();
 			proto_msg->set_air_temp(msg->air_temp);

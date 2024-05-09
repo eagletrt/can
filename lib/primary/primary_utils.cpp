@@ -4800,7 +4800,362 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
     }
     return 0;
 }
-std::vector<std::string> primary_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name)
+std::vector<std::string> primary_enum_fields_from_message(const std::string& msg_name)
+{
+	std::vector<std::string> ret;
+
+	if(msg_name == NLG5_ERR) {
+		ret.push_back("nlg5_e_oov");
+		ret.push_back("nlg5_e_mov_ii");
+		ret.push_back("nlg5_e_mov_i");
+		ret.push_back("nlg5_e_sc");
+		ret.push_back("nlg5_e_p_om");
+		ret.push_back("nlg5_e_p_mv");
+		ret.push_back("nlg5_e_of");
+		ret.push_back("nlg5_e_mf");
+		ret.push_back("nlg5_e_b_p");
+		ret.push_back("nlg5_e_t_c");
+		ret.push_back("nlg5_e_t_pow");
+		ret.push_back("nlg5_e_t_dio");
+		ret.push_back("nlg5_e_t_tr");
+		ret.push_back("nlg5_e_t_ext1");
+		ret.push_back("nlg5_e_t_ext2");
+		ret.push_back("nlg5_e_t_ext3");
+		ret.push_back("nlg5_e_f_crc");
+		ret.push_back("nlg5_e_nv_crc");
+		ret.push_back("nlg5_e_es_crc");
+		ret.push_back("nlg5_e_ep_crc");
+		ret.push_back("nlg5_e_wdt");
+		ret.push_back("nlg5_e_init");
+		ret.push_back("nlg5_e_c_to");
+		ret.push_back("nlg5_e_c_off");
+		ret.push_back("nlg5_e_c_tx");
+		ret.push_back("nlg5_e_c_rx");
+		ret.push_back("nlg5_e_sdt_bt");
+		ret.push_back("nlg5_e_sdt_bv");
+		ret.push_back("nlg5_e_sdt_ah");
+		ret.push_back("nlg5_e_sdt_ct");
+		ret.push_back("nlg5_w_pl_mv");
+		ret.push_back("nlg5_w_pl_bv");
+		ret.push_back("nlg5_w_pl_it");
+		ret.push_back("nlg5_w_c_vor");
+	}
+	if(msg_name == NLG5_ST) {
+		ret.push_back("nlg5_s_he");
+		ret.push_back("nlg5_s_err");
+		ret.push_back("nlg5_s_war");
+		ret.push_back("nlg5_s_fan");
+		ret.push_back("nlg5_s_eum");
+		ret.push_back("nlg5_s_um_i");
+		ret.push_back("nlg5_s_um_ii");
+		ret.push_back("nlg5_s_cp_dt");
+		ret.push_back("nlg5_s_bpd_i");
+		ret.push_back("nlg5_s_bpd_ii");
+		ret.push_back("nlg5_s_l_ov");
+		ret.push_back("nlg5_s_l_oc");
+		ret.push_back("nlg5_s_l_mc");
+		ret.push_back("nlg5_s_l_pi");
+		ret.push_back("nlg5_s_l_cp");
+		ret.push_back("nlg5_s_l_pmax");
+		ret.push_back("nlg5_s_l_mc_max");
+		ret.push_back("nlg5_s_l_oc_max");
+		ret.push_back("nlg5_s_l_mo_max");
+		ret.push_back("nlg5_s_l_t_cprim");
+		ret.push_back("nlg5_s_l_t_pow");
+		ret.push_back("nlg5_s_l_t_dio");
+		ret.push_back("nlg5_s_l_t_tr");
+		ret.push_back("nlg5_s_l_t_batt");
+		ret.push_back("nlg5_s_aac");
+	}
+	if(msg_name == NLG5_CTL) {
+		ret.push_back("nlg5_c_c_en");
+		ret.push_back("nlg5_c_c_el");
+		ret.push_back("nlg5_c_cp_v");
+		ret.push_back("nlg5_c_mr");
+	}
+	if(msg_name == HV_JMP_TO_BLT) {
+		ret.push_back("forward");
+		ret.push_back("cellboard_id");
+	}
+	if(msg_name == HV_CELLBOARD_VERSION) {
+		ret.push_back("cellboard_id");
+	}
+	if(msg_name == HV_ERRORS) {
+		ret.push_back("errors_cell_under_voltage");
+		ret.push_back("errors_cell_over_voltage");
+		ret.push_back("errors_cell_under_temperature");
+		ret.push_back("errors_cell_over_temperature");
+		ret.push_back("errors_over_current");
+		ret.push_back("errors_can");
+		ret.push_back("errors_int_voltage_mismatch");
+		ret.push_back("errors_cellboard_comm");
+		ret.push_back("errors_cellboard_internal");
+		ret.push_back("errors_connector_disconnected");
+		ret.push_back("errors_fans_disconnected");
+		ret.push_back("errors_feedback");
+		ret.push_back("errors_feedback_circuitry");
+		ret.push_back("errors_eeprom_comm");
+		ret.push_back("errors_eeprom_write");
+	}
+	if(msg_name == HV_DEBUG_SIGNALS) {
+		ret.push_back("feedbacks_implausibility_detected");
+		ret.push_back("feedbacks_imd_cockpit");
+		ret.push_back("feedbacks_tsal_green_fault_latched");
+		ret.push_back("feedbacks_bms_cockpit");
+		ret.push_back("feedbacks_ext_latched");
+		ret.push_back("feedbacks_tsal_green");
+		ret.push_back("feedbacks_ts_over_60v_status");
+		ret.push_back("feedbacks_airn_status");
+		ret.push_back("feedbacks_airp_status");
+		ret.push_back("feedbacks_airp_gate");
+		ret.push_back("feedbacks_airn_gate");
+		ret.push_back("feedbacks_precharge_status");
+		ret.push_back("feedbacks_tsp_over_60v_status");
+		ret.push_back("feedbacks_imd_fault");
+		ret.push_back("feedbacks_check_mux");
+		ret.push_back("feedbacks_sd_end");
+		ret.push_back("feedbacks_sd_out");
+		ret.push_back("feedbacks_sd_in");
+		ret.push_back("feedbacks_sd_bms");
+		ret.push_back("feedbacks_sd_imd");
+		ret.push_back("errors_cell_under_voltage");
+		ret.push_back("errors_cell_over_voltage");
+		ret.push_back("errors_cell_under_temperature");
+		ret.push_back("errors_cell_over_temperature");
+		ret.push_back("errors_over_current");
+		ret.push_back("errors_can");
+		ret.push_back("errors_int_voltage_mismatch");
+		ret.push_back("errors_cellboard_comm");
+		ret.push_back("errors_cellboard_internal");
+		ret.push_back("errors_connector_disconnected");
+		ret.push_back("errors_fans_disconnected");
+		ret.push_back("errors_feedback");
+		ret.push_back("errors_feedback_circuitry");
+		ret.push_back("errors_eeprom_comm");
+		ret.push_back("errors_eeprom_write");
+	}
+	if(msg_name == HV_FANS_STATUS) {
+		ret.push_back("fans_override");
+	}
+	if(msg_name == HV_SET_FANS_STATUS) {
+		ret.push_back("fans_override");
+	}
+	if(msg_name == HV_FEEDBACK_STATUS) {
+		ret.push_back("feedback_implausibility_detected");
+		ret.push_back("feedback_imd_cockpit");
+		ret.push_back("feedback_tsal_green_fault_latched");
+		ret.push_back("feedback_bms_cockpit");
+		ret.push_back("feedback_ext_latched");
+		ret.push_back("feedback_tsal_green");
+		ret.push_back("feedback_ts_over_60v_status");
+		ret.push_back("feedback_airn_status");
+		ret.push_back("feedback_airp_status");
+		ret.push_back("feedback_airp_gate");
+		ret.push_back("feedback_airn_gate");
+		ret.push_back("feedback_precharge_status");
+		ret.push_back("feedback_tsp_over_60v_status");
+		ret.push_back("feedback_imd_fault");
+		ret.push_back("feedback_check_mux");
+		ret.push_back("feedback_sd_end");
+		ret.push_back("feedback_sd_out");
+		ret.push_back("feedback_sd_in");
+		ret.push_back("feedback_sd_bms");
+		ret.push_back("feedback_sd_imd");
+	}
+	if(msg_name == HV_IMD_STATUS) {
+		ret.push_back("imd_fault");
+		ret.push_back("imd_status");
+	}
+	if(msg_name == HV_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == HV_SET_STATUS_ECU) {
+		ret.push_back("hv_status_set");
+	}
+	if(msg_name == HV_SET_STATUS_HANDCART) {
+		ret.push_back("hv_status_set");
+	}
+	if(msg_name == HV_BALANCING_STATUS) {
+		ret.push_back("cellboard_id");
+		ret.push_back("balancing_status");
+		ret.push_back("errors_can_comm");
+		ret.push_back("errors_ltc_comm");
+		ret.push_back("errors_temp_comm_0");
+		ret.push_back("errors_temp_comm_1");
+		ret.push_back("errors_temp_comm_2");
+		ret.push_back("errors_temp_comm_3");
+		ret.push_back("errors_temp_comm_4");
+		ret.push_back("errors_temp_comm_5");
+		ret.push_back("errors_open_wire");
+		ret.push_back("balancing_cells_cell0");
+		ret.push_back("balancing_cells_cell1");
+		ret.push_back("balancing_cells_cell2");
+		ret.push_back("balancing_cells_cell3");
+		ret.push_back("balancing_cells_cell4");
+		ret.push_back("balancing_cells_cell5");
+		ret.push_back("balancing_cells_cell6");
+		ret.push_back("balancing_cells_cell7");
+		ret.push_back("balancing_cells_cell8");
+		ret.push_back("balancing_cells_cell9");
+		ret.push_back("balancing_cells_cell10");
+		ret.push_back("balancing_cells_cell11");
+		ret.push_back("balancing_cells_cell12");
+		ret.push_back("balancing_cells_cell13");
+		ret.push_back("balancing_cells_cell14");
+		ret.push_back("balancing_cells_cell15");
+		ret.push_back("balancing_cells_cell16");
+		ret.push_back("balancing_cells_cell17");
+	}
+	if(msg_name == HV_SET_BALANCING_STATUS_HANDCART) {
+		ret.push_back("set_balancing_status");
+	}
+	if(msg_name == HV_SET_BALANCING_STATUS_STEERING_WHEEL) {
+		ret.push_back("set_balancing_status");
+	}
+	if(msg_name == LV_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == LV_CHARGING_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == LV_RADIATOR_SPEED) {
+		ret.push_back("status");
+	}
+	if(msg_name == LV_PUMPS_SPEED) {
+		ret.push_back("status");
+	}
+	if(msg_name == LV_SET_RADIATOR_SPEED) {
+		ret.push_back("status");
+	}
+	if(msg_name == LV_SET_PUMPS_SPEED) {
+		ret.push_back("status");
+	}
+	if(msg_name == LV_ERRORS) {
+		ret.push_back("errors_cell_undervoltage");
+		ret.push_back("errors_cell_overvoltage");
+		ret.push_back("errors_battery_open_wire");
+		ret.push_back("errors_can");
+		ret.push_back("errors_spi");
+		ret.push_back("errors_over_current");
+		ret.push_back("errors_cell_under_temperature");
+		ret.push_back("errors_cell_over_temperature");
+		ret.push_back("errors_relay");
+		ret.push_back("errors_bms_monitor");
+		ret.push_back("errors_voltages_not_ready");
+		ret.push_back("errors_mcp23017");
+		ret.push_back("errors_radiator");
+		ret.push_back("errors_fan");
+		ret.push_back("errors_pump");
+		ret.push_back("errors_adc_init");
+		ret.push_back("errors_mux");
+		ret.push_back("health_signals_lvms_out");
+		ret.push_back("health_signals_relay_out");
+		ret.push_back("health_signals_battery_voltage_out");
+		ret.push_back("health_signals_charger_current");
+		ret.push_back("health_signals_battery_current");
+		ret.push_back("health_signals_sign_battery_current");
+	}
+	if(msg_name == LV_FEEDBACK) {
+		ret.push_back("feedbacks_bspd");
+		ret.push_back("feedbacks_hvd");
+		ret.push_back("feedbacks_invc_interlock");
+		ret.push_back("feedbacks_ams");
+		ret.push_back("feedbacks_sd_end");
+		ret.push_back("feedbacks_lvms");
+		ret.push_back("feedbacks_interlock");
+		ret.push_back("feedbacks_sd_start");
+	}
+	if(msg_name == LV_FEEDBACK_GPIO_EXTENDER) {
+		ret.push_back("feedback_inverters");
+		ret.push_back("feedback_pcbs");
+		ret.push_back("feedback_pumps");
+		ret.push_back("feedback_radiators");
+		ret.push_back("feedback_shutdown");
+		ret.push_back("feedback_hv_fans");
+		ret.push_back("feedback_autonomous_system_actuation");
+		ret.push_back("feedback_rfe");
+		ret.push_back("feedback_frg");
+		ret.push_back("feedback_discharge");
+	}
+	if(msg_name == LV_INVERTER_CONNECTION_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == LV_SET_INVERTER_CONNECTION_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == TLM_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == TLM_SET_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == HANDCART_STATUS) {
+		ret.push_back("connected");
+	}
+	if(msg_name == HANDCART_SETTINGS) {
+		ret.push_back("fans_override");
+		ret.push_back("status");
+	}
+	if(msg_name == HANDCART_SET_SETTINGS) {
+		ret.push_back("fans_override");
+		ret.push_back("status");
+	}
+	if(msg_name == ECU_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == ECU_SET_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == ECU_INVERTER_STATUS) {
+		ret.push_back("rl");
+		ret.push_back("rr");
+	}
+	if(msg_name == ECU_CONTROL_STATUS) {
+		ret.push_back("control_enabled");
+		ret.push_back("control_errors_forced_off");
+		ret.push_back("control_errors_wrong_maps");
+		ret.push_back("control_errors_control_watchdog");
+	}
+	if(msg_name == ECU_ERRORS) {
+		ret.push_back("error_pedal_adc");
+		ret.push_back("error_pedal_implausibility");
+		ret.push_back("error_imu_tout");
+		ret.push_back("error_irts_tout");
+		ret.push_back("error_ts_tout");
+		ret.push_back("error_invl_tout");
+		ret.push_back("error_invr_tout");
+		ret.push_back("error_steer_tout");
+		ret.push_back("error_fsm");
+	}
+	if(msg_name == ECU_FEEDBACKS) {
+		ret.push_back("feedbacks_sd_cock_fb");
+		ret.push_back("feedbacks_sd_fb1");
+		ret.push_back("feedbacks_sd_bots_fb");
+		ret.push_back("feedbacks_sd_interial_fb");
+		ret.push_back("feedbacks_sd_fb4");
+		ret.push_back("feedbacks_sd_in");
+		ret.push_back("feedbacks_sd_out");
+		ret.push_back("feedbacks_sd_ctrl_pin");
+	}
+	if(msg_name == ECU_PTT_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == ECU_SET_PTT_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == ECU_STEER_ACTUATOR_STATUS) {
+		ret.push_back("status");
+	}
+	if(msg_name == ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL) {
+		ret.push_back("status");
+	}
+	if(msg_name == ECU_SET_STEER_ACTUATOR_STATUS_TLM) {
+		ret.push_back("status");
+	}
+
+	return ret;
+}
+std::vector<std::string> primary_enum_names_from_fields(const std::string& msg_name, const std::string& sgn_name)
 {
 	std::vector<std::string> ret;
 

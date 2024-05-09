@@ -613,7 +613,66 @@ int bms_fields_types_from_id(int id, int* fields_types, int fields_types_size)
     }
     return 0;
 }
-std::vector<std::string> bms_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name)
+std::vector<std::string> bms_enum_fields_from_message(const std::string& msg_name)
+{
+	std::vector<std::string> ret;
+
+	if(msg_name == BOARD_STATUS) {
+		ret.push_back("cellboard_id");
+		ret.push_back("errors_can_comm");
+		ret.push_back("errors_ltc_comm");
+		ret.push_back("errors_temp_comm_0");
+		ret.push_back("errors_temp_comm_1");
+		ret.push_back("errors_temp_comm_2");
+		ret.push_back("errors_temp_comm_3");
+		ret.push_back("errors_temp_comm_4");
+		ret.push_back("errors_temp_comm_5");
+		ret.push_back("errors_open_wire");
+		ret.push_back("balancing_status");
+		ret.push_back("balancing_cells_cell0");
+		ret.push_back("balancing_cells_cell1");
+		ret.push_back("balancing_cells_cell2");
+		ret.push_back("balancing_cells_cell3");
+		ret.push_back("balancing_cells_cell4");
+		ret.push_back("balancing_cells_cell5");
+		ret.push_back("balancing_cells_cell6");
+		ret.push_back("balancing_cells_cell7");
+		ret.push_back("balancing_cells_cell8");
+		ret.push_back("balancing_cells_cell9");
+		ret.push_back("balancing_cells_cell10");
+		ret.push_back("balancing_cells_cell11");
+		ret.push_back("balancing_cells_cell12");
+		ret.push_back("balancing_cells_cell13");
+		ret.push_back("balancing_cells_cell14");
+		ret.push_back("balancing_cells_cell15");
+		ret.push_back("balancing_cells_cell16");
+		ret.push_back("balancing_cells_cell17");
+	}
+	if(msg_name == TEMPERATURES_INFO) {
+		ret.push_back("cellboard_id");
+	}
+	if(msg_name == TEMPERATURES) {
+		ret.push_back("cellboard_id");
+	}
+	if(msg_name == VOLTAGES_INFO) {
+		ret.push_back("cellboard_id");
+	}
+	if(msg_name == VOLTAGES) {
+		ret.push_back("cellboard_id");
+	}
+	if(msg_name == SET_BALANCING_STATUS) {
+		ret.push_back("balancing_status");
+	}
+	if(msg_name == JMP_TO_BLT) {
+		ret.push_back("cellboard_id");
+	}
+	if(msg_name == CELLBOARD_VERSION) {
+		ret.push_back("cellboard_id");
+	}
+
+	return ret;
+}
+std::vector<std::string> bms_enum_names_from_fields(const std::string& msg_name, const std::string& sgn_name)
 {
 	std::vector<std::string> ret;
 

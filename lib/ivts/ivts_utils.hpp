@@ -322,13 +322,13 @@
 
 enum ivts_types_id{
 	e_ivts_int16_t = -8,
+	e_ivts_uint8_t,
 	e_ivts_uint16_t,
+	e_ivts_int8_t,
+	e_ivts_uint32_t,
 	e_ivts_uint64_t,
 	e_ivts_float,
-	e_ivts_uint8_t,
 	e_ivts_int32_t,
-	e_ivts_uint32_t,
-	e_ivts_int8_t,
 
 	e_ivts_ivt_msg_result_wh_ivt_id_result_wh,
 	e_ivts_ivt_msg_result_as_ivt_id_result_as,
@@ -436,6 +436,16 @@ int ivts_n_fields_from_id(int id);
 int ivts_fields_types_from_id(int id, int *fields_types, int fields_types_size);
 
 /**
+ * @brief get the fields of a message that are enums
+ * 
+ * @param[in] msg_name name of the message to find
+ * @param[in] sgn_name name of the signal to find
+ * 
+ * @return fields' strings vector
+*/
+std::vector<std::string> ivts_enum_fields_from_message(const std::string& msg_name);
+
+/**
  * @brief get the fields of an enum given the name of the message and the name of the signal
  * 
  * @param[in] msg_name name of the message to find
@@ -443,7 +453,7 @@ int ivts_fields_types_from_id(int id, int *fields_types, int fields_types_size);
  * 
  * @return fields' strings vector
 */
-std::vector<std::string> ivts_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name);
+std::vector<std::string> ivts_enum_names_from_fields(const std::string& msg_name, const std::string& sgn_name);
 
 
 #endif

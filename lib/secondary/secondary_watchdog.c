@@ -4,18 +4,20 @@
 int secondary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
        case 1552: return SECONDARY_INTERVAL_ANGULAR_VELOCITY;
-       case 1560: return SECONDARY_INTERVAL_PEDAL_THROTTLE;
-       case 1568: return SECONDARY_INTERVAL_PEDAL_BRAKES_PRESSURE;
-       case 1576: return SECONDARY_INTERVAL_STEER_ANGLE;
-       case 1600: return SECONDARY_INTERVAL_TLM_UNIX_TIMESTAMP;
-       case 1616: return SECONDARY_INTERVAL_TLM_LAPS_STATS;
-       case 1624: return SECONDARY_INTERVAL_TLM_NETWORK_INTERFACE;
-       case 1632: return SECONDARY_INTERVAL_AMMO_COMPRESSION;
-       case 1640: return SECONDARY_INTERVAL_LINK_DEFORMATION;
-       case 1648: return SECONDARY_INTERVAL_DEBUG_SIGNAL_1;
-       case 1656: return SECONDARY_INTERVAL_DEBUG_SIGNAL_2;
-       case 1664: return SECONDARY_INTERVAL_COOLING_TEMP_PUMPS;
-       case 1672: return SECONDARY_INTERVAL_COOLING_TEMP_RADIATORS;
+       case 1560: return SECONDARY_INTERVAL_HV_SOC_ESTIMATION_STATE;
+       case 1568: return SECONDARY_INTERVAL_HV_SOC_ESTIMATION_COVARIANCE;
+       case 1576: return SECONDARY_INTERVAL_PEDAL_THROTTLE;
+       case 1584: return SECONDARY_INTERVAL_PEDAL_BRAKES_PRESSURE;
+       case 1592: return SECONDARY_INTERVAL_STEER_ANGLE;
+       case 1616: return SECONDARY_INTERVAL_TLM_UNIX_TIMESTAMP;
+       case 1632: return SECONDARY_INTERVAL_TLM_LAPS_STATS;
+       case 1640: return SECONDARY_INTERVAL_TLM_NETWORK_INTERFACE;
+       case 1648: return SECONDARY_INTERVAL_AMMO_COMPRESSION;
+       case 1656: return SECONDARY_INTERVAL_LINK_DEFORMATION;
+       case 1664: return SECONDARY_INTERVAL_DEBUG_SIGNAL_1;
+       case 1672: return SECONDARY_INTERVAL_DEBUG_SIGNAL_2;
+       case 1680: return SECONDARY_INTERVAL_COOLING_TEMP_PUMPS;
+       case 1688: return SECONDARY_INTERVAL_COOLING_TEMP_RADIATORS;
 
     }
     return -1;
@@ -109,22 +111,24 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1536: return SECONDARY_INDEX_GPS_COORDS;
        case 1544: return SECONDARY_INDEX_GPS_SPEED;
        case 1552: return SECONDARY_INDEX_ANGULAR_VELOCITY;
-       case 1560: return SECONDARY_INDEX_PEDAL_THROTTLE;
-       case 1568: return SECONDARY_INDEX_PEDAL_BRAKES_PRESSURE;
-       case 1576: return SECONDARY_INDEX_STEER_ANGLE;
-       case 1584: return SECONDARY_INDEX_TPMS_PRESSURE;
-       case 1592: return SECONDARY_INDEX_TPMS_TEMPERATURE;
-       case 1600: return SECONDARY_INDEX_TLM_UNIX_TIMESTAMP;
-       case 1608: return SECONDARY_INDEX_TLM_LAP_TIME;
-       case 1616: return SECONDARY_INDEX_TLM_LAPS_STATS;
-       case 1624: return SECONDARY_INDEX_TLM_NETWORK_INTERFACE;
-       case 1632: return SECONDARY_INDEX_AMMO_COMPRESSION;
-       case 1640: return SECONDARY_INDEX_LINK_DEFORMATION;
+       case 1560: return SECONDARY_INDEX_HV_SOC_ESTIMATION_STATE;
+       case 1568: return SECONDARY_INDEX_HV_SOC_ESTIMATION_COVARIANCE;
+       case 1576: return SECONDARY_INDEX_PEDAL_THROTTLE;
+       case 1584: return SECONDARY_INDEX_PEDAL_BRAKES_PRESSURE;
+       case 1592: return SECONDARY_INDEX_STEER_ANGLE;
+       case 1600: return SECONDARY_INDEX_TPMS_PRESSURE;
+       case 1608: return SECONDARY_INDEX_TPMS_TEMPERATURE;
+       case 1616: return SECONDARY_INDEX_TLM_UNIX_TIMESTAMP;
+       case 1624: return SECONDARY_INDEX_TLM_LAP_TIME;
+       case 1632: return SECONDARY_INDEX_TLM_LAPS_STATS;
+       case 1640: return SECONDARY_INDEX_TLM_NETWORK_INTERFACE;
+       case 1648: return SECONDARY_INDEX_AMMO_COMPRESSION;
+       case 1656: return SECONDARY_INDEX_LINK_DEFORMATION;
        case 72: return SECONDARY_INDEX_LINK_DEFORMATION_SET_CALIBRATION;
-       case 1648: return SECONDARY_INDEX_DEBUG_SIGNAL_1;
-       case 1656: return SECONDARY_INDEX_DEBUG_SIGNAL_2;
-       case 1664: return SECONDARY_INDEX_COOLING_TEMP_PUMPS;
-       case 1672: return SECONDARY_INDEX_COOLING_TEMP_RADIATORS;
+       case 1664: return SECONDARY_INDEX_DEBUG_SIGNAL_1;
+       case 1672: return SECONDARY_INDEX_DEBUG_SIGNAL_2;
+       case 1680: return SECONDARY_INDEX_COOLING_TEMP_PUMPS;
+       case 1688: return SECONDARY_INDEX_COOLING_TEMP_RADIATORS;
 
     }
     return -1;
@@ -136,7 +140,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 102 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 104 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -153,6 +157,20 @@ void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_ti
         && timestamp - watchdog->last_reset[SECONDARY_INDEX_ANGULAR_VELOCITY] > SECONDARY_INTERVAL_ANGULAR_VELOCITY * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_ANGULAR_VELOCITY);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_HV_SOC_ESTIMATION_STATE)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_HV_SOC_ESTIMATION_STATE] > SECONDARY_INTERVAL_HV_SOC_ESTIMATION_STATE * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_HV_SOC_ESTIMATION_STATE);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_HV_SOC_ESTIMATION_COVARIANCE)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_HV_SOC_ESTIMATION_COVARIANCE] > SECONDARY_INTERVAL_HV_SOC_ESTIMATION_COVARIANCE * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_HV_SOC_ESTIMATION_COVARIANCE);
     }
 
     if (

@@ -1036,11 +1036,11 @@
 /* END */
 
 enum primary_types_id{
-	e_primary_uint8_t = -5,
-	e_primary_uint32_t,
-	e_primary_uint16_t,
-	e_primary_float,
+	e_primary_uint16_t = -5,
 	e_primary_uint64_t,
+	e_primary_float,
+	e_primary_uint8_t,
+	e_primary_uint32_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,
@@ -1158,6 +1158,16 @@ int primary_n_fields_from_id(int id);
 int primary_fields_types_from_id(int id, int *fields_types, int fields_types_size);
 
 /**
+ * @brief get the fields of a message that are enums
+ * 
+ * @param[in] msg_name name of the message to find
+ * @param[in] sgn_name name of the signal to find
+ * 
+ * @return fields' strings vector
+*/
+std::vector<std::string> primary_enum_fields_from_message(const std::string& msg_name);
+
+/**
  * @brief get the fields of an enum given the name of the message and the name of the signal
  * 
  * @param[in] msg_name name of the message to find
@@ -1165,7 +1175,7 @@ int primary_fields_types_from_id(int id, int *fields_types, int fields_types_siz
  * 
  * @return fields' strings vector
 */
-std::vector<std::string> primary_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name);
+std::vector<std::string> primary_enum_names_from_fields(const std::string& msg_name, const std::string& sgn_name);
 
 
 #endif

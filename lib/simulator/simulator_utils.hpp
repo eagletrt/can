@@ -142,6 +142,16 @@ int simulator_n_fields_from_id(int id);
 int simulator_fields_types_from_id(int id, int *fields_types, int fields_types_size);
 
 /**
+ * @brief get the fields of a message that are enums
+ * 
+ * @param[in] msg_name name of the message to find
+ * @param[in] sgn_name name of the signal to find
+ * 
+ * @return fields' strings vector
+*/
+std::vector<std::string> simulator_enum_fields_from_message(const std::string& msg_name);
+
+/**
  * @brief get the fields of an enum given the name of the message and the name of the signal
  * 
  * @param[in] msg_name name of the message to find
@@ -149,7 +159,7 @@ int simulator_fields_types_from_id(int id, int *fields_types, int fields_types_s
  * 
  * @return fields' strings vector
 */
-std::vector<std::string> simulator_enum_fields_from_name(const std::string& msg_name, const std::string& sgn_name);
+std::vector<std::string> simulator_enum_names_from_fields(const std::string& msg_name, const std::string& sgn_name);
 
 
 #endif
