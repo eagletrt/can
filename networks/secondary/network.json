@@ -1629,6 +1629,80 @@
       }
     },
     {
+      "name": "HV_SOC_ESTIMATION_STATE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 50,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "State of Charge estimation state",
+      "contents": {
+        "soc": {
+          "type": "float32",
+          "range": [
+            0,
+            1
+          ],
+          "force": "uint16"
+        },
+        "rc1": {
+          "type": "float32",
+          "range": [
+            0,
+            4.5
+          ],
+          "force": "uint16"
+        },
+        "rc2": {
+          "type": "float32",
+          "range": [
+            0,
+            4.5
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "HV_SOC_ESTIMATION_COVARIANCE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 50,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "State of Charge estimation covariance of the state",
+      "contents": {
+        "soc": {
+          "type": "float32",
+          "range": [
+            0,
+            10000
+          ],
+          "force": "uint16"
+        },
+        "rc1": {
+          "type": "float32",
+          "range": [
+            0,
+            10000
+          ],
+          "force": "uint16"
+        },
+        "rc2": {
+          "type": "float32",
+          "range": [
+            0,
+            10000
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
       "name": "PEDAL_THROTTLE",
       "topic": "HYDRA",
       "priority": 3,
