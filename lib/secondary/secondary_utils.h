@@ -658,12 +658,12 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint64_t = -6,
-	e_secondary_uint32_t,
-	e_secondary_uint16_t,
-	e_secondary_uint8_t,
-	e_secondary_int16_t,
+	e_secondary_uint8_t = -6,
 	e_secondary_float,
+	e_secondary_uint16_t,
+	e_secondary_uint32_t,
+	e_secondary_uint64_t,
+	e_secondary_int16_t,
 
 	
 };
@@ -702,7 +702,7 @@ int secondary_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
  * 
  * @return Size of packed data, or negative error code.
 */
-int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size);
 
 /**
  * @brief get the number of signals in the message

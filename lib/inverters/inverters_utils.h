@@ -367,10 +367,10 @@ extern "C" {
 /* END */
 
 enum inverters_types_id{
-	e_inverters_int16_t = -4,
-	e_inverters_float,
-	e_inverters_uint8_t,
+	e_inverters_float = -4,
+	e_inverters_int16_t,
 	e_inverters_uint16_t,
+	e_inverters_uint8_t,
 
 	e_inverters_inv_l_send_send_mux,
 	e_inverters_inv_l_send_read_id,
@@ -432,7 +432,7 @@ int inverters_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
  * 
  * @return Size of packed data, or negative error code.
 */
-int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+int inverters_serialize_from_string(int id, char *s, uint8_t *data, size_t *size);
 
 /**
  * @brief get the number of signals in the message

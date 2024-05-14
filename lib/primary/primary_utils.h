@@ -1040,11 +1040,11 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_float = -5,
-	e_primary_uint32_t,
-	e_primary_uint16_t,
+	e_primary_uint64_t = -5,
 	e_primary_uint8_t,
-	e_primary_uint64_t,
+	e_primary_uint16_t,
+	e_primary_uint32_t,
+	e_primary_float,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,
@@ -1139,7 +1139,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
  * 
  * @return Size of packed data, or negative error code.
 */
-int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size);
 
 /**
  * @brief get the number of signals in the message

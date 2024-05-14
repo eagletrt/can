@@ -83,8 +83,8 @@ extern "C" {
 /* END */
 
 enum simulator_types_id{
-	e_simulator_int16_t = -2,
-	e_simulator_float,
+	e_simulator_float = -2,
+	e_simulator_int16_t,
 
 	
 };
@@ -123,7 +123,7 @@ int simulator_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
  * 
  * @return Size of packed data, or negative error code.
 */
-int simulator_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+int simulator_serialize_from_string(int id, char *s, uint8_t *data, size_t *size);
 
 /**
  * @brief get the number of signals in the message

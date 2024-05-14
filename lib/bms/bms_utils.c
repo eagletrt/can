@@ -186,7 +186,7 @@ int bms_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_siz
     }
     return 0;
 }
-int bms_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
+int bms_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 {
     switch(id)
     {

@@ -325,14 +325,14 @@ extern "C" {
 /* END */
 
 enum ivts_types_id{
-	e_ivts_uint8_t = -8,
-	e_ivts_uint16_t,
-	e_ivts_int16_t,
-	e_ivts_uint32_t,
+	e_ivts_uint16_t = -8,
 	e_ivts_uint64_t,
-	e_ivts_int32_t,
+	e_ivts_int16_t,
 	e_ivts_int8_t,
 	e_ivts_float,
+	e_ivts_int32_t,
+	e_ivts_uint32_t,
+	e_ivts_uint8_t,
 
 	e_ivts_ivt_msg_result_wh_ivt_id_result_wh,
 	e_ivts_ivt_msg_result_as_ivt_id_result_as,
@@ -417,7 +417,7 @@ int ivts_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_si
  * 
  * @return Size of packed data, or negative error code.
 */
-int ivts_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+int ivts_serialize_from_string(int id, char *s, uint8_t *data, size_t *size);
 
 /**
  * @brief get the number of signals in the message

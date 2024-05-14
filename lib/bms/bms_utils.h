@@ -169,10 +169,10 @@ extern "C" {
 /* END */
 
 enum bms_types_id{
-	e_bms_uint32_t = -4,
-	e_bms_float,
-	e_bms_uint8_t,
+	e_bms_uint8_t = -4,
 	e_bms_uint16_t,
+	e_bms_uint32_t,
+	e_bms_float,
 
 	e_bms_board_status_cellboard_id,
 	e_bms_board_status_balancing_status,
@@ -219,7 +219,7 @@ int bms_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_siz
  * 
  * @return Size of packed data, or negative error code.
 */
-int bms_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+int bms_serialize_from_string(int id, char *s, uint8_t *data, size_t *size);
 
 /**
  * @brief get the number of signals in the message
