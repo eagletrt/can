@@ -26,6 +26,7 @@ jobs:
         run: |
           pip install git+https://github.com/eagletrt/cantools.git
           cantools generate_c_source --use-float --generate-dbc --infolder networks -o .
+          g++ -fsyntax-only $(find ./lib -name "*.[ch]")
           mkdir -p /tmp/workspace-evo
           cp -R networks lib proto dbc /tmp/workspace-evo
 
