@@ -1447,16 +1447,55 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->link_deformation_size(); i++){
+    for(int i = 0; i < pack->link_deformation_fl_wheel_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->link_deformation(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->link_deformation(i)._inner_timestamp();
-        (*net_signals)["LINK_DEFORMATION"]["_timestamp"].push(pack->link_deformation(i)._inner_timestamp());
+        if(pack->link_deformation_fl_wheel(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->link_deformation_fl_wheel(i)._inner_timestamp();
+        (*net_signals)["LINK_DEFORMATION_FL_WHEEL"]["_timestamp"].push(pack->link_deformation_fl_wheel(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LINK_DEFORMATION"]["rod_id"].push(pack->link_deformation(i).rod_id());
-		(*net_signals)["LINK_DEFORMATION"]["deformation"].push(pack->link_deformation(i).deformation());
+		(*net_signals)["LINK_DEFORMATION_FL_WHEEL"]["rod_id"].push(pack->link_deformation_fl_wheel(i).rod_id());
+		(*net_signals)["LINK_DEFORMATION_FL_WHEEL"]["deformation"].push(pack->link_deformation_fl_wheel(i).deformation());
+
+    }
+
+    for(int i = 0; i < pack->link_deformation_fr_wheel_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->link_deformation_fr_wheel(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->link_deformation_fr_wheel(i)._inner_timestamp();
+        (*net_signals)["LINK_DEFORMATION_FR_WHEEL"]["_timestamp"].push(pack->link_deformation_fr_wheel(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["LINK_DEFORMATION_FR_WHEEL"]["rod_id"].push(pack->link_deformation_fr_wheel(i).rod_id());
+		(*net_signals)["LINK_DEFORMATION_FR_WHEEL"]["deformation"].push(pack->link_deformation_fr_wheel(i).deformation());
+
+    }
+
+    for(int i = 0; i < pack->link_deformation_rl_wheel_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->link_deformation_rl_wheel(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->link_deformation_rl_wheel(i)._inner_timestamp();
+        (*net_signals)["LINK_DEFORMATION_RL_WHEEL"]["_timestamp"].push(pack->link_deformation_rl_wheel(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["LINK_DEFORMATION_RL_WHEEL"]["rod_id"].push(pack->link_deformation_rl_wheel(i).rod_id());
+		(*net_signals)["LINK_DEFORMATION_RL_WHEEL"]["deformation"].push(pack->link_deformation_rl_wheel(i).deformation());
+
+    }
+
+    for(int i = 0; i < pack->link_deformation_rr_wheel_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->link_deformation_rr_wheel(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->link_deformation_rr_wheel(i)._inner_timestamp();
+        (*net_signals)["LINK_DEFORMATION_RR_WHEEL"]["_timestamp"].push(pack->link_deformation_rr_wheel(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["LINK_DEFORMATION_RR_WHEEL"]["rod_id"].push(pack->link_deformation_rr_wheel(i).rod_id());
+		(*net_signals)["LINK_DEFORMATION_RR_WHEEL"]["deformation"].push(pack->link_deformation_rr_wheel(i).deformation());
 
     }
 
@@ -2628,8 +2667,44 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1656: {
-            secondary_link_deformation_converted_t* msg = (secondary_link_deformation_converted_t*)(device->message);
-            secondary::LINK_DEFORMATION* proto_msg = pack->add_link_deformation();
+            secondary_link_deformation_fl_wheel_converted_t* msg = (secondary_link_deformation_fl_wheel_converted_t*)(device->message);
+            secondary::LINK_DEFORMATION_FL_WHEEL* proto_msg = pack->add_link_deformation_fl_wheel();
+			proto_msg->set_rod_id(msg->rod_id);
+			proto_msg->set_deformation(msg->deformation);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1664: {
+            secondary_link_deformation_fr_wheel_converted_t* msg = (secondary_link_deformation_fr_wheel_converted_t*)(device->message);
+            secondary::LINK_DEFORMATION_FR_WHEEL* proto_msg = pack->add_link_deformation_fr_wheel();
+			proto_msg->set_rod_id(msg->rod_id);
+			proto_msg->set_deformation(msg->deformation);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1672: {
+            secondary_link_deformation_rl_wheel_converted_t* msg = (secondary_link_deformation_rl_wheel_converted_t*)(device->message);
+            secondary::LINK_DEFORMATION_RL_WHEEL* proto_msg = pack->add_link_deformation_rl_wheel();
+			proto_msg->set_rod_id(msg->rod_id);
+			proto_msg->set_deformation(msg->deformation);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1680: {
+            secondary_link_deformation_rr_wheel_converted_t* msg = (secondary_link_deformation_rr_wheel_converted_t*)(device->message);
+            secondary::LINK_DEFORMATION_RR_WHEEL* proto_msg = pack->add_link_deformation_rr_wheel();
 			proto_msg->set_rod_id(msg->rod_id);
 			proto_msg->set_deformation(msg->deformation);
 
@@ -2651,7 +2726,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1664: {
+        case 1688: {
             secondary_debug_signal_1_converted_t* msg = (secondary_debug_signal_1_converted_t*)(device->message);
             secondary::DEBUG_SIGNAL_1* proto_msg = pack->add_debug_signal_1();
 			proto_msg->set_field_1(msg->field_1);
@@ -2665,7 +2740,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1672: {
+        case 1696: {
             secondary_debug_signal_2_converted_t* msg = (secondary_debug_signal_2_converted_t*)(device->message);
             secondary::DEBUG_SIGNAL_2* proto_msg = pack->add_debug_signal_2();
 			proto_msg->set_field_1(msg->field_1);
@@ -2679,7 +2754,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1680: {
+        case 1704: {
             secondary_cooling_temp_pumps_converted_t* msg = (secondary_cooling_temp_pumps_converted_t*)(device->message);
             secondary::COOLING_TEMP_PUMPS* proto_msg = pack->add_cooling_temp_pumps();
 			proto_msg->set_input(msg->input);
@@ -2691,7 +2766,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1688: {
+        case 1712: {
             secondary_cooling_temp_radiators_converted_t* msg = (secondary_cooling_temp_radiators_converted_t*)(device->message);
             secondary::COOLING_TEMP_RADIATORS* proto_msg = pack->add_cooling_temp_radiators();
 			proto_msg->set_air_temp(msg->air_temp);

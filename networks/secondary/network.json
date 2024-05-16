@@ -1987,14 +1987,80 @@
       }
     },
     {
-      "name": "LINK_DEFORMATION",
+      "name": "LINK_DEFORMATION_FL_WHEEL",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [
         "ACQUISINATOR"
       ],
       "receiving": [],
-      "description": "Message for the arm deformation",
+      "description": "Message for the arm deformation for the front left wheel",
+      "interval": 10,
+      "contents": {
+        "rod_id": "uint8",
+        "deformation": {
+          "type": "float32",
+          "range": [
+            -3.0,
+            3.0
+          ],
+          "force": "uint32"
+        }
+      }
+    },
+    {
+      "name": "LINK_DEFORMATION_FR_WHEEL",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ACQUISINATOR"
+      ],
+      "receiving": [],
+      "description": "Message for the arm deformation for the front right wheel",
+      "interval": 10,
+      "contents": {
+        "rod_id": "uint8",
+        "deformation": {
+          "type": "float32",
+          "range": [
+            -3.0,
+            3.0
+          ],
+          "force": "uint32"
+        }
+      }
+    },
+    {
+      "name": "LINK_DEFORMATION_RL_WHEEL",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ACQUISINATOR"
+      ],
+      "receiving": [],
+      "description": "Message for the arm deformation for the rear left wheel",
+      "interval": 10,
+      "contents": {
+        "rod_id": "uint8",
+        "deformation": {
+          "type": "float32",
+          "range": [
+            -3.0,
+            3.0
+          ],
+          "force": "uint32"
+        }
+      }
+    },
+    {
+      "name": "LINK_DEFORMATION_RR_WHEEL",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ACQUISINATOR"
+      ],
+      "receiving": [],
+      "description": "Message for the arm deformation for the rear right wheel",
       "interval": 10,
       "contents": {
         "rod_id": "uint8",

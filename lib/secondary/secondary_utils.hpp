@@ -609,10 +609,31 @@
 /* END */
 
 /* START */
-#define LINK_DEFORMATION "LINK_DEFORMATION"
+#define LINK_DEFORMATION_FL_WHEEL "LINK_DEFORMATION_FL_WHEEL"
 
-#define LINK_DEFORMATION_ROD_ID "link_deformation_rod_id"
-#define LINK_DEFORMATION_DEFORMATION "link_deformation_deformation"
+#define LINK_DEFORMATION_FL_WHEEL_ROD_ID "link_deformation_fl_wheel_rod_id"
+#define LINK_DEFORMATION_FL_WHEEL_DEFORMATION "link_deformation_fl_wheel_deformation"
+/* END */
+
+/* START */
+#define LINK_DEFORMATION_FR_WHEEL "LINK_DEFORMATION_FR_WHEEL"
+
+#define LINK_DEFORMATION_FR_WHEEL_ROD_ID "link_deformation_fr_wheel_rod_id"
+#define LINK_DEFORMATION_FR_WHEEL_DEFORMATION "link_deformation_fr_wheel_deformation"
+/* END */
+
+/* START */
+#define LINK_DEFORMATION_RL_WHEEL "LINK_DEFORMATION_RL_WHEEL"
+
+#define LINK_DEFORMATION_RL_WHEEL_ROD_ID "link_deformation_rl_wheel_rod_id"
+#define LINK_DEFORMATION_RL_WHEEL_DEFORMATION "link_deformation_rl_wheel_deformation"
+/* END */
+
+/* START */
+#define LINK_DEFORMATION_RR_WHEEL "LINK_DEFORMATION_RR_WHEEL"
+
+#define LINK_DEFORMATION_RR_WHEEL_ROD_ID "link_deformation_rr_wheel_rod_id"
+#define LINK_DEFORMATION_RR_WHEEL_DEFORMATION "link_deformation_rr_wheel_deformation"
 /* END */
 
 /* START */
@@ -654,12 +675,12 @@
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint8_t = -6,
-	e_secondary_float,
+	e_secondary_int16_t = -6,
 	e_secondary_uint16_t,
-	e_secondary_uint32_t,
 	e_secondary_uint64_t,
-	e_secondary_int16_t,
+	e_secondary_uint32_t,
+	e_secondary_float,
+	e_secondary_uint8_t,
 
 	
 };
