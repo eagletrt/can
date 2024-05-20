@@ -175,17 +175,18 @@ typedef void (*canlib_watchdog_callback)(int);
 #define SECONDARY_INDEX_LINK_DEFORMATION_RL_WHEEL 100
 #define SECONDARY_INDEX_LINK_DEFORMATION_RR_WHEEL 101
 #define SECONDARY_INDEX_LINK_DEFORMATION_SET_CALIBRATION 102
-#define SECONDARY_INDEX_DEBUG_SIGNAL_1 103
-#define SECONDARY_INDEX_DEBUG_SIGNAL_2 104
-#define SECONDARY_INDEX_COOLING_TEMP_PUMPS 105
-#define SECONDARY_INDEX_COOLING_TEMP_RADIATORS 106
+#define SECONDARY_INDEX_AMMO_POS_SET_CALIBRATION 103
+#define SECONDARY_INDEX_DEBUG_SIGNAL_1 104
+#define SECONDARY_INDEX_DEBUG_SIGNAL_2 105
+#define SECONDARY_INDEX_COOLING_TEMP_PUMPS 106
+#define SECONDARY_INDEX_COOLING_TEMP_RADIATORS 107
 
 
 
 typedef struct {
     uint8_t activated[14];
     uint8_t timeout[14];
-    canlib_watchdog_timestamp last_reset[107];
+    canlib_watchdog_timestamp last_reset[108];
 } secondary_watchdog;
 
 int secondary_watchdog_interval_from_id(uint16_t message_id);

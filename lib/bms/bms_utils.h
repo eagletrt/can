@@ -169,10 +169,10 @@ extern "C" {
 /* END */
 
 enum bms_types_id{
-	e_bms_uint8_t = -4,
+	e_bms_uint32_t = -4,
+	e_bms_uint8_t,
 	e_bms_uint16_t,
 	e_bms_float,
-	e_bms_uint32_t,
 
 	e_bms_board_status_cellboard_id,
 	e_bms_board_status_balancing_status,

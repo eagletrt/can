@@ -131,6 +131,7 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1672: return SECONDARY_INDEX_LINK_DEFORMATION_RL_WHEEL;
        case 1680: return SECONDARY_INDEX_LINK_DEFORMATION_RR_WHEEL;
        case 72: return SECONDARY_INDEX_LINK_DEFORMATION_SET_CALIBRATION;
+       case 80: return SECONDARY_INDEX_AMMO_POS_SET_CALIBRATION;
        case 1688: return SECONDARY_INDEX_DEBUG_SIGNAL_1;
        case 1696: return SECONDARY_INDEX_DEBUG_SIGNAL_2;
        case 1704: return SECONDARY_INDEX_COOLING_TEMP_PUMPS;
@@ -146,7 +147,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 107 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 108 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }

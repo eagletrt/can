@@ -1507,8 +1507,17 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
         (*net_signals)["LINK_DEFORMATION_SET_CALIBRATION"]["_timestamp"].push(pack->link_deformation_set_calibration(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LINK_DEFORMATION_SET_CALIBRATION"]["rod_id"].push(pack->link_deformation_set_calibration(i).rod_id());
-		(*net_signals)["LINK_DEFORMATION_SET_CALIBRATION"]["deformation"].push(pack->link_deformation_set_calibration(i).deformation());
+
+    }
+
+    for(int i = 0; i < pack->ammo_pos_set_calibration_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ammo_pos_set_calibration(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ammo_pos_set_calibration(i)._inner_timestamp();
+        (*net_signals)["AMMO_POS_SET_CALIBRATION"]["_timestamp"].push(pack->ammo_pos_set_calibration(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
 
     }
 
@@ -2715,10 +2724,18 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 72: {
-            secondary_link_deformation_set_calibration_converted_t* msg = (secondary_link_deformation_set_calibration_converted_t*)(device->message);
+            secondary_link_deformation_set_calibration_t* msg = (secondary_link_deformation_set_calibration_t*)(device->message);
             secondary::LINK_DEFORMATION_SET_CALIBRATION* proto_msg = pack->add_link_deformation_set_calibration();
-			proto_msg->set_rod_id(msg->rod_id);
-			proto_msg->set_deformation(msg->deformation);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 80: {
+            secondary_ammo_pos_set_calibration_t* msg = (secondary_ammo_pos_set_calibration_t*)(device->message);
+            secondary::AMMO_POS_SET_CALIBRATION* proto_msg = pack->add_ammo_pos_set_calibration();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

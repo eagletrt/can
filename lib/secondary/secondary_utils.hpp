@@ -639,8 +639,11 @@
 /* START */
 #define LINK_DEFORMATION_SET_CALIBRATION "LINK_DEFORMATION_SET_CALIBRATION"
 
-#define LINK_DEFORMATION_SET_CALIBRATION_ROD_ID "link_deformation_set_calibration_rod_id"
-#define LINK_DEFORMATION_SET_CALIBRATION_DEFORMATION "link_deformation_set_calibration_deformation"
+/* END */
+
+/* START */
+#define AMMO_POS_SET_CALIBRATION "AMMO_POS_SET_CALIBRATION"
+
 /* END */
 
 /* START */
@@ -675,12 +678,12 @@
 /* END */
 
 enum secondary_types_id{
-	e_secondary_int16_t = -6,
-	e_secondary_uint16_t,
-	e_secondary_uint64_t,
-	e_secondary_uint32_t,
+	e_secondary_uint16_t = -6,
+	e_secondary_int16_t,
 	e_secondary_float,
 	e_secondary_uint8_t,
+	e_secondary_uint32_t,
+	e_secondary_uint64_t,
 
 	
 };
