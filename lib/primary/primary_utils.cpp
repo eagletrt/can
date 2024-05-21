@@ -763,23 +763,26 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 1096:
-		if(2 > fields_size) return 1;
+		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_STATUS);
-		snprintf(v[1], string_size, ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_TARGET);
 
 		return 0;
 	case 1104:
-		if(2 > fields_size) return 1;
+		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_SET_STEER_ACTUATOR_STATUS_TLM_STATUS);
-		snprintf(v[1], string_size, ECU_SET_STEER_ACTUATOR_STATUS_TLM_TARGET);
 
 		return 0;
 	case 1752:
 		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, ECU_STEER_ACTUATOR_CURRENT_CURRENT);
+		snprintf(v[0], string_size, ECU_SET_STEER_ACTUATOR_ANGLE_ANGLE);
 
 		return 0;
 	case 1760:
+		if(1 > fields_size) return 1;
+		snprintf(v[0], string_size, ECU_STEER_ACTUATOR_CURRENT_CURRENT);
+
+		return 0;
+	case 1768:
 		if(8 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_CRASH_DEBUG_SEQ_NUMBER);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_CRASH_DEBUG_BYTE_1);
@@ -791,12 +794,12 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[7], string_size, DEBUG_SIGNAL_CRASH_DEBUG_BYTE_7);
 
 		return 0;
-	case 1768:
+	case 1776:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_CRASH_DEBUG_ACK_SEQ_NUMBER);
 
 		return 0;
-	case 1776:
+	case 1784:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_1_FIELD_1);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_1_FIELD_2);
@@ -804,7 +807,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[3], string_size, DEBUG_SIGNAL_1_FIELD_4);
 
 		return 0;
-	case 1784:
+	case 1792:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_2_FIELD_1);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_2_FIELD_2);
@@ -3794,14 +3797,10 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		primary_ecu_set_steer_actuator_status_steering_wheel_t tmp;
 		primary_ecu_set_steer_actuator_status_steering_wheel_converted_t tmp_converted;
 		uint8_t r_status;
-		float r_target;
 
-		sscanf(s, "%" SCNu8 ","  
-			"%f,"       ,
-			&r_status,
-			&r_target);
+		sscanf(s, "%" SCNu8 ","  ,
+			&r_status);
 		tmp_converted.status = (primary_ecu_set_steer_actuator_status_steering_wheel_status)r_status;
-		tmp_converted.target = (float)r_target;
 
 		primary_ecu_set_steer_actuator_status_steering_wheel_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_BYTE_SIZE;
@@ -3812,20 +3811,30 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		primary_ecu_set_steer_actuator_status_tlm_t tmp;
 		primary_ecu_set_steer_actuator_status_tlm_converted_t tmp_converted;
 		uint8_t r_status;
-		float r_target;
 
-		sscanf(s, "%" SCNu8 ","  
-			"%f,"       ,
-			&r_status,
-			&r_target);
+		sscanf(s, "%" SCNu8 ","  ,
+			&r_status);
 		tmp_converted.status = (primary_ecu_set_steer_actuator_status_tlm_status)r_status;
-		tmp_converted.target = (float)r_target;
 
 		primary_ecu_set_steer_actuator_status_tlm_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_ECU_SET_STEER_ACTUATOR_STATUS_TLM_BYTE_SIZE;
 		return primary_ecu_set_steer_actuator_status_tlm_pack(data, &tmp, PRIMARY_ECU_SET_STEER_ACTUATOR_STATUS_TLM_BYTE_SIZE);
 	}
 	case 1752:
+	{
+		primary_ecu_set_steer_actuator_angle_t tmp;
+		primary_ecu_set_steer_actuator_angle_converted_t tmp_converted;
+		float r_angle;
+
+		sscanf(s, "%f,"       ,
+			&r_angle);
+		tmp_converted.angle = (float)r_angle;
+
+		primary_ecu_set_steer_actuator_angle_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_ECU_SET_STEER_ACTUATOR_ANGLE_BYTE_SIZE;
+		return primary_ecu_set_steer_actuator_angle_pack(data, &tmp, PRIMARY_ECU_SET_STEER_ACTUATOR_ANGLE_BYTE_SIZE);
+	}
+	case 1760:
 	{
 		primary_ecu_steer_actuator_current_t tmp;
 		primary_ecu_steer_actuator_current_converted_t tmp_converted;
@@ -3839,7 +3848,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_ECU_STEER_ACTUATOR_CURRENT_BYTE_SIZE;
 		return primary_ecu_steer_actuator_current_pack(data, &tmp, PRIMARY_ECU_STEER_ACTUATOR_CURRENT_BYTE_SIZE);
 	}
-	case 1760:
+	case 1768:
 	{
 		primary_debug_signal_crash_debug_t tmp;
 		primary_debug_signal_crash_debug_converted_t tmp_converted;
@@ -3881,7 +3890,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_DEBUG_SIGNAL_CRASH_DEBUG_BYTE_SIZE;
 		return primary_debug_signal_crash_debug_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_CRASH_DEBUG_BYTE_SIZE);
 	}
-	case 1768:
+	case 1776:
 	{
 		primary_debug_signal_crash_debug_ack_t tmp;
 		primary_debug_signal_crash_debug_ack_converted_t tmp_converted;
@@ -3895,7 +3904,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_DEBUG_SIGNAL_CRASH_DEBUG_ACK_BYTE_SIZE;
 		return primary_debug_signal_crash_debug_ack_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_CRASH_DEBUG_ACK_BYTE_SIZE);
 	}
-	case 1776:
+	case 1784:
 	{
 		primary_debug_signal_1_t tmp;
 		primary_debug_signal_1_converted_t tmp_converted;
@@ -3921,7 +3930,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_DEBUG_SIGNAL_1_BYTE_SIZE;
 		return primary_debug_signal_1_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_1_BYTE_SIZE);
 	}
-	case 1784:
+	case 1792:
 	{
 		primary_debug_signal_2_t tmp;
 		primary_debug_signal_2_converted_t tmp_converted;
@@ -4063,13 +4072,14 @@ int primary_n_fields_from_id(int id)
 		case 1728: return 5;
 		case 1736: return 3;
 		case 1744: return 1;
-		case 1096: return 2;
-		case 1104: return 2;
+		case 1096: return 1;
+		case 1104: return 1;
 		case 1752: return 1;
-		case 1760: return 8;
-		case 1768: return 1;
-		case 1776: return 4;
+		case 1760: return 1;
+		case 1768: return 8;
+		case 1776: return 1;
 		case 1784: return 4;
+		case 1792: return 4;
     }
     return 0;
 }
@@ -4754,20 +4764,22 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[0] = e_primary_ecu_steer_actuator_status_status;
 		return 1;
 	case 1096:
-		if(fields_types_size < 2) return 0;
+		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_set_steer_actuator_status_steering_wheel_status;
-		fields_types[1] = e_primary_float;
-		return 2;
+		return 1;
 	case 1104:
-		if(fields_types_size < 2) return 0;
+		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_set_steer_actuator_status_tlm_status;
-		fields_types[1] = e_primary_float;
-		return 2;
+		return 1;
 	case 1752:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_float;
 		return 1;
 	case 1760:
+		if(fields_types_size < 1) return 0;
+		fields_types[0] = e_primary_float;
+		return 1;
+	case 1768:
 		if(fields_types_size < 8) return 0;
 		fields_types[0] = e_primary_uint8_t;
 		fields_types[1] = e_primary_uint8_t;
@@ -4778,18 +4790,18 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[6] = e_primary_uint8_t;
 		fields_types[7] = e_primary_uint8_t;
 		return 8;
-	case 1768:
+	case 1776:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_uint8_t;
 		return 1;
-	case 1776:
+	case 1784:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_primary_float;
 		fields_types[1] = e_primary_float;
 		fields_types[2] = e_primary_float;
 		fields_types[3] = e_primary_float;
 		return 4;
-	case 1784:
+	case 1792:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_primary_float;
 		fields_types[1] = e_primary_float;

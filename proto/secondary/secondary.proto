@@ -325,14 +325,16 @@ message IRTS_RR_3{
 	double channel16 = 4;
 	uint64 _inner_timestamp = 5;
 }
-message GPS_COORDS{
-	uint32 latitude = 1;
-	uint32 longitude = 2;
-	uint64 _inner_timestamp = 3;
+message VEHICLE_POSITION{
+	double x = 1;
+	double y = 2;
+	double heading = 3;
+	uint64 _inner_timestamp = 4;
 }
-message GPS_SPEED{
-	uint32 speed = 1;
-	uint64 _inner_timestamp = 2;
+message VEHICLE_SPEED{
+	double u = 1;
+	double v = 2;
+	uint64 _inner_timestamp = 3;
 }
 message ANGULAR_VELOCITY{
 	double fl = 1;
@@ -543,8 +545,8 @@ message Pack{
 	repeated IRTS_RR_1 IRTS_RR_1 = 81;
 	repeated IRTS_RR_2 IRTS_RR_2 = 82;
 	repeated IRTS_RR_3 IRTS_RR_3 = 83;
-	repeated GPS_COORDS GPS_COORDS = 84;
-	repeated GPS_SPEED GPS_SPEED = 85;
+	repeated VEHICLE_POSITION VEHICLE_POSITION = 84;
+	repeated VEHICLE_SPEED VEHICLE_SPEED = 85;
 	repeated ANGULAR_VELOCITY ANGULAR_VELOCITY = 86;
 	repeated HV_SOC_ESTIMATION_STATE HV_SOC_ESTIMATION_STATE = 87;
 	repeated HV_SOC_ESTIMATION_COVARIANCE HV_SOC_ESTIMATION_COVARIANCE = 88;

@@ -1244,28 +1244,30 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->gps_coords_size(); i++){
+    for(int i = 0; i < pack->vehicle_position_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->gps_coords(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->gps_coords(i)._inner_timestamp();
-        (*net_signals)["GPS_COORDS"]["_timestamp"].push(pack->gps_coords(i)._inner_timestamp());
+        if(pack->vehicle_position(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->vehicle_position(i)._inner_timestamp();
+        (*net_signals)["VEHICLE_POSITION"]["_timestamp"].push(pack->vehicle_position(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["GPS_COORDS"]["latitude"].push(pack->gps_coords(i).latitude());
-		(*net_signals)["GPS_COORDS"]["longitude"].push(pack->gps_coords(i).longitude());
+		(*net_signals)["VEHICLE_POSITION"]["x"].push(pack->vehicle_position(i).x());
+		(*net_signals)["VEHICLE_POSITION"]["y"].push(pack->vehicle_position(i).y());
+		(*net_signals)["VEHICLE_POSITION"]["heading"].push(pack->vehicle_position(i).heading());
 
     }
 
-    for(int i = 0; i < pack->gps_speed_size(); i++){
+    for(int i = 0; i < pack->vehicle_speed_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->gps_speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->gps_speed(i)._inner_timestamp();
-        (*net_signals)["GPS_SPEED"]["_timestamp"].push(pack->gps_speed(i)._inner_timestamp());
+        if(pack->vehicle_speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->vehicle_speed(i)._inner_timestamp();
+        (*net_signals)["VEHICLE_SPEED"]["_timestamp"].push(pack->vehicle_speed(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["GPS_SPEED"]["speed"].push(pack->gps_speed(i).speed());
+		(*net_signals)["VEHICLE_SPEED"]["u"].push(pack->vehicle_speed(i).u());
+		(*net_signals)["VEHICLE_SPEED"]["v"].push(pack->vehicle_speed(i).v());
 
     }
 
@@ -2488,10 +2490,11 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1536: {
-            secondary_gps_coords_t* msg = (secondary_gps_coords_t*)(device->message);
-            secondary::GPS_COORDS* proto_msg = pack->add_gps_coords();
-			proto_msg->set_latitude(msg->latitude);
-			proto_msg->set_longitude(msg->longitude);
+            secondary_vehicle_position_converted_t* msg = (secondary_vehicle_position_converted_t*)(device->message);
+            secondary::VEHICLE_POSITION* proto_msg = pack->add_vehicle_position();
+			proto_msg->set_x(msg->x);
+			proto_msg->set_y(msg->y);
+			proto_msg->set_heading(msg->heading);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2500,9 +2503,10 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1544: {
-            secondary_gps_speed_t* msg = (secondary_gps_speed_t*)(device->message);
-            secondary::GPS_SPEED* proto_msg = pack->add_gps_speed();
-			proto_msg->set_speed(msg->speed);
+            secondary_vehicle_speed_converted_t* msg = (secondary_vehicle_speed_converted_t*)(device->message);
+            secondary::VEHICLE_SPEED* proto_msg = pack->add_vehicle_speed();
+			proto_msg->set_u(msg->u);
+			proto_msg->set_v(msg->v);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

@@ -496,16 +496,18 @@
 /* END */
 
 /* START */
-#define GPS_COORDS "GPS_COORDS"
+#define VEHICLE_POSITION "VEHICLE_POSITION"
 
-#define GPS_COORDS_LATITUDE "gps_coords_latitude"
-#define GPS_COORDS_LONGITUDE "gps_coords_longitude"
+#define VEHICLE_POSITION_X "vehicle_position_x"
+#define VEHICLE_POSITION_Y "vehicle_position_y"
+#define VEHICLE_POSITION_HEADING "vehicle_position_heading"
 /* END */
 
 /* START */
-#define GPS_SPEED "GPS_SPEED"
+#define VEHICLE_SPEED "VEHICLE_SPEED"
 
-#define GPS_SPEED_SPEED "gps_speed_speed"
+#define VEHICLE_SPEED_U "vehicle_speed_u"
+#define VEHICLE_SPEED_V "vehicle_speed_v"
 /* END */
 
 /* START */
@@ -678,12 +680,12 @@
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint16_t = -6,
-	e_secondary_int16_t,
-	e_secondary_float,
-	e_secondary_uint8_t,
-	e_secondary_uint32_t,
+	e_secondary_uint8_t = -6,
+	e_secondary_uint16_t,
 	e_secondary_uint64_t,
+	e_secondary_float,
+	e_secondary_uint32_t,
+	e_secondary_int16_t,
 
 	
 };

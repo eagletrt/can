@@ -986,14 +986,18 @@ extern "C" {
 #define ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL "ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"
 
 #define ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_STATUS "ecu_set_steer_actuator_status_steering_wheel_status"
-#define ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_TARGET "ecu_set_steer_actuator_status_steering_wheel_target"
 /* END */
 
 /* START */
 #define ECU_SET_STEER_ACTUATOR_STATUS_TLM "ECU_SET_STEER_ACTUATOR_STATUS_TLM"
 
 #define ECU_SET_STEER_ACTUATOR_STATUS_TLM_STATUS "ecu_set_steer_actuator_status_tlm_status"
-#define ECU_SET_STEER_ACTUATOR_STATUS_TLM_TARGET "ecu_set_steer_actuator_status_tlm_target"
+/* END */
+
+/* START */
+#define ECU_SET_STEER_ACTUATOR_ANGLE "ECU_SET_STEER_ACTUATOR_ANGLE"
+
+#define ECU_SET_STEER_ACTUATOR_ANGLE_ANGLE "ecu_set_steer_actuator_angle_angle"
 /* END */
 
 /* START */
@@ -1041,10 +1045,10 @@ extern "C" {
 
 enum primary_types_id{
 	e_primary_float = -5,
+	e_primary_uint64_t,
+	e_primary_uint32_t,
 	e_primary_uint8_t,
 	e_primary_uint16_t,
-	e_primary_uint32_t,
-	e_primary_uint64_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,

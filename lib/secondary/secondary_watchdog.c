@@ -3,6 +3,8 @@
 
 int secondary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
+       case 1536: return SECONDARY_INTERVAL_VEHICLE_POSITION;
+       case 1544: return SECONDARY_INTERVAL_VEHICLE_SPEED;
        case 1552: return SECONDARY_INTERVAL_ANGULAR_VELOCITY;
        case 1560: return SECONDARY_INTERVAL_HV_SOC_ESTIMATION_STATE;
        case 1568: return SECONDARY_INTERVAL_HV_SOC_ESTIMATION_COVARIANCE;
@@ -111,8 +113,8 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1201: return SECONDARY_INDEX_IRTS_RR_1;
        case 1202: return SECONDARY_INDEX_IRTS_RR_2;
        case 1203: return SECONDARY_INDEX_IRTS_RR_3;
-       case 1536: return SECONDARY_INDEX_GPS_COORDS;
-       case 1544: return SECONDARY_INDEX_GPS_SPEED;
+       case 1536: return SECONDARY_INDEX_VEHICLE_POSITION;
+       case 1544: return SECONDARY_INDEX_VEHICLE_SPEED;
        case 1552: return SECONDARY_INDEX_ANGULAR_VELOCITY;
        case 1560: return SECONDARY_INDEX_HV_SOC_ESTIMATION_STATE;
        case 1568: return SECONDARY_INDEX_HV_SOC_ESTIMATION_COVARIANCE;
@@ -158,6 +160,20 @@ void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_
     memset(watchdog->last_reset, timestamp, sizeof(watchdog->last_reset));
 }
 void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_VEHICLE_POSITION)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_VEHICLE_POSITION] > SECONDARY_INTERVAL_VEHICLE_POSITION * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_VEHICLE_POSITION);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_VEHICLE_SPEED)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_VEHICLE_SPEED] > SECONDARY_INTERVAL_VEHICLE_SPEED * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_VEHICLE_SPEED);
+    }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_ANGULAR_VELOCITY)

@@ -153,14 +153,16 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 
 		return 0;
 	case 1536:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, GPS_COORDS_LATITUDE);
-		snprintf(v[1], string_size, GPS_COORDS_LONGITUDE);
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, VEHICLE_POSITION_X);
+		snprintf(v[1], string_size, VEHICLE_POSITION_Y);
+		snprintf(v[2], string_size, VEHICLE_POSITION_HEADING);
 
 		return 0;
 	case 1544:
-		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, GPS_SPEED_SPEED);
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, VEHICLE_SPEED_U);
+		snprintf(v[1], string_size, VEHICLE_SPEED_V);
 
 		return 0;
 	case 1552:
@@ -797,35 +799,43 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 	}
 	case 1536:
 	{
-		secondary_gps_coords_t tmp;
-		secondary_gps_coords_converted_t tmp_converted;
-		uint32_t r_latitude;
-		uint32_t r_longitude;
+		secondary_vehicle_position_t tmp;
+		secondary_vehicle_position_converted_t tmp_converted;
+		float r_x;
+		float r_y;
+		float r_heading;
 
-		sscanf(s, "%" SCNu32 "," 
-			"%" SCNu32 "," ,
-			&r_latitude,
-			&r_longitude);
-		tmp_converted.latitude = (uint32_t)r_latitude;
-		tmp_converted.longitude = (uint32_t)r_longitude;
+		sscanf(s, "%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_x,
+			&r_y,
+			&r_heading);
+		tmp_converted.x = (float)r_x;
+		tmp_converted.y = (float)r_y;
+		tmp_converted.heading = (float)r_heading;
 
-		secondary_gps_coords_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = SECONDARY_GPS_COORDS_BYTE_SIZE;
-		return secondary_gps_coords_pack(data, &tmp, SECONDARY_GPS_COORDS_BYTE_SIZE);
+		secondary_vehicle_position_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_VEHICLE_POSITION_BYTE_SIZE;
+		return secondary_vehicle_position_pack(data, &tmp, SECONDARY_VEHICLE_POSITION_BYTE_SIZE);
 	}
 	case 1544:
 	{
-		secondary_gps_speed_t tmp;
-		secondary_gps_speed_converted_t tmp_converted;
-		uint16_t r_speed;
+		secondary_vehicle_speed_t tmp;
+		secondary_vehicle_speed_converted_t tmp_converted;
+		float r_u;
+		float r_v;
 
-		sscanf(s, "%" SCNu16 "," ,
-			&r_speed);
-		tmp_converted.speed = (uint16_t)r_speed;
+		sscanf(s, "%f,"       
+			"%f,"       ,
+			&r_u,
+			&r_v);
+		tmp_converted.u = (float)r_u;
+		tmp_converted.v = (float)r_v;
 
-		secondary_gps_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = SECONDARY_GPS_SPEED_BYTE_SIZE;
-		return secondary_gps_speed_pack(data, &tmp, SECONDARY_GPS_SPEED_BYTE_SIZE);
+		secondary_vehicle_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_VEHICLE_SPEED_BYTE_SIZE;
+		return secondary_vehicle_speed_pack(data, &tmp, SECONDARY_VEHICLE_SPEED_BYTE_SIZE);
 	}
 	case 1552:
 	{
@@ -1344,8 +1354,8 @@ int secondary_n_fields_from_id(int id)
 		case 1201: return 4;
 		case 1202: return 4;
 		case 1203: return 4;
-		case 1536: return 2;
-		case 1544: return 1;
+		case 1536: return 3;
+		case 1544: return 2;
 		case 1552: return 2;
 		case 1560: return 3;
 		case 1568: return 3;
@@ -1506,14 +1516,16 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[3] = e_secondary_float;
 		return 4;
 	case 1536:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_secondary_uint32_t;
-		fields_types[1] = e_secondary_uint32_t;
-		return 2;
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_secondary_float;
+		fields_types[1] = e_secondary_float;
+		fields_types[2] = e_secondary_float;
+		return 3;
 	case 1544:
-		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_secondary_uint16_t;
-		return 1;
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_secondary_float;
+		fields_types[1] = e_secondary_float;
+		return 2;
 	case 1552:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_float;

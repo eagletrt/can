@@ -1998,7 +1998,6 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_enums)["ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"]["status"].push(pack->ecu_set_steer_actuator_status_steering_wheel(i).status());
 		primary_ecu_set_steer_actuator_status_steering_wheel_status_enum_to_string((primary_ecu_set_steer_actuator_status_steering_wheel_status)pack->ecu_set_steer_actuator_status_steering_wheel(i).status(), buffer);
 		(*net_strings)["ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"]["status"].push(buffer);
-		(*net_signals)["ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"]["target"].push(pack->ecu_set_steer_actuator_status_steering_wheel(i).target());
 
     }
 
@@ -2013,7 +2012,18 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_enums)["ECU_SET_STEER_ACTUATOR_STATUS_TLM"]["status"].push(pack->ecu_set_steer_actuator_status_tlm(i).status());
 		primary_ecu_set_steer_actuator_status_tlm_status_enum_to_string((primary_ecu_set_steer_actuator_status_tlm_status)pack->ecu_set_steer_actuator_status_tlm(i).status(), buffer);
 		(*net_strings)["ECU_SET_STEER_ACTUATOR_STATUS_TLM"]["status"].push(buffer);
-		(*net_signals)["ECU_SET_STEER_ACTUATOR_STATUS_TLM"]["target"].push(pack->ecu_set_steer_actuator_status_tlm(i).target());
+
+    }
+
+    for(int i = 0; i < pack->ecu_set_steer_actuator_angle_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->ecu_set_steer_actuator_angle(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ecu_set_steer_actuator_angle(i)._inner_timestamp();
+        (*net_signals)["ECU_SET_STEER_ACTUATOR_ANGLE"]["_timestamp"].push(pack->ecu_set_steer_actuator_angle(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["ECU_SET_STEER_ACTUATOR_ANGLE"]["angle"].push(pack->ecu_set_steer_actuator_angle(i).angle());
 
     }
 
@@ -3610,10 +3620,9 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1096: {
-            primary_ecu_set_steer_actuator_status_steering_wheel_converted_t* msg = (primary_ecu_set_steer_actuator_status_steering_wheel_converted_t*)(device->message);
+            primary_ecu_set_steer_actuator_status_steering_wheel_t* msg = (primary_ecu_set_steer_actuator_status_steering_wheel_t*)(device->message);
             primary::ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL* proto_msg = pack->add_ecu_set_steer_actuator_status_steering_wheel();
 			proto_msg->set_status((primary::primary_ecu_set_steer_actuator_status_steering_wheel_status)msg->status);
-			proto_msg->set_target(msg->target);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3622,10 +3631,9 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1104: {
-            primary_ecu_set_steer_actuator_status_tlm_converted_t* msg = (primary_ecu_set_steer_actuator_status_tlm_converted_t*)(device->message);
+            primary_ecu_set_steer_actuator_status_tlm_t* msg = (primary_ecu_set_steer_actuator_status_tlm_t*)(device->message);
             primary::ECU_SET_STEER_ACTUATOR_STATUS_TLM* proto_msg = pack->add_ecu_set_steer_actuator_status_tlm();
 			proto_msg->set_status((primary::primary_ecu_set_steer_actuator_status_tlm_status)msg->status);
-			proto_msg->set_target(msg->target);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3634,6 +3642,17 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1752: {
+            primary_ecu_set_steer_actuator_angle_converted_t* msg = (primary_ecu_set_steer_actuator_angle_converted_t*)(device->message);
+            primary::ECU_SET_STEER_ACTUATOR_ANGLE* proto_msg = pack->add_ecu_set_steer_actuator_angle();
+			proto_msg->set_angle(msg->angle);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1760: {
             primary_ecu_steer_actuator_current_converted_t* msg = (primary_ecu_steer_actuator_current_converted_t*)(device->message);
             primary::ECU_STEER_ACTUATOR_CURRENT* proto_msg = pack->add_ecu_steer_actuator_current();
 			proto_msg->set_current(msg->current);
@@ -3644,7 +3663,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1760: {
+        case 1768: {
             primary_debug_signal_crash_debug_t* msg = (primary_debug_signal_crash_debug_t*)(device->message);
             primary::DEBUG_SIGNAL_CRASH_DEBUG* proto_msg = pack->add_debug_signal_crash_debug();
 			proto_msg->set_seq_number(msg->seq_number);
@@ -3662,7 +3681,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1768: {
+        case 1776: {
             primary_debug_signal_crash_debug_ack_t* msg = (primary_debug_signal_crash_debug_ack_t*)(device->message);
             primary::DEBUG_SIGNAL_CRASH_DEBUG_ACK* proto_msg = pack->add_debug_signal_crash_debug_ack();
 			proto_msg->set_seq_number(msg->seq_number);
@@ -3673,7 +3692,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1776: {
+        case 1784: {
             primary_debug_signal_1_converted_t* msg = (primary_debug_signal_1_converted_t*)(device->message);
             primary::DEBUG_SIGNAL_1* proto_msg = pack->add_debug_signal_1();
 			proto_msg->set_field_1(msg->field_1);
@@ -3687,7 +3706,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1784: {
+        case 1792: {
             primary_debug_signal_2_converted_t* msg = (primary_debug_signal_2_converted_t*)(device->message);
             primary::DEBUG_SIGNAL_2* proto_msg = pack->add_debug_signal_2();
 			proto_msg->set_field_1(msg->field_1);
