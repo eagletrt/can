@@ -1573,30 +1573,69 @@
       }
     },
     {
-      "name": "GPS_COORDS",
+      "name": "VEHICLE_POSITION",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [
         "TLM"
       ],
       "receiving": [],
-      "description": "Coordinates received from GPS",
+      "description": "Vehicle position in meters and heading in radians",
+      "interval": 10,
       "contents": {
-        "latitude": "float32",
-        "longitude": "float32"
+        "x": {
+          "type": "float32",
+          "range": [
+            -1000,
+            1000
+          ],
+          "force": "uint16"
+        },
+        "y": {
+          "type": "float32",
+          "range": [
+            -1000,
+            1000
+          ],
+          "force": "uint16"
+        },
+        "heading": {
+          "type": "float32",
+          "range": [
+            -3.14159,
+            3.14159
+          ],
+          "force": "uint16"
+        }
       }
     },
     {
-      "name": "GPS_SPEED",
+      "name": "VEHICLE_SPEED",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [
         "TLM"
       ],
       "receiving": [],
-      "description": "Speed received from GPS",
+      "description": "Vehicle speed in m/s",
+      "interval": 10,
       "contents": {
-        "speed": "uint16"
+        "u": {
+          "type": "float32",
+          "range": [
+            0,
+            40
+          ],
+          "force": "uint16"
+        },
+        "v": {
+          "type": "float32",
+          "range": [
+            -20,
+            20
+          ],
+          "force": "uint16"
+        }
       }
     },
     {

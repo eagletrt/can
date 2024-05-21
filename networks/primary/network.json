@@ -2454,14 +2454,28 @@
                 "ECU"
             ],
             "contents": {
-                "status": "Toggle",
-                "target": {
+                "status": "Toggle"
+            }
+        },
+        {
+            "name": "ECU_SET_STEER_ACTUATOR_ANGLE",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "ECU"
+            ],
+            "contents": {
+                "angle": {
                     "type": "float32",
                     "range": [
-                        -0.1,
-                        1
+                        -180,
+                        180
                     ],
-                    "precision": 0.1
+                    "force": "uint16"
                 }
             }
         },
