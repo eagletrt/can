@@ -339,6 +339,13 @@ extern "C" {
 /* END */
 
 /* START */
+#define ACQUISINATOR_VERSION "ACQUISINATOR_VERSION"
+
+#define ACQUISINATOR_VERSION_ACQUISINATOR_ID "acquisinator_version_acquisinator_id"
+#define ACQUISINATOR_VERSION_CANLIB_BUILD_TIME "acquisinator_version_canlib_build_time"
+/* END */
+
+/* START */
 #define IMU_ANGULAR_RATE "IMU_ANGULAR_RATE"
 
 #define IMU_ANGULAR_RATE_X "imu_angular_rate_x"
@@ -684,12 +691,12 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint8_t = -6,
-	e_secondary_uint16_t,
-	e_secondary_uint64_t,
-	e_secondary_float,
+	e_secondary_uint16_t = -6,
 	e_secondary_uint32_t,
 	e_secondary_int16_t,
+	e_secondary_float,
+	e_secondary_uint64_t,
+	e_secondary_uint8_t,
 
 	
 };

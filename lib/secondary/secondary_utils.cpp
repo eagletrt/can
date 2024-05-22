@@ -9,6 +9,12 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[0], string_size, ACQUISINATOR_JMP_TO_BLT_ACQUISINATORE_ID);
 
 		return 0;
+	case 700:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, ACQUISINATOR_VERSION_ACQUISINATOR_ID);
+		snprintf(v[1], string_size, ACQUISINATOR_VERSION_CANLIB_BUILD_TIME);
+
+		return 0;
 	case 1260:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, IMU_ANGULAR_RATE_X);
@@ -332,6 +338,24 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		secondary_acquisinator_jmp_to_blt_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = SECONDARY_ACQUISINATOR_JMP_TO_BLT_BYTE_SIZE;
 		return secondary_acquisinator_jmp_to_blt_pack(data, &tmp, SECONDARY_ACQUISINATOR_JMP_TO_BLT_BYTE_SIZE);
+	}
+	case 700:
+	{
+		secondary_acquisinator_version_t tmp;
+		secondary_acquisinator_version_converted_t tmp_converted;
+		uint8_t r_acquisinator_id;
+		uint32_t r_canlib_build_time;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu32 "," ,
+			&r_acquisinator_id,
+			&r_canlib_build_time);
+		tmp_converted.acquisinator_id = (uint8_t)r_acquisinator_id;
+		tmp_converted.canlib_build_time = (uint32_t)r_canlib_build_time;
+
+		secondary_acquisinator_version_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_ACQUISINATOR_VERSION_BYTE_SIZE;
+		return secondary_acquisinator_version_pack(data, &tmp, SECONDARY_ACQUISINATOR_VERSION_BYTE_SIZE);
 	}
 	case 1260:
 	{
@@ -1336,6 +1360,7 @@ int secondary_n_fields_from_id(int id)
 		case 62: return 0;
 		case 63: return 0;
 		case 64: return 0;
+		case 700: return 2;
 		case 1260: return 3;
 		case 1261: return 4;
 		case 1456: return 4;
@@ -1390,6 +1415,11 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_secondary_uint8_t;
 		return 1;
+	case 700:
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_secondary_uint8_t;
+		fields_types[1] = e_secondary_uint32_t;
+		return 2;
 	case 1260:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_secondary_float;

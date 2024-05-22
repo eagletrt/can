@@ -3,6 +3,7 @@
 
 int secondary_watchdog_interval_from_id(uint16_t message_id) {
     switch (message_id) {
+       case 700: return SECONDARY_INTERVAL_ACQUISINATOR_VERSION;
        case 1536: return SECONDARY_INTERVAL_VEHICLE_POSITION;
        case 1544: return SECONDARY_INTERVAL_VEHICLE_SPEED;
        case 1552: return SECONDARY_INTERVAL_ANGULAR_VELOCITY;
@@ -95,6 +96,7 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 62: return SECONDARY_INDEX_ACQUISINATOR_FLASH_30_RX;
        case 63: return SECONDARY_INDEX_ACQUISINATOR_FLASH_31_TX;
        case 64: return SECONDARY_INDEX_ACQUISINATOR_FLASH_31_RX;
+       case 700: return SECONDARY_INDEX_ACQUISINATOR_VERSION;
        case 1260: return SECONDARY_INDEX_IMU_ANGULAR_RATE;
        case 1261: return SECONDARY_INDEX_IMU_ACCELERATION;
        case 1456: return SECONDARY_INDEX_IRTS_FL_0;
@@ -149,7 +151,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 108 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 109 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -160,6 +162,13 @@ void secondary_watchdog_reset_all(secondary_watchdog *watchdog, canlib_watchdog_
     memset(watchdog->last_reset, timestamp, sizeof(watchdog->last_reset));
 }
 void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_timestamp timestamp) {
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_ACQUISINATOR_VERSION)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_ACQUISINATOR_VERSION] > SECONDARY_INTERVAL_ACQUISINATOR_VERSION * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_ACQUISINATOR_VERSION);
+    }
 
     if (
         CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_VEHICLE_POSITION)

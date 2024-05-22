@@ -975,6 +975,19 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->acquisinator_version_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_version(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_version(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_VERSION"]["_timestamp"].push(pack->acquisinator_version(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["ACQUISINATOR_VERSION"]["acquisinator_id"].push(pack->acquisinator_version(i).acquisinator_id());
+		(*net_signals)["ACQUISINATOR_VERSION"]["canlib_build_time"].push(pack->acquisinator_version(i).canlib_build_time());
+
+    }
+
     for(int i = 0; i < pack->imu_angular_rate_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -2231,6 +2244,18 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         case 64: {
             secondary_acquisinator_flash_31_rx_t* msg = (secondary_acquisinator_flash_31_rx_t*)(device->message);
             secondary::ACQUISINATOR_FLASH_31_RX* proto_msg = pack->add_acquisinator_flash_31_rx();
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 700: {
+            secondary_acquisinator_version_t* msg = (secondary_acquisinator_version_t*)(device->message);
+            secondary::ACQUISINATOR_VERSION* proto_msg = pack->add_acquisinator_version();
+			proto_msg->set_acquisinator_id(msg->acquisinator_id);
+			proto_msg->set_canlib_build_time(msg->canlib_build_time);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
