@@ -1,6 +1,18 @@
 {
   "version": 1.0,
-  "types": {},
+  "types": {
+    "RodNames": {
+      "type": "enum",
+      "items": [
+        "F1011",
+        "F36",
+        "F46",
+        "F27",
+        "F17",
+        "F58"
+      ]
+    }
+  },
   "messages": [
     {
       "name": "ACQUISINATOR_JMP_TO_BLT",
@@ -2049,12 +2061,12 @@
       "description": "Message for the arm deformation for the front left wheel",
       "interval": 10,
       "contents": {
-        "rod_id": "uint8",
+        "rod_id": "RodNames",
         "deformation": {
           "type": "float32",
           "range": [
-            -3.0,
-            3.0
+            -0.01,
+            0.01
           ],
           "force": "uint32"
         }
@@ -2071,12 +2083,12 @@
       "description": "Message for the arm deformation for the front right wheel",
       "interval": 10,
       "contents": {
-        "rod_id": "uint8",
+        "rod_id": "RodNames",
         "deformation": {
           "type": "float32",
           "range": [
-            -3.0,
-            3.0
+            -0.01,
+            0.01
           ],
           "force": "uint32"
         }
@@ -2093,12 +2105,12 @@
       "description": "Message for the arm deformation for the rear left wheel",
       "interval": 10,
       "contents": {
-        "rod_id": "uint8",
+        "rod_id": "RodNames",
         "deformation": {
           "type": "float32",
           "range": [
-            -3.0,
-            3.0
+            -0.01,
+            0.01
           ],
           "force": "uint32"
         }
@@ -2115,12 +2127,12 @@
       "description": "Message for the arm deformation for the rear right wheel",
       "interval": 10,
       "contents": {
-        "rod_id": "uint8",
+        "rod_id": "RodNames",
         "deformation": {
           "type": "float32",
           "range": [
-            -3.0,
-            3.0
+            -0.01,
+            0.01
           ],
           "force": "uint32"
         }
@@ -2141,7 +2153,7 @@
       "contents": {}
     },
     {
-      "name": "AMMO_POS_SET_CALIBRATION",
+      "name": "AMMO_COMPRESSION_SET_CALIBRATION",
       "topic": "HYDRA",
       "priority": 0,
       "sending": [
@@ -2150,7 +2162,7 @@
       "receiving": [
         "ACQUISINATOR"
       ],
-      "description": "Calibration command for ammo positions",
+      "description": "Calibration command for ammo compression",
       "interval": "oneshot",
       "contents": {}
     },
