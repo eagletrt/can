@@ -720,6 +720,19 @@
       "contents": {}
     },
     {
+      "name": "ACQUISINATOR_VERSION",
+      "fixed_id": 700,
+      "interval": 1000,
+      "sending": [
+        "ACQUISINATOR"
+      ],
+      "receiving": [],
+      "contents": {
+        "acquisinator_id": "uint8",
+        "canlib_build_time": "uint32"
+      }
+    },
+    {
       "name": "IMU_ANGULAR_RATE",
       "fixed_id": 1260,
       "sending": [
