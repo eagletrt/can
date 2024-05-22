@@ -651,7 +651,7 @@
 /* END */
 
 /* START */
-#define AMMO_POS_SET_CALIBRATION "AMMO_POS_SET_CALIBRATION"
+#define AMMO_COMPRESSION_SET_CALIBRATION "AMMO_COMPRESSION_SET_CALIBRATION"
 
 /* END */
 
@@ -688,13 +688,16 @@
 
 enum secondary_types_id{
 	e_secondary_uint16_t = -6,
-	e_secondary_uint32_t,
 	e_secondary_int16_t,
-	e_secondary_float,
+	e_secondary_uint32_t,
 	e_secondary_uint64_t,
+	e_secondary_float,
 	e_secondary_uint8_t,
 
-	
+	e_secondary_link_deformation_fl_wheel_rod_id,
+	e_secondary_link_deformation_fr_wheel_rod_id,
+	e_secondary_link_deformation_rl_wheel_rod_id,
+	e_secondary_link_deformation_rr_wheel_rod_id
 };
 
 /**

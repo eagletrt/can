@@ -2,6 +2,38 @@ syntax = "proto3";
 package secondary;
 
 
+enum secondary_link_deformation_fl_wheel_rod_id {
+	secondary_link_deformation_fl_wheel_rod_id_F1011 = 0;
+	secondary_link_deformation_fl_wheel_rod_id_F36 = 1;
+	secondary_link_deformation_fl_wheel_rod_id_F46 = 2;
+	secondary_link_deformation_fl_wheel_rod_id_F27 = 3;
+	secondary_link_deformation_fl_wheel_rod_id_F17 = 4;
+	secondary_link_deformation_fl_wheel_rod_id_F58 = 5;
+}
+enum secondary_link_deformation_fr_wheel_rod_id {
+	secondary_link_deformation_fr_wheel_rod_id_F1011 = 0;
+	secondary_link_deformation_fr_wheel_rod_id_F36 = 1;
+	secondary_link_deformation_fr_wheel_rod_id_F46 = 2;
+	secondary_link_deformation_fr_wheel_rod_id_F27 = 3;
+	secondary_link_deformation_fr_wheel_rod_id_F17 = 4;
+	secondary_link_deformation_fr_wheel_rod_id_F58 = 5;
+}
+enum secondary_link_deformation_rl_wheel_rod_id {
+	secondary_link_deformation_rl_wheel_rod_id_F1011 = 0;
+	secondary_link_deformation_rl_wheel_rod_id_F36 = 1;
+	secondary_link_deformation_rl_wheel_rod_id_F46 = 2;
+	secondary_link_deformation_rl_wheel_rod_id_F27 = 3;
+	secondary_link_deformation_rl_wheel_rod_id_F17 = 4;
+	secondary_link_deformation_rl_wheel_rod_id_F58 = 5;
+}
+enum secondary_link_deformation_rr_wheel_rod_id {
+	secondary_link_deformation_rr_wheel_rod_id_F1011 = 0;
+	secondary_link_deformation_rr_wheel_rod_id_F36 = 1;
+	secondary_link_deformation_rr_wheel_rod_id_F46 = 2;
+	secondary_link_deformation_rr_wheel_rod_id_F27 = 3;
+	secondary_link_deformation_rr_wheel_rod_id_F17 = 4;
+	secondary_link_deformation_rr_wheel_rod_id_F58 = 5;
+}
 
 
 message ACQUISINATOR_JMP_TO_BLT{
@@ -416,29 +448,29 @@ message AMMO_COMPRESSION{
 	uint64 _inner_timestamp = 5;
 }
 message LINK_DEFORMATION_FL_WHEEL{
-	uint32 rod_id = 1;
+	secondary_link_deformation_fl_wheel_rod_id rod_id = 1;
 	float deformation = 2;
 	uint64 _inner_timestamp = 3;
 }
 message LINK_DEFORMATION_FR_WHEEL{
-	uint32 rod_id = 1;
+	secondary_link_deformation_fr_wheel_rod_id rod_id = 1;
 	float deformation = 2;
 	uint64 _inner_timestamp = 3;
 }
 message LINK_DEFORMATION_RL_WHEEL{
-	uint32 rod_id = 1;
+	secondary_link_deformation_rl_wheel_rod_id rod_id = 1;
 	float deformation = 2;
 	uint64 _inner_timestamp = 3;
 }
 message LINK_DEFORMATION_RR_WHEEL{
-	uint32 rod_id = 1;
+	secondary_link_deformation_rr_wheel_rod_id rod_id = 1;
 	float deformation = 2;
 	uint64 _inner_timestamp = 3;
 }
 message LINK_DEFORMATION_SET_CALIBRATION{
 	uint64 _inner_timestamp = 1;
 }
-message AMMO_POS_SET_CALIBRATION{
+message AMMO_COMPRESSION_SET_CALIBRATION{
 	uint64 _inner_timestamp = 1;
 }
 message DEBUG_SIGNAL_1{
@@ -571,7 +603,7 @@ message Pack{
 	repeated LINK_DEFORMATION_RL_WHEEL LINK_DEFORMATION_RL_WHEEL = 102;
 	repeated LINK_DEFORMATION_RR_WHEEL LINK_DEFORMATION_RR_WHEEL = 103;
 	repeated LINK_DEFORMATION_SET_CALIBRATION LINK_DEFORMATION_SET_CALIBRATION = 104;
-	repeated AMMO_POS_SET_CALIBRATION AMMO_POS_SET_CALIBRATION = 105;
+	repeated AMMO_COMPRESSION_SET_CALIBRATION AMMO_COMPRESSION_SET_CALIBRATION = 105;
 	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 106;
 	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 107;
 	repeated COOLING_TEMP_PUMPS COOLING_TEMP_PUMPS = 108;

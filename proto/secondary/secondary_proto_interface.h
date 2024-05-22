@@ -1470,7 +1470,9 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
         (*net_signals)["LINK_DEFORMATION_FL_WHEEL"]["_timestamp"].push(pack->link_deformation_fl_wheel(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LINK_DEFORMATION_FL_WHEEL"]["rod_id"].push(pack->link_deformation_fl_wheel(i).rod_id());
+		(*net_enums)["LINK_DEFORMATION_FL_WHEEL"]["rod_id"].push(pack->link_deformation_fl_wheel(i).rod_id());
+		secondary_link_deformation_fl_wheel_rod_id_enum_to_string((secondary_link_deformation_fl_wheel_rod_id)pack->link_deformation_fl_wheel(i).rod_id(), buffer);
+		(*net_strings)["LINK_DEFORMATION_FL_WHEEL"]["rod_id"].push(buffer);
 		(*net_signals)["LINK_DEFORMATION_FL_WHEEL"]["deformation"].push(pack->link_deformation_fl_wheel(i).deformation());
 
     }
@@ -1483,7 +1485,9 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
         (*net_signals)["LINK_DEFORMATION_FR_WHEEL"]["_timestamp"].push(pack->link_deformation_fr_wheel(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LINK_DEFORMATION_FR_WHEEL"]["rod_id"].push(pack->link_deformation_fr_wheel(i).rod_id());
+		(*net_enums)["LINK_DEFORMATION_FR_WHEEL"]["rod_id"].push(pack->link_deformation_fr_wheel(i).rod_id());
+		secondary_link_deformation_fr_wheel_rod_id_enum_to_string((secondary_link_deformation_fr_wheel_rod_id)pack->link_deformation_fr_wheel(i).rod_id(), buffer);
+		(*net_strings)["LINK_DEFORMATION_FR_WHEEL"]["rod_id"].push(buffer);
 		(*net_signals)["LINK_DEFORMATION_FR_WHEEL"]["deformation"].push(pack->link_deformation_fr_wheel(i).deformation());
 
     }
@@ -1496,7 +1500,9 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
         (*net_signals)["LINK_DEFORMATION_RL_WHEEL"]["_timestamp"].push(pack->link_deformation_rl_wheel(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LINK_DEFORMATION_RL_WHEEL"]["rod_id"].push(pack->link_deformation_rl_wheel(i).rod_id());
+		(*net_enums)["LINK_DEFORMATION_RL_WHEEL"]["rod_id"].push(pack->link_deformation_rl_wheel(i).rod_id());
+		secondary_link_deformation_rl_wheel_rod_id_enum_to_string((secondary_link_deformation_rl_wheel_rod_id)pack->link_deformation_rl_wheel(i).rod_id(), buffer);
+		(*net_strings)["LINK_DEFORMATION_RL_WHEEL"]["rod_id"].push(buffer);
 		(*net_signals)["LINK_DEFORMATION_RL_WHEEL"]["deformation"].push(pack->link_deformation_rl_wheel(i).deformation());
 
     }
@@ -1509,7 +1515,9 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
         (*net_signals)["LINK_DEFORMATION_RR_WHEEL"]["_timestamp"].push(pack->link_deformation_rr_wheel(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["LINK_DEFORMATION_RR_WHEEL"]["rod_id"].push(pack->link_deformation_rr_wheel(i).rod_id());
+		(*net_enums)["LINK_DEFORMATION_RR_WHEEL"]["rod_id"].push(pack->link_deformation_rr_wheel(i).rod_id());
+		secondary_link_deformation_rr_wheel_rod_id_enum_to_string((secondary_link_deformation_rr_wheel_rod_id)pack->link_deformation_rr_wheel(i).rod_id(), buffer);
+		(*net_strings)["LINK_DEFORMATION_RR_WHEEL"]["rod_id"].push(buffer);
 		(*net_signals)["LINK_DEFORMATION_RR_WHEEL"]["deformation"].push(pack->link_deformation_rr_wheel(i).deformation());
 
     }
@@ -1525,12 +1533,12 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->ammo_pos_set_calibration_size(); i++){
+    for(int i = 0; i < pack->ammo_compression_set_calibration_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->ammo_pos_set_calibration(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ammo_pos_set_calibration(i)._inner_timestamp();
-        (*net_signals)["AMMO_POS_SET_CALIBRATION"]["_timestamp"].push(pack->ammo_pos_set_calibration(i)._inner_timestamp());
+        if(pack->ammo_compression_set_calibration(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->ammo_compression_set_calibration(i)._inner_timestamp();
+        (*net_signals)["AMMO_COMPRESSION_SET_CALIBRATION"]["_timestamp"].push(pack->ammo_compression_set_calibration(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
 
@@ -2707,7 +2715,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         case 1656: {
             secondary_link_deformation_fl_wheel_converted_t* msg = (secondary_link_deformation_fl_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_FL_WHEEL* proto_msg = pack->add_link_deformation_fl_wheel();
-			proto_msg->set_rod_id(msg->rod_id);
+			proto_msg->set_rod_id((secondary::secondary_link_deformation_fl_wheel_rod_id)msg->rod_id);
 			proto_msg->set_deformation(msg->deformation);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2719,7 +2727,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         case 1664: {
             secondary_link_deformation_fr_wheel_converted_t* msg = (secondary_link_deformation_fr_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_FR_WHEEL* proto_msg = pack->add_link_deformation_fr_wheel();
-			proto_msg->set_rod_id(msg->rod_id);
+			proto_msg->set_rod_id((secondary::secondary_link_deformation_fr_wheel_rod_id)msg->rod_id);
 			proto_msg->set_deformation(msg->deformation);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2731,7 +2739,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         case 1672: {
             secondary_link_deformation_rl_wheel_converted_t* msg = (secondary_link_deformation_rl_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_RL_WHEEL* proto_msg = pack->add_link_deformation_rl_wheel();
-			proto_msg->set_rod_id(msg->rod_id);
+			proto_msg->set_rod_id((secondary::secondary_link_deformation_rl_wheel_rod_id)msg->rod_id);
 			proto_msg->set_deformation(msg->deformation);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2743,7 +2751,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         case 1680: {
             secondary_link_deformation_rr_wheel_converted_t* msg = (secondary_link_deformation_rr_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_RR_WHEEL* proto_msg = pack->add_link_deformation_rr_wheel();
-			proto_msg->set_rod_id(msg->rod_id);
+			proto_msg->set_rod_id((secondary::secondary_link_deformation_rr_wheel_rod_id)msg->rod_id);
 			proto_msg->set_deformation(msg->deformation);
 
 #ifdef CANLIB_TIMESTAMP
@@ -2763,8 +2771,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 80: {
-            secondary_ammo_pos_set_calibration_t* msg = (secondary_ammo_pos_set_calibration_t*)(device->message);
-            secondary::AMMO_POS_SET_CALIBRATION* proto_msg = pack->add_ammo_pos_set_calibration();
+            secondary_ammo_compression_set_calibration_t* msg = (secondary_ammo_compression_set_calibration_t*)(device->message);
+            secondary::AMMO_COMPRESSION_SET_CALIBRATION* proto_msg = pack->add_ammo_compression_set_calibration();
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

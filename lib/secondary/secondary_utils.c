@@ -317,6 +317,46 @@ int secondary_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 {
     switch(enum_id)
     {
+	case 0:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "secondary_link_deformation_fl_wheel_rod_id_F1011");
+		snprintf(v[1], string_size, "secondary_link_deformation_fl_wheel_rod_id_F36");
+		snprintf(v[2], string_size, "secondary_link_deformation_fl_wheel_rod_id_F46");
+		snprintf(v[3], string_size, "secondary_link_deformation_fl_wheel_rod_id_F27");
+		snprintf(v[4], string_size, "secondary_link_deformation_fl_wheel_rod_id_F17");
+		snprintf(v[5], string_size, "secondary_link_deformation_fl_wheel_rod_id_F58");
+
+		return 0;
+	case 1:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "secondary_link_deformation_fr_wheel_rod_id_F1011");
+		snprintf(v[1], string_size, "secondary_link_deformation_fr_wheel_rod_id_F36");
+		snprintf(v[2], string_size, "secondary_link_deformation_fr_wheel_rod_id_F46");
+		snprintf(v[3], string_size, "secondary_link_deformation_fr_wheel_rod_id_F27");
+		snprintf(v[4], string_size, "secondary_link_deformation_fr_wheel_rod_id_F17");
+		snprintf(v[5], string_size, "secondary_link_deformation_fr_wheel_rod_id_F58");
+
+		return 0;
+	case 2:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "secondary_link_deformation_rl_wheel_rod_id_F1011");
+		snprintf(v[1], string_size, "secondary_link_deformation_rl_wheel_rod_id_F36");
+		snprintf(v[2], string_size, "secondary_link_deformation_rl_wheel_rod_id_F46");
+		snprintf(v[3], string_size, "secondary_link_deformation_rl_wheel_rod_id_F27");
+		snprintf(v[4], string_size, "secondary_link_deformation_rl_wheel_rod_id_F17");
+		snprintf(v[5], string_size, "secondary_link_deformation_rl_wheel_rod_id_F58");
+
+		return 0;
+	case 3:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "secondary_link_deformation_rr_wheel_rod_id_F1011");
+		snprintf(v[1], string_size, "secondary_link_deformation_rr_wheel_rod_id_F36");
+		snprintf(v[2], string_size, "secondary_link_deformation_rr_wheel_rod_id_F46");
+		snprintf(v[3], string_size, "secondary_link_deformation_rr_wheel_rod_id_F27");
+		snprintf(v[4], string_size, "secondary_link_deformation_rr_wheel_rod_id_F17");
+		snprintf(v[5], string_size, "secondary_link_deformation_rr_wheel_rod_id_F58");
+
+		return 0;
 
     }
     return 0;
@@ -1142,7 +1182,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 			"%f,"       ,
 			&r_rod_id,
 			&r_deformation);
-		tmp_converted.rod_id = (uint8_t)r_rod_id;
+		tmp_converted.rod_id = (secondary_link_deformation_fl_wheel_rod_id)r_rod_id;
 		tmp_converted.deformation = (float)r_deformation;
 
 		secondary_link_deformation_fl_wheel_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -1160,7 +1200,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 			"%f,"       ,
 			&r_rod_id,
 			&r_deformation);
-		tmp_converted.rod_id = (uint8_t)r_rod_id;
+		tmp_converted.rod_id = (secondary_link_deformation_fr_wheel_rod_id)r_rod_id;
 		tmp_converted.deformation = (float)r_deformation;
 
 		secondary_link_deformation_fr_wheel_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -1178,7 +1218,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 			"%f,"       ,
 			&r_rod_id,
 			&r_deformation);
-		tmp_converted.rod_id = (uint8_t)r_rod_id;
+		tmp_converted.rod_id = (secondary_link_deformation_rl_wheel_rod_id)r_rod_id;
 		tmp_converted.deformation = (float)r_deformation;
 
 		secondary_link_deformation_rl_wheel_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -1196,7 +1236,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 			"%f,"       ,
 			&r_rod_id,
 			&r_deformation);
-		tmp_converted.rod_id = (uint8_t)r_rod_id;
+		tmp_converted.rod_id = (secondary_link_deformation_rr_wheel_rod_id)r_rod_id;
 		tmp_converted.deformation = (float)r_deformation;
 
 		secondary_link_deformation_rr_wheel_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -1632,22 +1672,22 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		return 4;
 	case 1656:
 		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_secondary_uint8_t;
+		fields_types[0] = e_secondary_link_deformation_fl_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
 	case 1664:
 		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_secondary_uint8_t;
+		fields_types[0] = e_secondary_link_deformation_fr_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
 	case 1672:
 		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_secondary_uint8_t;
+		fields_types[0] = e_secondary_link_deformation_rl_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
 	case 1680:
 		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_secondary_uint8_t;
+		fields_types[0] = e_secondary_link_deformation_rr_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
 	case 1688:
@@ -1679,5 +1719,57 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 }
 int secondary_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
 {
+	if(!strcmp(msg_name, "LINK_DEFORMATION_FL_WHEEL"))
+	{
+		if(!strcmp(sgn_name, "rod_id"))
+		{
+			sprintf(v[0], "F1011");
+			sprintf(v[1], "F36");
+			sprintf(v[2], "F46");
+			sprintf(v[3], "F27");
+			sprintf(v[4], "F17");
+			sprintf(v[5], "F58");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "LINK_DEFORMATION_FR_WHEEL"))
+	{
+		if(!strcmp(sgn_name, "rod_id"))
+		{
+			sprintf(v[0], "F1011");
+			sprintf(v[1], "F36");
+			sprintf(v[2], "F46");
+			sprintf(v[3], "F27");
+			sprintf(v[4], "F17");
+			sprintf(v[5], "F58");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "LINK_DEFORMATION_RL_WHEEL"))
+	{
+		if(!strcmp(sgn_name, "rod_id"))
+		{
+			sprintf(v[0], "F1011");
+			sprintf(v[1], "F36");
+			sprintf(v[2], "F46");
+			sprintf(v[3], "F27");
+			sprintf(v[4], "F17");
+			sprintf(v[5], "F58");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "LINK_DEFORMATION_RR_WHEEL"))
+	{
+		if(!strcmp(sgn_name, "rod_id"))
+		{
+			sprintf(v[0], "F1011");
+			sprintf(v[1], "F36");
+			sprintf(v[2], "F46");
+			sprintf(v[3], "F27");
+			sprintf(v[4], "F17");
+			sprintf(v[5], "F58");
+			return 6;
+		}
+	}
 	return 0;
 }
