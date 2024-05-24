@@ -522,6 +522,13 @@ extern "C" {
 /* END */
 
 /* START */
+#define VEHICLE_CURVILINEAR_COORDINATES "VEHICLE_CURVILINEAR_COORDINATES"
+
+#define VEHICLE_CURVILINEAR_COORDINATES_S "vehicle_curvilinear_coordinates_s"
+#define VEHICLE_CURVILINEAR_COORDINATES_N "vehicle_curvilinear_coordinates_n"
+/* END */
+
+/* START */
 #define ANGULAR_VELOCITY "ANGULAR_VELOCITY"
 
 #define ANGULAR_VELOCITY_FL "angular_velocity_fl"
@@ -691,12 +698,12 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint16_t = -6,
+	e_secondary_float = -6,
+	e_secondary_uint16_t,
+	e_secondary_uint64_t,
+	e_secondary_uint8_t,
 	e_secondary_int16_t,
 	e_secondary_uint32_t,
-	e_secondary_uint64_t,
-	e_secondary_float,
-	e_secondary_uint8_t,
 
 	e_secondary_link_deformation_fl_wheel_rod_id,
 	e_secondary_link_deformation_fr_wheel_rod_id,
