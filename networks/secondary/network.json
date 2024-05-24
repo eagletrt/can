@@ -1664,6 +1664,35 @@
       }
     },
     {
+      "name": "VEHICLE_CURVILINEAR_COORDINATES",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "Vehicle curvilinear coordinates wrt baseline",
+      "interval": 10,
+      "contents": {
+        "s": {
+          "type": "float32",
+          "range": [
+            0,
+            5000
+          ],
+          "force": "uint32"
+        },
+        "n": {
+          "type": "float32",
+          "range": [
+            -10,
+            10
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
       "name": "ANGULAR_VELOCITY",
       "topic": "HYDRA",
       "priority": 3,
