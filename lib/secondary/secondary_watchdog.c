@@ -17,14 +17,15 @@ int secondary_watchdog_interval_from_id(uint16_t message_id) {
        case 1640: return SECONDARY_INTERVAL_TLM_LAPS_STATS;
        case 1648: return SECONDARY_INTERVAL_TLM_NETWORK_INTERFACE;
        case 1656: return SECONDARY_INTERVAL_AMMO_COMPRESSION;
-       case 1664: return SECONDARY_INTERVAL_LINK_DEFORMATION_FL_WHEEL;
-       case 1672: return SECONDARY_INTERVAL_LINK_DEFORMATION_FR_WHEEL;
-       case 1680: return SECONDARY_INTERVAL_LINK_DEFORMATION_RL_WHEEL;
-       case 1688: return SECONDARY_INTERVAL_LINK_DEFORMATION_RR_WHEEL;
-       case 1696: return SECONDARY_INTERVAL_DEBUG_SIGNAL_1;
-       case 1704: return SECONDARY_INTERVAL_DEBUG_SIGNAL_2;
-       case 1712: return SECONDARY_INTERVAL_COOLING_TEMP_PUMPS;
-       case 1720: return SECONDARY_INTERVAL_COOLING_TEMP_RADIATORS;
+       case 1664: return SECONDARY_INTERVAL_ACQUISINATOR_CALIBRATIONS_OFFSETS;
+       case 1672: return SECONDARY_INTERVAL_LINK_DEFORMATION_FL_WHEEL;
+       case 1680: return SECONDARY_INTERVAL_LINK_DEFORMATION_FR_WHEEL;
+       case 1688: return SECONDARY_INTERVAL_LINK_DEFORMATION_RL_WHEEL;
+       case 1696: return SECONDARY_INTERVAL_LINK_DEFORMATION_RR_WHEEL;
+       case 1704: return SECONDARY_INTERVAL_DEBUG_SIGNAL_1;
+       case 1712: return SECONDARY_INTERVAL_DEBUG_SIGNAL_2;
+       case 1720: return SECONDARY_INTERVAL_COOLING_TEMP_PUMPS;
+       case 1728: return SECONDARY_INTERVAL_COOLING_TEMP_RADIATORS;
 
     }
     return -1;
@@ -132,16 +133,17 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1640: return SECONDARY_INDEX_TLM_LAPS_STATS;
        case 1648: return SECONDARY_INDEX_TLM_NETWORK_INTERFACE;
        case 1656: return SECONDARY_INDEX_AMMO_COMPRESSION;
-       case 1664: return SECONDARY_INDEX_LINK_DEFORMATION_FL_WHEEL;
-       case 1672: return SECONDARY_INDEX_LINK_DEFORMATION_FR_WHEEL;
-       case 1680: return SECONDARY_INDEX_LINK_DEFORMATION_RL_WHEEL;
-       case 1688: return SECONDARY_INDEX_LINK_DEFORMATION_RR_WHEEL;
+       case 1664: return SECONDARY_INDEX_ACQUISINATOR_CALIBRATIONS_OFFSETS;
+       case 1672: return SECONDARY_INDEX_LINK_DEFORMATION_FL_WHEEL;
+       case 1680: return SECONDARY_INDEX_LINK_DEFORMATION_FR_WHEEL;
+       case 1688: return SECONDARY_INDEX_LINK_DEFORMATION_RL_WHEEL;
+       case 1696: return SECONDARY_INDEX_LINK_DEFORMATION_RR_WHEEL;
        case 72: return SECONDARY_INDEX_LINK_DEFORMATION_SET_CALIBRATION;
        case 80: return SECONDARY_INDEX_AMMO_COMPRESSION_SET_CALIBRATION;
-       case 1696: return SECONDARY_INDEX_DEBUG_SIGNAL_1;
-       case 1704: return SECONDARY_INDEX_DEBUG_SIGNAL_2;
-       case 1712: return SECONDARY_INDEX_COOLING_TEMP_PUMPS;
-       case 1720: return SECONDARY_INDEX_COOLING_TEMP_RADIATORS;
+       case 1704: return SECONDARY_INDEX_DEBUG_SIGNAL_1;
+       case 1712: return SECONDARY_INDEX_DEBUG_SIGNAL_2;
+       case 1720: return SECONDARY_INDEX_COOLING_TEMP_PUMPS;
+       case 1728: return SECONDARY_INDEX_COOLING_TEMP_RADIATORS;
 
     }
     return -1;
@@ -153,7 +155,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 110 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 111 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -261,6 +263,13 @@ void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_ti
         && timestamp - watchdog->last_reset[SECONDARY_INDEX_AMMO_COMPRESSION] > SECONDARY_INTERVAL_AMMO_COMPRESSION * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_AMMO_COMPRESSION);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_ACQUISINATOR_CALIBRATIONS_OFFSETS)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_ACQUISINATOR_CALIBRATIONS_OFFSETS] > SECONDARY_INTERVAL_ACQUISINATOR_CALIBRATIONS_OFFSETS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_ACQUISINATOR_CALIBRATIONS_OFFSETS);
     }
 
     if (

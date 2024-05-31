@@ -625,6 +625,14 @@
 /* END */
 
 /* START */
+#define ACQUISINATOR_CALIBRATIONS_OFFSETS "ACQUISINATOR_CALIBRATIONS_OFFSETS"
+
+#define ACQUISINATOR_CALIBRATIONS_OFFSETS_ACQUISINATOR_ID "acquisinator_calibrations_offsets_acquisinator_id"
+#define ACQUISINATOR_CALIBRATIONS_OFFSETS_OFFSET1 "acquisinator_calibrations_offsets_offset1"
+#define ACQUISINATOR_CALIBRATIONS_OFFSETS_OFFSET2 "acquisinator_calibrations_offsets_offset2"
+/* END */
+
+/* START */
 #define LINK_DEFORMATION_FL_WHEEL "LINK_DEFORMATION_FL_WHEEL"
 
 #define LINK_DEFORMATION_FL_WHEEL_ROD_ID "link_deformation_fl_wheel_rod_id"
@@ -694,12 +702,12 @@
 /* END */
 
 enum secondary_types_id{
-	e_secondary_float = -6,
+	e_secondary_uint64_t = -6,
 	e_secondary_uint16_t,
-	e_secondary_uint64_t,
-	e_secondary_uint8_t,
 	e_secondary_int16_t,
+	e_secondary_float,
 	e_secondary_uint32_t,
+	e_secondary_uint8_t,
 
 	e_secondary_link_deformation_fl_wheel_rod_id,
 	e_secondary_link_deformation_fr_wheel_rod_id,
