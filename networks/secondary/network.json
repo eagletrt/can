@@ -2080,6 +2080,36 @@
       }
     },
     {
+      "name": "ACQUISINATOR_CALIBRATIONS_OFFSETS",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ACQUISINATOR"
+      ],
+      "receiving": [],
+      "description": "Calibration offsets for acquisinatore",
+      "interval": 1000,
+      "contents": {
+        "acquisinator_id": "uint8",
+        "offset1": {
+          "type": "float32",
+          "range": [
+            -100.0,
+            100.0
+          ],
+          "force": "uint16"
+        },
+        "offset2": {
+          "type": "float32",
+          "range": [
+            -100.0,
+            100.0
+          ],
+          "force": "uint32"
+        }
+      }
+    },
+    {
       "name": "LINK_DEFORMATION_FL_WHEEL",
       "topic": "HYDRA",
       "priority": 3,
