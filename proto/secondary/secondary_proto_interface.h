@@ -1489,6 +1489,24 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->link_deformation_debug_voltages_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->link_deformation_debug_voltages(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->link_deformation_debug_voltages(i)._inner_timestamp();
+        (*net_signals)["LINK_DEFORMATION_DEBUG_VOLTAGES"]["_timestamp"].push(pack->link_deformation_debug_voltages(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["LINK_DEFORMATION_DEBUG_VOLTAGES"]["wheel_id"].push(pack->link_deformation_debug_voltages(i).wheel_id());
+		secondary_link_deformation_debug_voltages_wheel_id_enum_to_string((secondary_link_deformation_debug_voltages_wheel_id)pack->link_deformation_debug_voltages(i).wheel_id(), buffer);
+		(*net_strings)["LINK_DEFORMATION_DEBUG_VOLTAGES"]["wheel_id"].push(buffer);
+		(*net_enums)["LINK_DEFORMATION_DEBUG_VOLTAGES"]["rod_id"].push(pack->link_deformation_debug_voltages(i).rod_id());
+		secondary_link_deformation_debug_voltages_rod_id_enum_to_string((secondary_link_deformation_debug_voltages_rod_id)pack->link_deformation_debug_voltages(i).rod_id(), buffer);
+		(*net_strings)["LINK_DEFORMATION_DEBUG_VOLTAGES"]["rod_id"].push(buffer);
+		(*net_signals)["LINK_DEFORMATION_DEBUG_VOLTAGES"]["raw_voltage"].push(pack->link_deformation_debug_voltages(i).raw_voltage());
+
+    }
+
     for(int i = 0; i < pack->link_deformation_fl_wheel_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -2765,6 +2783,19 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1672: {
+            secondary_link_deformation_debug_voltages_converted_t* msg = (secondary_link_deformation_debug_voltages_converted_t*)(device->message);
+            secondary::LINK_DEFORMATION_DEBUG_VOLTAGES* proto_msg = pack->add_link_deformation_debug_voltages();
+			proto_msg->set_wheel_id((secondary::secondary_link_deformation_debug_voltages_wheel_id)msg->wheel_id);
+			proto_msg->set_rod_id((secondary::secondary_link_deformation_debug_voltages_rod_id)msg->rod_id);
+			proto_msg->set_raw_voltage(msg->raw_voltage);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1680: {
             secondary_link_deformation_fl_wheel_converted_t* msg = (secondary_link_deformation_fl_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_FL_WHEEL* proto_msg = pack->add_link_deformation_fl_wheel();
 			proto_msg->set_rod_id((secondary::secondary_link_deformation_fl_wheel_rod_id)msg->rod_id);
@@ -2776,7 +2807,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1680: {
+        case 1688: {
             secondary_link_deformation_fr_wheel_converted_t* msg = (secondary_link_deformation_fr_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_FR_WHEEL* proto_msg = pack->add_link_deformation_fr_wheel();
 			proto_msg->set_rod_id((secondary::secondary_link_deformation_fr_wheel_rod_id)msg->rod_id);
@@ -2788,7 +2819,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1688: {
+        case 1696: {
             secondary_link_deformation_rl_wheel_converted_t* msg = (secondary_link_deformation_rl_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_RL_WHEEL* proto_msg = pack->add_link_deformation_rl_wheel();
 			proto_msg->set_rod_id((secondary::secondary_link_deformation_rl_wheel_rod_id)msg->rod_id);
@@ -2800,7 +2831,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1696: {
+        case 1704: {
             secondary_link_deformation_rr_wheel_converted_t* msg = (secondary_link_deformation_rr_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_RR_WHEEL* proto_msg = pack->add_link_deformation_rr_wheel();
 			proto_msg->set_rod_id((secondary::secondary_link_deformation_rr_wheel_rod_id)msg->rod_id);
@@ -2832,7 +2863,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1704: {
+        case 1712: {
             secondary_debug_signal_1_converted_t* msg = (secondary_debug_signal_1_converted_t*)(device->message);
             secondary::DEBUG_SIGNAL_1* proto_msg = pack->add_debug_signal_1();
 			proto_msg->set_field_1(msg->field_1);
@@ -2846,7 +2877,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1712: {
+        case 1720: {
             secondary_debug_signal_2_converted_t* msg = (secondary_debug_signal_2_converted_t*)(device->message);
             secondary::DEBUG_SIGNAL_2* proto_msg = pack->add_debug_signal_2();
 			proto_msg->set_field_1(msg->field_1);
@@ -2860,7 +2891,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1720: {
+        case 1728: {
             secondary_cooling_temp_pumps_converted_t* msg = (secondary_cooling_temp_pumps_converted_t*)(device->message);
             secondary::COOLING_TEMP_PUMPS* proto_msg = pack->add_cooling_temp_pumps();
 			proto_msg->set_input(msg->input);
@@ -2872,7 +2903,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1728: {
+        case 1736: {
             secondary_cooling_temp_radiators_converted_t* msg = (secondary_cooling_temp_radiators_converted_t*)(device->message);
             secondary::COOLING_TEMP_RADIATORS* proto_msg = pack->add_cooling_temp_radiators();
 			proto_msg->set_air_temp(msg->air_temp);

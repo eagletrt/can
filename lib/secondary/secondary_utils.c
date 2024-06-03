@@ -272,30 +272,37 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 
 		return 0;
 	case 1672:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, LINK_DEFORMATION_DEBUG_VOLTAGES_WHEEL_ID);
+		snprintf(v[1], string_size, LINK_DEFORMATION_DEBUG_VOLTAGES_ROD_ID);
+		snprintf(v[2], string_size, LINK_DEFORMATION_DEBUG_VOLTAGES_RAW_VOLTAGE);
+
+		return 0;
+	case 1680:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_FL_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_FL_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1680:
+	case 1688:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_FR_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_FR_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1688:
+	case 1696:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_RL_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_RL_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1696:
+	case 1704:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_RR_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_RR_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1704:
+	case 1712:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_1_FIELD_1);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_1_FIELD_2);
@@ -303,7 +310,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, DEBUG_SIGNAL_1_FIELD_4);
 
 		return 0;
-	case 1712:
+	case 1720:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_2_FIELD_1);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_2_FIELD_2);
@@ -311,13 +318,13 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, DEBUG_SIGNAL_2_FIELD_4);
 
 		return 0;
-	case 1720:
+	case 1728:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, COOLING_TEMP_PUMPS_INPUT);
 		snprintf(v[1], string_size, COOLING_TEMP_PUMPS_OUTPUT);
 
 		return 0;
-	case 1728:
+	case 1736:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, COOLING_TEMP_RADIATORS_AIR_TEMP);
 
@@ -331,6 +338,24 @@ int secondary_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
     switch(enum_id)
     {
 	case 0:
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, "secondary_link_deformation_debug_voltages_wheel_id_fl");
+		snprintf(v[1], string_size, "secondary_link_deformation_debug_voltages_wheel_id_fr");
+		snprintf(v[2], string_size, "secondary_link_deformation_debug_voltages_wheel_id_rl");
+		snprintf(v[3], string_size, "secondary_link_deformation_debug_voltages_wheel_id_rr");
+
+		return 0;
+	case 1:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "secondary_link_deformation_debug_voltages_rod_id_F1011");
+		snprintf(v[1], string_size, "secondary_link_deformation_debug_voltages_rod_id_F36");
+		snprintf(v[2], string_size, "secondary_link_deformation_debug_voltages_rod_id_F46");
+		snprintf(v[3], string_size, "secondary_link_deformation_debug_voltages_rod_id_F27");
+		snprintf(v[4], string_size, "secondary_link_deformation_debug_voltages_rod_id_F17");
+		snprintf(v[5], string_size, "secondary_link_deformation_debug_voltages_rod_id_F58");
+
+		return 0;
+	case 2:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "secondary_link_deformation_fl_wheel_rod_id_F1011");
 		snprintf(v[1], string_size, "secondary_link_deformation_fl_wheel_rod_id_F36");
@@ -340,7 +365,7 @@ int secondary_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[5], string_size, "secondary_link_deformation_fl_wheel_rod_id_F58");
 
 		return 0;
-	case 1:
+	case 3:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "secondary_link_deformation_fr_wheel_rod_id_F1011");
 		snprintf(v[1], string_size, "secondary_link_deformation_fr_wheel_rod_id_F36");
@@ -350,7 +375,7 @@ int secondary_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[5], string_size, "secondary_link_deformation_fr_wheel_rod_id_F58");
 
 		return 0;
-	case 2:
+	case 4:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "secondary_link_deformation_rl_wheel_rod_id_F1011");
 		snprintf(v[1], string_size, "secondary_link_deformation_rl_wheel_rod_id_F36");
@@ -360,7 +385,7 @@ int secondary_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[5], string_size, "secondary_link_deformation_rl_wheel_rod_id_F58");
 
 		return 0;
-	case 3:
+	case 5:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "secondary_link_deformation_rr_wheel_rod_id_F1011");
 		snprintf(v[1], string_size, "secondary_link_deformation_rr_wheel_rod_id_F36");
@@ -1226,6 +1251,28 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 	}
 	case 1672:
 	{
+		secondary_link_deformation_debug_voltages_t tmp;
+		secondary_link_deformation_debug_voltages_converted_t tmp_converted;
+		uint8_t r_wheel_id;
+		uint8_t r_rod_id;
+		float r_raw_voltage;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%f,"       ,
+			&r_wheel_id,
+			&r_rod_id,
+			&r_raw_voltage);
+		tmp_converted.wheel_id = (secondary_link_deformation_debug_voltages_wheel_id)r_wheel_id;
+		tmp_converted.rod_id = (secondary_link_deformation_debug_voltages_rod_id)r_rod_id;
+		tmp_converted.raw_voltage = (float)r_raw_voltage;
+
+		secondary_link_deformation_debug_voltages_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_LINK_DEFORMATION_DEBUG_VOLTAGES_BYTE_SIZE;
+		return secondary_link_deformation_debug_voltages_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_DEBUG_VOLTAGES_BYTE_SIZE);
+	}
+	case 1680:
+	{
 		secondary_link_deformation_fl_wheel_t tmp;
 		secondary_link_deformation_fl_wheel_converted_t tmp_converted;
 		uint8_t r_rod_id;
@@ -1242,7 +1289,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_FL_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_fl_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_FL_WHEEL_BYTE_SIZE);
 	}
-	case 1680:
+	case 1688:
 	{
 		secondary_link_deformation_fr_wheel_t tmp;
 		secondary_link_deformation_fr_wheel_converted_t tmp_converted;
@@ -1260,7 +1307,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_FR_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_fr_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_FR_WHEEL_BYTE_SIZE);
 	}
-	case 1688:
+	case 1696:
 	{
 		secondary_link_deformation_rl_wheel_t tmp;
 		secondary_link_deformation_rl_wheel_converted_t tmp_converted;
@@ -1278,7 +1325,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_RL_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_rl_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_RL_WHEEL_BYTE_SIZE);
 	}
-	case 1696:
+	case 1704:
 	{
 		secondary_link_deformation_rr_wheel_t tmp;
 		secondary_link_deformation_rr_wheel_converted_t tmp_converted;
@@ -1296,7 +1343,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_RR_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_rr_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_RR_WHEEL_BYTE_SIZE);
 	}
-	case 1704:
+	case 1712:
 	{
 		secondary_debug_signal_1_t tmp;
 		secondary_debug_signal_1_converted_t tmp_converted;
@@ -1322,7 +1369,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_DEBUG_SIGNAL_1_BYTE_SIZE;
 		return secondary_debug_signal_1_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_1_BYTE_SIZE);
 	}
-	case 1712:
+	case 1720:
 	{
 		secondary_debug_signal_2_t tmp;
 		secondary_debug_signal_2_converted_t tmp_converted;
@@ -1348,7 +1395,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_DEBUG_SIGNAL_2_BYTE_SIZE;
 		return secondary_debug_signal_2_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_2_BYTE_SIZE);
 	}
-	case 1720:
+	case 1728:
 	{
 		secondary_cooling_temp_pumps_t tmp;
 		secondary_cooling_temp_pumps_converted_t tmp_converted;
@@ -1366,7 +1413,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_COOLING_TEMP_PUMPS_BYTE_SIZE;
 		return secondary_cooling_temp_pumps_pack(data, &tmp, SECONDARY_COOLING_TEMP_PUMPS_BYTE_SIZE);
 	}
-	case 1728:
+	case 1736:
 	{
 		secondary_cooling_temp_radiators_t tmp;
 		secondary_cooling_temp_radiators_converted_t tmp_converted;
@@ -1489,16 +1536,17 @@ int secondary_n_fields_from_id(int id)
 		case 1648: return 5;
 		case 1656: return 4;
 		case 1664: return 3;
-		case 1672: return 2;
+		case 1672: return 3;
 		case 1680: return 2;
 		case 1688: return 2;
 		case 1696: return 2;
+		case 1704: return 2;
 		case 72: return 0;
 		case 80: return 0;
-		case 1704: return 4;
 		case 1712: return 4;
-		case 1720: return 2;
-		case 1728: return 1;
+		case 1720: return 4;
+		case 1728: return 2;
+		case 1736: return 1;
     }
     return 0;
 }
@@ -1737,32 +1785,31 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[2] = e_secondary_float;
 		return 3;
 	case 1672:
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_secondary_link_deformation_debug_voltages_wheel_id;
+		fields_types[1] = e_secondary_link_deformation_debug_voltages_rod_id;
+		fields_types[2] = e_secondary_float;
+		return 3;
+	case 1680:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_fl_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1680:
+	case 1688:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_fr_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1688:
+	case 1696:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_rl_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1696:
+	case 1704:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_rr_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1704:
-		if(fields_types_size < 4) return 0;
-		fields_types[0] = e_secondary_float;
-		fields_types[1] = e_secondary_float;
-		fields_types[2] = e_secondary_float;
-		fields_types[3] = e_secondary_float;
-		return 4;
 	case 1712:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_float;
@@ -1771,11 +1818,18 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[3] = e_secondary_float;
 		return 4;
 	case 1720:
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_secondary_float;
+		fields_types[1] = e_secondary_float;
+		fields_types[2] = e_secondary_float;
+		fields_types[3] = e_secondary_float;
+		return 4;
+	case 1728:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1728:
+	case 1736:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_secondary_float;
 		return 1;
@@ -1785,6 +1839,27 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 }
 int secondary_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
 {
+	if(!strcmp(msg_name, "LINK_DEFORMATION_DEBUG_VOLTAGES"))
+	{
+		if(!strcmp(sgn_name, "wheel_id"))
+		{
+			sprintf(v[0], "fl");
+			sprintf(v[1], "fr");
+			sprintf(v[2], "rl");
+			sprintf(v[3], "rr");
+			return 4;
+		}
+		if(!strcmp(sgn_name, "rod_id"))
+		{
+			sprintf(v[0], "F1011");
+			sprintf(v[1], "F36");
+			sprintf(v[2], "F46");
+			sprintf(v[3], "F27");
+			sprintf(v[4], "F17");
+			sprintf(v[5], "F58");
+			return 6;
+		}
+	}
 	if(!strcmp(msg_name, "LINK_DEFORMATION_FL_WHEEL"))
 	{
 		if(!strcmp(sgn_name, "rod_id"))

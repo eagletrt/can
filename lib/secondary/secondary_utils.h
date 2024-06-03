@@ -637,6 +637,14 @@ extern "C" {
 /* END */
 
 /* START */
+#define LINK_DEFORMATION_DEBUG_VOLTAGES "LINK_DEFORMATION_DEBUG_VOLTAGES"
+
+#define LINK_DEFORMATION_DEBUG_VOLTAGES_WHEEL_ID "link_deformation_debug_voltages_wheel_id"
+#define LINK_DEFORMATION_DEBUG_VOLTAGES_ROD_ID "link_deformation_debug_voltages_rod_id"
+#define LINK_DEFORMATION_DEBUG_VOLTAGES_RAW_VOLTAGE "link_deformation_debug_voltages_raw_voltage"
+/* END */
+
+/* START */
 #define LINK_DEFORMATION_FL_WHEEL "LINK_DEFORMATION_FL_WHEEL"
 
 #define LINK_DEFORMATION_FL_WHEEL_ROD_ID "link_deformation_fl_wheel_rod_id"
@@ -706,13 +714,15 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint64_t = -6,
-	e_secondary_uint16_t,
-	e_secondary_int16_t,
-	e_secondary_float,
-	e_secondary_uint32_t,
+	e_secondary_int16_t = -6,
 	e_secondary_uint8_t,
+	e_secondary_float,
+	e_secondary_uint16_t,
+	e_secondary_uint32_t,
+	e_secondary_uint64_t,
 
+	e_secondary_link_deformation_debug_voltages_wheel_id,
+	e_secondary_link_deformation_debug_voltages_rod_id,
 	e_secondary_link_deformation_fl_wheel_rod_id,
 	e_secondary_link_deformation_fr_wheel_rod_id,
 	e_secondary_link_deformation_rl_wheel_rod_id,

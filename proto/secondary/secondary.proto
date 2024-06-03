@@ -2,6 +2,20 @@ syntax = "proto3";
 package secondary;
 
 
+enum secondary_link_deformation_debug_voltages_wheel_id {
+	secondary_link_deformation_debug_voltages_wheel_id_fl = 0;
+	secondary_link_deformation_debug_voltages_wheel_id_fr = 1;
+	secondary_link_deformation_debug_voltages_wheel_id_rl = 2;
+	secondary_link_deformation_debug_voltages_wheel_id_rr = 3;
+}
+enum secondary_link_deformation_debug_voltages_rod_id {
+	secondary_link_deformation_debug_voltages_rod_id_F1011 = 0;
+	secondary_link_deformation_debug_voltages_rod_id_F36 = 1;
+	secondary_link_deformation_debug_voltages_rod_id_F46 = 2;
+	secondary_link_deformation_debug_voltages_rod_id_F27 = 3;
+	secondary_link_deformation_debug_voltages_rod_id_F17 = 4;
+	secondary_link_deformation_debug_voltages_rod_id_F58 = 5;
+}
 enum secondary_link_deformation_fl_wheel_rod_id {
 	secondary_link_deformation_fl_wheel_rod_id_F1011 = 0;
 	secondary_link_deformation_fl_wheel_rod_id_F36 = 1;
@@ -458,6 +472,12 @@ message ACQUISINATOR_CALIBRATIONS_OFFSETS{
 	float offset2 = 3;
 	uint64 _inner_timestamp = 4;
 }
+message LINK_DEFORMATION_DEBUG_VOLTAGES{
+	secondary_link_deformation_debug_voltages_wheel_id wheel_id = 1;
+	secondary_link_deformation_debug_voltages_rod_id rod_id = 2;
+	float raw_voltage = 3;
+	uint64 _inner_timestamp = 4;
+}
 message LINK_DEFORMATION_FL_WHEEL{
 	secondary_link_deformation_fl_wheel_rod_id rod_id = 1;
 	float deformation = 2;
@@ -611,15 +631,16 @@ message Pack{
 	repeated TLM_NETWORK_INTERFACE TLM_NETWORK_INTERFACE = 99;
 	repeated AMMO_COMPRESSION AMMO_COMPRESSION = 100;
 	repeated ACQUISINATOR_CALIBRATIONS_OFFSETS ACQUISINATOR_CALIBRATIONS_OFFSETS = 101;
-	repeated LINK_DEFORMATION_FL_WHEEL LINK_DEFORMATION_FL_WHEEL = 102;
-	repeated LINK_DEFORMATION_FR_WHEEL LINK_DEFORMATION_FR_WHEEL = 103;
-	repeated LINK_DEFORMATION_RL_WHEEL LINK_DEFORMATION_RL_WHEEL = 104;
-	repeated LINK_DEFORMATION_RR_WHEEL LINK_DEFORMATION_RR_WHEEL = 105;
-	repeated LINK_DEFORMATION_SET_CALIBRATION LINK_DEFORMATION_SET_CALIBRATION = 106;
-	repeated AMMO_COMPRESSION_SET_CALIBRATION AMMO_COMPRESSION_SET_CALIBRATION = 107;
-	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 108;
-	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 109;
-	repeated COOLING_TEMP_PUMPS COOLING_TEMP_PUMPS = 110;
-	repeated COOLING_TEMP_RADIATORS COOLING_TEMP_RADIATORS = 111;
+	repeated LINK_DEFORMATION_DEBUG_VOLTAGES LINK_DEFORMATION_DEBUG_VOLTAGES = 102;
+	repeated LINK_DEFORMATION_FL_WHEEL LINK_DEFORMATION_FL_WHEEL = 103;
+	repeated LINK_DEFORMATION_FR_WHEEL LINK_DEFORMATION_FR_WHEEL = 104;
+	repeated LINK_DEFORMATION_RL_WHEEL LINK_DEFORMATION_RL_WHEEL = 105;
+	repeated LINK_DEFORMATION_RR_WHEEL LINK_DEFORMATION_RR_WHEEL = 106;
+	repeated LINK_DEFORMATION_SET_CALIBRATION LINK_DEFORMATION_SET_CALIBRATION = 107;
+	repeated AMMO_COMPRESSION_SET_CALIBRATION AMMO_COMPRESSION_SET_CALIBRATION = 108;
+	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 109;
+	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 110;
+	repeated COOLING_TEMP_PUMPS COOLING_TEMP_PUMPS = 111;
+	repeated COOLING_TEMP_RADIATORS COOLING_TEMP_RADIATORS = 112;
 }
 

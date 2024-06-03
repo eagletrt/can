@@ -1,6 +1,15 @@
 {
   "version": 1.0,
   "types": {
+    "WheelIds": {
+      "type": "enum",
+      "items": [
+        "fl",
+        "fr",
+        "rl",
+        "rr"
+      ]
+    },
     "RodNames": {
       "type": "enum",
       "items": [
@@ -2104,6 +2113,29 @@
           "range": [
             -100.0,
             100.0
+          ],
+          "force": "uint32"
+        }
+      }
+    },
+    {
+      "name": "LINK_DEFORMATION_DEBUG_VOLTAGES",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ACQUISINATOR"
+      ],
+      "receiving": [],
+      "description": "Debug message with raw voltages from strain gauges",
+      "interval": 10,
+      "contents": {
+        "wheel_id": "WheelIds",
+        "rod_id": "RodNames",
+        "raw_voltage": {
+          "type": "float32",
+          "range": [
+            0.0,
+            3.5
           ],
           "force": "uint32"
         }
