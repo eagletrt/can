@@ -1876,6 +1876,27 @@
       }
     },
     {
+      "name": "ODOMETER",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 1000,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "Cumulative kilometers count",
+      "contents": {
+        "kilometers": {
+          "type": "float32",
+          "range": [
+            0,
+            1000000
+          ],
+          "force": "uint32"
+        }
+      }
+    },
+    {
       "name": "TPMS_PRESSURE",
       "topic": "HYDRA",
       "priority": 3,
