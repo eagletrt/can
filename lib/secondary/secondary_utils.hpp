@@ -567,6 +567,12 @@
 /* END */
 
 /* START */
+#define ODOMETER "ODOMETER"
+
+#define ODOMETER_KILOMETERS "odometer_kilometers"
+/* END */
+
+/* START */
 #define TPMS_PRESSURE "TPMS_PRESSURE"
 
 #define TPMS_PRESSURE_FL "tpms_pressure_fl"
@@ -712,10 +718,10 @@
 enum secondary_types_id{
 	e_secondary_int16_t = -6,
 	e_secondary_uint8_t,
+	e_secondary_uint64_t,
 	e_secondary_float,
 	e_secondary_uint16_t,
 	e_secondary_uint32_t,
-	e_secondary_uint64_t,
 
 	e_secondary_link_deformation_debug_voltages_wheel_id,
 	e_secondary_link_deformation_debug_voltages_rod_id,

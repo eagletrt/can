@@ -1,5 +1,4 @@
 #include "canlib_device.h"
-#include <stdlib.h>
 
 void device_init(device_t *device) {
     device->message = NULL;

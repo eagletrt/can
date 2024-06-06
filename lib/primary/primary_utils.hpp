@@ -1040,11 +1040,11 @@
 /* END */
 
 enum primary_types_id{
-	e_primary_uint64_t = -5,
-	e_primary_float,
-	e_primary_uint16_t,
+	e_primary_uint32_t = -5,
 	e_primary_uint8_t,
-	e_primary_uint32_t,
+	e_primary_float,
+	e_primary_uint64_t,
+	e_primary_uint16_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,
