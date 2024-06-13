@@ -1782,7 +1782,7 @@
           "type": "float32",
           "range": [
             0,
-            10000
+            10
           ],
           "force": "uint16"
         },
@@ -1790,7 +1790,7 @@
           "type": "float32",
           "range": [
             0,
-            10000
+            100
           ],
           "force": "uint16"
         },
@@ -1798,7 +1798,81 @@
           "type": "float32",
           "range": [
             0,
-            10000
+            100
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "LV_SOC_ESTIMATION_STATE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 50,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "State of Charge estimation state",
+      "contents": {
+        "soc": {
+          "type": "float32",
+          "range": [
+            0,
+            1
+          ],
+          "force": "uint16"
+        },
+        "rc1": {
+          "type": "float32",
+          "range": [
+            0,
+            4.5
+          ],
+          "force": "uint16"
+        },
+        "rc2": {
+          "type": "float32",
+          "range": [
+            0,
+            4.5
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "LV_SOC_ESTIMATION_COVARIANCE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 50,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "State of Charge estimation covariance of the state",
+      "contents": {
+        "soc": {
+          "type": "float32",
+          "range": [
+            0,
+            10
+          ],
+          "force": "uint16"
+        },
+        "rc1": {
+          "type": "float32",
+          "range": [
+            0,
+            100
+          ],
+          "force": "uint16"
+        },
+        "rc2": {
+          "type": "float32",
+          "range": [
+            0,
+            100
           ],
           "force": "uint16"
         }

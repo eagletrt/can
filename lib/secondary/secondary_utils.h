@@ -552,6 +552,22 @@ extern "C" {
 /* END */
 
 /* START */
+#define LV_SOC_ESTIMATION_STATE "LV_SOC_ESTIMATION_STATE"
+
+#define LV_SOC_ESTIMATION_STATE_SOC "lv_soc_estimation_state_soc"
+#define LV_SOC_ESTIMATION_STATE_RC1 "lv_soc_estimation_state_rc1"
+#define LV_SOC_ESTIMATION_STATE_RC2 "lv_soc_estimation_state_rc2"
+/* END */
+
+/* START */
+#define LV_SOC_ESTIMATION_COVARIANCE "LV_SOC_ESTIMATION_COVARIANCE"
+
+#define LV_SOC_ESTIMATION_COVARIANCE_SOC "lv_soc_estimation_covariance_soc"
+#define LV_SOC_ESTIMATION_COVARIANCE_RC1 "lv_soc_estimation_covariance_rc1"
+#define LV_SOC_ESTIMATION_COVARIANCE_RC2 "lv_soc_estimation_covariance_rc2"
+/* END */
+
+/* START */
 #define PEDAL_THROTTLE "PEDAL_THROTTLE"
 
 #define PEDAL_THROTTLE_THROTTLE "pedal_throttle_throttle"
@@ -720,11 +736,11 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_int16_t = -6,
-	e_secondary_uint8_t,
-	e_secondary_uint64_t,
-	e_secondary_float,
+	e_secondary_uint64_t = -6,
+	e_secondary_int16_t,
 	e_secondary_uint16_t,
+	e_secondary_uint8_t,
+	e_secondary_float,
 	e_secondary_uint32_t,
 
 	e_secondary_link_deformation_debug_voltages_wheel_id,
