@@ -1,0 +1,231 @@
+VERSION ""
+
+BS_:
+
+BU_: Vector__XXX
+
+BO_ 1 AARB_RESPONSE: 8 Vector__XXX
+	SG_ Recv_Mux M : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+    
+    SG_ enc_carry_carry m48 : 15|32@0- (1,0) [-2147483648|2147483647] "" Vector__XXX
+    SG_ enc_carry_value m48 : 47|16@0+ (1,0) [0|16383] "" Vector__XXX
+    SG_ enc_carry_crc m48 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+    
+    SG_ enc_value_value m49 : 15|48@0- (1,0) [-140737488355328|140737488355327] "" Vector__XXX
+    SG_ enc_value_crc m49 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+    
+    SG_ speed m50 : 15|16@0- (1,0) [-32768|32767] "rpm" Vector__XXX
+    SG_ speed_crc m50 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ pulses m51 : 15|32@0- (1,0) [-2147483648|2147483647] "" Vector__XXX
+    SG_ pulses_crc m51 : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ io_status_in1 m52 : 9|1@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ io_status_in2 m52 : 10|1@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ io_status_out1 m52 : 11|1@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ io_status_out2 m52 : 12|1@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ io_status_crc m52 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ angle_error m57 : 15|32@0- (0.00703125,0) [-15099494|15099494] "deg" Vector__XXX
+    SG_ angle_error_crc m57 : 47|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ enable_pin m58 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ enable_pin_crc m58 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ power_on_zero_status m59 : 15|8@0+ (1,0) [0|2] "" Vector__XXX
+	SG_ power_on_zero_crc m59 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ release_rotor_lock_success m61 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ release_rotor_lock_crc m61 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ shaft_protected_success m62 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ shaft_protected_crc m62 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ encoder_calibration_status m128 : 15|8@0+ (1,0) [0|2] "" Vector__XXX
+	SG_ encoder_calibration_crc m128 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_work_mode_success m130 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_work_mode_crc m130 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+    
+    SG_ set_current_success m131 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_current_crc m131 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+    
+    SG_ set_holding_current_success m155 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_holding_current_crc m155 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_microsteps_success m132 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_microsteps_crc m132 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_enable_mode_success m133 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_enable_mode_crc m133 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_direcrion_success m134 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_direcrion_crc m134 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_display_auto_off_success m135 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_display_auto_off_crc m135 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_shaft_lock_success m136 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_shaft_lock_crc m136 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_interpolation_success m137 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_interpolation_crc m137 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_can_bitrate_success m138 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_can_bitrate_crc m138 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_can_id_success m139 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_can_id_crc m139 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_slave_resp_success m140 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_slave_resp_crc m140 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_key_lock_success m143 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_key_lock_crc m143 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_group_id_success m141 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_group_id_crc m141 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_home_success m144 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_home_crc m144 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ go_home_status m145 : 15|8@0+ (1,0) [0|2] "" Vector__XXX
+	SG_ go_home_crc m145 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ zero_axis_success m146 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ zero_axis_crc m146 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_sensorless_home_success m148 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_sensorless_home_crc m148 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_limit_port_remap_success m158 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_limit_port_remap_crc m158 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_auto_zero_success m154 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ set_auto_zero_crc m154 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ restore_default_parameters_success m63 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ restore_default_parameters_crc m63 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ reboot_motor_success m65 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+	SG_ reboot_motor_crc m65 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ motor_status m241 : 15|8@0+ (1,0) [0|6] "" Vector__XXX
+    SG_ motor_status_crc m241 : 23|8@0+ (1,0) [0|6] "" Vector__XXX
+
+    SG_ motor_enable_success m243 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ motor_enable_crc m243 : 23|8@0+ (1,0) [0|1] "" Vector__XXX
+
+    SG_ emergency_stop_success m247 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ emergency_stop_crc m247 : 23|8@0+ (1,0) [0|1] "" Vector__XXX
+
+    SG_ speed_mode_success m246 : 15|8@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ speed_mode_crc m246 : 23|8@0+ (1,0) [0|1] "" Vector__XXX
+
+    SG_ rel_steps_position_mode_status m253 : 15|8@0+ (1,0) [0|3] "" Vector__XXX
+    SG_ rel_steps_position_mode_crc m253 : 23|8@0+ (1,0) [0|3] "" Vector__XXX
+
+    SG_ abs_steps_position_mode_status m254 : 15|8@0+ (1,0) [0|3] "" Vector__XXX
+    SG_ abs_steps_position_mode_crc m254 : 23|8@0+ (1,0) [0|3] "" Vector__XXX
+
+    SG_ rel_encoder_position_mode_status m244 : 15|8@0+ (1,0) [0|3] "" Vector__XXX
+    SG_ rel_encoder_position_mode_crc m244 : 23|8@0+ (1,0) [0|3] "" Vector__XXX
+
+    SG_ abs_encoder_position_mode_status m245 : 15|8@0+ (1,0) [0|3] "" Vector__XXX
+    SG_ abs_encoder_position_mode_crc m245 : 23|8@0+ (1,0) [0|3] "" Vector__XXX
+
+VAL_ 1 Recv_Mux
+    48 "enc_carry"
+    49 "enc_value"
+    50 "speed"
+    51 "pulses"
+    52 "io_status"
+    57 "angle_error"
+    58 "enable_pin"
+    59 "power_on_zero"
+    61 "release_rotor_lock"
+    62 "shaft_protected"
+
+    128 "encoder_calibration"
+    130 "set_work_mode"
+    131 "set_current"
+    155 "set_holding_current"
+    132 "set_microsteps"
+    133 "set_enable_mode"
+    134 "set_direcrion"
+    135 "set_display_auto_off"
+    136 "set_shaft_lock"
+    137 "set_interpolation"
+    138 "set_can_bitrate"
+    139 "set_can_id"
+    140 "set_slave_resp"
+    143 "set_key_lock"
+    141 "set_group_id"
+
+    144 "set_home"
+    145 "go_home"
+    146 "zero_axis"
+    148 "set_sensorless_home"
+    158 "set_limit_port_remap"
+
+    154 "set_auto_zero"
+    63 "restore_default_parameters"
+    65 "reboot_motor"
+
+    241 "motor_status"
+    243 "motor_enable"
+    247 "emergency_stop"
+    246 "speed_mode"
+    253 "rel_steps_position_mode"
+    254 "abs_steps_position_mode"
+    244 "rel_encoder_position_mode"
+    245 "abs_encoder_position_mode" ;
+    
+VAL_ 1 power_on_zero_status
+    0 "going_to_zero"
+    1 "success"
+    2 "fail" ; 
+
+VAL_ 1 encoder_calibration_status
+    0 "calibrating"
+    1 "success"
+    2 "calibration_failed" ;
+
+VAL_ 1 go_home_status
+    0 "failed"
+    1 "started"
+    2 "success" ;
+
+VAL_ 1 motor_status
+    0 "query_fail"
+    1 "motor_stop"
+    2 "motor_speed_up"
+    3 "motor_speed_down"
+    4 "motor_full_speed"
+    5 "motor_is_homing"
+    6 "motor_is_calibrating" ;
+
+VAL_ 1 rel_steps_position_mode_status
+    0 "fail"
+    1 "starting"
+    2 "complete"
+    3 "endstop_triggered" ;
+    
+VAL_ 1 abs_steps_position_mode_status
+    0 "fail"
+    1 "starting"
+    2 "complete"
+    3 "endstop_triggered" ;
+
+VAL_ 1 rel_encoder_position_mode_status
+    0 "fail"
+    1 "starting"
+    2 "complete"
+    3 "endstop_triggered" ;
+    
+VAL_ 1 abs_encoder_position_mode_status
+    0 "fail"
+    1 "starting"
+    2 "complete"
+    3 "endstop_triggered" ;
+    

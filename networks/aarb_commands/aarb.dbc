@@ -1,0 +1,247 @@
+VERSION ""
+
+BS_:
+
+BU_: Vector__XXX
+
+BO_ 1 AARB_COMMAND: 8 Vector__XXX
+    SG_ Send_Mux M : 7|8@0+ (1,0) [0|0] "" Vector__XXX
+
+	  SG_ read_enc_carry_crc m48 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+	
+    SG_ read_enc_value_crc m49 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+	
+    SG_ read_speed_crc m50 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+	
+    SG_ read_pulses_crc m51 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+	
+    SG_ read_io_status_crc m52 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+	
+    SG_ read_angle_error_crc m57 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+	
+    SG_ read_enable_pin_crc m58 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+	
+    SG_ read_power_on_zero_crc m59 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+	
+    SG_ release_rotor_lock_crc m61 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+    
+    SG_ read_shaft_protection_crc m62 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ calibrate_encoder_crc m128 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX
+    
+    SG_ set_work_mode_mode m130 : 15|8@0+ (1, 0) [0|5] "" Vector__XXX
+    SG_ set_work_mode_crc m130 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX
+    
+    SG_ set_current_current m131 : 15|16@0+ (1, 0) [0|5200] "mA" Vector__XXX
+    SG_ set_current_crc m131 : 31|8@0+ (1, 0) [0|255] "" Vector__XXX
+    
+    SG_ set_holding_curr_percent m155 : 15|8@0+ (10, 10) [10|90] "percent" Vector__XXX
+    SG_ set_holding_curr_crc m155 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX  
+    
+    SG_ set_microstep_steps m132 : 15|8@0+ (1, 0) [0|255] "" Vector__XXX
+    SG_ set_microstep_crc m132 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX   
+    
+    SG_ set_enable_mode_mode m133 : 15|8@0+ (1, 0) [0|2] "" Vector__XXX
+    SG_ set_enable_mode_crc m133 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX
+    
+    SG_ set_direction_dir m134 : 15|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_direction_crc m134 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX
+    
+    SG_ set_display_auto_off_enable m135 : 15|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_display_auto_off_crc m135 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX
+    
+    SG_ set_shaft_lock_enable m136 : 15|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_shaft_lock_crc m136 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX
+    
+    SG_ set_interpolation_enable m137 : 15|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_interpolation_crc m137 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX
+    
+    SG_ set_can_bitrate_rate m138 : 15|8@0+ (1, 0) [0|3] "" Vector__XXX
+    SG_ set_can_bitrate_crc m138 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX
+
+    SG_ set_can_id_id m139 : 15|16@0+ (1, 0) [0|2047] "" Vector__XXX
+    SG_ set_can_id_crc m139 : 31|8@0+ (1, 0) [0|255] "" Vector__XXX
+
+    SG_ set_slave_resp_respond m140 : 15|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_slave_resp_active m140 : 23|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_slave_resp_crc m140 : 31|8@0+ (1, 0) [0|255] "" Vector__XXX
+    
+    SG_ set_key_lock_enable m143 : 15|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_key_lock_crc m143 : 23|8@0+ (1, 0) [0|1] "" Vector__XXX
+
+    SG_ set_group_id_id m141 : 15|16@0+ (1, 0) [1|2047] "" Vector__XXX
+    SG_ set_group_id_crc m141 : 31|8@0+ (1, 0) [0|255] "" Vector__XXX
+
+    SG_ set_home_level m144 : 15|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_home_dir m144 : 23|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_home_speed m144 : 31|16@0+ (1, 0) [0|3000] "rpm" Vector__XXX
+    SG_ set_home_limit m144 : 47|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_home_crc m144 : 55|8@0+ (1, 0) [0|255] "" Vector__XXX
+
+    SG_ go_home_crc m145 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+    
+    SG_ zero_axis_crc m146 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_sensorless_home_max_angle m148 : 15|32@0+ (0.02197265625,0) [0|94371839.97802734] "deg" Vector__XXX
+    SG_ set_sensorless_home_current m148 : 47|16@0+ (1,0) [0|5200] "mA" Vector__XXX
+    SG_ set_sensorless_home_crc m148 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ set_limit_port_remap_enable m158 : 15|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_limit_port_remap_crc m158 : 23|8@0+ (1, 0) [0|255] "" Vector__XXX
+
+    SG_ set_auto_zero_mode m154 : 15|8@0+ (1, 0) [0|2] "" Vector__XXX
+    SG_ set_auto_zero_enable m154 : 23|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_auto_zero_speed m154 : 31|8@0+ (1, 0) [0|4] "" Vector__XXX
+    SG_ set_auto_zero_dir m154 : 39|8@0+ (1, 0) [0|1] "" Vector__XXX
+    SG_ set_auto_zero_crc m154 : 47|8@0+ (1, 0) [0|255] "" Vector__XXX
+    
+    SG_ restore_default_parameters_crc m63 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+    
+    SG_ reboot_motor_crc m65 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ query_motor_status_crc m241 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ motor_enable m243 : 8|1@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ motor_enable_crc m243 : 23|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ emergency_stop_crc m247 : 15|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ speed_mode_dir m246 : 15|1@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ speed_mode_speed m246 : 11|12@0+ (1,0) [0|3000] "rpm" Vector__XXX
+    SG_ speed_mode_acc m246 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+    SG_ speed_mode_crc m246 : 39|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ rel_steps_position_mode_dir m253 : 15|1@0+ (1,0) [0|1] "" Vector__XXX
+    SG_ rel_steps_position_mode_speed m253 : 11|12@0+ (1,0) [0|3000] "rpm" Vector__XXX
+    SG_ rel_steps_position_mode_acc m253 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+    SG_ rel_steps_position_mode_steps m253 : 39|24@0+ (1,0) [0|16777215] "" Vector__XXX
+    SG_ rel_steps_position_mode_crc m253 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ abs_steps_position_mode_speed m254 : 15|16@0+ (1,0) [0|3000] "rpm" Vector__XXX
+    SG_ abs_steps_position_mode_acc m254 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+    SG_ abs_steps_position_mode_steps m254 : 39|24@0- (1,0) [-8388607|8388607] "" Vector__XXX
+    SG_ abs_steps_position_mode_crc m254 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ rel_encoder_position_mode_speed m244 : 15|16@0+ (1,0) [0|3000] "rpm" Vector__XXX
+    SG_ rel_encoder_position_mode_acc m244 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+    SG_ rel_encoder_position_mode_pos m244 : 39|24@0- (1,0) [-8388607|8388607] "" Vector__XXX
+    SG_ rel_encoder_position_mode_crc m244 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+    SG_ abs_encoder_position_mode_speed m245 : 15|16@0+ (1,0) [0|3000] "rpm" Vector__XXX
+    SG_ abs_encoder_position_mode_acc m245 : 31|8@0+ (1,0) [0|255] "" Vector__XXX
+    SG_ abs_encoder_position_mode_pos m245 : 39|24@0- (1,0) [-8388607|8388607] "" Vector__XXX
+    SG_ abs_encoder_position_mode_crc m245 : 63|8@0+ (1,0) [0|255] "" Vector__XXX
+
+
+CM_ SG_ 1 set_limit_port_remap_enable "Left limit -> En port, Right limit -> Dir port";
+CM_ SG_ 1 speed_mode_acc "1rpm/((256-acc) * 50uS)";
+CM_ SG_ 1 rel_steps_position_mode_acc "1rpm/((256-acc) * 50uS)";
+CM_ SG_ 1 abs_steps_position_mode_acc "1rpm/((256-acc) * 50uS)";
+CM_ SG_ 1 rel_encoder_position_mode_acc "1rpm/((256-acc) * 50uS)";
+CM_ SG_ 1 abs_encoder_position_mode_acc "1rpm/((256-acc) * 50uS)";
+
+VAL_ 1 Send_Mux
+    48 "read_enc_carry"
+    49 "read_enc_value"
+    50 "read_speed"
+    51 "read_pulses"
+    52 "read_io_status"
+    57 "read_angle_error"
+    58 "read_enable_pin"
+    59 "read_power_on_zero"
+    61 "release_rotor_lock"
+    62 "read_shaft_protection"
+
+    128 "calibrate_encoder"
+    130 "set_work_mode"
+    131 "set_current"
+    155 "set_holding_curr"
+    132 "set_microstep"
+    133 "set_enable_mode"
+    134 "set_direction"
+    135 "set_display_auto_off"
+    136 "set_shaft_lock"
+    137 "set_interpolation"
+    138 "set_can_bitrate"
+    139 "set_can_id"
+    140 "set_slave_resp"
+    143 "set_key_lock"
+    141 "set_group_id"
+    
+    144 "set_home"
+    145 "go_home"
+    146 "zero_axis"
+    148 "set_sensorless_home"
+    158 "set_limit_port_remap"
+    
+    154 "set_auto_zero"
+    63 "restore_default_parameters"
+    65 "reboot_motor"
+    
+    241 "query_motor_status"
+    243 "motor_enable"
+    247 "emergency_stop"
+    246 "speed_mode"
+    253 "rel_steps_position_mode"
+    254 "abs_steps_position_mode"
+    244 "rel_encoder_position_mode"
+    245 "abs_encoder_position_mode" ;
+    
+VAL_ 1 set_work_mode_mode
+    0 "CR_OPEN"
+    1 "CR_CLOSE"
+    2 "CR_vFOC"
+    3 "SR_OPEN"
+    4 "SR_CLOSE"
+    5 "SR_vFOC" ;
+
+VAL_ 1 set_enable_mode_mode
+    0 "active_low"
+    1 "active_high"
+    2 "active_always" ;
+
+VAL_ 1 set_direction_dir
+    1 "CCW"
+    0 "CW" ;
+
+VAL_ 1 set_can_bitrate_rate
+    0 "125k"
+    1 "250k"
+    2 "500k"
+    3 "1M" ;
+
+VAL_ 1 set_home_level
+    1 "active_high"
+    0 "active_low" ;
+
+VAL_ 1 set_home_dir
+    1 "CCW"
+    0 "CW" ;
+
+VAL_ 1 set_home_limit
+    1 "endstop_enabled"
+    0 "endstop_disabled" ;
+
+VAL_ 1 set_auto_zero_mode
+    0 "disable"
+    1 "fixed_dir"
+    2 "minumum_angle" ; 
+
+VAL_ 1 set_auto_zero_speed
+    0 "slowest"
+    1 "slow"
+    2 "normal"
+    3 "fast"
+    4 "fastest" ;
+
+VAL_ 1 set_auto_zero_dir
+    0 "CW"
+    1 "CCW" ;
+
+VAL_ 1 speed_mode_dir
+    1 "CW"
+    0 "CCW" ;
+
+VAL_ 1 rel_steps_position_mode_dir
+    1 "CW"
+    0 "CCW" ;
