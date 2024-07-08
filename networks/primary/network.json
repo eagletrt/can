@@ -244,7 +244,9 @@
                 "invl_tout",
                 "invr_tout",
                 "steer_tout",
-                "fsm"
+                "fsm",
+                "bspd_limits",
+                "no_brake_to_rtd"
             ]
         },
         "EcuSetStatus": {
