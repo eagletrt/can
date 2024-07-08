@@ -1572,6 +1572,8 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_enums)["ECU_ERRORS"]["error_invr_tout"].push(pack->ecu_errors(i).error_invr_tout());
 		(*net_enums)["ECU_ERRORS"]["error_steer_tout"].push(pack->ecu_errors(i).error_steer_tout());
 		(*net_enums)["ECU_ERRORS"]["error_fsm"].push(pack->ecu_errors(i).error_fsm());
+		(*net_enums)["ECU_ERRORS"]["error_bspd_limits"].push(pack->ecu_errors(i).error_bspd_limits());
+		(*net_enums)["ECU_ERRORS"]["error_no_brake_to_rtd"].push(pack->ecu_errors(i).error_no_brake_to_rtd());
 
     }
 
@@ -3234,6 +3236,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 			proto_msg->set_error_invr_tout(msg->error_invr_tout);
 			proto_msg->set_error_steer_tout(msg->error_steer_tout);
 			proto_msg->set_error_fsm(msg->error_fsm);
+			proto_msg->set_error_bspd_limits(msg->error_bspd_limits);
+			proto_msg->set_error_no_brake_to_rtd(msg->error_no_brake_to_rtd);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

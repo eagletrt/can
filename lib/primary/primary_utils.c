@@ -540,7 +540,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 656:
-		if(9 > fields_size) return 1;
+		if(11 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_ERRORS_ERROR_PEDAL_ADC);
 		snprintf(v[1], string_size, ECU_ERRORS_ERROR_PEDAL_IMPLAUSIBILITY);
 		snprintf(v[2], string_size, ECU_ERRORS_ERROR_IMU_TOUT);
@@ -550,6 +550,8 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[6], string_size, ECU_ERRORS_ERROR_INVR_TOUT);
 		snprintf(v[7], string_size, ECU_ERRORS_ERROR_STEER_TOUT);
 		snprintf(v[8], string_size, ECU_ERRORS_ERROR_FSM);
+		snprintf(v[9], string_size, ECU_ERRORS_ERROR_BSPD_LIMITS);
+		snprintf(v[10], string_size, ECU_ERRORS_ERROR_NO_BRAKE_TO_RTD);
 
 		return 0;
 	case 664:
@@ -3087,8 +3089,12 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_error_invr_tout;
 		uint8_t r_error_steer_tout;
 		uint8_t r_error_fsm;
+		uint8_t r_error_bspd_limits;
+		uint8_t r_error_no_brake_to_rtd;
 
 		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -3105,7 +3111,9 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 			&r_error_invl_tout,
 			&r_error_invr_tout,
 			&r_error_steer_tout,
-			&r_error_fsm);
+			&r_error_fsm,
+			&r_error_bspd_limits,
+			&r_error_no_brake_to_rtd);
 		tmp_converted.error_pedal_adc = (uint8_t)r_error_pedal_adc;
 		tmp_converted.error_pedal_implausibility = (uint8_t)r_error_pedal_implausibility;
 		tmp_converted.error_imu_tout = (uint8_t)r_error_imu_tout;
@@ -3115,6 +3123,8 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.error_invr_tout = (uint8_t)r_error_invr_tout;
 		tmp_converted.error_steer_tout = (uint8_t)r_error_steer_tout;
 		tmp_converted.error_fsm = (uint8_t)r_error_fsm;
+		tmp_converted.error_bspd_limits = (uint8_t)r_error_bspd_limits;
+		tmp_converted.error_no_brake_to_rtd = (uint8_t)r_error_no_brake_to_rtd;
 
 		primary_ecu_errors_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_ECU_ERRORS_BYTE_SIZE;
@@ -4043,7 +4053,7 @@ int primary_n_fields_from_id(int id)
 		case 88: return 1;
 		case 1080: return 2;
 		case 648: return 4;
-		case 656: return 9;
+		case 656: return 11;
 		case 664: return 8;
 		case 672: return 3;
 		case 96: return 3;
@@ -4570,7 +4580,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[3] = e_primary_uint8_t;
 		return 4;
 	case 656:
-		if(fields_types_size < 9) return 0;
+		if(fields_types_size < 11) return 0;
 		fields_types[0] = e_primary_uint8_t;
 		fields_types[1] = e_primary_uint8_t;
 		fields_types[2] = e_primary_uint8_t;
@@ -4580,7 +4590,9 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[6] = e_primary_uint8_t;
 		fields_types[7] = e_primary_uint8_t;
 		fields_types[8] = e_primary_uint8_t;
-		return 9;
+		fields_types[9] = e_primary_uint8_t;
+		fields_types[10] = e_primary_uint8_t;
+		return 11;
 	case 664:
 		if(fields_types_size < 8) return 0;
 		fields_types[0] = e_primary_uint8_t;

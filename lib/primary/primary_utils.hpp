@@ -738,6 +738,8 @@
 #define ECU_ERRORS_ERROR_INVR_TOUT "ecu_errors_error_invr_tout"
 #define ECU_ERRORS_ERROR_STEER_TOUT "ecu_errors_error_steer_tout"
 #define ECU_ERRORS_ERROR_FSM "ecu_errors_error_fsm"
+#define ECU_ERRORS_ERROR_BSPD_LIMITS "ecu_errors_error_bspd_limits"
+#define ECU_ERRORS_ERROR_NO_BRAKE_TO_RTD "ecu_errors_error_no_brake_to_rtd"
 /* END */
 
 /* START */
@@ -1040,11 +1042,11 @@
 /* END */
 
 enum primary_types_id{
-	e_primary_uint32_t = -5,
-	e_primary_uint64_t,
-	e_primary_float,
+	e_primary_uint16_t = -5,
+	e_primary_uint32_t,
 	e_primary_uint8_t,
-	e_primary_uint16_t,
+	e_primary_float,
+	e_primary_uint64_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,

@@ -881,7 +881,9 @@ message ECU_ERRORS{
 	bool error_invr_tout = 7;
 	bool error_steer_tout = 8;
 	bool error_fsm = 9;
-	uint64 _inner_timestamp = 10;
+	bool error_bspd_limits = 10;
+	bool error_no_brake_to_rtd = 11;
+	uint64 _inner_timestamp = 12;
 }
 message ECU_FEEDBACKS{
 	bool feedbacks_sd_cock_fb = 1;
