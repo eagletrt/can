@@ -772,26 +772,6 @@
           "precision": 0.1,
           "optimize": false,
           "signed": true
-        },
-        "y": {
-          "type": "float32",
-          "range": [
-            0,
-            245
-          ],
-          "precision": 0.1,
-          "optimize": false,
-          "signed": true
-        },
-        "z": {
-          "type": "float32",
-          "range": [
-            0,
-            245
-          ],
-          "precision": 0.1,
-          "optimize": false,
-          "signed": true
         }
       }
     },
