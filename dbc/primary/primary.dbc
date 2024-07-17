@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: INVERTER_L TLM ECU ECU HANDCART LV HV LV ECU LV HANDCART LV HV LV ECU LV HANDCART HV LV HV HV ECU HV HANDCART HV HV HV ECU HV HANDCART HV HV HV HV ECU HV HANDCART HV ECU ECU HV STEERING_WHEEL HANDCART TLM HV ECU HV TLM TLM ECU ECU HANDCART HV ECU STEERING_WHEEL ANY HV HV ANY LV HV ANY ECU ANY LV TLM HV HV TLM ECU HV HANDCART TLM TLM LV HV STEERING_WHEEL TLM LV HV STEERING_WHEEL TLM LV HV LV TLM ECU HV LV TLM LV HV ECU TLM LV TLM HV ECU TLM LV HV ECU TLM LV HV ECU TLM TLM TLM LV STEERING_WHEEL TLM LV LV LV TLM LV LV ECU TLM ECU ECU LV TLM TLM ECU STEERING_WHEEL TLM HANDCART ECU HANDCART TLM TLM STEERING_WHEEL HANDCART TLM ECU STEERING_WHEEL STEERING_WHEEL TLM ECU STEERING_WHEEL ECU STEERING_WHEEL ECU TLM ECU ECU ECU LV ECU TLM STEERING_WHEEL HV ECU HV ECU HV STEERING_WHEEL ECU ECU HANDCART ECU HV INVERTER_L ECU TLM HANDCART ECU HV TLM ECU ECU HANDCART ECU HANDCART INVERTER_L HV INVERTER_L HV ECU
+BU_: HV ECU TLM ECU HV TLM TLM ECU HV TLM INVERTER_L TLM ECU LV INVERTER_L ECU ECU ECU TLM LV STEERING_WHEEL STEERING_WHEEL ECU LV STEERING_WHEEL ECU LV TLM TLM STEERING_WHEEL STEERING_WHEEL ECU INVERTER_L STEERING_WHEEL ECU TLM HV ECU ECU HV TLM ECU LV ECU ECU ECU TLM CHARGER LV ECU LV HANDCART TLM ECU ECU CHARGER LV STEERING_WHEEL LV HANDCART TLM ECU ECU CHARGER HV HANDCART LV HANDCART LV TLM LV CHARGER TLM HANDCART ECU HANDCART TLM HANDCART LV HANDCART ECU LV CHARGER TLM STEERING_WHEEL HANDCART TLM LV CHARGER HV STEERING_WHEEL CHARGER TLM LV HANDCART HV HANDCART CHARGER TLM ECU HANDCART HV HV CHARGER TLM LV HANDCART ECU HANDCART LV CHARGER HV HANDCART TLM STEERING_WHEEL CHARGER HANDCART HANDCART ECU CHARGER HV HANDCART TLM HV CHARGER HANDCART HANDCART HV CHARGER ECU HANDCART HANDCART TLM CHARGER ECU HANDCART TLM HV CHARGER HANDCART HV CHARGER ECU HANDCART HV HV HANDCART HANDCART CHARGER STEERING_WHEEL ECU HV CHARGER HV HANDCART HANDCART ANY ECU ANY HV ANY HANDCART ANY ECU ECU HV ECU HANDCART TLM ECU ECU HV TLM TLM HV STEERING_WHEEL HANDCART ECU HANDCART HV ECU HV HV HV HANDCART HV ECU HV HV HV HV HANDCART HV ECU TLM HV HV HV HV LV HV LV TLM HV LV LV LV ECU LV TLM LV STEERING_WHEEL LV ECU INVERTER_L ECU HV TLM TLM
 
 
 BO_ 1818 NLG5_DIAG_TX: 8 NLG5
@@ -721,6 +721,196 @@ BO_ 1792 DEBUG_SIGNAL_2: 8 Vector__XXX
  SG_ field_2 : 16|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_1 : 0|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
 
+BO_ 256 CHARGER_1: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 272 CHARGER_2: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 288 CHARGER_3: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 304 CHARGER_4: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 320 CHARGER_5: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 336 CHARGER_6: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 344 CHARGER_7: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 352 CHARGER_8: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 368 CHARGER_9: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 384 CHARGER_10: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 392 CHARGER_11: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 400 CHARGER_12: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 408 CHARGER_13: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 416 CHARGER_14: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 432 CHARGER_15: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 448 CHARGER_16: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 464 CHARGER_17: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 480 CHARGER_18: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
+BO_ 496 CHARGER_19: 8 Vector__XXX
+ SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_4 : 32|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
+ SG_ data_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+
 
 
 
@@ -919,6 +1109,25 @@ CM_ BO_ 1768 "";
 CM_ BO_ 1776 "";
 CM_ BO_ 1784 "";
 CM_ BO_ 1792 "";
+CM_ BO_ 256 "";
+CM_ BO_ 272 "";
+CM_ BO_ 288 "";
+CM_ BO_ 304 "";
+CM_ BO_ 320 "";
+CM_ BO_ 336 "";
+CM_ BO_ 344 "";
+CM_ BO_ 352 "";
+CM_ BO_ 368 "";
+CM_ BO_ 384 "";
+CM_ BO_ 392 "";
+CM_ BO_ 400 "";
+CM_ BO_ 408 "";
+CM_ BO_ 416 "";
+CM_ BO_ 432 "";
+CM_ BO_ 448 "";
+CM_ BO_ 464 "";
+CM_ BO_ 480 "";
+CM_ BO_ 496 "";
 BA_DEF_  "Bus Speed" STRING ;
 BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
 BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
@@ -1017,6 +1226,25 @@ BA_ "GenMsgCycleTime" BO_ 1768 10;
 BA_ "GenMsgCycleTime" BO_ 1776 10;
 BA_ "GenMsgCycleTime" BO_ 1784 20;
 BA_ "GenMsgCycleTime" BO_ 1792 20;
+BA_ "GenMsgCycleTime" BO_ 256 100;
+BA_ "GenMsgCycleTime" BO_ 272 100;
+BA_ "GenMsgCycleTime" BO_ 288 1000;
+BA_ "GenMsgCycleTime" BO_ 304 100;
+BA_ "GenMsgCycleTime" BO_ 320 1000;
+BA_ "GenMsgCycleTime" BO_ 336 1000;
+BA_ "GenMsgCycleTime" BO_ 344 1000;
+BA_ "GenMsgCycleTime" BO_ 352 1000;
+BA_ "GenMsgCycleTime" BO_ 368 1000;
+BA_ "GenMsgCycleTime" BO_ 384 1000;
+BA_ "GenMsgCycleTime" BO_ 392 1000;
+BA_ "GenMsgCycleTime" BO_ 400 1000;
+BA_ "GenMsgCycleTime" BO_ 408 1000;
+BA_ "GenMsgCycleTime" BO_ 416 1000;
+BA_ "GenMsgCycleTime" BO_ 432 1000;
+BA_ "GenMsgCycleTime" BO_ 448 1000;
+BA_ "GenMsgCycleTime" BO_ 464 1000;
+BA_ "GenMsgCycleTime" BO_ 480 1000;
+BA_ "GenMsgCycleTime" BO_ 496 1000;
 VAL_ 0 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 0 forward 0 "off" 1 "on" ;
 VAL_ 705 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;

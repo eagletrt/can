@@ -1112,6 +1112,215 @@ message DEBUG_SIGNAL_2{
 	double field_4 = 4;
 	uint64 _inner_timestamp = 5;
 }
+message CHARGER_1{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_2{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_3{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_4{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_5{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_6{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_7{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_8{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_9{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_10{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_11{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_12{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_13{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_14{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_15{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_16{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_17{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_18{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
+message CHARGER_19{
+	uint32 data_0 = 1;
+	uint32 data_1 = 2;
+	uint32 data_2 = 3;
+	uint32 data_3 = 4;
+	uint32 data_4 = 5;
+	uint32 data_5 = 6;
+	uint32 data_6 = 7;
+	uint32 data_7 = 8;
+	uint64 _inner_timestamp = 9;
+}
 
 
 message Pack{
@@ -1231,5 +1440,24 @@ message Pack{
 	repeated DEBUG_SIGNAL_CRASH_DEBUG_ACK DEBUG_SIGNAL_CRASH_DEBUG_ACK = 114;
 	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 115;
 	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 116;
+	repeated CHARGER_1 CHARGER_1 = 117;
+	repeated CHARGER_2 CHARGER_2 = 118;
+	repeated CHARGER_3 CHARGER_3 = 119;
+	repeated CHARGER_4 CHARGER_4 = 120;
+	repeated CHARGER_5 CHARGER_5 = 121;
+	repeated CHARGER_6 CHARGER_6 = 122;
+	repeated CHARGER_7 CHARGER_7 = 123;
+	repeated CHARGER_8 CHARGER_8 = 124;
+	repeated CHARGER_9 CHARGER_9 = 125;
+	repeated CHARGER_10 CHARGER_10 = 126;
+	repeated CHARGER_11 CHARGER_11 = 127;
+	repeated CHARGER_12 CHARGER_12 = 128;
+	repeated CHARGER_13 CHARGER_13 = 129;
+	repeated CHARGER_14 CHARGER_14 = 130;
+	repeated CHARGER_15 CHARGER_15 = 131;
+	repeated CHARGER_16 CHARGER_16 = 132;
+	repeated CHARGER_17 CHARGER_17 = 133;
+	repeated CHARGER_18 CHARGER_18 = 134;
+	repeated CHARGER_19 CHARGER_19 = 135;
 }
 

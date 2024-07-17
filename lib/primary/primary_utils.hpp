@@ -1041,12 +1041,259 @@
 #define DEBUG_SIGNAL_2_FIELD_4 "debug_signal_2_field_4"
 /* END */
 
+/* START */
+#define CHARGER_1 "CHARGER_1"
+
+#define CHARGER_1_DATA_0 "charger_1_data_0"
+#define CHARGER_1_DATA_1 "charger_1_data_1"
+#define CHARGER_1_DATA_2 "charger_1_data_2"
+#define CHARGER_1_DATA_3 "charger_1_data_3"
+#define CHARGER_1_DATA_4 "charger_1_data_4"
+#define CHARGER_1_DATA_5 "charger_1_data_5"
+#define CHARGER_1_DATA_6 "charger_1_data_6"
+#define CHARGER_1_DATA_7 "charger_1_data_7"
+/* END */
+
+/* START */
+#define CHARGER_2 "CHARGER_2"
+
+#define CHARGER_2_DATA_0 "charger_2_data_0"
+#define CHARGER_2_DATA_1 "charger_2_data_1"
+#define CHARGER_2_DATA_2 "charger_2_data_2"
+#define CHARGER_2_DATA_3 "charger_2_data_3"
+#define CHARGER_2_DATA_4 "charger_2_data_4"
+#define CHARGER_2_DATA_5 "charger_2_data_5"
+#define CHARGER_2_DATA_6 "charger_2_data_6"
+#define CHARGER_2_DATA_7 "charger_2_data_7"
+/* END */
+
+/* START */
+#define CHARGER_3 "CHARGER_3"
+
+#define CHARGER_3_DATA_0 "charger_3_data_0"
+#define CHARGER_3_DATA_1 "charger_3_data_1"
+#define CHARGER_3_DATA_2 "charger_3_data_2"
+#define CHARGER_3_DATA_3 "charger_3_data_3"
+#define CHARGER_3_DATA_4 "charger_3_data_4"
+#define CHARGER_3_DATA_5 "charger_3_data_5"
+#define CHARGER_3_DATA_6 "charger_3_data_6"
+#define CHARGER_3_DATA_7 "charger_3_data_7"
+/* END */
+
+/* START */
+#define CHARGER_4 "CHARGER_4"
+
+#define CHARGER_4_DATA_0 "charger_4_data_0"
+#define CHARGER_4_DATA_1 "charger_4_data_1"
+#define CHARGER_4_DATA_2 "charger_4_data_2"
+#define CHARGER_4_DATA_3 "charger_4_data_3"
+#define CHARGER_4_DATA_4 "charger_4_data_4"
+#define CHARGER_4_DATA_5 "charger_4_data_5"
+#define CHARGER_4_DATA_6 "charger_4_data_6"
+#define CHARGER_4_DATA_7 "charger_4_data_7"
+/* END */
+
+/* START */
+#define CHARGER_5 "CHARGER_5"
+
+#define CHARGER_5_DATA_0 "charger_5_data_0"
+#define CHARGER_5_DATA_1 "charger_5_data_1"
+#define CHARGER_5_DATA_2 "charger_5_data_2"
+#define CHARGER_5_DATA_3 "charger_5_data_3"
+#define CHARGER_5_DATA_4 "charger_5_data_4"
+#define CHARGER_5_DATA_5 "charger_5_data_5"
+#define CHARGER_5_DATA_6 "charger_5_data_6"
+#define CHARGER_5_DATA_7 "charger_5_data_7"
+/* END */
+
+/* START */
+#define CHARGER_6 "CHARGER_6"
+
+#define CHARGER_6_DATA_0 "charger_6_data_0"
+#define CHARGER_6_DATA_1 "charger_6_data_1"
+#define CHARGER_6_DATA_2 "charger_6_data_2"
+#define CHARGER_6_DATA_3 "charger_6_data_3"
+#define CHARGER_6_DATA_4 "charger_6_data_4"
+#define CHARGER_6_DATA_5 "charger_6_data_5"
+#define CHARGER_6_DATA_6 "charger_6_data_6"
+#define CHARGER_6_DATA_7 "charger_6_data_7"
+/* END */
+
+/* START */
+#define CHARGER_7 "CHARGER_7"
+
+#define CHARGER_7_DATA_0 "charger_7_data_0"
+#define CHARGER_7_DATA_1 "charger_7_data_1"
+#define CHARGER_7_DATA_2 "charger_7_data_2"
+#define CHARGER_7_DATA_3 "charger_7_data_3"
+#define CHARGER_7_DATA_4 "charger_7_data_4"
+#define CHARGER_7_DATA_5 "charger_7_data_5"
+#define CHARGER_7_DATA_6 "charger_7_data_6"
+#define CHARGER_7_DATA_7 "charger_7_data_7"
+/* END */
+
+/* START */
+#define CHARGER_8 "CHARGER_8"
+
+#define CHARGER_8_DATA_0 "charger_8_data_0"
+#define CHARGER_8_DATA_1 "charger_8_data_1"
+#define CHARGER_8_DATA_2 "charger_8_data_2"
+#define CHARGER_8_DATA_3 "charger_8_data_3"
+#define CHARGER_8_DATA_4 "charger_8_data_4"
+#define CHARGER_8_DATA_5 "charger_8_data_5"
+#define CHARGER_8_DATA_6 "charger_8_data_6"
+#define CHARGER_8_DATA_7 "charger_8_data_7"
+/* END */
+
+/* START */
+#define CHARGER_9 "CHARGER_9"
+
+#define CHARGER_9_DATA_0 "charger_9_data_0"
+#define CHARGER_9_DATA_1 "charger_9_data_1"
+#define CHARGER_9_DATA_2 "charger_9_data_2"
+#define CHARGER_9_DATA_3 "charger_9_data_3"
+#define CHARGER_9_DATA_4 "charger_9_data_4"
+#define CHARGER_9_DATA_5 "charger_9_data_5"
+#define CHARGER_9_DATA_6 "charger_9_data_6"
+#define CHARGER_9_DATA_7 "charger_9_data_7"
+/* END */
+
+/* START */
+#define CHARGER_10 "CHARGER_10"
+
+#define CHARGER_10_DATA_0 "charger_10_data_0"
+#define CHARGER_10_DATA_1 "charger_10_data_1"
+#define CHARGER_10_DATA_2 "charger_10_data_2"
+#define CHARGER_10_DATA_3 "charger_10_data_3"
+#define CHARGER_10_DATA_4 "charger_10_data_4"
+#define CHARGER_10_DATA_5 "charger_10_data_5"
+#define CHARGER_10_DATA_6 "charger_10_data_6"
+#define CHARGER_10_DATA_7 "charger_10_data_7"
+/* END */
+
+/* START */
+#define CHARGER_11 "CHARGER_11"
+
+#define CHARGER_11_DATA_0 "charger_11_data_0"
+#define CHARGER_11_DATA_1 "charger_11_data_1"
+#define CHARGER_11_DATA_2 "charger_11_data_2"
+#define CHARGER_11_DATA_3 "charger_11_data_3"
+#define CHARGER_11_DATA_4 "charger_11_data_4"
+#define CHARGER_11_DATA_5 "charger_11_data_5"
+#define CHARGER_11_DATA_6 "charger_11_data_6"
+#define CHARGER_11_DATA_7 "charger_11_data_7"
+/* END */
+
+/* START */
+#define CHARGER_12 "CHARGER_12"
+
+#define CHARGER_12_DATA_0 "charger_12_data_0"
+#define CHARGER_12_DATA_1 "charger_12_data_1"
+#define CHARGER_12_DATA_2 "charger_12_data_2"
+#define CHARGER_12_DATA_3 "charger_12_data_3"
+#define CHARGER_12_DATA_4 "charger_12_data_4"
+#define CHARGER_12_DATA_5 "charger_12_data_5"
+#define CHARGER_12_DATA_6 "charger_12_data_6"
+#define CHARGER_12_DATA_7 "charger_12_data_7"
+/* END */
+
+/* START */
+#define CHARGER_13 "CHARGER_13"
+
+#define CHARGER_13_DATA_0 "charger_13_data_0"
+#define CHARGER_13_DATA_1 "charger_13_data_1"
+#define CHARGER_13_DATA_2 "charger_13_data_2"
+#define CHARGER_13_DATA_3 "charger_13_data_3"
+#define CHARGER_13_DATA_4 "charger_13_data_4"
+#define CHARGER_13_DATA_5 "charger_13_data_5"
+#define CHARGER_13_DATA_6 "charger_13_data_6"
+#define CHARGER_13_DATA_7 "charger_13_data_7"
+/* END */
+
+/* START */
+#define CHARGER_14 "CHARGER_14"
+
+#define CHARGER_14_DATA_0 "charger_14_data_0"
+#define CHARGER_14_DATA_1 "charger_14_data_1"
+#define CHARGER_14_DATA_2 "charger_14_data_2"
+#define CHARGER_14_DATA_3 "charger_14_data_3"
+#define CHARGER_14_DATA_4 "charger_14_data_4"
+#define CHARGER_14_DATA_5 "charger_14_data_5"
+#define CHARGER_14_DATA_6 "charger_14_data_6"
+#define CHARGER_14_DATA_7 "charger_14_data_7"
+/* END */
+
+/* START */
+#define CHARGER_15 "CHARGER_15"
+
+#define CHARGER_15_DATA_0 "charger_15_data_0"
+#define CHARGER_15_DATA_1 "charger_15_data_1"
+#define CHARGER_15_DATA_2 "charger_15_data_2"
+#define CHARGER_15_DATA_3 "charger_15_data_3"
+#define CHARGER_15_DATA_4 "charger_15_data_4"
+#define CHARGER_15_DATA_5 "charger_15_data_5"
+#define CHARGER_15_DATA_6 "charger_15_data_6"
+#define CHARGER_15_DATA_7 "charger_15_data_7"
+/* END */
+
+/* START */
+#define CHARGER_16 "CHARGER_16"
+
+#define CHARGER_16_DATA_0 "charger_16_data_0"
+#define CHARGER_16_DATA_1 "charger_16_data_1"
+#define CHARGER_16_DATA_2 "charger_16_data_2"
+#define CHARGER_16_DATA_3 "charger_16_data_3"
+#define CHARGER_16_DATA_4 "charger_16_data_4"
+#define CHARGER_16_DATA_5 "charger_16_data_5"
+#define CHARGER_16_DATA_6 "charger_16_data_6"
+#define CHARGER_16_DATA_7 "charger_16_data_7"
+/* END */
+
+/* START */
+#define CHARGER_17 "CHARGER_17"
+
+#define CHARGER_17_DATA_0 "charger_17_data_0"
+#define CHARGER_17_DATA_1 "charger_17_data_1"
+#define CHARGER_17_DATA_2 "charger_17_data_2"
+#define CHARGER_17_DATA_3 "charger_17_data_3"
+#define CHARGER_17_DATA_4 "charger_17_data_4"
+#define CHARGER_17_DATA_5 "charger_17_data_5"
+#define CHARGER_17_DATA_6 "charger_17_data_6"
+#define CHARGER_17_DATA_7 "charger_17_data_7"
+/* END */
+
+/* START */
+#define CHARGER_18 "CHARGER_18"
+
+#define CHARGER_18_DATA_0 "charger_18_data_0"
+#define CHARGER_18_DATA_1 "charger_18_data_1"
+#define CHARGER_18_DATA_2 "charger_18_data_2"
+#define CHARGER_18_DATA_3 "charger_18_data_3"
+#define CHARGER_18_DATA_4 "charger_18_data_4"
+#define CHARGER_18_DATA_5 "charger_18_data_5"
+#define CHARGER_18_DATA_6 "charger_18_data_6"
+#define CHARGER_18_DATA_7 "charger_18_data_7"
+/* END */
+
+/* START */
+#define CHARGER_19 "CHARGER_19"
+
+#define CHARGER_19_DATA_0 "charger_19_data_0"
+#define CHARGER_19_DATA_1 "charger_19_data_1"
+#define CHARGER_19_DATA_2 "charger_19_data_2"
+#define CHARGER_19_DATA_3 "charger_19_data_3"
+#define CHARGER_19_DATA_4 "charger_19_data_4"
+#define CHARGER_19_DATA_5 "charger_19_data_5"
+#define CHARGER_19_DATA_6 "charger_19_data_6"
+#define CHARGER_19_DATA_7 "charger_19_data_7"
+/* END */
+
 enum primary_types_id{
 	e_primary_uint16_t = -5,
-	e_primary_uint32_t,
-	e_primary_uint8_t,
 	e_primary_float,
+	e_primary_uint32_t,
 	e_primary_uint64_t,
+	e_primary_uint8_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,

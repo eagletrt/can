@@ -817,6 +817,234 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[3], string_size, DEBUG_SIGNAL_2_FIELD_4);
 
 		return 0;
+	case 256:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_1_DATA_0);
+		snprintf(v[1], string_size, CHARGER_1_DATA_1);
+		snprintf(v[2], string_size, CHARGER_1_DATA_2);
+		snprintf(v[3], string_size, CHARGER_1_DATA_3);
+		snprintf(v[4], string_size, CHARGER_1_DATA_4);
+		snprintf(v[5], string_size, CHARGER_1_DATA_5);
+		snprintf(v[6], string_size, CHARGER_1_DATA_6);
+		snprintf(v[7], string_size, CHARGER_1_DATA_7);
+
+		return 0;
+	case 272:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_2_DATA_0);
+		snprintf(v[1], string_size, CHARGER_2_DATA_1);
+		snprintf(v[2], string_size, CHARGER_2_DATA_2);
+		snprintf(v[3], string_size, CHARGER_2_DATA_3);
+		snprintf(v[4], string_size, CHARGER_2_DATA_4);
+		snprintf(v[5], string_size, CHARGER_2_DATA_5);
+		snprintf(v[6], string_size, CHARGER_2_DATA_6);
+		snprintf(v[7], string_size, CHARGER_2_DATA_7);
+
+		return 0;
+	case 288:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_3_DATA_0);
+		snprintf(v[1], string_size, CHARGER_3_DATA_1);
+		snprintf(v[2], string_size, CHARGER_3_DATA_2);
+		snprintf(v[3], string_size, CHARGER_3_DATA_3);
+		snprintf(v[4], string_size, CHARGER_3_DATA_4);
+		snprintf(v[5], string_size, CHARGER_3_DATA_5);
+		snprintf(v[6], string_size, CHARGER_3_DATA_6);
+		snprintf(v[7], string_size, CHARGER_3_DATA_7);
+
+		return 0;
+	case 304:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_4_DATA_0);
+		snprintf(v[1], string_size, CHARGER_4_DATA_1);
+		snprintf(v[2], string_size, CHARGER_4_DATA_2);
+		snprintf(v[3], string_size, CHARGER_4_DATA_3);
+		snprintf(v[4], string_size, CHARGER_4_DATA_4);
+		snprintf(v[5], string_size, CHARGER_4_DATA_5);
+		snprintf(v[6], string_size, CHARGER_4_DATA_6);
+		snprintf(v[7], string_size, CHARGER_4_DATA_7);
+
+		return 0;
+	case 320:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_5_DATA_0);
+		snprintf(v[1], string_size, CHARGER_5_DATA_1);
+		snprintf(v[2], string_size, CHARGER_5_DATA_2);
+		snprintf(v[3], string_size, CHARGER_5_DATA_3);
+		snprintf(v[4], string_size, CHARGER_5_DATA_4);
+		snprintf(v[5], string_size, CHARGER_5_DATA_5);
+		snprintf(v[6], string_size, CHARGER_5_DATA_6);
+		snprintf(v[7], string_size, CHARGER_5_DATA_7);
+
+		return 0;
+	case 336:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_6_DATA_0);
+		snprintf(v[1], string_size, CHARGER_6_DATA_1);
+		snprintf(v[2], string_size, CHARGER_6_DATA_2);
+		snprintf(v[3], string_size, CHARGER_6_DATA_3);
+		snprintf(v[4], string_size, CHARGER_6_DATA_4);
+		snprintf(v[5], string_size, CHARGER_6_DATA_5);
+		snprintf(v[6], string_size, CHARGER_6_DATA_6);
+		snprintf(v[7], string_size, CHARGER_6_DATA_7);
+
+		return 0;
+	case 344:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_7_DATA_0);
+		snprintf(v[1], string_size, CHARGER_7_DATA_1);
+		snprintf(v[2], string_size, CHARGER_7_DATA_2);
+		snprintf(v[3], string_size, CHARGER_7_DATA_3);
+		snprintf(v[4], string_size, CHARGER_7_DATA_4);
+		snprintf(v[5], string_size, CHARGER_7_DATA_5);
+		snprintf(v[6], string_size, CHARGER_7_DATA_6);
+		snprintf(v[7], string_size, CHARGER_7_DATA_7);
+
+		return 0;
+	case 352:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_8_DATA_0);
+		snprintf(v[1], string_size, CHARGER_8_DATA_1);
+		snprintf(v[2], string_size, CHARGER_8_DATA_2);
+		snprintf(v[3], string_size, CHARGER_8_DATA_3);
+		snprintf(v[4], string_size, CHARGER_8_DATA_4);
+		snprintf(v[5], string_size, CHARGER_8_DATA_5);
+		snprintf(v[6], string_size, CHARGER_8_DATA_6);
+		snprintf(v[7], string_size, CHARGER_8_DATA_7);
+
+		return 0;
+	case 368:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_9_DATA_0);
+		snprintf(v[1], string_size, CHARGER_9_DATA_1);
+		snprintf(v[2], string_size, CHARGER_9_DATA_2);
+		snprintf(v[3], string_size, CHARGER_9_DATA_3);
+		snprintf(v[4], string_size, CHARGER_9_DATA_4);
+		snprintf(v[5], string_size, CHARGER_9_DATA_5);
+		snprintf(v[6], string_size, CHARGER_9_DATA_6);
+		snprintf(v[7], string_size, CHARGER_9_DATA_7);
+
+		return 0;
+	case 384:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_10_DATA_0);
+		snprintf(v[1], string_size, CHARGER_10_DATA_1);
+		snprintf(v[2], string_size, CHARGER_10_DATA_2);
+		snprintf(v[3], string_size, CHARGER_10_DATA_3);
+		snprintf(v[4], string_size, CHARGER_10_DATA_4);
+		snprintf(v[5], string_size, CHARGER_10_DATA_5);
+		snprintf(v[6], string_size, CHARGER_10_DATA_6);
+		snprintf(v[7], string_size, CHARGER_10_DATA_7);
+
+		return 0;
+	case 392:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_11_DATA_0);
+		snprintf(v[1], string_size, CHARGER_11_DATA_1);
+		snprintf(v[2], string_size, CHARGER_11_DATA_2);
+		snprintf(v[3], string_size, CHARGER_11_DATA_3);
+		snprintf(v[4], string_size, CHARGER_11_DATA_4);
+		snprintf(v[5], string_size, CHARGER_11_DATA_5);
+		snprintf(v[6], string_size, CHARGER_11_DATA_6);
+		snprintf(v[7], string_size, CHARGER_11_DATA_7);
+
+		return 0;
+	case 400:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_12_DATA_0);
+		snprintf(v[1], string_size, CHARGER_12_DATA_1);
+		snprintf(v[2], string_size, CHARGER_12_DATA_2);
+		snprintf(v[3], string_size, CHARGER_12_DATA_3);
+		snprintf(v[4], string_size, CHARGER_12_DATA_4);
+		snprintf(v[5], string_size, CHARGER_12_DATA_5);
+		snprintf(v[6], string_size, CHARGER_12_DATA_6);
+		snprintf(v[7], string_size, CHARGER_12_DATA_7);
+
+		return 0;
+	case 408:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_13_DATA_0);
+		snprintf(v[1], string_size, CHARGER_13_DATA_1);
+		snprintf(v[2], string_size, CHARGER_13_DATA_2);
+		snprintf(v[3], string_size, CHARGER_13_DATA_3);
+		snprintf(v[4], string_size, CHARGER_13_DATA_4);
+		snprintf(v[5], string_size, CHARGER_13_DATA_5);
+		snprintf(v[6], string_size, CHARGER_13_DATA_6);
+		snprintf(v[7], string_size, CHARGER_13_DATA_7);
+
+		return 0;
+	case 416:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_14_DATA_0);
+		snprintf(v[1], string_size, CHARGER_14_DATA_1);
+		snprintf(v[2], string_size, CHARGER_14_DATA_2);
+		snprintf(v[3], string_size, CHARGER_14_DATA_3);
+		snprintf(v[4], string_size, CHARGER_14_DATA_4);
+		snprintf(v[5], string_size, CHARGER_14_DATA_5);
+		snprintf(v[6], string_size, CHARGER_14_DATA_6);
+		snprintf(v[7], string_size, CHARGER_14_DATA_7);
+
+		return 0;
+	case 432:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_15_DATA_0);
+		snprintf(v[1], string_size, CHARGER_15_DATA_1);
+		snprintf(v[2], string_size, CHARGER_15_DATA_2);
+		snprintf(v[3], string_size, CHARGER_15_DATA_3);
+		snprintf(v[4], string_size, CHARGER_15_DATA_4);
+		snprintf(v[5], string_size, CHARGER_15_DATA_5);
+		snprintf(v[6], string_size, CHARGER_15_DATA_6);
+		snprintf(v[7], string_size, CHARGER_15_DATA_7);
+
+		return 0;
+	case 448:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_16_DATA_0);
+		snprintf(v[1], string_size, CHARGER_16_DATA_1);
+		snprintf(v[2], string_size, CHARGER_16_DATA_2);
+		snprintf(v[3], string_size, CHARGER_16_DATA_3);
+		snprintf(v[4], string_size, CHARGER_16_DATA_4);
+		snprintf(v[5], string_size, CHARGER_16_DATA_5);
+		snprintf(v[6], string_size, CHARGER_16_DATA_6);
+		snprintf(v[7], string_size, CHARGER_16_DATA_7);
+
+		return 0;
+	case 464:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_17_DATA_0);
+		snprintf(v[1], string_size, CHARGER_17_DATA_1);
+		snprintf(v[2], string_size, CHARGER_17_DATA_2);
+		snprintf(v[3], string_size, CHARGER_17_DATA_3);
+		snprintf(v[4], string_size, CHARGER_17_DATA_4);
+		snprintf(v[5], string_size, CHARGER_17_DATA_5);
+		snprintf(v[6], string_size, CHARGER_17_DATA_6);
+		snprintf(v[7], string_size, CHARGER_17_DATA_7);
+
+		return 0;
+	case 480:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_18_DATA_0);
+		snprintf(v[1], string_size, CHARGER_18_DATA_1);
+		snprintf(v[2], string_size, CHARGER_18_DATA_2);
+		snprintf(v[3], string_size, CHARGER_18_DATA_3);
+		snprintf(v[4], string_size, CHARGER_18_DATA_4);
+		snprintf(v[5], string_size, CHARGER_18_DATA_5);
+		snprintf(v[6], string_size, CHARGER_18_DATA_6);
+		snprintf(v[7], string_size, CHARGER_18_DATA_7);
+
+		return 0;
+	case 496:
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, CHARGER_19_DATA_0);
+		snprintf(v[1], string_size, CHARGER_19_DATA_1);
+		snprintf(v[2], string_size, CHARGER_19_DATA_2);
+		snprintf(v[3], string_size, CHARGER_19_DATA_3);
+		snprintf(v[4], string_size, CHARGER_19_DATA_4);
+		snprintf(v[5], string_size, CHARGER_19_DATA_5);
+		snprintf(v[6], string_size, CHARGER_19_DATA_6);
+		snprintf(v[7], string_size, CHARGER_19_DATA_7);
+
+		return 0;
 
     }
     return 0;
@@ -3966,6 +4194,804 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_DEBUG_SIGNAL_2_BYTE_SIZE;
 		return primary_debug_signal_2_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_2_BYTE_SIZE);
 	}
+	case 256:
+	{
+		primary_charger_1_t tmp;
+		primary_charger_1_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_1_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_1_BYTE_SIZE;
+		return primary_charger_1_pack(data, &tmp, PRIMARY_CHARGER_1_BYTE_SIZE);
+	}
+	case 272:
+	{
+		primary_charger_2_t tmp;
+		primary_charger_2_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_2_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_2_BYTE_SIZE;
+		return primary_charger_2_pack(data, &tmp, PRIMARY_CHARGER_2_BYTE_SIZE);
+	}
+	case 288:
+	{
+		primary_charger_3_t tmp;
+		primary_charger_3_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_3_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_3_BYTE_SIZE;
+		return primary_charger_3_pack(data, &tmp, PRIMARY_CHARGER_3_BYTE_SIZE);
+	}
+	case 304:
+	{
+		primary_charger_4_t tmp;
+		primary_charger_4_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_4_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_4_BYTE_SIZE;
+		return primary_charger_4_pack(data, &tmp, PRIMARY_CHARGER_4_BYTE_SIZE);
+	}
+	case 320:
+	{
+		primary_charger_5_t tmp;
+		primary_charger_5_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_5_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_5_BYTE_SIZE;
+		return primary_charger_5_pack(data, &tmp, PRIMARY_CHARGER_5_BYTE_SIZE);
+	}
+	case 336:
+	{
+		primary_charger_6_t tmp;
+		primary_charger_6_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_6_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_6_BYTE_SIZE;
+		return primary_charger_6_pack(data, &tmp, PRIMARY_CHARGER_6_BYTE_SIZE);
+	}
+	case 344:
+	{
+		primary_charger_7_t tmp;
+		primary_charger_7_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_7_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_7_BYTE_SIZE;
+		return primary_charger_7_pack(data, &tmp, PRIMARY_CHARGER_7_BYTE_SIZE);
+	}
+	case 352:
+	{
+		primary_charger_8_t tmp;
+		primary_charger_8_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_8_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_8_BYTE_SIZE;
+		return primary_charger_8_pack(data, &tmp, PRIMARY_CHARGER_8_BYTE_SIZE);
+	}
+	case 368:
+	{
+		primary_charger_9_t tmp;
+		primary_charger_9_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_9_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_9_BYTE_SIZE;
+		return primary_charger_9_pack(data, &tmp, PRIMARY_CHARGER_9_BYTE_SIZE);
+	}
+	case 384:
+	{
+		primary_charger_10_t tmp;
+		primary_charger_10_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_10_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_10_BYTE_SIZE;
+		return primary_charger_10_pack(data, &tmp, PRIMARY_CHARGER_10_BYTE_SIZE);
+	}
+	case 392:
+	{
+		primary_charger_11_t tmp;
+		primary_charger_11_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_11_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_11_BYTE_SIZE;
+		return primary_charger_11_pack(data, &tmp, PRIMARY_CHARGER_11_BYTE_SIZE);
+	}
+	case 400:
+	{
+		primary_charger_12_t tmp;
+		primary_charger_12_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_12_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_12_BYTE_SIZE;
+		return primary_charger_12_pack(data, &tmp, PRIMARY_CHARGER_12_BYTE_SIZE);
+	}
+	case 408:
+	{
+		primary_charger_13_t tmp;
+		primary_charger_13_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_13_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_13_BYTE_SIZE;
+		return primary_charger_13_pack(data, &tmp, PRIMARY_CHARGER_13_BYTE_SIZE);
+	}
+	case 416:
+	{
+		primary_charger_14_t tmp;
+		primary_charger_14_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_14_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_14_BYTE_SIZE;
+		return primary_charger_14_pack(data, &tmp, PRIMARY_CHARGER_14_BYTE_SIZE);
+	}
+	case 432:
+	{
+		primary_charger_15_t tmp;
+		primary_charger_15_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_15_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_15_BYTE_SIZE;
+		return primary_charger_15_pack(data, &tmp, PRIMARY_CHARGER_15_BYTE_SIZE);
+	}
+	case 448:
+	{
+		primary_charger_16_t tmp;
+		primary_charger_16_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_16_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_16_BYTE_SIZE;
+		return primary_charger_16_pack(data, &tmp, PRIMARY_CHARGER_16_BYTE_SIZE);
+	}
+	case 464:
+	{
+		primary_charger_17_t tmp;
+		primary_charger_17_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_17_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_17_BYTE_SIZE;
+		return primary_charger_17_pack(data, &tmp, PRIMARY_CHARGER_17_BYTE_SIZE);
+	}
+	case 480:
+	{
+		primary_charger_18_t tmp;
+		primary_charger_18_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_18_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_18_BYTE_SIZE;
+		return primary_charger_18_pack(data, &tmp, PRIMARY_CHARGER_18_BYTE_SIZE);
+	}
+	case 496:
+	{
+		primary_charger_19_t tmp;
+		primary_charger_19_converted_t tmp_converted;
+		uint8_t r_data_0;
+		uint8_t r_data_1;
+		uint8_t r_data_2;
+		uint8_t r_data_3;
+		uint8_t r_data_4;
+		uint8_t r_data_5;
+		uint8_t r_data_6;
+		uint8_t r_data_7;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_data_0,
+			&r_data_1,
+			&r_data_2,
+			&r_data_3,
+			&r_data_4,
+			&r_data_5,
+			&r_data_6,
+			&r_data_7);
+		tmp_converted.data_0 = (uint8_t)r_data_0;
+		tmp_converted.data_1 = (uint8_t)r_data_1;
+		tmp_converted.data_2 = (uint8_t)r_data_2;
+		tmp_converted.data_3 = (uint8_t)r_data_3;
+		tmp_converted.data_4 = (uint8_t)r_data_4;
+		tmp_converted.data_5 = (uint8_t)r_data_5;
+		tmp_converted.data_6 = (uint8_t)r_data_6;
+		tmp_converted.data_7 = (uint8_t)r_data_7;
+
+		primary_charger_19_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_CHARGER_19_BYTE_SIZE;
+		return primary_charger_19_pack(data, &tmp, PRIMARY_CHARGER_19_BYTE_SIZE);
+	}
 
     }
     return 0;
@@ -4090,6 +5116,25 @@ int primary_n_fields_from_id(int id)
 		case 1776: return 1;
 		case 1784: return 4;
 		case 1792: return 4;
+		case 256: return 8;
+		case 272: return 8;
+		case 288: return 8;
+		case 304: return 8;
+		case 320: return 8;
+		case 336: return 8;
+		case 344: return 8;
+		case 352: return 8;
+		case 368: return 8;
+		case 384: return 8;
+		case 392: return 8;
+		case 400: return 8;
+		case 408: return 8;
+		case 416: return 8;
+		case 432: return 8;
+		case 448: return 8;
+		case 464: return 8;
+		case 480: return 8;
+		case 496: return 8;
     }
     return 0;
 }
@@ -4820,6 +5865,215 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[2] = e_primary_float;
 		fields_types[3] = e_primary_float;
 		return 4;
+	case 256:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 272:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 288:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 304:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 320:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 336:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 344:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 352:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 368:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 384:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 392:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 400:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 408:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 416:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 432:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 448:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 464:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 480:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
+	case 496:
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
 
     }
     return 0;

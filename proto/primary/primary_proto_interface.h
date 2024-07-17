@@ -2102,6 +2102,367 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
+    for(int i = 0; i < pack->charger_1_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_1(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_1(i)._inner_timestamp();
+        (*net_signals)["CHARGER_1"]["_timestamp"].push(pack->charger_1(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_1"]["data_0"].push(pack->charger_1(i).data_0());
+		(*net_signals)["CHARGER_1"]["data_1"].push(pack->charger_1(i).data_1());
+		(*net_signals)["CHARGER_1"]["data_2"].push(pack->charger_1(i).data_2());
+		(*net_signals)["CHARGER_1"]["data_3"].push(pack->charger_1(i).data_3());
+		(*net_signals)["CHARGER_1"]["data_4"].push(pack->charger_1(i).data_4());
+		(*net_signals)["CHARGER_1"]["data_5"].push(pack->charger_1(i).data_5());
+		(*net_signals)["CHARGER_1"]["data_6"].push(pack->charger_1(i).data_6());
+		(*net_signals)["CHARGER_1"]["data_7"].push(pack->charger_1(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_2_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_2(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_2(i)._inner_timestamp();
+        (*net_signals)["CHARGER_2"]["_timestamp"].push(pack->charger_2(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_2"]["data_0"].push(pack->charger_2(i).data_0());
+		(*net_signals)["CHARGER_2"]["data_1"].push(pack->charger_2(i).data_1());
+		(*net_signals)["CHARGER_2"]["data_2"].push(pack->charger_2(i).data_2());
+		(*net_signals)["CHARGER_2"]["data_3"].push(pack->charger_2(i).data_3());
+		(*net_signals)["CHARGER_2"]["data_4"].push(pack->charger_2(i).data_4());
+		(*net_signals)["CHARGER_2"]["data_5"].push(pack->charger_2(i).data_5());
+		(*net_signals)["CHARGER_2"]["data_6"].push(pack->charger_2(i).data_6());
+		(*net_signals)["CHARGER_2"]["data_7"].push(pack->charger_2(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_3_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_3(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_3(i)._inner_timestamp();
+        (*net_signals)["CHARGER_3"]["_timestamp"].push(pack->charger_3(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_3"]["data_0"].push(pack->charger_3(i).data_0());
+		(*net_signals)["CHARGER_3"]["data_1"].push(pack->charger_3(i).data_1());
+		(*net_signals)["CHARGER_3"]["data_2"].push(pack->charger_3(i).data_2());
+		(*net_signals)["CHARGER_3"]["data_3"].push(pack->charger_3(i).data_3());
+		(*net_signals)["CHARGER_3"]["data_4"].push(pack->charger_3(i).data_4());
+		(*net_signals)["CHARGER_3"]["data_5"].push(pack->charger_3(i).data_5());
+		(*net_signals)["CHARGER_3"]["data_6"].push(pack->charger_3(i).data_6());
+		(*net_signals)["CHARGER_3"]["data_7"].push(pack->charger_3(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_4_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_4(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_4(i)._inner_timestamp();
+        (*net_signals)["CHARGER_4"]["_timestamp"].push(pack->charger_4(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_4"]["data_0"].push(pack->charger_4(i).data_0());
+		(*net_signals)["CHARGER_4"]["data_1"].push(pack->charger_4(i).data_1());
+		(*net_signals)["CHARGER_4"]["data_2"].push(pack->charger_4(i).data_2());
+		(*net_signals)["CHARGER_4"]["data_3"].push(pack->charger_4(i).data_3());
+		(*net_signals)["CHARGER_4"]["data_4"].push(pack->charger_4(i).data_4());
+		(*net_signals)["CHARGER_4"]["data_5"].push(pack->charger_4(i).data_5());
+		(*net_signals)["CHARGER_4"]["data_6"].push(pack->charger_4(i).data_6());
+		(*net_signals)["CHARGER_4"]["data_7"].push(pack->charger_4(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_5_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_5(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_5(i)._inner_timestamp();
+        (*net_signals)["CHARGER_5"]["_timestamp"].push(pack->charger_5(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_5"]["data_0"].push(pack->charger_5(i).data_0());
+		(*net_signals)["CHARGER_5"]["data_1"].push(pack->charger_5(i).data_1());
+		(*net_signals)["CHARGER_5"]["data_2"].push(pack->charger_5(i).data_2());
+		(*net_signals)["CHARGER_5"]["data_3"].push(pack->charger_5(i).data_3());
+		(*net_signals)["CHARGER_5"]["data_4"].push(pack->charger_5(i).data_4());
+		(*net_signals)["CHARGER_5"]["data_5"].push(pack->charger_5(i).data_5());
+		(*net_signals)["CHARGER_5"]["data_6"].push(pack->charger_5(i).data_6());
+		(*net_signals)["CHARGER_5"]["data_7"].push(pack->charger_5(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_6_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_6(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_6(i)._inner_timestamp();
+        (*net_signals)["CHARGER_6"]["_timestamp"].push(pack->charger_6(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_6"]["data_0"].push(pack->charger_6(i).data_0());
+		(*net_signals)["CHARGER_6"]["data_1"].push(pack->charger_6(i).data_1());
+		(*net_signals)["CHARGER_6"]["data_2"].push(pack->charger_6(i).data_2());
+		(*net_signals)["CHARGER_6"]["data_3"].push(pack->charger_6(i).data_3());
+		(*net_signals)["CHARGER_6"]["data_4"].push(pack->charger_6(i).data_4());
+		(*net_signals)["CHARGER_6"]["data_5"].push(pack->charger_6(i).data_5());
+		(*net_signals)["CHARGER_6"]["data_6"].push(pack->charger_6(i).data_6());
+		(*net_signals)["CHARGER_6"]["data_7"].push(pack->charger_6(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_7_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_7(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_7(i)._inner_timestamp();
+        (*net_signals)["CHARGER_7"]["_timestamp"].push(pack->charger_7(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_7"]["data_0"].push(pack->charger_7(i).data_0());
+		(*net_signals)["CHARGER_7"]["data_1"].push(pack->charger_7(i).data_1());
+		(*net_signals)["CHARGER_7"]["data_2"].push(pack->charger_7(i).data_2());
+		(*net_signals)["CHARGER_7"]["data_3"].push(pack->charger_7(i).data_3());
+		(*net_signals)["CHARGER_7"]["data_4"].push(pack->charger_7(i).data_4());
+		(*net_signals)["CHARGER_7"]["data_5"].push(pack->charger_7(i).data_5());
+		(*net_signals)["CHARGER_7"]["data_6"].push(pack->charger_7(i).data_6());
+		(*net_signals)["CHARGER_7"]["data_7"].push(pack->charger_7(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_8_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_8(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_8(i)._inner_timestamp();
+        (*net_signals)["CHARGER_8"]["_timestamp"].push(pack->charger_8(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_8"]["data_0"].push(pack->charger_8(i).data_0());
+		(*net_signals)["CHARGER_8"]["data_1"].push(pack->charger_8(i).data_1());
+		(*net_signals)["CHARGER_8"]["data_2"].push(pack->charger_8(i).data_2());
+		(*net_signals)["CHARGER_8"]["data_3"].push(pack->charger_8(i).data_3());
+		(*net_signals)["CHARGER_8"]["data_4"].push(pack->charger_8(i).data_4());
+		(*net_signals)["CHARGER_8"]["data_5"].push(pack->charger_8(i).data_5());
+		(*net_signals)["CHARGER_8"]["data_6"].push(pack->charger_8(i).data_6());
+		(*net_signals)["CHARGER_8"]["data_7"].push(pack->charger_8(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_9_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_9(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_9(i)._inner_timestamp();
+        (*net_signals)["CHARGER_9"]["_timestamp"].push(pack->charger_9(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_9"]["data_0"].push(pack->charger_9(i).data_0());
+		(*net_signals)["CHARGER_9"]["data_1"].push(pack->charger_9(i).data_1());
+		(*net_signals)["CHARGER_9"]["data_2"].push(pack->charger_9(i).data_2());
+		(*net_signals)["CHARGER_9"]["data_3"].push(pack->charger_9(i).data_3());
+		(*net_signals)["CHARGER_9"]["data_4"].push(pack->charger_9(i).data_4());
+		(*net_signals)["CHARGER_9"]["data_5"].push(pack->charger_9(i).data_5());
+		(*net_signals)["CHARGER_9"]["data_6"].push(pack->charger_9(i).data_6());
+		(*net_signals)["CHARGER_9"]["data_7"].push(pack->charger_9(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_10_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_10(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_10(i)._inner_timestamp();
+        (*net_signals)["CHARGER_10"]["_timestamp"].push(pack->charger_10(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_10"]["data_0"].push(pack->charger_10(i).data_0());
+		(*net_signals)["CHARGER_10"]["data_1"].push(pack->charger_10(i).data_1());
+		(*net_signals)["CHARGER_10"]["data_2"].push(pack->charger_10(i).data_2());
+		(*net_signals)["CHARGER_10"]["data_3"].push(pack->charger_10(i).data_3());
+		(*net_signals)["CHARGER_10"]["data_4"].push(pack->charger_10(i).data_4());
+		(*net_signals)["CHARGER_10"]["data_5"].push(pack->charger_10(i).data_5());
+		(*net_signals)["CHARGER_10"]["data_6"].push(pack->charger_10(i).data_6());
+		(*net_signals)["CHARGER_10"]["data_7"].push(pack->charger_10(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_11_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_11(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_11(i)._inner_timestamp();
+        (*net_signals)["CHARGER_11"]["_timestamp"].push(pack->charger_11(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_11"]["data_0"].push(pack->charger_11(i).data_0());
+		(*net_signals)["CHARGER_11"]["data_1"].push(pack->charger_11(i).data_1());
+		(*net_signals)["CHARGER_11"]["data_2"].push(pack->charger_11(i).data_2());
+		(*net_signals)["CHARGER_11"]["data_3"].push(pack->charger_11(i).data_3());
+		(*net_signals)["CHARGER_11"]["data_4"].push(pack->charger_11(i).data_4());
+		(*net_signals)["CHARGER_11"]["data_5"].push(pack->charger_11(i).data_5());
+		(*net_signals)["CHARGER_11"]["data_6"].push(pack->charger_11(i).data_6());
+		(*net_signals)["CHARGER_11"]["data_7"].push(pack->charger_11(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_12_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_12(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_12(i)._inner_timestamp();
+        (*net_signals)["CHARGER_12"]["_timestamp"].push(pack->charger_12(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_12"]["data_0"].push(pack->charger_12(i).data_0());
+		(*net_signals)["CHARGER_12"]["data_1"].push(pack->charger_12(i).data_1());
+		(*net_signals)["CHARGER_12"]["data_2"].push(pack->charger_12(i).data_2());
+		(*net_signals)["CHARGER_12"]["data_3"].push(pack->charger_12(i).data_3());
+		(*net_signals)["CHARGER_12"]["data_4"].push(pack->charger_12(i).data_4());
+		(*net_signals)["CHARGER_12"]["data_5"].push(pack->charger_12(i).data_5());
+		(*net_signals)["CHARGER_12"]["data_6"].push(pack->charger_12(i).data_6());
+		(*net_signals)["CHARGER_12"]["data_7"].push(pack->charger_12(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_13_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_13(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_13(i)._inner_timestamp();
+        (*net_signals)["CHARGER_13"]["_timestamp"].push(pack->charger_13(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_13"]["data_0"].push(pack->charger_13(i).data_0());
+		(*net_signals)["CHARGER_13"]["data_1"].push(pack->charger_13(i).data_1());
+		(*net_signals)["CHARGER_13"]["data_2"].push(pack->charger_13(i).data_2());
+		(*net_signals)["CHARGER_13"]["data_3"].push(pack->charger_13(i).data_3());
+		(*net_signals)["CHARGER_13"]["data_4"].push(pack->charger_13(i).data_4());
+		(*net_signals)["CHARGER_13"]["data_5"].push(pack->charger_13(i).data_5());
+		(*net_signals)["CHARGER_13"]["data_6"].push(pack->charger_13(i).data_6());
+		(*net_signals)["CHARGER_13"]["data_7"].push(pack->charger_13(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_14_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_14(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_14(i)._inner_timestamp();
+        (*net_signals)["CHARGER_14"]["_timestamp"].push(pack->charger_14(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_14"]["data_0"].push(pack->charger_14(i).data_0());
+		(*net_signals)["CHARGER_14"]["data_1"].push(pack->charger_14(i).data_1());
+		(*net_signals)["CHARGER_14"]["data_2"].push(pack->charger_14(i).data_2());
+		(*net_signals)["CHARGER_14"]["data_3"].push(pack->charger_14(i).data_3());
+		(*net_signals)["CHARGER_14"]["data_4"].push(pack->charger_14(i).data_4());
+		(*net_signals)["CHARGER_14"]["data_5"].push(pack->charger_14(i).data_5());
+		(*net_signals)["CHARGER_14"]["data_6"].push(pack->charger_14(i).data_6());
+		(*net_signals)["CHARGER_14"]["data_7"].push(pack->charger_14(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_15_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_15(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_15(i)._inner_timestamp();
+        (*net_signals)["CHARGER_15"]["_timestamp"].push(pack->charger_15(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_15"]["data_0"].push(pack->charger_15(i).data_0());
+		(*net_signals)["CHARGER_15"]["data_1"].push(pack->charger_15(i).data_1());
+		(*net_signals)["CHARGER_15"]["data_2"].push(pack->charger_15(i).data_2());
+		(*net_signals)["CHARGER_15"]["data_3"].push(pack->charger_15(i).data_3());
+		(*net_signals)["CHARGER_15"]["data_4"].push(pack->charger_15(i).data_4());
+		(*net_signals)["CHARGER_15"]["data_5"].push(pack->charger_15(i).data_5());
+		(*net_signals)["CHARGER_15"]["data_6"].push(pack->charger_15(i).data_6());
+		(*net_signals)["CHARGER_15"]["data_7"].push(pack->charger_15(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_16_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_16(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_16(i)._inner_timestamp();
+        (*net_signals)["CHARGER_16"]["_timestamp"].push(pack->charger_16(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_16"]["data_0"].push(pack->charger_16(i).data_0());
+		(*net_signals)["CHARGER_16"]["data_1"].push(pack->charger_16(i).data_1());
+		(*net_signals)["CHARGER_16"]["data_2"].push(pack->charger_16(i).data_2());
+		(*net_signals)["CHARGER_16"]["data_3"].push(pack->charger_16(i).data_3());
+		(*net_signals)["CHARGER_16"]["data_4"].push(pack->charger_16(i).data_4());
+		(*net_signals)["CHARGER_16"]["data_5"].push(pack->charger_16(i).data_5());
+		(*net_signals)["CHARGER_16"]["data_6"].push(pack->charger_16(i).data_6());
+		(*net_signals)["CHARGER_16"]["data_7"].push(pack->charger_16(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_17_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_17(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_17(i)._inner_timestamp();
+        (*net_signals)["CHARGER_17"]["_timestamp"].push(pack->charger_17(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_17"]["data_0"].push(pack->charger_17(i).data_0());
+		(*net_signals)["CHARGER_17"]["data_1"].push(pack->charger_17(i).data_1());
+		(*net_signals)["CHARGER_17"]["data_2"].push(pack->charger_17(i).data_2());
+		(*net_signals)["CHARGER_17"]["data_3"].push(pack->charger_17(i).data_3());
+		(*net_signals)["CHARGER_17"]["data_4"].push(pack->charger_17(i).data_4());
+		(*net_signals)["CHARGER_17"]["data_5"].push(pack->charger_17(i).data_5());
+		(*net_signals)["CHARGER_17"]["data_6"].push(pack->charger_17(i).data_6());
+		(*net_signals)["CHARGER_17"]["data_7"].push(pack->charger_17(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_18_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_18(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_18(i)._inner_timestamp();
+        (*net_signals)["CHARGER_18"]["_timestamp"].push(pack->charger_18(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_18"]["data_0"].push(pack->charger_18(i).data_0());
+		(*net_signals)["CHARGER_18"]["data_1"].push(pack->charger_18(i).data_1());
+		(*net_signals)["CHARGER_18"]["data_2"].push(pack->charger_18(i).data_2());
+		(*net_signals)["CHARGER_18"]["data_3"].push(pack->charger_18(i).data_3());
+		(*net_signals)["CHARGER_18"]["data_4"].push(pack->charger_18(i).data_4());
+		(*net_signals)["CHARGER_18"]["data_5"].push(pack->charger_18(i).data_5());
+		(*net_signals)["CHARGER_18"]["data_6"].push(pack->charger_18(i).data_6());
+		(*net_signals)["CHARGER_18"]["data_7"].push(pack->charger_18(i).data_7());
+
+    }
+
+    for(int i = 0; i < pack->charger_19_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->charger_19(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->charger_19(i)._inner_timestamp();
+        (*net_signals)["CHARGER_19"]["_timestamp"].push(pack->charger_19(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["CHARGER_19"]["data_0"].push(pack->charger_19(i).data_0());
+		(*net_signals)["CHARGER_19"]["data_1"].push(pack->charger_19(i).data_1());
+		(*net_signals)["CHARGER_19"]["data_2"].push(pack->charger_19(i).data_2());
+		(*net_signals)["CHARGER_19"]["data_3"].push(pack->charger_19(i).data_3());
+		(*net_signals)["CHARGER_19"]["data_4"].push(pack->charger_19(i).data_4());
+		(*net_signals)["CHARGER_19"]["data_5"].push(pack->charger_19(i).data_5());
+		(*net_signals)["CHARGER_19"]["data_6"].push(pack->charger_19(i).data_6());
+		(*net_signals)["CHARGER_19"]["data_7"].push(pack->charger_19(i).data_7());
+
+    }
+
 }
 
 void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, device_t* device) {
@@ -3717,6 +4078,348 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 			proto_msg->set_field_2(msg->field_2);
 			proto_msg->set_field_3(msg->field_3);
 			proto_msg->set_field_4(msg->field_4);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 256: {
+            primary_charger_1_t* msg = (primary_charger_1_t*)(device->message);
+            primary::CHARGER_1* proto_msg = pack->add_charger_1();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 272: {
+            primary_charger_2_t* msg = (primary_charger_2_t*)(device->message);
+            primary::CHARGER_2* proto_msg = pack->add_charger_2();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 288: {
+            primary_charger_3_t* msg = (primary_charger_3_t*)(device->message);
+            primary::CHARGER_3* proto_msg = pack->add_charger_3();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 304: {
+            primary_charger_4_t* msg = (primary_charger_4_t*)(device->message);
+            primary::CHARGER_4* proto_msg = pack->add_charger_4();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 320: {
+            primary_charger_5_t* msg = (primary_charger_5_t*)(device->message);
+            primary::CHARGER_5* proto_msg = pack->add_charger_5();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 336: {
+            primary_charger_6_t* msg = (primary_charger_6_t*)(device->message);
+            primary::CHARGER_6* proto_msg = pack->add_charger_6();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 344: {
+            primary_charger_7_t* msg = (primary_charger_7_t*)(device->message);
+            primary::CHARGER_7* proto_msg = pack->add_charger_7();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 352: {
+            primary_charger_8_t* msg = (primary_charger_8_t*)(device->message);
+            primary::CHARGER_8* proto_msg = pack->add_charger_8();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 368: {
+            primary_charger_9_t* msg = (primary_charger_9_t*)(device->message);
+            primary::CHARGER_9* proto_msg = pack->add_charger_9();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 384: {
+            primary_charger_10_t* msg = (primary_charger_10_t*)(device->message);
+            primary::CHARGER_10* proto_msg = pack->add_charger_10();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 392: {
+            primary_charger_11_t* msg = (primary_charger_11_t*)(device->message);
+            primary::CHARGER_11* proto_msg = pack->add_charger_11();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 400: {
+            primary_charger_12_t* msg = (primary_charger_12_t*)(device->message);
+            primary::CHARGER_12* proto_msg = pack->add_charger_12();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 408: {
+            primary_charger_13_t* msg = (primary_charger_13_t*)(device->message);
+            primary::CHARGER_13* proto_msg = pack->add_charger_13();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 416: {
+            primary_charger_14_t* msg = (primary_charger_14_t*)(device->message);
+            primary::CHARGER_14* proto_msg = pack->add_charger_14();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 432: {
+            primary_charger_15_t* msg = (primary_charger_15_t*)(device->message);
+            primary::CHARGER_15* proto_msg = pack->add_charger_15();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 448: {
+            primary_charger_16_t* msg = (primary_charger_16_t*)(device->message);
+            primary::CHARGER_16* proto_msg = pack->add_charger_16();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 464: {
+            primary_charger_17_t* msg = (primary_charger_17_t*)(device->message);
+            primary::CHARGER_17* proto_msg = pack->add_charger_17();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 480: {
+            primary_charger_18_t* msg = (primary_charger_18_t*)(device->message);
+            primary::CHARGER_18* proto_msg = pack->add_charger_18();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 496: {
+            primary_charger_19_t* msg = (primary_charger_19_t*)(device->message);
+            primary::CHARGER_19* proto_msg = pack->add_charger_19();
+			proto_msg->set_data_0(msg->data_0);
+			proto_msg->set_data_1(msg->data_1);
+			proto_msg->set_data_2(msg->data_2);
+			proto_msg->set_data_3(msg->data_3);
+			proto_msg->set_data_4(msg->data_4);
+			proto_msg->set_data_5(msg->data_5);
+			proto_msg->set_data_6(msg->data_6);
+			proto_msg->set_data_7(msg->data_7);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

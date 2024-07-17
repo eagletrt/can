@@ -84,6 +84,25 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 1776: return PRIMARY_INTERVAL_DEBUG_SIGNAL_CRASH_DEBUG_ACK;
        case 1784: return PRIMARY_INTERVAL_DEBUG_SIGNAL_1;
        case 1792: return PRIMARY_INTERVAL_DEBUG_SIGNAL_2;
+       case 256: return PRIMARY_INTERVAL_CHARGER_1;
+       case 272: return PRIMARY_INTERVAL_CHARGER_2;
+       case 288: return PRIMARY_INTERVAL_CHARGER_3;
+       case 304: return PRIMARY_INTERVAL_CHARGER_4;
+       case 320: return PRIMARY_INTERVAL_CHARGER_5;
+       case 336: return PRIMARY_INTERVAL_CHARGER_6;
+       case 344: return PRIMARY_INTERVAL_CHARGER_7;
+       case 352: return PRIMARY_INTERVAL_CHARGER_8;
+       case 368: return PRIMARY_INTERVAL_CHARGER_9;
+       case 384: return PRIMARY_INTERVAL_CHARGER_10;
+       case 392: return PRIMARY_INTERVAL_CHARGER_11;
+       case 400: return PRIMARY_INTERVAL_CHARGER_12;
+       case 408: return PRIMARY_INTERVAL_CHARGER_13;
+       case 416: return PRIMARY_INTERVAL_CHARGER_14;
+       case 432: return PRIMARY_INTERVAL_CHARGER_15;
+       case 448: return PRIMARY_INTERVAL_CHARGER_16;
+       case 464: return PRIMARY_INTERVAL_CHARGER_17;
+       case 480: return PRIMARY_INTERVAL_CHARGER_18;
+       case 496: return PRIMARY_INTERVAL_CHARGER_19;
 
     }
     return -1;
@@ -207,6 +226,25 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 1776: return PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG_ACK;
        case 1784: return PRIMARY_INDEX_DEBUG_SIGNAL_1;
        case 1792: return PRIMARY_INDEX_DEBUG_SIGNAL_2;
+       case 256: return PRIMARY_INDEX_CHARGER_1;
+       case 272: return PRIMARY_INDEX_CHARGER_2;
+       case 288: return PRIMARY_INDEX_CHARGER_3;
+       case 304: return PRIMARY_INDEX_CHARGER_4;
+       case 320: return PRIMARY_INDEX_CHARGER_5;
+       case 336: return PRIMARY_INDEX_CHARGER_6;
+       case 344: return PRIMARY_INDEX_CHARGER_7;
+       case 352: return PRIMARY_INDEX_CHARGER_8;
+       case 368: return PRIMARY_INDEX_CHARGER_9;
+       case 384: return PRIMARY_INDEX_CHARGER_10;
+       case 392: return PRIMARY_INDEX_CHARGER_11;
+       case 400: return PRIMARY_INDEX_CHARGER_12;
+       case 408: return PRIMARY_INDEX_CHARGER_13;
+       case 416: return PRIMARY_INDEX_CHARGER_14;
+       case 432: return PRIMARY_INDEX_CHARGER_15;
+       case 448: return PRIMARY_INDEX_CHARGER_16;
+       case 464: return PRIMARY_INDEX_CHARGER_17;
+       case 480: return PRIMARY_INDEX_CHARGER_18;
+       case 496: return PRIMARY_INDEX_CHARGER_19;
 
     }
     return -1;
@@ -218,7 +256,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 116 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 135 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -795,6 +833,139 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_DEBUG_SIGNAL_2] > PRIMARY_INTERVAL_DEBUG_SIGNAL_2 * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DEBUG_SIGNAL_2);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_1)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_1] > PRIMARY_INTERVAL_CHARGER_1 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_1);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_2)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_2] > PRIMARY_INTERVAL_CHARGER_2 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_2);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_3)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_3] > PRIMARY_INTERVAL_CHARGER_3 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_3);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_4)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_4] > PRIMARY_INTERVAL_CHARGER_4 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_4);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_5)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_5] > PRIMARY_INTERVAL_CHARGER_5 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_5);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_6)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_6] > PRIMARY_INTERVAL_CHARGER_6 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_6);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_7)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_7] > PRIMARY_INTERVAL_CHARGER_7 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_7);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_8)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_8] > PRIMARY_INTERVAL_CHARGER_8 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_8);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_9)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_9] > PRIMARY_INTERVAL_CHARGER_9 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_9);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_10)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_10] > PRIMARY_INTERVAL_CHARGER_10 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_10);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_11)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_11] > PRIMARY_INTERVAL_CHARGER_11 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_11);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_12)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_12] > PRIMARY_INTERVAL_CHARGER_12 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_12);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_13)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_13] > PRIMARY_INTERVAL_CHARGER_13 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_13);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_14)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_14] > PRIMARY_INTERVAL_CHARGER_14 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_14);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_15)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_15] > PRIMARY_INTERVAL_CHARGER_15 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_15);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_16)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_16] > PRIMARY_INTERVAL_CHARGER_16 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_16);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_17)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_17] > PRIMARY_INTERVAL_CHARGER_17 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_17);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_18)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_18] > PRIMARY_INTERVAL_CHARGER_18 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_18);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_CHARGER_19)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_CHARGER_19] > PRIMARY_INTERVAL_CHARGER_19 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_CHARGER_19);
     }
 
 }
