@@ -2621,6 +2621,405 @@
                     "force": "uint16"
                 }
             }
+        },
+        {
+            "name": "CHARGER_1",
+            "fixed_id": 256,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [
+                "CHARGER"
+            ],
+            "interval": 100,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_2",
+            "fixed_id": 272,
+            "sending": [
+                "CHARGER"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "interval": 100,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_3",
+            "fixed_id": 288,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [
+                "CHARGER"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_4",
+            "fixed_id": 304,
+            "sending": [
+                "CHARGER"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "interval": 100,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_5",
+            "fixed_id": 320,
+            "sending": [
+                "CHARGER"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_6",
+            "fixed_id": 336,
+            "sending": [
+                "CHARGER"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_7",
+            "fixed_id": 344,
+            "sending": [
+                "CHARGER"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_8",
+            "fixed_id": 352,
+            "sending": [
+                "CHARGER"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_9",
+            "fixed_id": 368,
+            "sending": [
+                "CHARGER"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_10",
+            "fixed_id": 384,
+            "sending": [
+                "CHARGER"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_11",
+            "fixed_id": 392,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [
+                "CHARGER"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_12",
+            "fixed_id": 400,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [
+                "CHARGER"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_13",
+            "fixed_id": 408,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [
+                "CHARGER"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_14",
+            "fixed_id": 416,
+            "sending": [
+                "CHARGER"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_15",
+            "fixed_id": 432,
+            "sending": [
+                "CHARGER"
+            ],
+            "receiving": [
+                "HANDCART"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_16",
+            "fixed_id": 448,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [
+                "CHARGER"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_17",
+            "fixed_id": 464,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [
+                "CHARGER"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_18",
+            "fixed_id": 480,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [
+                "CHARGER"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
+        },
+        {
+            "name": "CHARGER_19",
+            "fixed_id": 496,
+            "sending": [
+                "HANDCART"
+            ],
+            "receiving": [
+                "CHARGER"
+            ],
+            "interval": 1000,
+            "contents": {
+                "data_0": "uint8",
+                "data_1": "uint8",
+                "data_2": "uint8",
+                "data_3": "uint8",
+                "data_4": "uint8",
+                "data_5": "uint8",
+                "data_6": "uint8",
+                "data_7": "uint8"
+            }
         }
     ]
 }
