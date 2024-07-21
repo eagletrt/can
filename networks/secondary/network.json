@@ -1709,7 +1709,7 @@
         "ECU"
       ],
       "receiving": [],
-      "description": "Encoder and inverter speed in rad/sec",
+      "description": "Front encoder speed in rad/sec",
       "interval": 10,
       "contents": {
         "fl": {
@@ -1721,6 +1721,35 @@
           ]
         },
         "fr": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [
+            -200,
+            200
+          ]
+        }
+      }
+    },
+    {
+      "name": "REAR_ANGULAR_VELOCITY",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "DITOCAN"
+      ],
+      "receiving": [],
+      "description": "Rear encoders speed in rad/sec",
+      "interval": 10,
+      "contents": {
+        "rl": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [
+            -200,
+            200
+          ]
+        },
+        "rr": {
           "type": "float32",
           "force": "uint16",
           "range": [
