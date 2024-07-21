@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: ACQUISINATOR TLM ACQUISINATOR IRTS_FL TLM TLM ACQUISINATOR IMU ACQUISINATOR ACQUISINATOR TLM TLM TLM IRTS_RR ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM TLM IMU TLM ACQUISINATOR ACQUISINATOR TLM ACQUISINATOR TLM TLM TLM TLM ACQUISINATOR IRTS_FL TLM ACQUISINATOR TLM IRTS_FL ACQUISINATOR TLM ACQUISINATOR IRTS_FL ECU TLM ACQUISINATOR TLM IRTS_FR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM TLM ACQUISINATOR ACQUISINATOR ECU TLM TLM ECU ACQUISINATOR ACQUISINATOR ECU TLM TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM TLM ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM TLM TLM ACQUISINATOR TLM ACQUISINATOR TLM TLM TLM ACQUISINATOR ACQUISINATOR TLM ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM ACQUISINATOR IRTS_RL ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM TLM ACQUISINATOR IRTS_RR TLM ACQUISINATOR ACQUISINATOR TLM TLM ACQUISINATOR TLM TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM ACQUISINATOR ACQUISINATOR TLM ACQUISINATOR ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM IRTS_RR ACQUISINATOR TLM IRTS_RR TLM IRTS_FR TLM IRTS_FR ACQUISINATOR ACQUISINATOR TLM IRTS_FR ACQUISINATOR IRTS_RL TLM IRTS_RL ACQUISINATOR ACQUISINATOR IRTS_RL TLM TLM ACQUISINATOR ACQUISINATOR ACQUISINATOR
+BU_: ACQUISINATOR ACQUISINATOR ACQUISINATOR IRTS_FL TLM TLM TLM IMU ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM TLM TLM TLM ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM TLM IMU ACQUISINATOR ACQUISINATOR TLM TLM TLM TLM TLM ACQUISINATOR ACQUISINATOR IRTS_FL ECU TLM TLM IRTS_FL ACQUISINATOR ACQUISINATOR ACQUISINATOR IRTS_FL DITOCAN TLM TLM TLM IRTS_FR TLM ACQUISINATOR ACQUISINATOR TLM ACQUISINATOR TLM TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM TLM ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM TLM TLM ACQUISINATOR ECU TLM ACQUISINATOR ECU ACQUISINATOR TLM ECU TLM ACQUISINATOR TLM ACQUISINATOR TLM TLM TLM ACQUISINATOR TLM ACQUISINATOR TLM TLM TLM ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM TLM ACQUISINATOR TLM ACQUISINATOR TLM TLM ACQUISINATOR TLM ACQUISINATOR TLM TLM ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR ACQUISINATOR TLM TLM TLM ACQUISINATOR TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM ACQUISINATOR ACQUISINATOR TLM TLM ACQUISINATOR ACQUISINATOR ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR ACQUISINATOR IRTS_RL TLM ACQUISINATOR TLM ACQUISINATOR TLM IRTS_RR ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM ACQUISINATOR TLM IRTS_RR IRTS_RR IRTS_RR ACQUISINATOR TLM IRTS_FR TLM IRTS_FR TLM IRTS_FR ACQUISINATOR ACQUISINATOR TLM IRTS_RL ACQUISINATOR IRTS_RL TLM IRTS_RL ACQUISINATOR ACQUISINATOR TLM TLM TLM
 
 
 BO_ 0 ACQUISINATOR_JMP_TO_BLT: 1 Vector__XXX
@@ -295,99 +295,103 @@ BO_ 1560 ANGULAR_VELOCITY: 4 Vector__XXX
  SG_ fr : 16|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
  SG_ fl : 0|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
 
-BO_ 1568 HV_SOC_ESTIMATION_STATE: 6 Vector__XXX
+BO_ 1568 REAR_ANGULAR_VELOCITY: 4 Vector__XXX
+ SG_ rr : 16|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+ SG_ rl : 0|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+
+BO_ 1576 HV_SOC_ESTIMATION_STATE: 6 Vector__XXX
  SG_ rc2 : 32|16@1+ (6.86655985351339e-05,0) [0|4.5] "" Vector__XXX
  SG_ rc1 : 16|16@1+ (6.86655985351339e-05,0) [0|4.5] "" Vector__XXX
  SG_ soc : 0|16@1+ (1.5259021896696422e-05,0) [0|1] "" Vector__XXX
 
-BO_ 1576 HV_SOC_ESTIMATION_COVARIANCE: 6 Vector__XXX
+BO_ 1584 HV_SOC_ESTIMATION_COVARIANCE: 6 Vector__XXX
  SG_ rc2 : 32|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
  SG_ rc1 : 16|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
  SG_ soc : 0|16@1+ (0.00015259021896696422,0) [0|10] "" Vector__XXX
 
-BO_ 1584 LV_SOC_ESTIMATION_STATE: 6 Vector__XXX
+BO_ 1592 LV_SOC_ESTIMATION_STATE: 6 Vector__XXX
  SG_ rc2 : 32|16@1+ (6.86655985351339e-05,0) [0|4.5] "" Vector__XXX
  SG_ rc1 : 16|16@1+ (6.86655985351339e-05,0) [0|4.5] "" Vector__XXX
  SG_ soc : 0|16@1+ (1.5259021896696422e-05,0) [0|1] "" Vector__XXX
 
-BO_ 1592 LV_SOC_ESTIMATION_COVARIANCE: 6 Vector__XXX
+BO_ 1600 LV_SOC_ESTIMATION_COVARIANCE: 6 Vector__XXX
  SG_ rc2 : 32|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
  SG_ rc1 : 16|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
  SG_ soc : 0|16@1+ (0.00015259021896696422,0) [0|10] "" Vector__XXX
 
-BO_ 1600 PEDAL_THROTTLE: 2 Vector__XXX
+BO_ 1608 PEDAL_THROTTLE: 2 Vector__XXX
  SG_ throttle : 0|16@1+ (1.5259021896696422e-05,0) [0|1] "" Vector__XXX
 
-BO_ 1608 PEDAL_BRAKES_PRESSURE: 4 Vector__XXX
+BO_ 1616 PEDAL_BRAKES_PRESSURE: 4 Vector__XXX
  SG_ rear : 16|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
  SG_ front : 0|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
 
-BO_ 1616 STEER_ANGLE: 4 Vector__XXX
+BO_ 1624 STEER_ANGLE: 4 Vector__XXX
  SG_ angle : 0|32@1+ (8.38190317349087e-08,-180) [-180|180] "" Vector__XXX
 
-BO_ 1624 ODOMETER: 4 Vector__XXX
+BO_ 1632 ODOMETER: 4 Vector__XXX
  SG_ kilometers : 0|32@1+ (0.00023283064370807974,0) [0|1000000] "" Vector__XXX
 
-BO_ 1632 TPMS_PRESSURE: 4 Vector__XXX
+BO_ 1640 TPMS_PRESSURE: 4 Vector__XXX
  SG_ rr : 24|8@1+ (1.0,0) [0|255] "" Vector__XXX
  SG_ rl : 16|8@1+ (1.0,0) [0|255] "" Vector__XXX
  SG_ fr : 8|8@1+ (1.0,0) [0|255] "" Vector__XXX
  SG_ fl : 0|8@1+ (1.0,0) [0|255] "" Vector__XXX
 
-BO_ 1640 TPMS_TEMPERATURE: 4 Vector__XXX
+BO_ 1648 TPMS_TEMPERATURE: 4 Vector__XXX
  SG_ rr : 24|8@1+ (1.0,0) [0|255] "" Vector__XXX
  SG_ rl : 16|8@1+ (1.0,0) [0|255] "" Vector__XXX
  SG_ fr : 8|8@1+ (1.0,0) [0|255] "" Vector__XXX
  SG_ fl : 0|8@1+ (1.0,0) [0|255] "" Vector__XXX
 
-BO_ 1648 TLM_UNIX_TIMESTAMP: 8 Vector__XXX
+BO_ 1656 TLM_UNIX_TIMESTAMP: 8 Vector__XXX
  SG_ timestamp : 0|64@1+ (1,0) [0|18446744073709551615] "" Vector__XXX
 
-BO_ 1656 TLM_LAP_TIME: 4 Vector__XXX
+BO_ 1664 TLM_LAP_TIME: 4 Vector__XXX
  SG_ lap_time : 16|16@1+ (0.015259021896696421,0) [0|1000] "" Vector__XXX
  SG_ lap_count : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
 
-BO_ 1664 TLM_LAPS_STATS: 6 Vector__XXX
+BO_ 1672 TLM_LAPS_STATS: 6 Vector__XXX
  SG_ last_time : 32|16@1+ (0.015259021896696421,0) [0|1000] "" Vector__XXX
  SG_ best_time : 16|16@1+ (0.015259021896696421,0) [0|1000] "" Vector__XXX
  SG_ lap_number : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
 
-BO_ 1672 TLM_NETWORK_INTERFACE: 8 Vector__XXX
+BO_ 1680 TLM_NETWORK_INTERFACE: 8 Vector__XXX
  SG_ ip_address : 32|32@1+ (1,0) [0|4294967295] "" Vector__XXX
  SG_ iname_3 : 24|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ iname_2 : 16|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ iname_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ iname_0 : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1680 AMMO_COMPRESSION: 8 Vector__XXX
+BO_ 1688 AMMO_COMPRESSION: 8 Vector__XXX
  SG_ fr : 48|16@1+ (0.0010681315327687496,-20) [-20|50] "" Vector__XXX
  SG_ fl : 32|16@1+ (0.0010681315327687496,-20) [-20|50] "" Vector__XXX
  SG_ rr : 16|16@1+ (0.0010681315327687496,-50) [-50|20] "" Vector__XXX
  SG_ rl : 0|16@1+ (0.0010681315327687496,-50) [-50|20] "" Vector__XXX
 
-BO_ 1688 ACQUISINATOR_CALIBRATIONS_OFFSETS: 7 Vector__XXX
+BO_ 1696 ACQUISINATOR_CALIBRATIONS_OFFSETS: 7 Vector__XXX
  SG_ offset2 : 24|32@1+ (4.656612874161595e-08,-100.0) [-100.0|100.0] "" Vector__XXX
  SG_ offset1 : 8|16@1+ (0.0030518043793392844,-100.0) [-100.0|100.0] "" Vector__XXX
  SG_ acquisinator_id : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1696 LINK_DEFORMATION_DEBUG_VOLTAGES: 5 Vector__XXX
+BO_ 1704 LINK_DEFORMATION_DEBUG_VOLTAGES: 5 Vector__XXX
  SG_ raw_voltage : 5|32@1+ (8.149072529782791e-10,0.0) [0.0|3.5] "" Vector__XXX
  SG_ rod_id : 2|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ wheel_id : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
-BO_ 1704 LINK_DEFORMATION_FL_WHEEL: 5 Vector__XXX
+BO_ 1712 LINK_DEFORMATION_FL_WHEEL: 5 Vector__XXX
  SG_ deformation : 3|32@1+ (4.656612874161595e-12,-0.01) [-0.01|0.01] "" Vector__XXX
  SG_ rod_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 1712 LINK_DEFORMATION_FR_WHEEL: 5 Vector__XXX
+BO_ 1720 LINK_DEFORMATION_FR_WHEEL: 5 Vector__XXX
  SG_ deformation : 3|32@1+ (4.656612874161595e-12,-0.01) [-0.01|0.01] "" Vector__XXX
  SG_ rod_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 1720 LINK_DEFORMATION_RL_WHEEL: 5 Vector__XXX
+BO_ 1728 LINK_DEFORMATION_RL_WHEEL: 5 Vector__XXX
  SG_ deformation : 3|32@1+ (4.656612874161595e-12,-0.01) [-0.01|0.01] "" Vector__XXX
  SG_ rod_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
-BO_ 1728 LINK_DEFORMATION_RR_WHEEL: 5 Vector__XXX
+BO_ 1736 LINK_DEFORMATION_RR_WHEEL: 5 Vector__XXX
  SG_ deformation : 3|32@1+ (4.656612874161595e-12,-0.01) [-0.01|0.01] "" Vector__XXX
  SG_ rod_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
@@ -395,23 +399,23 @@ BO_ 72 LINK_DEFORMATION_SET_CALIBRATION: 0 Vector__XXX
 
 BO_ 80 AMMO_COMPRESSION_SET_CALIBRATION: 0 Vector__XXX
 
-BO_ 1736 DEBUG_SIGNAL_1: 8 Vector__XXX
+BO_ 1744 DEBUG_SIGNAL_1: 8 Vector__XXX
  SG_ field_4 : 48|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_3 : 32|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_2 : 16|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_1 : 0|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
 
-BO_ 1744 DEBUG_SIGNAL_2: 8 Vector__XXX
+BO_ 1752 DEBUG_SIGNAL_2: 8 Vector__XXX
  SG_ field_4 : 48|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_3 : 32|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_2 : 16|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_1 : 0|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
 
-BO_ 1752 COOLING_TEMP_PUMPS: 4 Vector__XXX
+BO_ 1760 COOLING_TEMP_PUMPS: 4 Vector__XXX
  SG_ output : 16|16@1+ (0.0018310826276035706,-10) [-10|110] "" Vector__XXX
  SG_ input : 0|16@1+ (0.0018310826276035706,-10) [-10|110] "" Vector__XXX
 
-BO_ 1760 COOLING_TEMP_RADIATORS: 2 Vector__XXX
+BO_ 1768 COOLING_TEMP_RADIATORS: 2 Vector__XXX
  SG_ air_temp : 0|16@1+ (0.0018310826276035706,-10) [-10|110] "" Vector__XXX
 
 
@@ -504,34 +508,35 @@ CM_ BO_ 1203 "Rear Right wheel InfraRed Temperature Sensor data, channels 13 thr
 CM_ BO_ 1536 "Vehicle position in meters and heading in radians";
 CM_ BO_ 1544 "Vehicle speed in m/s";
 CM_ BO_ 1552 "Vehicle curvilinear coordinates wrt baseline";
-CM_ BO_ 1560 "Encoder and inverter speed in rad/sec";
-CM_ BO_ 1568 "State of Charge estimation state";
-CM_ BO_ 1576 "State of Charge estimation covariance of the state";
-CM_ BO_ 1584 "State of Charge estimation state";
-CM_ BO_ 1592 "State of Charge estimation covariance of the state";
-CM_ BO_ 1600 "Pedal Throttle , already calibrated";
-CM_ BO_ 1608 "Pedal brakes pressures in bar, already calibrated";
-CM_ BO_ 1616 "Steering angle in degrees";
-CM_ BO_ 1624 "Cumulative kilometers count";
-CM_ BO_ 1632 "Tire Pressure Monitoring System, pressure of each tire";
-CM_ BO_ 1640 "Tire Pressure Monitoring System, temperature of each tire";
-CM_ BO_ 1648 "";
+CM_ BO_ 1560 "Front encoder speed in rad/sec";
+CM_ BO_ 1568 "Rear encoders speed in rad/sec";
+CM_ BO_ 1576 "State of Charge estimation state";
+CM_ BO_ 1584 "State of Charge estimation covariance of the state";
+CM_ BO_ 1592 "State of Charge estimation state";
+CM_ BO_ 1600 "State of Charge estimation covariance of the state";
+CM_ BO_ 1608 "Pedal Throttle , already calibrated";
+CM_ BO_ 1616 "Pedal brakes pressures in bar, already calibrated";
+CM_ BO_ 1624 "Steering angle in degrees";
+CM_ BO_ 1632 "Cumulative kilometers count";
+CM_ BO_ 1640 "Tire Pressure Monitoring System, pressure of each tire";
+CM_ BO_ 1648 "Tire Pressure Monitoring System, temperature of each tire";
 CM_ BO_ 1656 "";
 CM_ BO_ 1664 "";
-CM_ BO_ 1672 "Network interface from telemetry device, only IPV4";
-CM_ BO_ 1680 "Position of the ammos";
-CM_ BO_ 1688 "Calibration offsets for acquisinatore";
-CM_ BO_ 1696 "Debug message with raw voltages from strain gauges";
-CM_ BO_ 1704 "Message for the arm deformation for the front left wheel";
-CM_ BO_ 1712 "Message for the arm deformation for the front right wheel";
-CM_ BO_ 1720 "Message for the arm deformation for the rear left wheel";
-CM_ BO_ 1728 "Message for the arm deformation for the rear right wheel";
+CM_ BO_ 1672 "";
+CM_ BO_ 1680 "Network interface from telemetry device, only IPV4";
+CM_ BO_ 1688 "Position of the ammos";
+CM_ BO_ 1696 "Calibration offsets for acquisinatore";
+CM_ BO_ 1704 "Debug message with raw voltages from strain gauges";
+CM_ BO_ 1712 "Message for the arm deformation for the front left wheel";
+CM_ BO_ 1720 "Message for the arm deformation for the front right wheel";
+CM_ BO_ 1728 "Message for the arm deformation for the rear left wheel";
+CM_ BO_ 1736 "Message for the arm deformation for the rear right wheel";
 CM_ BO_ 72 "Calibration command for link deformation";
 CM_ BO_ 80 "Calibration command for ammo compression";
-CM_ BO_ 1736 "Debug signals";
 CM_ BO_ 1744 "Debug signals";
-CM_ BO_ 1752 "Temperature of pumps input to the radiator and output";
-CM_ BO_ 1760 "Air temperature outside the radiator";
+CM_ BO_ 1752 "Debug signals";
+CM_ BO_ 1760 "Temperature of pumps input to the radiator and output";
+CM_ BO_ 1768 "Air temperature outside the radiator";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 BA_ "GenMsgCycleTime" BO_ 700 1000;
@@ -539,34 +544,35 @@ BA_ "GenMsgCycleTime" BO_ 1536 10;
 BA_ "GenMsgCycleTime" BO_ 1544 10;
 BA_ "GenMsgCycleTime" BO_ 1552 10;
 BA_ "GenMsgCycleTime" BO_ 1560 10;
-BA_ "GenMsgCycleTime" BO_ 1568 50;
+BA_ "GenMsgCycleTime" BO_ 1568 10;
 BA_ "GenMsgCycleTime" BO_ 1576 50;
 BA_ "GenMsgCycleTime" BO_ 1584 50;
 BA_ "GenMsgCycleTime" BO_ 1592 50;
-BA_ "GenMsgCycleTime" BO_ 1600 10;
+BA_ "GenMsgCycleTime" BO_ 1600 50;
 BA_ "GenMsgCycleTime" BO_ 1608 10;
 BA_ "GenMsgCycleTime" BO_ 1616 10;
-BA_ "GenMsgCycleTime" BO_ 1624 1000;
-BA_ "GenMsgCycleTime" BO_ 1648 1000;
-BA_ "GenMsgCycleTime" BO_ 1664 1000;
+BA_ "GenMsgCycleTime" BO_ 1624 10;
+BA_ "GenMsgCycleTime" BO_ 1632 1000;
+BA_ "GenMsgCycleTime" BO_ 1656 1000;
 BA_ "GenMsgCycleTime" BO_ 1672 1000;
-BA_ "GenMsgCycleTime" BO_ 1680 10;
-BA_ "GenMsgCycleTime" BO_ 1688 1000;
-BA_ "GenMsgCycleTime" BO_ 1696 10;
+BA_ "GenMsgCycleTime" BO_ 1680 1000;
+BA_ "GenMsgCycleTime" BO_ 1688 10;
+BA_ "GenMsgCycleTime" BO_ 1696 1000;
 BA_ "GenMsgCycleTime" BO_ 1704 10;
 BA_ "GenMsgCycleTime" BO_ 1712 10;
 BA_ "GenMsgCycleTime" BO_ 1720 10;
 BA_ "GenMsgCycleTime" BO_ 1728 10;
 BA_ "GenMsgCycleTime" BO_ 1736 10;
 BA_ "GenMsgCycleTime" BO_ 1744 10;
-BA_ "GenMsgCycleTime" BO_ 1752 500;
+BA_ "GenMsgCycleTime" BO_ 1752 10;
 BA_ "GenMsgCycleTime" BO_ 1760 500;
-VAL_ 1696 rod_id 0 "F1011" 1 "F36" 2 "F46" 3 "F27" 4 "F17" 5 "F58" ;
-VAL_ 1696 wheel_id 0 "fl" 1 "fr" 2 "rl" 3 "rr" ;
+BA_ "GenMsgCycleTime" BO_ 1768 500;
 VAL_ 1704 rod_id 0 "F1011" 1 "F36" 2 "F46" 3 "F27" 4 "F17" 5 "F58" ;
+VAL_ 1704 wheel_id 0 "fl" 1 "fr" 2 "rl" 3 "rr" ;
 VAL_ 1712 rod_id 0 "F1011" 1 "F36" 2 "F46" 3 "F27" 4 "F17" 5 "F58" ;
 VAL_ 1720 rod_id 0 "F1011" 1 "F36" 2 "F46" 3 "F27" 4 "F17" 5 "F58" ;
 VAL_ 1728 rod_id 0 "F1011" 1 "F36" 2 "F46" 3 "F27" 4 "F17" 5 "F58" ;
+VAL_ 1736 rod_id 0 "F1011" 1 "F36" 2 "F46" 3 "F27" 4 "F17" 5 "F58" ;
 
 
 

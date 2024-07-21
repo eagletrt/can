@@ -364,9 +364,9 @@
 
 enum inverters_types_id{
 	e_inverters_uint16_t = -4,
+	e_inverters_float,
 	e_inverters_int16_t,
 	e_inverters_uint8_t,
-	e_inverters_float,
 
 	e_inverters_inv_r_send_send_mux,
 	e_inverters_inv_r_send_read_id,

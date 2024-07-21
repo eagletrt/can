@@ -532,6 +532,13 @@
 /* END */
 
 /* START */
+#define REAR_ANGULAR_VELOCITY "REAR_ANGULAR_VELOCITY"
+
+#define REAR_ANGULAR_VELOCITY_RL "rear_angular_velocity_rl"
+#define REAR_ANGULAR_VELOCITY_RR "rear_angular_velocity_rr"
+/* END */
+
+/* START */
 #define HV_SOC_ESTIMATION_STATE "HV_SOC_ESTIMATION_STATE"
 
 #define HV_SOC_ESTIMATION_STATE_SOC "hv_soc_estimation_state_soc"
@@ -732,12 +739,12 @@
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint8_t = -6,
-	e_secondary_uint64_t,
+	e_secondary_uint16_t = -6,
 	e_secondary_float,
-	e_secondary_uint16_t,
 	e_secondary_uint32_t,
+	e_secondary_uint8_t,
 	e_secondary_int16_t,
+	e_secondary_uint64_t,
 
 	e_secondary_link_deformation_debug_voltages_wheel_id,
 	e_secondary_link_deformation_debug_voltages_rod_id,
