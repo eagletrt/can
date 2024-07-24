@@ -1,6 +1,20 @@
 {
     "version": 2.0,
     "types": {
+        "DeviceId": {
+            "type": "enum",
+            "items": [
+                "hv_mainboard",
+                "hv_cellboard",
+                "lv",
+                "ecu",
+                "tlm",
+                "traction_control",
+                "steeering_wheel",
+                "handcart",
+                "acquisinator"
+            ]
+        },
         "HvFeedbackStatus": {
             "type": "enum",
             "items": [
@@ -2544,6 +2558,7 @@
             ],
             "receiving": [],
             "contents": {
+                "device_id": "DeviceId",
                 "field_1": {
                     "type": "float32",
                     "range": [
@@ -2561,14 +2576,6 @@
                     "force": "uint16"
                 },
                 "field_3": {
-                    "type": "float32",
-                    "range": [
-                        -1,
-                        1
-                    ],
-                    "force": "uint16"
-                },
-                "field_4": {
                     "type": "float32",
                     "range": [
                         -1,
@@ -2588,6 +2595,7 @@
             ],
             "receiving": [],
             "contents": {
+                "device_id": "DeviceId",
                 "field_1": {
                     "type": "float32",
                     "range": [
@@ -2611,8 +2619,74 @@
                         1
                     ],
                     "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "DEBUG_SIGNAL_3",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 20,
+            "sending": [
+                "ANY"
+            ],
+            "receiving": [],
+            "contents": {
+                "device_id": "DeviceId",
+                "field_1": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
                 },
-                "field_4": {
+                "field_2": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                },
+                "field_3": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "DEBUG_SIGNAL_4",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 20,
+            "sending": [
+                "ANY"
+            ],
+            "receiving": [],
+            "contents": {
+                "device_id": "DeviceId",
+                "field_1": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                },
+                "field_2": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        1
+                    ],
+                    "force": "uint16"
+                },
+                "field_3": {
                     "type": "float32",
                     "range": [
                         -1,
