@@ -803,18 +803,34 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		return 0;
 	case 1784:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, DEBUG_SIGNAL_1_FIELD_1);
-		snprintf(v[1], string_size, DEBUG_SIGNAL_1_FIELD_2);
-		snprintf(v[2], string_size, DEBUG_SIGNAL_1_FIELD_3);
-		snprintf(v[3], string_size, DEBUG_SIGNAL_1_FIELD_4);
+		snprintf(v[0], string_size, DEBUG_SIGNAL_1_DEVICE_ID);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_1_FIELD_1);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_1_FIELD_2);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_1_FIELD_3);
 
 		return 0;
 	case 1792:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, DEBUG_SIGNAL_2_FIELD_1);
-		snprintf(v[1], string_size, DEBUG_SIGNAL_2_FIELD_2);
-		snprintf(v[2], string_size, DEBUG_SIGNAL_2_FIELD_3);
-		snprintf(v[3], string_size, DEBUG_SIGNAL_2_FIELD_4);
+		snprintf(v[0], string_size, DEBUG_SIGNAL_2_DEVICE_ID);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_2_FIELD_1);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_2_FIELD_2);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_2_FIELD_3);
+
+		return 0;
+	case 1800:
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, DEBUG_SIGNAL_3_DEVICE_ID);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_3_FIELD_1);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_3_FIELD_2);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_3_FIELD_3);
+
+		return 0;
+	case 1808:
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, DEBUG_SIGNAL_4_DEVICE_ID);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_4_FIELD_1);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_4_FIELD_2);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_4_FIELD_3);
 
 		return 0;
 	case 256:
@@ -1472,6 +1488,58 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_on");
+
+		return 0;
+	case 57:
+		if(9 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_debug_signal_1_device_id_hv_mainboard");
+		snprintf(v[1], string_size, "primary_debug_signal_1_device_id_hv_cellboard");
+		snprintf(v[2], string_size, "primary_debug_signal_1_device_id_lv");
+		snprintf(v[3], string_size, "primary_debug_signal_1_device_id_ecu");
+		snprintf(v[4], string_size, "primary_debug_signal_1_device_id_tlm");
+		snprintf(v[5], string_size, "primary_debug_signal_1_device_id_traction_control");
+		snprintf(v[6], string_size, "primary_debug_signal_1_device_id_steeering_wheel");
+		snprintf(v[7], string_size, "primary_debug_signal_1_device_id_handcart");
+		snprintf(v[8], string_size, "primary_debug_signal_1_device_id_acquisinator");
+
+		return 0;
+	case 58:
+		if(9 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_debug_signal_2_device_id_hv_mainboard");
+		snprintf(v[1], string_size, "primary_debug_signal_2_device_id_hv_cellboard");
+		snprintf(v[2], string_size, "primary_debug_signal_2_device_id_lv");
+		snprintf(v[3], string_size, "primary_debug_signal_2_device_id_ecu");
+		snprintf(v[4], string_size, "primary_debug_signal_2_device_id_tlm");
+		snprintf(v[5], string_size, "primary_debug_signal_2_device_id_traction_control");
+		snprintf(v[6], string_size, "primary_debug_signal_2_device_id_steeering_wheel");
+		snprintf(v[7], string_size, "primary_debug_signal_2_device_id_handcart");
+		snprintf(v[8], string_size, "primary_debug_signal_2_device_id_acquisinator");
+
+		return 0;
+	case 59:
+		if(9 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_debug_signal_3_device_id_hv_mainboard");
+		snprintf(v[1], string_size, "primary_debug_signal_3_device_id_hv_cellboard");
+		snprintf(v[2], string_size, "primary_debug_signal_3_device_id_lv");
+		snprintf(v[3], string_size, "primary_debug_signal_3_device_id_ecu");
+		snprintf(v[4], string_size, "primary_debug_signal_3_device_id_tlm");
+		snprintf(v[5], string_size, "primary_debug_signal_3_device_id_traction_control");
+		snprintf(v[6], string_size, "primary_debug_signal_3_device_id_steeering_wheel");
+		snprintf(v[7], string_size, "primary_debug_signal_3_device_id_handcart");
+		snprintf(v[8], string_size, "primary_debug_signal_3_device_id_acquisinator");
+
+		return 0;
+	case 60:
+		if(9 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_debug_signal_4_device_id_hv_mainboard");
+		snprintf(v[1], string_size, "primary_debug_signal_4_device_id_hv_cellboard");
+		snprintf(v[2], string_size, "primary_debug_signal_4_device_id_lv");
+		snprintf(v[3], string_size, "primary_debug_signal_4_device_id_ecu");
+		snprintf(v[4], string_size, "primary_debug_signal_4_device_id_tlm");
+		snprintf(v[5], string_size, "primary_debug_signal_4_device_id_traction_control");
+		snprintf(v[6], string_size, "primary_debug_signal_4_device_id_steeering_wheel");
+		snprintf(v[7], string_size, "primary_debug_signal_4_device_id_handcart");
+		snprintf(v[8], string_size, "primary_debug_signal_4_device_id_acquisinator");
 
 		return 0;
 
@@ -4146,23 +4214,23 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_debug_signal_1_t tmp;
 		primary_debug_signal_1_converted_t tmp_converted;
+		uint8_t r_device_id;
 		float r_field_1;
 		float r_field_2;
 		float r_field_3;
-		float r_field_4;
 
-		sscanf(s, "%f,"       
+		sscanf(s, "%" SCNu8 ","  
 			"%f,"       
 			"%f,"       
 			"%f,"       ,
+			&r_device_id,
 			&r_field_1,
 			&r_field_2,
-			&r_field_3,
-			&r_field_4);
+			&r_field_3);
+		tmp_converted.device_id = (primary_debug_signal_1_device_id)r_device_id;
 		tmp_converted.field_1 = (float)r_field_1;
 		tmp_converted.field_2 = (float)r_field_2;
 		tmp_converted.field_3 = (float)r_field_3;
-		tmp_converted.field_4 = (float)r_field_4;
 
 		primary_debug_signal_1_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_DEBUG_SIGNAL_1_BYTE_SIZE;
@@ -4172,27 +4240,79 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_debug_signal_2_t tmp;
 		primary_debug_signal_2_converted_t tmp_converted;
+		uint8_t r_device_id;
 		float r_field_1;
 		float r_field_2;
 		float r_field_3;
-		float r_field_4;
 
-		sscanf(s, "%f,"       
+		sscanf(s, "%" SCNu8 ","  
 			"%f,"       
 			"%f,"       
 			"%f,"       ,
+			&r_device_id,
 			&r_field_1,
 			&r_field_2,
-			&r_field_3,
-			&r_field_4);
+			&r_field_3);
+		tmp_converted.device_id = (primary_debug_signal_2_device_id)r_device_id;
 		tmp_converted.field_1 = (float)r_field_1;
 		tmp_converted.field_2 = (float)r_field_2;
 		tmp_converted.field_3 = (float)r_field_3;
-		tmp_converted.field_4 = (float)r_field_4;
 
 		primary_debug_signal_2_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_DEBUG_SIGNAL_2_BYTE_SIZE;
 		return primary_debug_signal_2_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_2_BYTE_SIZE);
+	}
+	case 1800:
+	{
+		primary_debug_signal_3_t tmp;
+		primary_debug_signal_3_converted_t tmp_converted;
+		uint8_t r_device_id;
+		float r_field_1;
+		float r_field_2;
+		float r_field_3;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_device_id,
+			&r_field_1,
+			&r_field_2,
+			&r_field_3);
+		tmp_converted.device_id = (primary_debug_signal_3_device_id)r_device_id;
+		tmp_converted.field_1 = (float)r_field_1;
+		tmp_converted.field_2 = (float)r_field_2;
+		tmp_converted.field_3 = (float)r_field_3;
+
+		primary_debug_signal_3_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_DEBUG_SIGNAL_3_BYTE_SIZE;
+		return primary_debug_signal_3_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_3_BYTE_SIZE);
+	}
+	case 1808:
+	{
+		primary_debug_signal_4_t tmp;
+		primary_debug_signal_4_converted_t tmp_converted;
+		uint8_t r_device_id;
+		float r_field_1;
+		float r_field_2;
+		float r_field_3;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_device_id,
+			&r_field_1,
+			&r_field_2,
+			&r_field_3);
+		tmp_converted.device_id = (primary_debug_signal_4_device_id)r_device_id;
+		tmp_converted.field_1 = (float)r_field_1;
+		tmp_converted.field_2 = (float)r_field_2;
+		tmp_converted.field_3 = (float)r_field_3;
+
+		primary_debug_signal_4_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_DEBUG_SIGNAL_4_BYTE_SIZE;
+		return primary_debug_signal_4_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_4_BYTE_SIZE);
 	}
 	case 256:
 	{
@@ -5116,6 +5236,8 @@ int primary_n_fields_from_id(int id)
 		case 1776: return 1;
 		case 1784: return 4;
 		case 1792: return 4;
+		case 1800: return 4;
+		case 1808: return 4;
 		case 256: return 8;
 		case 272: return 8;
 		case 288: return 8;
@@ -5853,14 +5975,28 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		return 1;
 	case 1784:
 		if(fields_types_size < 4) return 0;
-		fields_types[0] = e_primary_float;
+		fields_types[0] = e_primary_debug_signal_1_device_id;
 		fields_types[1] = e_primary_float;
 		fields_types[2] = e_primary_float;
 		fields_types[3] = e_primary_float;
 		return 4;
 	case 1792:
 		if(fields_types_size < 4) return 0;
-		fields_types[0] = e_primary_float;
+		fields_types[0] = e_primary_debug_signal_2_device_id;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_float;
+		fields_types[3] = e_primary_float;
+		return 4;
+	case 1800:
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_primary_debug_signal_3_device_id;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_float;
+		fields_types[3] = e_primary_float;
+		return 4;
+	case 1808:
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_primary_debug_signal_4_device_id;
 		fields_types[1] = e_primary_float;
 		fields_types[2] = e_primary_float;
 		fields_types[3] = e_primary_float;
@@ -6598,6 +6734,70 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 			sprintf(v[0], "off");
 			sprintf(v[1], "on");
 			return 2;
+		}
+	}
+	if(!strcmp(msg_name, "DEBUG_SIGNAL_1"))
+	{
+		if(!strcmp(sgn_name, "device_id"))
+		{
+			sprintf(v[0], "hv_mainboard");
+			sprintf(v[1], "hv_cellboard");
+			sprintf(v[2], "lv");
+			sprintf(v[3], "ecu");
+			sprintf(v[4], "tlm");
+			sprintf(v[5], "traction_control");
+			sprintf(v[6], "steeering_wheel");
+			sprintf(v[7], "handcart");
+			sprintf(v[8], "acquisinator");
+			return 9;
+		}
+	}
+	if(!strcmp(msg_name, "DEBUG_SIGNAL_2"))
+	{
+		if(!strcmp(sgn_name, "device_id"))
+		{
+			sprintf(v[0], "hv_mainboard");
+			sprintf(v[1], "hv_cellboard");
+			sprintf(v[2], "lv");
+			sprintf(v[3], "ecu");
+			sprintf(v[4], "tlm");
+			sprintf(v[5], "traction_control");
+			sprintf(v[6], "steeering_wheel");
+			sprintf(v[7], "handcart");
+			sprintf(v[8], "acquisinator");
+			return 9;
+		}
+	}
+	if(!strcmp(msg_name, "DEBUG_SIGNAL_3"))
+	{
+		if(!strcmp(sgn_name, "device_id"))
+		{
+			sprintf(v[0], "hv_mainboard");
+			sprintf(v[1], "hv_cellboard");
+			sprintf(v[2], "lv");
+			sprintf(v[3], "ecu");
+			sprintf(v[4], "tlm");
+			sprintf(v[5], "traction_control");
+			sprintf(v[6], "steeering_wheel");
+			sprintf(v[7], "handcart");
+			sprintf(v[8], "acquisinator");
+			return 9;
+		}
+	}
+	if(!strcmp(msg_name, "DEBUG_SIGNAL_4"))
+	{
+		if(!strcmp(sgn_name, "device_id"))
+		{
+			sprintf(v[0], "hv_mainboard");
+			sprintf(v[1], "hv_cellboard");
+			sprintf(v[2], "lv");
+			sprintf(v[3], "ecu");
+			sprintf(v[4], "tlm");
+			sprintf(v[5], "traction_control");
+			sprintf(v[6], "steeering_wheel");
+			sprintf(v[7], "handcart");
+			sprintf(v[8], "acquisinator");
+			return 9;
 		}
 	}
 	return 0;

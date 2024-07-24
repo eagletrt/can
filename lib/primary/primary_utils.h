@@ -1030,19 +1030,37 @@ extern "C" {
 /* START */
 #define DEBUG_SIGNAL_1 "DEBUG_SIGNAL_1"
 
+#define DEBUG_SIGNAL_1_DEVICE_ID "debug_signal_1_device_id"
 #define DEBUG_SIGNAL_1_FIELD_1 "debug_signal_1_field_1"
 #define DEBUG_SIGNAL_1_FIELD_2 "debug_signal_1_field_2"
 #define DEBUG_SIGNAL_1_FIELD_3 "debug_signal_1_field_3"
-#define DEBUG_SIGNAL_1_FIELD_4 "debug_signal_1_field_4"
 /* END */
 
 /* START */
 #define DEBUG_SIGNAL_2 "DEBUG_SIGNAL_2"
 
+#define DEBUG_SIGNAL_2_DEVICE_ID "debug_signal_2_device_id"
 #define DEBUG_SIGNAL_2_FIELD_1 "debug_signal_2_field_1"
 #define DEBUG_SIGNAL_2_FIELD_2 "debug_signal_2_field_2"
 #define DEBUG_SIGNAL_2_FIELD_3 "debug_signal_2_field_3"
-#define DEBUG_SIGNAL_2_FIELD_4 "debug_signal_2_field_4"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_3 "DEBUG_SIGNAL_3"
+
+#define DEBUG_SIGNAL_3_DEVICE_ID "debug_signal_3_device_id"
+#define DEBUG_SIGNAL_3_FIELD_1 "debug_signal_3_field_1"
+#define DEBUG_SIGNAL_3_FIELD_2 "debug_signal_3_field_2"
+#define DEBUG_SIGNAL_3_FIELD_3 "debug_signal_3_field_3"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_4 "DEBUG_SIGNAL_4"
+
+#define DEBUG_SIGNAL_4_DEVICE_ID "debug_signal_4_device_id"
+#define DEBUG_SIGNAL_4_FIELD_1 "debug_signal_4_field_1"
+#define DEBUG_SIGNAL_4_FIELD_2 "debug_signal_4_field_2"
+#define DEBUG_SIGNAL_4_FIELD_3 "debug_signal_4_field_3"
 /* END */
 
 /* START */
@@ -1293,11 +1311,11 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_uint8_t = -5,
-	e_primary_uint64_t,
+	e_primary_uint32_t = -5,
+	e_primary_uint8_t,
 	e_primary_float,
 	e_primary_uint16_t,
-	e_primary_uint32_t,
+	e_primary_uint64_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,
@@ -1355,7 +1373,11 @@ enum primary_types_id{
 	e_primary_ecu_set_ptt_status_status,
 	e_primary_ecu_steer_actuator_status_status,
 	e_primary_ecu_set_steer_actuator_status_steering_wheel_status,
-	e_primary_ecu_set_steer_actuator_status_tlm_status
+	e_primary_ecu_set_steer_actuator_status_tlm_status,
+	e_primary_debug_signal_1_device_id,
+	e_primary_debug_signal_2_device_id,
+	e_primary_debug_signal_3_device_id,
+	e_primary_debug_signal_4_device_id
 };
 
 /**

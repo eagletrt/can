@@ -2080,10 +2080,12 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["DEBUG_SIGNAL_1"]["_timestamp"].push(pack->debug_signal_1(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["DEBUG_SIGNAL_1"]["device_id"].push(pack->debug_signal_1(i).device_id());
+		primary_debug_signal_1_device_id_enum_to_string((primary_debug_signal_1_device_id)pack->debug_signal_1(i).device_id(), buffer);
+		(*net_strings)["DEBUG_SIGNAL_1"]["device_id"].push(buffer);
 		(*net_signals)["DEBUG_SIGNAL_1"]["field_1"].push(pack->debug_signal_1(i).field_1());
 		(*net_signals)["DEBUG_SIGNAL_1"]["field_2"].push(pack->debug_signal_1(i).field_2());
 		(*net_signals)["DEBUG_SIGNAL_1"]["field_3"].push(pack->debug_signal_1(i).field_3());
-		(*net_signals)["DEBUG_SIGNAL_1"]["field_4"].push(pack->debug_signal_1(i).field_4());
 
     }
 
@@ -2095,10 +2097,46 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["DEBUG_SIGNAL_2"]["_timestamp"].push(pack->debug_signal_2(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
+		(*net_enums)["DEBUG_SIGNAL_2"]["device_id"].push(pack->debug_signal_2(i).device_id());
+		primary_debug_signal_2_device_id_enum_to_string((primary_debug_signal_2_device_id)pack->debug_signal_2(i).device_id(), buffer);
+		(*net_strings)["DEBUG_SIGNAL_2"]["device_id"].push(buffer);
 		(*net_signals)["DEBUG_SIGNAL_2"]["field_1"].push(pack->debug_signal_2(i).field_1());
 		(*net_signals)["DEBUG_SIGNAL_2"]["field_2"].push(pack->debug_signal_2(i).field_2());
 		(*net_signals)["DEBUG_SIGNAL_2"]["field_3"].push(pack->debug_signal_2(i).field_3());
-		(*net_signals)["DEBUG_SIGNAL_2"]["field_4"].push(pack->debug_signal_2(i).field_4());
+
+    }
+
+    for(int i = 0; i < pack->debug_signal_3_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->debug_signal_3(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal_3(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL_3"]["_timestamp"].push(pack->debug_signal_3(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["DEBUG_SIGNAL_3"]["device_id"].push(pack->debug_signal_3(i).device_id());
+		primary_debug_signal_3_device_id_enum_to_string((primary_debug_signal_3_device_id)pack->debug_signal_3(i).device_id(), buffer);
+		(*net_strings)["DEBUG_SIGNAL_3"]["device_id"].push(buffer);
+		(*net_signals)["DEBUG_SIGNAL_3"]["field_1"].push(pack->debug_signal_3(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL_3"]["field_2"].push(pack->debug_signal_3(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL_3"]["field_3"].push(pack->debug_signal_3(i).field_3());
+
+    }
+
+    for(int i = 0; i < pack->debug_signal_4_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->debug_signal_4(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal_4(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL_4"]["_timestamp"].push(pack->debug_signal_4(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["DEBUG_SIGNAL_4"]["device_id"].push(pack->debug_signal_4(i).device_id());
+		primary_debug_signal_4_device_id_enum_to_string((primary_debug_signal_4_device_id)pack->debug_signal_4(i).device_id(), buffer);
+		(*net_strings)["DEBUG_SIGNAL_4"]["device_id"].push(buffer);
+		(*net_signals)["DEBUG_SIGNAL_4"]["field_1"].push(pack->debug_signal_4(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL_4"]["field_2"].push(pack->debug_signal_4(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL_4"]["field_3"].push(pack->debug_signal_4(i).field_3());
 
     }
 
@@ -4060,10 +4098,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 1784: {
             primary_debug_signal_1_converted_t* msg = (primary_debug_signal_1_converted_t*)(device->message);
             primary::DEBUG_SIGNAL_1* proto_msg = pack->add_debug_signal_1();
+			proto_msg->set_device_id((primary::primary_debug_signal_1_device_id)msg->device_id);
 			proto_msg->set_field_1(msg->field_1);
 			proto_msg->set_field_2(msg->field_2);
 			proto_msg->set_field_3(msg->field_3);
-			proto_msg->set_field_4(msg->field_4);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -4074,10 +4112,38 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 1792: {
             primary_debug_signal_2_converted_t* msg = (primary_debug_signal_2_converted_t*)(device->message);
             primary::DEBUG_SIGNAL_2* proto_msg = pack->add_debug_signal_2();
+			proto_msg->set_device_id((primary::primary_debug_signal_2_device_id)msg->device_id);
 			proto_msg->set_field_1(msg->field_1);
 			proto_msg->set_field_2(msg->field_2);
 			proto_msg->set_field_3(msg->field_3);
-			proto_msg->set_field_4(msg->field_4);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1800: {
+            primary_debug_signal_3_converted_t* msg = (primary_debug_signal_3_converted_t*)(device->message);
+            primary::DEBUG_SIGNAL_3* proto_msg = pack->add_debug_signal_3();
+			proto_msg->set_device_id((primary::primary_debug_signal_3_device_id)msg->device_id);
+			proto_msg->set_field_1(msg->field_1);
+			proto_msg->set_field_2(msg->field_2);
+			proto_msg->set_field_3(msg->field_3);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1808: {
+            primary_debug_signal_4_converted_t* msg = (primary_debug_signal_4_converted_t*)(device->message);
+            primary::DEBUG_SIGNAL_4* proto_msg = pack->add_debug_signal_4();
+			proto_msg->set_device_id((primary::primary_debug_signal_4_device_id)msg->device_id);
+			proto_msg->set_field_1(msg->field_1);
+			proto_msg->set_field_2(msg->field_2);
+			proto_msg->set_field_3(msg->field_3);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

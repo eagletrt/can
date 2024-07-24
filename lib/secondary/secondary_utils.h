@@ -529,10 +529,10 @@ extern "C" {
 /* END */
 
 /* START */
-#define ANGULAR_VELOCITY "ANGULAR_VELOCITY"
+#define FRONT_ANGULAR_VELOCITY "FRONT_ANGULAR_VELOCITY"
 
-#define ANGULAR_VELOCITY_FL "angular_velocity_fl"
-#define ANGULAR_VELOCITY_FR "angular_velocity_fr"
+#define FRONT_ANGULAR_VELOCITY_FL "front_angular_velocity_fl"
+#define FRONT_ANGULAR_VELOCITY_FR "front_angular_velocity_fr"
 /* END */
 
 /* START */
@@ -666,6 +666,16 @@ extern "C" {
 /* END */
 
 /* START */
+#define ACQUISINATOR_ERRORS "ACQUISINATOR_ERRORS"
+
+#define ACQUISINATOR_ERRORS_ACQUISINATOR_ID "acquisinator_errors_acquisinator_id"
+#define ACQUISINATOR_ERRORS_ACQUISINATOR_ERRORS_ACQUISINATORE_LED_CODE_CAN_NOT_WORKING "acquisinator_errors_acquisinator_errors_acquisinatore_led_code_can_not_working"
+#define ACQUISINATOR_ERRORS_ACQUISINATOR_ERRORS_ACQUISINATORE_LED_CODE_SPI_ERROR "acquisinator_errors_acquisinator_errors_acquisinatore_led_code_spi_error"
+#define ACQUISINATOR_ERRORS_ACQUISINATOR_ERRORS_ACQUISINATORE_LED_CODE_READ_WRITE_FLASH "acquisinator_errors_acquisinator_errors_acquisinatore_led_code_read_write_flash"
+#define ACQUISINATOR_ERRORS_ACQUISINATOR_ERRORS_ACQUISINATORE_LED_CODE_FLASHED_FIRMWARE_WITH_WRONG_ID "acquisinator_errors_acquisinator_errors_acquisinatore_led_code_flashed_firmware_with_wrong_id"
+/* END */
+
+/* START */
 #define LINK_DEFORMATION_DEBUG_VOLTAGES "LINK_DEFORMATION_DEBUG_VOLTAGES"
 
 #define LINK_DEFORMATION_DEBUG_VOLTAGES_WHEEL_ID "link_deformation_debug_voltages_wheel_id"
@@ -712,21 +722,39 @@ extern "C" {
 /* END */
 
 /* START */
-#define DEBUG_SIGNAL_1 "DEBUG_SIGNAL_1"
+#define DEBUG_SIGNAL_5 "DEBUG_SIGNAL_5"
 
-#define DEBUG_SIGNAL_1_FIELD_1 "debug_signal_1_field_1"
-#define DEBUG_SIGNAL_1_FIELD_2 "debug_signal_1_field_2"
-#define DEBUG_SIGNAL_1_FIELD_3 "debug_signal_1_field_3"
-#define DEBUG_SIGNAL_1_FIELD_4 "debug_signal_1_field_4"
+#define DEBUG_SIGNAL_5_DEVICE_ID "debug_signal_5_device_id"
+#define DEBUG_SIGNAL_5_FIELD_1 "debug_signal_5_field_1"
+#define DEBUG_SIGNAL_5_FIELD_2 "debug_signal_5_field_2"
+#define DEBUG_SIGNAL_5_FIELD_3 "debug_signal_5_field_3"
 /* END */
 
 /* START */
-#define DEBUG_SIGNAL_2 "DEBUG_SIGNAL_2"
+#define DEBUG_SIGNAL_6 "DEBUG_SIGNAL_6"
 
-#define DEBUG_SIGNAL_2_FIELD_1 "debug_signal_2_field_1"
-#define DEBUG_SIGNAL_2_FIELD_2 "debug_signal_2_field_2"
-#define DEBUG_SIGNAL_2_FIELD_3 "debug_signal_2_field_3"
-#define DEBUG_SIGNAL_2_FIELD_4 "debug_signal_2_field_4"
+#define DEBUG_SIGNAL_6_DEVICE_ID "debug_signal_6_device_id"
+#define DEBUG_SIGNAL_6_FIELD_1 "debug_signal_6_field_1"
+#define DEBUG_SIGNAL_6_FIELD_2 "debug_signal_6_field_2"
+#define DEBUG_SIGNAL_6_FIELD_3 "debug_signal_6_field_3"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_7 "DEBUG_SIGNAL_7"
+
+#define DEBUG_SIGNAL_7_DEVICE_ID "debug_signal_7_device_id"
+#define DEBUG_SIGNAL_7_FIELD_1 "debug_signal_7_field_1"
+#define DEBUG_SIGNAL_7_FIELD_2 "debug_signal_7_field_2"
+#define DEBUG_SIGNAL_7_FIELD_3 "debug_signal_7_field_3"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_8 "DEBUG_SIGNAL_8"
+
+#define DEBUG_SIGNAL_8_DEVICE_ID "debug_signal_8_device_id"
+#define DEBUG_SIGNAL_8_FIELD_1 "debug_signal_8_field_1"
+#define DEBUG_SIGNAL_8_FIELD_2 "debug_signal_8_field_2"
+#define DEBUG_SIGNAL_8_FIELD_3 "debug_signal_8_field_3"
 /* END */
 
 /* START */
@@ -743,19 +771,23 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint16_t = -6,
+	e_secondary_uint64_t = -6,
 	e_secondary_float,
-	e_secondary_uint32_t,
 	e_secondary_uint8_t,
+	e_secondary_uint32_t,
+	e_secondary_uint16_t,
 	e_secondary_int16_t,
-	e_secondary_uint64_t,
 
 	e_secondary_link_deformation_debug_voltages_wheel_id,
 	e_secondary_link_deformation_debug_voltages_rod_id,
 	e_secondary_link_deformation_fl_wheel_rod_id,
 	e_secondary_link_deformation_fr_wheel_rod_id,
 	e_secondary_link_deformation_rl_wheel_rod_id,
-	e_secondary_link_deformation_rr_wheel_rod_id
+	e_secondary_link_deformation_rr_wheel_rod_id,
+	e_secondary_debug_signal_5_device_id,
+	e_secondary_debug_signal_6_device_id,
+	e_secondary_debug_signal_7_device_id,
+	e_secondary_debug_signal_8_device_id
 };
 
 /**

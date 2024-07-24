@@ -179,8 +179,8 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		return 0;
 	case 1560:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, ANGULAR_VELOCITY_FL);
-		snprintf(v[1], string_size, ANGULAR_VELOCITY_FR);
+		snprintf(v[0], string_size, FRONT_ANGULAR_VELOCITY_FL);
+		snprintf(v[1], string_size, FRONT_ANGULAR_VELOCITY_FR);
 
 		return 0;
 	case 1568:
@@ -297,59 +297,84 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 
 		return 0;
 	case 1704:
+		if(5 > fields_size) return 1;
+		snprintf(v[0], string_size, ACQUISINATOR_ERRORS_ACQUISINATOR_ID);
+		snprintf(v[1], string_size, ACQUISINATOR_ERRORS_ACQUISINATOR_ERRORS_ACQUISINATORE_LED_CODE_CAN_NOT_WORKING);
+		snprintf(v[2], string_size, ACQUISINATOR_ERRORS_ACQUISINATOR_ERRORS_ACQUISINATORE_LED_CODE_SPI_ERROR);
+		snprintf(v[3], string_size, ACQUISINATOR_ERRORS_ACQUISINATOR_ERRORS_ACQUISINATORE_LED_CODE_READ_WRITE_FLASH);
+		snprintf(v[4], string_size, ACQUISINATOR_ERRORS_ACQUISINATOR_ERRORS_ACQUISINATORE_LED_CODE_FLASHED_FIRMWARE_WITH_WRONG_ID);
+
+		return 0;
+	case 1712:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_DEBUG_VOLTAGES_WHEEL_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_DEBUG_VOLTAGES_ROD_ID);
 		snprintf(v[2], string_size, LINK_DEFORMATION_DEBUG_VOLTAGES_RAW_VOLTAGE);
 
 		return 0;
-	case 1712:
+	case 1720:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_FL_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_FL_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1720:
+	case 1728:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_FR_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_FR_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1728:
+	case 1736:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_RL_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_RL_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1736:
+	case 1744:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_RR_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_RR_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1744:
-		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, DEBUG_SIGNAL_1_FIELD_1);
-		snprintf(v[1], string_size, DEBUG_SIGNAL_1_FIELD_2);
-		snprintf(v[2], string_size, DEBUG_SIGNAL_1_FIELD_3);
-		snprintf(v[3], string_size, DEBUG_SIGNAL_1_FIELD_4);
-
-		return 0;
 	case 1752:
 		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, DEBUG_SIGNAL_2_FIELD_1);
-		snprintf(v[1], string_size, DEBUG_SIGNAL_2_FIELD_2);
-		snprintf(v[2], string_size, DEBUG_SIGNAL_2_FIELD_3);
-		snprintf(v[3], string_size, DEBUG_SIGNAL_2_FIELD_4);
+		snprintf(v[0], string_size, DEBUG_SIGNAL_5_DEVICE_ID);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_5_FIELD_1);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_5_FIELD_2);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_5_FIELD_3);
 
 		return 0;
 	case 1760:
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, DEBUG_SIGNAL_6_DEVICE_ID);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_6_FIELD_1);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_6_FIELD_2);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_6_FIELD_3);
+
+		return 0;
+	case 1768:
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, DEBUG_SIGNAL_7_DEVICE_ID);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_7_FIELD_1);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_7_FIELD_2);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_7_FIELD_3);
+
+		return 0;
+	case 1776:
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, DEBUG_SIGNAL_8_DEVICE_ID);
+		snprintf(v[1], string_size, DEBUG_SIGNAL_8_FIELD_1);
+		snprintf(v[2], string_size, DEBUG_SIGNAL_8_FIELD_2);
+		snprintf(v[3], string_size, DEBUG_SIGNAL_8_FIELD_3);
+
+		return 0;
+	case 1784:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, COOLING_TEMP_PUMPS_INPUT);
 		snprintf(v[1], string_size, COOLING_TEMP_PUMPS_OUTPUT);
 
 		return 0;
-	case 1768:
+	case 1792:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, COOLING_TEMP_RADIATORS_AIR_TEMP);
 
@@ -418,6 +443,58 @@ int secondary_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[3], string_size, "secondary_link_deformation_rr_wheel_rod_id_F27");
 		snprintf(v[4], string_size, "secondary_link_deformation_rr_wheel_rod_id_F17");
 		snprintf(v[5], string_size, "secondary_link_deformation_rr_wheel_rod_id_F58");
+
+		return 0;
+	case 6:
+		if(9 > fields_size) return 1;
+		snprintf(v[0], string_size, "secondary_debug_signal_5_device_id_hv_mainboard");
+		snprintf(v[1], string_size, "secondary_debug_signal_5_device_id_hv_cellboard");
+		snprintf(v[2], string_size, "secondary_debug_signal_5_device_id_lv");
+		snprintf(v[3], string_size, "secondary_debug_signal_5_device_id_ecu");
+		snprintf(v[4], string_size, "secondary_debug_signal_5_device_id_tlm");
+		snprintf(v[5], string_size, "secondary_debug_signal_5_device_id_traction_control");
+		snprintf(v[6], string_size, "secondary_debug_signal_5_device_id_steeering_wheel");
+		snprintf(v[7], string_size, "secondary_debug_signal_5_device_id_handcart");
+		snprintf(v[8], string_size, "secondary_debug_signal_5_device_id_acquisinator");
+
+		return 0;
+	case 7:
+		if(9 > fields_size) return 1;
+		snprintf(v[0], string_size, "secondary_debug_signal_6_device_id_hv_mainboard");
+		snprintf(v[1], string_size, "secondary_debug_signal_6_device_id_hv_cellboard");
+		snprintf(v[2], string_size, "secondary_debug_signal_6_device_id_lv");
+		snprintf(v[3], string_size, "secondary_debug_signal_6_device_id_ecu");
+		snprintf(v[4], string_size, "secondary_debug_signal_6_device_id_tlm");
+		snprintf(v[5], string_size, "secondary_debug_signal_6_device_id_traction_control");
+		snprintf(v[6], string_size, "secondary_debug_signal_6_device_id_steeering_wheel");
+		snprintf(v[7], string_size, "secondary_debug_signal_6_device_id_handcart");
+		snprintf(v[8], string_size, "secondary_debug_signal_6_device_id_acquisinator");
+
+		return 0;
+	case 8:
+		if(9 > fields_size) return 1;
+		snprintf(v[0], string_size, "secondary_debug_signal_7_device_id_hv_mainboard");
+		snprintf(v[1], string_size, "secondary_debug_signal_7_device_id_hv_cellboard");
+		snprintf(v[2], string_size, "secondary_debug_signal_7_device_id_lv");
+		snprintf(v[3], string_size, "secondary_debug_signal_7_device_id_ecu");
+		snprintf(v[4], string_size, "secondary_debug_signal_7_device_id_tlm");
+		snprintf(v[5], string_size, "secondary_debug_signal_7_device_id_traction_control");
+		snprintf(v[6], string_size, "secondary_debug_signal_7_device_id_steeering_wheel");
+		snprintf(v[7], string_size, "secondary_debug_signal_7_device_id_handcart");
+		snprintf(v[8], string_size, "secondary_debug_signal_7_device_id_acquisinator");
+
+		return 0;
+	case 9:
+		if(9 > fields_size) return 1;
+		snprintf(v[0], string_size, "secondary_debug_signal_8_device_id_hv_mainboard");
+		snprintf(v[1], string_size, "secondary_debug_signal_8_device_id_hv_cellboard");
+		snprintf(v[2], string_size, "secondary_debug_signal_8_device_id_lv");
+		snprintf(v[3], string_size, "secondary_debug_signal_8_device_id_ecu");
+		snprintf(v[4], string_size, "secondary_debug_signal_8_device_id_tlm");
+		snprintf(v[5], string_size, "secondary_debug_signal_8_device_id_traction_control");
+		snprintf(v[6], string_size, "secondary_debug_signal_8_device_id_steeering_wheel");
+		snprintf(v[7], string_size, "secondary_debug_signal_8_device_id_handcart");
+		snprintf(v[8], string_size, "secondary_debug_signal_8_device_id_acquisinator");
 
 		return 0;
 
@@ -984,8 +1061,8 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 	}
 	case 1560:
 	{
-		secondary_angular_velocity_t tmp;
-		secondary_angular_velocity_converted_t tmp_converted;
+		secondary_front_angular_velocity_t tmp;
+		secondary_front_angular_velocity_converted_t tmp_converted;
 		float r_fl;
 		float r_fr;
 
@@ -996,9 +1073,9 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		tmp_converted.fl = (float)r_fl;
 		tmp_converted.fr = (float)r_fr;
 
-		secondary_angular_velocity_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = SECONDARY_ANGULAR_VELOCITY_BYTE_SIZE;
-		return secondary_angular_velocity_pack(data, &tmp, SECONDARY_ANGULAR_VELOCITY_BYTE_SIZE);
+		secondary_front_angular_velocity_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_FRONT_ANGULAR_VELOCITY_BYTE_SIZE;
+		return secondary_front_angular_velocity_pack(data, &tmp, SECONDARY_FRONT_ANGULAR_VELOCITY_BYTE_SIZE);
 	}
 	case 1568:
 	{
@@ -1352,6 +1429,36 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 	}
 	case 1704:
 	{
+		secondary_acquisinator_errors_t tmp;
+		secondary_acquisinator_errors_converted_t tmp_converted;
+		uint8_t r_acquisinator_id;
+		uint8_t r_acquisinator_errors_acquisinatore_led_code_can_not_working;
+		uint8_t r_acquisinator_errors_acquisinatore_led_code_spi_error;
+		uint8_t r_acquisinator_errors_acquisinatore_led_code_read_write_flash;
+		uint8_t r_acquisinator_errors_acquisinatore_led_code_flashed_firmware_with_wrong_id;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_acquisinator_id,
+			&r_acquisinator_errors_acquisinatore_led_code_can_not_working,
+			&r_acquisinator_errors_acquisinatore_led_code_spi_error,
+			&r_acquisinator_errors_acquisinatore_led_code_read_write_flash,
+			&r_acquisinator_errors_acquisinatore_led_code_flashed_firmware_with_wrong_id);
+		tmp_converted.acquisinator_id = (uint8_t)r_acquisinator_id;
+		tmp_converted.acquisinator_errors_acquisinatore_led_code_can_not_working = (uint8_t)r_acquisinator_errors_acquisinatore_led_code_can_not_working;
+		tmp_converted.acquisinator_errors_acquisinatore_led_code_spi_error = (uint8_t)r_acquisinator_errors_acquisinatore_led_code_spi_error;
+		tmp_converted.acquisinator_errors_acquisinatore_led_code_read_write_flash = (uint8_t)r_acquisinator_errors_acquisinatore_led_code_read_write_flash;
+		tmp_converted.acquisinator_errors_acquisinatore_led_code_flashed_firmware_with_wrong_id = (uint8_t)r_acquisinator_errors_acquisinatore_led_code_flashed_firmware_with_wrong_id;
+
+		secondary_acquisinator_errors_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_ACQUISINATOR_ERRORS_BYTE_SIZE;
+		return secondary_acquisinator_errors_pack(data, &tmp, SECONDARY_ACQUISINATOR_ERRORS_BYTE_SIZE);
+	}
+	case 1712:
+	{
 		secondary_link_deformation_debug_voltages_t tmp;
 		secondary_link_deformation_debug_voltages_converted_t tmp_converted;
 		uint8_t r_wheel_id;
@@ -1372,7 +1479,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_DEBUG_VOLTAGES_BYTE_SIZE;
 		return secondary_link_deformation_debug_voltages_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_DEBUG_VOLTAGES_BYTE_SIZE);
 	}
-	case 1712:
+	case 1720:
 	{
 		secondary_link_deformation_fl_wheel_t tmp;
 		secondary_link_deformation_fl_wheel_converted_t tmp_converted;
@@ -1390,7 +1497,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_FL_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_fl_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_FL_WHEEL_BYTE_SIZE);
 	}
-	case 1720:
+	case 1728:
 	{
 		secondary_link_deformation_fr_wheel_t tmp;
 		secondary_link_deformation_fr_wheel_converted_t tmp_converted;
@@ -1408,7 +1515,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_FR_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_fr_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_FR_WHEEL_BYTE_SIZE);
 	}
-	case 1728:
+	case 1736:
 	{
 		secondary_link_deformation_rl_wheel_t tmp;
 		secondary_link_deformation_rl_wheel_converted_t tmp_converted;
@@ -1426,7 +1533,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_RL_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_rl_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_RL_WHEEL_BYTE_SIZE);
 	}
-	case 1736:
+	case 1744:
 	{
 		secondary_link_deformation_rr_wheel_t tmp;
 		secondary_link_deformation_rr_wheel_converted_t tmp_converted;
@@ -1444,59 +1551,111 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_RR_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_rr_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_RR_WHEEL_BYTE_SIZE);
 	}
-	case 1744:
-	{
-		secondary_debug_signal_1_t tmp;
-		secondary_debug_signal_1_converted_t tmp_converted;
-		float r_field_1;
-		float r_field_2;
-		float r_field_3;
-		float r_field_4;
-
-		sscanf(s, "%f,"       
-			"%f,"       
-			"%f,"       
-			"%f,"       ,
-			&r_field_1,
-			&r_field_2,
-			&r_field_3,
-			&r_field_4);
-		tmp_converted.field_1 = (float)r_field_1;
-		tmp_converted.field_2 = (float)r_field_2;
-		tmp_converted.field_3 = (float)r_field_3;
-		tmp_converted.field_4 = (float)r_field_4;
-
-		secondary_debug_signal_1_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = SECONDARY_DEBUG_SIGNAL_1_BYTE_SIZE;
-		return secondary_debug_signal_1_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_1_BYTE_SIZE);
-	}
 	case 1752:
 	{
-		secondary_debug_signal_2_t tmp;
-		secondary_debug_signal_2_converted_t tmp_converted;
+		secondary_debug_signal_5_t tmp;
+		secondary_debug_signal_5_converted_t tmp_converted;
+		uint8_t r_device_id;
 		float r_field_1;
 		float r_field_2;
 		float r_field_3;
-		float r_field_4;
 
-		sscanf(s, "%f,"       
+		sscanf(s, "%" SCNu8 ","  
 			"%f,"       
 			"%f,"       
 			"%f,"       ,
+			&r_device_id,
 			&r_field_1,
 			&r_field_2,
-			&r_field_3,
-			&r_field_4);
+			&r_field_3);
+		tmp_converted.device_id = (secondary_debug_signal_5_device_id)r_device_id;
 		tmp_converted.field_1 = (float)r_field_1;
 		tmp_converted.field_2 = (float)r_field_2;
 		tmp_converted.field_3 = (float)r_field_3;
-		tmp_converted.field_4 = (float)r_field_4;
 
-		secondary_debug_signal_2_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = SECONDARY_DEBUG_SIGNAL_2_BYTE_SIZE;
-		return secondary_debug_signal_2_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_2_BYTE_SIZE);
+		secondary_debug_signal_5_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_DEBUG_SIGNAL_5_BYTE_SIZE;
+		return secondary_debug_signal_5_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_5_BYTE_SIZE);
 	}
 	case 1760:
+	{
+		secondary_debug_signal_6_t tmp;
+		secondary_debug_signal_6_converted_t tmp_converted;
+		uint8_t r_device_id;
+		float r_field_1;
+		float r_field_2;
+		float r_field_3;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_device_id,
+			&r_field_1,
+			&r_field_2,
+			&r_field_3);
+		tmp_converted.device_id = (secondary_debug_signal_6_device_id)r_device_id;
+		tmp_converted.field_1 = (float)r_field_1;
+		tmp_converted.field_2 = (float)r_field_2;
+		tmp_converted.field_3 = (float)r_field_3;
+
+		secondary_debug_signal_6_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_DEBUG_SIGNAL_6_BYTE_SIZE;
+		return secondary_debug_signal_6_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_6_BYTE_SIZE);
+	}
+	case 1768:
+	{
+		secondary_debug_signal_7_t tmp;
+		secondary_debug_signal_7_converted_t tmp_converted;
+		uint8_t r_device_id;
+		float r_field_1;
+		float r_field_2;
+		float r_field_3;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_device_id,
+			&r_field_1,
+			&r_field_2,
+			&r_field_3);
+		tmp_converted.device_id = (secondary_debug_signal_7_device_id)r_device_id;
+		tmp_converted.field_1 = (float)r_field_1;
+		tmp_converted.field_2 = (float)r_field_2;
+		tmp_converted.field_3 = (float)r_field_3;
+
+		secondary_debug_signal_7_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_DEBUG_SIGNAL_7_BYTE_SIZE;
+		return secondary_debug_signal_7_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_7_BYTE_SIZE);
+	}
+	case 1776:
+	{
+		secondary_debug_signal_8_t tmp;
+		secondary_debug_signal_8_converted_t tmp_converted;
+		uint8_t r_device_id;
+		float r_field_1;
+		float r_field_2;
+		float r_field_3;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_device_id,
+			&r_field_1,
+			&r_field_2,
+			&r_field_3);
+		tmp_converted.device_id = (secondary_debug_signal_8_device_id)r_device_id;
+		tmp_converted.field_1 = (float)r_field_1;
+		tmp_converted.field_2 = (float)r_field_2;
+		tmp_converted.field_3 = (float)r_field_3;
+
+		secondary_debug_signal_8_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_DEBUG_SIGNAL_8_BYTE_SIZE;
+		return secondary_debug_signal_8_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_8_BYTE_SIZE);
+	}
+	case 1784:
 	{
 		secondary_cooling_temp_pumps_t tmp;
 		secondary_cooling_temp_pumps_converted_t tmp_converted;
@@ -1514,7 +1673,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_COOLING_TEMP_PUMPS_BYTE_SIZE;
 		return secondary_cooling_temp_pumps_pack(data, &tmp, SECONDARY_COOLING_TEMP_PUMPS_BYTE_SIZE);
 	}
-	case 1768:
+	case 1792:
 	{
 		secondary_cooling_temp_radiators_t tmp;
 		secondary_cooling_temp_radiators_converted_t tmp_converted;
@@ -1641,17 +1800,20 @@ int secondary_n_fields_from_id(int id)
 		case 1680: return 5;
 		case 1688: return 4;
 		case 1696: return 3;
-		case 1704: return 3;
-		case 1712: return 2;
+		case 1704: return 5;
+		case 1712: return 3;
 		case 1720: return 2;
 		case 1728: return 2;
 		case 1736: return 2;
+		case 1744: return 2;
 		case 72: return 0;
 		case 80: return 0;
-		case 1744: return 4;
 		case 1752: return 4;
-		case 1760: return 2;
-		case 1768: return 1;
+		case 1760: return 4;
+		case 1768: return 4;
+		case 1776: return 4;
+		case 1784: return 2;
+		case 1792: return 1;
     }
     return 0;
 }
@@ -1911,51 +2073,73 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[2] = e_secondary_float;
 		return 3;
 	case 1704:
+		if(fields_types_size < 5) return 0;
+		fields_types[0] = e_secondary_uint8_t;
+		fields_types[1] = e_secondary_uint8_t;
+		fields_types[2] = e_secondary_uint8_t;
+		fields_types[3] = e_secondary_uint8_t;
+		fields_types[4] = e_secondary_uint8_t;
+		return 5;
+	case 1712:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_secondary_link_deformation_debug_voltages_wheel_id;
 		fields_types[1] = e_secondary_link_deformation_debug_voltages_rod_id;
 		fields_types[2] = e_secondary_float;
 		return 3;
-	case 1712:
+	case 1720:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_fl_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1720:
+	case 1728:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_fr_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1728:
+	case 1736:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_rl_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1736:
+	case 1744:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_rr_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1744:
-		if(fields_types_size < 4) return 0;
-		fields_types[0] = e_secondary_float;
-		fields_types[1] = e_secondary_float;
-		fields_types[2] = e_secondary_float;
-		fields_types[3] = e_secondary_float;
-		return 4;
 	case 1752:
 		if(fields_types_size < 4) return 0;
-		fields_types[0] = e_secondary_float;
+		fields_types[0] = e_secondary_debug_signal_5_device_id;
 		fields_types[1] = e_secondary_float;
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
 	case 1760:
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_secondary_debug_signal_6_device_id;
+		fields_types[1] = e_secondary_float;
+		fields_types[2] = e_secondary_float;
+		fields_types[3] = e_secondary_float;
+		return 4;
+	case 1768:
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_secondary_debug_signal_7_device_id;
+		fields_types[1] = e_secondary_float;
+		fields_types[2] = e_secondary_float;
+		fields_types[3] = e_secondary_float;
+		return 4;
+	case 1776:
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_secondary_debug_signal_8_device_id;
+		fields_types[1] = e_secondary_float;
+		fields_types[2] = e_secondary_float;
+		fields_types[3] = e_secondary_float;
+		return 4;
+	case 1784:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1768:
+	case 1792:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_secondary_float;
 		return 1;
@@ -2036,6 +2220,70 @@ int secondary_enum_fields_from_name(const char *msg_name, const char *sgn_name, 
 			sprintf(v[4], "F17");
 			sprintf(v[5], "F58");
 			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "DEBUG_SIGNAL_5"))
+	{
+		if(!strcmp(sgn_name, "device_id"))
+		{
+			sprintf(v[0], "hv_mainboard");
+			sprintf(v[1], "hv_cellboard");
+			sprintf(v[2], "lv");
+			sprintf(v[3], "ecu");
+			sprintf(v[4], "tlm");
+			sprintf(v[5], "traction_control");
+			sprintf(v[6], "steeering_wheel");
+			sprintf(v[7], "handcart");
+			sprintf(v[8], "acquisinator");
+			return 9;
+		}
+	}
+	if(!strcmp(msg_name, "DEBUG_SIGNAL_6"))
+	{
+		if(!strcmp(sgn_name, "device_id"))
+		{
+			sprintf(v[0], "hv_mainboard");
+			sprintf(v[1], "hv_cellboard");
+			sprintf(v[2], "lv");
+			sprintf(v[3], "ecu");
+			sprintf(v[4], "tlm");
+			sprintf(v[5], "traction_control");
+			sprintf(v[6], "steeering_wheel");
+			sprintf(v[7], "handcart");
+			sprintf(v[8], "acquisinator");
+			return 9;
+		}
+	}
+	if(!strcmp(msg_name, "DEBUG_SIGNAL_7"))
+	{
+		if(!strcmp(sgn_name, "device_id"))
+		{
+			sprintf(v[0], "hv_mainboard");
+			sprintf(v[1], "hv_cellboard");
+			sprintf(v[2], "lv");
+			sprintf(v[3], "ecu");
+			sprintf(v[4], "tlm");
+			sprintf(v[5], "traction_control");
+			sprintf(v[6], "steeering_wheel");
+			sprintf(v[7], "handcart");
+			sprintf(v[8], "acquisinator");
+			return 9;
+		}
+	}
+	if(!strcmp(msg_name, "DEBUG_SIGNAL_8"))
+	{
+		if(!strcmp(sgn_name, "device_id"))
+		{
+			sprintf(v[0], "hv_mainboard");
+			sprintf(v[1], "hv_cellboard");
+			sprintf(v[2], "lv");
+			sprintf(v[3], "ecu");
+			sprintf(v[4], "tlm");
+			sprintf(v[5], "traction_control");
+			sprintf(v[6], "steeering_wheel");
+			sprintf(v[7], "handcart");
+			sprintf(v[8], "acquisinator");
+			return 9;
 		}
 	}
 	return 0;

@@ -20,6 +20,29 @@
         "F17",
         "F58"
       ]
+    },
+    "DeviceId": {
+      "type": "enum",
+      "items": [
+        "hv_mainboard",
+        "hv_cellboard",
+        "lv",
+        "ecu",
+        "tlm",
+        "traction_control",
+        "steeering_wheel",
+        "handcart",
+        "acquisinator"
+      ]
+    },
+    "AcquisinatorErrors": {
+      "type": "bitset",
+      "items": [
+        "acquisinatore_led_code_can_not_working",
+        "acquisinatore_led_code_spi_error",
+        "acquisinatore_led_code_read_write_flash",
+        "acquisinatore_led_code_flashed_firmware_with_wrong_id"
+      ]
     }
   },
   "messages": [
@@ -1702,7 +1725,7 @@
       }
     },
     {
-      "name": "ANGULAR_VELOCITY",
+      "name": "FRONT_ANGULAR_VELOCITY",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [
@@ -2175,7 +2198,7 @@
         "ACQUISINATOR"
       ],
       "receiving": [],
-      "description": "Position of the ammos",
+      "description": "Ammo compressions",
       "interval": 10,
       "contents": {
         "rl": {
@@ -2220,7 +2243,7 @@
         "ACQUISINATOR"
       ],
       "receiving": [],
-      "description": "Calibration offsets for acquisinatore",
+      "description": "Calibration offsets for acquisinators",
       "interval": 1000,
       "contents": {
         "acquisinator_id": "uint8",
@@ -2240,6 +2263,21 @@
           ],
           "force": "uint32"
         }
+      }
+    },
+    {
+      "name": "ACQUISINATOR_ERRORS",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ACQUISINATOR"
+      ],
+      "receiving": [],
+      "description": "Acquisinator errors",
+      "interval": 1000,
+      "contents": {
+        "acquisinator_id": "uint8",
+        "acquisinator_errors": "AcquisinatorErrors"
       }
     },
     {
@@ -2382,16 +2420,17 @@
       "contents": {}
     },
     {
-      "name": "DEBUG_SIGNAL_1",
+      "name": "DEBUG_SIGNAL_5",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [
-        "TLM"
+        "ANY"
       ],
       "receiving": [],
       "description": "Debug signals",
       "interval": 10,
       "contents": {
+        "device_id": "DeviceId",
         "field_1": {
           "type": "float32",
           "range": [
@@ -2409,14 +2448,6 @@
           "force": "uint16"
         },
         "field_3": {
-          "type": "float32",
-          "range": [
-            -1,
-            1
-          ],
-          "force": "uint16"
-        },
-        "field_4": {
           "type": "float32",
           "range": [
             -1,
@@ -2427,16 +2458,17 @@
       }
     },
     {
-      "name": "DEBUG_SIGNAL_2",
+      "name": "DEBUG_SIGNAL_6",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [
-        "TLM"
+        "ANY"
       ],
       "receiving": [],
       "description": "Debug signals",
       "interval": 10,
       "contents": {
+        "device_id": "DeviceId",
         "field_1": {
           "type": "float32",
           "range": [
@@ -2460,8 +2492,76 @@
             1
           ],
           "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "DEBUG_SIGNAL_7",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ANY"
+      ],
+      "receiving": [],
+      "description": "Debug signals",
+      "interval": 10,
+      "contents": {
+        "device_id": "DeviceId",
+        "field_1": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
         },
-        "field_4": {
+        "field_2": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        },
+        "field_3": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "DEBUG_SIGNAL_8",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ANY"
+      ],
+      "receiving": [],
+      "description": "Debug signals",
+      "interval": 10,
+      "contents": {
+        "device_id": "DeviceId",
+        "field_1": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        },
+        "field_2": {
+          "type": "float32",
+          "range": [
+            -1,
+            1
+          ],
+          "force": "uint16"
+        },
+        "field_3": {
           "type": "float32",
           "range": [
             -1,

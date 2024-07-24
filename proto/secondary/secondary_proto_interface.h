@@ -1297,16 +1297,16 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->angular_velocity_size(); i++){
+    for(int i = 0; i < pack->front_angular_velocity_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->angular_velocity(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->angular_velocity(i)._inner_timestamp();
-        (*net_signals)["ANGULAR_VELOCITY"]["_timestamp"].push(pack->angular_velocity(i)._inner_timestamp());
+        if(pack->front_angular_velocity(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->front_angular_velocity(i)._inner_timestamp();
+        (*net_signals)["FRONT_ANGULAR_VELOCITY"]["_timestamp"].push(pack->front_angular_velocity(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["ANGULAR_VELOCITY"]["fl"].push(pack->angular_velocity(i).fl());
-		(*net_signals)["ANGULAR_VELOCITY"]["fr"].push(pack->angular_velocity(i).fr());
+		(*net_signals)["FRONT_ANGULAR_VELOCITY"]["fl"].push(pack->front_angular_velocity(i).fl());
+		(*net_signals)["FRONT_ANGULAR_VELOCITY"]["fr"].push(pack->front_angular_velocity(i).fr());
 
     }
 
@@ -1542,6 +1542,22 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->acquisinator_errors_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->acquisinator_errors(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->acquisinator_errors(i)._inner_timestamp();
+        (*net_signals)["ACQUISINATOR_ERRORS"]["_timestamp"].push(pack->acquisinator_errors(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["ACQUISINATOR_ERRORS"]["acquisinator_id"].push(pack->acquisinator_errors(i).acquisinator_id());
+		(*net_enums)["ACQUISINATOR_ERRORS"]["acquisinator_errors_acquisinatore_led_code_can_not_working"].push(pack->acquisinator_errors(i).acquisinator_errors_acquisinatore_led_code_can_not_working());
+		(*net_enums)["ACQUISINATOR_ERRORS"]["acquisinator_errors_acquisinatore_led_code_spi_error"].push(pack->acquisinator_errors(i).acquisinator_errors_acquisinatore_led_code_spi_error());
+		(*net_enums)["ACQUISINATOR_ERRORS"]["acquisinator_errors_acquisinatore_led_code_read_write_flash"].push(pack->acquisinator_errors(i).acquisinator_errors_acquisinatore_led_code_read_write_flash());
+		(*net_enums)["ACQUISINATOR_ERRORS"]["acquisinator_errors_acquisinatore_led_code_flashed_firmware_with_wrong_id"].push(pack->acquisinator_errors(i).acquisinator_errors_acquisinatore_led_code_flashed_firmware_with_wrong_id());
+
+    }
+
     for(int i = 0; i < pack->link_deformation_debug_voltages_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -1642,33 +1658,71 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
-    for(int i = 0; i < pack->debug_signal_1_size(); i++){
+    for(int i = 0; i < pack->debug_signal_5_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->debug_signal_1(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->debug_signal_1(i)._inner_timestamp();
-        (*net_signals)["DEBUG_SIGNAL_1"]["_timestamp"].push(pack->debug_signal_1(i)._inner_timestamp());
+        if(pack->debug_signal_5(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal_5(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL_5"]["_timestamp"].push(pack->debug_signal_5(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["DEBUG_SIGNAL_1"]["field_1"].push(pack->debug_signal_1(i).field_1());
-		(*net_signals)["DEBUG_SIGNAL_1"]["field_2"].push(pack->debug_signal_1(i).field_2());
-		(*net_signals)["DEBUG_SIGNAL_1"]["field_3"].push(pack->debug_signal_1(i).field_3());
-		(*net_signals)["DEBUG_SIGNAL_1"]["field_4"].push(pack->debug_signal_1(i).field_4());
+		(*net_enums)["DEBUG_SIGNAL_5"]["device_id"].push(pack->debug_signal_5(i).device_id());
+		secondary_debug_signal_5_device_id_enum_to_string((secondary_debug_signal_5_device_id)pack->debug_signal_5(i).device_id(), buffer);
+		(*net_strings)["DEBUG_SIGNAL_5"]["device_id"].push(buffer);
+		(*net_signals)["DEBUG_SIGNAL_5"]["field_1"].push(pack->debug_signal_5(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL_5"]["field_2"].push(pack->debug_signal_5(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL_5"]["field_3"].push(pack->debug_signal_5(i).field_3());
 
     }
 
-    for(int i = 0; i < pack->debug_signal_2_size(); i++){
+    for(int i = 0; i < pack->debug_signal_6_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->debug_signal_2(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->debug_signal_2(i)._inner_timestamp();
-        (*net_signals)["DEBUG_SIGNAL_2"]["_timestamp"].push(pack->debug_signal_2(i)._inner_timestamp());
+        if(pack->debug_signal_6(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal_6(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL_6"]["_timestamp"].push(pack->debug_signal_6(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["DEBUG_SIGNAL_2"]["field_1"].push(pack->debug_signal_2(i).field_1());
-		(*net_signals)["DEBUG_SIGNAL_2"]["field_2"].push(pack->debug_signal_2(i).field_2());
-		(*net_signals)["DEBUG_SIGNAL_2"]["field_3"].push(pack->debug_signal_2(i).field_3());
-		(*net_signals)["DEBUG_SIGNAL_2"]["field_4"].push(pack->debug_signal_2(i).field_4());
+		(*net_enums)["DEBUG_SIGNAL_6"]["device_id"].push(pack->debug_signal_6(i).device_id());
+		secondary_debug_signal_6_device_id_enum_to_string((secondary_debug_signal_6_device_id)pack->debug_signal_6(i).device_id(), buffer);
+		(*net_strings)["DEBUG_SIGNAL_6"]["device_id"].push(buffer);
+		(*net_signals)["DEBUG_SIGNAL_6"]["field_1"].push(pack->debug_signal_6(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL_6"]["field_2"].push(pack->debug_signal_6(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL_6"]["field_3"].push(pack->debug_signal_6(i).field_3());
+
+    }
+
+    for(int i = 0; i < pack->debug_signal_7_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->debug_signal_7(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal_7(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL_7"]["_timestamp"].push(pack->debug_signal_7(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["DEBUG_SIGNAL_7"]["device_id"].push(pack->debug_signal_7(i).device_id());
+		secondary_debug_signal_7_device_id_enum_to_string((secondary_debug_signal_7_device_id)pack->debug_signal_7(i).device_id(), buffer);
+		(*net_strings)["DEBUG_SIGNAL_7"]["device_id"].push(buffer);
+		(*net_signals)["DEBUG_SIGNAL_7"]["field_1"].push(pack->debug_signal_7(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL_7"]["field_2"].push(pack->debug_signal_7(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL_7"]["field_3"].push(pack->debug_signal_7(i).field_3());
+
+    }
+
+    for(int i = 0; i < pack->debug_signal_8_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->debug_signal_8(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->debug_signal_8(i)._inner_timestamp();
+        (*net_signals)["DEBUG_SIGNAL_8"]["_timestamp"].push(pack->debug_signal_8(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["DEBUG_SIGNAL_8"]["device_id"].push(pack->debug_signal_8(i).device_id());
+		secondary_debug_signal_8_device_id_enum_to_string((secondary_debug_signal_8_device_id)pack->debug_signal_8(i).device_id(), buffer);
+		(*net_strings)["DEBUG_SIGNAL_8"]["device_id"].push(buffer);
+		(*net_signals)["DEBUG_SIGNAL_8"]["field_1"].push(pack->debug_signal_8(i).field_1());
+		(*net_signals)["DEBUG_SIGNAL_8"]["field_2"].push(pack->debug_signal_8(i).field_2());
+		(*net_signals)["DEBUG_SIGNAL_8"]["field_3"].push(pack->debug_signal_8(i).field_3());
 
     }
 
@@ -2658,8 +2712,8 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1560: {
-            secondary_angular_velocity_converted_t* msg = (secondary_angular_velocity_converted_t*)(device->message);
-            secondary::ANGULAR_VELOCITY* proto_msg = pack->add_angular_velocity();
+            secondary_front_angular_velocity_converted_t* msg = (secondary_front_angular_velocity_converted_t*)(device->message);
+            secondary::FRONT_ANGULAR_VELOCITY* proto_msg = pack->add_front_angular_velocity();
 			proto_msg->set_fl(msg->fl);
 			proto_msg->set_fr(msg->fr);
 
@@ -2885,6 +2939,21 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1704: {
+            secondary_acquisinator_errors_t* msg = (secondary_acquisinator_errors_t*)(device->message);
+            secondary::ACQUISINATOR_ERRORS* proto_msg = pack->add_acquisinator_errors();
+			proto_msg->set_acquisinator_id(msg->acquisinator_id);
+			proto_msg->set_acquisinator_errors_acquisinatore_led_code_can_not_working(msg->acquisinator_errors_acquisinatore_led_code_can_not_working);
+			proto_msg->set_acquisinator_errors_acquisinatore_led_code_spi_error(msg->acquisinator_errors_acquisinatore_led_code_spi_error);
+			proto_msg->set_acquisinator_errors_acquisinatore_led_code_read_write_flash(msg->acquisinator_errors_acquisinatore_led_code_read_write_flash);
+			proto_msg->set_acquisinator_errors_acquisinatore_led_code_flashed_firmware_with_wrong_id(msg->acquisinator_errors_acquisinatore_led_code_flashed_firmware_with_wrong_id);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1712: {
             secondary_link_deformation_debug_voltages_converted_t* msg = (secondary_link_deformation_debug_voltages_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_DEBUG_VOLTAGES* proto_msg = pack->add_link_deformation_debug_voltages();
 			proto_msg->set_wheel_id((secondary::secondary_link_deformation_debug_voltages_wheel_id)msg->wheel_id);
@@ -2897,7 +2966,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1712: {
+        case 1720: {
             secondary_link_deformation_fl_wheel_converted_t* msg = (secondary_link_deformation_fl_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_FL_WHEEL* proto_msg = pack->add_link_deformation_fl_wheel();
 			proto_msg->set_rod_id((secondary::secondary_link_deformation_fl_wheel_rod_id)msg->rod_id);
@@ -2909,7 +2978,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1720: {
+        case 1728: {
             secondary_link_deformation_fr_wheel_converted_t* msg = (secondary_link_deformation_fr_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_FR_WHEEL* proto_msg = pack->add_link_deformation_fr_wheel();
 			proto_msg->set_rod_id((secondary::secondary_link_deformation_fr_wheel_rod_id)msg->rod_id);
@@ -2921,7 +2990,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1728: {
+        case 1736: {
             secondary_link_deformation_rl_wheel_converted_t* msg = (secondary_link_deformation_rl_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_RL_WHEEL* proto_msg = pack->add_link_deformation_rl_wheel();
 			proto_msg->set_rod_id((secondary::secondary_link_deformation_rl_wheel_rod_id)msg->rod_id);
@@ -2933,7 +3002,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1736: {
+        case 1744: {
             secondary_link_deformation_rr_wheel_converted_t* msg = (secondary_link_deformation_rr_wheel_converted_t*)(device->message);
             secondary::LINK_DEFORMATION_RR_WHEEL* proto_msg = pack->add_link_deformation_rr_wheel();
 			proto_msg->set_rod_id((secondary::secondary_link_deformation_rr_wheel_rod_id)msg->rod_id);
@@ -2965,27 +3034,13 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1744: {
-            secondary_debug_signal_1_converted_t* msg = (secondary_debug_signal_1_converted_t*)(device->message);
-            secondary::DEBUG_SIGNAL_1* proto_msg = pack->add_debug_signal_1();
-			proto_msg->set_field_1(msg->field_1);
-			proto_msg->set_field_2(msg->field_2);
-			proto_msg->set_field_3(msg->field_3);
-			proto_msg->set_field_4(msg->field_4);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
         case 1752: {
-            secondary_debug_signal_2_converted_t* msg = (secondary_debug_signal_2_converted_t*)(device->message);
-            secondary::DEBUG_SIGNAL_2* proto_msg = pack->add_debug_signal_2();
+            secondary_debug_signal_5_converted_t* msg = (secondary_debug_signal_5_converted_t*)(device->message);
+            secondary::DEBUG_SIGNAL_5* proto_msg = pack->add_debug_signal_5();
+			proto_msg->set_device_id((secondary::secondary_debug_signal_5_device_id)msg->device_id);
 			proto_msg->set_field_1(msg->field_1);
 			proto_msg->set_field_2(msg->field_2);
 			proto_msg->set_field_3(msg->field_3);
-			proto_msg->set_field_4(msg->field_4);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -2994,6 +3049,48 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
         }
 
         case 1760: {
+            secondary_debug_signal_6_converted_t* msg = (secondary_debug_signal_6_converted_t*)(device->message);
+            secondary::DEBUG_SIGNAL_6* proto_msg = pack->add_debug_signal_6();
+			proto_msg->set_device_id((secondary::secondary_debug_signal_6_device_id)msg->device_id);
+			proto_msg->set_field_1(msg->field_1);
+			proto_msg->set_field_2(msg->field_2);
+			proto_msg->set_field_3(msg->field_3);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1768: {
+            secondary_debug_signal_7_converted_t* msg = (secondary_debug_signal_7_converted_t*)(device->message);
+            secondary::DEBUG_SIGNAL_7* proto_msg = pack->add_debug_signal_7();
+			proto_msg->set_device_id((secondary::secondary_debug_signal_7_device_id)msg->device_id);
+			proto_msg->set_field_1(msg->field_1);
+			proto_msg->set_field_2(msg->field_2);
+			proto_msg->set_field_3(msg->field_3);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1776: {
+            secondary_debug_signal_8_converted_t* msg = (secondary_debug_signal_8_converted_t*)(device->message);
+            secondary::DEBUG_SIGNAL_8* proto_msg = pack->add_debug_signal_8();
+			proto_msg->set_device_id((secondary::secondary_debug_signal_8_device_id)msg->device_id);
+			proto_msg->set_field_1(msg->field_1);
+			proto_msg->set_field_2(msg->field_2);
+			proto_msg->set_field_3(msg->field_3);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1784: {
             secondary_cooling_temp_pumps_converted_t* msg = (secondary_cooling_temp_pumps_converted_t*)(device->message);
             secondary::COOLING_TEMP_PUMPS* proto_msg = pack->add_cooling_temp_pumps();
 			proto_msg->set_input(msg->input);
@@ -3005,7 +3102,7 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             break;
         }
 
-        case 1768: {
+        case 1792: {
             secondary_cooling_temp_radiators_converted_t* msg = (secondary_cooling_temp_radiators_converted_t*)(device->message);
             secondary::COOLING_TEMP_RADIATORS* proto_msg = pack->add_cooling_temp_radiators();
 			proto_msg->set_air_temp(msg->air_temp);

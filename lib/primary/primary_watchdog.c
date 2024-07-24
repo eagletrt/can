@@ -84,6 +84,8 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 1776: return PRIMARY_INTERVAL_DEBUG_SIGNAL_CRASH_DEBUG_ACK;
        case 1784: return PRIMARY_INTERVAL_DEBUG_SIGNAL_1;
        case 1792: return PRIMARY_INTERVAL_DEBUG_SIGNAL_2;
+       case 1800: return PRIMARY_INTERVAL_DEBUG_SIGNAL_3;
+       case 1808: return PRIMARY_INTERVAL_DEBUG_SIGNAL_4;
        case 256: return PRIMARY_INTERVAL_CHARGER_1;
        case 272: return PRIMARY_INTERVAL_CHARGER_2;
        case 288: return PRIMARY_INTERVAL_CHARGER_3;
@@ -226,6 +228,8 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 1776: return PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG_ACK;
        case 1784: return PRIMARY_INDEX_DEBUG_SIGNAL_1;
        case 1792: return PRIMARY_INDEX_DEBUG_SIGNAL_2;
+       case 1800: return PRIMARY_INDEX_DEBUG_SIGNAL_3;
+       case 1808: return PRIMARY_INDEX_DEBUG_SIGNAL_4;
        case 256: return PRIMARY_INDEX_CHARGER_1;
        case 272: return PRIMARY_INDEX_CHARGER_2;
        case 288: return PRIMARY_INDEX_CHARGER_3;
@@ -256,7 +260,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 135 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 137 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -833,6 +837,20 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_DEBUG_SIGNAL_2] > PRIMARY_INTERVAL_DEBUG_SIGNAL_2 * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DEBUG_SIGNAL_2);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_DEBUG_SIGNAL_3)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DEBUG_SIGNAL_3] > PRIMARY_INTERVAL_DEBUG_SIGNAL_3 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DEBUG_SIGNAL_3);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_DEBUG_SIGNAL_4)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_DEBUG_SIGNAL_4] > PRIMARY_INTERVAL_DEBUG_SIGNAL_4 * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_DEBUG_SIGNAL_4);
     }
 
     if (

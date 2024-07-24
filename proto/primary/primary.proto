@@ -309,6 +309,50 @@ enum primary_ecu_set_steer_actuator_status_tlm_status {
 	primary_ecu_set_steer_actuator_status_tlm_status_off = 0;
 	primary_ecu_set_steer_actuator_status_tlm_status_on = 1;
 }
+enum primary_debug_signal_1_device_id {
+	primary_debug_signal_1_device_id_hv_mainboard = 0;
+	primary_debug_signal_1_device_id_hv_cellboard = 1;
+	primary_debug_signal_1_device_id_lv = 2;
+	primary_debug_signal_1_device_id_ecu = 3;
+	primary_debug_signal_1_device_id_tlm = 4;
+	primary_debug_signal_1_device_id_traction_control = 5;
+	primary_debug_signal_1_device_id_steeering_wheel = 6;
+	primary_debug_signal_1_device_id_handcart = 7;
+	primary_debug_signal_1_device_id_acquisinator = 8;
+}
+enum primary_debug_signal_2_device_id {
+	primary_debug_signal_2_device_id_hv_mainboard = 0;
+	primary_debug_signal_2_device_id_hv_cellboard = 1;
+	primary_debug_signal_2_device_id_lv = 2;
+	primary_debug_signal_2_device_id_ecu = 3;
+	primary_debug_signal_2_device_id_tlm = 4;
+	primary_debug_signal_2_device_id_traction_control = 5;
+	primary_debug_signal_2_device_id_steeering_wheel = 6;
+	primary_debug_signal_2_device_id_handcart = 7;
+	primary_debug_signal_2_device_id_acquisinator = 8;
+}
+enum primary_debug_signal_3_device_id {
+	primary_debug_signal_3_device_id_hv_mainboard = 0;
+	primary_debug_signal_3_device_id_hv_cellboard = 1;
+	primary_debug_signal_3_device_id_lv = 2;
+	primary_debug_signal_3_device_id_ecu = 3;
+	primary_debug_signal_3_device_id_tlm = 4;
+	primary_debug_signal_3_device_id_traction_control = 5;
+	primary_debug_signal_3_device_id_steeering_wheel = 6;
+	primary_debug_signal_3_device_id_handcart = 7;
+	primary_debug_signal_3_device_id_acquisinator = 8;
+}
+enum primary_debug_signal_4_device_id {
+	primary_debug_signal_4_device_id_hv_mainboard = 0;
+	primary_debug_signal_4_device_id_hv_cellboard = 1;
+	primary_debug_signal_4_device_id_lv = 2;
+	primary_debug_signal_4_device_id_ecu = 3;
+	primary_debug_signal_4_device_id_tlm = 4;
+	primary_debug_signal_4_device_id_traction_control = 5;
+	primary_debug_signal_4_device_id_steeering_wheel = 6;
+	primary_debug_signal_4_device_id_handcart = 7;
+	primary_debug_signal_4_device_id_acquisinator = 8;
+}
 
 
 message NLG5_DIAG_TX{
@@ -1099,17 +1143,31 @@ message DEBUG_SIGNAL_CRASH_DEBUG_ACK{
 	uint64 _inner_timestamp = 2;
 }
 message DEBUG_SIGNAL_1{
-	double field_1 = 1;
-	double field_2 = 2;
-	double field_3 = 3;
-	double field_4 = 4;
+	primary_debug_signal_1_device_id device_id = 1;
+	double field_1 = 2;
+	double field_2 = 3;
+	double field_3 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message DEBUG_SIGNAL_2{
-	double field_1 = 1;
-	double field_2 = 2;
-	double field_3 = 3;
-	double field_4 = 4;
+	primary_debug_signal_2_device_id device_id = 1;
+	double field_1 = 2;
+	double field_2 = 3;
+	double field_3 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message DEBUG_SIGNAL_3{
+	primary_debug_signal_3_device_id device_id = 1;
+	double field_1 = 2;
+	double field_2 = 3;
+	double field_3 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message DEBUG_SIGNAL_4{
+	primary_debug_signal_4_device_id device_id = 1;
+	double field_1 = 2;
+	double field_2 = 3;
+	double field_3 = 4;
 	uint64 _inner_timestamp = 5;
 }
 message CHARGER_1{
@@ -1440,24 +1498,26 @@ message Pack{
 	repeated DEBUG_SIGNAL_CRASH_DEBUG_ACK DEBUG_SIGNAL_CRASH_DEBUG_ACK = 114;
 	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 115;
 	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 116;
-	repeated CHARGER_1 CHARGER_1 = 117;
-	repeated CHARGER_2 CHARGER_2 = 118;
-	repeated CHARGER_3 CHARGER_3 = 119;
-	repeated CHARGER_4 CHARGER_4 = 120;
-	repeated CHARGER_5 CHARGER_5 = 121;
-	repeated CHARGER_6 CHARGER_6 = 122;
-	repeated CHARGER_7 CHARGER_7 = 123;
-	repeated CHARGER_8 CHARGER_8 = 124;
-	repeated CHARGER_9 CHARGER_9 = 125;
-	repeated CHARGER_10 CHARGER_10 = 126;
-	repeated CHARGER_11 CHARGER_11 = 127;
-	repeated CHARGER_12 CHARGER_12 = 128;
-	repeated CHARGER_13 CHARGER_13 = 129;
-	repeated CHARGER_14 CHARGER_14 = 130;
-	repeated CHARGER_15 CHARGER_15 = 131;
-	repeated CHARGER_16 CHARGER_16 = 132;
-	repeated CHARGER_17 CHARGER_17 = 133;
-	repeated CHARGER_18 CHARGER_18 = 134;
-	repeated CHARGER_19 CHARGER_19 = 135;
+	repeated DEBUG_SIGNAL_3 DEBUG_SIGNAL_3 = 117;
+	repeated DEBUG_SIGNAL_4 DEBUG_SIGNAL_4 = 118;
+	repeated CHARGER_1 CHARGER_1 = 119;
+	repeated CHARGER_2 CHARGER_2 = 120;
+	repeated CHARGER_3 CHARGER_3 = 121;
+	repeated CHARGER_4 CHARGER_4 = 122;
+	repeated CHARGER_5 CHARGER_5 = 123;
+	repeated CHARGER_6 CHARGER_6 = 124;
+	repeated CHARGER_7 CHARGER_7 = 125;
+	repeated CHARGER_8 CHARGER_8 = 126;
+	repeated CHARGER_9 CHARGER_9 = 127;
+	repeated CHARGER_10 CHARGER_10 = 128;
+	repeated CHARGER_11 CHARGER_11 = 129;
+	repeated CHARGER_12 CHARGER_12 = 130;
+	repeated CHARGER_13 CHARGER_13 = 131;
+	repeated CHARGER_14 CHARGER_14 = 132;
+	repeated CHARGER_15 CHARGER_15 = 133;
+	repeated CHARGER_16 CHARGER_16 = 134;
+	repeated CHARGER_17 CHARGER_17 = 135;
+	repeated CHARGER_18 CHARGER_18 = 136;
+	repeated CHARGER_19 CHARGER_19 = 137;
 }
 
