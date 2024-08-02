@@ -318,20 +318,19 @@
             "contents": {
                 "start": "bool",
                 "target": {
-                    "type": "float",
+                    "type": "uint16",
                     "range": [
-                        2800,
-                        4200
-                    ],
-                    "force": "uint16"
+                        28000,
+                        42000
+                    ]
                 },
                 "threshold": {
-                    "type": "float",
+                    "type": "uint8",
                     "range": [
-                        5,
-                        200
+                        50,
+                        2000
                     ],
-                    "force": "uint8"
+                    "precision": 10
                 }
             }
         },

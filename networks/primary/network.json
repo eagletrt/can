@@ -325,6 +325,31 @@
             }
         },
         {
+            "name": "HV_SET_BALANCING_STATUS",
+            "topic": "HYDRA",
+            "priority": 2,
+            "interval": 200,
+            "sending": [
+                "STEERING_WHEEL",
+                "HANDCART"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "description": "Start or stop the balancing procedure",
+            "contents": {
+                "status": "bool",
+                "threshold": {
+                    "type": "uint8",
+                    "range": [
+                        5,
+                        200
+                    ],
+                    "note": "The maximum allowed delta between the highest and lowest cell voltages in mV"
+                }
+            }
+        },
+        {
             "name": "HV_CURRENT",
             "topic": "HYDRA",
             "priority": 3,
