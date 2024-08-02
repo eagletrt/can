@@ -345,6 +345,61 @@
                     "note": "The current sensor has a resolution of +/-10mA"
                 }
             }
+        },
+        {
+            "name": "HV_CELLS_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 2,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Cells voltages in V",
+            "contents": {
+                "cellboard_id": "HvCellboardId",
+                "offset": {
+                    "type": "uint8",
+                    "range": [
+                        0,
+                        20
+                    ],
+                    "precision": 4,
+                    "note": "Offset from the first cell of the segment"
+                },
+                "voltage_0": {
+                    "type": "float",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "precision": 0.0013
+                },
+                "voltage_1": {
+                    "type": "float",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "precision": 0.0013
+                },
+                "voltage_2": {
+                    "type": "float",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "precision": 0.0013
+                },
+                "voltage_3": {
+                    "type": "float",
+                    "range": [
+                        0,
+                        5
+                    ],
+                    "precision": 0.0013
+                }
+            }
         }
     ]
 }

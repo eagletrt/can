@@ -23,6 +23,14 @@
                 "cooldown"
             ]
         },
+        "CellboardErrorStatus": {
+            "type": "enum",
+            "items": [
+                "unset",
+                "running",
+                "expired"
+            ]
+        },
         "CellboardDischargingCells": {
             "type": "bitset",
             "items": [
@@ -207,34 +215,34 @@
                 "voltage_0": {
                     "type": "uint16",
                     "range": [
-                        28000,
-                        42000
+                        0,
+                        50000
                     ],
-                    "precision": 5
+                    "precision": 13
                 },
                 "voltage_1": {
                     "type": "uint16",
                     "range": [
-                        28000,
-                        42000
+                        0,
+                        50000
                     ],
-                    "precision": 5
+                    "precision": 13
                 },
                 "voltage_2": {
                     "type": "uint16",
                     "range": [
-                        28000,
-                        42000
+                        0,
+                        50000
                     ],
-                    "precision": 5
+                    "precision": 13
                 },
                 "voltage_3": {
                     "type": "uint16",
                     "range": [
-                        28000,
-                        42000
+                        0,
+                        50000
                     ],
-                    "precision": 5
+                    "precision": 13
                 }
             }
         },
@@ -342,6 +350,32 @@
             "contents": {
                 "cellboard_id": "CellboardId",
                 "discharging": "CellboardDischargingCells"
+            }
+        },
+        {
+            "name": "CELLBOARD_ERRORS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "description": "Cellboard errors status",
+            "contents": {
+                "post" : "CellboardErrorStatus",
+                "undervoltage": "CellboardErrorStatus",
+                "overvoltage": "CellboardErrorStatus",
+                "undertemperature_cells": "CellboardErrorStatus",
+                "undertemperature_discharge": "CellboardErrorStatus",
+                "overtemperature_cells": "CellboardErrorStatus",
+                "overtemperature_discharge": "CellboardErrorStatus",
+                "can": "CellboardErrorStatus",
+                "flash": "CellboardErrorStatus",
+                "bms_monitor": "CellboardErrorStatus",
+                "open_wire": "CellboardErrorStatus"
             }
         }
     ]
