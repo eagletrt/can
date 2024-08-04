@@ -268,7 +268,7 @@
                         536870911
                     ],
                     "precision": 1,
-                    "note": "The build time is expressed in seconds with the 3 least significant bits truncated to fit into the CAN payload"
+                    "comment": "The build time is expressed in seconds with the 3 least significant bits truncated to fit into the CAN payload"
                 }
             }
         },
@@ -345,7 +345,7 @@
                         5,
                         200
                     ],
-                    "note": "The maximum allowed delta between the highest and lowest cell voltages in mV"
+                    "comment": "The maximum allowed delta between the highest and lowest cell voltages in mV"
                 }
             }
         },
@@ -367,7 +367,7 @@
                         135
                     ],
                     "precision": 0.001,
-                    "note": "The current sensor has a resolution of +/-10mA"
+                    "comment": "The current sensor has a resolution of +/-10mA"
                 }
             }
         },
@@ -390,7 +390,7 @@
                         20
                     ],
                     "precision": 4,
-                    "note": "Offset from the first cell of the segment"
+                    "comment": "Offset from the first cell of the segment"
                 },
                 "voltage_0": {
                     "type": "float",

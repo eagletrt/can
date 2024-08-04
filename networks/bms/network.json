@@ -168,7 +168,7 @@
                         536870911
                     ],
                     "precision": 1,
-                    "note": "The build time is expressed in seconds with the 3 least significant bits truncated to fit into the CAN payload"
+                    "comment": "The build time is expressed in seconds with the 3 least significant bits truncated to fit into the CAN payload"
                 }
             }
         },
@@ -210,7 +210,7 @@
                         20
                     ],
                     "precision": 4,
-                    "note": "The offset is the position of the cell corresponding to the first voltage in the message"
+                    "comment": "The offset is the position of the cell corresponding to the first voltage in the message"
                 },
                 "voltage_0": {
                     "type": "uint16",
@@ -267,7 +267,7 @@
                         44
                     ],
                     "precision": 4,
-                    "note": "The offset is the position of the cell corresponding to the first temperature in the message"
+                    "comment": "The offset is the position of the cell corresponding to the first temperature in the message"
                 },
                 "temperature_0": {
                     "type": "uint16",
@@ -325,12 +325,11 @@
                     ]
                 },
                 "threshold": {
-                    "type": "uint8",
+                    "type": "uint16",
                     "range": [
                         50,
                         2000
-                    ],
-                    "precision": 10
+                    ]
                 }
             }
         },
