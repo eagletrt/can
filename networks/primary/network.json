@@ -15,6 +15,14 @@
                 "acquisinator"
             ]
         },
+        "CoolingAggressiveness": {
+            "type": "enum",
+            "items": [
+                "weak",
+                "normal",
+                "aggressive"
+            ]
+        },
         "HvFeedbackStatus": {
             "type": "enum",
             "items": [
@@ -234,6 +242,7 @@
                 "drive",
                 "disable_inv_drive",
                 "start_ts_discharge",
+                "re_enable_inverter_drive",
                 "wait_ts_discharge",
                 "fatal_error"
             ]
@@ -1126,17 +1135,28 @@
             }
         },
         {
+            "name": "LV_COOLING_AGGRESSIVENESS",
+            "topic": "HYDRA",
+            "priority": 2,
+            "sending": [
+                "STEERING_WHEEL"
+            ],
+            "receiving": [
+                "LV"
+            ],
+            "contents": {
+                "status": "CoolingAggressiveness"
+            }
+        },
+        {
             "name": "LV_RADIATOR_SPEED",
             "topic": "HYDRA",
             "priority": 3,
             "interval": 200,
             "sending": [
-                "HV"
+                "LV"
             ],
-            "receiving": [
-                "ECU",
-                "HANDCART"
-            ],
+            "receiving": [],
             "contents": {
                 "status": "CoolingStatus",
                 "radiator_speed": {

@@ -282,21 +282,25 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 
 		return 0;
 	case 1688:
-		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, AMMO_COMPRESSION_RL);
-		snprintf(v[1], string_size, AMMO_COMPRESSION_RR);
-		snprintf(v[2], string_size, AMMO_COMPRESSION_FL);
-		snprintf(v[3], string_size, AMMO_COMPRESSION_FR);
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, FRONT_AMMO_COMPRESSION_FL);
+		snprintf(v[1], string_size, FRONT_AMMO_COMPRESSION_FR);
 
 		return 0;
 	case 1696:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, REAR_AMMO_COMPRESSION_RL);
+		snprintf(v[1], string_size, REAR_AMMO_COMPRESSION_RR);
+
+		return 0;
+	case 1704:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, ACQUISINATOR_CALIBRATIONS_OFFSETS_ACQUISINATOR_ID);
 		snprintf(v[1], string_size, ACQUISINATOR_CALIBRATIONS_OFFSETS_OFFSET1);
 		snprintf(v[2], string_size, ACQUISINATOR_CALIBRATIONS_OFFSETS_OFFSET2);
 
 		return 0;
-	case 1704:
+	case 1712:
 		if(5 > fields_size) return 1;
 		snprintf(v[0], string_size, ACQUISINATOR_ERRORS_ACQUISINATOR_ID);
 		snprintf(v[1], string_size, ACQUISINATOR_ERRORS_ACQUISINATOR_ERRORS_ACQUISINATORE_LED_CODE_CAN_NOT_WORKING);
@@ -305,38 +309,38 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[4], string_size, ACQUISINATOR_ERRORS_ACQUISINATOR_ERRORS_ACQUISINATORE_LED_CODE_FLASHED_FIRMWARE_WITH_WRONG_ID);
 
 		return 0;
-	case 1712:
+	case 1720:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_DEBUG_VOLTAGES_WHEEL_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_DEBUG_VOLTAGES_ROD_ID);
 		snprintf(v[2], string_size, LINK_DEFORMATION_DEBUG_VOLTAGES_RAW_VOLTAGE);
 
 		return 0;
-	case 1720:
+	case 1728:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_FL_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_FL_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1728:
+	case 1736:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_FR_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_FR_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1736:
+	case 1744:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_RL_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_RL_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1744:
+	case 1752:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LINK_DEFORMATION_RR_WHEEL_ROD_ID);
 		snprintf(v[1], string_size, LINK_DEFORMATION_RR_WHEEL_DEFORMATION);
 
 		return 0;
-	case 1752:
+	case 1760:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_5_DEVICE_ID);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_5_FIELD_1);
@@ -344,7 +348,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, DEBUG_SIGNAL_5_FIELD_3);
 
 		return 0;
-	case 1760:
+	case 1768:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_6_DEVICE_ID);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_6_FIELD_1);
@@ -352,7 +356,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, DEBUG_SIGNAL_6_FIELD_3);
 
 		return 0;
-	case 1768:
+	case 1776:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_7_DEVICE_ID);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_7_FIELD_1);
@@ -360,7 +364,7 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, DEBUG_SIGNAL_7_FIELD_3);
 
 		return 0;
-	case 1776:
+	case 1784:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, DEBUG_SIGNAL_8_DEVICE_ID);
 		snprintf(v[1], string_size, DEBUG_SIGNAL_8_FIELD_1);
@@ -368,13 +372,13 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, DEBUG_SIGNAL_8_FIELD_3);
 
 		return 0;
-	case 1784:
+	case 1792:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, COOLING_TEMP_PUMPS_INPUT);
 		snprintf(v[1], string_size, COOLING_TEMP_PUMPS_OUTPUT);
 
 		return 0;
-	case 1792:
+	case 1800:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, COOLING_TEMP_RADIATORS_AIR_TEMP);
 
@@ -1381,31 +1385,41 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 	}
 	case 1688:
 	{
-		secondary_ammo_compression_t tmp;
-		secondary_ammo_compression_converted_t tmp_converted;
-		float r_rl;
-		float r_rr;
+		secondary_front_ammo_compression_t tmp;
+		secondary_front_ammo_compression_converted_t tmp_converted;
 		float r_fl;
 		float r_fr;
 
 		sscanf(s, "%f,"       
-			"%f,"       
-			"%f,"       
 			"%f,"       ,
-			&r_rl,
-			&r_rr,
 			&r_fl,
 			&r_fr);
-		tmp_converted.rl = (float)r_rl;
-		tmp_converted.rr = (float)r_rr;
 		tmp_converted.fl = (float)r_fl;
 		tmp_converted.fr = (float)r_fr;
 
-		secondary_ammo_compression_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = SECONDARY_AMMO_COMPRESSION_BYTE_SIZE;
-		return secondary_ammo_compression_pack(data, &tmp, SECONDARY_AMMO_COMPRESSION_BYTE_SIZE);
+		secondary_front_ammo_compression_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_FRONT_AMMO_COMPRESSION_BYTE_SIZE;
+		return secondary_front_ammo_compression_pack(data, &tmp, SECONDARY_FRONT_AMMO_COMPRESSION_BYTE_SIZE);
 	}
 	case 1696:
+	{
+		secondary_rear_ammo_compression_t tmp;
+		secondary_rear_ammo_compression_converted_t tmp_converted;
+		float r_rl;
+		float r_rr;
+
+		sscanf(s, "%f,"       
+			"%f,"       ,
+			&r_rl,
+			&r_rr);
+		tmp_converted.rl = (float)r_rl;
+		tmp_converted.rr = (float)r_rr;
+
+		secondary_rear_ammo_compression_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_REAR_AMMO_COMPRESSION_BYTE_SIZE;
+		return secondary_rear_ammo_compression_pack(data, &tmp, SECONDARY_REAR_AMMO_COMPRESSION_BYTE_SIZE);
+	}
+	case 1704:
 	{
 		secondary_acquisinator_calibrations_offsets_t tmp;
 		secondary_acquisinator_calibrations_offsets_converted_t tmp_converted;
@@ -1427,7 +1441,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_ACQUISINATOR_CALIBRATIONS_OFFSETS_BYTE_SIZE;
 		return secondary_acquisinator_calibrations_offsets_pack(data, &tmp, SECONDARY_ACQUISINATOR_CALIBRATIONS_OFFSETS_BYTE_SIZE);
 	}
-	case 1704:
+	case 1712:
 	{
 		secondary_acquisinator_errors_t tmp;
 		secondary_acquisinator_errors_converted_t tmp_converted;
@@ -1457,7 +1471,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_ACQUISINATOR_ERRORS_BYTE_SIZE;
 		return secondary_acquisinator_errors_pack(data, &tmp, SECONDARY_ACQUISINATOR_ERRORS_BYTE_SIZE);
 	}
-	case 1712:
+	case 1720:
 	{
 		secondary_link_deformation_debug_voltages_t tmp;
 		secondary_link_deformation_debug_voltages_converted_t tmp_converted;
@@ -1479,7 +1493,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_DEBUG_VOLTAGES_BYTE_SIZE;
 		return secondary_link_deformation_debug_voltages_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_DEBUG_VOLTAGES_BYTE_SIZE);
 	}
-	case 1720:
+	case 1728:
 	{
 		secondary_link_deformation_fl_wheel_t tmp;
 		secondary_link_deformation_fl_wheel_converted_t tmp_converted;
@@ -1497,7 +1511,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_FL_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_fl_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_FL_WHEEL_BYTE_SIZE);
 	}
-	case 1728:
+	case 1736:
 	{
 		secondary_link_deformation_fr_wheel_t tmp;
 		secondary_link_deformation_fr_wheel_converted_t tmp_converted;
@@ -1515,7 +1529,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_FR_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_fr_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_FR_WHEEL_BYTE_SIZE);
 	}
-	case 1736:
+	case 1744:
 	{
 		secondary_link_deformation_rl_wheel_t tmp;
 		secondary_link_deformation_rl_wheel_converted_t tmp_converted;
@@ -1533,7 +1547,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_RL_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_rl_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_RL_WHEEL_BYTE_SIZE);
 	}
-	case 1744:
+	case 1752:
 	{
 		secondary_link_deformation_rr_wheel_t tmp;
 		secondary_link_deformation_rr_wheel_converted_t tmp_converted;
@@ -1551,7 +1565,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_LINK_DEFORMATION_RR_WHEEL_BYTE_SIZE;
 		return secondary_link_deformation_rr_wheel_pack(data, &tmp, SECONDARY_LINK_DEFORMATION_RR_WHEEL_BYTE_SIZE);
 	}
-	case 1752:
+	case 1760:
 	{
 		secondary_debug_signal_5_t tmp;
 		secondary_debug_signal_5_converted_t tmp_converted;
@@ -1577,7 +1591,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_DEBUG_SIGNAL_5_BYTE_SIZE;
 		return secondary_debug_signal_5_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_5_BYTE_SIZE);
 	}
-	case 1760:
+	case 1768:
 	{
 		secondary_debug_signal_6_t tmp;
 		secondary_debug_signal_6_converted_t tmp_converted;
@@ -1603,7 +1617,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_DEBUG_SIGNAL_6_BYTE_SIZE;
 		return secondary_debug_signal_6_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_6_BYTE_SIZE);
 	}
-	case 1768:
+	case 1776:
 	{
 		secondary_debug_signal_7_t tmp;
 		secondary_debug_signal_7_converted_t tmp_converted;
@@ -1629,7 +1643,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_DEBUG_SIGNAL_7_BYTE_SIZE;
 		return secondary_debug_signal_7_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_7_BYTE_SIZE);
 	}
-	case 1776:
+	case 1784:
 	{
 		secondary_debug_signal_8_t tmp;
 		secondary_debug_signal_8_converted_t tmp_converted;
@@ -1655,7 +1669,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_DEBUG_SIGNAL_8_BYTE_SIZE;
 		return secondary_debug_signal_8_pack(data, &tmp, SECONDARY_DEBUG_SIGNAL_8_BYTE_SIZE);
 	}
-	case 1784:
+	case 1792:
 	{
 		secondary_cooling_temp_pumps_t tmp;
 		secondary_cooling_temp_pumps_converted_t tmp_converted;
@@ -1673,7 +1687,7 @@ int secondary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size
 		*size = SECONDARY_COOLING_TEMP_PUMPS_BYTE_SIZE;
 		return secondary_cooling_temp_pumps_pack(data, &tmp, SECONDARY_COOLING_TEMP_PUMPS_BYTE_SIZE);
 	}
-	case 1792:
+	case 1800:
 	{
 		secondary_cooling_temp_radiators_t tmp;
 		secondary_cooling_temp_radiators_converted_t tmp_converted;
@@ -1798,22 +1812,23 @@ int secondary_n_fields_from_id(int id)
 		case 1664: return 2;
 		case 1672: return 3;
 		case 1680: return 5;
-		case 1688: return 4;
-		case 1696: return 3;
-		case 1704: return 5;
-		case 1712: return 3;
-		case 1720: return 2;
+		case 1688: return 2;
+		case 1696: return 2;
+		case 1704: return 3;
+		case 1712: return 5;
+		case 1720: return 3;
 		case 1728: return 2;
 		case 1736: return 2;
 		case 1744: return 2;
+		case 1752: return 2;
 		case 72: return 0;
 		case 80: return 0;
-		case 1752: return 4;
 		case 1760: return 4;
 		case 1768: return 4;
 		case 1776: return 4;
-		case 1784: return 2;
-		case 1792: return 1;
+		case 1784: return 4;
+		case 1792: return 2;
+		case 1800: return 1;
     }
     return 0;
 }
@@ -2060,19 +2075,22 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[4] = e_secondary_uint32_t;
 		return 5;
 	case 1688:
-		if(fields_types_size < 4) return 0;
+		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
-		fields_types[2] = e_secondary_float;
-		fields_types[3] = e_secondary_float;
-		return 4;
+		return 2;
 	case 1696:
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_secondary_float;
+		fields_types[1] = e_secondary_float;
+		return 2;
+	case 1704:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_secondary_uint8_t;
 		fields_types[1] = e_secondary_float;
 		fields_types[2] = e_secondary_float;
 		return 3;
-	case 1704:
+	case 1712:
 		if(fields_types_size < 5) return 0;
 		fields_types[0] = e_secondary_uint8_t;
 		fields_types[1] = e_secondary_uint8_t;
@@ -2080,66 +2098,66 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[3] = e_secondary_uint8_t;
 		fields_types[4] = e_secondary_uint8_t;
 		return 5;
-	case 1712:
+	case 1720:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_secondary_link_deformation_debug_voltages_wheel_id;
 		fields_types[1] = e_secondary_link_deformation_debug_voltages_rod_id;
 		fields_types[2] = e_secondary_float;
 		return 3;
-	case 1720:
+	case 1728:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_fl_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1728:
+	case 1736:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_fr_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1736:
+	case 1744:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_rl_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1744:
+	case 1752:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_link_deformation_rr_wheel_rod_id;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1752:
+	case 1760:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_debug_signal_5_device_id;
 		fields_types[1] = e_secondary_float;
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
-	case 1760:
+	case 1768:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_debug_signal_6_device_id;
 		fields_types[1] = e_secondary_float;
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
-	case 1768:
+	case 1776:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_debug_signal_7_device_id;
 		fields_types[1] = e_secondary_float;
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
-	case 1776:
+	case 1784:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_secondary_debug_signal_8_device_id;
 		fields_types[1] = e_secondary_float;
 		fields_types[2] = e_secondary_float;
 		fields_types[3] = e_secondary_float;
 		return 4;
-	case 1784:
+	case 1792:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_secondary_float;
 		fields_types[1] = e_secondary_float;
 		return 2;
-	case 1792:
+	case 1800:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_secondary_float;
 		return 1;

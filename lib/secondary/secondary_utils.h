@@ -649,12 +649,17 @@ extern "C" {
 /* END */
 
 /* START */
-#define AMMO_COMPRESSION "AMMO_COMPRESSION"
+#define FRONT_AMMO_COMPRESSION "FRONT_AMMO_COMPRESSION"
 
-#define AMMO_COMPRESSION_RL "ammo_compression_rl"
-#define AMMO_COMPRESSION_RR "ammo_compression_rr"
-#define AMMO_COMPRESSION_FL "ammo_compression_fl"
-#define AMMO_COMPRESSION_FR "ammo_compression_fr"
+#define FRONT_AMMO_COMPRESSION_FL "front_ammo_compression_fl"
+#define FRONT_AMMO_COMPRESSION_FR "front_ammo_compression_fr"
+/* END */
+
+/* START */
+#define REAR_AMMO_COMPRESSION "REAR_AMMO_COMPRESSION"
+
+#define REAR_AMMO_COMPRESSION_RL "rear_ammo_compression_rl"
+#define REAR_AMMO_COMPRESSION_RR "rear_ammo_compression_rr"
 /* END */
 
 /* START */
@@ -771,12 +776,12 @@ extern "C" {
 /* END */
 
 enum secondary_types_id{
-	e_secondary_uint64_t = -6,
-	e_secondary_float,
-	e_secondary_uint8_t,
-	e_secondary_uint32_t,
-	e_secondary_uint16_t,
+	e_secondary_uint32_t = -6,
 	e_secondary_int16_t,
+	e_secondary_float,
+	e_secondary_uint64_t,
+	e_secondary_uint8_t,
+	e_secondary_uint16_t,
 
 	e_secondary_link_deformation_debug_voltages_wheel_id,
 	e_secondary_link_deformation_debug_voltages_rod_id,

@@ -2191,45 +2191,58 @@
       }
     },
     {
-      "name": "AMMO_COMPRESSION",
+      "name": "FRONT_AMMO_COMPRESSION",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [
         "ACQUISINATOR"
       ],
       "receiving": [],
-      "description": "Ammo compressions",
+      "description": "Front ammo compressions",
       "interval": 10,
       "contents": {
-        "rl": {
-          "type": "float32",
-          "range": [
-            -50,
-            20
-          ],
-          "force": "uint16"
-        },
-        "rr": {
-          "type": "float32",
-          "range": [
-            -50,
-            20
-          ],
-          "force": "uint16"
-        },
         "fl": {
           "type": "float32",
           "range": [
-            -20,
-            50
+            -100,
+            100
           ],
           "force": "uint16"
         },
         "fr": {
           "type": "float32",
           "range": [
-            -20,
-            50
+            -100,
+            100
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "REAR_AMMO_COMPRESSION",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ACQUISINATOR"
+      ],
+      "receiving": [],
+      "description": "Rear ammo compressions",
+      "interval": 10,
+      "contents": {
+        "rl": {
+          "type": "float32",
+          "range": [
+            -100,
+            100
+          ],
+          "force": "uint16"
+        },
+        "rr": {
+          "type": "float32",
+          "range": [
+            -100,
+            100
           ],
           "force": "uint16"
         }

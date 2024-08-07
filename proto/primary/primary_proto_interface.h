@@ -1171,6 +1171,20 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
+    for(int i = 0; i < pack->lv_cooling_aggressiveness_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->lv_cooling_aggressiveness(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lv_cooling_aggressiveness(i)._inner_timestamp();
+        (*net_signals)["LV_COOLING_AGGRESSIVENESS"]["_timestamp"].push(pack->lv_cooling_aggressiveness(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["LV_COOLING_AGGRESSIVENESS"]["status"].push(pack->lv_cooling_aggressiveness(i).status());
+		primary_lv_cooling_aggressiveness_status_enum_to_string((primary_lv_cooling_aggressiveness_status)pack->lv_cooling_aggressiveness(i).status(), buffer);
+		(*net_strings)["LV_COOLING_AGGRESSIVENESS"]["status"].push(buffer);
+
+    }
+
     for(int i = 0; i < pack->lv_radiator_speed_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -3297,6 +3311,17 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
+        case 1048: {
+            primary_lv_cooling_aggressiveness_t* msg = (primary_lv_cooling_aggressiveness_t*)(device->message);
+            primary::LV_COOLING_AGGRESSIVENESS* proto_msg = pack->add_lv_cooling_aggressiveness();
+			proto_msg->set_status((primary::primary_lv_cooling_aggressiveness_status)msg->status);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
         case 1576: {
             primary_lv_radiator_speed_converted_t* msg = (primary_lv_radiator_speed_converted_t*)(device->message);
             primary::LV_RADIATOR_SPEED* proto_msg = pack->add_lv_radiator_speed();
@@ -3321,7 +3346,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1048: {
+        case 1056: {
             primary_lv_set_radiator_speed_converted_t* msg = (primary_lv_set_radiator_speed_converted_t*)(device->message);
             primary::LV_SET_RADIATOR_SPEED* proto_msg = pack->add_lv_set_radiator_speed();
 			proto_msg->set_status((primary::primary_lv_set_radiator_speed_status)msg->status);
@@ -3333,7 +3358,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1056: {
+        case 1064: {
             primary_lv_set_pumps_speed_converted_t* msg = (primary_lv_set_pumps_speed_converted_t*)(device->message);
             primary::LV_SET_PUMPS_SPEED* proto_msg = pack->add_lv_set_pumps_speed();
 			proto_msg->set_status((primary::primary_lv_set_pumps_speed_status)msg->status);
@@ -3521,7 +3546,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1064: {
+        case 1072: {
             primary_tlm_set_status_t* msg = (primary_tlm_set_status_t*)(device->message);
             primary::TLM_SET_STATUS* proto_msg = pack->add_tlm_set_status();
 			proto_msg->set_status((primary::primary_tlm_set_status_status)msg->status);
@@ -3559,7 +3584,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1072: {
+        case 1080: {
             primary_handcart_set_settings_converted_t* msg = (primary_handcart_set_settings_converted_t*)(device->message);
             primary::HANDCART_SET_SETTINGS* proto_msg = pack->add_handcart_set_settings();
 			proto_msg->set_target_voltage(msg->target_voltage);
@@ -3597,7 +3622,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1080: {
+        case 1088: {
             primary_ecu_inverter_status_t* msg = (primary_ecu_inverter_status_t*)(device->message);
             primary::ECU_INVERTER_STATUS* proto_msg = pack->add_ecu_inverter_status();
 			proto_msg->set_rl((primary::primary_ecu_inverter_status_rl)msg->rl);
@@ -3699,7 +3724,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1088: {
+        case 1096: {
             primary_ecu_set_ptt_status_t* msg = (primary_ecu_set_ptt_status_t*)(device->message);
             primary::ECU_SET_PTT_STATUS* proto_msg = pack->add_ecu_set_ptt_status();
 			proto_msg->set_status((primary::primary_ecu_set_ptt_status_status)msg->status);
@@ -4022,7 +4047,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1096: {
+        case 1104: {
             primary_ecu_set_steer_actuator_status_steering_wheel_t* msg = (primary_ecu_set_steer_actuator_status_steering_wheel_t*)(device->message);
             primary::ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL* proto_msg = pack->add_ecu_set_steer_actuator_status_steering_wheel();
 			proto_msg->set_status((primary::primary_ecu_set_steer_actuator_status_steering_wheel_status)msg->status);
@@ -4033,7 +4058,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1104: {
+        case 1112: {
             primary_ecu_set_steer_actuator_status_tlm_t* msg = (primary_ecu_set_steer_actuator_status_tlm_t*)(device->message);
             primary::ECU_SET_STEER_ACTUATOR_STATUS_TLM* proto_msg = pack->add_ecu_set_steer_actuator_status_tlm();
 			proto_msg->set_status((primary::primary_ecu_set_steer_actuator_status_tlm_status)msg->status);

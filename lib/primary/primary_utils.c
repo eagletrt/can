@@ -369,6 +369,11 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[0], string_size, LV_CHARGING_STATUS_STATUS);
 
 		return 0;
+	case 1048:
+		if(1 > fields_size) return 1;
+		snprintf(v[0], string_size, LV_COOLING_AGGRESSIVENESS_STATUS);
+
+		return 0;
 	case 1576:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LV_RADIATOR_SPEED_STATUS);
@@ -381,13 +386,13 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[1], string_size, LV_PUMPS_SPEED_PUMPS_SPEED);
 
 		return 0;
-	case 1048:
+	case 1056:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LV_SET_RADIATOR_SPEED_STATUS);
 		snprintf(v[1], string_size, LV_SET_RADIATOR_SPEED_RADIATOR_SPEED);
 
 		return 0;
-	case 1056:
+	case 1064:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, LV_SET_PUMPS_SPEED_STATUS);
 		snprintf(v[1], string_size, LV_SET_PUMPS_SPEED_PUMPS_SPEED);
@@ -485,7 +490,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[0], string_size, TLM_STATUS_STATUS);
 
 		return 0;
-	case 1064:
+	case 1072:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, TLM_SET_STATUS_STATUS);
 
@@ -505,7 +510,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[5], string_size, HANDCART_SETTINGS_STATUS);
 
 		return 0;
-	case 1072:
+	case 1080:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, HANDCART_SET_SETTINGS_TARGET_VOLTAGE);
 		snprintf(v[1], string_size, HANDCART_SET_SETTINGS_FANS_OVERRIDE);
@@ -525,7 +530,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[0], string_size, ECU_SET_STATUS_STATUS);
 
 		return 0;
-	case 1080:
+	case 1088:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_INVERTER_STATUS_RL);
 		snprintf(v[1], string_size, ECU_INVERTER_STATUS_RR);
@@ -585,7 +590,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[0], string_size, ECU_PTT_STATUS_STATUS);
 
 		return 0;
-	case 1088:
+	case 1096:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_SET_PTT_STATUS_STATUS);
 
@@ -764,12 +769,12 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[0], string_size, ECU_STEER_ACTUATOR_STATUS_STATUS);
 
 		return 0;
-	case 1096:
+	case 1104:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_STATUS);
 
 		return 0;
-	case 1104:
+	case 1112:
 		if(1 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_SET_STEER_ACTUATOR_STATUS_TLM_STATUS);
 
@@ -1326,69 +1331,76 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		return 0;
 	case 35:
 		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_lv_cooling_aggressiveness_status_weak");
+		snprintf(v[1], string_size, "primary_lv_cooling_aggressiveness_status_normal");
+		snprintf(v[2], string_size, "primary_lv_cooling_aggressiveness_status_aggressive");
+
+		return 0;
+	case 36:
+		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_radiator_speed_status_off");
 		snprintf(v[1], string_size, "primary_lv_radiator_speed_status_auto");
 		snprintf(v[2], string_size, "primary_lv_radiator_speed_status_manual");
 
 		return 0;
-	case 36:
+	case 37:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_pumps_speed_status_off");
 		snprintf(v[1], string_size, "primary_lv_pumps_speed_status_auto");
 		snprintf(v[2], string_size, "primary_lv_pumps_speed_status_manual");
 
 		return 0;
-	case 37:
+	case 38:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_radiator_speed_status_off");
 		snprintf(v[1], string_size, "primary_lv_set_radiator_speed_status_auto");
 		snprintf(v[2], string_size, "primary_lv_set_radiator_speed_status_manual");
 
 		return 0;
-	case 38:
+	case 39:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_pumps_speed_status_off");
 		snprintf(v[1], string_size, "primary_lv_set_pumps_speed_status_auto");
 		snprintf(v[2], string_size, "primary_lv_set_pumps_speed_status_manual");
 
 		return 0;
-	case 39:
+	case 40:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_inverter_connection_status_status_on");
 
 		return 0;
-	case 40:
+	case 41:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_set_inverter_connection_status_status_on");
 
 		return 0;
-	case 41:
+	case 42:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_status_status_on");
 
 		return 0;
-	case 42:
+	case 43:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_set_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_set_status_status_on");
 
 		return 0;
-	case 43:
+	case 44:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_status_connected_off");
 		snprintf(v[1], string_size, "primary_handcart_status_connected_on");
 
 		return 0;
-	case 44:
+	case 45:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_settings_fans_override_on");
 
 		return 0;
-	case 45:
+	case 46:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_settings_status_check");
@@ -1401,13 +1413,13 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_settings_status_error");
 
 		return 0;
-	case 46:
+	case 47:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_fans_override_on");
 
 		return 0;
-	case 47:
+	case 48:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_status_check");
@@ -1420,8 +1432,8 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_set_settings_status_error");
 
 		return 0;
-	case 48:
-		if(13 > fields_size) return 1;
+	case 49:
+		if(14 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_status_status_init");
 		snprintf(v[1], string_size, "primary_ecu_status_status_enable_inv_updates");
 		snprintf(v[2], string_size, "primary_ecu_status_status_check_inv_settings");
@@ -1433,18 +1445,19 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_ecu_status_status_drive");
 		snprintf(v[9], string_size, "primary_ecu_status_status_disable_inv_drive");
 		snprintf(v[10], string_size, "primary_ecu_status_status_start_ts_discharge");
-		snprintf(v[11], string_size, "primary_ecu_status_status_wait_ts_discharge");
-		snprintf(v[12], string_size, "primary_ecu_status_status_fatal_error");
+		snprintf(v[11], string_size, "primary_ecu_status_status_re_enable_inverter_drive");
+		snprintf(v[12], string_size, "primary_ecu_status_status_wait_ts_discharge");
+		snprintf(v[13], string_size, "primary_ecu_status_status_fatal_error");
 
 		return 0;
-	case 49:
+	case 50:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_status_status_idle");
 		snprintf(v[1], string_size, "primary_ecu_set_status_status_ready");
 		snprintf(v[2], string_size, "primary_ecu_set_status_status_drive");
 
 		return 0;
-	case 50:
+	case 51:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rl_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rl_rfe_on");
@@ -1452,7 +1465,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rl_enabled");
 
 		return 0;
-	case 51:
+	case 52:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rr_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rr_rfe_on");
@@ -1460,37 +1473,37 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rr_enabled");
 
 		return 0;
-	case 52:
+	case 53:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_ptt_status_status_on");
 
 		return 0;
-	case 53:
+	case 54:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_ptt_status_status_on");
 
 		return 0;
-	case 54:
+	case 55:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_steer_actuator_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_steer_actuator_status_status_on");
 
 		return 0;
-	case 55:
+	case 56:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_on");
 
 		return 0;
-	case 56:
+	case 57:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_on");
 
 		return 0;
-	case 57:
+	case 58:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_1_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_1_device_id_hv_cellboard");
@@ -1503,7 +1516,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_debug_signal_1_device_id_acquisinator");
 
 		return 0;
-	case 58:
+	case 59:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_2_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_2_device_id_hv_cellboard");
@@ -1516,7 +1529,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_debug_signal_2_device_id_acquisinator");
 
 		return 0;
-	case 59:
+	case 60:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_3_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_3_device_id_hv_cellboard");
@@ -1529,7 +1542,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_debug_signal_3_device_id_acquisinator");
 
 		return 0;
-	case 60:
+	case 61:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_4_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_4_device_id_hv_cellboard");
@@ -2818,6 +2831,20 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_LV_CHARGING_STATUS_BYTE_SIZE;
 		return primary_lv_charging_status_pack(data, &tmp, PRIMARY_LV_CHARGING_STATUS_BYTE_SIZE);
 	}
+	case 1048:
+	{
+		primary_lv_cooling_aggressiveness_t tmp;
+		primary_lv_cooling_aggressiveness_converted_t tmp_converted;
+		uint8_t r_status;
+
+		sscanf(s, "%" SCNu8 ","  ,
+			&r_status);
+		tmp_converted.status = (primary_lv_cooling_aggressiveness_status)r_status;
+
+		primary_lv_cooling_aggressiveness_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_LV_COOLING_AGGRESSIVENESS_BYTE_SIZE;
+		return primary_lv_cooling_aggressiveness_pack(data, &tmp, PRIMARY_LV_COOLING_AGGRESSIVENESS_BYTE_SIZE);
+	}
 	case 1576:
 	{
 		primary_lv_radiator_speed_t tmp;
@@ -2854,7 +2881,7 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_LV_PUMPS_SPEED_BYTE_SIZE;
 		return primary_lv_pumps_speed_pack(data, &tmp, PRIMARY_LV_PUMPS_SPEED_BYTE_SIZE);
 	}
-	case 1048:
+	case 1056:
 	{
 		primary_lv_set_radiator_speed_t tmp;
 		primary_lv_set_radiator_speed_converted_t tmp_converted;
@@ -2872,7 +2899,7 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_LV_SET_RADIATOR_SPEED_BYTE_SIZE;
 		return primary_lv_set_radiator_speed_pack(data, &tmp, PRIMARY_LV_SET_RADIATOR_SPEED_BYTE_SIZE);
 	}
-	case 1056:
+	case 1064:
 	{
 		primary_lv_set_pumps_speed_t tmp;
 		primary_lv_set_pumps_speed_converted_t tmp_converted;
@@ -3204,7 +3231,7 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_TLM_STATUS_BYTE_SIZE;
 		return primary_tlm_status_pack(data, &tmp, PRIMARY_TLM_STATUS_BYTE_SIZE);
 	}
-	case 1064:
+	case 1072:
 	{
 		primary_tlm_set_status_t tmp;
 		primary_tlm_set_status_converted_t tmp_converted;
@@ -3266,7 +3293,7 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_HANDCART_SETTINGS_BYTE_SIZE;
 		return primary_handcart_settings_pack(data, &tmp, PRIMARY_HANDCART_SETTINGS_BYTE_SIZE);
 	}
-	case 1072:
+	case 1080:
 	{
 		primary_handcart_set_settings_t tmp;
 		primary_handcart_set_settings_converted_t tmp_converted;
@@ -3328,7 +3355,7 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_ECU_SET_STATUS_BYTE_SIZE;
 		return primary_ecu_set_status_pack(data, &tmp, PRIMARY_ECU_SET_STATUS_BYTE_SIZE);
 	}
-	case 1080:
+	case 1088:
 	{
 		primary_ecu_inverter_status_t tmp;
 		primary_ecu_inverter_status_converted_t tmp_converted;
@@ -3526,7 +3553,7 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_ECU_PTT_STATUS_BYTE_SIZE;
 		return primary_ecu_ptt_status_pack(data, &tmp, PRIMARY_ECU_PTT_STATUS_BYTE_SIZE);
 	}
-	case 1088:
+	case 1096:
 	{
 		primary_ecu_set_ptt_status_t tmp;
 		primary_ecu_set_ptt_status_converted_t tmp_converted;
@@ -4098,7 +4125,7 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_ECU_STEER_ACTUATOR_STATUS_BYTE_SIZE;
 		return primary_ecu_steer_actuator_status_pack(data, &tmp, PRIMARY_ECU_STEER_ACTUATOR_STATUS_BYTE_SIZE);
 	}
-	case 1096:
+	case 1104:
 	{
 		primary_ecu_set_steer_actuator_status_steering_wheel_t tmp;
 		primary_ecu_set_steer_actuator_status_steering_wheel_converted_t tmp_converted;
@@ -4112,7 +4139,7 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_BYTE_SIZE;
 		return primary_ecu_set_steer_actuator_status_steering_wheel_pack(data, &tmp, PRIMARY_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_BYTE_SIZE);
 	}
-	case 1104:
+	case 1112:
 	{
 		primary_ecu_set_steer_actuator_status_tlm_t tmp;
 		primary_ecu_set_steer_actuator_status_tlm_converted_t tmp_converted;
@@ -5175,10 +5202,11 @@ int primary_n_fields_from_id(int id)
 		case 1040: return 2;
 		case 568: return 1;
 		case 1568: return 1;
+		case 1048: return 1;
 		case 1576: return 2;
 		case 1584: return 2;
-		case 1048: return 2;
 		case 1056: return 2;
+		case 1064: return 2;
 		case 576: return 23;
 		case 584: return 8;
 		case 592: return 4;
@@ -5191,20 +5219,20 @@ int primary_n_fields_from_id(int id)
 		case 624: return 1;
 		case 80: return 1;
 		case 1592: return 1;
-		case 1064: return 1;
+		case 1072: return 1;
 		case 632: return 1;
 		case 1600: return 6;
-		case 1072: return 6;
+		case 1080: return 6;
 		case 640: return 1;
 		case 88: return 1;
-		case 1080: return 2;
+		case 1088: return 2;
 		case 648: return 4;
 		case 656: return 11;
 		case 664: return 8;
 		case 672: return 3;
 		case 96: return 3;
 		case 1608: return 1;
-		case 1088: return 1;
+		case 1096: return 1;
 		case 513: return 8;
 		case 680: return 5;
 		case 688: return 3;
@@ -5228,8 +5256,8 @@ int primary_n_fields_from_id(int id)
 		case 1728: return 5;
 		case 1736: return 3;
 		case 1744: return 1;
-		case 1096: return 1;
 		case 1104: return 1;
+		case 1112: return 1;
 		case 1752: return 1;
 		case 1760: return 1;
 		case 1768: return 8;
@@ -5597,6 +5625,10 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_lv_charging_status_status;
 		return 1;
+	case 1048:
+		if(fields_types_size < 1) return 0;
+		fields_types[0] = e_primary_lv_cooling_aggressiveness_status;
+		return 1;
 	case 1576:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_primary_lv_radiator_speed_status;
@@ -5607,12 +5639,12 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[0] = e_primary_lv_pumps_speed_status;
 		fields_types[1] = e_primary_float;
 		return 2;
-	case 1048:
+	case 1056:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_primary_lv_set_radiator_speed_status;
 		fields_types[1] = e_primary_float;
 		return 2;
-	case 1056:
+	case 1064:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_primary_lv_set_pumps_speed_status;
 		fields_types[1] = e_primary_float;
@@ -5700,7 +5732,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_tlm_status_status;
 		return 1;
-	case 1064:
+	case 1072:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_tlm_set_status_status;
 		return 1;
@@ -5717,7 +5749,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[4] = e_primary_float;
 		fields_types[5] = e_primary_handcart_settings_status;
 		return 6;
-	case 1072:
+	case 1080:
 		if(fields_types_size < 6) return 0;
 		fields_types[0] = e_primary_float;
 		fields_types[1] = e_primary_handcart_set_settings_fans_override;
@@ -5734,7 +5766,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_set_status_status;
 		return 1;
-	case 1080:
+	case 1088:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_primary_ecu_inverter_status_rl;
 		fields_types[1] = e_primary_ecu_inverter_status_rr;
@@ -5787,7 +5819,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_ptt_status_status;
 		return 1;
-	case 1088:
+	case 1096:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_set_ptt_status_status;
 		return 1;
@@ -5942,11 +5974,11 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_steer_actuator_status_status;
 		return 1;
-	case 1096:
+	case 1104:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_set_steer_actuator_status_steering_wheel_status;
 		return 1;
-	case 1104:
+	case 1112:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_set_steer_actuator_status_tlm_status;
 		return 1;
@@ -6513,6 +6545,16 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 			return 2;
 		}
 	}
+	if(!strcmp(msg_name, "LV_COOLING_AGGRESSIVENESS"))
+	{
+		if(!strcmp(sgn_name, "status"))
+		{
+			sprintf(v[0], "weak");
+			sprintf(v[1], "normal");
+			sprintf(v[2], "aggressive");
+			return 3;
+		}
+	}
 	if(!strcmp(msg_name, "LV_RADIATOR_SPEED"))
 	{
 		if(!strcmp(sgn_name, "status"))
@@ -6657,9 +6699,10 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 			sprintf(v[8], "drive");
 			sprintf(v[9], "disable_inv_drive");
 			sprintf(v[10], "start_ts_discharge");
-			sprintf(v[11], "wait_ts_discharge");
-			sprintf(v[12], "fatal_error");
-			return 13;
+			sprintf(v[11], "re_enable_inverter_drive");
+			sprintf(v[12], "wait_ts_discharge");
+			sprintf(v[13], "fatal_error");
+			return 14;
 		}
 	}
 	if(!strcmp(msg_name, "ECU_SET_STATUS"))
