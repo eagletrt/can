@@ -388,9 +388,9 @@
                     "force": "uint8",
                     "range": [
                         0,
-                        20
+                        21
                     ],
-                    "precision": 4,
+                    "precision": 3,
                     "comment": "Offset from the first cell of the segment"
                 },
                 "voltage_0": {
