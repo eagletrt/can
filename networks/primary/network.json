@@ -385,6 +385,7 @@
                 "cellboard_id": "HvCellboardId",
                 "offset": {
                     "type": "uint8",
+                    "force": "uint8",
                     "range": [
                         0,
                         20
@@ -409,14 +410,6 @@
                     "precision": 0.0013
                 },
                 "voltage_2": {
-                    "type": "float",
-                    "range": [
-                        0,
-                        5
-                    ],
-                    "precision": 0.0013
-                },
-                "voltage_3": {
                     "type": "float",
                     "range": [
                         0,
