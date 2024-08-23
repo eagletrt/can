@@ -35,16 +35,9 @@ SG_ KM_rsvd_13 m81 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ KM_PSEUDO_ENABLE m81 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ KM_DEBUG_TEST m81 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ M_setdig__Iq m144 : 8|16@1- (1.00000011920928955078125,0) [-32768|32767] "" Vector__XXX
+SG_ ID_setdig__Id m33 : 8|16@1- (0.37383776,0) [-12249.91571968|12249.54188192] "Arms" Vector__XXX
 SG_ Active192 m192 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ def_DIN_1 m192 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
-SG_ Active190 m190 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ def_END_1 m190 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
-SG_ I_max_pk m196 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
-SG_ I_con_eff m197 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
-SG_ I_device m198 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
-SG_ N_R_Lim m199 : 8|16@1+ (1,0) [0|1000] "ms" Vector__XXX
-SG_ M_R_Rcp m199 : 24|16@1+ (1,0) [0|4000] "ms" Vector__XXX
-SG_ Nmax100perc m200 : 8|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
 
 
 
@@ -125,6 +118,7 @@ SG_ BRK1216 m216 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ I_cmd m38 : 8|16@1- (0.13876843,0) [-4547.16391424|4547.02514581] "Arms" Vector__XXX
 SG_ I_cmd_ramp m34 : 8|16@1- (0.13876843,0) [-4547.16391424|4547.02514581] "Arms" Vector__XXX
 SG_ Iq_Actual m39 : 8|16@1- (0.13876843,0) [-4547.16391424|4547.02514581] "Arms" Vector__XXX
+SG_ Id_Actual m40 : 8|16@1- (0.13876843,0) [-4547.16391424|4547.02514581] "Arms" Vector__XXX
 SG_ T_Motor m73 : 8|16@1+ (1,0) [0|65535] "" Vector__XXX
 SG_ T_Igbt m74 : 8|16@1+ (1,0) [0|65535] "" Vector__XXX
 SG_ Vdc_Bus_Filt m235 : 8|16@1+ (0.03166389465,0) [0|2075] "V" Vector__XXX
@@ -144,47 +138,9 @@ SG_ KM_rsvd_12 m81 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ KM_rsvd_13 m81 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ KM_PSEUDO_ENABLE m81 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
 SG_ KM_DEBUG_TEST m81 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Ena82 m82 : 8|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ NcR082 m82 : 9|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Lim_plus82 m82 : 10|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Lim_minus82 m82 : 11|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ OK82 m82 : 12|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Icns82 m82 : 13|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ TNLim82 m82 : 14|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ PN82 m82 : 15|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ NI82 m82 : 16|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ _N082 m82 : 17|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Rsw82 m82 : 18|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Cal082 m82 : 19|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Cal82 m82 : 20|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Tol82 m82 : 21|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Rdy82 m82 : 22|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Brk082 m82 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ SignMag82 m82 : 24|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Nclip82 m82 : 25|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Nclip_minus82 m82 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Nclip_plus82 m82 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ IrdDig82 m82 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Iuserchd82 m82 : 29|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ IrdN82 m82 : 30|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ IrdTi82 m82 : 31|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ IrdTIR82 m82 : 32|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ _10Hz82 m82 : 33|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ IrdTM82 m82 : 34|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ IrdANA82 m82 : 35|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Iwcns82 m82 : 36|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ RFEpulse82 m82 : 37|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ MD82 m82 : 38|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ HndWhl82 m82 : 39|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ Active192 m192 : 23|1@1+ (1,0) [0|1] "" Vector__XXX
-SG_ def_DIN_1 m192 : 8|15@1+ (1,0) [0|32767] "" Vector__XXX
 SG_ M_cmd_ramp m58 : 8|16@1- (1,0) [-32767|32767] "Num" Vector__XXX
 SG_ free m58 : 24|16@1- (1,0) [-32768|32767] "Num" Vector__XXX
-SG_ I_max_pk m196 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
-SG_ I_con_eff m197 : 8|16@1+ (0.00610388818,0) [0|100] "%" Vector__XXX
 SG_ I_device m198 : 8|16@1+ (0.1,0) [0|6553.5] "A" Vector__XXX
-SG_ N_R_Lim m199 : 8|16@1+ (1,0) [0|1000] "ms" Vector__XXX
-SG_ M_R_Rcp m199 : 24|16@1+ (1,0) [0|4000] "ms" Vector__XXX
 SG_ Nmax100perc m200 : 8|16@1- (1,0) [-32768|32767] "rpm" Vector__XXX
 
 CM_ SG_ 514 Motor_F_N "Nominal Motor Frequency";

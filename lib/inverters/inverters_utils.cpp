@@ -5,41 +5,34 @@ int inverters_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 	switch(id)
     {
 	case 514:
-		if(30 > fields_size) return 1;
+		if(23 > fields_size) return 1;
 		snprintf(v[0], string_size, INV_R_SEND_SEND_MUX);
 		snprintf(v[1], string_size, INV_R_SEND_READ_ID);
 		snprintf(v[2], string_size, INV_R_SEND_KM_RSVD_0);
 		snprintf(v[3], string_size, INV_R_SEND_M_SETDIG__IQ);
-		snprintf(v[4], string_size, INV_R_SEND_DEF_DIN_1);
-		snprintf(v[5], string_size, INV_R_SEND_DEF_END_1);
-		snprintf(v[6], string_size, INV_R_SEND_I_MAX_PK);
-		snprintf(v[7], string_size, INV_R_SEND_I_CON_EFF);
-		snprintf(v[8], string_size, INV_R_SEND_I_DEVICE);
-		snprintf(v[9], string_size, INV_R_SEND_N_R_LIM);
-		snprintf(v[10], string_size, INV_R_SEND_NMAX100PERC);
-		snprintf(v[11], string_size, INV_R_SEND_KM_SPEED_0);
-		snprintf(v[12], string_size, INV_R_SEND_KM_FRG_OFF);
-		snprintf(v[13], string_size, INV_R_SEND_KM_CAL_OFF);
-		snprintf(v[14], string_size, INV_R_SEND_KM_TX_TOG_STAT);
-		snprintf(v[15], string_size, INV_R_SEND_KM_I_LIMIT);
-		snprintf(v[16], string_size, INV_R_SEND_KM_N_CLIP);
-		snprintf(v[17], string_size, INV_R_SEND_KM_MIX_ANA_ON);
-		snprintf(v[18], string_size, INV_R_SEND_RET_INTERVAL);
-		snprintf(v[19], string_size, INV_R_SEND_KM_ALLOW_SYNC);
-		snprintf(v[20], string_size, INV_R_SEND_KM_HANDWHEEL);
-		snprintf(v[21], string_size, INV_R_SEND_KM_PHASING_EXTEND);
-		snprintf(v[22], string_size, INV_R_SEND_KM_RSVD_11);
-		snprintf(v[23], string_size, INV_R_SEND_KM_RSVD_12);
-		snprintf(v[24], string_size, INV_R_SEND_KM_RSVD_13);
-		snprintf(v[25], string_size, INV_R_SEND_KM_PSEUDO_ENABLE);
-		snprintf(v[26], string_size, INV_R_SEND_KM_DEBUG_TEST);
-		snprintf(v[27], string_size, INV_R_SEND_ACTIVE192);
-		snprintf(v[28], string_size, INV_R_SEND_ACTIVE190);
-		snprintf(v[29], string_size, INV_R_SEND_M_R_RCP);
+		snprintf(v[4], string_size, INV_R_SEND_ID_SETDIG__ID);
+		snprintf(v[5], string_size, INV_R_SEND_DEF_DIN_1);
+		snprintf(v[6], string_size, INV_R_SEND_KM_SPEED_0);
+		snprintf(v[7], string_size, INV_R_SEND_KM_FRG_OFF);
+		snprintf(v[8], string_size, INV_R_SEND_KM_CAL_OFF);
+		snprintf(v[9], string_size, INV_R_SEND_KM_TX_TOG_STAT);
+		snprintf(v[10], string_size, INV_R_SEND_KM_I_LIMIT);
+		snprintf(v[11], string_size, INV_R_SEND_KM_N_CLIP);
+		snprintf(v[12], string_size, INV_R_SEND_KM_MIX_ANA_ON);
+		snprintf(v[13], string_size, INV_R_SEND_RET_INTERVAL);
+		snprintf(v[14], string_size, INV_R_SEND_KM_ALLOW_SYNC);
+		snprintf(v[15], string_size, INV_R_SEND_KM_HANDWHEEL);
+		snprintf(v[16], string_size, INV_R_SEND_KM_PHASING_EXTEND);
+		snprintf(v[17], string_size, INV_R_SEND_KM_RSVD_11);
+		snprintf(v[18], string_size, INV_R_SEND_KM_RSVD_12);
+		snprintf(v[19], string_size, INV_R_SEND_KM_RSVD_13);
+		snprintf(v[20], string_size, INV_R_SEND_KM_PSEUDO_ENABLE);
+		snprintf(v[21], string_size, INV_R_SEND_KM_DEBUG_TEST);
+		snprintf(v[22], string_size, INV_R_SEND_ACTIVE192);
 
 		return 0;
 	case 386:
-		if(137 > fields_size) return 1;
+		if(100 > fields_size) return 1;
 		snprintf(v[0], string_size, INV_R_RCV_RCV_MUX);
 		snprintf(v[1], string_size, INV_R_RCV_N_ACTUAL_FILT);
 		snprintf(v[2], string_size, INV_R_RCV_ENA64);
@@ -49,172 +42,128 @@ int inverters_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[6], string_size, INV_R_RCV_I_CMD);
 		snprintf(v[7], string_size, INV_R_RCV_I_CMD_RAMP);
 		snprintf(v[8], string_size, INV_R_RCV_IQ_ACTUAL);
-		snprintf(v[9], string_size, INV_R_RCV_T_MOTOR);
-		snprintf(v[10], string_size, INV_R_RCV_T_IGBT);
-		snprintf(v[11], string_size, INV_R_RCV_VDC_BUS_FILT);
-		snprintf(v[12], string_size, INV_R_RCV_KM_RSVD_0);
-		snprintf(v[13], string_size, INV_R_RCV_ENA82);
-		snprintf(v[14], string_size, INV_R_RCV_DEF_DIN_1);
-		snprintf(v[15], string_size, INV_R_RCV_M_CMD_RAMP);
-		snprintf(v[16], string_size, INV_R_RCV_I_MAX_PK);
-		snprintf(v[17], string_size, INV_R_RCV_I_CON_EFF);
-		snprintf(v[18], string_size, INV_R_RCV_I_DEVICE);
-		snprintf(v[19], string_size, INV_R_RCV_N_R_LIM);
-		snprintf(v[20], string_size, INV_R_RCV_NMAX100PERC);
-		snprintf(v[21], string_size, INV_R_RCV_NCR064);
-		snprintf(v[22], string_size, INV_R_RCV_ERR_POWERFAULT);
-		snprintf(v[23], string_size, INV_R_RCV_LMT_ACTIVE_2);
-		snprintf(v[24], string_size, INV_R_RCV_KM_SPEED_0);
-		snprintf(v[25], string_size, INV_R_RCV_NCR082);
-		snprintf(v[26], string_size, INV_R_RCV_LIM_PLUS64);
-		snprintf(v[27], string_size, INV_R_RCV_ERR_RFE_FAULT);
-		snprintf(v[28], string_size, INV_R_RCV_IN_ACTIVE_2);
-		snprintf(v[29], string_size, INV_R_RCV_KM_FRG_OFF);
-		snprintf(v[30], string_size, INV_R_RCV_LIM_PLUS82);
-		snprintf(v[31], string_size, INV_R_RCV_LIM_MINUS64);
-		snprintf(v[32], string_size, INV_R_RCV_ERR_BUSTIMEOUT);
-		snprintf(v[33], string_size, INV_R_RCV_IN_ACTIVE_1);
-		snprintf(v[34], string_size, INV_R_RCV_KM_CAL_OFF);
-		snprintf(v[35], string_size, INV_R_RCV_LIM_MINUS82);
-		snprintf(v[36], string_size, INV_R_RCV_OK64);
-		snprintf(v[37], string_size, INV_R_RCV_ERR_FEEDBACKSIGNAL);
-		snprintf(v[38], string_size, INV_R_RCV_FRGRUN);
-		snprintf(v[39], string_size, INV_R_RCV_KM_TX_TOG_STAT);
-		snprintf(v[40], string_size, INV_R_RCV_OK82);
-		snprintf(v[41], string_size, INV_R_RCV_ICNS64);
-		snprintf(v[42], string_size, INV_R_RCV_ERR_POWERVOLTAGE_LOW);
-		snprintf(v[43], string_size, INV_R_RCV_RFE216);
-		snprintf(v[44], string_size, INV_R_RCV_KM_I_LIMIT);
-		snprintf(v[45], string_size, INV_R_RCV_ICNS82);
-		snprintf(v[46], string_size, INV_R_RCV_TNLIM64);
-		snprintf(v[47], string_size, INV_R_RCV_ERR_MOTORTEMP);
-		snprintf(v[48], string_size, INV_R_RCV_KM_N_CLIP);
-		snprintf(v[49], string_size, INV_R_RCV_TNLIM82);
-		snprintf(v[50], string_size, INV_R_RCV_PN64);
-		snprintf(v[51], string_size, INV_R_RCV_ERR_DEVICETEMP);
-		snprintf(v[52], string_size, INV_R_RCV_KM_MIX_ANA_ON);
-		snprintf(v[53], string_size, INV_R_RCV_PN82);
-		snprintf(v[54], string_size, INV_R_RCV_NI64);
-		snprintf(v[55], string_size, INV_R_RCV_ERR_OVERVOLTAGE);
-		snprintf(v[56], string_size, INV_R_RCV_D_OUT_1_ON);
-		snprintf(v[57], string_size, INV_R_RCV_KM_ALLOW_SYNC);
-		snprintf(v[58], string_size, INV_R_RCV_NI82);
-		snprintf(v[59], string_size, INV_R_RCV__N064);
-		snprintf(v[60], string_size, INV_R_RCV_ERR_IPEAK);
-		snprintf(v[61], string_size, INV_R_RCV_D_OUT_2_ON);
-		snprintf(v[62], string_size, INV_R_RCV_KM_HANDWHEEL);
-		snprintf(v[63], string_size, INV_R_RCV__N082);
-		snprintf(v[64], string_size, INV_R_RCV_RSW64);
-		snprintf(v[65], string_size, INV_R_RCV_ERR_RACEAWAY);
-		snprintf(v[66], string_size, INV_R_RCV_BTBRDY);
-		snprintf(v[67], string_size, INV_R_RCV_KM_PHASING_EXTEND);
-		snprintf(v[68], string_size, INV_R_RCV_RSW82);
-		snprintf(v[69], string_size, INV_R_RCV_CAL064);
-		snprintf(v[70], string_size, INV_R_RCV_ERR_USER);
-		snprintf(v[71], string_size, INV_R_RCV_GO216);
-		snprintf(v[72], string_size, INV_R_RCV_KM_RSVD_11);
-		snprintf(v[73], string_size, INV_R_RCV_CAL082);
-		snprintf(v[74], string_size, INV_R_RCV_CAL64);
-		snprintf(v[75], string_size, INV_R_RCV_D_OUT_3_ON);
-		snprintf(v[76], string_size, INV_R_RCV_KM_RSVD_12);
-		snprintf(v[77], string_size, INV_R_RCV_CAL82);
-		snprintf(v[78], string_size, INV_R_RCV_TOL64);
-		snprintf(v[79], string_size, INV_R_RCV_D_OUT_4_ON);
-		snprintf(v[80], string_size, INV_R_RCV_KM_RSVD_13);
-		snprintf(v[81], string_size, INV_R_RCV_TOL82);
-		snprintf(v[82], string_size, INV_R_RCV_RDY64);
-		snprintf(v[83], string_size, INV_R_RCV_ERR_HWERR);
-		snprintf(v[84], string_size, INV_R_RCV_GOFF);
-		snprintf(v[85], string_size, INV_R_RCV_KM_PSEUDO_ENABLE);
-		snprintf(v[86], string_size, INV_R_RCV_RDY82);
-		snprintf(v[87], string_size, INV_R_RCV_BRK064);
-		snprintf(v[88], string_size, INV_R_RCV_ERR_BALLAST);
-		snprintf(v[89], string_size, INV_R_RCV_ACTIVE190);
-		snprintf(v[90], string_size, INV_R_RCV_BRK1216);
-		snprintf(v[91], string_size, INV_R_RCV_KM_DEBUG_TEST);
-		snprintf(v[92], string_size, INV_R_RCV_BRK082);
-		snprintf(v[93], string_size, INV_R_RCV_ACTIVE192);
-		snprintf(v[94], string_size, INV_R_RCV_SIGNMAG64);
-		snprintf(v[95], string_size, INV_R_RCV_WARN_WARNING_0);
-		snprintf(v[96], string_size, INV_R_RCV_SIGNMAG82);
-		snprintf(v[97], string_size, INV_R_RCV_FREE);
-		snprintf(v[98], string_size, INV_R_RCV_M_R_RCP);
-		snprintf(v[99], string_size, INV_R_RCV_NCLIP64);
-		snprintf(v[100], string_size, INV_R_RCV_WARN_ILLEGAL_STATUS);
-		snprintf(v[101], string_size, INV_R_RCV_NCLIP82);
-		snprintf(v[102], string_size, INV_R_RCV_NCLIP_MINUS64);
-		snprintf(v[103], string_size, INV_R_RCV_WARN_SAFE_IN);
-		snprintf(v[104], string_size, INV_R_RCV_NCLIP_MINUS82);
-		snprintf(v[105], string_size, INV_R_RCV_NCLIP_PLUS64);
-		snprintf(v[106], string_size, INV_R_RCV_NCLIP_PLUS82);
-		snprintf(v[107], string_size, INV_R_RCV_IRDDIG64);
-		snprintf(v[108], string_size, INV_R_RCV_IRDDIG82);
-		snprintf(v[109], string_size, INV_R_RCV_IUSERCHD64);
-		snprintf(v[110], string_size, INV_R_RCV_IUSERCHD82);
-		snprintf(v[111], string_size, INV_R_RCV_IRDN64);
-		snprintf(v[112], string_size, INV_R_RCV_WARN_MOTORTEMP);
-		snprintf(v[113], string_size, INV_R_RCV_IRDN82);
-		snprintf(v[114], string_size, INV_R_RCV_IRDTI64);
-		snprintf(v[115], string_size, INV_R_RCV_WARN_DEVICETEMP);
-		snprintf(v[116], string_size, INV_R_RCV_IRDTI82);
-		snprintf(v[117], string_size, INV_R_RCV_IRDTIR64);
-		snprintf(v[118], string_size, INV_R_RCV_WARN_VOUT_SAT);
-		snprintf(v[119], string_size, INV_R_RCV_IRDTIR82);
-		snprintf(v[120], string_size, INV_R_RCV__10HZ64);
-		snprintf(v[121], string_size, INV_R_RCV_WARN_IPEAK);
-		snprintf(v[122], string_size, INV_R_RCV__10HZ82);
-		snprintf(v[123], string_size, INV_R_RCV_IRDTM64);
-		snprintf(v[124], string_size, INV_R_RCV_WARN_RACEAWAY);
-		snprintf(v[125], string_size, INV_R_RCV_IRDTM82);
-		snprintf(v[126], string_size, INV_R_RCV_IRDANA64);
-		snprintf(v[127], string_size, INV_R_RCV_IRDANA82);
-		snprintf(v[128], string_size, INV_R_RCV_IWCNS64);
-		snprintf(v[129], string_size, INV_R_RCV_IWCNS82);
-		snprintf(v[130], string_size, INV_R_RCV_RFEPULSE64);
-		snprintf(v[131], string_size, INV_R_RCV_RFEPULSE82);
-		snprintf(v[132], string_size, INV_R_RCV_MD64);
-		snprintf(v[133], string_size, INV_R_RCV_MD82);
-		snprintf(v[134], string_size, INV_R_RCV_HNDWHL64);
-		snprintf(v[135], string_size, INV_R_RCV_WARN_BALLAST);
-		snprintf(v[136], string_size, INV_R_RCV_HNDWHL82);
+		snprintf(v[9], string_size, INV_R_RCV_ID_ACTUAL);
+		snprintf(v[10], string_size, INV_R_RCV_T_MOTOR);
+		snprintf(v[11], string_size, INV_R_RCV_T_IGBT);
+		snprintf(v[12], string_size, INV_R_RCV_VDC_BUS_FILT);
+		snprintf(v[13], string_size, INV_R_RCV_KM_RSVD_0);
+		snprintf(v[14], string_size, INV_R_RCV_M_CMD_RAMP);
+		snprintf(v[15], string_size, INV_R_RCV_I_DEVICE);
+		snprintf(v[16], string_size, INV_R_RCV_NMAX100PERC);
+		snprintf(v[17], string_size, INV_R_RCV_NCR064);
+		snprintf(v[18], string_size, INV_R_RCV_ERR_POWERFAULT);
+		snprintf(v[19], string_size, INV_R_RCV_LMT_ACTIVE_2);
+		snprintf(v[20], string_size, INV_R_RCV_KM_SPEED_0);
+		snprintf(v[21], string_size, INV_R_RCV_LIM_PLUS64);
+		snprintf(v[22], string_size, INV_R_RCV_ERR_RFE_FAULT);
+		snprintf(v[23], string_size, INV_R_RCV_IN_ACTIVE_2);
+		snprintf(v[24], string_size, INV_R_RCV_KM_FRG_OFF);
+		snprintf(v[25], string_size, INV_R_RCV_LIM_MINUS64);
+		snprintf(v[26], string_size, INV_R_RCV_ERR_BUSTIMEOUT);
+		snprintf(v[27], string_size, INV_R_RCV_IN_ACTIVE_1);
+		snprintf(v[28], string_size, INV_R_RCV_KM_CAL_OFF);
+		snprintf(v[29], string_size, INV_R_RCV_OK64);
+		snprintf(v[30], string_size, INV_R_RCV_ERR_FEEDBACKSIGNAL);
+		snprintf(v[31], string_size, INV_R_RCV_FRGRUN);
+		snprintf(v[32], string_size, INV_R_RCV_KM_TX_TOG_STAT);
+		snprintf(v[33], string_size, INV_R_RCV_ICNS64);
+		snprintf(v[34], string_size, INV_R_RCV_ERR_POWERVOLTAGE_LOW);
+		snprintf(v[35], string_size, INV_R_RCV_RFE216);
+		snprintf(v[36], string_size, INV_R_RCV_KM_I_LIMIT);
+		snprintf(v[37], string_size, INV_R_RCV_TNLIM64);
+		snprintf(v[38], string_size, INV_R_RCV_ERR_MOTORTEMP);
+		snprintf(v[39], string_size, INV_R_RCV_KM_N_CLIP);
+		snprintf(v[40], string_size, INV_R_RCV_PN64);
+		snprintf(v[41], string_size, INV_R_RCV_ERR_DEVICETEMP);
+		snprintf(v[42], string_size, INV_R_RCV_KM_MIX_ANA_ON);
+		snprintf(v[43], string_size, INV_R_RCV_NI64);
+		snprintf(v[44], string_size, INV_R_RCV_ERR_OVERVOLTAGE);
+		snprintf(v[45], string_size, INV_R_RCV_D_OUT_1_ON);
+		snprintf(v[46], string_size, INV_R_RCV_KM_ALLOW_SYNC);
+		snprintf(v[47], string_size, INV_R_RCV__N064);
+		snprintf(v[48], string_size, INV_R_RCV_ERR_IPEAK);
+		snprintf(v[49], string_size, INV_R_RCV_D_OUT_2_ON);
+		snprintf(v[50], string_size, INV_R_RCV_KM_HANDWHEEL);
+		snprintf(v[51], string_size, INV_R_RCV_RSW64);
+		snprintf(v[52], string_size, INV_R_RCV_ERR_RACEAWAY);
+		snprintf(v[53], string_size, INV_R_RCV_BTBRDY);
+		snprintf(v[54], string_size, INV_R_RCV_KM_PHASING_EXTEND);
+		snprintf(v[55], string_size, INV_R_RCV_CAL064);
+		snprintf(v[56], string_size, INV_R_RCV_ERR_USER);
+		snprintf(v[57], string_size, INV_R_RCV_GO216);
+		snprintf(v[58], string_size, INV_R_RCV_KM_RSVD_11);
+		snprintf(v[59], string_size, INV_R_RCV_CAL64);
+		snprintf(v[60], string_size, INV_R_RCV_D_OUT_3_ON);
+		snprintf(v[61], string_size, INV_R_RCV_KM_RSVD_12);
+		snprintf(v[62], string_size, INV_R_RCV_TOL64);
+		snprintf(v[63], string_size, INV_R_RCV_D_OUT_4_ON);
+		snprintf(v[64], string_size, INV_R_RCV_KM_RSVD_13);
+		snprintf(v[65], string_size, INV_R_RCV_RDY64);
+		snprintf(v[66], string_size, INV_R_RCV_ERR_HWERR);
+		snprintf(v[67], string_size, INV_R_RCV_GOFF);
+		snprintf(v[68], string_size, INV_R_RCV_KM_PSEUDO_ENABLE);
+		snprintf(v[69], string_size, INV_R_RCV_BRK064);
+		snprintf(v[70], string_size, INV_R_RCV_ERR_BALLAST);
+		snprintf(v[71], string_size, INV_R_RCV_ACTIVE190);
+		snprintf(v[72], string_size, INV_R_RCV_BRK1216);
+		snprintf(v[73], string_size, INV_R_RCV_KM_DEBUG_TEST);
+		snprintf(v[74], string_size, INV_R_RCV_SIGNMAG64);
+		snprintf(v[75], string_size, INV_R_RCV_WARN_WARNING_0);
+		snprintf(v[76], string_size, INV_R_RCV_FREE);
+		snprintf(v[77], string_size, INV_R_RCV_NCLIP64);
+		snprintf(v[78], string_size, INV_R_RCV_WARN_ILLEGAL_STATUS);
+		snprintf(v[79], string_size, INV_R_RCV_NCLIP_MINUS64);
+		snprintf(v[80], string_size, INV_R_RCV_WARN_SAFE_IN);
+		snprintf(v[81], string_size, INV_R_RCV_NCLIP_PLUS64);
+		snprintf(v[82], string_size, INV_R_RCV_IRDDIG64);
+		snprintf(v[83], string_size, INV_R_RCV_IUSERCHD64);
+		snprintf(v[84], string_size, INV_R_RCV_IRDN64);
+		snprintf(v[85], string_size, INV_R_RCV_WARN_MOTORTEMP);
+		snprintf(v[86], string_size, INV_R_RCV_IRDTI64);
+		snprintf(v[87], string_size, INV_R_RCV_WARN_DEVICETEMP);
+		snprintf(v[88], string_size, INV_R_RCV_IRDTIR64);
+		snprintf(v[89], string_size, INV_R_RCV_WARN_VOUT_SAT);
+		snprintf(v[90], string_size, INV_R_RCV__10HZ64);
+		snprintf(v[91], string_size, INV_R_RCV_WARN_IPEAK);
+		snprintf(v[92], string_size, INV_R_RCV_IRDTM64);
+		snprintf(v[93], string_size, INV_R_RCV_WARN_RACEAWAY);
+		snprintf(v[94], string_size, INV_R_RCV_IRDANA64);
+		snprintf(v[95], string_size, INV_R_RCV_IWCNS64);
+		snprintf(v[96], string_size, INV_R_RCV_RFEPULSE64);
+		snprintf(v[97], string_size, INV_R_RCV_MD64);
+		snprintf(v[98], string_size, INV_R_RCV_HNDWHL64);
+		snprintf(v[99], string_size, INV_R_RCV_WARN_BALLAST);
 
 		return 0;
 	case 513:
-		if(30 > fields_size) return 1;
+		if(23 > fields_size) return 1;
 		snprintf(v[0], string_size, INV_L_SEND_SEND_MUX);
 		snprintf(v[1], string_size, INV_L_SEND_READ_ID);
 		snprintf(v[2], string_size, INV_L_SEND_KM_RSVD_0);
 		snprintf(v[3], string_size, INV_L_SEND_M_SETDIG__IQ);
-		snprintf(v[4], string_size, INV_L_SEND_DEF_DIN_1);
-		snprintf(v[5], string_size, INV_L_SEND_DEF_END_1);
-		snprintf(v[6], string_size, INV_L_SEND_I_MAX_PK);
-		snprintf(v[7], string_size, INV_L_SEND_I_CON_EFF);
-		snprintf(v[8], string_size, INV_L_SEND_I_DEVICE);
-		snprintf(v[9], string_size, INV_L_SEND_N_R_LIM);
-		snprintf(v[10], string_size, INV_L_SEND_NMAX100PERC);
-		snprintf(v[11], string_size, INV_L_SEND_KM_SPEED_0);
-		snprintf(v[12], string_size, INV_L_SEND_KM_FRG_OFF);
-		snprintf(v[13], string_size, INV_L_SEND_KM_CAL_OFF);
-		snprintf(v[14], string_size, INV_L_SEND_KM_TX_TOG_STAT);
-		snprintf(v[15], string_size, INV_L_SEND_KM_I_LIMIT);
-		snprintf(v[16], string_size, INV_L_SEND_KM_N_CLIP);
-		snprintf(v[17], string_size, INV_L_SEND_KM_MIX_ANA_ON);
-		snprintf(v[18], string_size, INV_L_SEND_RET_INTERVAL);
-		snprintf(v[19], string_size, INV_L_SEND_KM_ALLOW_SYNC);
-		snprintf(v[20], string_size, INV_L_SEND_KM_HANDWHEEL);
-		snprintf(v[21], string_size, INV_L_SEND_KM_PHASING_EXTEND);
-		snprintf(v[22], string_size, INV_L_SEND_KM_RSVD_11);
-		snprintf(v[23], string_size, INV_L_SEND_KM_RSVD_12);
-		snprintf(v[24], string_size, INV_L_SEND_KM_RSVD_13);
-		snprintf(v[25], string_size, INV_L_SEND_KM_PSEUDO_ENABLE);
-		snprintf(v[26], string_size, INV_L_SEND_KM_DEBUG_TEST);
-		snprintf(v[27], string_size, INV_L_SEND_ACTIVE192);
-		snprintf(v[28], string_size, INV_L_SEND_ACTIVE190);
-		snprintf(v[29], string_size, INV_L_SEND_M_R_RCP);
+		snprintf(v[4], string_size, INV_L_SEND_ID_SETDIG__ID);
+		snprintf(v[5], string_size, INV_L_SEND_DEF_DIN_1);
+		snprintf(v[6], string_size, INV_L_SEND_KM_SPEED_0);
+		snprintf(v[7], string_size, INV_L_SEND_KM_FRG_OFF);
+		snprintf(v[8], string_size, INV_L_SEND_KM_CAL_OFF);
+		snprintf(v[9], string_size, INV_L_SEND_KM_TX_TOG_STAT);
+		snprintf(v[10], string_size, INV_L_SEND_KM_I_LIMIT);
+		snprintf(v[11], string_size, INV_L_SEND_KM_N_CLIP);
+		snprintf(v[12], string_size, INV_L_SEND_KM_MIX_ANA_ON);
+		snprintf(v[13], string_size, INV_L_SEND_RET_INTERVAL);
+		snprintf(v[14], string_size, INV_L_SEND_KM_ALLOW_SYNC);
+		snprintf(v[15], string_size, INV_L_SEND_KM_HANDWHEEL);
+		snprintf(v[16], string_size, INV_L_SEND_KM_PHASING_EXTEND);
+		snprintf(v[17], string_size, INV_L_SEND_KM_RSVD_11);
+		snprintf(v[18], string_size, INV_L_SEND_KM_RSVD_12);
+		snprintf(v[19], string_size, INV_L_SEND_KM_RSVD_13);
+		snprintf(v[20], string_size, INV_L_SEND_KM_PSEUDO_ENABLE);
+		snprintf(v[21], string_size, INV_L_SEND_KM_DEBUG_TEST);
+		snprintf(v[22], string_size, INV_L_SEND_ACTIVE192);
 
 		return 0;
 	case 385:
-		if(137 > fields_size) return 1;
+		if(100 > fields_size) return 1;
 		snprintf(v[0], string_size, INV_L_RCV_RCV_MUX);
 		snprintf(v[1], string_size, INV_L_RCV_N_ACTUAL_FILT);
 		snprintf(v[2], string_size, INV_L_RCV_ENA64);
@@ -224,134 +173,97 @@ int inverters_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[6], string_size, INV_L_RCV_I_CMD);
 		snprintf(v[7], string_size, INV_L_RCV_I_CMD_RAMP);
 		snprintf(v[8], string_size, INV_L_RCV_IQ_ACTUAL);
-		snprintf(v[9], string_size, INV_L_RCV_T_MOTOR);
-		snprintf(v[10], string_size, INV_L_RCV_T_IGBT);
-		snprintf(v[11], string_size, INV_L_RCV_VDC_BUS_FILT);
-		snprintf(v[12], string_size, INV_L_RCV_KM_RSVD_0);
-		snprintf(v[13], string_size, INV_L_RCV_ENA82);
-		snprintf(v[14], string_size, INV_L_RCV_DEF_DIN_1);
-		snprintf(v[15], string_size, INV_L_RCV_M_CMD_RAMP);
-		snprintf(v[16], string_size, INV_L_RCV_I_MAX_PK);
-		snprintf(v[17], string_size, INV_L_RCV_I_CON_EFF);
-		snprintf(v[18], string_size, INV_L_RCV_I_DEVICE);
-		snprintf(v[19], string_size, INV_L_RCV_N_R_LIM);
-		snprintf(v[20], string_size, INV_L_RCV_NMAX100PERC);
-		snprintf(v[21], string_size, INV_L_RCV_NCR064);
-		snprintf(v[22], string_size, INV_L_RCV_ERR_POWERFAULT);
-		snprintf(v[23], string_size, INV_L_RCV_LMT_ACTIVE_2);
-		snprintf(v[24], string_size, INV_L_RCV_KM_SPEED_0);
-		snprintf(v[25], string_size, INV_L_RCV_NCR082);
-		snprintf(v[26], string_size, INV_L_RCV_LIM_PLUS64);
-		snprintf(v[27], string_size, INV_L_RCV_ERR_RFE_FAULT);
-		snprintf(v[28], string_size, INV_L_RCV_IN_ACTIVE_2);
-		snprintf(v[29], string_size, INV_L_RCV_KM_FRG_OFF);
-		snprintf(v[30], string_size, INV_L_RCV_LIM_PLUS82);
-		snprintf(v[31], string_size, INV_L_RCV_LIM_MINUS64);
-		snprintf(v[32], string_size, INV_L_RCV_ERR_BUSTIMEOUT);
-		snprintf(v[33], string_size, INV_L_RCV_IN_ACTIVE_1);
-		snprintf(v[34], string_size, INV_L_RCV_KM_CAL_OFF);
-		snprintf(v[35], string_size, INV_L_RCV_LIM_MINUS82);
-		snprintf(v[36], string_size, INV_L_RCV_OK64);
-		snprintf(v[37], string_size, INV_L_RCV_ERR_FEEDBACKSIGNAL);
-		snprintf(v[38], string_size, INV_L_RCV_FRGRUN);
-		snprintf(v[39], string_size, INV_L_RCV_KM_TX_TOG_STAT);
-		snprintf(v[40], string_size, INV_L_RCV_OK82);
-		snprintf(v[41], string_size, INV_L_RCV_ICNS64);
-		snprintf(v[42], string_size, INV_L_RCV_ERR_POWERVOLTAGE_LOW);
-		snprintf(v[43], string_size, INV_L_RCV_RFE216);
-		snprintf(v[44], string_size, INV_L_RCV_KM_I_LIMIT);
-		snprintf(v[45], string_size, INV_L_RCV_ICNS82);
-		snprintf(v[46], string_size, INV_L_RCV_TNLIM64);
-		snprintf(v[47], string_size, INV_L_RCV_ERR_MOTORTEMP);
-		snprintf(v[48], string_size, INV_L_RCV_KM_N_CLIP);
-		snprintf(v[49], string_size, INV_L_RCV_TNLIM82);
-		snprintf(v[50], string_size, INV_L_RCV_PN64);
-		snprintf(v[51], string_size, INV_L_RCV_ERR_DEVICETEMP);
-		snprintf(v[52], string_size, INV_L_RCV_KM_MIX_ANA_ON);
-		snprintf(v[53], string_size, INV_L_RCV_PN82);
-		snprintf(v[54], string_size, INV_L_RCV_NI64);
-		snprintf(v[55], string_size, INV_L_RCV_ERR_OVERVOLTAGE);
-		snprintf(v[56], string_size, INV_L_RCV_D_OUT_1_ON);
-		snprintf(v[57], string_size, INV_L_RCV_KM_ALLOW_SYNC);
-		snprintf(v[58], string_size, INV_L_RCV_NI82);
-		snprintf(v[59], string_size, INV_L_RCV__N064);
-		snprintf(v[60], string_size, INV_L_RCV_ERR_IPEAK);
-		snprintf(v[61], string_size, INV_L_RCV_D_OUT_2_ON);
-		snprintf(v[62], string_size, INV_L_RCV_KM_HANDWHEEL);
-		snprintf(v[63], string_size, INV_L_RCV__N082);
-		snprintf(v[64], string_size, INV_L_RCV_RSW64);
-		snprintf(v[65], string_size, INV_L_RCV_ERR_RACEAWAY);
-		snprintf(v[66], string_size, INV_L_RCV_BTBRDY);
-		snprintf(v[67], string_size, INV_L_RCV_KM_PHASING_EXTEND);
-		snprintf(v[68], string_size, INV_L_RCV_RSW82);
-		snprintf(v[69], string_size, INV_L_RCV_CAL064);
-		snprintf(v[70], string_size, INV_L_RCV_ERR_USER);
-		snprintf(v[71], string_size, INV_L_RCV_GO216);
-		snprintf(v[72], string_size, INV_L_RCV_KM_RSVD_11);
-		snprintf(v[73], string_size, INV_L_RCV_CAL082);
-		snprintf(v[74], string_size, INV_L_RCV_CAL64);
-		snprintf(v[75], string_size, INV_L_RCV_D_OUT_3_ON);
-		snprintf(v[76], string_size, INV_L_RCV_KM_RSVD_12);
-		snprintf(v[77], string_size, INV_L_RCV_CAL82);
-		snprintf(v[78], string_size, INV_L_RCV_TOL64);
-		snprintf(v[79], string_size, INV_L_RCV_D_OUT_4_ON);
-		snprintf(v[80], string_size, INV_L_RCV_KM_RSVD_13);
-		snprintf(v[81], string_size, INV_L_RCV_TOL82);
-		snprintf(v[82], string_size, INV_L_RCV_RDY64);
-		snprintf(v[83], string_size, INV_L_RCV_ERR_HWERR);
-		snprintf(v[84], string_size, INV_L_RCV_GOFF);
-		snprintf(v[85], string_size, INV_L_RCV_KM_PSEUDO_ENABLE);
-		snprintf(v[86], string_size, INV_L_RCV_RDY82);
-		snprintf(v[87], string_size, INV_L_RCV_BRK064);
-		snprintf(v[88], string_size, INV_L_RCV_ERR_BALLAST);
-		snprintf(v[89], string_size, INV_L_RCV_ACTIVE190);
-		snprintf(v[90], string_size, INV_L_RCV_BRK1216);
-		snprintf(v[91], string_size, INV_L_RCV_KM_DEBUG_TEST);
-		snprintf(v[92], string_size, INV_L_RCV_BRK082);
-		snprintf(v[93], string_size, INV_L_RCV_ACTIVE192);
-		snprintf(v[94], string_size, INV_L_RCV_SIGNMAG64);
-		snprintf(v[95], string_size, INV_L_RCV_WARN_WARNING_0);
-		snprintf(v[96], string_size, INV_L_RCV_SIGNMAG82);
-		snprintf(v[97], string_size, INV_L_RCV_FREE);
-		snprintf(v[98], string_size, INV_L_RCV_M_R_RCP);
-		snprintf(v[99], string_size, INV_L_RCV_NCLIP64);
-		snprintf(v[100], string_size, INV_L_RCV_WARN_ILLEGAL_STATUS);
-		snprintf(v[101], string_size, INV_L_RCV_NCLIP82);
-		snprintf(v[102], string_size, INV_L_RCV_NCLIP_MINUS64);
-		snprintf(v[103], string_size, INV_L_RCV_WARN_SAFE_IN);
-		snprintf(v[104], string_size, INV_L_RCV_NCLIP_MINUS82);
-		snprintf(v[105], string_size, INV_L_RCV_NCLIP_PLUS64);
-		snprintf(v[106], string_size, INV_L_RCV_NCLIP_PLUS82);
-		snprintf(v[107], string_size, INV_L_RCV_IRDDIG64);
-		snprintf(v[108], string_size, INV_L_RCV_IRDDIG82);
-		snprintf(v[109], string_size, INV_L_RCV_IUSERCHD64);
-		snprintf(v[110], string_size, INV_L_RCV_IUSERCHD82);
-		snprintf(v[111], string_size, INV_L_RCV_IRDN64);
-		snprintf(v[112], string_size, INV_L_RCV_WARN_MOTORTEMP);
-		snprintf(v[113], string_size, INV_L_RCV_IRDN82);
-		snprintf(v[114], string_size, INV_L_RCV_IRDTI64);
-		snprintf(v[115], string_size, INV_L_RCV_WARN_DEVICETEMP);
-		snprintf(v[116], string_size, INV_L_RCV_IRDTI82);
-		snprintf(v[117], string_size, INV_L_RCV_IRDTIR64);
-		snprintf(v[118], string_size, INV_L_RCV_WARN_VOUT_SAT);
-		snprintf(v[119], string_size, INV_L_RCV_IRDTIR82);
-		snprintf(v[120], string_size, INV_L_RCV__10HZ64);
-		snprintf(v[121], string_size, INV_L_RCV_WARN_IPEAK);
-		snprintf(v[122], string_size, INV_L_RCV__10HZ82);
-		snprintf(v[123], string_size, INV_L_RCV_IRDTM64);
-		snprintf(v[124], string_size, INV_L_RCV_WARN_RACEAWAY);
-		snprintf(v[125], string_size, INV_L_RCV_IRDTM82);
-		snprintf(v[126], string_size, INV_L_RCV_IRDANA64);
-		snprintf(v[127], string_size, INV_L_RCV_IRDANA82);
-		snprintf(v[128], string_size, INV_L_RCV_IWCNS64);
-		snprintf(v[129], string_size, INV_L_RCV_IWCNS82);
-		snprintf(v[130], string_size, INV_L_RCV_RFEPULSE64);
-		snprintf(v[131], string_size, INV_L_RCV_RFEPULSE82);
-		snprintf(v[132], string_size, INV_L_RCV_MD64);
-		snprintf(v[133], string_size, INV_L_RCV_MD82);
-		snprintf(v[134], string_size, INV_L_RCV_HNDWHL64);
-		snprintf(v[135], string_size, INV_L_RCV_WARN_BALLAST);
-		snprintf(v[136], string_size, INV_L_RCV_HNDWHL82);
+		snprintf(v[9], string_size, INV_L_RCV_ID_ACTUAL);
+		snprintf(v[10], string_size, INV_L_RCV_T_MOTOR);
+		snprintf(v[11], string_size, INV_L_RCV_T_IGBT);
+		snprintf(v[12], string_size, INV_L_RCV_VDC_BUS_FILT);
+		snprintf(v[13], string_size, INV_L_RCV_KM_RSVD_0);
+		snprintf(v[14], string_size, INV_L_RCV_M_CMD_RAMP);
+		snprintf(v[15], string_size, INV_L_RCV_I_DEVICE);
+		snprintf(v[16], string_size, INV_L_RCV_NMAX100PERC);
+		snprintf(v[17], string_size, INV_L_RCV_NCR064);
+		snprintf(v[18], string_size, INV_L_RCV_ERR_POWERFAULT);
+		snprintf(v[19], string_size, INV_L_RCV_LMT_ACTIVE_2);
+		snprintf(v[20], string_size, INV_L_RCV_KM_SPEED_0);
+		snprintf(v[21], string_size, INV_L_RCV_LIM_PLUS64);
+		snprintf(v[22], string_size, INV_L_RCV_ERR_RFE_FAULT);
+		snprintf(v[23], string_size, INV_L_RCV_IN_ACTIVE_2);
+		snprintf(v[24], string_size, INV_L_RCV_KM_FRG_OFF);
+		snprintf(v[25], string_size, INV_L_RCV_LIM_MINUS64);
+		snprintf(v[26], string_size, INV_L_RCV_ERR_BUSTIMEOUT);
+		snprintf(v[27], string_size, INV_L_RCV_IN_ACTIVE_1);
+		snprintf(v[28], string_size, INV_L_RCV_KM_CAL_OFF);
+		snprintf(v[29], string_size, INV_L_RCV_OK64);
+		snprintf(v[30], string_size, INV_L_RCV_ERR_FEEDBACKSIGNAL);
+		snprintf(v[31], string_size, INV_L_RCV_FRGRUN);
+		snprintf(v[32], string_size, INV_L_RCV_KM_TX_TOG_STAT);
+		snprintf(v[33], string_size, INV_L_RCV_ICNS64);
+		snprintf(v[34], string_size, INV_L_RCV_ERR_POWERVOLTAGE_LOW);
+		snprintf(v[35], string_size, INV_L_RCV_RFE216);
+		snprintf(v[36], string_size, INV_L_RCV_KM_I_LIMIT);
+		snprintf(v[37], string_size, INV_L_RCV_TNLIM64);
+		snprintf(v[38], string_size, INV_L_RCV_ERR_MOTORTEMP);
+		snprintf(v[39], string_size, INV_L_RCV_KM_N_CLIP);
+		snprintf(v[40], string_size, INV_L_RCV_PN64);
+		snprintf(v[41], string_size, INV_L_RCV_ERR_DEVICETEMP);
+		snprintf(v[42], string_size, INV_L_RCV_KM_MIX_ANA_ON);
+		snprintf(v[43], string_size, INV_L_RCV_NI64);
+		snprintf(v[44], string_size, INV_L_RCV_ERR_OVERVOLTAGE);
+		snprintf(v[45], string_size, INV_L_RCV_D_OUT_1_ON);
+		snprintf(v[46], string_size, INV_L_RCV_KM_ALLOW_SYNC);
+		snprintf(v[47], string_size, INV_L_RCV__N064);
+		snprintf(v[48], string_size, INV_L_RCV_ERR_IPEAK);
+		snprintf(v[49], string_size, INV_L_RCV_D_OUT_2_ON);
+		snprintf(v[50], string_size, INV_L_RCV_KM_HANDWHEEL);
+		snprintf(v[51], string_size, INV_L_RCV_RSW64);
+		snprintf(v[52], string_size, INV_L_RCV_ERR_RACEAWAY);
+		snprintf(v[53], string_size, INV_L_RCV_BTBRDY);
+		snprintf(v[54], string_size, INV_L_RCV_KM_PHASING_EXTEND);
+		snprintf(v[55], string_size, INV_L_RCV_CAL064);
+		snprintf(v[56], string_size, INV_L_RCV_ERR_USER);
+		snprintf(v[57], string_size, INV_L_RCV_GO216);
+		snprintf(v[58], string_size, INV_L_RCV_KM_RSVD_11);
+		snprintf(v[59], string_size, INV_L_RCV_CAL64);
+		snprintf(v[60], string_size, INV_L_RCV_D_OUT_3_ON);
+		snprintf(v[61], string_size, INV_L_RCV_KM_RSVD_12);
+		snprintf(v[62], string_size, INV_L_RCV_TOL64);
+		snprintf(v[63], string_size, INV_L_RCV_D_OUT_4_ON);
+		snprintf(v[64], string_size, INV_L_RCV_KM_RSVD_13);
+		snprintf(v[65], string_size, INV_L_RCV_RDY64);
+		snprintf(v[66], string_size, INV_L_RCV_ERR_HWERR);
+		snprintf(v[67], string_size, INV_L_RCV_GOFF);
+		snprintf(v[68], string_size, INV_L_RCV_KM_PSEUDO_ENABLE);
+		snprintf(v[69], string_size, INV_L_RCV_BRK064);
+		snprintf(v[70], string_size, INV_L_RCV_ERR_BALLAST);
+		snprintf(v[71], string_size, INV_L_RCV_ACTIVE190);
+		snprintf(v[72], string_size, INV_L_RCV_BRK1216);
+		snprintf(v[73], string_size, INV_L_RCV_KM_DEBUG_TEST);
+		snprintf(v[74], string_size, INV_L_RCV_SIGNMAG64);
+		snprintf(v[75], string_size, INV_L_RCV_WARN_WARNING_0);
+		snprintf(v[76], string_size, INV_L_RCV_FREE);
+		snprintf(v[77], string_size, INV_L_RCV_NCLIP64);
+		snprintf(v[78], string_size, INV_L_RCV_WARN_ILLEGAL_STATUS);
+		snprintf(v[79], string_size, INV_L_RCV_NCLIP_MINUS64);
+		snprintf(v[80], string_size, INV_L_RCV_WARN_SAFE_IN);
+		snprintf(v[81], string_size, INV_L_RCV_NCLIP_PLUS64);
+		snprintf(v[82], string_size, INV_L_RCV_IRDDIG64);
+		snprintf(v[83], string_size, INV_L_RCV_IUSERCHD64);
+		snprintf(v[84], string_size, INV_L_RCV_IRDN64);
+		snprintf(v[85], string_size, INV_L_RCV_WARN_MOTORTEMP);
+		snprintf(v[86], string_size, INV_L_RCV_IRDTI64);
+		snprintf(v[87], string_size, INV_L_RCV_WARN_DEVICETEMP);
+		snprintf(v[88], string_size, INV_L_RCV_IRDTIR64);
+		snprintf(v[89], string_size, INV_L_RCV_WARN_VOUT_SAT);
+		snprintf(v[90], string_size, INV_L_RCV__10HZ64);
+		snprintf(v[91], string_size, INV_L_RCV_WARN_IPEAK);
+		snprintf(v[92], string_size, INV_L_RCV_IRDTM64);
+		snprintf(v[93], string_size, INV_L_RCV_WARN_RACEAWAY);
+		snprintf(v[94], string_size, INV_L_RCV_IRDANA64);
+		snprintf(v[95], string_size, INV_L_RCV_IWCNS64);
+		snprintf(v[96], string_size, INV_L_RCV_RFEPULSE64);
+		snprintf(v[97], string_size, INV_L_RCV_MD64);
+		snprintf(v[98], string_size, INV_L_RCV_HNDWHL64);
+		snprintf(v[99], string_size, INV_L_RCV_WARN_BALLAST);
 
 		return 0;
 
@@ -764,57 +676,18 @@ int inverters_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 
 		return 0;
 	case 3:
-		if(29 > fields_size) return 1;
-		snprintf(v[0], string_size, "inverters_inv_r_send_def_end_1__Off_");
-		snprintf(v[1], string_size, "inverters_inv_r_send_def_end_1_Ref_and_Limit_Plus");
-		snprintf(v[2], string_size, "inverters_inv_r_send_def_end_1_Ref_and_Limit_Minus");
-		snprintf(v[3], string_size, "inverters_inv_r_send_def_end_1_Ref_Plus");
-		snprintf(v[4], string_size, "inverters_inv_r_send_def_end_1_Limit_Plus");
-		snprintf(v[5], string_size, "inverters_inv_r_send_def_end_1_Limit_Minus");
-		snprintf(v[6], string_size, "inverters_inv_r_send_def_end_1_Limit_Plus_and_Minus");
-		snprintf(v[7], string_size, "inverters_inv_r_send_def_end_1_Cancel_Error_s_");
-		snprintf(v[8], string_size, "inverters_inv_r_send_def_end_1__Start_Ref_Drive");
-		snprintf(v[9], string_size, "inverters_inv_r_send_def_end_1_Speed_Ramp_0");
-		snprintf(v[10], string_size, "inverters_inv_r_send_def_end_1__Start_Dest_eq_Var_1");
-		snprintf(v[11], string_size, "inverters_inv_r_send_def_end_1__Start_Dest_eq_Var_2");
-		snprintf(v[12], string_size, "inverters_inv_r_send_def_end_1_N_cmd_Reverse");
-		snprintf(v[13], string_size, "inverters_inv_r_send_def_end_1__Preset_Pos_eq_Var_3");
-		snprintf(v[14], string_size, "inverters_inv_r_send_def_end_1__Capture_Var_3_eq_Pos");
-		snprintf(v[15], string_size, "inverters_inv_r_send_def_end_1__Capture_Var_4_eq_Pos");
-		snprintf(v[16], string_size, "inverters_inv_r_send_def_end_1__Switch_Spd_eq_notAin1_Ain2");
-		snprintf(v[17], string_size, "inverters_inv_r_send_def_end_1__Switch_Spd_eq_notVar1_Var2");
-		snprintf(v[18], string_size, "inverters_inv_r_send_def_end_1_I_limit_dig_");
-		snprintf(v[19], string_size, "inverters_inv_r_send_def_end_1_N_clip_neg_pos_");
-		snprintf(v[20], string_size, "inverters_inv_r_send_def_end_1__Switch_Cmd_eq_notDig_Ana");
-		snprintf(v[21], string_size, "inverters_inv_r_send_def_end_1_Speed_Ramp_0_Pos");
-		snprintf(v[22], string_size, "inverters_inv_r_send_def_end_1_Handwheel");
-		snprintf(v[23], string_size, "inverters_inv_r_send_def_end_1_Brake_Car");
-		snprintf(v[24], string_size, "inverters_inv_r_send_def_end_1_Recup_Disabled");
-		snprintf(v[25], string_size, "inverters_inv_r_send_def_end_1_Rising_Bank_1_Falling_Bank_0");
-		snprintf(v[26], string_size, "inverters_inv_r_send_def_end_1__Start_Dest_eq_Var_1_2_3_4");
-		snprintf(v[27], string_size, "inverters_inv_r_send_def_end_1__Start_CW_eq_Var_1_2_3_4");
-		snprintf(v[28], string_size, "inverters_inv_r_send_def_end_1_Brake_Car_Nr2");
-
-		return 0;
-	case 4:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_r_send_ret_interval_Stop");
 		snprintf(v[1], string_size, "inverters_inv_r_send_ret_interval_Single");
 
 		return 0;
-	case 5:
+	case 4:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_r_send_active192_Low");
 		snprintf(v[1], string_size, "inverters_inv_r_send_active192_High");
 
 		return 0;
-	case 6:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, "inverters_inv_r_send_active190_Low");
-		snprintf(v[1], string_size, "inverters_inv_r_send_active190_High");
-
-		return 0;
-	case 7:
+	case 5:
 		if(230 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_r_rcv_rcv_mux_ID_30_N_Actual");
 		snprintf(v[1], string_size, "inverters_inv_r_rcv_rcv_mux_ID_35_Acc_Ramps");
@@ -1048,7 +921,7 @@ int inverters_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[229], string_size, "inverters_inv_r_rcv_rcv_mux_ID_FE_FW_Subv_Revis_Nr");
 
 		return 0;
-	case 8:
+	case 6:
 		if(29 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_r_rcv_def_end_1__Off_");
 		snprintf(v[1], string_size, "inverters_inv_r_rcv_def_end_1_Ref_and_Limit_Plus");
@@ -1081,52 +954,13 @@ int inverters_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[28], string_size, "inverters_inv_r_rcv_def_end_1_Brake_Car_Nr2");
 
 		return 0;
-	case 9:
-		if(29 > fields_size) return 1;
-		snprintf(v[0], string_size, "inverters_inv_r_rcv_def_din_1__Off_");
-		snprintf(v[1], string_size, "inverters_inv_r_rcv_def_din_1_Ref_and_Limit_Plus");
-		snprintf(v[2], string_size, "inverters_inv_r_rcv_def_din_1_Ref_and_Limit_Minus");
-		snprintf(v[3], string_size, "inverters_inv_r_rcv_def_din_1_Ref_Plus");
-		snprintf(v[4], string_size, "inverters_inv_r_rcv_def_din_1_Limit_Plus");
-		snprintf(v[5], string_size, "inverters_inv_r_rcv_def_din_1_Limit_Minus");
-		snprintf(v[6], string_size, "inverters_inv_r_rcv_def_din_1_Limit_Plus_and_Minus");
-		snprintf(v[7], string_size, "inverters_inv_r_rcv_def_din_1_Cancel_Error_s_");
-		snprintf(v[8], string_size, "inverters_inv_r_rcv_def_din_1__Start_Ref_Drive");
-		snprintf(v[9], string_size, "inverters_inv_r_rcv_def_din_1_Speed_Ramp_0");
-		snprintf(v[10], string_size, "inverters_inv_r_rcv_def_din_1__Start_Dest_eq_Var_1");
-		snprintf(v[11], string_size, "inverters_inv_r_rcv_def_din_1__Start_Dest_eq_Var_2");
-		snprintf(v[12], string_size, "inverters_inv_r_rcv_def_din_1_N_cmd_Reverse");
-		snprintf(v[13], string_size, "inverters_inv_r_rcv_def_din_1__Preset_Pos_eq_Var_3");
-		snprintf(v[14], string_size, "inverters_inv_r_rcv_def_din_1__Capture_Var_3_eq_Pos");
-		snprintf(v[15], string_size, "inverters_inv_r_rcv_def_din_1__Capture_Var_4_eq_Pos");
-		snprintf(v[16], string_size, "inverters_inv_r_rcv_def_din_1__Switch_Spd_eq_notAin1_Ain2");
-		snprintf(v[17], string_size, "inverters_inv_r_rcv_def_din_1__Switch_Spd_eq_notVar1_Var2");
-		snprintf(v[18], string_size, "inverters_inv_r_rcv_def_din_1_I_limit_dig_");
-		snprintf(v[19], string_size, "inverters_inv_r_rcv_def_din_1_N_clip_neg_pos_");
-		snprintf(v[20], string_size, "inverters_inv_r_rcv_def_din_1__Switch_Cmd_eq_notDig_Ana");
-		snprintf(v[21], string_size, "inverters_inv_r_rcv_def_din_1_Speed_Ramp_0_Pos");
-		snprintf(v[22], string_size, "inverters_inv_r_rcv_def_din_1_Handwheel");
-		snprintf(v[23], string_size, "inverters_inv_r_rcv_def_din_1_Brake_Car");
-		snprintf(v[24], string_size, "inverters_inv_r_rcv_def_din_1_Recup_Disabled");
-		snprintf(v[25], string_size, "inverters_inv_r_rcv_def_din_1_Rising_Bank_1_Falling_Bank_0");
-		snprintf(v[26], string_size, "inverters_inv_r_rcv_def_din_1__Start_Dest_eq_Var_1_2_3_4");
-		snprintf(v[27], string_size, "inverters_inv_r_rcv_def_din_1__Start_CW_eq_Var_1_2_3_4");
-		snprintf(v[28], string_size, "inverters_inv_r_rcv_def_din_1_Brake_Car_Nr2");
-
-		return 0;
-	case 10:
+	case 7:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_r_rcv_active190_Low");
 		snprintf(v[1], string_size, "inverters_inv_r_rcv_active190_High");
 
 		return 0;
-	case 11:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, "inverters_inv_r_rcv_active192_Low");
-		snprintf(v[1], string_size, "inverters_inv_r_rcv_active192_High");
-
-		return 0;
-	case 12:
+	case 8:
 		if(131 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_l_send_send_mux_ID_04_USER_Key");
 		snprintf(v[1], string_size, "inverters_inv_l_send_send_mux_ID_05_Motor_F_nom");
@@ -1261,7 +1095,7 @@ int inverters_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[130], string_size, "inverters_inv_l_send_send_mux_ID_F8_Axis_Label");
 
 		return 0;
-	case 13:
+	case 9:
 		if(229 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_l_send_read_id_05h_Motor_F_nom");
 		snprintf(v[1], string_size, "inverters_inv_l_send_read_id_06h_Motor_V_nom");
@@ -1494,7 +1328,7 @@ int inverters_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[228], string_size, "inverters_inv_l_send_read_id_FEh_Subv_SVNRev_Nr");
 
 		return 0;
-	case 14:
+	case 10:
 		if(29 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_l_send_def_din_1__Off_");
 		snprintf(v[1], string_size, "inverters_inv_l_send_def_din_1_Ref_and_Limit_Plus");
@@ -1527,58 +1361,19 @@ int inverters_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[28], string_size, "inverters_inv_l_send_def_din_1_Brake_Car_Nr2");
 
 		return 0;
-	case 15:
-		if(29 > fields_size) return 1;
-		snprintf(v[0], string_size, "inverters_inv_l_send_def_end_1__Off_");
-		snprintf(v[1], string_size, "inverters_inv_l_send_def_end_1_Ref_and_Limit_Plus");
-		snprintf(v[2], string_size, "inverters_inv_l_send_def_end_1_Ref_and_Limit_Minus");
-		snprintf(v[3], string_size, "inverters_inv_l_send_def_end_1_Ref_Plus");
-		snprintf(v[4], string_size, "inverters_inv_l_send_def_end_1_Limit_Plus");
-		snprintf(v[5], string_size, "inverters_inv_l_send_def_end_1_Limit_Minus");
-		snprintf(v[6], string_size, "inverters_inv_l_send_def_end_1_Limit_Plus_and_Minus");
-		snprintf(v[7], string_size, "inverters_inv_l_send_def_end_1_Cancel_Error_s_");
-		snprintf(v[8], string_size, "inverters_inv_l_send_def_end_1__Start_Ref_Drive");
-		snprintf(v[9], string_size, "inverters_inv_l_send_def_end_1_Speed_Ramp_0");
-		snprintf(v[10], string_size, "inverters_inv_l_send_def_end_1__Start_Dest_eq_Var_1");
-		snprintf(v[11], string_size, "inverters_inv_l_send_def_end_1__Start_Dest_eq_Var_2");
-		snprintf(v[12], string_size, "inverters_inv_l_send_def_end_1_N_cmd_Reverse");
-		snprintf(v[13], string_size, "inverters_inv_l_send_def_end_1__Preset_Pos_eq_Var_3");
-		snprintf(v[14], string_size, "inverters_inv_l_send_def_end_1__Capture_Var_3_eq_Pos");
-		snprintf(v[15], string_size, "inverters_inv_l_send_def_end_1__Capture_Var_4_eq_Pos");
-		snprintf(v[16], string_size, "inverters_inv_l_send_def_end_1__Switch_Spd_eq_notAin1_Ain2");
-		snprintf(v[17], string_size, "inverters_inv_l_send_def_end_1__Switch_Spd_eq_notVar1_Var2");
-		snprintf(v[18], string_size, "inverters_inv_l_send_def_end_1_I_limit_dig_");
-		snprintf(v[19], string_size, "inverters_inv_l_send_def_end_1_N_clip_neg_pos_");
-		snprintf(v[20], string_size, "inverters_inv_l_send_def_end_1__Switch_Cmd_eq_notDig_Ana");
-		snprintf(v[21], string_size, "inverters_inv_l_send_def_end_1_Speed_Ramp_0_Pos");
-		snprintf(v[22], string_size, "inverters_inv_l_send_def_end_1_Handwheel");
-		snprintf(v[23], string_size, "inverters_inv_l_send_def_end_1_Brake_Car");
-		snprintf(v[24], string_size, "inverters_inv_l_send_def_end_1_Recup_Disabled");
-		snprintf(v[25], string_size, "inverters_inv_l_send_def_end_1_Rising_Bank_1_Falling_Bank_0");
-		snprintf(v[26], string_size, "inverters_inv_l_send_def_end_1__Start_Dest_eq_Var_1_2_3_4");
-		snprintf(v[27], string_size, "inverters_inv_l_send_def_end_1__Start_CW_eq_Var_1_2_3_4");
-		snprintf(v[28], string_size, "inverters_inv_l_send_def_end_1_Brake_Car_Nr2");
-
-		return 0;
-	case 16:
+	case 11:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_l_send_ret_interval_Stop");
 		snprintf(v[1], string_size, "inverters_inv_l_send_ret_interval_Single");
 
 		return 0;
-	case 17:
+	case 12:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_l_send_active192_Low");
 		snprintf(v[1], string_size, "inverters_inv_l_send_active192_High");
 
 		return 0;
-	case 18:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, "inverters_inv_l_send_active190_Low");
-		snprintf(v[1], string_size, "inverters_inv_l_send_active190_High");
-
-		return 0;
-	case 19:
+	case 13:
 		if(230 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_l_rcv_rcv_mux_ID_30_N_Actual");
 		snprintf(v[1], string_size, "inverters_inv_l_rcv_rcv_mux_ID_35_Acc_Ramps");
@@ -1812,7 +1607,7 @@ int inverters_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[229], string_size, "inverters_inv_l_rcv_rcv_mux_ID_FE_FW_Subv_Revis_Nr");
 
 		return 0;
-	case 20:
+	case 14:
 		if(29 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_l_rcv_def_end_1__Off_");
 		snprintf(v[1], string_size, "inverters_inv_l_rcv_def_end_1_Ref_and_Limit_Plus");
@@ -1845,49 +1640,10 @@ int inverters_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 		snprintf(v[28], string_size, "inverters_inv_l_rcv_def_end_1_Brake_Car_Nr2");
 
 		return 0;
-	case 21:
-		if(29 > fields_size) return 1;
-		snprintf(v[0], string_size, "inverters_inv_l_rcv_def_din_1__Off_");
-		snprintf(v[1], string_size, "inverters_inv_l_rcv_def_din_1_Ref_and_Limit_Plus");
-		snprintf(v[2], string_size, "inverters_inv_l_rcv_def_din_1_Ref_and_Limit_Minus");
-		snprintf(v[3], string_size, "inverters_inv_l_rcv_def_din_1_Ref_Plus");
-		snprintf(v[4], string_size, "inverters_inv_l_rcv_def_din_1_Limit_Plus");
-		snprintf(v[5], string_size, "inverters_inv_l_rcv_def_din_1_Limit_Minus");
-		snprintf(v[6], string_size, "inverters_inv_l_rcv_def_din_1_Limit_Plus_and_Minus");
-		snprintf(v[7], string_size, "inverters_inv_l_rcv_def_din_1_Cancel_Error_s_");
-		snprintf(v[8], string_size, "inverters_inv_l_rcv_def_din_1__Start_Ref_Drive");
-		snprintf(v[9], string_size, "inverters_inv_l_rcv_def_din_1_Speed_Ramp_0");
-		snprintf(v[10], string_size, "inverters_inv_l_rcv_def_din_1__Start_Dest_eq_Var_1");
-		snprintf(v[11], string_size, "inverters_inv_l_rcv_def_din_1__Start_Dest_eq_Var_2");
-		snprintf(v[12], string_size, "inverters_inv_l_rcv_def_din_1_N_cmd_Reverse");
-		snprintf(v[13], string_size, "inverters_inv_l_rcv_def_din_1__Preset_Pos_eq_Var_3");
-		snprintf(v[14], string_size, "inverters_inv_l_rcv_def_din_1__Capture_Var_3_eq_Pos");
-		snprintf(v[15], string_size, "inverters_inv_l_rcv_def_din_1__Capture_Var_4_eq_Pos");
-		snprintf(v[16], string_size, "inverters_inv_l_rcv_def_din_1__Switch_Spd_eq_notAin1_Ain2");
-		snprintf(v[17], string_size, "inverters_inv_l_rcv_def_din_1__Switch_Spd_eq_notVar1_Var2");
-		snprintf(v[18], string_size, "inverters_inv_l_rcv_def_din_1_I_limit_dig_");
-		snprintf(v[19], string_size, "inverters_inv_l_rcv_def_din_1_N_clip_neg_pos_");
-		snprintf(v[20], string_size, "inverters_inv_l_rcv_def_din_1__Switch_Cmd_eq_notDig_Ana");
-		snprintf(v[21], string_size, "inverters_inv_l_rcv_def_din_1_Speed_Ramp_0_Pos");
-		snprintf(v[22], string_size, "inverters_inv_l_rcv_def_din_1_Handwheel");
-		snprintf(v[23], string_size, "inverters_inv_l_rcv_def_din_1_Brake_Car");
-		snprintf(v[24], string_size, "inverters_inv_l_rcv_def_din_1_Recup_Disabled");
-		snprintf(v[25], string_size, "inverters_inv_l_rcv_def_din_1_Rising_Bank_1_Falling_Bank_0");
-		snprintf(v[26], string_size, "inverters_inv_l_rcv_def_din_1__Start_Dest_eq_Var_1_2_3_4");
-		snprintf(v[27], string_size, "inverters_inv_l_rcv_def_din_1__Start_CW_eq_Var_1_2_3_4");
-		snprintf(v[28], string_size, "inverters_inv_l_rcv_def_din_1_Brake_Car_Nr2");
-
-		return 0;
-	case 22:
+	case 15:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "inverters_inv_l_rcv_active190_Low");
 		snprintf(v[1], string_size, "inverters_inv_l_rcv_active190_High");
-
-		return 0;
-	case 23:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, "inverters_inv_l_rcv_active192_Low");
-		snprintf(v[1], string_size, "inverters_inv_l_rcv_active192_High");
 
 		return 0;
 
@@ -1906,13 +1662,8 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_read_id;
 		uint8_t r_km_rsvd_0;
 		float r_m_setdig__iq;
+		float r_id_setdig__id;
 		uint16_t r_def_din_1;
-		uint16_t r_def_end_1;
-		float r_i_max_pk;
-		float r_i_con_eff;
-		float r_i_device;
-		uint16_t r_n_r_lim;
-		int16_t r_nmax100perc;
 		uint8_t r_km_speed_0;
 		uint8_t r_km_frg_off;
 		uint8_t r_km_cal_off;
@@ -1930,20 +1681,13 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_km_pseudo_enable;
 		uint8_t r_km_debug_test;
 		uint8_t r_active192;
-		uint8_t r_active190;
-		uint16_t r_m_r_rcp;
 
 		sscanf(s, "%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%f,"       
-			"%" SCNu16 "," 
-			"%" SCNu16 "," 
-			"%f,"       
-			"%f,"       
 			"%f,"       
 			"%" SCNu16 "," 
-			"%" SCNi16 "," 
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -1960,20 +1704,13 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu16 "," ,
+			"%" SCNu8 ","  ,
 			&r_send_mux,
 			&r_read_id,
 			&r_km_rsvd_0,
 			&r_m_setdig__iq,
+			&r_id_setdig__id,
 			&r_def_din_1,
-			&r_def_end_1,
-			&r_i_max_pk,
-			&r_i_con_eff,
-			&r_i_device,
-			&r_n_r_lim,
-			&r_nmax100perc,
 			&r_km_speed_0,
 			&r_km_frg_off,
 			&r_km_cal_off,
@@ -1990,20 +1727,13 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			&r_km_rsvd_13,
 			&r_km_pseudo_enable,
 			&r_km_debug_test,
-			&r_active192,
-			&r_active190,
-			&r_m_r_rcp);
+			&r_active192);
 		tmp_converted.send_mux = (inverters_inv_r_send_send_mux)r_send_mux;
 		tmp_converted.read_id = (inverters_inv_r_send_read_id)r_read_id;
 		tmp_converted.km_rsvd_0 = (uint8_t)r_km_rsvd_0;
 		tmp_converted.m_setdig__iq = (float)r_m_setdig__iq;
+		tmp_converted.id_setdig__id = (float)r_id_setdig__id;
 		tmp_converted.def_din_1 = (inverters_inv_r_send_def_din_1)r_def_din_1;
-		tmp_converted.def_end_1 = (inverters_inv_r_send_def_end_1)r_def_end_1;
-		tmp_converted.i_max_pk = (float)r_i_max_pk;
-		tmp_converted.i_con_eff = (float)r_i_con_eff;
-		tmp_converted.i_device = (float)r_i_device;
-		tmp_converted.n_r_lim = (uint16_t)r_n_r_lim;
-		tmp_converted.nmax100perc = (int16_t)r_nmax100perc;
 		tmp_converted.km_speed_0 = (uint8_t)r_km_speed_0;
 		tmp_converted.km_frg_off = (uint8_t)r_km_frg_off;
 		tmp_converted.km_cal_off = (uint8_t)r_km_cal_off;
@@ -2021,8 +1751,6 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.km_pseudo_enable = (uint8_t)r_km_pseudo_enable;
 		tmp_converted.km_debug_test = (uint8_t)r_km_debug_test;
 		tmp_converted.active192 = (inverters_inv_r_send_active192)r_active192;
-		tmp_converted.active190 = (inverters_inv_r_send_active190)r_active190;
-		tmp_converted.m_r_rcp = (uint16_t)r_m_r_rcp;
 
 		inverters_inv_r_send_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = INVERTERS_INV_R_SEND_BYTE_SIZE;
@@ -2041,134 +1769,97 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		float r_i_cmd;
 		float r_i_cmd_ramp;
 		float r_iq_actual;
+		float r_id_actual;
 		uint16_t r_t_motor;
 		uint16_t r_t_igbt;
 		float r_vdc_bus_filt;
 		uint8_t r_km_rsvd_0;
-		uint8_t r_ena82;
-		uint16_t r_def_din_1;
 		int16_t r_m_cmd_ramp;
-		float r_i_max_pk;
-		float r_i_con_eff;
 		float r_i_device;
-		uint16_t r_n_r_lim;
 		int16_t r_nmax100perc;
 		uint8_t r_ncr064;
 		uint8_t r_err_powerfault;
 		uint8_t r_lmt_active_2;
 		uint8_t r_km_speed_0;
-		uint8_t r_ncr082;
 		uint8_t r_lim_plus64;
 		uint8_t r_err_rfe_fault;
 		uint8_t r_in_active_2;
 		uint8_t r_km_frg_off;
-		uint8_t r_lim_plus82;
 		uint8_t r_lim_minus64;
 		uint8_t r_err_bustimeout;
 		uint8_t r_in_active_1;
 		uint8_t r_km_cal_off;
-		uint8_t r_lim_minus82;
 		uint8_t r_ok64;
 		uint8_t r_err_feedbacksignal;
 		uint8_t r_frgrun;
 		uint8_t r_km_tx_tog_stat;
-		uint8_t r_ok82;
 		uint8_t r_icns64;
 		uint8_t r_err_powervoltage_low;
 		uint8_t r_rfe216;
 		uint8_t r_km_i_limit;
-		uint8_t r_icns82;
 		uint8_t r_tnlim64;
 		uint8_t r_err_motortemp;
 		uint8_t r_km_n_clip;
-		uint8_t r_tnlim82;
 		uint8_t r_pn64;
 		uint8_t r_err_devicetemp;
 		uint8_t r_km_mix_ana_on;
-		uint8_t r_pn82;
 		uint8_t r_ni64;
 		uint8_t r_err_overvoltage;
 		uint8_t r_d_out_1_on;
 		uint8_t r_km_allow_sync;
-		uint8_t r_ni82;
 		uint8_t r__n064;
 		uint8_t r_err_ipeak;
 		uint8_t r_d_out_2_on;
 		uint8_t r_km_handwheel;
-		uint8_t r__n082;
 		uint8_t r_rsw64;
 		uint8_t r_err_raceaway;
 		uint8_t r_btbrdy;
 		uint8_t r_km_phasing_extend;
-		uint8_t r_rsw82;
 		uint8_t r_cal064;
 		uint8_t r_err_user;
 		uint8_t r_go216;
 		uint8_t r_km_rsvd_11;
-		uint8_t r_cal082;
 		uint8_t r_cal64;
 		uint8_t r_d_out_3_on;
 		uint8_t r_km_rsvd_12;
-		uint8_t r_cal82;
 		uint8_t r_tol64;
 		uint8_t r_d_out_4_on;
 		uint8_t r_km_rsvd_13;
-		uint8_t r_tol82;
 		uint8_t r_rdy64;
 		uint8_t r_err_hwerr;
 		uint8_t r_goff;
 		uint8_t r_km_pseudo_enable;
-		uint8_t r_rdy82;
 		uint8_t r_brk064;
 		uint8_t r_err_ballast;
 		uint8_t r_active190;
 		uint8_t r_brk1216;
 		uint8_t r_km_debug_test;
-		uint8_t r_brk082;
-		uint8_t r_active192;
 		uint8_t r_signmag64;
 		uint8_t r_warn_warning_0;
-		uint8_t r_signmag82;
 		int16_t r_free;
-		uint16_t r_m_r_rcp;
 		uint8_t r_nclip64;
 		uint8_t r_warn_illegal_status;
-		uint8_t r_nclip82;
 		uint8_t r_nclip_minus64;
 		uint8_t r_warn_safe_in;
-		uint8_t r_nclip_minus82;
 		uint8_t r_nclip_plus64;
-		uint8_t r_nclip_plus82;
 		uint8_t r_irddig64;
-		uint8_t r_irddig82;
 		uint8_t r_iuserchd64;
-		uint8_t r_iuserchd82;
 		uint8_t r_irdn64;
 		uint8_t r_warn_motortemp;
-		uint8_t r_irdn82;
 		uint8_t r_irdti64;
 		uint8_t r_warn_devicetemp;
-		uint8_t r_irdti82;
 		uint8_t r_irdtir64;
 		uint8_t r_warn_vout_sat;
-		uint8_t r_irdtir82;
 		uint8_t r__10hz64;
 		uint8_t r_warn_ipeak;
-		uint8_t r__10hz82;
 		uint8_t r_irdtm64;
 		uint8_t r_warn_raceaway;
-		uint8_t r_irdtm82;
 		uint8_t r_irdana64;
-		uint8_t r_irdana82;
 		uint8_t r_iwcns64;
-		uint8_t r_iwcns82;
 		uint8_t r_rfepulse64;
-		uint8_t r_rfepulse82;
 		uint8_t r_md64;
-		uint8_t r_md82;
 		uint8_t r_hndwhl64;
 		uint8_t r_warn_ballast;
-		uint8_t r_hndwhl82;
 
 		sscanf(s, "%" SCNu8 ","  
 			"%f,"       
@@ -2179,17 +1870,13 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			"%f,"       
 			"%f,"       
 			"%f,"       
+			"%f,"       
 			"%" SCNu16 "," 
 			"%" SCNu16 "," 
 			"%f,"       
 			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu16 "," 
 			"%" SCNi16 "," 
 			"%f,"       
-			"%f,"       
-			"%f,"       
-			"%" SCNu16 "," 
 			"%" SCNi16 "," 
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -2250,40 +1937,7 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
 			"%" SCNi16 "," 
-			"%" SCNu16 "," 
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -2316,134 +1970,97 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			&r_i_cmd,
 			&r_i_cmd_ramp,
 			&r_iq_actual,
+			&r_id_actual,
 			&r_t_motor,
 			&r_t_igbt,
 			&r_vdc_bus_filt,
 			&r_km_rsvd_0,
-			&r_ena82,
-			&r_def_din_1,
 			&r_m_cmd_ramp,
-			&r_i_max_pk,
-			&r_i_con_eff,
 			&r_i_device,
-			&r_n_r_lim,
 			&r_nmax100perc,
 			&r_ncr064,
 			&r_err_powerfault,
 			&r_lmt_active_2,
 			&r_km_speed_0,
-			&r_ncr082,
 			&r_lim_plus64,
 			&r_err_rfe_fault,
 			&r_in_active_2,
 			&r_km_frg_off,
-			&r_lim_plus82,
 			&r_lim_minus64,
 			&r_err_bustimeout,
 			&r_in_active_1,
 			&r_km_cal_off,
-			&r_lim_minus82,
 			&r_ok64,
 			&r_err_feedbacksignal,
 			&r_frgrun,
 			&r_km_tx_tog_stat,
-			&r_ok82,
 			&r_icns64,
 			&r_err_powervoltage_low,
 			&r_rfe216,
 			&r_km_i_limit,
-			&r_icns82,
 			&r_tnlim64,
 			&r_err_motortemp,
 			&r_km_n_clip,
-			&r_tnlim82,
 			&r_pn64,
 			&r_err_devicetemp,
 			&r_km_mix_ana_on,
-			&r_pn82,
 			&r_ni64,
 			&r_err_overvoltage,
 			&r_d_out_1_on,
 			&r_km_allow_sync,
-			&r_ni82,
 			&r__n064,
 			&r_err_ipeak,
 			&r_d_out_2_on,
 			&r_km_handwheel,
-			&r__n082,
 			&r_rsw64,
 			&r_err_raceaway,
 			&r_btbrdy,
 			&r_km_phasing_extend,
-			&r_rsw82,
 			&r_cal064,
 			&r_err_user,
 			&r_go216,
 			&r_km_rsvd_11,
-			&r_cal082,
 			&r_cal64,
 			&r_d_out_3_on,
 			&r_km_rsvd_12,
-			&r_cal82,
 			&r_tol64,
 			&r_d_out_4_on,
 			&r_km_rsvd_13,
-			&r_tol82,
 			&r_rdy64,
 			&r_err_hwerr,
 			&r_goff,
 			&r_km_pseudo_enable,
-			&r_rdy82,
 			&r_brk064,
 			&r_err_ballast,
 			&r_active190,
 			&r_brk1216,
 			&r_km_debug_test,
-			&r_brk082,
-			&r_active192,
 			&r_signmag64,
 			&r_warn_warning_0,
-			&r_signmag82,
 			&r_free,
-			&r_m_r_rcp,
 			&r_nclip64,
 			&r_warn_illegal_status,
-			&r_nclip82,
 			&r_nclip_minus64,
 			&r_warn_safe_in,
-			&r_nclip_minus82,
 			&r_nclip_plus64,
-			&r_nclip_plus82,
 			&r_irddig64,
-			&r_irddig82,
 			&r_iuserchd64,
-			&r_iuserchd82,
 			&r_irdn64,
 			&r_warn_motortemp,
-			&r_irdn82,
 			&r_irdti64,
 			&r_warn_devicetemp,
-			&r_irdti82,
 			&r_irdtir64,
 			&r_warn_vout_sat,
-			&r_irdtir82,
 			&r__10hz64,
 			&r_warn_ipeak,
-			&r__10hz82,
 			&r_irdtm64,
 			&r_warn_raceaway,
-			&r_irdtm82,
 			&r_irdana64,
-			&r_irdana82,
 			&r_iwcns64,
-			&r_iwcns82,
 			&r_rfepulse64,
-			&r_rfepulse82,
 			&r_md64,
-			&r_md82,
 			&r_hndwhl64,
-			&r_warn_ballast,
-			&r_hndwhl82);
+			&r_warn_ballast);
 		tmp_converted.rcv_mux = (inverters_inv_r_rcv_rcv_mux)r_rcv_mux;
 		tmp_converted.n_actual_filt = (float)r_n_actual_filt;
 		tmp_converted.ena64 = (uint8_t)r_ena64;
@@ -2453,134 +2070,97 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.i_cmd = (float)r_i_cmd;
 		tmp_converted.i_cmd_ramp = (float)r_i_cmd_ramp;
 		tmp_converted.iq_actual = (float)r_iq_actual;
+		tmp_converted.id_actual = (float)r_id_actual;
 		tmp_converted.t_motor = (uint16_t)r_t_motor;
 		tmp_converted.t_igbt = (uint16_t)r_t_igbt;
 		tmp_converted.vdc_bus_filt = (float)r_vdc_bus_filt;
 		tmp_converted.km_rsvd_0 = (uint8_t)r_km_rsvd_0;
-		tmp_converted.ena82 = (uint8_t)r_ena82;
-		tmp_converted.def_din_1 = (inverters_inv_r_rcv_def_din_1)r_def_din_1;
 		tmp_converted.m_cmd_ramp = (int16_t)r_m_cmd_ramp;
-		tmp_converted.i_max_pk = (float)r_i_max_pk;
-		tmp_converted.i_con_eff = (float)r_i_con_eff;
 		tmp_converted.i_device = (float)r_i_device;
-		tmp_converted.n_r_lim = (uint16_t)r_n_r_lim;
 		tmp_converted.nmax100perc = (int16_t)r_nmax100perc;
 		tmp_converted.ncr064 = (uint8_t)r_ncr064;
 		tmp_converted.err_powerfault = (uint8_t)r_err_powerfault;
 		tmp_converted.lmt_active_2 = (uint8_t)r_lmt_active_2;
 		tmp_converted.km_speed_0 = (uint8_t)r_km_speed_0;
-		tmp_converted.ncr082 = (uint8_t)r_ncr082;
 		tmp_converted.lim_plus64 = (uint8_t)r_lim_plus64;
 		tmp_converted.err_rfe_fault = (uint8_t)r_err_rfe_fault;
 		tmp_converted.in_active_2 = (uint8_t)r_in_active_2;
 		tmp_converted.km_frg_off = (uint8_t)r_km_frg_off;
-		tmp_converted.lim_plus82 = (uint8_t)r_lim_plus82;
 		tmp_converted.lim_minus64 = (uint8_t)r_lim_minus64;
 		tmp_converted.err_bustimeout = (uint8_t)r_err_bustimeout;
 		tmp_converted.in_active_1 = (uint8_t)r_in_active_1;
 		tmp_converted.km_cal_off = (uint8_t)r_km_cal_off;
-		tmp_converted.lim_minus82 = (uint8_t)r_lim_minus82;
 		tmp_converted.ok64 = (uint8_t)r_ok64;
 		tmp_converted.err_feedbacksignal = (uint8_t)r_err_feedbacksignal;
 		tmp_converted.frgrun = (uint8_t)r_frgrun;
 		tmp_converted.km_tx_tog_stat = (uint8_t)r_km_tx_tog_stat;
-		tmp_converted.ok82 = (uint8_t)r_ok82;
 		tmp_converted.icns64 = (uint8_t)r_icns64;
 		tmp_converted.err_powervoltage_low = (uint8_t)r_err_powervoltage_low;
 		tmp_converted.rfe216 = (uint8_t)r_rfe216;
 		tmp_converted.km_i_limit = (uint8_t)r_km_i_limit;
-		tmp_converted.icns82 = (uint8_t)r_icns82;
 		tmp_converted.tnlim64 = (uint8_t)r_tnlim64;
 		tmp_converted.err_motortemp = (uint8_t)r_err_motortemp;
 		tmp_converted.km_n_clip = (uint8_t)r_km_n_clip;
-		tmp_converted.tnlim82 = (uint8_t)r_tnlim82;
 		tmp_converted.pn64 = (uint8_t)r_pn64;
 		tmp_converted.err_devicetemp = (uint8_t)r_err_devicetemp;
 		tmp_converted.km_mix_ana_on = (uint8_t)r_km_mix_ana_on;
-		tmp_converted.pn82 = (uint8_t)r_pn82;
 		tmp_converted.ni64 = (uint8_t)r_ni64;
 		tmp_converted.err_overvoltage = (uint8_t)r_err_overvoltage;
 		tmp_converted.d_out_1_on = (uint8_t)r_d_out_1_on;
 		tmp_converted.km_allow_sync = (uint8_t)r_km_allow_sync;
-		tmp_converted.ni82 = (uint8_t)r_ni82;
 		tmp_converted._n064 = (uint8_t)r__n064;
 		tmp_converted.err_ipeak = (uint8_t)r_err_ipeak;
 		tmp_converted.d_out_2_on = (uint8_t)r_d_out_2_on;
 		tmp_converted.km_handwheel = (uint8_t)r_km_handwheel;
-		tmp_converted._n082 = (uint8_t)r__n082;
 		tmp_converted.rsw64 = (uint8_t)r_rsw64;
 		tmp_converted.err_raceaway = (uint8_t)r_err_raceaway;
 		tmp_converted.btbrdy = (uint8_t)r_btbrdy;
 		tmp_converted.km_phasing_extend = (uint8_t)r_km_phasing_extend;
-		tmp_converted.rsw82 = (uint8_t)r_rsw82;
 		tmp_converted.cal064 = (uint8_t)r_cal064;
 		tmp_converted.err_user = (uint8_t)r_err_user;
 		tmp_converted.go216 = (uint8_t)r_go216;
 		tmp_converted.km_rsvd_11 = (uint8_t)r_km_rsvd_11;
-		tmp_converted.cal082 = (uint8_t)r_cal082;
 		tmp_converted.cal64 = (uint8_t)r_cal64;
 		tmp_converted.d_out_3_on = (uint8_t)r_d_out_3_on;
 		tmp_converted.km_rsvd_12 = (uint8_t)r_km_rsvd_12;
-		tmp_converted.cal82 = (uint8_t)r_cal82;
 		tmp_converted.tol64 = (uint8_t)r_tol64;
 		tmp_converted.d_out_4_on = (uint8_t)r_d_out_4_on;
 		tmp_converted.km_rsvd_13 = (uint8_t)r_km_rsvd_13;
-		tmp_converted.tol82 = (uint8_t)r_tol82;
 		tmp_converted.rdy64 = (uint8_t)r_rdy64;
 		tmp_converted.err_hwerr = (uint8_t)r_err_hwerr;
 		tmp_converted.goff = (uint8_t)r_goff;
 		tmp_converted.km_pseudo_enable = (uint8_t)r_km_pseudo_enable;
-		tmp_converted.rdy82 = (uint8_t)r_rdy82;
 		tmp_converted.brk064 = (uint8_t)r_brk064;
 		tmp_converted.err_ballast = (uint8_t)r_err_ballast;
 		tmp_converted.active190 = (inverters_inv_r_rcv_active190)r_active190;
 		tmp_converted.brk1216 = (uint8_t)r_brk1216;
 		tmp_converted.km_debug_test = (uint8_t)r_km_debug_test;
-		tmp_converted.brk082 = (uint8_t)r_brk082;
-		tmp_converted.active192 = (inverters_inv_r_rcv_active192)r_active192;
 		tmp_converted.signmag64 = (uint8_t)r_signmag64;
 		tmp_converted.warn_warning_0 = (uint8_t)r_warn_warning_0;
-		tmp_converted.signmag82 = (uint8_t)r_signmag82;
 		tmp_converted.free = (int16_t)r_free;
-		tmp_converted.m_r_rcp = (uint16_t)r_m_r_rcp;
 		tmp_converted.nclip64 = (uint8_t)r_nclip64;
 		tmp_converted.warn_illegal_status = (uint8_t)r_warn_illegal_status;
-		tmp_converted.nclip82 = (uint8_t)r_nclip82;
 		tmp_converted.nclip_minus64 = (uint8_t)r_nclip_minus64;
 		tmp_converted.warn_safe_in = (uint8_t)r_warn_safe_in;
-		tmp_converted.nclip_minus82 = (uint8_t)r_nclip_minus82;
 		tmp_converted.nclip_plus64 = (uint8_t)r_nclip_plus64;
-		tmp_converted.nclip_plus82 = (uint8_t)r_nclip_plus82;
 		tmp_converted.irddig64 = (uint8_t)r_irddig64;
-		tmp_converted.irddig82 = (uint8_t)r_irddig82;
 		tmp_converted.iuserchd64 = (uint8_t)r_iuserchd64;
-		tmp_converted.iuserchd82 = (uint8_t)r_iuserchd82;
 		tmp_converted.irdn64 = (uint8_t)r_irdn64;
 		tmp_converted.warn_motortemp = (uint8_t)r_warn_motortemp;
-		tmp_converted.irdn82 = (uint8_t)r_irdn82;
 		tmp_converted.irdti64 = (uint8_t)r_irdti64;
 		tmp_converted.warn_devicetemp = (uint8_t)r_warn_devicetemp;
-		tmp_converted.irdti82 = (uint8_t)r_irdti82;
 		tmp_converted.irdtir64 = (uint8_t)r_irdtir64;
 		tmp_converted.warn_vout_sat = (uint8_t)r_warn_vout_sat;
-		tmp_converted.irdtir82 = (uint8_t)r_irdtir82;
 		tmp_converted._10hz64 = (uint8_t)r__10hz64;
 		tmp_converted.warn_ipeak = (uint8_t)r_warn_ipeak;
-		tmp_converted._10hz82 = (uint8_t)r__10hz82;
 		tmp_converted.irdtm64 = (uint8_t)r_irdtm64;
 		tmp_converted.warn_raceaway = (uint8_t)r_warn_raceaway;
-		tmp_converted.irdtm82 = (uint8_t)r_irdtm82;
 		tmp_converted.irdana64 = (uint8_t)r_irdana64;
-		tmp_converted.irdana82 = (uint8_t)r_irdana82;
 		tmp_converted.iwcns64 = (uint8_t)r_iwcns64;
-		tmp_converted.iwcns82 = (uint8_t)r_iwcns82;
 		tmp_converted.rfepulse64 = (uint8_t)r_rfepulse64;
-		tmp_converted.rfepulse82 = (uint8_t)r_rfepulse82;
 		tmp_converted.md64 = (uint8_t)r_md64;
-		tmp_converted.md82 = (uint8_t)r_md82;
 		tmp_converted.hndwhl64 = (uint8_t)r_hndwhl64;
 		tmp_converted.warn_ballast = (uint8_t)r_warn_ballast;
-		tmp_converted.hndwhl82 = (uint8_t)r_hndwhl82;
 
 		inverters_inv_r_rcv_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = INVERTERS_INV_R_RCV_BYTE_SIZE;
@@ -2594,13 +2174,8 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_read_id;
 		uint8_t r_km_rsvd_0;
 		float r_m_setdig__iq;
+		float r_id_setdig__id;
 		uint16_t r_def_din_1;
-		uint16_t r_def_end_1;
-		float r_i_max_pk;
-		float r_i_con_eff;
-		float r_i_device;
-		uint16_t r_n_r_lim;
-		int16_t r_nmax100perc;
 		uint8_t r_km_speed_0;
 		uint8_t r_km_frg_off;
 		uint8_t r_km_cal_off;
@@ -2618,20 +2193,13 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_km_pseudo_enable;
 		uint8_t r_km_debug_test;
 		uint8_t r_active192;
-		uint8_t r_active190;
-		uint16_t r_m_r_rcp;
 
 		sscanf(s, "%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%f,"       
-			"%" SCNu16 "," 
-			"%" SCNu16 "," 
-			"%f,"       
-			"%f,"       
 			"%f,"       
 			"%" SCNu16 "," 
-			"%" SCNi16 "," 
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -2648,20 +2216,13 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu16 "," ,
+			"%" SCNu8 ","  ,
 			&r_send_mux,
 			&r_read_id,
 			&r_km_rsvd_0,
 			&r_m_setdig__iq,
+			&r_id_setdig__id,
 			&r_def_din_1,
-			&r_def_end_1,
-			&r_i_max_pk,
-			&r_i_con_eff,
-			&r_i_device,
-			&r_n_r_lim,
-			&r_nmax100perc,
 			&r_km_speed_0,
 			&r_km_frg_off,
 			&r_km_cal_off,
@@ -2678,20 +2239,13 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			&r_km_rsvd_13,
 			&r_km_pseudo_enable,
 			&r_km_debug_test,
-			&r_active192,
-			&r_active190,
-			&r_m_r_rcp);
+			&r_active192);
 		tmp_converted.send_mux = (inverters_inv_l_send_send_mux)r_send_mux;
 		tmp_converted.read_id = (inverters_inv_l_send_read_id)r_read_id;
 		tmp_converted.km_rsvd_0 = (uint8_t)r_km_rsvd_0;
 		tmp_converted.m_setdig__iq = (float)r_m_setdig__iq;
+		tmp_converted.id_setdig__id = (float)r_id_setdig__id;
 		tmp_converted.def_din_1 = (inverters_inv_l_send_def_din_1)r_def_din_1;
-		tmp_converted.def_end_1 = (inverters_inv_l_send_def_end_1)r_def_end_1;
-		tmp_converted.i_max_pk = (float)r_i_max_pk;
-		tmp_converted.i_con_eff = (float)r_i_con_eff;
-		tmp_converted.i_device = (float)r_i_device;
-		tmp_converted.n_r_lim = (uint16_t)r_n_r_lim;
-		tmp_converted.nmax100perc = (int16_t)r_nmax100perc;
 		tmp_converted.km_speed_0 = (uint8_t)r_km_speed_0;
 		tmp_converted.km_frg_off = (uint8_t)r_km_frg_off;
 		tmp_converted.km_cal_off = (uint8_t)r_km_cal_off;
@@ -2709,8 +2263,6 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.km_pseudo_enable = (uint8_t)r_km_pseudo_enable;
 		tmp_converted.km_debug_test = (uint8_t)r_km_debug_test;
 		tmp_converted.active192 = (inverters_inv_l_send_active192)r_active192;
-		tmp_converted.active190 = (inverters_inv_l_send_active190)r_active190;
-		tmp_converted.m_r_rcp = (uint16_t)r_m_r_rcp;
 
 		inverters_inv_l_send_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = INVERTERS_INV_L_SEND_BYTE_SIZE;
@@ -2729,134 +2281,97 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		float r_i_cmd;
 		float r_i_cmd_ramp;
 		float r_iq_actual;
+		float r_id_actual;
 		uint16_t r_t_motor;
 		uint16_t r_t_igbt;
 		float r_vdc_bus_filt;
 		uint8_t r_km_rsvd_0;
-		uint8_t r_ena82;
-		uint16_t r_def_din_1;
 		int16_t r_m_cmd_ramp;
-		float r_i_max_pk;
-		float r_i_con_eff;
 		float r_i_device;
-		uint16_t r_n_r_lim;
 		int16_t r_nmax100perc;
 		uint8_t r_ncr064;
 		uint8_t r_err_powerfault;
 		uint8_t r_lmt_active_2;
 		uint8_t r_km_speed_0;
-		uint8_t r_ncr082;
 		uint8_t r_lim_plus64;
 		uint8_t r_err_rfe_fault;
 		uint8_t r_in_active_2;
 		uint8_t r_km_frg_off;
-		uint8_t r_lim_plus82;
 		uint8_t r_lim_minus64;
 		uint8_t r_err_bustimeout;
 		uint8_t r_in_active_1;
 		uint8_t r_km_cal_off;
-		uint8_t r_lim_minus82;
 		uint8_t r_ok64;
 		uint8_t r_err_feedbacksignal;
 		uint8_t r_frgrun;
 		uint8_t r_km_tx_tog_stat;
-		uint8_t r_ok82;
 		uint8_t r_icns64;
 		uint8_t r_err_powervoltage_low;
 		uint8_t r_rfe216;
 		uint8_t r_km_i_limit;
-		uint8_t r_icns82;
 		uint8_t r_tnlim64;
 		uint8_t r_err_motortemp;
 		uint8_t r_km_n_clip;
-		uint8_t r_tnlim82;
 		uint8_t r_pn64;
 		uint8_t r_err_devicetemp;
 		uint8_t r_km_mix_ana_on;
-		uint8_t r_pn82;
 		uint8_t r_ni64;
 		uint8_t r_err_overvoltage;
 		uint8_t r_d_out_1_on;
 		uint8_t r_km_allow_sync;
-		uint8_t r_ni82;
 		uint8_t r__n064;
 		uint8_t r_err_ipeak;
 		uint8_t r_d_out_2_on;
 		uint8_t r_km_handwheel;
-		uint8_t r__n082;
 		uint8_t r_rsw64;
 		uint8_t r_err_raceaway;
 		uint8_t r_btbrdy;
 		uint8_t r_km_phasing_extend;
-		uint8_t r_rsw82;
 		uint8_t r_cal064;
 		uint8_t r_err_user;
 		uint8_t r_go216;
 		uint8_t r_km_rsvd_11;
-		uint8_t r_cal082;
 		uint8_t r_cal64;
 		uint8_t r_d_out_3_on;
 		uint8_t r_km_rsvd_12;
-		uint8_t r_cal82;
 		uint8_t r_tol64;
 		uint8_t r_d_out_4_on;
 		uint8_t r_km_rsvd_13;
-		uint8_t r_tol82;
 		uint8_t r_rdy64;
 		uint8_t r_err_hwerr;
 		uint8_t r_goff;
 		uint8_t r_km_pseudo_enable;
-		uint8_t r_rdy82;
 		uint8_t r_brk064;
 		uint8_t r_err_ballast;
 		uint8_t r_active190;
 		uint8_t r_brk1216;
 		uint8_t r_km_debug_test;
-		uint8_t r_brk082;
-		uint8_t r_active192;
 		uint8_t r_signmag64;
 		uint8_t r_warn_warning_0;
-		uint8_t r_signmag82;
 		int16_t r_free;
-		uint16_t r_m_r_rcp;
 		uint8_t r_nclip64;
 		uint8_t r_warn_illegal_status;
-		uint8_t r_nclip82;
 		uint8_t r_nclip_minus64;
 		uint8_t r_warn_safe_in;
-		uint8_t r_nclip_minus82;
 		uint8_t r_nclip_plus64;
-		uint8_t r_nclip_plus82;
 		uint8_t r_irddig64;
-		uint8_t r_irddig82;
 		uint8_t r_iuserchd64;
-		uint8_t r_iuserchd82;
 		uint8_t r_irdn64;
 		uint8_t r_warn_motortemp;
-		uint8_t r_irdn82;
 		uint8_t r_irdti64;
 		uint8_t r_warn_devicetemp;
-		uint8_t r_irdti82;
 		uint8_t r_irdtir64;
 		uint8_t r_warn_vout_sat;
-		uint8_t r_irdtir82;
 		uint8_t r__10hz64;
 		uint8_t r_warn_ipeak;
-		uint8_t r__10hz82;
 		uint8_t r_irdtm64;
 		uint8_t r_warn_raceaway;
-		uint8_t r_irdtm82;
 		uint8_t r_irdana64;
-		uint8_t r_irdana82;
 		uint8_t r_iwcns64;
-		uint8_t r_iwcns82;
 		uint8_t r_rfepulse64;
-		uint8_t r_rfepulse82;
 		uint8_t r_md64;
-		uint8_t r_md82;
 		uint8_t r_hndwhl64;
 		uint8_t r_warn_ballast;
-		uint8_t r_hndwhl82;
 
 		sscanf(s, "%" SCNu8 ","  
 			"%f,"       
@@ -2867,17 +2382,13 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			"%f,"       
 			"%f,"       
 			"%f,"       
+			"%f,"       
 			"%" SCNu16 "," 
 			"%" SCNu16 "," 
 			"%f,"       
 			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu16 "," 
 			"%" SCNi16 "," 
 			"%f,"       
-			"%f,"       
-			"%f,"       
-			"%" SCNu16 "," 
 			"%" SCNi16 "," 
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -2938,40 +2449,7 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
 			"%" SCNi16 "," 
-			"%" SCNu16 "," 
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -3004,134 +2482,97 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			&r_i_cmd,
 			&r_i_cmd_ramp,
 			&r_iq_actual,
+			&r_id_actual,
 			&r_t_motor,
 			&r_t_igbt,
 			&r_vdc_bus_filt,
 			&r_km_rsvd_0,
-			&r_ena82,
-			&r_def_din_1,
 			&r_m_cmd_ramp,
-			&r_i_max_pk,
-			&r_i_con_eff,
 			&r_i_device,
-			&r_n_r_lim,
 			&r_nmax100perc,
 			&r_ncr064,
 			&r_err_powerfault,
 			&r_lmt_active_2,
 			&r_km_speed_0,
-			&r_ncr082,
 			&r_lim_plus64,
 			&r_err_rfe_fault,
 			&r_in_active_2,
 			&r_km_frg_off,
-			&r_lim_plus82,
 			&r_lim_minus64,
 			&r_err_bustimeout,
 			&r_in_active_1,
 			&r_km_cal_off,
-			&r_lim_minus82,
 			&r_ok64,
 			&r_err_feedbacksignal,
 			&r_frgrun,
 			&r_km_tx_tog_stat,
-			&r_ok82,
 			&r_icns64,
 			&r_err_powervoltage_low,
 			&r_rfe216,
 			&r_km_i_limit,
-			&r_icns82,
 			&r_tnlim64,
 			&r_err_motortemp,
 			&r_km_n_clip,
-			&r_tnlim82,
 			&r_pn64,
 			&r_err_devicetemp,
 			&r_km_mix_ana_on,
-			&r_pn82,
 			&r_ni64,
 			&r_err_overvoltage,
 			&r_d_out_1_on,
 			&r_km_allow_sync,
-			&r_ni82,
 			&r__n064,
 			&r_err_ipeak,
 			&r_d_out_2_on,
 			&r_km_handwheel,
-			&r__n082,
 			&r_rsw64,
 			&r_err_raceaway,
 			&r_btbrdy,
 			&r_km_phasing_extend,
-			&r_rsw82,
 			&r_cal064,
 			&r_err_user,
 			&r_go216,
 			&r_km_rsvd_11,
-			&r_cal082,
 			&r_cal64,
 			&r_d_out_3_on,
 			&r_km_rsvd_12,
-			&r_cal82,
 			&r_tol64,
 			&r_d_out_4_on,
 			&r_km_rsvd_13,
-			&r_tol82,
 			&r_rdy64,
 			&r_err_hwerr,
 			&r_goff,
 			&r_km_pseudo_enable,
-			&r_rdy82,
 			&r_brk064,
 			&r_err_ballast,
 			&r_active190,
 			&r_brk1216,
 			&r_km_debug_test,
-			&r_brk082,
-			&r_active192,
 			&r_signmag64,
 			&r_warn_warning_0,
-			&r_signmag82,
 			&r_free,
-			&r_m_r_rcp,
 			&r_nclip64,
 			&r_warn_illegal_status,
-			&r_nclip82,
 			&r_nclip_minus64,
 			&r_warn_safe_in,
-			&r_nclip_minus82,
 			&r_nclip_plus64,
-			&r_nclip_plus82,
 			&r_irddig64,
-			&r_irddig82,
 			&r_iuserchd64,
-			&r_iuserchd82,
 			&r_irdn64,
 			&r_warn_motortemp,
-			&r_irdn82,
 			&r_irdti64,
 			&r_warn_devicetemp,
-			&r_irdti82,
 			&r_irdtir64,
 			&r_warn_vout_sat,
-			&r_irdtir82,
 			&r__10hz64,
 			&r_warn_ipeak,
-			&r__10hz82,
 			&r_irdtm64,
 			&r_warn_raceaway,
-			&r_irdtm82,
 			&r_irdana64,
-			&r_irdana82,
 			&r_iwcns64,
-			&r_iwcns82,
 			&r_rfepulse64,
-			&r_rfepulse82,
 			&r_md64,
-			&r_md82,
 			&r_hndwhl64,
-			&r_warn_ballast,
-			&r_hndwhl82);
+			&r_warn_ballast);
 		tmp_converted.rcv_mux = (inverters_inv_l_rcv_rcv_mux)r_rcv_mux;
 		tmp_converted.n_actual_filt = (float)r_n_actual_filt;
 		tmp_converted.ena64 = (uint8_t)r_ena64;
@@ -3141,134 +2582,97 @@ int inverters_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.i_cmd = (float)r_i_cmd;
 		tmp_converted.i_cmd_ramp = (float)r_i_cmd_ramp;
 		tmp_converted.iq_actual = (float)r_iq_actual;
+		tmp_converted.id_actual = (float)r_id_actual;
 		tmp_converted.t_motor = (uint16_t)r_t_motor;
 		tmp_converted.t_igbt = (uint16_t)r_t_igbt;
 		tmp_converted.vdc_bus_filt = (float)r_vdc_bus_filt;
 		tmp_converted.km_rsvd_0 = (uint8_t)r_km_rsvd_0;
-		tmp_converted.ena82 = (uint8_t)r_ena82;
-		tmp_converted.def_din_1 = (inverters_inv_l_rcv_def_din_1)r_def_din_1;
 		tmp_converted.m_cmd_ramp = (int16_t)r_m_cmd_ramp;
-		tmp_converted.i_max_pk = (float)r_i_max_pk;
-		tmp_converted.i_con_eff = (float)r_i_con_eff;
 		tmp_converted.i_device = (float)r_i_device;
-		tmp_converted.n_r_lim = (uint16_t)r_n_r_lim;
 		tmp_converted.nmax100perc = (int16_t)r_nmax100perc;
 		tmp_converted.ncr064 = (uint8_t)r_ncr064;
 		tmp_converted.err_powerfault = (uint8_t)r_err_powerfault;
 		tmp_converted.lmt_active_2 = (uint8_t)r_lmt_active_2;
 		tmp_converted.km_speed_0 = (uint8_t)r_km_speed_0;
-		tmp_converted.ncr082 = (uint8_t)r_ncr082;
 		tmp_converted.lim_plus64 = (uint8_t)r_lim_plus64;
 		tmp_converted.err_rfe_fault = (uint8_t)r_err_rfe_fault;
 		tmp_converted.in_active_2 = (uint8_t)r_in_active_2;
 		tmp_converted.km_frg_off = (uint8_t)r_km_frg_off;
-		tmp_converted.lim_plus82 = (uint8_t)r_lim_plus82;
 		tmp_converted.lim_minus64 = (uint8_t)r_lim_minus64;
 		tmp_converted.err_bustimeout = (uint8_t)r_err_bustimeout;
 		tmp_converted.in_active_1 = (uint8_t)r_in_active_1;
 		tmp_converted.km_cal_off = (uint8_t)r_km_cal_off;
-		tmp_converted.lim_minus82 = (uint8_t)r_lim_minus82;
 		tmp_converted.ok64 = (uint8_t)r_ok64;
 		tmp_converted.err_feedbacksignal = (uint8_t)r_err_feedbacksignal;
 		tmp_converted.frgrun = (uint8_t)r_frgrun;
 		tmp_converted.km_tx_tog_stat = (uint8_t)r_km_tx_tog_stat;
-		tmp_converted.ok82 = (uint8_t)r_ok82;
 		tmp_converted.icns64 = (uint8_t)r_icns64;
 		tmp_converted.err_powervoltage_low = (uint8_t)r_err_powervoltage_low;
 		tmp_converted.rfe216 = (uint8_t)r_rfe216;
 		tmp_converted.km_i_limit = (uint8_t)r_km_i_limit;
-		tmp_converted.icns82 = (uint8_t)r_icns82;
 		tmp_converted.tnlim64 = (uint8_t)r_tnlim64;
 		tmp_converted.err_motortemp = (uint8_t)r_err_motortemp;
 		tmp_converted.km_n_clip = (uint8_t)r_km_n_clip;
-		tmp_converted.tnlim82 = (uint8_t)r_tnlim82;
 		tmp_converted.pn64 = (uint8_t)r_pn64;
 		tmp_converted.err_devicetemp = (uint8_t)r_err_devicetemp;
 		tmp_converted.km_mix_ana_on = (uint8_t)r_km_mix_ana_on;
-		tmp_converted.pn82 = (uint8_t)r_pn82;
 		tmp_converted.ni64 = (uint8_t)r_ni64;
 		tmp_converted.err_overvoltage = (uint8_t)r_err_overvoltage;
 		tmp_converted.d_out_1_on = (uint8_t)r_d_out_1_on;
 		tmp_converted.km_allow_sync = (uint8_t)r_km_allow_sync;
-		tmp_converted.ni82 = (uint8_t)r_ni82;
 		tmp_converted._n064 = (uint8_t)r__n064;
 		tmp_converted.err_ipeak = (uint8_t)r_err_ipeak;
 		tmp_converted.d_out_2_on = (uint8_t)r_d_out_2_on;
 		tmp_converted.km_handwheel = (uint8_t)r_km_handwheel;
-		tmp_converted._n082 = (uint8_t)r__n082;
 		tmp_converted.rsw64 = (uint8_t)r_rsw64;
 		tmp_converted.err_raceaway = (uint8_t)r_err_raceaway;
 		tmp_converted.btbrdy = (uint8_t)r_btbrdy;
 		tmp_converted.km_phasing_extend = (uint8_t)r_km_phasing_extend;
-		tmp_converted.rsw82 = (uint8_t)r_rsw82;
 		tmp_converted.cal064 = (uint8_t)r_cal064;
 		tmp_converted.err_user = (uint8_t)r_err_user;
 		tmp_converted.go216 = (uint8_t)r_go216;
 		tmp_converted.km_rsvd_11 = (uint8_t)r_km_rsvd_11;
-		tmp_converted.cal082 = (uint8_t)r_cal082;
 		tmp_converted.cal64 = (uint8_t)r_cal64;
 		tmp_converted.d_out_3_on = (uint8_t)r_d_out_3_on;
 		tmp_converted.km_rsvd_12 = (uint8_t)r_km_rsvd_12;
-		tmp_converted.cal82 = (uint8_t)r_cal82;
 		tmp_converted.tol64 = (uint8_t)r_tol64;
 		tmp_converted.d_out_4_on = (uint8_t)r_d_out_4_on;
 		tmp_converted.km_rsvd_13 = (uint8_t)r_km_rsvd_13;
-		tmp_converted.tol82 = (uint8_t)r_tol82;
 		tmp_converted.rdy64 = (uint8_t)r_rdy64;
 		tmp_converted.err_hwerr = (uint8_t)r_err_hwerr;
 		tmp_converted.goff = (uint8_t)r_goff;
 		tmp_converted.km_pseudo_enable = (uint8_t)r_km_pseudo_enable;
-		tmp_converted.rdy82 = (uint8_t)r_rdy82;
 		tmp_converted.brk064 = (uint8_t)r_brk064;
 		tmp_converted.err_ballast = (uint8_t)r_err_ballast;
 		tmp_converted.active190 = (inverters_inv_l_rcv_active190)r_active190;
 		tmp_converted.brk1216 = (uint8_t)r_brk1216;
 		tmp_converted.km_debug_test = (uint8_t)r_km_debug_test;
-		tmp_converted.brk082 = (uint8_t)r_brk082;
-		tmp_converted.active192 = (inverters_inv_l_rcv_active192)r_active192;
 		tmp_converted.signmag64 = (uint8_t)r_signmag64;
 		tmp_converted.warn_warning_0 = (uint8_t)r_warn_warning_0;
-		tmp_converted.signmag82 = (uint8_t)r_signmag82;
 		tmp_converted.free = (int16_t)r_free;
-		tmp_converted.m_r_rcp = (uint16_t)r_m_r_rcp;
 		tmp_converted.nclip64 = (uint8_t)r_nclip64;
 		tmp_converted.warn_illegal_status = (uint8_t)r_warn_illegal_status;
-		tmp_converted.nclip82 = (uint8_t)r_nclip82;
 		tmp_converted.nclip_minus64 = (uint8_t)r_nclip_minus64;
 		tmp_converted.warn_safe_in = (uint8_t)r_warn_safe_in;
-		tmp_converted.nclip_minus82 = (uint8_t)r_nclip_minus82;
 		tmp_converted.nclip_plus64 = (uint8_t)r_nclip_plus64;
-		tmp_converted.nclip_plus82 = (uint8_t)r_nclip_plus82;
 		tmp_converted.irddig64 = (uint8_t)r_irddig64;
-		tmp_converted.irddig82 = (uint8_t)r_irddig82;
 		tmp_converted.iuserchd64 = (uint8_t)r_iuserchd64;
-		tmp_converted.iuserchd82 = (uint8_t)r_iuserchd82;
 		tmp_converted.irdn64 = (uint8_t)r_irdn64;
 		tmp_converted.warn_motortemp = (uint8_t)r_warn_motortemp;
-		tmp_converted.irdn82 = (uint8_t)r_irdn82;
 		tmp_converted.irdti64 = (uint8_t)r_irdti64;
 		tmp_converted.warn_devicetemp = (uint8_t)r_warn_devicetemp;
-		tmp_converted.irdti82 = (uint8_t)r_irdti82;
 		tmp_converted.irdtir64 = (uint8_t)r_irdtir64;
 		tmp_converted.warn_vout_sat = (uint8_t)r_warn_vout_sat;
-		tmp_converted.irdtir82 = (uint8_t)r_irdtir82;
 		tmp_converted._10hz64 = (uint8_t)r__10hz64;
 		tmp_converted.warn_ipeak = (uint8_t)r_warn_ipeak;
-		tmp_converted._10hz82 = (uint8_t)r__10hz82;
 		tmp_converted.irdtm64 = (uint8_t)r_irdtm64;
 		tmp_converted.warn_raceaway = (uint8_t)r_warn_raceaway;
-		tmp_converted.irdtm82 = (uint8_t)r_irdtm82;
 		tmp_converted.irdana64 = (uint8_t)r_irdana64;
-		tmp_converted.irdana82 = (uint8_t)r_irdana82;
 		tmp_converted.iwcns64 = (uint8_t)r_iwcns64;
-		tmp_converted.iwcns82 = (uint8_t)r_iwcns82;
 		tmp_converted.rfepulse64 = (uint8_t)r_rfepulse64;
-		tmp_converted.rfepulse82 = (uint8_t)r_rfepulse82;
 		tmp_converted.md64 = (uint8_t)r_md64;
-		tmp_converted.md82 = (uint8_t)r_md82;
 		tmp_converted.hndwhl64 = (uint8_t)r_hndwhl64;
 		tmp_converted.warn_ballast = (uint8_t)r_warn_ballast;
-		tmp_converted.hndwhl82 = (uint8_t)r_hndwhl82;
 
 		inverters_inv_l_rcv_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = INVERTERS_INV_L_RCV_BYTE_SIZE;
@@ -3282,10 +2686,10 @@ int inverters_n_fields_from_id(int id)
 {
 	switch(id)
     {
-		case 514: return 30;
-		case 386: return 137;
-		case 513: return 30;
-		case 385: return 137;
+		case 514: return 23;
+		case 386: return 100;
+		case 513: return 23;
+		case 385: return 100;
     }
     return 0;
 }
@@ -3294,40 +2698,33 @@ int inverters_fields_types_from_id(int id, int* fields_types, int fields_types_s
     switch(id)
     {
 	case 514:
-		if(fields_types_size < 30) return 0;
+		if(fields_types_size < 23) return 0;
 		fields_types[0] = e_inverters_inv_r_send_send_mux;
 		fields_types[1] = e_inverters_inv_r_send_read_id;
 		fields_types[2] = e_inverters_uint8_t;
 		fields_types[3] = e_inverters_float;
-		fields_types[4] = e_inverters_inv_r_send_def_din_1;
-		fields_types[5] = e_inverters_inv_r_send_def_end_1;
-		fields_types[6] = e_inverters_float;
-		fields_types[7] = e_inverters_float;
-		fields_types[8] = e_inverters_float;
-		fields_types[9] = e_inverters_uint16_t;
-		fields_types[10] = e_inverters_int16_t;
+		fields_types[4] = e_inverters_float;
+		fields_types[5] = e_inverters_inv_r_send_def_din_1;
+		fields_types[6] = e_inverters_uint8_t;
+		fields_types[7] = e_inverters_uint8_t;
+		fields_types[8] = e_inverters_uint8_t;
+		fields_types[9] = e_inverters_uint8_t;
+		fields_types[10] = e_inverters_uint8_t;
 		fields_types[11] = e_inverters_uint8_t;
 		fields_types[12] = e_inverters_uint8_t;
-		fields_types[13] = e_inverters_uint8_t;
+		fields_types[13] = e_inverters_inv_r_send_ret_interval;
 		fields_types[14] = e_inverters_uint8_t;
 		fields_types[15] = e_inverters_uint8_t;
 		fields_types[16] = e_inverters_uint8_t;
 		fields_types[17] = e_inverters_uint8_t;
-		fields_types[18] = e_inverters_inv_r_send_ret_interval;
+		fields_types[18] = e_inverters_uint8_t;
 		fields_types[19] = e_inverters_uint8_t;
 		fields_types[20] = e_inverters_uint8_t;
 		fields_types[21] = e_inverters_uint8_t;
-		fields_types[22] = e_inverters_uint8_t;
-		fields_types[23] = e_inverters_uint8_t;
-		fields_types[24] = e_inverters_uint8_t;
-		fields_types[25] = e_inverters_uint8_t;
-		fields_types[26] = e_inverters_uint8_t;
-		fields_types[27] = e_inverters_inv_r_send_active192;
-		fields_types[28] = e_inverters_inv_r_send_active190;
-		fields_types[29] = e_inverters_uint16_t;
-		return 30;
+		fields_types[22] = e_inverters_inv_r_send_active192;
+		return 23;
 	case 386:
-		if(fields_types_size < 137) return 0;
+		if(fields_types_size < 100) return 0;
 		fields_types[0] = e_inverters_inv_r_rcv_rcv_mux;
 		fields_types[1] = e_inverters_float;
 		fields_types[2] = e_inverters_uint8_t;
@@ -3337,18 +2734,18 @@ int inverters_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[6] = e_inverters_float;
 		fields_types[7] = e_inverters_float;
 		fields_types[8] = e_inverters_float;
-		fields_types[9] = e_inverters_uint16_t;
+		fields_types[9] = e_inverters_float;
 		fields_types[10] = e_inverters_uint16_t;
-		fields_types[11] = e_inverters_float;
-		fields_types[12] = e_inverters_uint8_t;
+		fields_types[11] = e_inverters_uint16_t;
+		fields_types[12] = e_inverters_float;
 		fields_types[13] = e_inverters_uint8_t;
-		fields_types[14] = e_inverters_inv_r_rcv_def_din_1;
-		fields_types[15] = e_inverters_int16_t;
-		fields_types[16] = e_inverters_float;
-		fields_types[17] = e_inverters_float;
-		fields_types[18] = e_inverters_float;
-		fields_types[19] = e_inverters_uint16_t;
-		fields_types[20] = e_inverters_int16_t;
+		fields_types[14] = e_inverters_int16_t;
+		fields_types[15] = e_inverters_float;
+		fields_types[16] = e_inverters_int16_t;
+		fields_types[17] = e_inverters_uint8_t;
+		fields_types[18] = e_inverters_uint8_t;
+		fields_types[19] = e_inverters_uint8_t;
+		fields_types[20] = e_inverters_uint8_t;
 		fields_types[21] = e_inverters_uint8_t;
 		fields_types[22] = e_inverters_uint8_t;
 		fields_types[23] = e_inverters_uint8_t;
@@ -3399,12 +2796,12 @@ int inverters_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[68] = e_inverters_uint8_t;
 		fields_types[69] = e_inverters_uint8_t;
 		fields_types[70] = e_inverters_uint8_t;
-		fields_types[71] = e_inverters_uint8_t;
+		fields_types[71] = e_inverters_inv_r_rcv_active190;
 		fields_types[72] = e_inverters_uint8_t;
 		fields_types[73] = e_inverters_uint8_t;
 		fields_types[74] = e_inverters_uint8_t;
 		fields_types[75] = e_inverters_uint8_t;
-		fields_types[76] = e_inverters_uint8_t;
+		fields_types[76] = e_inverters_int16_t;
 		fields_types[77] = e_inverters_uint8_t;
 		fields_types[78] = e_inverters_uint8_t;
 		fields_types[79] = e_inverters_uint8_t;
@@ -3417,90 +2814,46 @@ int inverters_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[86] = e_inverters_uint8_t;
 		fields_types[87] = e_inverters_uint8_t;
 		fields_types[88] = e_inverters_uint8_t;
-		fields_types[89] = e_inverters_inv_r_rcv_active190;
+		fields_types[89] = e_inverters_uint8_t;
 		fields_types[90] = e_inverters_uint8_t;
 		fields_types[91] = e_inverters_uint8_t;
 		fields_types[92] = e_inverters_uint8_t;
-		fields_types[93] = e_inverters_inv_r_rcv_active192;
+		fields_types[93] = e_inverters_uint8_t;
 		fields_types[94] = e_inverters_uint8_t;
 		fields_types[95] = e_inverters_uint8_t;
 		fields_types[96] = e_inverters_uint8_t;
-		fields_types[97] = e_inverters_int16_t;
-		fields_types[98] = e_inverters_uint16_t;
+		fields_types[97] = e_inverters_uint8_t;
+		fields_types[98] = e_inverters_uint8_t;
 		fields_types[99] = e_inverters_uint8_t;
-		fields_types[100] = e_inverters_uint8_t;
-		fields_types[101] = e_inverters_uint8_t;
-		fields_types[102] = e_inverters_uint8_t;
-		fields_types[103] = e_inverters_uint8_t;
-		fields_types[104] = e_inverters_uint8_t;
-		fields_types[105] = e_inverters_uint8_t;
-		fields_types[106] = e_inverters_uint8_t;
-		fields_types[107] = e_inverters_uint8_t;
-		fields_types[108] = e_inverters_uint8_t;
-		fields_types[109] = e_inverters_uint8_t;
-		fields_types[110] = e_inverters_uint8_t;
-		fields_types[111] = e_inverters_uint8_t;
-		fields_types[112] = e_inverters_uint8_t;
-		fields_types[113] = e_inverters_uint8_t;
-		fields_types[114] = e_inverters_uint8_t;
-		fields_types[115] = e_inverters_uint8_t;
-		fields_types[116] = e_inverters_uint8_t;
-		fields_types[117] = e_inverters_uint8_t;
-		fields_types[118] = e_inverters_uint8_t;
-		fields_types[119] = e_inverters_uint8_t;
-		fields_types[120] = e_inverters_uint8_t;
-		fields_types[121] = e_inverters_uint8_t;
-		fields_types[122] = e_inverters_uint8_t;
-		fields_types[123] = e_inverters_uint8_t;
-		fields_types[124] = e_inverters_uint8_t;
-		fields_types[125] = e_inverters_uint8_t;
-		fields_types[126] = e_inverters_uint8_t;
-		fields_types[127] = e_inverters_uint8_t;
-		fields_types[128] = e_inverters_uint8_t;
-		fields_types[129] = e_inverters_uint8_t;
-		fields_types[130] = e_inverters_uint8_t;
-		fields_types[131] = e_inverters_uint8_t;
-		fields_types[132] = e_inverters_uint8_t;
-		fields_types[133] = e_inverters_uint8_t;
-		fields_types[134] = e_inverters_uint8_t;
-		fields_types[135] = e_inverters_uint8_t;
-		fields_types[136] = e_inverters_uint8_t;
-		return 137;
+		return 100;
 	case 513:
-		if(fields_types_size < 30) return 0;
+		if(fields_types_size < 23) return 0;
 		fields_types[0] = e_inverters_inv_l_send_send_mux;
 		fields_types[1] = e_inverters_inv_l_send_read_id;
 		fields_types[2] = e_inverters_uint8_t;
 		fields_types[3] = e_inverters_float;
-		fields_types[4] = e_inverters_inv_l_send_def_din_1;
-		fields_types[5] = e_inverters_inv_l_send_def_end_1;
-		fields_types[6] = e_inverters_float;
-		fields_types[7] = e_inverters_float;
-		fields_types[8] = e_inverters_float;
-		fields_types[9] = e_inverters_uint16_t;
-		fields_types[10] = e_inverters_int16_t;
+		fields_types[4] = e_inverters_float;
+		fields_types[5] = e_inverters_inv_l_send_def_din_1;
+		fields_types[6] = e_inverters_uint8_t;
+		fields_types[7] = e_inverters_uint8_t;
+		fields_types[8] = e_inverters_uint8_t;
+		fields_types[9] = e_inverters_uint8_t;
+		fields_types[10] = e_inverters_uint8_t;
 		fields_types[11] = e_inverters_uint8_t;
 		fields_types[12] = e_inverters_uint8_t;
-		fields_types[13] = e_inverters_uint8_t;
+		fields_types[13] = e_inverters_inv_l_send_ret_interval;
 		fields_types[14] = e_inverters_uint8_t;
 		fields_types[15] = e_inverters_uint8_t;
 		fields_types[16] = e_inverters_uint8_t;
 		fields_types[17] = e_inverters_uint8_t;
-		fields_types[18] = e_inverters_inv_l_send_ret_interval;
+		fields_types[18] = e_inverters_uint8_t;
 		fields_types[19] = e_inverters_uint8_t;
 		fields_types[20] = e_inverters_uint8_t;
 		fields_types[21] = e_inverters_uint8_t;
-		fields_types[22] = e_inverters_uint8_t;
-		fields_types[23] = e_inverters_uint8_t;
-		fields_types[24] = e_inverters_uint8_t;
-		fields_types[25] = e_inverters_uint8_t;
-		fields_types[26] = e_inverters_uint8_t;
-		fields_types[27] = e_inverters_inv_l_send_active192;
-		fields_types[28] = e_inverters_inv_l_send_active190;
-		fields_types[29] = e_inverters_uint16_t;
-		return 30;
+		fields_types[22] = e_inverters_inv_l_send_active192;
+		return 23;
 	case 385:
-		if(fields_types_size < 137) return 0;
+		if(fields_types_size < 100) return 0;
 		fields_types[0] = e_inverters_inv_l_rcv_rcv_mux;
 		fields_types[1] = e_inverters_float;
 		fields_types[2] = e_inverters_uint8_t;
@@ -3510,18 +2863,18 @@ int inverters_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[6] = e_inverters_float;
 		fields_types[7] = e_inverters_float;
 		fields_types[8] = e_inverters_float;
-		fields_types[9] = e_inverters_uint16_t;
+		fields_types[9] = e_inverters_float;
 		fields_types[10] = e_inverters_uint16_t;
-		fields_types[11] = e_inverters_float;
-		fields_types[12] = e_inverters_uint8_t;
+		fields_types[11] = e_inverters_uint16_t;
+		fields_types[12] = e_inverters_float;
 		fields_types[13] = e_inverters_uint8_t;
-		fields_types[14] = e_inverters_inv_l_rcv_def_din_1;
-		fields_types[15] = e_inverters_int16_t;
-		fields_types[16] = e_inverters_float;
-		fields_types[17] = e_inverters_float;
-		fields_types[18] = e_inverters_float;
-		fields_types[19] = e_inverters_uint16_t;
-		fields_types[20] = e_inverters_int16_t;
+		fields_types[14] = e_inverters_int16_t;
+		fields_types[15] = e_inverters_float;
+		fields_types[16] = e_inverters_int16_t;
+		fields_types[17] = e_inverters_uint8_t;
+		fields_types[18] = e_inverters_uint8_t;
+		fields_types[19] = e_inverters_uint8_t;
+		fields_types[20] = e_inverters_uint8_t;
 		fields_types[21] = e_inverters_uint8_t;
 		fields_types[22] = e_inverters_uint8_t;
 		fields_types[23] = e_inverters_uint8_t;
@@ -3572,12 +2925,12 @@ int inverters_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[68] = e_inverters_uint8_t;
 		fields_types[69] = e_inverters_uint8_t;
 		fields_types[70] = e_inverters_uint8_t;
-		fields_types[71] = e_inverters_uint8_t;
+		fields_types[71] = e_inverters_inv_l_rcv_active190;
 		fields_types[72] = e_inverters_uint8_t;
 		fields_types[73] = e_inverters_uint8_t;
 		fields_types[74] = e_inverters_uint8_t;
 		fields_types[75] = e_inverters_uint8_t;
-		fields_types[76] = e_inverters_uint8_t;
+		fields_types[76] = e_inverters_int16_t;
 		fields_types[77] = e_inverters_uint8_t;
 		fields_types[78] = e_inverters_uint8_t;
 		fields_types[79] = e_inverters_uint8_t;
@@ -3590,55 +2943,18 @@ int inverters_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[86] = e_inverters_uint8_t;
 		fields_types[87] = e_inverters_uint8_t;
 		fields_types[88] = e_inverters_uint8_t;
-		fields_types[89] = e_inverters_inv_l_rcv_active190;
+		fields_types[89] = e_inverters_uint8_t;
 		fields_types[90] = e_inverters_uint8_t;
 		fields_types[91] = e_inverters_uint8_t;
 		fields_types[92] = e_inverters_uint8_t;
-		fields_types[93] = e_inverters_inv_l_rcv_active192;
+		fields_types[93] = e_inverters_uint8_t;
 		fields_types[94] = e_inverters_uint8_t;
 		fields_types[95] = e_inverters_uint8_t;
 		fields_types[96] = e_inverters_uint8_t;
-		fields_types[97] = e_inverters_int16_t;
-		fields_types[98] = e_inverters_uint16_t;
+		fields_types[97] = e_inverters_uint8_t;
+		fields_types[98] = e_inverters_uint8_t;
 		fields_types[99] = e_inverters_uint8_t;
-		fields_types[100] = e_inverters_uint8_t;
-		fields_types[101] = e_inverters_uint8_t;
-		fields_types[102] = e_inverters_uint8_t;
-		fields_types[103] = e_inverters_uint8_t;
-		fields_types[104] = e_inverters_uint8_t;
-		fields_types[105] = e_inverters_uint8_t;
-		fields_types[106] = e_inverters_uint8_t;
-		fields_types[107] = e_inverters_uint8_t;
-		fields_types[108] = e_inverters_uint8_t;
-		fields_types[109] = e_inverters_uint8_t;
-		fields_types[110] = e_inverters_uint8_t;
-		fields_types[111] = e_inverters_uint8_t;
-		fields_types[112] = e_inverters_uint8_t;
-		fields_types[113] = e_inverters_uint8_t;
-		fields_types[114] = e_inverters_uint8_t;
-		fields_types[115] = e_inverters_uint8_t;
-		fields_types[116] = e_inverters_uint8_t;
-		fields_types[117] = e_inverters_uint8_t;
-		fields_types[118] = e_inverters_uint8_t;
-		fields_types[119] = e_inverters_uint8_t;
-		fields_types[120] = e_inverters_uint8_t;
-		fields_types[121] = e_inverters_uint8_t;
-		fields_types[122] = e_inverters_uint8_t;
-		fields_types[123] = e_inverters_uint8_t;
-		fields_types[124] = e_inverters_uint8_t;
-		fields_types[125] = e_inverters_uint8_t;
-		fields_types[126] = e_inverters_uint8_t;
-		fields_types[127] = e_inverters_uint8_t;
-		fields_types[128] = e_inverters_uint8_t;
-		fields_types[129] = e_inverters_uint8_t;
-		fields_types[130] = e_inverters_uint8_t;
-		fields_types[131] = e_inverters_uint8_t;
-		fields_types[132] = e_inverters_uint8_t;
-		fields_types[133] = e_inverters_uint8_t;
-		fields_types[134] = e_inverters_uint8_t;
-		fields_types[135] = e_inverters_uint8_t;
-		fields_types[136] = e_inverters_uint8_t;
-		return 137;
+		return 100;
 
     }
     return 0;
@@ -3652,7 +2968,6 @@ std::vector<std::string> inverters_enum_fields_from_message(const std::string& m
 		ret.push_back("read_id");
 		ret.push_back("km_rsvd_0");
 		ret.push_back("def_din_1");
-		ret.push_back("def_end_1");
 		ret.push_back("km_speed_0");
 		ret.push_back("km_frg_off");
 		ret.push_back("km_cal_off");
@@ -3670,7 +2985,6 @@ std::vector<std::string> inverters_enum_fields_from_message(const std::string& m
 		ret.push_back("km_pseudo_enable");
 		ret.push_back("km_debug_test");
 		ret.push_back("active192");
-		ret.push_back("active190");
 	}
 	if(msg_name == INV_R_RCV) {
 		ret.push_back("rcv_mux");
@@ -3679,129 +2993,94 @@ std::vector<std::string> inverters_enum_fields_from_message(const std::string& m
 		ret.push_back("def_end_1");
 		ret.push_back("lmt_active_1");
 		ret.push_back("km_rsvd_0");
-		ret.push_back("ena82");
-		ret.push_back("def_din_1");
 		ret.push_back("ncr064");
 		ret.push_back("err_powerfault");
 		ret.push_back("lmt_active_2");
 		ret.push_back("km_speed_0");
-		ret.push_back("ncr082");
 		ret.push_back("lim_plus64");
 		ret.push_back("err_rfe_fault");
 		ret.push_back("in_active_2");
 		ret.push_back("km_frg_off");
-		ret.push_back("lim_plus82");
 		ret.push_back("lim_minus64");
 		ret.push_back("err_bustimeout");
 		ret.push_back("in_active_1");
 		ret.push_back("km_cal_off");
-		ret.push_back("lim_minus82");
 		ret.push_back("ok64");
 		ret.push_back("err_feedbacksignal");
 		ret.push_back("frgrun");
 		ret.push_back("km_tx_tog_stat");
-		ret.push_back("ok82");
 		ret.push_back("icns64");
 		ret.push_back("err_powervoltage_low");
 		ret.push_back("rfe216");
 		ret.push_back("km_i_limit");
-		ret.push_back("icns82");
 		ret.push_back("tnlim64");
 		ret.push_back("err_motortemp");
 		ret.push_back("km_n_clip");
-		ret.push_back("tnlim82");
 		ret.push_back("pn64");
 		ret.push_back("err_devicetemp");
 		ret.push_back("km_mix_ana_on");
-		ret.push_back("pn82");
 		ret.push_back("ni64");
 		ret.push_back("err_overvoltage");
 		ret.push_back("d_out_1_on");
 		ret.push_back("km_allow_sync");
-		ret.push_back("ni82");
 		ret.push_back("_n064");
 		ret.push_back("err_ipeak");
 		ret.push_back("d_out_2_on");
 		ret.push_back("km_handwheel");
-		ret.push_back("_n082");
 		ret.push_back("rsw64");
 		ret.push_back("err_raceaway");
 		ret.push_back("btbrdy");
 		ret.push_back("km_phasing_extend");
-		ret.push_back("rsw82");
 		ret.push_back("cal064");
 		ret.push_back("err_user");
 		ret.push_back("go216");
 		ret.push_back("km_rsvd_11");
-		ret.push_back("cal082");
 		ret.push_back("cal64");
 		ret.push_back("d_out_3_on");
 		ret.push_back("km_rsvd_12");
-		ret.push_back("cal82");
 		ret.push_back("tol64");
 		ret.push_back("d_out_4_on");
 		ret.push_back("km_rsvd_13");
-		ret.push_back("tol82");
 		ret.push_back("rdy64");
 		ret.push_back("err_hwerr");
 		ret.push_back("goff");
 		ret.push_back("km_pseudo_enable");
-		ret.push_back("rdy82");
 		ret.push_back("brk064");
 		ret.push_back("err_ballast");
 		ret.push_back("active190");
 		ret.push_back("brk1216");
 		ret.push_back("km_debug_test");
-		ret.push_back("brk082");
-		ret.push_back("active192");
 		ret.push_back("signmag64");
 		ret.push_back("warn_warning_0");
-		ret.push_back("signmag82");
 		ret.push_back("nclip64");
 		ret.push_back("warn_illegal_status");
-		ret.push_back("nclip82");
 		ret.push_back("nclip_minus64");
 		ret.push_back("warn_safe_in");
-		ret.push_back("nclip_minus82");
 		ret.push_back("nclip_plus64");
-		ret.push_back("nclip_plus82");
 		ret.push_back("irddig64");
-		ret.push_back("irddig82");
 		ret.push_back("iuserchd64");
-		ret.push_back("iuserchd82");
 		ret.push_back("irdn64");
 		ret.push_back("warn_motortemp");
-		ret.push_back("irdn82");
 		ret.push_back("irdti64");
 		ret.push_back("warn_devicetemp");
-		ret.push_back("irdti82");
 		ret.push_back("irdtir64");
 		ret.push_back("warn_vout_sat");
-		ret.push_back("irdtir82");
 		ret.push_back("_10hz64");
 		ret.push_back("warn_ipeak");
-		ret.push_back("_10hz82");
 		ret.push_back("irdtm64");
 		ret.push_back("warn_raceaway");
-		ret.push_back("irdtm82");
 		ret.push_back("irdana64");
-		ret.push_back("irdana82");
 		ret.push_back("iwcns64");
-		ret.push_back("iwcns82");
 		ret.push_back("rfepulse64");
-		ret.push_back("rfepulse82");
 		ret.push_back("md64");
-		ret.push_back("md82");
 		ret.push_back("hndwhl64");
 		ret.push_back("warn_ballast");
-		ret.push_back("hndwhl82");
 	}
 	if(msg_name == INV_L_SEND) {
 		ret.push_back("send_mux");
 		ret.push_back("read_id");
 		ret.push_back("km_rsvd_0");
 		ret.push_back("def_din_1");
-		ret.push_back("def_end_1");
 		ret.push_back("km_speed_0");
 		ret.push_back("km_frg_off");
 		ret.push_back("km_cal_off");
@@ -3819,7 +3098,6 @@ std::vector<std::string> inverters_enum_fields_from_message(const std::string& m
 		ret.push_back("km_pseudo_enable");
 		ret.push_back("km_debug_test");
 		ret.push_back("active192");
-		ret.push_back("active190");
 	}
 	if(msg_name == INV_L_RCV) {
 		ret.push_back("rcv_mux");
@@ -3828,122 +3106,88 @@ std::vector<std::string> inverters_enum_fields_from_message(const std::string& m
 		ret.push_back("def_end_1");
 		ret.push_back("lmt_active_1");
 		ret.push_back("km_rsvd_0");
-		ret.push_back("ena82");
-		ret.push_back("def_din_1");
 		ret.push_back("ncr064");
 		ret.push_back("err_powerfault");
 		ret.push_back("lmt_active_2");
 		ret.push_back("km_speed_0");
-		ret.push_back("ncr082");
 		ret.push_back("lim_plus64");
 		ret.push_back("err_rfe_fault");
 		ret.push_back("in_active_2");
 		ret.push_back("km_frg_off");
-		ret.push_back("lim_plus82");
 		ret.push_back("lim_minus64");
 		ret.push_back("err_bustimeout");
 		ret.push_back("in_active_1");
 		ret.push_back("km_cal_off");
-		ret.push_back("lim_minus82");
 		ret.push_back("ok64");
 		ret.push_back("err_feedbacksignal");
 		ret.push_back("frgrun");
 		ret.push_back("km_tx_tog_stat");
-		ret.push_back("ok82");
 		ret.push_back("icns64");
 		ret.push_back("err_powervoltage_low");
 		ret.push_back("rfe216");
 		ret.push_back("km_i_limit");
-		ret.push_back("icns82");
 		ret.push_back("tnlim64");
 		ret.push_back("err_motortemp");
 		ret.push_back("km_n_clip");
-		ret.push_back("tnlim82");
 		ret.push_back("pn64");
 		ret.push_back("err_devicetemp");
 		ret.push_back("km_mix_ana_on");
-		ret.push_back("pn82");
 		ret.push_back("ni64");
 		ret.push_back("err_overvoltage");
 		ret.push_back("d_out_1_on");
 		ret.push_back("km_allow_sync");
-		ret.push_back("ni82");
 		ret.push_back("_n064");
 		ret.push_back("err_ipeak");
 		ret.push_back("d_out_2_on");
 		ret.push_back("km_handwheel");
-		ret.push_back("_n082");
 		ret.push_back("rsw64");
 		ret.push_back("err_raceaway");
 		ret.push_back("btbrdy");
 		ret.push_back("km_phasing_extend");
-		ret.push_back("rsw82");
 		ret.push_back("cal064");
 		ret.push_back("err_user");
 		ret.push_back("go216");
 		ret.push_back("km_rsvd_11");
-		ret.push_back("cal082");
 		ret.push_back("cal64");
 		ret.push_back("d_out_3_on");
 		ret.push_back("km_rsvd_12");
-		ret.push_back("cal82");
 		ret.push_back("tol64");
 		ret.push_back("d_out_4_on");
 		ret.push_back("km_rsvd_13");
-		ret.push_back("tol82");
 		ret.push_back("rdy64");
 		ret.push_back("err_hwerr");
 		ret.push_back("goff");
 		ret.push_back("km_pseudo_enable");
-		ret.push_back("rdy82");
 		ret.push_back("brk064");
 		ret.push_back("err_ballast");
 		ret.push_back("active190");
 		ret.push_back("brk1216");
 		ret.push_back("km_debug_test");
-		ret.push_back("brk082");
-		ret.push_back("active192");
 		ret.push_back("signmag64");
 		ret.push_back("warn_warning_0");
-		ret.push_back("signmag82");
 		ret.push_back("nclip64");
 		ret.push_back("warn_illegal_status");
-		ret.push_back("nclip82");
 		ret.push_back("nclip_minus64");
 		ret.push_back("warn_safe_in");
-		ret.push_back("nclip_minus82");
 		ret.push_back("nclip_plus64");
-		ret.push_back("nclip_plus82");
 		ret.push_back("irddig64");
-		ret.push_back("irddig82");
 		ret.push_back("iuserchd64");
-		ret.push_back("iuserchd82");
 		ret.push_back("irdn64");
 		ret.push_back("warn_motortemp");
-		ret.push_back("irdn82");
 		ret.push_back("irdti64");
 		ret.push_back("warn_devicetemp");
-		ret.push_back("irdti82");
 		ret.push_back("irdtir64");
 		ret.push_back("warn_vout_sat");
-		ret.push_back("irdtir82");
 		ret.push_back("_10hz64");
 		ret.push_back("warn_ipeak");
-		ret.push_back("_10hz82");
 		ret.push_back("irdtm64");
 		ret.push_back("warn_raceaway");
-		ret.push_back("irdtm82");
 		ret.push_back("irdana64");
-		ret.push_back("irdana82");
 		ret.push_back("iwcns64");
-		ret.push_back("iwcns82");
 		ret.push_back("rfepulse64");
-		ret.push_back("rfepulse82");
 		ret.push_back("md64");
-		ret.push_back("md82");
 		ret.push_back("hndwhl64");
 		ret.push_back("warn_ballast");
-		ret.push_back("hndwhl82");
 	}
 
 	return ret;
@@ -4355,39 +3599,6 @@ std::vector<std::string> inverters_enum_names_from_fields(const std::string& msg
 			ret.push_back("Brake_Car_Nr2");
 			return ret;
 		}
-		if(sgn_name == "def_end_1")
-		{
-			ret.push_back("_Off_");
-			ret.push_back("Ref_and_Limit_Plus");
-			ret.push_back("Ref_and_Limit_Minus");
-			ret.push_back("Ref_Plus");
-			ret.push_back("Limit_Plus");
-			ret.push_back("Limit_Minus");
-			ret.push_back("Limit_Plus_and_Minus");
-			ret.push_back("Cancel_Error_s_");
-			ret.push_back("_Start_Ref_Drive");
-			ret.push_back("Speed_Ramp_0");
-			ret.push_back("_Start_Dest_eq_Var_1");
-			ret.push_back("_Start_Dest_eq_Var_2");
-			ret.push_back("N_cmd_Reverse");
-			ret.push_back("_Preset_Pos_eq_Var_3");
-			ret.push_back("_Capture_Var_3_eq_Pos");
-			ret.push_back("_Capture_Var_4_eq_Pos");
-			ret.push_back("_Switch_Spd_eq_notAin1_Ain2");
-			ret.push_back("_Switch_Spd_eq_notVar1_Var2");
-			ret.push_back("I_limit_dig_");
-			ret.push_back("N_clip_neg_pos_");
-			ret.push_back("_Switch_Cmd_eq_notDig_Ana");
-			ret.push_back("Speed_Ramp_0_Pos");
-			ret.push_back("Handwheel");
-			ret.push_back("Brake_Car");
-			ret.push_back("Recup_Disabled");
-			ret.push_back("Rising_Bank_1_Falling_Bank_0");
-			ret.push_back("_Start_Dest_eq_Var_1_2_3_4");
-			ret.push_back("_Start_CW_eq_Var_1_2_3_4");
-			ret.push_back("Brake_Car_Nr2");
-			return ret;
-		}
 		if(sgn_name == "ret_interval")
 		{
 			ret.push_back("Stop");
@@ -4395,12 +3606,6 @@ std::vector<std::string> inverters_enum_names_from_fields(const std::string& msg
 			return ret;
 		}
 		if(sgn_name == "active192")
-		{
-			ret.push_back("Low");
-			ret.push_back("High");
-			return ret;
-		}
-		if(sgn_name == "active190")
 		{
 			ret.push_back("Low");
 			ret.push_back("High");
@@ -4676,46 +3881,7 @@ std::vector<std::string> inverters_enum_names_from_fields(const std::string& msg
 			ret.push_back("Brake_Car_Nr2");
 			return ret;
 		}
-		if(sgn_name == "def_din_1")
-		{
-			ret.push_back("_Off_");
-			ret.push_back("Ref_and_Limit_Plus");
-			ret.push_back("Ref_and_Limit_Minus");
-			ret.push_back("Ref_Plus");
-			ret.push_back("Limit_Plus");
-			ret.push_back("Limit_Minus");
-			ret.push_back("Limit_Plus_and_Minus");
-			ret.push_back("Cancel_Error_s_");
-			ret.push_back("_Start_Ref_Drive");
-			ret.push_back("Speed_Ramp_0");
-			ret.push_back("_Start_Dest_eq_Var_1");
-			ret.push_back("_Start_Dest_eq_Var_2");
-			ret.push_back("N_cmd_Reverse");
-			ret.push_back("_Preset_Pos_eq_Var_3");
-			ret.push_back("_Capture_Var_3_eq_Pos");
-			ret.push_back("_Capture_Var_4_eq_Pos");
-			ret.push_back("_Switch_Spd_eq_notAin1_Ain2");
-			ret.push_back("_Switch_Spd_eq_notVar1_Var2");
-			ret.push_back("I_limit_dig_");
-			ret.push_back("N_clip_neg_pos_");
-			ret.push_back("_Switch_Cmd_eq_notDig_Ana");
-			ret.push_back("Speed_Ramp_0_Pos");
-			ret.push_back("Handwheel");
-			ret.push_back("Brake_Car");
-			ret.push_back("Recup_Disabled");
-			ret.push_back("Rising_Bank_1_Falling_Bank_0");
-			ret.push_back("_Start_Dest_eq_Var_1_2_3_4");
-			ret.push_back("_Start_CW_eq_Var_1_2_3_4");
-			ret.push_back("Brake_Car_Nr2");
-			return ret;
-		}
 		if(sgn_name == "active190")
-		{
-			ret.push_back("Low");
-			ret.push_back("High");
-			return ret;
-		}
-		if(sgn_name == "active192")
 		{
 			ret.push_back("Low");
 			ret.push_back("High");
@@ -5125,39 +4291,6 @@ std::vector<std::string> inverters_enum_names_from_fields(const std::string& msg
 			ret.push_back("Brake_Car_Nr2");
 			return ret;
 		}
-		if(sgn_name == "def_end_1")
-		{
-			ret.push_back("_Off_");
-			ret.push_back("Ref_and_Limit_Plus");
-			ret.push_back("Ref_and_Limit_Minus");
-			ret.push_back("Ref_Plus");
-			ret.push_back("Limit_Plus");
-			ret.push_back("Limit_Minus");
-			ret.push_back("Limit_Plus_and_Minus");
-			ret.push_back("Cancel_Error_s_");
-			ret.push_back("_Start_Ref_Drive");
-			ret.push_back("Speed_Ramp_0");
-			ret.push_back("_Start_Dest_eq_Var_1");
-			ret.push_back("_Start_Dest_eq_Var_2");
-			ret.push_back("N_cmd_Reverse");
-			ret.push_back("_Preset_Pos_eq_Var_3");
-			ret.push_back("_Capture_Var_3_eq_Pos");
-			ret.push_back("_Capture_Var_4_eq_Pos");
-			ret.push_back("_Switch_Spd_eq_notAin1_Ain2");
-			ret.push_back("_Switch_Spd_eq_notVar1_Var2");
-			ret.push_back("I_limit_dig_");
-			ret.push_back("N_clip_neg_pos_");
-			ret.push_back("_Switch_Cmd_eq_notDig_Ana");
-			ret.push_back("Speed_Ramp_0_Pos");
-			ret.push_back("Handwheel");
-			ret.push_back("Brake_Car");
-			ret.push_back("Recup_Disabled");
-			ret.push_back("Rising_Bank_1_Falling_Bank_0");
-			ret.push_back("_Start_Dest_eq_Var_1_2_3_4");
-			ret.push_back("_Start_CW_eq_Var_1_2_3_4");
-			ret.push_back("Brake_Car_Nr2");
-			return ret;
-		}
 		if(sgn_name == "ret_interval")
 		{
 			ret.push_back("Stop");
@@ -5165,12 +4298,6 @@ std::vector<std::string> inverters_enum_names_from_fields(const std::string& msg
 			return ret;
 		}
 		if(sgn_name == "active192")
-		{
-			ret.push_back("Low");
-			ret.push_back("High");
-			return ret;
-		}
-		if(sgn_name == "active190")
 		{
 			ret.push_back("Low");
 			ret.push_back("High");
@@ -5446,46 +4573,7 @@ std::vector<std::string> inverters_enum_names_from_fields(const std::string& msg
 			ret.push_back("Brake_Car_Nr2");
 			return ret;
 		}
-		if(sgn_name == "def_din_1")
-		{
-			ret.push_back("_Off_");
-			ret.push_back("Ref_and_Limit_Plus");
-			ret.push_back("Ref_and_Limit_Minus");
-			ret.push_back("Ref_Plus");
-			ret.push_back("Limit_Plus");
-			ret.push_back("Limit_Minus");
-			ret.push_back("Limit_Plus_and_Minus");
-			ret.push_back("Cancel_Error_s_");
-			ret.push_back("_Start_Ref_Drive");
-			ret.push_back("Speed_Ramp_0");
-			ret.push_back("_Start_Dest_eq_Var_1");
-			ret.push_back("_Start_Dest_eq_Var_2");
-			ret.push_back("N_cmd_Reverse");
-			ret.push_back("_Preset_Pos_eq_Var_3");
-			ret.push_back("_Capture_Var_3_eq_Pos");
-			ret.push_back("_Capture_Var_4_eq_Pos");
-			ret.push_back("_Switch_Spd_eq_notAin1_Ain2");
-			ret.push_back("_Switch_Spd_eq_notVar1_Var2");
-			ret.push_back("I_limit_dig_");
-			ret.push_back("N_clip_neg_pos_");
-			ret.push_back("_Switch_Cmd_eq_notDig_Ana");
-			ret.push_back("Speed_Ramp_0_Pos");
-			ret.push_back("Handwheel");
-			ret.push_back("Brake_Car");
-			ret.push_back("Recup_Disabled");
-			ret.push_back("Rising_Bank_1_Falling_Bank_0");
-			ret.push_back("_Start_Dest_eq_Var_1_2_3_4");
-			ret.push_back("_Start_CW_eq_Var_1_2_3_4");
-			ret.push_back("Brake_Car_Nr2");
-			return ret;
-		}
 		if(sgn_name == "active190")
-		{
-			ret.push_back("Low");
-			ret.push_back("High");
-			return ret;
-		}
-		if(sgn_name == "active192")
 		{
 			ret.push_back("Low");
 			ret.push_back("High");
