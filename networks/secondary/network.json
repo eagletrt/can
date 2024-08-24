@@ -792,7 +792,7 @@
             0,
             245
           ],
-          "precision": 0.1,
+          "precision": 0.01,
           "optimize": false,
           "signed": true
         },
@@ -802,7 +802,7 @@
             0,
             245
           ],
-          "precision": 0.1,
+          "precision": 0.01,
           "optimize": false,
           "signed": true
         },
@@ -812,7 +812,7 @@
             0,
             245
           ],
-          "precision": 0.1,
+          "precision": 0.01,
           "optimize": false,
           "signed": true
         }
