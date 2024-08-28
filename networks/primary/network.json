@@ -36,6 +36,69 @@
                 "discharge",
                 "cooldown"
             ]
+        },
+        "HvFeedback": {
+            "type": "enum",
+            "items": [
+                "airn_open_com",
+                "precharge_open_com",
+                "airp_open_com",
+                "airn_open_mec",
+                "precharge_open_mec",
+                "airp_open_mec",
+                "sd_imd_fb",
+                "sd_bms_fb",
+                "ts_less_than_60v",
+                "plausible_state_persisted",
+                "plausible_state",
+                "bms_fault_cockpit_led",
+                "imd_fault_cockpit_led",
+                "indicator_connected",
+                "latch_reset",
+                "plausible_state_latched",
+                "bms_fault_latched",
+                "imd_fault_latched",
+                "ext_fault_latched",
+                "imd_ok",
+                "plausible_state_rc",
+                "tsal_green",
+                "probing_3v3",
+                "sd_out",
+                "sd_in",
+                "sd_end",
+                "v5_mcu",
+                "unknown"
+            ]
+        },
+        "HvFeedbackDigital": {
+            "type": "bitset",
+            "items": [
+                "airn_open_com",
+                "airp_open_com",
+                "sd_imd_fb",
+                "sd_bms_fb",
+                "precharge_open_com",
+                "precharge_open_mec",
+                "ts_less_than_60v",
+                "plausible_state_persisted",
+                "plausible_state",
+                "bms_fault_cockpit_led",
+                "imd_fault_cockpit_led",
+                "indicator_connected",
+                "latch_reset",
+                "plausible_state_latched",
+                "bms_fault_latched",
+                "imd_fault_latched",
+                "ext_fault_latched"
+            ]
+        },
+        "HvFeedbackStatus": {
+            "type": "enum",
+            "items": [
+                "low",
+                "error",
+                "high"
+            ]
         }
     },
     "messages": [
@@ -416,6 +479,205 @@
                         5
                     ],
                     "precision": 0.0013
+                }
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Status of all the BMS HV feedbacks",
+            "contents": {
+                "airn_open_com": "HvFeedbackStatus",
+                "precharge_open_com": "HvFeedbackStatus",
+                "airp_open_com": "HvFeedbackStatus",
+                "airn_open_mec": "HvFeedbackStatus",
+                "precharge_open_mec": "HvFeedbackStatus",
+                "airp_open_mec": "HvFeedbackStatus",
+                "sd_imd_fb": "HvFeedbackStatus",
+                "sd_bms_fb": "HvFeedbackStatus",
+                "ts_less_than_60v": "HvFeedbackStatus",
+                "plausible_state_persisted": "HvFeedbackStatus",
+                "plausible_state": "HvFeedbackStatus",
+                "bms_fault_cockpit_led": "HvFeedbackStatus",
+                "imd_fault_cockpit_led": "HvFeedbackStatus",
+                "indicator_connected": "HvFeedbackStatus",
+                "latch_reset": "HvFeedbackStatus",
+                "plausible_state_latched": "HvFeedbackStatus",
+                "bms_fault_latched": "HvFeedbackStatus",
+                "imd_fault_latched": "HvFeedbackStatus",
+                "ext_fault_latched": "HvFeedbackStatus",
+                "imd_ok": "HvFeedbackStatus",
+                "plausible_state_rc": "HvFeedbackStatus",
+                "tsal_green": "HvFeedbackStatus",
+                "probing_3v3": "HvFeedbackStatus",
+                "sd_out": "HvFeedbackStatus",
+                "sd_in": "HvFeedbackStatus",
+                "sd_end": "HvFeedbackStatus",
+                "v5_mcu": "HvFeedbackStatus"
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_DIGITAL",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Values of the BMS HV digital feedbacks",
+            "contents": {
+                "digital": "HvFeedbackDigital"
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_ANALOG",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Voltages of the BMS HV analog feedbacks",
+            "contents": {
+                "analog_airn_open_mec": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_airp_open_mec": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_imd_ok": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_plausible_state_rc": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_tsal_green": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_probing_3v3": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_v5_mcu": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        5
+                    ]
+                }
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_ANALOG_SD",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Voltages of the BMS HV analog shutdown circuit feedbacks",
+            "contents": {
+                "sd_out": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        12
+                    ],
+                    "precision": 0.001
+                },
+                "sd_in": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        12
+                    ],
+                    "precision": 0.001
+                },
+                "sd_end": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        12
+                    ],
+                    "precision": 0.001
+                }
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_ENZOMMA",
+            "topic": "HYDRA",
+            "priority": 1,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Info regarding the feedback that did not allow the BMS to go in the TS ON state",
+            "contents": {
+                "feedback": "HvFeedback",
+                "status": "HvFeedbackStatus",
+                "is_digital": "bool",
+                "digital": "bool",
+                "analog": {
+                    "type": "float32",
+                    "force": "uint16",
+                    "range": [
+                        0,
+                        3.3
+                    ]
                 }
             }
         }

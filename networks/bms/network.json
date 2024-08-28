@@ -214,36 +214,28 @@
                     "comment": "The offset is the position of the cell corresponding to the first voltage in the message"
                 },
                 "voltage_0": {
-                    "type": "uint16",
+                    "type": "float32",
+                    "force": "uint16",
                     "range": [
                         0,
-                        50000
-                    ],
-                    "precision": 13
+                        5
+                    ]
                 },
                 "voltage_1": {
-                    "type": "uint16",
+                    "type": "float32",
+                    "force": "uint16",
                     "range": [
                         0,
-                        50000
-                    ],
-                    "precision": 13
+                        5
+                    ]
                 },
                 "voltage_2": {
-                    "type": "uint16",
+                    "type": "float32",
+                    "force": "uint16",
                     "range": [
                         0,
-                        50000
-                    ],
-                    "precision": 13
-                },
-                "voltage_3": {
-                    "type": "uint16",
-                    "range": [
-                        0,
-                        50000
-                    ],
-                    "precision": 13
+                        5
+                    ]
                 }
             }
         },
