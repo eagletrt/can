@@ -309,7 +309,7 @@
         "EcuControlErrors": {
             "type": "bitset",
             "items": [
-                "forced_off",
+                "disabled_from_ecu",
                 "wrong_maps",
                 "control_watchdog"
             ]
@@ -1709,7 +1709,7 @@
             ],
             "receiving": [],
             "contents": {
-                "map_pw": {
+                "map_power": {
                     "type": "float32",
                     "range": [
                         -0.5,
@@ -1718,24 +1718,9 @@
                     "precision": 0.01,
                     "optimize": false
                 },
-                "map_sc": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        1
-                    ],
-                    "precision": 0.01,
-                    "optimize": false
-                },
-                "map_tv": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        1
-                    ],
-                    "precision": 0.01,
-                    "optimize": false
-                }
+                "sc_state": "Toggle",
+                "tv_state": "Toggle",
+                "reg_state": "Toggle"
             }
         },
         {
@@ -1750,7 +1735,7 @@
                 "ECU"
             ],
             "contents": {
-                "map_pw": {
+                "map_power": {
                     "type": "float32",
                     "range": [
                         -0.5,
@@ -1759,24 +1744,9 @@
                     "precision": 0.01,
                     "optimize": false
                 },
-                "map_sc": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        1
-                    ],
-                    "precision": 0.01,
-                    "optimize": false
-                },
-                "map_tv": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        1
-                    ],
-                    "precision": 0.01,
-                    "optimize": false
-                }
+                "sc_state": "Toggle",
+                "tv_state": "Toggle",
+                "reg_state": "Toggle"
             }
         },
         {
@@ -1896,7 +1866,7 @@
             "description": "Power maps used by the control algorithm. (ECU checks if are coherent with the ones in the ECU)",
             "interval": 20,
             "contents": {
-                "map_pw": {
+                "map_power": {
                     "type": "float32",
                     "range": [
                         -0.5,
@@ -1905,24 +1875,9 @@
                     "precision": 0.01,
                     "optimize": false
                 },
-                "map_sc": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        1
-                    ],
-                    "precision": 0.01,
-                    "optimize": false
-                },
-                "map_tv": {
-                    "type": "float32",
-                    "range": [
-                        0,
-                        1
-                    ],
-                    "precision": 0.01,
-                    "optimize": false
-                }
+                "sc_state": "Toggle",
+                "tv_state": "Toggle",
+                "reg_state": "Toggle"
             }
         },
         {
