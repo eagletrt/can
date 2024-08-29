@@ -484,7 +484,7 @@
             "name": "HV_CURRENT",
             "topic": "HYDRA",
             "priority": 3,
-            "interval": 20,
+            "interval": 50,
             "sending": [
                 "HV"
             ],
@@ -492,13 +492,34 @@
             "description": "Mainboard current in A",
             "contents": {
                 "current": {
-                    "type": "float",
+                    "type": "float32",
                     "range": [
                         -39,
                         135
                     ],
                     "precision": 0.001,
                     "comment": "The current sensor has a resolution of +/-10mA"
+                }
+            }
+        },
+        {
+            "name": "HV_POWER",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Mainboard power in kW",
+            "contents": {
+                "current": {
+                    "type": "float32",
+                    "force": "uint16",
+                    "range": [
+                        -100,
+                        100
+                    ]
                 }
             }
         },
@@ -547,6 +568,46 @@
                         5
                     ],
                     "precision": 0.0013
+                }
+            }
+        },
+        {
+            "name": "HV_TS_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 2,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Voltage present on the tractive system in V",
+            "contents": {
+                "ts": {
+                    "type": "float32",
+                    "force": "uint16",
+                    "range": [
+                        0,
+                        605
+                    ],
+                    "comment": "Voltage of the Tractive System of the car in V"
+                },
+                "pack": {
+                    "type": "float32",
+                    "force": "uint16",
+                    "range": [
+                        0,
+                        605
+                    ],
+                    "comment": "Total voltage of the BMS in V"
+                },
+                "cells_sum": {
+                    "type": "float32",
+                    "force": "uint16",
+                    "range": [
+                        0,
+                        605
+                    ],
+                    "comment": "Sum of all the cells voltages of the BMS in V"
                 }
             }
         },
