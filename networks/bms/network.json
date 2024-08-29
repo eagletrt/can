@@ -200,7 +200,7 @@
             "receiving": [
                 "HV"
             ],
-            "description": "Cellboard cells raw voltages",
+            "description": "Cellboard cells voltages in V",
             "contents": {
                 "cellboard_id": "CellboardId",
                 "offset": {
@@ -250,7 +250,7 @@
             "receiving": [
                 "HV"
             ],
-            "description": "Cellboard cells raw temperatures",
+            "description": "Cellboard cells temperatures in °C",
             "contents": {
                 "cellboard_id": "CellboardId",
                 "offset": {
@@ -263,36 +263,36 @@
                     "comment": "The offset is the position of the cell corresponding to the first temperature in the message"
                 },
                 "temperature_0": {
-                    "type": "uint16",
+                    "type": "float32",
+                    "force": "uint8",
                     "range": [
-                        0,
-                        4095
-                    ],
-                    "precision": 1
+                        -25.0,
+                        100.0
+                    ]
                 },
                 "temperature_1": {
-                    "type": "uint16",
+                    "type": "float32",
+                    "force": "uint8",
                     "range": [
-                        0,
-                        4095
-                    ],
-                    "precision": 1
+                        -25.0,
+                        100.0
+                    ]
                 },
                 "temperature_2": {
-                    "type": "uint16",
+                    "type": "float32",
+                    "force": "uint8",
                     "range": [
-                        0,
-                        4095
-                    ],
-                    "precision": 1
+                        -25.0,
+                        100.0
+                    ]
                 },
                 "temperature_3": {
-                    "type": "uint16",
+                    "type": "float32",
+                    "force": "uint8",
                     "range": [
-                        0,
-                        4095
-                    ],
-                    "precision": 1
+                        -25.0,
+                        100.0
+                    ]
                 }
             }
         },
@@ -311,17 +311,19 @@
             "contents": {
                 "start": "bool",
                 "target": {
-                    "type": "uint16",
+                    "type": "float32",
+                    "force": "uint16",
                     "range": [
-                        28000,
-                        42000
+                        2.8,
+                        4.2
                     ]
                 },
                 "threshold": {
-                    "type": "uint16",
+                    "type": "float32",
+                    "force": "uint16",
                     "range": [
-                        50,
-                        2000
+                        0.005,
+                        0.2
                     ]
                 }
             }
