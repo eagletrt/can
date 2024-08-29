@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: ECU TLM TLM HV TLM ECU HV TLM ECU STEERING_WHEEL HV INVERTER_L TLM INVERTER_L HV ECU STEERING_WHEEL INVERTER_L TLM ECU ECU LV HV TLM LV LV TLM STEERING_WHEEL LV TLM LV HV LV HV LV TLM TLM LV HV ECU HV TLM HANDCART HV HV HV ECU HV HANDCART ECU HV HV HV ECU HV HV CHARGER TLM HV TLM HV HANDCART HANDCART ECU HV CHARGER STEERING_WHEEL LV CHARGER TLM TLM HANDCART TLM ECU CHARGER HANDCART TLM HANDCART HV ECU HANDCART ECU ECU STEERING_WHEEL HANDCART ANY HV HANDCART ANY LV HV ANY ECU HV LV ANY LV ECU ANY ECU HV ANY STEERING_WHEEL LV HANDCART HANDCART HV CHARGER LV LV CHARGER STEERING_WHEEL HANDCART HANDCART LV STEERING_WHEEL HANDCART CHARGER LV CHARGER LV HANDCART ECU CHARGER TLM TLM LV HV HANDCART LV TLM LV CHARGER ECU HV TLM HANDCART LV TLM ECU CHARGER ECU HV ECU HANDCART LV TLM HV CHARGER ECU HV HANDCART ECU TLM LV HV CHARGER ECU HANDCART TLM LV CHARGER STEERING_WHEEL LV LV ECU ECU LV HV TLM HANDCART HANDCART ECU STEERING_WHEEL HV HANDCART HANDCART HV TLM HV HANDCART HANDCART TLM HV ECU ECU STEERING_WHEEL HANDCART ECU ECU ECU ECU HV ECU HANDCART HANDCART ECU TLM HANDCART ECU STEERING_WHEEL CHARGER STEERING_WHEEL HANDCART ECU CHARGER ECU HV HANDCART STEERING_WHEEL CHARGER ECU ECU CHARGER ECU HANDCART INVERTER_L TLM CHARGER TLM TLM
+BU_: TLM TLM ECU HV TLM TLM HV TLM ECU STEERING_WHEEL HV ECU TLM INVERTER_L HV INVERTER_L STEERING_WHEEL ECU TLM INVERTER_L ECU ECU HV TLM LV LV TLM STEERING_WHEEL LV TLM LV HV LV HV LV TLM TLM LV HV ECU LV TLM HANDCART HV HV HV ECU HV HANDCART ECU HV HV HV ECU HV CHARGER HV HANDCART TLM HV TLM HV CHARGER CHARGER HV HV HANDCART ECU LV HANDCART STEERING_WHEEL TLM CHARGER TLM TLM HANDCART HANDCART ECU HANDCART HV TLM CHARGER ECU ECU STEERING_WHEEL HANDCART ECU HV HANDCART ANY LV HV ANY ECU HV LV ANY LV ECU ANY LV HV ANY LV LV ANY HANDCART HV HANDCART STEERING_WHEEL STEERING_WHEEL CHARGER LV CHARGER HANDCART STEERING_WHEEL LV HANDCART HANDCART LV CHARGER LV CHARGER ECU HANDCART TLM TLM ECU HV CHARGER LV TLM LV HANDCART LV HV TLM CHARGER ECU TLM ECU HANDCART LV HV ECU CHARGER ECU TLM HV HANDCART LV HV CHARGER ECU TLM ECU HV HANDCART LV CHARGER ECU STEERING_WHEEL HANDCART TLM LV LV LV ECU ECU HV LV HANDCART STEERING_WHEEL ECU TLM HV HANDCART HANDCART HV HANDCART HV HANDCART TLM TLM HV HANDCART ECU ECU HANDCART STEERING_WHEEL ECU ECU ECU HV ECU HANDCART CHARGER ECU TLM HANDCART ECU STEERING_WHEEL HANDCART ECU CHARGER STEERING_WHEEL HANDCART ECU HV CHARGER ECU HANDCART ECU STEERING_WHEEL CHARGER ECU CHARGER ECU TLM HANDCART INVERTER_L TLM
 
 
 BO_ 1818 NLG5_DIAG_TX: 8 NLG5
@@ -383,14 +383,17 @@ BO_ 568 LV_STATUS: 1 Vector__XXX
 BO_ 1568 LV_CHARGING_STATUS: 1 Vector__XXX
  SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1048 LV_COOLING_AGGRESSIVENESS: 1 Vector__XXX
+BO_ 1576 LV_COOLING_AGGRESSIVENESS: 1 Vector__XXX
  SG_ status : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
-BO_ 1576 LV_RADIATOR_SPEED: 2 Vector__XXX
+BO_ 1048 LV_SET_COOLING_AGGRESSIVENESS: 1 Vector__XXX
+ SG_ status : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1584 LV_RADIATOR_SPEED: 2 Vector__XXX
  SG_ radiator_speed : 2|8@1+ (0.007874015748031496,0) [0|1] "" Vector__XXX
  SG_ status : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
-BO_ 1584 LV_PUMPS_SPEED: 2 Vector__XXX
+BO_ 1592 LV_PUMPS_SPEED: 2 Vector__XXX
  SG_ pumps_speed : 2|8@1+ (0.007874015748031496,0) [0|1] "" Vector__XXX
  SG_ status : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
@@ -479,7 +482,7 @@ BO_ 624 LV_INVERTER_CONNECTION_STATUS: 1 Vector__XXX
 BO_ 80 LV_SET_INVERTER_CONNECTION_STATUS: 1 Vector__XXX
  SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1592 TLM_STATUS: 1 Vector__XXX
+BO_ 1600 TLM_STATUS: 1 Vector__XXX
  SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 1072 TLM_SET_STATUS: 1 Vector__XXX
@@ -488,7 +491,7 @@ BO_ 1072 TLM_SET_STATUS: 1 Vector__XXX
 BO_ 632 HANDCART_STATUS: 1 Vector__XXX
  SG_ connected : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1600 HANDCART_SETTINGS: 5 Vector__XXX
+BO_ 1608 HANDCART_SETTINGS: 5 Vector__XXX
  SG_ status : 33|4@1+ (1,0) [0|15] "" Vector__XXX
  SG_ grid_max_current : 25|8@1+ (0.058823529411764705,1) [1|16] "" Vector__XXX
  SG_ acc_charge_current : 17|8@1+ (0.058823529411764705,1) [1|16] "" Vector__XXX
@@ -553,7 +556,7 @@ BO_ 96 ECU_SET_POWER_MAPS: 3 Vector__XXX
  SG_ map_sc : 8|8@1+ (0.01,0) [0|1] "" Vector__XXX
  SG_ map_pw : 0|8@1+ (0.01,-0.5) [-0.5|1] "" Vector__XXX
 
-BO_ 1608 ECU_PTT_STATUS: 1 Vector__XXX
+BO_ 1616 ECU_PTT_STATUS: 1 Vector__XXX
  SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 1096 ECU_SET_PTT_STATUS: 1 Vector__XXX
@@ -611,80 +614,80 @@ BO_ 386 INV_R_RESPONSE: 8 Vector__XXX
  SG_ data_0 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ reg_id : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1616 LV_CURRENT_BATTERY: 2 Vector__XXX
+BO_ 1624 LV_CURRENT_BATTERY: 2 Vector__XXX
  SG_ lv_current : 0|16@1+ (0.07827788649706457,-20) [-20|20] "" Vector__XXX
 
-BO_ 1624 LV_CURRENT_CHARGER: 2 Vector__XXX
+BO_ 1632 LV_CURRENT_CHARGER: 2 Vector__XXX
  SG_ charger_current : 0|16@1+ (0.07827788649706457,-20) [-20|20] "" Vector__XXX
 
-BO_ 1632 LV_TOTAL_VOLTAGE: 4 Vector__XXX
+BO_ 1640 LV_TOTAL_VOLTAGE: 4 Vector__XXX
  SG_ total : 0|32@1+ (9.918250725748923e-05,0) [0|26] "" Vector__XXX
 
-BO_ 1640 LV_CELLS_VOLTAGE: 7 Vector__XXX
+BO_ 1648 LV_CELLS_VOLTAGE: 7 Vector__XXX
  SG_ voltage_2 : 40|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ voltage_1 : 24|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ voltage_0 : 8|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ start_index : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1648 LV_CELLS_VOLTAGE_STATS: 8 Vector__XXX
+BO_ 1656 LV_CELLS_VOLTAGE_STATS: 8 Vector__XXX
  SG_ avg : 48|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ delta : 32|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ min : 16|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ max : 0|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
 
-BO_ 1656 LV_CELLS_TEMP: 7 Vector__XXX
+BO_ 1664 LV_CELLS_TEMP: 7 Vector__XXX
  SG_ temp_2 : 40|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ temp_1 : 24|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ temp_0 : 8|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ start_index : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1664 LV_CELLS_TEMP_STATS: 6 Vector__XXX
+BO_ 1672 LV_CELLS_TEMP_STATS: 6 Vector__XXX
  SG_ avg : 32|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ min : 16|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ max : 0|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
 
-BO_ 1672 HV_CURRENT: 2 Vector__XXX
+BO_ 1680 HV_CURRENT: 2 Vector__XXX
  SG_ current : 0|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
 
-BO_ 1680 HV_POWER: 2 Vector__XXX
+BO_ 1688 HV_POWER: 2 Vector__XXX
  SG_ power : 0|16@1+ (0.0030518043793392844,-100) [-100|100] "" Vector__XXX
 
-BO_ 1688 HV_ENERGY: 2 Vector__XXX
+BO_ 1696 HV_ENERGY: 2 Vector__XXX
  SG_ energy : 0|16@1+ (0.10681315327687495,0) [0|7000] "" Vector__XXX
 
-BO_ 1696 HV_SOC: 1 Vector__XXX
+BO_ 1704 HV_SOC: 1 Vector__XXX
  SG_ soc : 0|8@1+ (0.39215686274509803,0) [0|100] "" Vector__XXX
 
-BO_ 1704 HV_TOTAL_VOLTAGE: 6 Vector__XXX
+BO_ 1712 HV_TOTAL_VOLTAGE: 6 Vector__XXX
  SG_ bus : 32|16@1+ (0.9001956947162426,0) [0|460] "" Vector__XXX
  SG_ sum_cell : 16|16@1+ (0.9001956947162426,0) [0|460] "" Vector__XXX
  SG_ pack : 0|16@1+ (0.9001956947162426,0) [0|460] "" Vector__XXX
 
-BO_ 1712 HV_CELLS_VOLTAGE: 7 Vector__XXX
+BO_ 1720 HV_CELLS_VOLTAGE: 7 Vector__XXX
  SG_ voltage_2 : 40|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ voltage_1 : 24|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ voltage_0 : 8|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ start_index : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1720 HV_CELLS_VOLTAGE_STATS: 8 Vector__XXX
+BO_ 1728 HV_CELLS_VOLTAGE_STATS: 8 Vector__XXX
  SG_ avg : 48|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ delta : 32|16@1+ (0.007019150072480354,0) [0|460] "" Vector__XXX
  SG_ min : 16|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
  SG_ max : 0|16@1+ (7.629510948348211e-05,0) [0|5] "" Vector__XXX
 
-BO_ 1728 HV_CELLS_TEMP: 5 Vector__XXX
+BO_ 1736 HV_CELLS_TEMP: 5 Vector__XXX
  SG_ temp_3 : 32|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ temp_2 : 24|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ temp_1 : 16|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ temp_0 : 8|8@1+ (0.39215686274509803,-20) [-20|80] "" Vector__XXX
  SG_ start_index : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1736 HV_CELLS_TEMP_STATS: 6 Vector__XXX
+BO_ 1744 HV_CELLS_TEMP_STATS: 6 Vector__XXX
  SG_ avg : 32|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ min : 16|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ max : 0|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
 
-BO_ 1744 ECU_STEER_ACTUATOR_STATUS: 1 Vector__XXX
+BO_ 1752 ECU_STEER_ACTUATOR_STATUS: 1 Vector__XXX
  SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 1104 ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL: 1 Vector__XXX
@@ -693,13 +696,13 @@ BO_ 1104 ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL: 1 Vector__XXX
 BO_ 1112 ECU_SET_STEER_ACTUATOR_STATUS_TLM: 1 Vector__XXX
  SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1752 ECU_SET_STEER_ACTUATOR_ANGLE: 2 Vector__XXX
+BO_ 1760 ECU_SET_STEER_ACTUATOR_ANGLE: 2 Vector__XXX
  SG_ angle : 0|16@1+ (0.005493247882810712,-180) [-180|180] "" Vector__XXX
 
-BO_ 1760 ECU_STEER_ACTUATOR_CURRENT: 1 Vector__XXX
+BO_ 1768 ECU_STEER_ACTUATOR_CURRENT: 1 Vector__XXX
  SG_ current : 0|8@1+ (0.19607843137254902,-25) [-25|25] "" Vector__XXX
 
-BO_ 1768 DEBUG_SIGNAL_CRASH_DEBUG: 8 Vector__XXX
+BO_ 1776 DEBUG_SIGNAL_CRASH_DEBUG: 8 Vector__XXX
  SG_ byte_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ byte_6 : 48|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ byte_5 : 40|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -709,28 +712,28 @@ BO_ 1768 DEBUG_SIGNAL_CRASH_DEBUG: 8 Vector__XXX
  SG_ byte_1 : 8|8@1+ (1,0) [0|255] "" Vector__XXX
  SG_ seq_number : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1776 DEBUG_SIGNAL_CRASH_DEBUG_ACK: 1 Vector__XXX
+BO_ 1784 DEBUG_SIGNAL_CRASH_DEBUG_ACK: 1 Vector__XXX
  SG_ seq_number : 0|8@1+ (1,0) [0|255] "" Vector__XXX
 
-BO_ 1784 DEBUG_SIGNAL_1: 7 Vector__XXX
+BO_ 1792 DEBUG_SIGNAL_1: 7 Vector__XXX
  SG_ field_3 : 36|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_2 : 20|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_1 : 4|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ device_id : 0|4@1+ (1,0) [0|15] "" Vector__XXX
 
-BO_ 1792 DEBUG_SIGNAL_2: 7 Vector__XXX
+BO_ 1800 DEBUG_SIGNAL_2: 7 Vector__XXX
  SG_ field_3 : 36|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_2 : 20|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_1 : 4|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ device_id : 0|4@1+ (1,0) [0|15] "" Vector__XXX
 
-BO_ 1800 DEBUG_SIGNAL_3: 7 Vector__XXX
+BO_ 1808 DEBUG_SIGNAL_3: 7 Vector__XXX
  SG_ field_3 : 36|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_2 : 20|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_1 : 4|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ device_id : 0|4@1+ (1,0) [0|15] "" Vector__XXX
 
-BO_ 1808 DEBUG_SIGNAL_4: 7 Vector__XXX
+BO_ 1824 DEBUG_SIGNAL_4: 7 Vector__XXX
  SG_ field_3 : 36|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_2 : 20|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_1 : 4|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
@@ -1063,9 +1066,10 @@ CM_ BO_ 1032 "";
 CM_ BO_ 1040 "";
 CM_ BO_ 568 "";
 CM_ BO_ 1568 "";
-CM_ BO_ 1048 "";
 CM_ BO_ 1576 "";
+CM_ BO_ 1048 "";
 CM_ BO_ 1584 "";
+CM_ BO_ 1592 "";
 CM_ BO_ 1056 "";
 CM_ BO_ 1064 "";
 CM_ BO_ 576 "";
@@ -1079,10 +1083,10 @@ CM_ BO_ 64 "";
 CM_ BO_ 72 "";
 CM_ BO_ 624 "";
 CM_ BO_ 80 "";
-CM_ BO_ 1592 "";
+CM_ BO_ 1600 "";
 CM_ BO_ 1072 "";
 CM_ BO_ 632 "";
-CM_ BO_ 1600 "";
+CM_ BO_ 1608 "";
 CM_ BO_ 1080 "";
 CM_ BO_ 640 "";
 CM_ BO_ 88 "";
@@ -1092,7 +1096,7 @@ CM_ BO_ 656 "";
 CM_ BO_ 664 "";
 CM_ BO_ 672 "";
 CM_ BO_ 96 "";
-CM_ BO_ 1608 "";
+CM_ BO_ 1616 "";
 CM_ BO_ 1096 "";
 CM_ BO_ 513 "";
 CM_ BO_ 680 "Torques and signals calculated by the controls algorithms";
@@ -1100,7 +1104,6 @@ CM_ BO_ 688 "Power maps used by the control algorithm. (ECU checks if are cohere
 CM_ BO_ 514 "";
 CM_ BO_ 385 "";
 CM_ BO_ 386 "";
-CM_ BO_ 1616 "";
 CM_ BO_ 1624 "";
 CM_ BO_ 1632 "";
 CM_ BO_ 1640 "";
@@ -1117,9 +1120,9 @@ CM_ BO_ 1720 "";
 CM_ BO_ 1728 "";
 CM_ BO_ 1736 "";
 CM_ BO_ 1744 "";
+CM_ BO_ 1752 "";
 CM_ BO_ 1104 "";
 CM_ BO_ 1112 "";
-CM_ BO_ 1752 "";
 CM_ BO_ 1760 "";
 CM_ BO_ 1768 "";
 CM_ BO_ 1776 "";
@@ -1127,6 +1130,7 @@ CM_ BO_ 1784 "";
 CM_ BO_ 1792 "";
 CM_ BO_ 1800 "";
 CM_ BO_ 1808 "";
+CM_ BO_ 1824 "";
 CM_ BO_ 256 "";
 CM_ BO_ 272 "";
 CM_ BO_ 288 "";
@@ -1186,8 +1190,9 @@ BA_ "GenMsgCycleTime" BO_ 1032 200;
 BA_ "GenMsgCycleTime" BO_ 1040 200;
 BA_ "GenMsgCycleTime" BO_ 568 20;
 BA_ "GenMsgCycleTime" BO_ 1568 200;
-BA_ "GenMsgCycleTime" BO_ 1576 200;
+BA_ "GenMsgCycleTime" BO_ 1576 1000;
 BA_ "GenMsgCycleTime" BO_ 1584 200;
+BA_ "GenMsgCycleTime" BO_ 1592 200;
 BA_ "GenMsgCycleTime" BO_ 1056 200;
 BA_ "GenMsgCycleTime" BO_ 1064 200;
 BA_ "GenMsgCycleTime" BO_ 576 20;
@@ -1198,10 +1203,10 @@ BA_ "GenMsgCycleTime" BO_ 608 50;
 BA_ "GenMsgCycleTime" BO_ 616 50;
 BA_ "GenMsgCycleTime" BO_ 624 20;
 BA_ "GenMsgCycleTime" BO_ 80 50;
-BA_ "GenMsgCycleTime" BO_ 1592 200;
+BA_ "GenMsgCycleTime" BO_ 1600 200;
 BA_ "GenMsgCycleTime" BO_ 1072 200;
 BA_ "GenMsgCycleTime" BO_ 632 20;
-BA_ "GenMsgCycleTime" BO_ 1600 200;
+BA_ "GenMsgCycleTime" BO_ 1608 200;
 BA_ "GenMsgCycleTime" BO_ 1080 200;
 BA_ "GenMsgCycleTime" BO_ 640 20;
 BA_ "GenMsgCycleTime" BO_ 88 50;
@@ -1211,7 +1216,7 @@ BA_ "GenMsgCycleTime" BO_ 656 20;
 BA_ "GenMsgCycleTime" BO_ 664 50;
 BA_ "GenMsgCycleTime" BO_ 672 200;
 BA_ "GenMsgCycleTime" BO_ 96 200;
-BA_ "GenMsgCycleTime" BO_ 1608 200;
+BA_ "GenMsgCycleTime" BO_ 1616 200;
 BA_ "GenMsgCycleTime" BO_ 1096 200;
 BA_ "GenMsgCycleTime" BO_ 513 10;
 BA_ "GenMsgCycleTime" BO_ 680 20;
@@ -1219,7 +1224,6 @@ BA_ "GenMsgCycleTime" BO_ 688 20;
 BA_ "GenMsgCycleTime" BO_ 514 10;
 BA_ "GenMsgCycleTime" BO_ 385 100;
 BA_ "GenMsgCycleTime" BO_ 386 100;
-BA_ "GenMsgCycleTime" BO_ 1616 50;
 BA_ "GenMsgCycleTime" BO_ 1624 50;
 BA_ "GenMsgCycleTime" BO_ 1632 50;
 BA_ "GenMsgCycleTime" BO_ 1640 50;
@@ -1235,17 +1239,18 @@ BA_ "GenMsgCycleTime" BO_ 1712 50;
 BA_ "GenMsgCycleTime" BO_ 1720 50;
 BA_ "GenMsgCycleTime" BO_ 1728 50;
 BA_ "GenMsgCycleTime" BO_ 1736 50;
-BA_ "GenMsgCycleTime" BO_ 1744 200;
+BA_ "GenMsgCycleTime" BO_ 1744 50;
+BA_ "GenMsgCycleTime" BO_ 1752 200;
 BA_ "GenMsgCycleTime" BO_ 1104 200;
 BA_ "GenMsgCycleTime" BO_ 1112 200;
-BA_ "GenMsgCycleTime" BO_ 1752 50;
-BA_ "GenMsgCycleTime" BO_ 1760 200;
-BA_ "GenMsgCycleTime" BO_ 1768 10;
+BA_ "GenMsgCycleTime" BO_ 1760 50;
+BA_ "GenMsgCycleTime" BO_ 1768 200;
 BA_ "GenMsgCycleTime" BO_ 1776 10;
-BA_ "GenMsgCycleTime" BO_ 1784 20;
+BA_ "GenMsgCycleTime" BO_ 1784 10;
 BA_ "GenMsgCycleTime" BO_ 1792 20;
 BA_ "GenMsgCycleTime" BO_ 1800 20;
 BA_ "GenMsgCycleTime" BO_ 1808 20;
+BA_ "GenMsgCycleTime" BO_ 1824 20;
 BA_ "GenMsgCycleTime" BO_ 256 100;
 BA_ "GenMsgCycleTime" BO_ 272 100;
 BA_ "GenMsgCycleTime" BO_ 288 1000;
@@ -1300,33 +1305,34 @@ VAL_ 1032 set_balancing_status 0 "off" 1 "on" ;
 VAL_ 1040 set_balancing_status 0 "off" 1 "on" ;
 VAL_ 568 status 0 "init" 1 "idle" 2 "tson" 3 "run" 4 "flashing" 5 "error" ;
 VAL_ 1568 status 0 "off" 1 "on" ;
+VAL_ 1576 status 0 "weak" 1 "normal" 2 "aggressive" ;
 VAL_ 1048 status 0 "weak" 1 "normal" 2 "aggressive" ;
-VAL_ 1576 status 0 "off" 1 "auto" 2 "manual" ;
 VAL_ 1584 status 0 "off" 1 "auto" 2 "manual" ;
+VAL_ 1592 status 0 "off" 1 "auto" 2 "manual" ;
 VAL_ 1056 status 0 "off" 1 "auto" 2 "manual" ;
 VAL_ 1064 status 0 "off" 1 "auto" 2 "manual" ;
 VAL_ 624 status 0 "off" 1 "on" ;
 VAL_ 80 status 0 "off" 1 "on" ;
-VAL_ 1592 status 0 "off" 1 "on" ;
+VAL_ 1600 status 0 "off" 1 "on" ;
 VAL_ 1072 status 0 "off" 1 "on" ;
 VAL_ 632 connected 0 "off" 1 "on" ;
-VAL_ 1600 status 0 "none" 1 "check" 2 "idle" 3 "precharge" 4 "ready" 5 "charge" 6 "charge_done" 7 "balancing" 8 "error" ;
-VAL_ 1600 fans_override 0 "off" 1 "on" ;
+VAL_ 1608 status 0 "none" 1 "check" 2 "idle" 3 "precharge" 4 "ready" 5 "charge" 6 "charge_done" 7 "balancing" 8 "error" ;
+VAL_ 1608 fans_override 0 "off" 1 "on" ;
 VAL_ 1080 status 0 "none" 1 "check" 2 "idle" 3 "precharge" 4 "ready" 5 "charge" 6 "charge_done" 7 "balancing" 8 "error" ;
 VAL_ 1080 fans_override 0 "off" 1 "on" ;
 VAL_ 640 status 0 "init" 1 "enable_inv_updates" 2 "check_inv_settings" 3 "idle" 4 "start_ts_precharge" 5 "wait_ts_precharge" 6 "wait_driver" 7 "enable_inv_drive" 8 "drive" 9 "disable_inv_drive" 10 "start_ts_discharge" 11 "re_enable_inverter_drive" 12 "wait_ts_discharge" 13 "fatal_error" ;
 VAL_ 88 status 0 "idle" 1 "ready" 2 "drive" ;
 VAL_ 1088 rr 0 "disabled" 1 "rfe_on" 2 "frg_on" 3 "enabled" ;
 VAL_ 1088 rl 0 "disabled" 1 "rfe_on" 2 "frg_on" 3 "enabled" ;
-VAL_ 1608 status 0 "off" 1 "on" ;
+VAL_ 1616 status 0 "off" 1 "on" ;
 VAL_ 1096 status 0 "off" 1 "on" ;
-VAL_ 1744 status 0 "off" 1 "on" ;
+VAL_ 1752 status 0 "off" 1 "on" ;
 VAL_ 1104 status 0 "off" 1 "on" ;
 VAL_ 1112 status 0 "off" 1 "on" ;
-VAL_ 1784 device_id 0 "hv_mainboard" 1 "hv_cellboard" 2 "lv" 3 "ecu" 4 "tlm" 5 "traction_control" 6 "steeering_wheel" 7 "handcart" 8 "acquisinator" ;
 VAL_ 1792 device_id 0 "hv_mainboard" 1 "hv_cellboard" 2 "lv" 3 "ecu" 4 "tlm" 5 "traction_control" 6 "steeering_wheel" 7 "handcart" 8 "acquisinator" ;
 VAL_ 1800 device_id 0 "hv_mainboard" 1 "hv_cellboard" 2 "lv" 3 "ecu" 4 "tlm" 5 "traction_control" 6 "steeering_wheel" 7 "handcart" 8 "acquisinator" ;
 VAL_ 1808 device_id 0 "hv_mainboard" 1 "hv_cellboard" 2 "lv" 3 "ecu" 4 "tlm" 5 "traction_control" 6 "steeering_wheel" 7 "handcart" 8 "acquisinator" ;
+VAL_ 1824 device_id 0 "hv_mainboard" 1 "hv_cellboard" 2 "lv" 3 "ecu" 4 "tlm" 5 "traction_control" 6 "steeering_wheel" 7 "handcart" 8 "acquisinator" ;
 
 
 

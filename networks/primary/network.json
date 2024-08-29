@@ -1137,6 +1137,19 @@
         {
             "name": "LV_COOLING_AGGRESSIVENESS",
             "topic": "HYDRA",
+            "priority": 3,
+            "interval": 1000,
+            "sending": [
+                "LV"
+            ],
+            "receiving": [],
+            "contents": {
+                "status": "CoolingAggressiveness"
+            }
+        },
+        {
+            "name": "LV_SET_COOLING_AGGRESSIVENESS",
+            "topic": "HYDRA",
             "priority": 2,
             "sending": [
                 "STEERING_WHEEL"

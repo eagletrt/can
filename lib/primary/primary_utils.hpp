@@ -527,6 +527,12 @@
 /* END */
 
 /* START */
+#define LV_SET_COOLING_AGGRESSIVENESS "LV_SET_COOLING_AGGRESSIVENESS"
+
+#define LV_SET_COOLING_AGGRESSIVENESS_STATUS "lv_set_cooling_aggressiveness_status"
+/* END */
+
+/* START */
 #define LV_RADIATOR_SPEED "LV_RADIATOR_SPEED"
 
 #define LV_RADIATOR_SPEED_STATUS "lv_radiator_speed_status"
@@ -1314,10 +1320,10 @@
 
 enum primary_types_id{
 	e_primary_float = -5,
-	e_primary_uint32_t,
-	e_primary_uint8_t,
 	e_primary_uint16_t,
 	e_primary_uint64_t,
+	e_primary_uint32_t,
+	e_primary_uint8_t,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,
@@ -1355,6 +1361,7 @@ enum primary_types_id{
 	e_primary_lv_status_status,
 	e_primary_lv_charging_status_status,
 	e_primary_lv_cooling_aggressiveness_status,
+	e_primary_lv_set_cooling_aggressiveness_status,
 	e_primary_lv_radiator_speed_status,
 	e_primary_lv_pumps_speed_status,
 	e_primary_lv_set_radiator_speed_status,
