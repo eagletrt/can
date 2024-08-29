@@ -1577,7 +1577,7 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 #endif // CANLIB_TIMESTAMP
 
 		(*net_enums)["ECU_CONTROL_STATUS"]["control_enabled"].push(pack->ecu_control_status(i).control_enabled());
-		(*net_enums)["ECU_CONTROL_STATUS"]["control_errors_forced_off"].push(pack->ecu_control_status(i).control_errors_forced_off());
+		(*net_enums)["ECU_CONTROL_STATUS"]["control_errors_disabled_from_ecu"].push(pack->ecu_control_status(i).control_errors_disabled_from_ecu());
 		(*net_enums)["ECU_CONTROL_STATUS"]["control_errors_wrong_maps"].push(pack->ecu_control_status(i).control_errors_wrong_maps());
 		(*net_enums)["ECU_CONTROL_STATUS"]["control_errors_control_watchdog"].push(pack->ecu_control_status(i).control_errors_control_watchdog());
 
@@ -1632,9 +1632,16 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["ECU_POWER_MAPS"]["_timestamp"].push(pack->ecu_power_maps(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["ECU_POWER_MAPS"]["map_pw"].push(pack->ecu_power_maps(i).map_pw());
-		(*net_signals)["ECU_POWER_MAPS"]["map_sc"].push(pack->ecu_power_maps(i).map_sc());
-		(*net_signals)["ECU_POWER_MAPS"]["map_tv"].push(pack->ecu_power_maps(i).map_tv());
+		(*net_signals)["ECU_POWER_MAPS"]["map_power"].push(pack->ecu_power_maps(i).map_power());
+		(*net_enums)["ECU_POWER_MAPS"]["sc_state"].push(pack->ecu_power_maps(i).sc_state());
+		primary_ecu_power_maps_sc_state_enum_to_string((primary_ecu_power_maps_sc_state)pack->ecu_power_maps(i).sc_state(), buffer);
+		(*net_strings)["ECU_POWER_MAPS"]["sc_state"].push(buffer);
+		(*net_enums)["ECU_POWER_MAPS"]["tv_state"].push(pack->ecu_power_maps(i).tv_state());
+		primary_ecu_power_maps_tv_state_enum_to_string((primary_ecu_power_maps_tv_state)pack->ecu_power_maps(i).tv_state(), buffer);
+		(*net_strings)["ECU_POWER_MAPS"]["tv_state"].push(buffer);
+		(*net_enums)["ECU_POWER_MAPS"]["reg_state"].push(pack->ecu_power_maps(i).reg_state());
+		primary_ecu_power_maps_reg_state_enum_to_string((primary_ecu_power_maps_reg_state)pack->ecu_power_maps(i).reg_state(), buffer);
+		(*net_strings)["ECU_POWER_MAPS"]["reg_state"].push(buffer);
 
     }
 
@@ -1646,9 +1653,16 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["ECU_SET_POWER_MAPS"]["_timestamp"].push(pack->ecu_set_power_maps(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["ECU_SET_POWER_MAPS"]["map_pw"].push(pack->ecu_set_power_maps(i).map_pw());
-		(*net_signals)["ECU_SET_POWER_MAPS"]["map_sc"].push(pack->ecu_set_power_maps(i).map_sc());
-		(*net_signals)["ECU_SET_POWER_MAPS"]["map_tv"].push(pack->ecu_set_power_maps(i).map_tv());
+		(*net_signals)["ECU_SET_POWER_MAPS"]["map_power"].push(pack->ecu_set_power_maps(i).map_power());
+		(*net_enums)["ECU_SET_POWER_MAPS"]["sc_state"].push(pack->ecu_set_power_maps(i).sc_state());
+		primary_ecu_set_power_maps_sc_state_enum_to_string((primary_ecu_set_power_maps_sc_state)pack->ecu_set_power_maps(i).sc_state(), buffer);
+		(*net_strings)["ECU_SET_POWER_MAPS"]["sc_state"].push(buffer);
+		(*net_enums)["ECU_SET_POWER_MAPS"]["tv_state"].push(pack->ecu_set_power_maps(i).tv_state());
+		primary_ecu_set_power_maps_tv_state_enum_to_string((primary_ecu_set_power_maps_tv_state)pack->ecu_set_power_maps(i).tv_state(), buffer);
+		(*net_strings)["ECU_SET_POWER_MAPS"]["tv_state"].push(buffer);
+		(*net_enums)["ECU_SET_POWER_MAPS"]["reg_state"].push(pack->ecu_set_power_maps(i).reg_state());
+		primary_ecu_set_power_maps_reg_state_enum_to_string((primary_ecu_set_power_maps_reg_state)pack->ecu_set_power_maps(i).reg_state(), buffer);
+		(*net_strings)["ECU_SET_POWER_MAPS"]["reg_state"].push(buffer);
 
     }
 
@@ -1723,9 +1737,16 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
         (*net_signals)["CONTROL_STATUS"]["_timestamp"].push(pack->control_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["CONTROL_STATUS"]["map_pw"].push(pack->control_status(i).map_pw());
-		(*net_signals)["CONTROL_STATUS"]["map_sc"].push(pack->control_status(i).map_sc());
-		(*net_signals)["CONTROL_STATUS"]["map_tv"].push(pack->control_status(i).map_tv());
+		(*net_signals)["CONTROL_STATUS"]["map_power"].push(pack->control_status(i).map_power());
+		(*net_enums)["CONTROL_STATUS"]["sc_state"].push(pack->control_status(i).sc_state());
+		primary_control_status_sc_state_enum_to_string((primary_control_status_sc_state)pack->control_status(i).sc_state(), buffer);
+		(*net_strings)["CONTROL_STATUS"]["sc_state"].push(buffer);
+		(*net_enums)["CONTROL_STATUS"]["tv_state"].push(pack->control_status(i).tv_state());
+		primary_control_status_tv_state_enum_to_string((primary_control_status_tv_state)pack->control_status(i).tv_state(), buffer);
+		(*net_strings)["CONTROL_STATUS"]["tv_state"].push(buffer);
+		(*net_enums)["CONTROL_STATUS"]["reg_state"].push(pack->control_status(i).reg_state());
+		primary_control_status_reg_state_enum_to_string((primary_control_status_reg_state)pack->control_status(i).reg_state(), buffer);
+		(*net_strings)["CONTROL_STATUS"]["reg_state"].push(buffer);
 
     }
 
@@ -3663,7 +3684,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             primary_ecu_control_status_t* msg = (primary_ecu_control_status_t*)(device->message);
             primary::ECU_CONTROL_STATUS* proto_msg = pack->add_ecu_control_status();
 			proto_msg->set_control_enabled(msg->control_enabled);
-			proto_msg->set_control_errors_forced_off(msg->control_errors_forced_off);
+			proto_msg->set_control_errors_disabled_from_ecu(msg->control_errors_disabled_from_ecu);
 			proto_msg->set_control_errors_wrong_maps(msg->control_errors_wrong_maps);
 			proto_msg->set_control_errors_control_watchdog(msg->control_errors_control_watchdog);
 
@@ -3715,9 +3736,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 672: {
             primary_ecu_power_maps_converted_t* msg = (primary_ecu_power_maps_converted_t*)(device->message);
             primary::ECU_POWER_MAPS* proto_msg = pack->add_ecu_power_maps();
-			proto_msg->set_map_pw(msg->map_pw);
-			proto_msg->set_map_sc(msg->map_sc);
-			proto_msg->set_map_tv(msg->map_tv);
+			proto_msg->set_map_power(msg->map_power);
+			proto_msg->set_sc_state((primary::primary_ecu_power_maps_sc_state)msg->sc_state);
+			proto_msg->set_tv_state((primary::primary_ecu_power_maps_tv_state)msg->tv_state);
+			proto_msg->set_reg_state((primary::primary_ecu_power_maps_reg_state)msg->reg_state);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3728,9 +3750,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 96: {
             primary_ecu_set_power_maps_converted_t* msg = (primary_ecu_set_power_maps_converted_t*)(device->message);
             primary::ECU_SET_POWER_MAPS* proto_msg = pack->add_ecu_set_power_maps();
-			proto_msg->set_map_pw(msg->map_pw);
-			proto_msg->set_map_sc(msg->map_sc);
-			proto_msg->set_map_tv(msg->map_tv);
+			proto_msg->set_map_power(msg->map_power);
+			proto_msg->set_sc_state((primary::primary_ecu_set_power_maps_sc_state)msg->sc_state);
+			proto_msg->set_tv_state((primary::primary_ecu_set_power_maps_tv_state)msg->tv_state);
+			proto_msg->set_reg_state((primary::primary_ecu_set_power_maps_reg_state)msg->reg_state);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -3796,9 +3819,10 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         case 688: {
             primary_control_status_converted_t* msg = (primary_control_status_converted_t*)(device->message);
             primary::CONTROL_STATUS* proto_msg = pack->add_control_status();
-			proto_msg->set_map_pw(msg->map_pw);
-			proto_msg->set_map_sc(msg->map_sc);
-			proto_msg->set_map_tv(msg->map_tv);
+			proto_msg->set_map_power(msg->map_power);
+			proto_msg->set_sc_state((primary::primary_control_status_sc_state)msg->sc_state);
+			proto_msg->set_tv_state((primary::primary_control_status_tv_state)msg->tv_state);
+			proto_msg->set_reg_state((primary::primary_control_status_reg_state)msg->reg_state);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

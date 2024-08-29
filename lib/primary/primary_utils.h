@@ -737,7 +737,7 @@ extern "C" {
 #define ECU_CONTROL_STATUS "ECU_CONTROL_STATUS"
 
 #define ECU_CONTROL_STATUS_CONTROL_ENABLED "ecu_control_status_control_enabled"
-#define ECU_CONTROL_STATUS_CONTROL_ERRORS_FORCED_OFF "ecu_control_status_control_errors_forced_off"
+#define ECU_CONTROL_STATUS_CONTROL_ERRORS_DISABLED_FROM_ECU "ecu_control_status_control_errors_disabled_from_ecu"
 #define ECU_CONTROL_STATUS_CONTROL_ERRORS_WRONG_MAPS "ecu_control_status_control_errors_wrong_maps"
 #define ECU_CONTROL_STATUS_CONTROL_ERRORS_CONTROL_WATCHDOG "ecu_control_status_control_errors_control_watchdog"
 /* END */
@@ -774,17 +774,19 @@ extern "C" {
 /* START */
 #define ECU_POWER_MAPS "ECU_POWER_MAPS"
 
-#define ECU_POWER_MAPS_MAP_PW "ecu_power_maps_map_pw"
-#define ECU_POWER_MAPS_MAP_SC "ecu_power_maps_map_sc"
-#define ECU_POWER_MAPS_MAP_TV "ecu_power_maps_map_tv"
+#define ECU_POWER_MAPS_MAP_POWER "ecu_power_maps_map_power"
+#define ECU_POWER_MAPS_SC_STATE "ecu_power_maps_sc_state"
+#define ECU_POWER_MAPS_TV_STATE "ecu_power_maps_tv_state"
+#define ECU_POWER_MAPS_REG_STATE "ecu_power_maps_reg_state"
 /* END */
 
 /* START */
 #define ECU_SET_POWER_MAPS "ECU_SET_POWER_MAPS"
 
-#define ECU_SET_POWER_MAPS_MAP_PW "ecu_set_power_maps_map_pw"
-#define ECU_SET_POWER_MAPS_MAP_SC "ecu_set_power_maps_map_sc"
-#define ECU_SET_POWER_MAPS_MAP_TV "ecu_set_power_maps_map_tv"
+#define ECU_SET_POWER_MAPS_MAP_POWER "ecu_set_power_maps_map_power"
+#define ECU_SET_POWER_MAPS_SC_STATE "ecu_set_power_maps_sc_state"
+#define ECU_SET_POWER_MAPS_TV_STATE "ecu_set_power_maps_tv_state"
+#define ECU_SET_POWER_MAPS_REG_STATE "ecu_set_power_maps_reg_state"
 /* END */
 
 /* START */
@@ -825,9 +827,10 @@ extern "C" {
 /* START */
 #define CONTROL_STATUS "CONTROL_STATUS"
 
-#define CONTROL_STATUS_MAP_PW "control_status_map_pw"
-#define CONTROL_STATUS_MAP_SC "control_status_map_sc"
-#define CONTROL_STATUS_MAP_TV "control_status_map_tv"
+#define CONTROL_STATUS_MAP_POWER "control_status_map_power"
+#define CONTROL_STATUS_SC_STATE "control_status_sc_state"
+#define CONTROL_STATUS_TV_STATE "control_status_tv_state"
+#define CONTROL_STATUS_REG_STATE "control_status_reg_state"
 /* END */
 
 /* START */
@@ -1323,11 +1326,11 @@ extern "C" {
 /* END */
 
 enum primary_types_id{
-	e_primary_float = -5,
-	e_primary_uint16_t,
-	e_primary_uint64_t,
-	e_primary_uint32_t,
+	e_primary_uint16_t = -5,
 	e_primary_uint8_t,
+	e_primary_uint32_t,
+	e_primary_uint64_t,
+	e_primary_float,
 
 	e_primary_hv_jmp_to_blt_forward,
 	e_primary_hv_jmp_to_blt_cellboard_id,
@@ -1383,8 +1386,17 @@ enum primary_types_id{
 	e_primary_ecu_set_status_status,
 	e_primary_ecu_inverter_status_rl,
 	e_primary_ecu_inverter_status_rr,
+	e_primary_ecu_power_maps_sc_state,
+	e_primary_ecu_power_maps_tv_state,
+	e_primary_ecu_power_maps_reg_state,
+	e_primary_ecu_set_power_maps_sc_state,
+	e_primary_ecu_set_power_maps_tv_state,
+	e_primary_ecu_set_power_maps_reg_state,
 	e_primary_ecu_ptt_status_status,
 	e_primary_ecu_set_ptt_status_status,
+	e_primary_control_status_sc_state,
+	e_primary_control_status_tv_state,
+	e_primary_control_status_reg_state,
 	e_primary_ecu_steer_actuator_status_status,
 	e_primary_ecu_set_steer_actuator_status_steering_wheel_status,
 	e_primary_ecu_set_steer_actuator_status_tlm_status,

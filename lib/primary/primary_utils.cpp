@@ -544,7 +544,7 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 	case 648:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, ECU_CONTROL_STATUS_CONTROL_ENABLED);
-		snprintf(v[1], string_size, ECU_CONTROL_STATUS_CONTROL_ERRORS_FORCED_OFF);
+		snprintf(v[1], string_size, ECU_CONTROL_STATUS_CONTROL_ERRORS_DISABLED_FROM_ECU);
 		snprintf(v[2], string_size, ECU_CONTROL_STATUS_CONTROL_ERRORS_WRONG_MAPS);
 		snprintf(v[3], string_size, ECU_CONTROL_STATUS_CONTROL_ERRORS_CONTROL_WATCHDOG);
 
@@ -577,17 +577,19 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 672:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, ECU_POWER_MAPS_MAP_PW);
-		snprintf(v[1], string_size, ECU_POWER_MAPS_MAP_SC);
-		snprintf(v[2], string_size, ECU_POWER_MAPS_MAP_TV);
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, ECU_POWER_MAPS_MAP_POWER);
+		snprintf(v[1], string_size, ECU_POWER_MAPS_SC_STATE);
+		snprintf(v[2], string_size, ECU_POWER_MAPS_TV_STATE);
+		snprintf(v[3], string_size, ECU_POWER_MAPS_REG_STATE);
 
 		return 0;
 	case 96:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, ECU_SET_POWER_MAPS_MAP_PW);
-		snprintf(v[1], string_size, ECU_SET_POWER_MAPS_MAP_SC);
-		snprintf(v[2], string_size, ECU_SET_POWER_MAPS_MAP_TV);
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, ECU_SET_POWER_MAPS_MAP_POWER);
+		snprintf(v[1], string_size, ECU_SET_POWER_MAPS_SC_STATE);
+		snprintf(v[2], string_size, ECU_SET_POWER_MAPS_TV_STATE);
+		snprintf(v[3], string_size, ECU_SET_POWER_MAPS_REG_STATE);
 
 		return 0;
 	case 1616:
@@ -622,10 +624,11 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 688:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, CONTROL_STATUS_MAP_PW);
-		snprintf(v[1], string_size, CONTROL_STATUS_MAP_SC);
-		snprintf(v[2], string_size, CONTROL_STATUS_MAP_TV);
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, CONTROL_STATUS_MAP_POWER);
+		snprintf(v[1], string_size, CONTROL_STATUS_SC_STATE);
+		snprintf(v[2], string_size, CONTROL_STATUS_TV_STATE);
+		snprintf(v[3], string_size, CONTROL_STATUS_REG_STATE);
 
 		return 0;
 	case 514:
@@ -1487,35 +1490,89 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		return 0;
 	case 54:
 		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_ecu_power_maps_sc_state_off");
+		snprintf(v[1], string_size, "primary_ecu_power_maps_sc_state_on");
+
+		return 0;
+	case 55:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_ecu_power_maps_tv_state_off");
+		snprintf(v[1], string_size, "primary_ecu_power_maps_tv_state_on");
+
+		return 0;
+	case 56:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_ecu_power_maps_reg_state_off");
+		snprintf(v[1], string_size, "primary_ecu_power_maps_reg_state_on");
+
+		return 0;
+	case 57:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_ecu_set_power_maps_sc_state_off");
+		snprintf(v[1], string_size, "primary_ecu_set_power_maps_sc_state_on");
+
+		return 0;
+	case 58:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_ecu_set_power_maps_tv_state_off");
+		snprintf(v[1], string_size, "primary_ecu_set_power_maps_tv_state_on");
+
+		return 0;
+	case 59:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_ecu_set_power_maps_reg_state_off");
+		snprintf(v[1], string_size, "primary_ecu_set_power_maps_reg_state_on");
+
+		return 0;
+	case 60:
+		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_ptt_status_status_on");
 
 		return 0;
-	case 55:
+	case 61:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_ptt_status_status_on");
 
 		return 0;
-	case 56:
+	case 62:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_control_status_sc_state_off");
+		snprintf(v[1], string_size, "primary_control_status_sc_state_on");
+
+		return 0;
+	case 63:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_control_status_tv_state_off");
+		snprintf(v[1], string_size, "primary_control_status_tv_state_on");
+
+		return 0;
+	case 64:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_control_status_reg_state_off");
+		snprintf(v[1], string_size, "primary_control_status_reg_state_on");
+
+		return 0;
+	case 65:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_steer_actuator_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_steer_actuator_status_status_on");
 
 		return 0;
-	case 57:
+	case 66:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_on");
 
 		return 0;
-	case 58:
+	case 67:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_on");
 
 		return 0;
-	case 59:
+	case 68:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_1_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_1_device_id_hv_cellboard");
@@ -1528,7 +1585,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_debug_signal_1_device_id_acquisinator");
 
 		return 0;
-	case 60:
+	case 69:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_2_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_2_device_id_hv_cellboard");
@@ -1541,7 +1598,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_debug_signal_2_device_id_acquisinator");
 
 		return 0;
-	case 61:
+	case 70:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_3_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_3_device_id_hv_cellboard");
@@ -1554,7 +1611,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_debug_signal_3_device_id_acquisinator");
 
 		return 0;
-	case 62:
+	case 71:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_4_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_4_device_id_hv_cellboard");
@@ -3404,7 +3461,7 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		primary_ecu_control_status_t tmp;
 		primary_ecu_control_status_converted_t tmp_converted;
 		uint8_t r_control_enabled;
-		uint8_t r_control_errors_forced_off;
+		uint8_t r_control_errors_disabled_from_ecu;
 		uint8_t r_control_errors_wrong_maps;
 		uint8_t r_control_errors_control_watchdog;
 
@@ -3413,11 +3470,11 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  ,
 			&r_control_enabled,
-			&r_control_errors_forced_off,
+			&r_control_errors_disabled_from_ecu,
 			&r_control_errors_wrong_maps,
 			&r_control_errors_control_watchdog);
 		tmp_converted.control_enabled = (uint8_t)r_control_enabled;
-		tmp_converted.control_errors_forced_off = (uint8_t)r_control_errors_forced_off;
+		tmp_converted.control_errors_disabled_from_ecu = (uint8_t)r_control_errors_disabled_from_ecu;
 		tmp_converted.control_errors_wrong_maps = (uint8_t)r_control_errors_wrong_maps;
 		tmp_converted.control_errors_control_watchdog = (uint8_t)r_control_errors_control_watchdog;
 
@@ -3525,19 +3582,23 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_ecu_power_maps_t tmp;
 		primary_ecu_power_maps_converted_t tmp_converted;
-		float r_map_pw;
-		float r_map_sc;
-		float r_map_tv;
+		float r_map_power;
+		uint8_t r_sc_state;
+		uint8_t r_tv_state;
+		uint8_t r_reg_state;
 
 		sscanf(s, "%f,"       
-			"%f,"       
-			"%f,"       ,
-			&r_map_pw,
-			&r_map_sc,
-			&r_map_tv);
-		tmp_converted.map_pw = (float)r_map_pw;
-		tmp_converted.map_sc = (float)r_map_sc;
-		tmp_converted.map_tv = (float)r_map_tv;
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_map_power,
+			&r_sc_state,
+			&r_tv_state,
+			&r_reg_state);
+		tmp_converted.map_power = (float)r_map_power;
+		tmp_converted.sc_state = (primary_ecu_power_maps_sc_state)r_sc_state;
+		tmp_converted.tv_state = (primary_ecu_power_maps_tv_state)r_tv_state;
+		tmp_converted.reg_state = (primary_ecu_power_maps_reg_state)r_reg_state;
 
 		primary_ecu_power_maps_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_ECU_POWER_MAPS_BYTE_SIZE;
@@ -3547,19 +3608,23 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_ecu_set_power_maps_t tmp;
 		primary_ecu_set_power_maps_converted_t tmp_converted;
-		float r_map_pw;
-		float r_map_sc;
-		float r_map_tv;
+		float r_map_power;
+		uint8_t r_sc_state;
+		uint8_t r_tv_state;
+		uint8_t r_reg_state;
 
 		sscanf(s, "%f,"       
-			"%f,"       
-			"%f,"       ,
-			&r_map_pw,
-			&r_map_sc,
-			&r_map_tv);
-		tmp_converted.map_pw = (float)r_map_pw;
-		tmp_converted.map_sc = (float)r_map_sc;
-		tmp_converted.map_tv = (float)r_map_tv;
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_map_power,
+			&r_sc_state,
+			&r_tv_state,
+			&r_reg_state);
+		tmp_converted.map_power = (float)r_map_power;
+		tmp_converted.sc_state = (primary_ecu_set_power_maps_sc_state)r_sc_state;
+		tmp_converted.tv_state = (primary_ecu_set_power_maps_tv_state)r_tv_state;
+		tmp_converted.reg_state = (primary_ecu_set_power_maps_reg_state)r_reg_state;
 
 		primary_ecu_set_power_maps_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_ECU_SET_POWER_MAPS_BYTE_SIZE;
@@ -3669,19 +3734,23 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_control_status_t tmp;
 		primary_control_status_converted_t tmp_converted;
-		float r_map_pw;
-		float r_map_sc;
-		float r_map_tv;
+		float r_map_power;
+		uint8_t r_sc_state;
+		uint8_t r_tv_state;
+		uint8_t r_reg_state;
 
 		sscanf(s, "%f,"       
-			"%f,"       
-			"%f,"       ,
-			&r_map_pw,
-			&r_map_sc,
-			&r_map_tv);
-		tmp_converted.map_pw = (float)r_map_pw;
-		tmp_converted.map_sc = (float)r_map_sc;
-		tmp_converted.map_tv = (float)r_map_tv;
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_map_power,
+			&r_sc_state,
+			&r_tv_state,
+			&r_reg_state);
+		tmp_converted.map_power = (float)r_map_power;
+		tmp_converted.sc_state = (primary_control_status_sc_state)r_sc_state;
+		tmp_converted.tv_state = (primary_control_status_tv_state)r_tv_state;
+		tmp_converted.reg_state = (primary_control_status_reg_state)r_reg_state;
 
 		primary_control_status_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_CONTROL_STATUS_BYTE_SIZE;
@@ -5256,13 +5325,13 @@ int primary_n_fields_from_id(int id)
 		case 648: return 4;
 		case 656: return 11;
 		case 664: return 8;
-		case 672: return 3;
-		case 96: return 3;
+		case 672: return 4;
+		case 96: return 4;
 		case 1616: return 1;
 		case 1096: return 1;
 		case 513: return 8;
 		case 680: return 5;
-		case 688: return 3;
+		case 688: return 4;
 		case 514: return 8;
 		case 385: return 8;
 		case 386: return 8;
@@ -5835,17 +5904,19 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[7] = e_primary_uint8_t;
 		return 8;
 	case 672:
-		if(fields_types_size < 3) return 0;
+		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_primary_float;
-		fields_types[1] = e_primary_float;
-		fields_types[2] = e_primary_float;
-		return 3;
+		fields_types[1] = e_primary_ecu_power_maps_sc_state;
+		fields_types[2] = e_primary_ecu_power_maps_tv_state;
+		fields_types[3] = e_primary_ecu_power_maps_reg_state;
+		return 4;
 	case 96:
-		if(fields_types_size < 3) return 0;
+		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_primary_float;
-		fields_types[1] = e_primary_float;
-		fields_types[2] = e_primary_float;
-		return 3;
+		fields_types[1] = e_primary_ecu_set_power_maps_sc_state;
+		fields_types[2] = e_primary_ecu_set_power_maps_tv_state;
+		fields_types[3] = e_primary_ecu_set_power_maps_reg_state;
+		return 4;
 	case 1616:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_ecu_ptt_status_status;
@@ -5874,11 +5945,12 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[4] = e_primary_float;
 		return 5;
 	case 688:
-		if(fields_types_size < 3) return 0;
+		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_primary_float;
-		fields_types[1] = e_primary_float;
-		fields_types[2] = e_primary_float;
-		return 3;
+		fields_types[1] = e_primary_control_status_sc_state;
+		fields_types[2] = e_primary_control_status_tv_state;
+		fields_types[3] = e_primary_control_status_reg_state;
+		return 4;
 	case 514:
 		if(fields_types_size < 8) return 0;
 		fields_types[0] = e_primary_uint8_t;
@@ -6595,7 +6667,7 @@ std::vector<std::string> primary_enum_fields_from_message(const std::string& msg
 	}
 	if(msg_name == ECU_CONTROL_STATUS) {
 		ret.push_back("control_enabled");
-		ret.push_back("control_errors_forced_off");
+		ret.push_back("control_errors_disabled_from_ecu");
 		ret.push_back("control_errors_wrong_maps");
 		ret.push_back("control_errors_control_watchdog");
 	}
@@ -6622,11 +6694,26 @@ std::vector<std::string> primary_enum_fields_from_message(const std::string& msg
 		ret.push_back("feedbacks_sd_out");
 		ret.push_back("feedbacks_sd_ctrl_pin");
 	}
+	if(msg_name == ECU_POWER_MAPS) {
+		ret.push_back("sc_state");
+		ret.push_back("tv_state");
+		ret.push_back("reg_state");
+	}
+	if(msg_name == ECU_SET_POWER_MAPS) {
+		ret.push_back("sc_state");
+		ret.push_back("tv_state");
+		ret.push_back("reg_state");
+	}
 	if(msg_name == ECU_PTT_STATUS) {
 		ret.push_back("status");
 	}
 	if(msg_name == ECU_SET_PTT_STATUS) {
 		ret.push_back("status");
+	}
+	if(msg_name == CONTROL_STATUS) {
+		ret.push_back("sc_state");
+		ret.push_back("tv_state");
+		ret.push_back("reg_state");
 	}
 	if(msg_name == ECU_STEER_ACTUATOR_STATUS) {
 		ret.push_back("status");
@@ -7152,6 +7239,48 @@ std::vector<std::string> primary_enum_names_from_fields(const std::string& msg_n
 			return ret;
 		}
 	}
+	if(msg_name == ECU_POWER_MAPS)
+	{
+		if(sgn_name == "sc_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "tv_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "reg_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+	}
+	if(msg_name == ECU_SET_POWER_MAPS)
+	{
+		if(sgn_name == "sc_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "tv_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "reg_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+	}
 	if(msg_name == ECU_PTT_STATUS)
 	{
 		if(sgn_name == "status")
@@ -7164,6 +7293,27 @@ std::vector<std::string> primary_enum_names_from_fields(const std::string& msg_n
 	if(msg_name == ECU_SET_PTT_STATUS)
 	{
 		if(sgn_name == "status")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+	}
+	if(msg_name == CONTROL_STATUS)
+	{
+		if(sgn_name == "sc_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "tv_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "reg_state")
 		{
 			ret.push_back("off");
 			ret.push_back("on");

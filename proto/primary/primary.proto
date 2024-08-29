@@ -300,6 +300,30 @@ enum primary_ecu_inverter_status_rr {
 	primary_ecu_inverter_status_rr_frg_on = 2;
 	primary_ecu_inverter_status_rr_enabled = 3;
 }
+enum primary_ecu_power_maps_sc_state {
+	primary_ecu_power_maps_sc_state_off = 0;
+	primary_ecu_power_maps_sc_state_on = 1;
+}
+enum primary_ecu_power_maps_tv_state {
+	primary_ecu_power_maps_tv_state_off = 0;
+	primary_ecu_power_maps_tv_state_on = 1;
+}
+enum primary_ecu_power_maps_reg_state {
+	primary_ecu_power_maps_reg_state_off = 0;
+	primary_ecu_power_maps_reg_state_on = 1;
+}
+enum primary_ecu_set_power_maps_sc_state {
+	primary_ecu_set_power_maps_sc_state_off = 0;
+	primary_ecu_set_power_maps_sc_state_on = 1;
+}
+enum primary_ecu_set_power_maps_tv_state {
+	primary_ecu_set_power_maps_tv_state_off = 0;
+	primary_ecu_set_power_maps_tv_state_on = 1;
+}
+enum primary_ecu_set_power_maps_reg_state {
+	primary_ecu_set_power_maps_reg_state_off = 0;
+	primary_ecu_set_power_maps_reg_state_on = 1;
+}
 enum primary_ecu_ptt_status_status {
 	primary_ecu_ptt_status_status_off = 0;
 	primary_ecu_ptt_status_status_on = 1;
@@ -307,6 +331,18 @@ enum primary_ecu_ptt_status_status {
 enum primary_ecu_set_ptt_status_status {
 	primary_ecu_set_ptt_status_status_off = 0;
 	primary_ecu_set_ptt_status_status_on = 1;
+}
+enum primary_control_status_sc_state {
+	primary_control_status_sc_state_off = 0;
+	primary_control_status_sc_state_on = 1;
+}
+enum primary_control_status_tv_state {
+	primary_control_status_tv_state_off = 0;
+	primary_control_status_tv_state_on = 1;
+}
+enum primary_control_status_reg_state {
+	primary_control_status_reg_state_off = 0;
+	primary_control_status_reg_state_on = 1;
 }
 enum primary_ecu_steer_actuator_status_status {
 	primary_ecu_steer_actuator_status_status_off = 0;
@@ -929,7 +965,7 @@ message ECU_INVERTER_STATUS{
 }
 message ECU_CONTROL_STATUS{
 	bool control_enabled = 1;
-	bool control_errors_forced_off = 2;
+	bool control_errors_disabled_from_ecu = 2;
 	bool control_errors_wrong_maps = 3;
 	bool control_errors_control_watchdog = 4;
 	uint64 _inner_timestamp = 5;
@@ -960,16 +996,18 @@ message ECU_FEEDBACKS{
 	uint64 _inner_timestamp = 9;
 }
 message ECU_POWER_MAPS{
-	double map_pw = 1;
-	double map_sc = 2;
-	double map_tv = 3;
-	uint64 _inner_timestamp = 4;
+	double map_power = 1;
+	primary_ecu_power_maps_sc_state sc_state = 2;
+	primary_ecu_power_maps_tv_state tv_state = 3;
+	primary_ecu_power_maps_reg_state reg_state = 4;
+	uint64 _inner_timestamp = 5;
 }
 message ECU_SET_POWER_MAPS{
-	double map_pw = 1;
-	double map_sc = 2;
-	double map_tv = 3;
-	uint64 _inner_timestamp = 4;
+	double map_power = 1;
+	primary_ecu_set_power_maps_sc_state sc_state = 2;
+	primary_ecu_set_power_maps_tv_state tv_state = 3;
+	primary_ecu_set_power_maps_reg_state reg_state = 4;
+	uint64 _inner_timestamp = 5;
 }
 message ECU_PTT_STATUS{
 	primary_ecu_ptt_status_status status = 1;
@@ -999,10 +1037,11 @@ message CONTROL_OUTPUT{
 	uint64 _inner_timestamp = 6;
 }
 message CONTROL_STATUS{
-	double map_pw = 1;
-	double map_sc = 2;
-	double map_tv = 3;
-	uint64 _inner_timestamp = 4;
+	double map_power = 1;
+	primary_control_status_sc_state sc_state = 2;
+	primary_control_status_tv_state tv_state = 3;
+	primary_control_status_reg_state reg_state = 4;
+	uint64 _inner_timestamp = 5;
 }
 message INV_R_REQUEST{
 	uint32 data_0 = 1;
