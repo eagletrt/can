@@ -51,14 +51,14 @@
                 "ts_less_than_60v",
                 "plausible_state_persisted",
                 "plausible_state",
-                "bms_fault_cockpit_led",
-                "imd_fault_cockpit_led",
+                "not_bms_fault_cockpit_led",
+                "not_imd_fault_cockpit_led",
                 "indicator_connected",
-                "latch_reset",
+                "not_latch_reset",
                 "plausible_state_latched",
-                "bms_fault_latched",
-                "imd_fault_latched",
-                "ext_fault_latched",
+                "not_bms_fault_latched",
+                "not_imd_fault_latched",
+                "not_ext_fault_latched",
                 "imd_ok",
                 "plausible_state_rc",
                 "tsal_green",
@@ -82,14 +82,14 @@
                 "ts_less_than_60v",
                 "plausible_state_persisted",
                 "plausible_state",
-                "bms_fault_cockpit_led",
-                "imd_fault_cockpit_led",
+                "not_bms_fault_cockpit_led",
+                "not_imd_fault_cockpit_led",
                 "indicator_connected",
-                "latch_reset",
+                "not_latch_reset",
                 "plausible_state_latched",
-                "bms_fault_latched",
-                "imd_fault_latched",
-                "ext_fault_latched"
+                "not_bms_fault_latched",
+                "not_imd_fault_latched",
+                "not_ext_fault_latched"
             ]
         },
         "HvFeedbackStatus": {
@@ -98,6 +98,18 @@
                 "low",
                 "error",
                 "high"
+            ]
+        },
+        "HvImdStatus": {
+            "type": "enum",
+            "items": [
+                "unknown",
+                "short_circuit",
+                "normal",
+                "under_voltage",
+                "start_measure",
+                "device_error",
+                "earth_fault"
             ]
         }
     },
@@ -403,12 +415,13 @@
             "contents": {
                 "status": "bool",
                 "threshold": {
-                    "type": "uint8",
+                    "type": "float32",
+                    "force": "uint16",
                     "range": [
-                        5,
-                        200
+                        0.005,
+                        0.2
                     ],
-                    "comment": "The maximum allowed delta between the highest and lowest cell voltages in mV"
+                    "comment": "The maximum allowed delta between the highest and lowest cell voltages in V"
                 }
             }
         },
@@ -507,14 +520,14 @@
                 "ts_less_than_60v": "HvFeedbackStatus",
                 "plausible_state_persisted": "HvFeedbackStatus",
                 "plausible_state": "HvFeedbackStatus",
-                "bms_fault_cockpit_led": "HvFeedbackStatus",
-                "imd_fault_cockpit_led": "HvFeedbackStatus",
+                "not_bms_fault_cockpit_led": "HvFeedbackStatus",
+                "not_imd_fault_cockpit_led": "HvFeedbackStatus",
                 "indicator_connected": "HvFeedbackStatus",
-                "latch_reset": "HvFeedbackStatus",
+                "not_latch_reset": "HvFeedbackStatus",
                 "plausible_state_latched": "HvFeedbackStatus",
-                "bms_fault_latched": "HvFeedbackStatus",
-                "imd_fault_latched": "HvFeedbackStatus",
-                "ext_fault_latched": "HvFeedbackStatus",
+                "not_bms_fault_latched": "HvFeedbackStatus",
+                "not_imd_fault_latched": "HvFeedbackStatus",
+                "not_ext_fault_latched": "HvFeedbackStatus",
                 "imd_ok": "HvFeedbackStatus",
                 "plausible_state_rc": "HvFeedbackStatus",
                 "tsal_green": "HvFeedbackStatus",
@@ -679,6 +692,43 @@
                         3.3
                     ]
                 }
+            }
+        },
+        {
+            "name": "HV_IMD_STATUS",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Internal status of the IMD",
+            "contents": {
+                "status": "HvImdStatus",
+                "frequency": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0.0,
+                        60.0
+                    ],
+                    "comment": "IMD frequency in Hz"
+                },
+                "duty_cycle": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "comment": "IMD duty cycle percentage"
+                },
+                "feedback_not_imd_fault_cockpit_led": "HvFeedbackStatus",
+                "feedback_not_imd_fault_latched": "HvFeedbackStatus"
             }
         }
     ]
