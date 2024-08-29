@@ -31,6 +31,14 @@
                 "expired"
             ]
         },
+        "CellboardBalancingStatus": {
+            "type": "enum",
+            "items": [
+                "stopped",
+                "paused",
+                "running"
+            ]
+        },
         "CellboardDischargingCells": {
             "type": "bitset",
             "items": [
@@ -332,15 +340,16 @@
             "name": "CELLBOARD_BALANCING_STATUS",
             "topic": "HYDRA",
             "priority": 3,
-            "interval": 200,
+            "interval": 50,
             "sending": [
                 "HV"
             ],
             "receiving": [
                 "HV"
             ],
-            "description": "Info about the cells that are currently discharging, only sent during the balancing procedure",
+            "description": "Info about the cells that are currently discharging",
             "contents": {
+                "status": "CellboardBalancingStatus",
                 "cellboard_id": "CellboardId",
                 "discharging": "CellboardDischargingCells"
             }
