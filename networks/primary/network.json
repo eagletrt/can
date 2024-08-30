@@ -526,13 +526,13 @@
         {
             "name": "HV_CELLS_VOLTAGE",
             "topic": "HYDRA",
-            "priority": 2,
+            "priority": 3,
             "interval": 50,
             "sending": [
                 "HV"
             ],
             "receiving": [],
-            "description": "Cells voltages in V",
+            "description": "HV cells voltages in V",
             "contents": {
                 "cellboard_id": "HvCellboardId",
                 "offset": {
@@ -546,28 +546,28 @@
                     "comment": "Offset from the first cell of the segment"
                 },
                 "voltage_0": {
-                    "type": "float",
+                    "type": "float32",
+                    "force": "uint16",
                     "range": [
                         0,
                         5
-                    ],
-                    "precision": 0.0013
+                    ]
                 },
                 "voltage_1": {
-                    "type": "float",
+                    "type": "float32",
+                    "force": "uint16",
                     "range": [
                         0,
                         5
-                    ],
-                    "precision": 0.0013
+                    ]
                 },
                 "voltage_2": {
-                    "type": "float",
+                    "type": "float32",
+                    "force": "uint16",
                     "range": [
                         0,
                         5
-                    ],
-                    "precision": 0.0013
+                    ]
                 }
             }
         },
@@ -608,6 +608,61 @@
                         605
                     ],
                     "comment": "Sum of all the cells voltages of the BMS in V"
+                }
+            }
+        },
+        {
+            "name": "HV_CELLS_TEMPERATURE",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "HV cells temperatures in °C",
+            "contents": {
+                "cellboard_id": "HvCellboardId",
+                "offset": {
+                    "type": "uint8",
+                    "range": [
+                        0,
+                        44
+                    ],
+                    "precision": 4,
+                    "comment": "The offset is the position of the cell corresponding to the first temperature in the message"
+                },
+                "temperature_0": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                },
+                "temperature_1": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                },
+                "temperature_2": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                },
+                "temperature_3": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
                 }
             }
         },

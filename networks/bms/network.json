@@ -216,9 +216,9 @@
                     "force": "uint8",
                     "range": [
                         0,
-                        20
+                        21
                     ],
-                    "precision": 4,
+                    "precision": 3,
                     "comment": "The offset is the position of the cell corresponding to the first voltage in the message"
                 },
                 "voltage_0": {
