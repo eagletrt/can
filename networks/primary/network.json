@@ -524,6 +524,26 @@
             }
         },
         {
+            "name": "HV_SOC",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "contents": {
+                "soc": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        1
+                    ]
+                }
+            }
+        },
+        {
             "name": "HV_CELLS_VOLTAGE",
             "topic": "HYDRA",
             "priority": 3,
