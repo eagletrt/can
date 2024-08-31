@@ -513,7 +513,7 @@
             "receiving": [],
             "description": "Mainboard power in kW",
             "contents": {
-                "current": {
+                "power": {
                     "type": "float32",
                     "force": "uint16",
                     "range": [
