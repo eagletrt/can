@@ -643,14 +643,33 @@
             "description": "HV cells temperatures in °C",
             "contents": {
                 "cellboard_id": "HvCellboardId",
-                "offset": {
+                "temperature_id_0": {
                     "type": "uint8",
                     "range": [
-                        0,
-                        44
-                    ],
-                    "precision": 4,
-                    "comment": "The offset is the position of the cell corresponding to the first temperature in the message"
+                        1,
+                        75
+                    ]
+                },
+                "temperature_id_1": {
+                    "type": "uint8",
+                    "range": [
+                        1,
+                        75
+                    ]
+                },
+                "temperature_id_2": {
+                    "type": "uint8",
+                    "range": [
+                        1,
+                        75
+                    ]
+                },
+                "temperature_id_3": {
+                    "type": "uint8",
+                    "range": [
+                        1,
+                        75
+                    ]
                 },
                 "temperature_0": {
                     "type": "float32",
