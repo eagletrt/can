@@ -213,12 +213,10 @@
                 "cellboard_id": "CellboardId",
                 "offset": {
                     "type": "uint8",
-                    "force": "uint8",
                     "range": [
                         0,
                         21
                     ],
-                    "precision": 3,
                     "comment": "The offset is the position of the cell corresponding to the first voltage in the message"
                 },
                 "voltage_0": {
@@ -267,7 +265,6 @@
                         0,
                         44
                     ],
-                    "precision": 4,
                     "comment": "The offset is the position of the cell corresponding to the first temperature in the message"
                 },
                 "temperature_0": {
