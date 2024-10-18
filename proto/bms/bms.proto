@@ -786,7 +786,7 @@ enum bms_cellboard_errors_open_wire {
 }
 
 
-message IVT_Msg_Result_Wh{
+message IVT_MSG_RESULT_WH{
 	bms_ivt_msg_result_wh_ivt_id_result_wh IVT_ID_Result_Wh = 1;
 	bool IVT_Result_Wh_System_Error = 2;
 	bool IVT_Result_Wh_Measurement_Error = 3;
@@ -796,7 +796,7 @@ message IVT_Msg_Result_Wh{
 	int32 IVT_Result_Wh = 7;
 	uint64 _inner_timestamp = 8;
 }
-message IVT_Msg_Result_As{
+message IVT_MSG_RESULT_AS{
 	bms_ivt_msg_result_as_ivt_id_result_as IVT_ID_Result_As = 1;
 	bool IVT_Result_As_System_Error = 2;
 	bool IVT_Result_As_Measurement_Error = 3;
@@ -806,7 +806,7 @@ message IVT_Msg_Result_As{
 	int32 IVT_Result_As = 7;
 	uint64 _inner_timestamp = 8;
 }
-message IVT_Msg_Result_W{
+message IVT_MSG_RESULT_W{
 	bms_ivt_msg_result_w_ivt_id_result_w IVT_ID_Result_W = 1;
 	bool IVT_Result_W_System_Error = 2;
 	bool IVT_Result_W_Measurement_Error = 3;
@@ -816,7 +816,7 @@ message IVT_Msg_Result_W{
 	int32 IVT_Result_W = 7;
 	uint64 _inner_timestamp = 8;
 }
-message IVT_Msg_Response{
+message IVT_MSG_RESPONSE{
 	bms_ivt_msg_response_ivt_id_response IVT_ID_Response = 1;
 	uint32 _B1_Trigger_spare = 2;
 	uint32 _FF_Wrong_Command = 3;
@@ -919,7 +919,7 @@ message IVT_Msg_Response{
 	uint32 _BA_Resp_SW_Ver_Internal = 100;
 	uint64 _inner_timestamp = 101;
 }
-message IVT_Msg_Result_T{
+message IVT_MSG_RESULT_T{
 	bms_ivt_msg_result_t_ivt_id_result_t IVT_ID_Result_T = 1;
 	bool IVT_Result_T_System_Error = 2;
 	bool IVT_Result_T_Measurement_Error = 3;
@@ -929,7 +929,7 @@ message IVT_Msg_Result_T{
 	float IVT_Result_T = 7;
 	uint64 _inner_timestamp = 8;
 }
-message IVT_Msg_Result_U3{
+message IVT_MSG_RESULT_U3{
 	bms_ivt_msg_result_u3_ivt_id_result_u3 IVT_ID_Result_U3 = 1;
 	bool IVT_Result_U3_System_Error = 2;
 	bool IVT_Result_U3_Measurement_Error = 3;
@@ -939,7 +939,7 @@ message IVT_Msg_Result_U3{
 	int32 IVT_Result_U3 = 7;
 	uint64 _inner_timestamp = 8;
 }
-message IVT_Msg_Result_U2{
+message IVT_MSG_RESULT_U2{
 	bms_ivt_msg_result_u2_ivt_id_result_u2 IVT_ID_Result_U2 = 1;
 	bool IVT_Result_U2_System_Error = 2;
 	bool IVT_Result_U2_Measurement_Error = 3;
@@ -949,7 +949,7 @@ message IVT_Msg_Result_U2{
 	int32 IVT_Result_U2 = 7;
 	uint64 _inner_timestamp = 8;
 }
-message IVT_Msg_Result_U1{
+message IVT_MSG_RESULT_U1{
 	bms_ivt_msg_result_u1_ivt_id_result_u1 IVT_ID_Result_U1 = 1;
 	bool IVT_Result_U1_System_Error = 2;
 	bool IVT_Result_U1_Measurement_Error = 3;
@@ -959,7 +959,7 @@ message IVT_Msg_Result_U1{
 	int32 IVT_Result_U1 = 7;
 	uint64 _inner_timestamp = 8;
 }
-message IVT_Msg_Result_I{
+message IVT_MSG_RESULT_I{
 	bms_ivt_msg_result_i_ivt_id_result_i IVT_ID_Result_I = 1;
 	bool IVT_Result_I_System_Error = 2;
 	bool IVT_Result_I_Measurement_Error = 3;
@@ -969,7 +969,7 @@ message IVT_Msg_Result_I{
 	int32 IVT_Result_I = 7;
 	uint64 _inner_timestamp = 8;
 }
-message IVT_Msg_Cmd{
+message IVT_MSG_CMD{
 	bms_ivt_msg_cmd_ivt_id_cmd IVT_ID_Cmd = 1;
 	uint32 _31_Trigger_spare = 2;
 	uint32 _10_Set_Can_ID_val_I = 3;
@@ -1286,16 +1286,16 @@ message CELLBOARD_ERRORS{
 
 
 message Pack{
-	repeated IVT_Msg_Result_Wh IVT_Msg_Result_Wh = 1;
-	repeated IVT_Msg_Result_As IVT_Msg_Result_As = 2;
-	repeated IVT_Msg_Result_W IVT_Msg_Result_W = 3;
-	repeated IVT_Msg_Response IVT_Msg_Response = 4;
-	repeated IVT_Msg_Result_T IVT_Msg_Result_T = 5;
-	repeated IVT_Msg_Result_U3 IVT_Msg_Result_U3 = 6;
-	repeated IVT_Msg_Result_U2 IVT_Msg_Result_U2 = 7;
-	repeated IVT_Msg_Result_U1 IVT_Msg_Result_U1 = 8;
-	repeated IVT_Msg_Result_I IVT_Msg_Result_I = 9;
-	repeated IVT_Msg_Cmd IVT_Msg_Cmd = 10;
+	repeated IVT_MSG_RESULT_WH IVT_MSG_RESULT_WH = 1;
+	repeated IVT_MSG_RESULT_AS IVT_MSG_RESULT_AS = 2;
+	repeated IVT_MSG_RESULT_W IVT_MSG_RESULT_W = 3;
+	repeated IVT_MSG_RESPONSE IVT_MSG_RESPONSE = 4;
+	repeated IVT_MSG_RESULT_T IVT_MSG_RESULT_T = 5;
+	repeated IVT_MSG_RESULT_U3 IVT_MSG_RESULT_U3 = 6;
+	repeated IVT_MSG_RESULT_U2 IVT_MSG_RESULT_U2 = 7;
+	repeated IVT_MSG_RESULT_U1 IVT_MSG_RESULT_U1 = 8;
+	repeated IVT_MSG_RESULT_I IVT_MSG_RESULT_I = 9;
+	repeated IVT_MSG_CMD IVT_MSG_CMD = 10;
 	repeated BOARD_STATUS BOARD_STATUS = 11;
 	repeated TEMPERATURES_INFO TEMPERATURES_INFO = 12;
 	repeated TEMPERATURES TEMPERATURES = 13;
