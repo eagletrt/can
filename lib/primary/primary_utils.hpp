@@ -133,10 +133,11 @@
 /* END */
 
 /* START */
-#define HV_JMP_TO_BLT "HV_JMP_TO_BLT"
+#define HV_FLASH "HV_FLASH"
 
-#define HV_JMP_TO_BLT_FORWARD "hv_jmp_to_blt_forward"
-#define HV_JMP_TO_BLT_CELLBOARD_ID "hv_jmp_to_blt_cellboard_id"
+#define HV_FLASH_START "hv_flash_start"
+#define HV_FLASH_FORWARD "hv_flash_forward"
+#define HV_FLASH_CELLBOARD_ID "hv_flash_cellboard_id"
 /* END */
 
 /* START */
@@ -293,8 +294,8 @@
 #define HV_CELLBOARD_VERSION "HV_CELLBOARD_VERSION"
 
 #define HV_CELLBOARD_VERSION_CELLBOARD_ID "hv_cellboard_version_cellboard_id"
-#define HV_CELLBOARD_VERSION_COMPONENT_VERSION "hv_cellboard_version_component_version"
 #define HV_CELLBOARD_VERSION_CANLIB_BUILD_TIME "hv_cellboard_version_canlib_build_time"
+#define HV_CELLBOARD_VERSION_COMPONENT_BUILD_TIME "hv_cellboard_version_component_build_time"
 /* END */
 
 /* START */
@@ -374,26 +375,38 @@
 /* START */
 #define HV_FEEDBACK_STATUS "HV_FEEDBACK_STATUS"
 
-#define HV_FEEDBACK_STATUS_FEEDBACK_IMPLAUSIBILITY_DETECTED "hv_feedback_status_feedback_implausibility_detected"
-#define HV_FEEDBACK_STATUS_FEEDBACK_IMD_COCKPIT "hv_feedback_status_feedback_imd_cockpit"
+#define HV_FEEDBACK_STATUS_AIRN_OPEN_COM "hv_feedback_status_airn_open_com"
+#define HV_FEEDBACK_STATUS_PRECHARGE_OPEN_COM "hv_feedback_status_precharge_open_com"
+#define HV_FEEDBACK_STATUS_AIRP_OPEN_COM "hv_feedback_status_airp_open_com"
+#define HV_FEEDBACK_STATUS_AIRN_OPEN_MEC "hv_feedback_status_airn_open_mec"
+#define HV_FEEDBACK_STATUS_PRECHARGE_OPEN_MEC "hv_feedback_status_precharge_open_mec"
+#define HV_FEEDBACK_STATUS_AIRP_OPEN_MEC "hv_feedback_status_airp_open_mec"
+#define HV_FEEDBACK_STATUS_SD_IMD_FB "hv_feedback_status_sd_imd_fb"
+#define HV_FEEDBACK_STATUS_SD_BMS_FB "hv_feedback_status_sd_bms_fb"
+#define HV_FEEDBACK_STATUS_TS_LESS_THAN_60V "hv_feedback_status_ts_less_than_60v"
+#define HV_FEEDBACK_STATUS_PLAUSIBLE_STATE_PERSISTED "hv_feedback_status_plausible_state_persisted"
+#define HV_FEEDBACK_STATUS_PLAUSIBLE_STATE "hv_feedback_status_plausible_state"
+#define HV_FEEDBACK_STATUS_NOT_BMS_FAULT_COCKPIT_LED "hv_feedback_status_not_bms_fault_cockpit_led"
+#define HV_FEEDBACK_STATUS_NOT_IMD_FAULT_COCKPIT_LED "hv_feedback_status_not_imd_fault_cockpit_led"
+#define HV_FEEDBACK_STATUS_INDICATOR_CONNECTED "hv_feedback_status_indicator_connected"
+#define HV_FEEDBACK_STATUS_NOT_LATCH_RESET "hv_feedback_status_not_latch_reset"
+#define HV_FEEDBACK_STATUS_PLAUSIBLE_STATE_LATCHED "hv_feedback_status_plausible_state_latched"
+#define HV_FEEDBACK_STATUS_NOT_BMS_FAULT_LATCHED "hv_feedback_status_not_bms_fault_latched"
+#define HV_FEEDBACK_STATUS_NOT_IMD_FAULT_LATCHED "hv_feedback_status_not_imd_fault_latched"
+#define HV_FEEDBACK_STATUS_NOT_EXT_FAULT_LATCHED "hv_feedback_status_not_ext_fault_latched"
+#define HV_FEEDBACK_STATUS_IMD_OK "hv_feedback_status_imd_ok"
+#define HV_FEEDBACK_STATUS_PLAUSIBLE_STATE_RC "hv_feedback_status_plausible_state_rc"
+#define HV_FEEDBACK_STATUS_TSAL_GREEN "hv_feedback_status_tsal_green"
+#define HV_FEEDBACK_STATUS_PROBING_3V3 "hv_feedback_status_probing_3v3"
+#define HV_FEEDBACK_STATUS_SD_OUT "hv_feedback_status_sd_out"
+#define HV_FEEDBACK_STATUS_SD_IN "hv_feedback_status_sd_in"
+#define HV_FEEDBACK_STATUS_SD_END "hv_feedback_status_sd_end"
+#define HV_FEEDBACK_STATUS_V5_MCU "hv_feedback_status_v5_mcu"
 #define HV_FEEDBACK_STATUS_FEEDBACK_TSAL_GREEN_FAULT_LATCHED "hv_feedback_status_feedback_tsal_green_fault_latched"
-#define HV_FEEDBACK_STATUS_FEEDBACK_BMS_COCKPIT "hv_feedback_status_feedback_bms_cockpit"
 #define HV_FEEDBACK_STATUS_FEEDBACK_EXT_LATCHED "hv_feedback_status_feedback_ext_latched"
-#define HV_FEEDBACK_STATUS_FEEDBACK_TSAL_GREEN "hv_feedback_status_feedback_tsal_green"
-#define HV_FEEDBACK_STATUS_FEEDBACK_TS_OVER_60V_STATUS "hv_feedback_status_feedback_ts_over_60v_status"
-#define HV_FEEDBACK_STATUS_FEEDBACK_AIRN_STATUS "hv_feedback_status_feedback_airn_status"
-#define HV_FEEDBACK_STATUS_FEEDBACK_AIRP_STATUS "hv_feedback_status_feedback_airp_status"
-#define HV_FEEDBACK_STATUS_FEEDBACK_AIRP_GATE "hv_feedback_status_feedback_airp_gate"
-#define HV_FEEDBACK_STATUS_FEEDBACK_AIRN_GATE "hv_feedback_status_feedback_airn_gate"
 #define HV_FEEDBACK_STATUS_FEEDBACK_PRECHARGE_STATUS "hv_feedback_status_feedback_precharge_status"
 #define HV_FEEDBACK_STATUS_FEEDBACK_TSP_OVER_60V_STATUS "hv_feedback_status_feedback_tsp_over_60v_status"
-#define HV_FEEDBACK_STATUS_FEEDBACK_IMD_FAULT "hv_feedback_status_feedback_imd_fault"
 #define HV_FEEDBACK_STATUS_FEEDBACK_CHECK_MUX "hv_feedback_status_feedback_check_mux"
-#define HV_FEEDBACK_STATUS_FEEDBACK_SD_END "hv_feedback_status_feedback_sd_end"
-#define HV_FEEDBACK_STATUS_FEEDBACK_SD_OUT "hv_feedback_status_feedback_sd_out"
-#define HV_FEEDBACK_STATUS_FEEDBACK_SD_IN "hv_feedback_status_feedback_sd_in"
-#define HV_FEEDBACK_STATUS_FEEDBACK_SD_BMS "hv_feedback_status_feedback_sd_bms"
-#define HV_FEEDBACK_STATUS_FEEDBACK_SD_IMD "hv_feedback_status_feedback_sd_imd"
 /* END */
 
 /* START */
@@ -434,11 +447,13 @@
 /* START */
 #define HV_IMD_STATUS "HV_IMD_STATUS"
 
+#define HV_IMD_STATUS_STATUS "hv_imd_status_status"
+#define HV_IMD_STATUS_FREQUENCY "hv_imd_status_frequency"
+#define HV_IMD_STATUS_DUTY_CYCLE "hv_imd_status_duty_cycle"
+#define HV_IMD_STATUS_FEEDBACK_NOT_IMD_FAULT_COCKPIT_LED "hv_imd_status_feedback_not_imd_fault_cockpit_led"
+#define HV_IMD_STATUS_FEEDBACK_NOT_IMD_FAULT_LATCHED "hv_imd_status_feedback_not_imd_fault_latched"
 #define HV_IMD_STATUS_IMD_FAULT "hv_imd_status_imd_fault"
-#define HV_IMD_STATUS_IMD_STATUS "hv_imd_status_imd_status"
 #define HV_IMD_STATUS_IMD_DETAILS "hv_imd_status_imd_details"
-#define HV_IMD_STATUS_IMD_DUTY_CYCLE "hv_imd_status_imd_duty_cycle"
-#define HV_IMD_STATUS_IMD_FREQ "hv_imd_status_imd_freq"
 #define HV_IMD_STATUS_IMD_PERIOD "hv_imd_status_imd_period"
 /* END */
 
@@ -446,17 +461,25 @@
 #define HV_STATUS "HV_STATUS"
 
 #define HV_STATUS_STATUS "hv_status_status"
+#define HV_STATUS_CELLBOARD_0 "hv_status_cellboard_0"
+#define HV_STATUS_CELLBOARD_1 "hv_status_cellboard_1"
+#define HV_STATUS_CELLBOARD_2 "hv_status_cellboard_2"
+#define HV_STATUS_CELLBOARD_3 "hv_status_cellboard_3"
+#define HV_STATUS_CELLBOARD_4 "hv_status_cellboard_4"
+#define HV_STATUS_CELLBOARD_5 "hv_status_cellboard_5"
 /* END */
 
 /* START */
 #define HV_SET_STATUS_ECU "HV_SET_STATUS_ECU"
 
+#define HV_SET_STATUS_ECU_STATUS "hv_set_status_ecu_status"
 #define HV_SET_STATUS_ECU_HV_STATUS_SET "hv_set_status_ecu_hv_status_set"
 /* END */
 
 /* START */
 #define HV_SET_STATUS_HANDCART "HV_SET_STATUS_HANDCART"
 
+#define HV_SET_STATUS_HANDCART_STATUS "hv_set_status_handcart_status"
 #define HV_SET_STATUS_HANDCART_HV_STATUS_SET "hv_set_status_handcart_hv_status_set"
 /* END */
 
@@ -492,20 +515,49 @@
 #define HV_BALANCING_STATUS_BALANCING_CELLS_CELL15 "hv_balancing_status_balancing_cells_cell15"
 #define HV_BALANCING_STATUS_BALANCING_CELLS_CELL16 "hv_balancing_status_balancing_cells_cell16"
 #define HV_BALANCING_STATUS_BALANCING_CELLS_CELL17 "hv_balancing_status_balancing_cells_cell17"
-/* END */
-
-/* START */
-#define HV_SET_BALANCING_STATUS_HANDCART "HV_SET_BALANCING_STATUS_HANDCART"
-
-#define HV_SET_BALANCING_STATUS_HANDCART_SET_BALANCING_STATUS "hv_set_balancing_status_handcart_set_balancing_status"
-#define HV_SET_BALANCING_STATUS_HANDCART_BALANCING_THRESHOLD "hv_set_balancing_status_handcart_balancing_threshold"
+#define HV_BALANCING_STATUS_STATUS "hv_balancing_status_status"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_0 "hv_balancing_status_discharging_cell_0"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_1 "hv_balancing_status_discharging_cell_1"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_2 "hv_balancing_status_discharging_cell_2"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_3 "hv_balancing_status_discharging_cell_3"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_4 "hv_balancing_status_discharging_cell_4"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_5 "hv_balancing_status_discharging_cell_5"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_6 "hv_balancing_status_discharging_cell_6"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_7 "hv_balancing_status_discharging_cell_7"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_8 "hv_balancing_status_discharging_cell_8"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_9 "hv_balancing_status_discharging_cell_9"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_10 "hv_balancing_status_discharging_cell_10"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_11 "hv_balancing_status_discharging_cell_11"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_12 "hv_balancing_status_discharging_cell_12"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_13 "hv_balancing_status_discharging_cell_13"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_14 "hv_balancing_status_discharging_cell_14"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_15 "hv_balancing_status_discharging_cell_15"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_16 "hv_balancing_status_discharging_cell_16"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_17 "hv_balancing_status_discharging_cell_17"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_18 "hv_balancing_status_discharging_cell_18"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_19 "hv_balancing_status_discharging_cell_19"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_20 "hv_balancing_status_discharging_cell_20"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_21 "hv_balancing_status_discharging_cell_21"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_22 "hv_balancing_status_discharging_cell_22"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_23 "hv_balancing_status_discharging_cell_23"
 /* END */
 
 /* START */
 #define HV_SET_BALANCING_STATUS_STEERING_WHEEL "HV_SET_BALANCING_STATUS_STEERING_WHEEL"
 
+#define HV_SET_BALANCING_STATUS_STEERING_WHEEL_STATUS "hv_set_balancing_status_steering_wheel_status"
+#define HV_SET_BALANCING_STATUS_STEERING_WHEEL_THRESHOLD "hv_set_balancing_status_steering_wheel_threshold"
 #define HV_SET_BALANCING_STATUS_STEERING_WHEEL_SET_BALANCING_STATUS "hv_set_balancing_status_steering_wheel_set_balancing_status"
 #define HV_SET_BALANCING_STATUS_STEERING_WHEEL_BALANCING_THRESHOLD "hv_set_balancing_status_steering_wheel_balancing_threshold"
+/* END */
+
+/* START */
+#define HV_SET_BALANCING_STATUS_HANDCART "HV_SET_BALANCING_STATUS_HANDCART"
+
+#define HV_SET_BALANCING_STATUS_HANDCART_STATUS "hv_set_balancing_status_handcart_status"
+#define HV_SET_BALANCING_STATUS_HANDCART_THRESHOLD "hv_set_balancing_status_handcart_threshold"
+#define HV_SET_BALANCING_STATUS_HANDCART_SET_BALANCING_STATUS "hv_set_balancing_status_handcart_set_balancing_status"
+#define HV_SET_BALANCING_STATUS_HANDCART_BALANCING_THRESHOLD "hv_set_balancing_status_handcart_balancing_threshold"
 /* END */
 
 /* START */
@@ -956,7 +1008,8 @@
 /* START */
 #define HV_CELLS_VOLTAGE "HV_CELLS_VOLTAGE"
 
-#define HV_CELLS_VOLTAGE_START_INDEX "hv_cells_voltage_start_index"
+#define HV_CELLS_VOLTAGE_CELLBOARD_ID "hv_cells_voltage_cellboard_id"
+#define HV_CELLS_VOLTAGE_OFFSET "hv_cells_voltage_offset"
 #define HV_CELLS_VOLTAGE_VOLTAGE_0 "hv_cells_voltage_voltage_0"
 #define HV_CELLS_VOLTAGE_VOLTAGE_1 "hv_cells_voltage_voltage_1"
 #define HV_CELLS_VOLTAGE_VOLTAGE_2 "hv_cells_voltage_voltage_2"
@@ -1072,6 +1125,41 @@
 #define DEBUG_SIGNAL_4_FIELD_1 "debug_signal_4_field_1"
 #define DEBUG_SIGNAL_4_FIELD_2 "debug_signal_4_field_2"
 #define DEBUG_SIGNAL_4_FIELD_3 "debug_signal_4_field_3"
+/* END */
+
+/* START */
+#define HV_FLASH_REQUEST "HV_FLASH_REQUEST"
+
+#define HV_FLASH_REQUEST_MAINBOARD "hv_flash_request_mainboard"
+#define HV_FLASH_REQUEST_CELLBOARD_ID "hv_flash_request_cellboard_id"
+/* END */
+
+/* START */
+#define HV_FLASH_RESPONSE "HV_FLASH_RESPONSE"
+
+#define HV_FLASH_RESPONSE_READY "hv_flash_response_ready"
+/* END */
+
+/* START */
+#define HV_TS_VOLTAGE "HV_TS_VOLTAGE"
+
+#define HV_TS_VOLTAGE_TS "hv_ts_voltage_ts"
+#define HV_TS_VOLTAGE_PACK "hv_ts_voltage_pack"
+#define HV_TS_VOLTAGE_CELLS_SUM "hv_ts_voltage_cells_sum"
+/* END */
+
+/* START */
+#define HV_CELLS_TEMPERATURE "HV_CELLS_TEMPERATURE"
+
+#define HV_CELLS_TEMPERATURE_CELLBOARD_ID "hv_cells_temperature_cellboard_id"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_0 "hv_cells_temperature_temperature_id_0"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_1 "hv_cells_temperature_temperature_id_1"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_2 "hv_cells_temperature_temperature_id_2"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_3 "hv_cells_temperature_temperature_id_3"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_0 "hv_cells_temperature_temperature_0"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_1 "hv_cells_temperature_temperature_1"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_2 "hv_cells_temperature_temperature_2"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_3 "hv_cells_temperature_temperature_3"
 /* END */
 
 /* START */
@@ -1321,46 +1409,119 @@
 #define CHARGER_19_DATA_7 "charger_19_data_7"
 /* END */
 
+/* START */
+#define HV_FEEDBACK_DIGITAL "HV_FEEDBACK_DIGITAL"
+
+#define HV_FEEDBACK_DIGITAL_DIGITAL_AIRN_OPEN_COM "hv_feedback_digital_digital_airn_open_com"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_AIRP_OPEN_COM "hv_feedback_digital_digital_airp_open_com"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_SD_IMD_FB "hv_feedback_digital_digital_sd_imd_fb"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_SD_BMS_FB "hv_feedback_digital_digital_sd_bms_fb"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_PRECHARGE_OPEN_COM "hv_feedback_digital_digital_precharge_open_com"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_PRECHARGE_OPEN_MEC "hv_feedback_digital_digital_precharge_open_mec"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_TS_LESS_THAN_60V "hv_feedback_digital_digital_ts_less_than_60v"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_PLAUSIBLE_STATE_PERSISTED "hv_feedback_digital_digital_plausible_state_persisted"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_PLAUSIBLE_STATE "hv_feedback_digital_digital_plausible_state"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_BMS_FAULT_COCKPIT_LED "hv_feedback_digital_digital_not_bms_fault_cockpit_led"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_IMD_FAULT_COCKPIT_LED "hv_feedback_digital_digital_not_imd_fault_cockpit_led"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_INDICATOR_CONNECTED "hv_feedback_digital_digital_indicator_connected"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_LATCH_RESET "hv_feedback_digital_digital_not_latch_reset"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_PLAUSIBLE_STATE_LATCHED "hv_feedback_digital_digital_plausible_state_latched"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_BMS_FAULT_LATCHED "hv_feedback_digital_digital_not_bms_fault_latched"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_IMD_FAULT_LATCHED "hv_feedback_digital_digital_not_imd_fault_latched"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_EXT_FAULT_LATCHED "hv_feedback_digital_digital_not_ext_fault_latched"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_ANALOG "HV_FEEDBACK_ANALOG"
+
+#define HV_FEEDBACK_ANALOG_ANALOG_AIRN_OPEN_MEC "hv_feedback_analog_analog_airn_open_mec"
+#define HV_FEEDBACK_ANALOG_ANALOG_AIRP_OPEN_MEC "hv_feedback_analog_analog_airp_open_mec"
+#define HV_FEEDBACK_ANALOG_ANALOG_IMD_OK "hv_feedback_analog_analog_imd_ok"
+#define HV_FEEDBACK_ANALOG_ANALOG_PLAUSIBLE_STATE_RC "hv_feedback_analog_analog_plausible_state_rc"
+#define HV_FEEDBACK_ANALOG_ANALOG_TSAL_GREEN "hv_feedback_analog_analog_tsal_green"
+#define HV_FEEDBACK_ANALOG_ANALOG_PROBING_3V3 "hv_feedback_analog_analog_probing_3v3"
+#define HV_FEEDBACK_ANALOG_ANALOG_V5_MCU "hv_feedback_analog_analog_v5_mcu"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_ANALOG_SD "HV_FEEDBACK_ANALOG_SD"
+
+#define HV_FEEDBACK_ANALOG_SD_SD_OUT "hv_feedback_analog_sd_sd_out"
+#define HV_FEEDBACK_ANALOG_SD_SD_IN "hv_feedback_analog_sd_sd_in"
+#define HV_FEEDBACK_ANALOG_SD_SD_END "hv_feedback_analog_sd_sd_end"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_ENZOMMA "HV_FEEDBACK_ENZOMMA"
+
+#define HV_FEEDBACK_ENZOMMA_FEEDBACK "hv_feedback_enzomma_feedback"
+#define HV_FEEDBACK_ENZOMMA_STATUS "hv_feedback_enzomma_status"
+#define HV_FEEDBACK_ENZOMMA_IS_DIGITAL "hv_feedback_enzomma_is_digital"
+#define HV_FEEDBACK_ENZOMMA_DIGITAL "hv_feedback_enzomma_digital"
+#define HV_FEEDBACK_ENZOMMA_ANALOG "hv_feedback_enzomma_analog"
+/* END */
+
 enum primary_types_id{
-	e_primary_uint16_t = -5,
-	e_primary_uint8_t,
+	e_primary_uint8_t = -5,
+	e_primary_uint16_t,
 	e_primary_uint32_t,
 	e_primary_uint64_t,
 	e_primary_float,
 
-	e_primary_hv_jmp_to_blt_forward,
-	e_primary_hv_jmp_to_blt_cellboard_id,
+	e_primary_hv_flash_forward,
+	e_primary_hv_flash_cellboard_id,
 	e_primary_hv_cellboard_version_cellboard_id,
 	e_primary_hv_fans_status_fans_override,
 	e_primary_hv_set_fans_status_fans_override,
-	e_primary_hv_feedback_status_feedback_implausibility_detected,
-	e_primary_hv_feedback_status_feedback_imd_cockpit,
+	e_primary_hv_feedback_status_airn_open_com,
+	e_primary_hv_feedback_status_precharge_open_com,
+	e_primary_hv_feedback_status_airp_open_com,
+	e_primary_hv_feedback_status_airn_open_mec,
+	e_primary_hv_feedback_status_precharge_open_mec,
+	e_primary_hv_feedback_status_airp_open_mec,
+	e_primary_hv_feedback_status_sd_imd_fb,
+	e_primary_hv_feedback_status_sd_bms_fb,
+	e_primary_hv_feedback_status_ts_less_than_60v,
+	e_primary_hv_feedback_status_plausible_state_persisted,
+	e_primary_hv_feedback_status_plausible_state,
+	e_primary_hv_feedback_status_not_bms_fault_cockpit_led,
+	e_primary_hv_feedback_status_not_imd_fault_cockpit_led,
+	e_primary_hv_feedback_status_indicator_connected,
+	e_primary_hv_feedback_status_not_latch_reset,
+	e_primary_hv_feedback_status_plausible_state_latched,
+	e_primary_hv_feedback_status_not_bms_fault_latched,
+	e_primary_hv_feedback_status_not_imd_fault_latched,
+	e_primary_hv_feedback_status_not_ext_fault_latched,
+	e_primary_hv_feedback_status_imd_ok,
+	e_primary_hv_feedback_status_plausible_state_rc,
+	e_primary_hv_feedback_status_tsal_green,
+	e_primary_hv_feedback_status_probing_3v3,
+	e_primary_hv_feedback_status_sd_out,
+	e_primary_hv_feedback_status_sd_in,
+	e_primary_hv_feedback_status_sd_end,
+	e_primary_hv_feedback_status_v5_mcu,
 	e_primary_hv_feedback_status_feedback_tsal_green_fault_latched,
-	e_primary_hv_feedback_status_feedback_bms_cockpit,
 	e_primary_hv_feedback_status_feedback_ext_latched,
-	e_primary_hv_feedback_status_feedback_tsal_green,
-	e_primary_hv_feedback_status_feedback_ts_over_60v_status,
-	e_primary_hv_feedback_status_feedback_airn_status,
-	e_primary_hv_feedback_status_feedback_airp_status,
-	e_primary_hv_feedback_status_feedback_airp_gate,
-	e_primary_hv_feedback_status_feedback_airn_gate,
 	e_primary_hv_feedback_status_feedback_precharge_status,
 	e_primary_hv_feedback_status_feedback_tsp_over_60v_status,
-	e_primary_hv_feedback_status_feedback_imd_fault,
 	e_primary_hv_feedback_status_feedback_check_mux,
-	e_primary_hv_feedback_status_feedback_sd_end,
-	e_primary_hv_feedback_status_feedback_sd_out,
-	e_primary_hv_feedback_status_feedback_sd_in,
-	e_primary_hv_feedback_status_feedback_sd_bms,
-	e_primary_hv_feedback_status_feedback_sd_imd,
-	e_primary_hv_imd_status_imd_status,
+	e_primary_hv_imd_status_status,
+	e_primary_hv_imd_status_feedback_not_imd_fault_cockpit_led,
+	e_primary_hv_imd_status_feedback_not_imd_fault_latched,
 	e_primary_hv_status_status,
+	e_primary_hv_status_cellboard_0,
+	e_primary_hv_status_cellboard_1,
+	e_primary_hv_status_cellboard_2,
+	e_primary_hv_status_cellboard_3,
+	e_primary_hv_status_cellboard_4,
+	e_primary_hv_status_cellboard_5,
 	e_primary_hv_set_status_ecu_hv_status_set,
 	e_primary_hv_set_status_handcart_hv_status_set,
 	e_primary_hv_balancing_status_cellboard_id,
 	e_primary_hv_balancing_status_balancing_status,
-	e_primary_hv_set_balancing_status_handcart_set_balancing_status,
+	e_primary_hv_balancing_status_status,
 	e_primary_hv_set_balancing_status_steering_wheel_set_balancing_status,
+	e_primary_hv_set_balancing_status_handcart_set_balancing_status,
 	e_primary_lv_status_status,
 	e_primary_lv_charging_status_status,
 	e_primary_lv_cooling_aggressiveness_status,
@@ -1393,13 +1554,18 @@ enum primary_types_id{
 	e_primary_control_status_sc_state,
 	e_primary_control_status_tv_state,
 	e_primary_control_status_reg_state,
+	e_primary_hv_cells_voltage_cellboard_id,
 	e_primary_ecu_steer_actuator_status_status,
 	e_primary_ecu_set_steer_actuator_status_steering_wheel_status,
 	e_primary_ecu_set_steer_actuator_status_tlm_status,
 	e_primary_debug_signal_1_device_id,
 	e_primary_debug_signal_2_device_id,
 	e_primary_debug_signal_3_device_id,
-	e_primary_debug_signal_4_device_id
+	e_primary_debug_signal_4_device_id,
+	e_primary_hv_flash_request_cellboard_id,
+	e_primary_hv_cells_temperature_cellboard_id,
+	e_primary_hv_feedback_enzomma_feedback,
+	e_primary_hv_feedback_enzomma_status
 };
 
 /**

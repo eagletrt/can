@@ -2,6 +2,600 @@ syntax = "proto3";
 package bms;
 
 
+enum bms_ivt_msg_result_wh_ivt_id_result_wh {
+	bms_ivt_msg_result_wh_ivt_id_result_wh_none = 0;
+	bms_ivt_msg_result_wh_ivt_id_result_wh_Vt_Result_Wh = 7;
+}
+enum bms_ivt_msg_result_as_ivt_id_result_as {
+	bms_ivt_msg_result_as_ivt_id_result_as_none = 0;
+	bms_ivt_msg_result_as_ivt_id_result_as_Vt_Result_As = 6;
+}
+enum bms_ivt_msg_result_w_ivt_id_result_w {
+	bms_ivt_msg_result_w_ivt_id_result_w_none = 0;
+	bms_ivt_msg_result_w_ivt_id_result_w_Vt_Result_W = 5;
+}
+enum bms_ivt_msg_response_ivt_id_response {
+	bms_ivt_msg_response_ivt_id_response_none = 0;
+	bms_ivt_msg_response_ivt_id_response_Resp_Error_Log_Measurement_Error = 128;
+	bms_ivt_msg_response_ivt_id_response_Resp_Error_Log_System_Error = 129;
+	bms_ivt_msg_response_ivt_id_response_Resp_Error_Log_Overall_Logdata = 130;
+	bms_ivt_msg_response_ivt_id_response_Resp_Error_Log_Logdata_Since_Res = 131;
+	bms_ivt_msg_response_ivt_id_response_Resp_CAN_ID_Res_I = 144;
+	bms_ivt_msg_response_ivt_id_response_Resp_CAN_ID_Res_U1 = 145;
+	bms_ivt_msg_response_ivt_id_response_Resp_CAN_ID_Res_U2 = 146;
+	bms_ivt_msg_response_ivt_id_response_Resp_CAN_ID_Res_U3 = 147;
+	bms_ivt_msg_response_ivt_id_response_Resp_CAN_ID_Res_T = 148;
+	bms_ivt_msg_response_ivt_id_response_Resp_CAN_ID_Res_W = 149;
+	bms_ivt_msg_response_ivt_id_response_Resp_CAN_ID_Res_As = 150;
+	bms_ivt_msg_response_ivt_id_response_Resp_CAN_ID_Res_Wh = 151;
+	bms_ivt_msg_response_ivt_id_response_Resp_CAN_ID_Command = 157;
+	bms_ivt_msg_response_ivt_id_response_Resp_CAN_ID_Response = 159;
+	bms_ivt_msg_response_ivt_id_response_Resp_Config_Result_I = 160;
+	bms_ivt_msg_response_ivt_id_response_Resp_Config_Result_U1 = 161;
+	bms_ivt_msg_response_ivt_id_response_Resp_Config_Result_U2 = 162;
+	bms_ivt_msg_response_ivt_id_response_Resp_Config_Result_U3 = 163;
+	bms_ivt_msg_response_ivt_id_response_Resp_Config_Result_T = 164;
+	bms_ivt_msg_response_ivt_id_response_Resp_Config_Result_W = 165;
+	bms_ivt_msg_response_ivt_id_response_Resp_Config_Result_As = 166;
+	bms_ivt_msg_response_ivt_id_response_Resp_Config_Result_Wh = 167;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_Reset_Error_Logdata = 176;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_TRIGGER = 177;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_STORE = 178;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_OC_TEST_TIME = 179;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_MODE = 180;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_THRESHOLD_POS = 181;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_THRESHOLD_NEG = 182;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_DEVICE_ID = 185;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_SW_VERSION = 186;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_Serialnumber = 187;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_ArtNr = 188;
+	bms_ivt_msg_response_ivt_id_response_Resp_Get_Set_ALIVE = 191;
+	bms_ivt_msg_response_ivt_id_response_Resp_Cmd_Wrong_Command = 255;
+}
+enum bms_ivt_msg_response__80_resp_measerror_item {
+	bms_ivt_msg_response__80_resp_measerror_item_Resonse_all_meas_errors = 0;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_ADC_interrupt = 1;
+	bms_ivt_msg_response__80_resp_measerror_item_Reso_error_Overflow_ADC_ch_1 = 2;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_Underflow_ADC_ch_1 = 3;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_Overflow_ADC_ch_2 = 4;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_Underflow_ADC_ch_2 = 5;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_Vref = 6;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_cur_meas_implausible = 7;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp__error_therm_EMF_correction = 8;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_meas_I1_OpenCirc = 9;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_meas_U1_OpenCirc = 10;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_meas_U2_OpenCirc = 11;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_meas_U3_OpenCirc = 12;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_ntc_h_OpenCirc = 13;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_ntc_I_OpenCirc = 14;
+	bms_ivt_msg_response__80_resp_measerror_item_Resp_error_calibration_data = 15;
+}
+enum bms_ivt_msg_response__81_resp_systemerror_item {
+	bms_ivt_msg_response__81_resp_systemerror_item_Resonse_all_SystemErrors = 0;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_code_CRC = 1;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_Parameter_CRC = 2;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_CAN_bus_receive_Data = 3;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_CAN_bus_transmit_Data = 4;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_Overtemp = 5;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_Undertemp = 6;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_Power_failure = 7;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_System_Clock = 8;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_System_Init = 9;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_Configuration = 10;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_Overcurrent_detection = 11;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_eeprom_rw = 12;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_ADC_Clock = 13;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_Reset_illegal_opcode = 14;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_Reset_Watchdog = 15;
+	bms_ivt_msg_response__81_resp_systemerror_item_Resp_error_Reset_EMC = 16;
+}
+enum bms_ivt_msg_response__82_resp_alllogdata_item {
+	bms_ivt_msg_response__82_resp_alllogdata_item_Response_on_Overall_Logdata = 0;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_Ah_counter_overall = 1;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_Ah_counter_charging = 2;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_Ah_counter_discharging = 3;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_energy_counter_overall = 4;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_energy_counter_charging = 5;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_energy_counter_discharging = 6;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_overall = 16;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_cur_in_spec_limits = 17;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_cur_out_spec_limits = 18;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_volt_1_in_spec_limits = 19;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_volt_1_out_spec_limits = 20;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_volt_2_in_spec_limits = 21;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_volt_2_out_spec_limits = 22;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_volt_3_in_spec_limits = 23;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_volt_3_out_spec_limits = 24;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_temp_in_spec_limits = 25;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_run_temp_out_spec_limits = 26;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_oc_positive_activated = 27;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_oc_negative_activated = 28;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_current_maximum = 33;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_current_minimum = 34;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_U1_maximum = 35;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_U1_minimum = 36;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_U2_maxmimum = 37;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_U2_minimum = 38;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_U3_maximum = 39;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_U3_minimum = 40;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_temp_maxmimum = 41;
+	bms_ivt_msg_response__82_resp_alllogdata_item_Resp_temp_minimum = 42;
+}
+enum bms_ivt_msg_response__83_resp_logdata_item {
+	bms_ivt_msg_response__83_resp_logdata_item_Response_all_Logdata_SinceReset = 0;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_Ah_counter_overall = 1;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_Ah_counter_charging = 2;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_Ah_counter_discharging = 3;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_energy_counter_overall = 4;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_energy_counter_charging = 5;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_energy_counter_discharging = 6;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_overall = 16;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_cur_in_spec_limits = 17;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_cur_out_spec_limits = 18;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_volt_1_in_spec_limits = 19;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_volt_1_out_spec_limits = 20;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_volt_2_in_spec_limits = 21;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_volt_2_out_spec_limits = 22;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_volt_3_in_spec_limits = 23;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_volt_3_out_spec_limits = 24;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_temp_in_spec_limits = 25;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_run_temp_out_spec_limits = 26;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_oc_positive_activated = 27;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_oc_negative_activated = 28;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_current_maximum = 33;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_current_minimum = 34;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_U1_maximum = 35;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_U1_minimum = 36;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_U2_maxmimum = 37;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_U2_minimum = 38;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_U3_maximum = 39;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_U3_minimum = 40;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_temp_maxmimum = 41;
+	bms_ivt_msg_response__83_resp_logdata_item_Resp_temp_minimum = 42;
+}
+enum bms_ivt_msg_response__b0_resp_reset_item {
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_all_measurement_errors = 0;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_error_ADC_interrupt = 1;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_error_Overflow_ADC_ch1 = 2;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_error_Underflow_ADC_ch1 = 3;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_error_Overflow_ADC_ch2 = 4;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_error_Underflow_ADC_ch2 = 5;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_error_Vref = 6;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_error_current_implausible = 7;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_thermal_EMF_correction = 8;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_current_measI1_OpenCircuit = 9;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_voltage_measU1_OpenCircuit = 10;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_voltage_measU2_OpenCircuit = 11;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_voltage_measU3_OpenCircuit = 12;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_ntc_h_OpenCircuit = 13;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_ntc_I_OpenCircuit = 14;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_calibration_data_ = 15;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_all_System_errors = 256;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Code_CRC = 257;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Parameter_CRC = 258;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_CAN_bus_receive_Data = 259;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_CAN_bus_transmit_Data = 260;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_overtemp = 261;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_undertemp = 262;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_power_failure = 263;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_system_clock = 264;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_system_init = 265;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_configuration = 266;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_overcurrent_detection = 267;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_eeprom_rw = 268;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_ADC_Clock = 269;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_illegal_opcode = 270;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Reset_Watchdog = 271;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Reset_EMC = 272;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_all_Logdata_Since_Reset = 512;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Ah_counter_overall = 513;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Ah_counter_charging = 514;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Ah_counter_discharging = 515;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Energy_counter_overall = 516;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Energy_counter_charging = 517;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Energy_counter_discharging = 518;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Runtime_overall = 528;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_cur_in_spec_limits = 529;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_cur_out_spec_limits = 530;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_volt_1_in_spec_limits = 531;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_volt_1_out_spec_limits = 532;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_volt_2_in_spec_limits = 533;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_volt_2_out_spec_limits = 534;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_volt_3_in_spec_limits = 535;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_volt_3_out_spec_limits = 536;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_temp_in_spec_limits = 537;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_temp_out_spec_limits = 538;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_overcur_pos_activated = 539;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Run_overcur_neg_activated = 540;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Current_maximum = 545;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_Current_minimum = 546;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_U1_maximum = 547;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_U1_minimum = 548;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_U2_maximum = 549;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_U2_minimum = 550;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_U3_maximum = 551;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_U3_minimum = 552;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_temp_maximum = 553;
+	bms_ivt_msg_response__b0_resp_reset_item_Reset_temp_minimum = 554;
+}
+enum bms_ivt_msg_response__b9_resp_device_type {
+	bms_ivt_msg_response__b9_resp_device_type_none = 0;
+	bms_ivt_msg_response__b9_resp_device_type_IVT_Mod = 1;
+	bms_ivt_msg_response__b9_resp_device_type_IVT_S = 2;
+}
+enum bms_ivt_msg_response__a0_resp_triggermode_i {
+	bms_ivt_msg_response__a0_resp_triggermode_i_DISABLED = 0;
+	bms_ivt_msg_response__a0_resp_triggermode_i_TRIGGERED = 1;
+	bms_ivt_msg_response__a0_resp_triggermode_i_CYCLIC = 2;
+}
+enum bms_ivt_msg_response__a1_resp_triggermode_u1 {
+	bms_ivt_msg_response__a1_resp_triggermode_u1_DISABLED = 0;
+	bms_ivt_msg_response__a1_resp_triggermode_u1_TRIGGERED = 1;
+	bms_ivt_msg_response__a1_resp_triggermode_u1_CYCLIC = 2;
+}
+enum bms_ivt_msg_response__a2_resp_triggermode_u2 {
+	bms_ivt_msg_response__a2_resp_triggermode_u2_DISABLED = 0;
+	bms_ivt_msg_response__a2_resp_triggermode_u2_TRIGGERED = 1;
+	bms_ivt_msg_response__a2_resp_triggermode_u2_CYCLIC = 2;
+}
+enum bms_ivt_msg_response__a3_resp_triggermode_u3 {
+	bms_ivt_msg_response__a3_resp_triggermode_u3_DISABLED = 0;
+	bms_ivt_msg_response__a3_resp_triggermode_u3_TRIGGERED = 1;
+	bms_ivt_msg_response__a3_resp_triggermode_u3_CYCLIC = 2;
+}
+enum bms_ivt_msg_response__a4_resp_triggermode_t {
+	bms_ivt_msg_response__a4_resp_triggermode_t_DISABLED = 0;
+	bms_ivt_msg_response__a4_resp_triggermode_t_TRIGGERED = 1;
+	bms_ivt_msg_response__a4_resp_triggermode_t_CYCLIC = 2;
+}
+enum bms_ivt_msg_response__a5_resp_triggermode_w {
+	bms_ivt_msg_response__a5_resp_triggermode_w_DISABLED = 0;
+	bms_ivt_msg_response__a5_resp_triggermode_w_TRIGGERED = 1;
+	bms_ivt_msg_response__a5_resp_triggermode_w_CYCLIC = 2;
+}
+enum bms_ivt_msg_response__a6_resp_triggermode_as {
+	bms_ivt_msg_response__a6_resp_triggermode_as_DISABLED = 0;
+	bms_ivt_msg_response__a6_resp_triggermode_as_TRIGGERED = 1;
+	bms_ivt_msg_response__a6_resp_triggermode_as_CYCLIC = 2;
+}
+enum bms_ivt_msg_response__a7_resp_triggermode_wh {
+	bms_ivt_msg_response__a7_resp_triggermode_wh_DISABLED = 0;
+	bms_ivt_msg_response__a7_resp_triggermode_wh_TRIGGERED = 1;
+	bms_ivt_msg_response__a7_resp_triggermode_wh_CYCLIC = 2;
+}
+enum bms_ivt_msg_response__b4_resp_actual_mode {
+	bms_ivt_msg_response__b4_resp_actual_mode_STOP = 0;
+	bms_ivt_msg_response__b4_resp_actual_mode_RUN = 1;
+}
+enum bms_ivt_msg_response__b9_resp_device_current {
+	bms_ivt_msg_response__b9_resp_device_current_none = 0;
+	bms_ivt_msg_response__b9_resp_device_current_100_A = 100;
+	bms_ivt_msg_response__b9_resp_device_current_300_A = 300;
+	bms_ivt_msg_response__b9_resp_device_current_500_A = 500;
+	bms_ivt_msg_response__b9_resp_device_current_1000_A = 1000;
+	bms_ivt_msg_response__b9_resp_device_current_2500_A = 2500;
+}
+enum bms_ivt_msg_response__b4_resp_startup_mode {
+	bms_ivt_msg_response__b4_resp_startup_mode_Stop = 0;
+	bms_ivt_msg_response__b4_resp_startup_mode_Run = 1;
+}
+enum bms_ivt_msg_response__b9_resp_device_voltage_chan {
+	bms_ivt_msg_response__b9_resp_device_voltage_chan_0_Channels = 0;
+	bms_ivt_msg_response__b9_resp_device_voltage_chan_3_Channels = 3;
+}
+enum bms_ivt_msg_response__b9_resp_device_toi {
+	bms_ivt_msg_response__b9_resp_device_toi_none = 0;
+	bms_ivt_msg_response__b9_resp_device_toi_I = 3;
+}
+enum bms_ivt_msg_response__b9_resp_device_com {
+	bms_ivt_msg_response__b9_resp_device_com_none = 0;
+	bms_ivt_msg_response__b9_resp_device_com_CAN_1___terminated = 1;
+	bms_ivt_msg_response__b9_resp_device_com_CAN_2___not_terminated = 2;
+}
+enum bms_ivt_msg_response__b9_resp_device_v_supply {
+	bms_ivt_msg_response__b9_resp_device_v_supply_none = 0;
+	bms_ivt_msg_response__b9_resp_device_v_supply_12__24_V_nominal_supply_voltage = 1;
+}
+enum bms_ivt_msg_result_t_ivt_id_result_t {
+	bms_ivt_msg_result_t_ivt_id_result_t_none = 0;
+	bms_ivt_msg_result_t_ivt_id_result_t_Vt_Result_T = 4;
+}
+enum bms_ivt_msg_result_u3_ivt_id_result_u3 {
+	bms_ivt_msg_result_u3_ivt_id_result_u3_none = 0;
+	bms_ivt_msg_result_u3_ivt_id_result_u3_Vt_Result_U3 = 3;
+}
+enum bms_ivt_msg_result_u2_ivt_id_result_u2 {
+	bms_ivt_msg_result_u2_ivt_id_result_u2_none = 0;
+	bms_ivt_msg_result_u2_ivt_id_result_u2_Vt_Result_U2 = 2;
+}
+enum bms_ivt_msg_result_u1_ivt_id_result_u1 {
+	bms_ivt_msg_result_u1_ivt_id_result_u1_none = 0;
+	bms_ivt_msg_result_u1_ivt_id_result_u1_Vt_Result_U1 = 1;
+}
+enum bms_ivt_msg_result_i_ivt_id_result_i {
+	bms_ivt_msg_result_i_ivt_id_result_i_Vt_Result_I = 0;
+}
+enum bms_ivt_msg_cmd_ivt_id_cmd {
+	bms_ivt_msg_cmd_ivt_id_cmd_none = 0;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_CAN_ID_Result_I = 16;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_CAN_ID_Result_U1 = 17;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_CAN_ID_Result_U2 = 18;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_CAN_ID_Result_U3 = 19;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_CAN_ID_Result_T = 20;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_CAN_ID_Result_W = 21;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_CAN_ID_Result_As = 22;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_CAN_ID_Result_Wh = 23;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_CAN_ID_Cmd = 29;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_CAN_ID_Response = 31;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_MODE_Result_I = 32;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_MODE_Result_U1 = 33;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_MODE_Result_U2 = 34;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_MODE_Result_U3 = 35;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_MODE_Result_T = 36;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_MODE_Result_W = 37;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_MODE_Result_As = 38;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_MODE_Result_Wh = 39;
+	bms_ivt_msg_cmd_ivt_id_cmd_Reset_Err_Log = 48;
+	bms_ivt_msg_cmd_ivt_id_cmd_TRIGGER = 49;
+	bms_ivt_msg_cmd_ivt_id_cmd_STORE = 50;
+	bms_ivt_msg_cmd_ivt_id_cmd_START_OC_TEST = 51;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_MODE = 52;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_THRESHOLD_pos = 53;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_THRESHOLD_neg = 54;
+	bms_ivt_msg_cmd_ivt_id_cmd_RESTART_to_Bitrate = 58;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_RESTART_to_default = 61;
+	bms_ivt_msg_cmd_ivt_id_cmd_Set_RESTART = 63;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Measurement_Errors = 64;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_System_Errors = 65;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Overall_Logdata = 66;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Logdata_Since_Reset = 67;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_CAN_ID_Res_I = 80;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_CAN_ID_Res_U1 = 81;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_CAN_ID_Res_U2 = 82;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_CAN_ID_Res_U3 = 83;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_CAN_ID_Res_T = 84;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_CAN_ID_Res_W = 85;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_CAN_ID_Res_As = 86;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_CAN_ID_Res_Wh = 87;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_CAN_ID_Command = 93;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_CAN_ID_Response = 95;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Config_Res_I = 96;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Config_Res_U1 = 97;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Config_Res_U2 = 98;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Config_Res_U3 = 99;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Config_Res_T = 100;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Config_Res_W = 101;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Config_Res_As = 102;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_Config_Res_Wh = 103;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_cmd_and_info_OC_TEST_TIME = 115;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_cmd_and_info_MODE = 116;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_cmd_and_info_THRESHOLD_POS = 117;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_cmd_and_info_THRESHOLD_NEG = 118;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_cmd_and_info_DEVICE_ID = 121;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_cmd_and_info_SW_Version = 122;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_cmd_and_info_SN = 123;
+	bms_ivt_msg_cmd_ivt_id_cmd_Get_cmd_and_info_ArtNr = 124;
+}
+enum bms_ivt_msg_cmd__30_reset_item {
+	bms_ivt_msg_cmd__30_reset_item_Reset_all_measurement_errors = 0;
+	bms_ivt_msg_cmd__30_reset_item_Reset_error_ADC_interrupt = 1;
+	bms_ivt_msg_cmd__30_reset_item_Reset_error_Overflow_ADC_ch1 = 2;
+	bms_ivt_msg_cmd__30_reset_item_Reset_error_Underflow_ADC_ch1 = 3;
+	bms_ivt_msg_cmd__30_reset_item_Reset_error_Overflow_ADC_ch2 = 4;
+	bms_ivt_msg_cmd__30_reset_item_Reset_error_Underflow_ADC_ch2 = 5;
+	bms_ivt_msg_cmd__30_reset_item_Reset_error_Vref = 6;
+	bms_ivt_msg_cmd__30_reset_item_Reset_error_current_implausible = 7;
+	bms_ivt_msg_cmd__30_reset_item_Reset_thermal_EMF_correction = 8;
+	bms_ivt_msg_cmd__30_reset_item_Reset_current_measI1_OpenCircuit = 9;
+	bms_ivt_msg_cmd__30_reset_item_Reset_voltage_measU1_OpenCircuit = 10;
+	bms_ivt_msg_cmd__30_reset_item_Reset_voltage_measU2_OpenCircuit = 11;
+	bms_ivt_msg_cmd__30_reset_item_Reset_voltage_measU3_OpenCircuit = 12;
+	bms_ivt_msg_cmd__30_reset_item_Reset_ntc_h_OpenCircuit = 13;
+	bms_ivt_msg_cmd__30_reset_item_Reset_ntc_I_OpenCircuit = 14;
+	bms_ivt_msg_cmd__30_reset_item_Reset_calibration_data_ = 15;
+	bms_ivt_msg_cmd__30_reset_item_Reset_all_System_errors = 256;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Code_CRC = 257;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Parameter_CRC = 258;
+	bms_ivt_msg_cmd__30_reset_item_Reset_CAN_bus_receive_Data = 259;
+	bms_ivt_msg_cmd__30_reset_item_Reset_CAN_bus_transmit_Data = 260;
+	bms_ivt_msg_cmd__30_reset_item_Reset_overtemp = 261;
+	bms_ivt_msg_cmd__30_reset_item_Reset_undertemp = 262;
+	bms_ivt_msg_cmd__30_reset_item_Reset_power_failure = 263;
+	bms_ivt_msg_cmd__30_reset_item_Reset_system_clock = 264;
+	bms_ivt_msg_cmd__30_reset_item_Reset_system_init = 265;
+	bms_ivt_msg_cmd__30_reset_item_Reset_configuration = 266;
+	bms_ivt_msg_cmd__30_reset_item_Reset_overcurrent_detection = 267;
+	bms_ivt_msg_cmd__30_reset_item_Reset_eeprom_rw = 268;
+	bms_ivt_msg_cmd__30_reset_item_Reset_ADC_Clock = 269;
+	bms_ivt_msg_cmd__30_reset_item_Reset_illegal_opcode = 270;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Reset_Watchdog = 271;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Reset_EMC = 272;
+	bms_ivt_msg_cmd__30_reset_item_Reset_all_Logdata_Since_Reset = 512;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Ah_counter_overall = 513;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Ah_counter_charging = 514;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Ah_counter_discharging = 515;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Energy_counter_overall = 516;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Energy_counter_charging = 517;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Energy_counter_discharging = 518;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Runtime_overall = 528;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_cur_in_spec_limits = 529;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_cur_out_spec_limits = 530;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_volt_1_in_spec_limits = 531;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_volt_1_out_spec_limits = 532;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_volt_2_in_spec_limits = 533;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_volt_2_out_spec_limits = 534;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_volt_3_in_spec_limits = 535;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_volt_3_out_spec_limits = 536;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_temp_in_spec_limits = 537;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_temp_out_spec_limits = 538;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_overcur_pos_activated = 539;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Run_overcur_neg_activated = 540;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Current_maximum = 545;
+	bms_ivt_msg_cmd__30_reset_item_Reset_Current_minimum = 546;
+	bms_ivt_msg_cmd__30_reset_item_Reset_U1_maximum = 547;
+	bms_ivt_msg_cmd__30_reset_item_Reset_U1_minimum = 548;
+	bms_ivt_msg_cmd__30_reset_item_Reset_U2_maximum = 549;
+	bms_ivt_msg_cmd__30_reset_item_Reset_U2_minimum = 550;
+	bms_ivt_msg_cmd__30_reset_item_Reset_U3_maximum = 551;
+	bms_ivt_msg_cmd__30_reset_item_Reset_U3_minimum = 552;
+	bms_ivt_msg_cmd__30_reset_item_Reset_temp_maximum = 553;
+	bms_ivt_msg_cmd__30_reset_item_Reset_temp_minimum = 554;
+}
+enum bms_ivt_msg_cmd__3a_restart_to_bitrate {
+	bms_ivt_msg_cmd__3a_restart_to_bitrate_none = 0;
+	bms_ivt_msg_cmd__3a_restart_to_bitrate_1000k = 2;
+	bms_ivt_msg_cmd__3a_restart_to_bitrate_500k = 4;
+	bms_ivt_msg_cmd__3a_restart_to_bitrate_250k = 8;
+}
+enum bms_ivt_msg_cmd__40_get_measerror_item {
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_all_meas_Errors = 0;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_ADC_interrupt = 1;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_Overflow_ADC_ch_1 = 2;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_Underflow_ADC_ch_1 = 3;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_Overflow_ADC_ch_2 = 4;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_Underflow_ADC_ch_2 = 5;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_Vref = 6;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_cur_meas_implausible = 7;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_thermal_EMF_correction = 8;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_cur_meas_I1_OpenCirc = 9;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_volt_meas_U1_OpenCirc = 10;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_volt_meas_U2_OpenCirc = 11;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_volt_meas_U3_OpenCirc = 12;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_ntc_h_OpenCirc = 13;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_ntc_I_OpenCirc = 14;
+	bms_ivt_msg_cmd__40_get_measerror_item_Get_error_calibration_data = 15;
+}
+enum bms_ivt_msg_cmd__41_get_systemerror_item {
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_all_System_errors = 0;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_Code_CRC = 1;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_Code_Parameter_CRC = 2;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_CAN__bus_receive_Data = 3;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_CAN_bus_transmit_Data = 4;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_overtemp = 5;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_undertemp = 6;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_power_failure = 7;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_system_clock = 8;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_system_init = 9;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_configuration = 10;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_overcurrent_detection = 11;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_eeprom_rw = 12;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_ADC_clock = 13;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_reset_illegal_opcode = 14;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_reset_Watchdog = 15;
+	bms_ivt_msg_cmd__41_get_systemerror_item_Get_error_reset_EMC = 16;
+}
+enum bms_ivt_msg_cmd__42_get_alllogdata_item {
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Overall_Logdata = 0;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Ah_counter_overall = 1;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Ah_counter_charging = 2;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Ah_counter_discharging = 3;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Energy_counter_overall = 4;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Energy_counter_charging = 5;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Energy_counter_discharging = 6;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Runtime_overall = 16;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Run_cur_in_spec_limits = 17;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_cur_out_spec_limits = 18;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_volt1_in_spec_limits = 19;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_volt1_out_spec_limits = 20;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_volt2_in_spec_limits = 21;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_volt2_out_spec_limits = 22;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_volt3_in_spec_limits = 23;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_volt3_out_spec_limits = 24;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_temp_in_spec_limits = 25;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_temp_out_spec_limits = 26;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_overcur_pos_activated = 27;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_run_overcur_neg_activated = 28;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_current_maximum = 33;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_current_minimum = 34;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_U1_maxmimum = 35;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_U1_minimum = 36;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_U2_maximum = 37;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_U2_minimum = 38;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_U3_maxmimum_ = 39;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_U3_minimum = 40;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Temperature_maximum = 41;
+	bms_ivt_msg_cmd__42_get_alllogdata_item_Get_Temperature_minimum = 42;
+}
+enum bms_ivt_msg_cmd__43_get_logdata_item {
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Overall_Logdata = 0;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Ah_counter_overall = 1;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Ah_counter_charging = 2;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Ah_counter_discharging = 3;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Energy_counter_overall = 4;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Energy_counter_charging = 5;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Energy_counter_discharging = 6;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Runtime_overall = 16;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Run_cur_in_spec_limits = 17;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_cur_out_spec_limits = 18;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_volt1_in_spec_limits = 19;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_volt1_out_spec_limits = 20;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_volt2_in_spec_limits = 21;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_volt2_out_spec_limits = 22;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_volt3_in_spec_limits = 23;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_volt3_out_spec_limits = 24;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_temp_in_spec_limits = 25;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_temp_out_spec_limits = 26;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_overcur_pos_activated = 27;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_run_overcur_neg_activated = 28;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_current_maximum = 33;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_current_minimum = 34;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_U1_maxmimum = 35;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_U1_minimum = 36;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_U2_maximum = 37;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_U2_minimum = 38;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_U3_maxmimum_ = 39;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_U3_minimum = 40;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Temperature_maximum = 41;
+	bms_ivt_msg_cmd__43_get_logdata_item_Get_Temperature_minimum = 42;
+}
+enum bms_ivt_msg_cmd__20_conf_triggermode_i {
+	bms_ivt_msg_cmd__20_conf_triggermode_i_DISABLED = 0;
+	bms_ivt_msg_cmd__20_conf_triggermode_i_TRIGGERED = 1;
+	bms_ivt_msg_cmd__20_conf_triggermode_i_CYCLIC = 2;
+}
+enum bms_ivt_msg_cmd__21_conf_triggermode_u1 {
+	bms_ivt_msg_cmd__21_conf_triggermode_u1_DISABLED = 0;
+	bms_ivt_msg_cmd__21_conf_triggermode_u1_TRIGGERED = 1;
+	bms_ivt_msg_cmd__21_conf_triggermode_u1_CYCLIC = 2;
+}
+enum bms_ivt_msg_cmd__22_conf_triggermode_u2 {
+	bms_ivt_msg_cmd__22_conf_triggermode_u2_DISABLED = 0;
+	bms_ivt_msg_cmd__22_conf_triggermode_u2_TRIGGERED = 1;
+	bms_ivt_msg_cmd__22_conf_triggermode_u2_CYCLIC = 2;
+}
+enum bms_ivt_msg_cmd__23_conf_triggermode_u3 {
+	bms_ivt_msg_cmd__23_conf_triggermode_u3_DISABLED = 0;
+	bms_ivt_msg_cmd__23_conf_triggermode_u3_TRIGGERED = 1;
+	bms_ivt_msg_cmd__23_conf_triggermode_u3_CYCLIC = 2;
+}
+enum bms_ivt_msg_cmd__24_conf_triggermode_t {
+	bms_ivt_msg_cmd__24_conf_triggermode_t_DISABLED = 0;
+	bms_ivt_msg_cmd__24_conf_triggermode_t_TRIGGERED = 1;
+	bms_ivt_msg_cmd__24_conf_triggermode_t_CYCLIC = 2;
+}
+enum bms_ivt_msg_cmd__25_conf_triggermode_w {
+	bms_ivt_msg_cmd__25_conf_triggermode_w_DISABLED = 0;
+	bms_ivt_msg_cmd__25_conf_triggermode_w_TRIGGERED = 1;
+	bms_ivt_msg_cmd__25_conf_triggermode_w_CYCLIC = 2;
+}
+enum bms_ivt_msg_cmd__26_conf_triggermode_as {
+	bms_ivt_msg_cmd__26_conf_triggermode_as_DISABLED = 0;
+	bms_ivt_msg_cmd__26_conf_triggermode_as_TRIGGERED = 1;
+	bms_ivt_msg_cmd__26_conf_triggermode_as_CYCLIC = 2;
+}
+enum bms_ivt_msg_cmd__27_conf_triggermode_wh {
+	bms_ivt_msg_cmd__27_conf_triggermode_wh_DISABLED = 0;
+	bms_ivt_msg_cmd__27_conf_triggermode_wh_TRIGGERED = 1;
+	bms_ivt_msg_cmd__27_conf_triggermode_wh_CYCLIC = 2;
+}
+enum bms_ivt_msg_cmd__34_actual_mode {
+	bms_ivt_msg_cmd__34_actual_mode_STOP = 0;
+	bms_ivt_msg_cmd__34_actual_mode_START = 1;
+}
+enum bms_ivt_msg_cmd__34_startup_mode {
+	bms_ivt_msg_cmd__34_startup_mode_STOP = 0;
+	bms_ivt_msg_cmd__34_startup_mode_START = 1;
+}
 enum bms_board_status_cellboard_id {
 	bms_board_status_cellboard_id_CELLBOARD_0 = 0;
 	bms_board_status_cellboard_id_CELLBOARD_1 = 1;
@@ -50,24 +644,440 @@ enum bms_set_balancing_status_balancing_status {
 	bms_set_balancing_status_balancing_status_OFF = 0;
 	bms_set_balancing_status_balancing_status_DISCHARGE = 1;
 }
-enum bms_jmp_to_blt_cellboard_id {
-	bms_jmp_to_blt_cellboard_id_CELLBOARD_0 = 0;
-	bms_jmp_to_blt_cellboard_id_CELLBOARD_1 = 1;
-	bms_jmp_to_blt_cellboard_id_CELLBOARD_2 = 2;
-	bms_jmp_to_blt_cellboard_id_CELLBOARD_3 = 3;
-	bms_jmp_to_blt_cellboard_id_CELLBOARD_4 = 4;
-	bms_jmp_to_blt_cellboard_id_CELLBOARD_5 = 5;
+enum bms_cellboard_flash_cellboard_id {
+	bms_cellboard_flash_cellboard_id_CELLBOARD_0 = 0;
+	bms_cellboard_flash_cellboard_id_CELLBOARD_1 = 1;
+	bms_cellboard_flash_cellboard_id_CELLBOARD_2 = 2;
+	bms_cellboard_flash_cellboard_id_CELLBOARD_3 = 3;
+	bms_cellboard_flash_cellboard_id_CELLBOARD_4 = 4;
+	bms_cellboard_flash_cellboard_id_CELLBOARD_5 = 5;
+}
+enum bms_cellboard_flash_request_cellboard_id {
+	bms_cellboard_flash_request_cellboard_id_cellboard_0 = 0;
+	bms_cellboard_flash_request_cellboard_id_cellboard_1 = 1;
+	bms_cellboard_flash_request_cellboard_id_cellboard_2 = 2;
+	bms_cellboard_flash_request_cellboard_id_cellboard_3 = 3;
+	bms_cellboard_flash_request_cellboard_id_cellboard_4 = 4;
+	bms_cellboard_flash_request_cellboard_id_cellboard_5 = 5;
+}
+enum bms_cellboard_flash_response_cellboard_id {
+	bms_cellboard_flash_response_cellboard_id_cellboard_0 = 0;
+	bms_cellboard_flash_response_cellboard_id_cellboard_1 = 1;
+	bms_cellboard_flash_response_cellboard_id_cellboard_2 = 2;
+	bms_cellboard_flash_response_cellboard_id_cellboard_3 = 3;
+	bms_cellboard_flash_response_cellboard_id_cellboard_4 = 4;
+	bms_cellboard_flash_response_cellboard_id_cellboard_5 = 5;
+}
+enum bms_cellboard_discovery_cellboard_id {
+	bms_cellboard_discovery_cellboard_id_cellboard_0 = 0;
+	bms_cellboard_discovery_cellboard_id_cellboard_1 = 1;
+	bms_cellboard_discovery_cellboard_id_cellboard_2 = 2;
+	bms_cellboard_discovery_cellboard_id_cellboard_3 = 3;
+	bms_cellboard_discovery_cellboard_id_cellboard_4 = 4;
+	bms_cellboard_discovery_cellboard_id_cellboard_5 = 5;
 }
 enum bms_cellboard_version_cellboard_id {
-	bms_cellboard_version_cellboard_id_CELLBOARD_0 = 0;
-	bms_cellboard_version_cellboard_id_CELLBOARD_1 = 1;
-	bms_cellboard_version_cellboard_id_CELLBOARD_2 = 2;
-	bms_cellboard_version_cellboard_id_CELLBOARD_3 = 3;
-	bms_cellboard_version_cellboard_id_CELLBOARD_4 = 4;
-	bms_cellboard_version_cellboard_id_CELLBOARD_5 = 5;
+	bms_cellboard_version_cellboard_id_cellboard_0 = 0;
+	bms_cellboard_version_cellboard_id_cellboard_1 = 1;
+	bms_cellboard_version_cellboard_id_cellboard_2 = 2;
+	bms_cellboard_version_cellboard_id_cellboard_3 = 3;
+	bms_cellboard_version_cellboard_id_cellboard_4 = 4;
+	bms_cellboard_version_cellboard_id_cellboard_5 = 5;
+}
+enum bms_cellboard_status_cellboard_id {
+	bms_cellboard_status_cellboard_id_cellboard_0 = 0;
+	bms_cellboard_status_cellboard_id_cellboard_1 = 1;
+	bms_cellboard_status_cellboard_id_cellboard_2 = 2;
+	bms_cellboard_status_cellboard_id_cellboard_3 = 3;
+	bms_cellboard_status_cellboard_id_cellboard_4 = 4;
+	bms_cellboard_status_cellboard_id_cellboard_5 = 5;
+}
+enum bms_cellboard_status_status {
+	bms_cellboard_status_status_init = 0;
+	bms_cellboard_status_status_idle = 1;
+	bms_cellboard_status_status_fatal = 2;
+	bms_cellboard_status_status_flash = 3;
+	bms_cellboard_status_status_discharge = 4;
+	bms_cellboard_status_status_cooldown = 5;
+}
+enum bms_cellboard_cells_voltage_cellboard_id {
+	bms_cellboard_cells_voltage_cellboard_id_cellboard_0 = 0;
+	bms_cellboard_cells_voltage_cellboard_id_cellboard_1 = 1;
+	bms_cellboard_cells_voltage_cellboard_id_cellboard_2 = 2;
+	bms_cellboard_cells_voltage_cellboard_id_cellboard_3 = 3;
+	bms_cellboard_cells_voltage_cellboard_id_cellboard_4 = 4;
+	bms_cellboard_cells_voltage_cellboard_id_cellboard_5 = 5;
+}
+enum bms_cellboard_cells_temperature_cellboard_id {
+	bms_cellboard_cells_temperature_cellboard_id_cellboard_0 = 0;
+	bms_cellboard_cells_temperature_cellboard_id_cellboard_1 = 1;
+	bms_cellboard_cells_temperature_cellboard_id_cellboard_2 = 2;
+	bms_cellboard_cells_temperature_cellboard_id_cellboard_3 = 3;
+	bms_cellboard_cells_temperature_cellboard_id_cellboard_4 = 4;
+	bms_cellboard_cells_temperature_cellboard_id_cellboard_5 = 5;
+}
+enum bms_cellboard_balancing_status_status {
+	bms_cellboard_balancing_status_status_stopped = 0;
+	bms_cellboard_balancing_status_status_paused = 1;
+	bms_cellboard_balancing_status_status_running = 2;
+}
+enum bms_cellboard_balancing_status_cellboard_id {
+	bms_cellboard_balancing_status_cellboard_id_cellboard_0 = 0;
+	bms_cellboard_balancing_status_cellboard_id_cellboard_1 = 1;
+	bms_cellboard_balancing_status_cellboard_id_cellboard_2 = 2;
+	bms_cellboard_balancing_status_cellboard_id_cellboard_3 = 3;
+	bms_cellboard_balancing_status_cellboard_id_cellboard_4 = 4;
+	bms_cellboard_balancing_status_cellboard_id_cellboard_5 = 5;
+}
+enum bms_cellboard_errors_post {
+	bms_cellboard_errors_post_unset = 0;
+	bms_cellboard_errors_post_running = 1;
+	bms_cellboard_errors_post_expired = 2;
+}
+enum bms_cellboard_errors_undervoltage {
+	bms_cellboard_errors_undervoltage_unset = 0;
+	bms_cellboard_errors_undervoltage_running = 1;
+	bms_cellboard_errors_undervoltage_expired = 2;
+}
+enum bms_cellboard_errors_overvoltage {
+	bms_cellboard_errors_overvoltage_unset = 0;
+	bms_cellboard_errors_overvoltage_running = 1;
+	bms_cellboard_errors_overvoltage_expired = 2;
+}
+enum bms_cellboard_errors_undertemperature_cells {
+	bms_cellboard_errors_undertemperature_cells_unset = 0;
+	bms_cellboard_errors_undertemperature_cells_running = 1;
+	bms_cellboard_errors_undertemperature_cells_expired = 2;
+}
+enum bms_cellboard_errors_undertemperature_discharge {
+	bms_cellboard_errors_undertemperature_discharge_unset = 0;
+	bms_cellboard_errors_undertemperature_discharge_running = 1;
+	bms_cellboard_errors_undertemperature_discharge_expired = 2;
+}
+enum bms_cellboard_errors_overtemperature_cells {
+	bms_cellboard_errors_overtemperature_cells_unset = 0;
+	bms_cellboard_errors_overtemperature_cells_running = 1;
+	bms_cellboard_errors_overtemperature_cells_expired = 2;
+}
+enum bms_cellboard_errors_overtemperature_discharge {
+	bms_cellboard_errors_overtemperature_discharge_unset = 0;
+	bms_cellboard_errors_overtemperature_discharge_running = 1;
+	bms_cellboard_errors_overtemperature_discharge_expired = 2;
+}
+enum bms_cellboard_errors_can {
+	bms_cellboard_errors_can_unset = 0;
+	bms_cellboard_errors_can_running = 1;
+	bms_cellboard_errors_can_expired = 2;
+}
+enum bms_cellboard_errors_flash {
+	bms_cellboard_errors_flash_unset = 0;
+	bms_cellboard_errors_flash_running = 1;
+	bms_cellboard_errors_flash_expired = 2;
+}
+enum bms_cellboard_errors_bms_monitor {
+	bms_cellboard_errors_bms_monitor_unset = 0;
+	bms_cellboard_errors_bms_monitor_running = 1;
+	bms_cellboard_errors_bms_monitor_expired = 2;
+}
+enum bms_cellboard_errors_open_wire {
+	bms_cellboard_errors_open_wire_unset = 0;
+	bms_cellboard_errors_open_wire_running = 1;
+	bms_cellboard_errors_open_wire_expired = 2;
 }
 
 
+message IVT_Msg_Result_Wh{
+	bms_ivt_msg_result_wh_ivt_id_result_wh IVT_ID_Result_Wh = 1;
+	bool IVT_Result_Wh_System_Error = 2;
+	bool IVT_Result_Wh_Measurement_Error = 3;
+	bool IVT_Result_Wh_Channel_Error = 4;
+	bool IVT_Result_Wh_OCS = 5;
+	uint32 IVT_MsgCount_Result_Wh = 6;
+	int32 IVT_Result_Wh = 7;
+	uint64 _inner_timestamp = 8;
+}
+message IVT_Msg_Result_As{
+	bms_ivt_msg_result_as_ivt_id_result_as IVT_ID_Result_As = 1;
+	bool IVT_Result_As_System_Error = 2;
+	bool IVT_Result_As_Measurement_Error = 3;
+	bool IVT_Result_As_Channel_Error = 4;
+	bool IVT_Result_As_OCS = 5;
+	uint32 IVT_MsgCount_Result_As = 6;
+	int32 IVT_Result_As = 7;
+	uint64 _inner_timestamp = 8;
+}
+message IVT_Msg_Result_W{
+	bms_ivt_msg_result_w_ivt_id_result_w IVT_ID_Result_W = 1;
+	bool IVT_Result_W_System_Error = 2;
+	bool IVT_Result_W_Measurement_Error = 3;
+	bool IVT_Result_W_Channel_Error = 4;
+	bool IVT_Result_W_OCS = 5;
+	uint32 IVT_MsgCount_Result_W = 6;
+	int32 IVT_Result_W = 7;
+	uint64 _inner_timestamp = 8;
+}
+message IVT_Msg_Response{
+	bms_ivt_msg_response_ivt_id_response IVT_ID_Response = 1;
+	uint32 _B1_Trigger_spare = 2;
+	uint32 _FF_Wrong_Command = 3;
+	uint32 _BF_Restart_Alive_Cmd_ID = 4;
+	bms_ivt_msg_response__80_resp_measerror_item _80_Resp_MeasError_Item = 5;
+	bms_ivt_msg_response__81_resp_systemerror_item _81_Resp_SystemError_Item = 6;
+	bms_ivt_msg_response__82_resp_alllogdata_item _82_Resp_AllLogData_Item = 7;
+	bms_ivt_msg_response__83_resp_logdata_item _83_Resp_LogData_Item = 8;
+	uint32 _90_Resp_Can_ID_val_I = 9;
+	uint32 _91_Resp_Can_ID_val_U1 = 10;
+	uint32 _92_Resp_Can_ID_val_U2 = 11;
+	uint32 _93_Resp_Can_ID_val_U3 = 12;
+	uint32 _94_Resp_Can_ID_val_T = 13;
+	uint32 _95_Resp_Can_ID_val_W = 14;
+	uint32 _96_Resp_Can_ID_val_As = 15;
+	uint32 _97_Resp_Can_ID_val_Wh = 16;
+	uint32 _9D_Resp_Can_ID_val_Command = 17;
+	uint32 _9F_Resp_Can_ID_val_Response = 18;
+	bool _A0_Resp_Sign_I = 19;
+	bool _A1_Resp_Sign_U1 = 20;
+	bool _A2_Resp_Sign_U2 = 21;
+	bool _A3_Resp_Sign_U3 = 22;
+	bool _A4_Resp_Sign_T = 23;
+	bool _A5_Resp_Sign_W = 24;
+	bool _A6_Resp_Sign_As = 25;
+	bool _A7_Resp_Sign_WH = 26;
+	bms_ivt_msg_response__b0_resp_reset_item _B0_Resp_Reset_Item = 27;
+	uint32 _B2_Resp_Store_dummy = 28;
+	uint32 _B3_Resp_Oc_Test_Time = 29;
+	int32 _B5_Resp_OC_Pos_Set_Threshold = 30;
+	int32 _B6_Resp_OC_Neg_Set_Threshold = 31;
+	bms_ivt_msg_response__b9_resp_device_type _B9_Resp_Device_type = 32;
+	uint32 _BA_Resp_SW_Ver_Major_HW = 33;
+	uint32 _BB_Resp_Serien_Nr = 34;
+	uint64 _BC_Resp_Art_N = 35;
+	bool _A0_Resp_Endianess_I = 36;
+	bool _A1_Resp_Endianess_U1 = 37;
+	bool _A2_Resp_Endianess_U2 = 38;
+	bool _A3_Resp_Endianess_U3 = 39;
+	bool _A4_Resp_Endianess_T = 40;
+	bool _A5_Resp_Endianess_W = 41;
+	bool _A6_Resp_Endianess_As = 42;
+	bool _A7_Resp_Endianess_WH = 43;
+	bms_ivt_msg_response__a0_resp_triggermode_i _A0_Resp_TriggerMode_I = 44;
+	bms_ivt_msg_response__a1_resp_triggermode_u1 _A1_Resp_TriggerMode_U1 = 45;
+	bms_ivt_msg_response__a2_resp_triggermode_u2 _A2_Resp_TriggerMode_U2 = 46;
+	bms_ivt_msg_response__a3_resp_triggermode_u3 _A3_Resp_TriggerMode_U3 = 47;
+	bms_ivt_msg_response__a4_resp_triggermode_t _A4_Resp_TriggerMode_T = 48;
+	bms_ivt_msg_response__a5_resp_triggermode_w _A5_Resp_TriggerMode_W = 49;
+	bms_ivt_msg_response__a6_resp_triggermode_as _A6_Resp_TriggerMode_As = 50;
+	bms_ivt_msg_response__a7_resp_triggermode_wh _A7_Resp_TriggerMode_WH = 51;
+	bms_ivt_msg_response__b4_resp_actual_mode _B4_Resp_Actual_Mode = 52;
+	bool _B1_07_Trigger_WH = 53;
+	uint32 _B2_Resp_Store_Device_SN = 54;
+	uint32 _BA_Resp_SW_Ver_Minor = 55;
+	bms_ivt_msg_response__b9_resp_device_current _B9_Resp_Device_current = 56;
+	uint32 _80_Resp_MeasError_Count_Mask = 57;
+	uint32 _81_Resp_SystemError_Count_Mask = 58;
+	uint64 _82_Resp_AllLogData_Counter = 59;
+	uint64 _83_Resp_LogData_Counter = 60;
+	uint32 _A0_Resp_CycleTime_I = 61;
+	uint32 _A1_Resp_CycleTime_U1 = 62;
+	uint32 _A2_Resp_CycleTime_U2 = 63;
+	uint32 _A3_Resp_CycleTime_U3 = 64;
+	uint32 _A4_Resp_CycleTime_T = 65;
+	uint32 _A5_Resp_CycleTime_W = 66;
+	uint32 _A6_Resp_CycleTime_As = 67;
+	uint32 _A7_Resp_CycleTime_WH = 68;
+	bool _B1_06_Trigger_As = 69;
+	bool _B1_05_Trigger_W = 70;
+	bool _B1_04_Trigger_T = 71;
+	bool _B1_03_Trigger_U3 = 72;
+	bool _B1_02_Trigger_U2 = 73;
+	bool _B1_01_Trigger_U1 = 74;
+	bool _B1_00_Trigger_I = 75;
+	bms_ivt_msg_response__b4_resp_startup_mode _B4_Resp_Startup_Mode = 76;
+	uint32 _BF_Restart_Alive_SN = 77;
+	uint32 _BA_Resp_SW_Ver_Revision = 78;
+	uint32 _90_Resp_Can_ID_SN_I = 79;
+	uint32 _91_Resp_Can_ID_SN_U1 = 80;
+	uint32 _92_Resp_Can_ID_SN_U2 = 81;
+	uint32 _93_Resp_Can_ID_SN_U3 = 82;
+	uint32 _94_Resp_Can_ID_SN_T = 83;
+	uint32 _95_Resp_Can_ID_SN_W = 84;
+	uint32 _96_Resp_Can_ID_SN_As = 85;
+	uint32 _97_Resp_Can_ID_SN_Wh = 86;
+	uint32 _9D_Resp_Can_ID_SN_Command = 87;
+	uint32 _9F_Resp_Can_ID_SN_Response = 88;
+	uint32 _B0_Resp_Reset_Device_SN = 89;
+	uint32 _B4_Resp_Code_Level = 90;
+	int32 _B5_Resp_OC_Pos_Reset_Threshold = 91;
+	int32 _B6_Resp_OC_Neg_Reset_Threshold = 92;
+	bms_ivt_msg_response__b9_resp_device_voltage_chan _B9_Resp_Device_Voltage_chan = 93;
+	uint32 _BA_Resp_SW_Ver_Vear = 94;
+	bms_ivt_msg_response__b9_resp_device_toi _B9_Resp_Device_TOI = 95;
+	int32 _BA_Resp_SW_Ver_Month = 96;
+	bms_ivt_msg_response__b9_resp_device_com _B9_Resp_Device_Com = 97;
+	uint32 _BA_Resp_SW_Ver_Day = 98;
+	bms_ivt_msg_response__b9_resp_device_v_supply _B9_Resp_Device_V_supply = 99;
+	uint32 _BA_Resp_SW_Ver_Internal = 100;
+	uint64 _inner_timestamp = 101;
+}
+message IVT_Msg_Result_T{
+	bms_ivt_msg_result_t_ivt_id_result_t IVT_ID_Result_T = 1;
+	bool IVT_Result_T_System_Error = 2;
+	bool IVT_Result_T_Measurement_Error = 3;
+	bool IVT_Result_T_Channel_Error = 4;
+	bool IVT_Result_T_OCS = 5;
+	uint32 IVT_MsgCount_Result_T = 6;
+	float IVT_Result_T = 7;
+	uint64 _inner_timestamp = 8;
+}
+message IVT_Msg_Result_U3{
+	bms_ivt_msg_result_u3_ivt_id_result_u3 IVT_ID_Result_U3 = 1;
+	bool IVT_Result_U3_System_Error = 2;
+	bool IVT_Result_U3_Measurement_Error = 3;
+	bool IVT_Result_U3_Channel_Error = 4;
+	bool IVT_Result_U3_OCS = 5;
+	uint32 IVT_MsgCount_Result_U3 = 6;
+	int32 IVT_Result_U3 = 7;
+	uint64 _inner_timestamp = 8;
+}
+message IVT_Msg_Result_U2{
+	bms_ivt_msg_result_u2_ivt_id_result_u2 IVT_ID_Result_U2 = 1;
+	bool IVT_Result_U2_System_Error = 2;
+	bool IVT_Result_U2_Measurement_Error = 3;
+	bool IVT_Result_U2_Channel_Error = 4;
+	bool IVT_Result_U2_OCS = 5;
+	uint32 IVT_MsgCount_Result_U2 = 6;
+	int32 IVT_Result_U2 = 7;
+	uint64 _inner_timestamp = 8;
+}
+message IVT_Msg_Result_U1{
+	bms_ivt_msg_result_u1_ivt_id_result_u1 IVT_ID_Result_U1 = 1;
+	bool IVT_Result_U1_System_Error = 2;
+	bool IVT_Result_U1_Measurement_Error = 3;
+	bool IVT_Result_U1_Channel_Error = 4;
+	bool IVT_Result_U1_OCS = 5;
+	uint32 IVT_MsgCount_Result_U1 = 6;
+	int32 IVT_Result_U1 = 7;
+	uint64 _inner_timestamp = 8;
+}
+message IVT_Msg_Result_I{
+	bms_ivt_msg_result_i_ivt_id_result_i IVT_ID_Result_I = 1;
+	bool IVT_Result_I_System_Error = 2;
+	bool IVT_Result_I_Measurement_Error = 3;
+	bool IVT_Result_I_Channel_Error = 4;
+	bool IVT_Result_I_OCS = 5;
+	uint32 IVT_MsgCount_Result_I = 6;
+	int32 IVT_Result_I = 7;
+	uint64 _inner_timestamp = 8;
+}
+message IVT_Msg_Cmd{
+	bms_ivt_msg_cmd_ivt_id_cmd IVT_ID_Cmd = 1;
+	uint32 _31_Trigger_spare = 2;
+	uint32 _10_Set_Can_ID_val_I = 3;
+	uint32 _11_Set_Can_ID_val_U1 = 4;
+	uint32 _12_Set_Can_ID_val_U2 = 5;
+	uint32 _13_Set_Can_ID_val_U3 = 6;
+	uint32 _14_Set_Can_ID_val_T = 7;
+	uint32 _15_Set_Can_ID_val_W = 8;
+	uint32 _16_Set_Can_ID_val_As = 9;
+	uint32 _17_Set_Can_ID_val_Wh = 10;
+	uint32 _1D_Set_Can_ID_val_Command = 11;
+	uint32 _1F_Set_Can_ID_val_Response = 12;
+	bool _20_Conf_Sign_I = 13;
+	bool _21_Conf_Sign_U1 = 14;
+	bool _22_Conf_Sign_U2 = 15;
+	bool _23_Conf_Sign_U3 = 16;
+	bool _24_Conf_Sign_T = 17;
+	bool _25_Conf_Sign_W = 18;
+	bool _26_Conf_Sign_As = 19;
+	bool _27_Conf_Sign_WH = 20;
+	bms_ivt_msg_cmd__30_reset_item _30_Reset_Item = 21;
+	uint32 _32_Store_dummy = 22;
+	uint32 _33_Oc_Test_Time = 23;
+	int32 _35_OC_Pos_Set_Threshold = 24;
+	int32 _36_OC_Neg_Set_Threshold = 25;
+	bms_ivt_msg_cmd__3a_restart_to_bitrate _3A_RESTART_to_Bitrate = 26;
+	uint32 _3D_Restart_Default_Dummy = 27;
+	uint32 _3F_Restart_Dummy = 28;
+	bms_ivt_msg_cmd__40_get_measerror_item _40_Get_MeasError_Item = 29;
+	bms_ivt_msg_cmd__41_get_systemerror_item _41_Get_SystemError_Item = 30;
+	bms_ivt_msg_cmd__42_get_alllogdata_item _42_Get_AllLogData_Item = 31;
+	bms_ivt_msg_cmd__43_get_logdata_item _43_Get_LogData_Item = 32;
+	uint32 _60_Get_Result_dummy_I = 33;
+	uint32 _61_Get_Result_dummy_U1 = 34;
+	uint32 _62_Get_Result_dummy_U2 = 35;
+	uint32 _63_Get_Result_dummy_U3 = 36;
+	uint32 _64_Get_Result_dummy_T = 37;
+	uint32 _65_Get_Result_dummy_W = 38;
+	uint32 _66_Get_Result_dummy_As = 39;
+	uint32 _67_Get_Result_dummy_Wh = 40;
+	uint32 _73_Get_OC_Test_dummy = 41;
+	uint32 _74_Get_Mode_dummy = 42;
+	uint32 _75_Get_OC_Pos_dummy = 43;
+	uint32 _76_Get_OC_Neg_dummy = 44;
+	uint32 _79_Get_Device_Id_dummy = 45;
+	uint32 _7A_Get_SW_Version_dummy = 46;
+	uint32 _7B_Get_Serien_Nr_dummy = 47;
+	uint32 _7C_Get_Art_Nr_dummy = 48;
+	bool _20_Conf_Endianess_I = 49;
+	bool _21_Conf_Endianess_U1 = 50;
+	bool _22_Conf_Endianess_U2 = 51;
+	bool _23_Conf_Endianess_U3 = 52;
+	bool _24_Conf_Endianess_T = 53;
+	bool _25_Conf_Endianess_W = 54;
+	bool _26_Conf_Endianess_As = 55;
+	bool _27_Conf_Endianess_WH = 56;
+	bms_ivt_msg_cmd__20_conf_triggermode_i _20_Conf_TriggerMode_I = 57;
+	bms_ivt_msg_cmd__21_conf_triggermode_u1 _21_Conf_TriggerMode_U1 = 58;
+	bms_ivt_msg_cmd__22_conf_triggermode_u2 _22_Conf_TriggerMode_U2 = 59;
+	bms_ivt_msg_cmd__23_conf_triggermode_u3 _23_Conf_TriggerMode_U3 = 60;
+	bms_ivt_msg_cmd__24_conf_triggermode_t _24_Conf_TriggerMode_T = 61;
+	bms_ivt_msg_cmd__25_conf_triggermode_w _25_Conf_TriggerMode_W = 62;
+	bms_ivt_msg_cmd__26_conf_triggermode_as _26_Conf_TriggerMode_As = 63;
+	bms_ivt_msg_cmd__27_conf_triggermode_wh _27_Conf_TriggerMode_WH = 64;
+	bms_ivt_msg_cmd__34_actual_mode _34_Actual_Mode = 65;
+	bool _31_07_Trigger_WH = 66;
+	uint32 _20_Conf_CycleTime_I = 67;
+	uint32 _21_Conf_CycleTime_U1 = 68;
+	uint32 _22_Conf_CycleTime_U2 = 69;
+	uint32 _23_Conf_CycleTime_U3 = 70;
+	uint32 _24_Conf_CycleTime_T = 71;
+	uint32 _25_Conf_CycleTime_W = 72;
+	uint32 _26_Conf_CycleTime_As = 73;
+	uint32 _27_Conf_CycleTime_WH = 74;
+	bool _31_06_Trigger_As = 75;
+	bool _31_05_Trigger_W = 76;
+	bool _31_04_Trigger_T = 77;
+	bool _31_03_Trigger_U3 = 78;
+	bool _31_02_Trigger_U2 = 79;
+	bool _31_01_Trigger_U1 = 80;
+	bool _31_00_Trigger_I = 81;
+	bms_ivt_msg_cmd__34_startup_mode _34_Startup_Mode = 82;
+	uint32 _10_Set_Can_ID_SN_I = 83;
+	uint32 _11_Set_Can_ID_SN_U1 = 84;
+	uint32 _12_Set_Can_ID_SN_U2 = 85;
+	uint32 _13_Set_Can_ID_SN_U3 = 86;
+	uint32 _14_Set_Can_ID_SN_T = 87;
+	uint32 _15_Set_Can_ID_SN_W = 88;
+	uint32 _16_Set_Can_ID_SN_As = 89;
+	uint32 _17_Set_Can_ID_SN_Wh = 90;
+	uint32 _1D_Set_Can_ID_SN_Command = 91;
+	uint32 _1F_Set_Can_ID_SN_Response = 92;
+	uint32 _30_Reset_Device_SN = 93;
+	uint32 _34_Code_Level = 94;
+	int32 _35_OC_Pos_Reset_Threshold = 95;
+	int32 _36_OC_Neg_Reset_Threshold = 96;
+	uint32 _50_Get_Can_ID_SN_I = 97;
+	uint32 _51_Get_Can_ID_SN_U1 = 98;
+	uint32 _52_Get_Can_ID_SN_U2 = 99;
+	uint32 _53_Get_Can_ID_SN_U3 = 100;
+	uint32 _54_Get_Can_ID_SN_T = 101;
+	uint32 _55_Get_Can_ID_SN_W = 102;
+	uint32 _56_Get_Can_ID_SN_As = 103;
+	uint32 _57_Get_Can_ID_SN_Wh = 104;
+	uint32 _5D_Get_Can_ID_SN_Command = 105;
+	uint32 _5F_Get_Can_ID_SN_Response = 106;
+	uint64 _inner_timestamp = 107;
+}
 message BOARD_STATUS{
 	bms_board_status_cellboard_id cellboard_id = 1;
 	bool errors_CAN_COMM = 2;
@@ -137,14 +1147,6 @@ message SET_BALANCING_STATUS{
 	bms_set_balancing_status_balancing_status balancing_status = 3;
 	uint64 _inner_timestamp = 4;
 }
-message JMP_TO_BLT{
-	bms_jmp_to_blt_cellboard_id cellboard_id = 1;
-	uint32 board_index = 2;
-	uint64 _inner_timestamp = 3;
-}
-message FLASH_CELLBOARD_0_TX{
-	uint64 _inner_timestamp = 1;
-}
 message FLASH_CELLBOARD_0_RX{
 	uint64 _inner_timestamp = 1;
 }
@@ -178,34 +1180,151 @@ message FLASH_CELLBOARD_5_TX{
 message FLASH_CELLBOARD_5_RX{
 	uint64 _inner_timestamp = 1;
 }
+message CELLBOARD_FLASH{
+	bool start = 1;
+	bms_cellboard_flash_cellboard_id cellboard_id = 2;
+	uint32 board_index = 3;
+	uint64 _inner_timestamp = 4;
+}
+message CELLBOARD_FLASH_TX{
+	uint64 _inner_timestamp = 1;
+}
+message CELLBOARD_FLASH_RX{
+	uint64 _inner_timestamp = 1;
+}
+message CELLBOARD_FLASH_REQUEST{
+	bool mainboard = 1;
+	bms_cellboard_flash_request_cellboard_id cellboard_id = 2;
+	uint64 _inner_timestamp = 3;
+}
+message CELLBOARD_FLASH_RESPONSE{
+	bms_cellboard_flash_response_cellboard_id cellboard_id = 1;
+	bool ready = 2;
+	uint64 _inner_timestamp = 3;
+}
+message CELLBOARD_DISCOVERY{
+	bms_cellboard_discovery_cellboard_id cellboard_id = 1;
+	uint64 _inner_timestamp = 2;
+}
 message CELLBOARD_VERSION{
 	bms_cellboard_version_cellboard_id cellboard_id = 1;
-	uint32 component_version = 2;
-	uint32 canlib_build_time = 3;
+	uint32 canlib_build_time = 2;
+	uint32 component_build_time = 3;
 	uint64 _inner_timestamp = 4;
+}
+message CELLBOARD_STATUS{
+	bms_cellboard_status_cellboard_id cellboard_id = 1;
+	bms_cellboard_status_status status = 2;
+	uint64 _inner_timestamp = 3;
+}
+message CELLBOARD_CELLS_VOLTAGE{
+	bms_cellboard_cells_voltage_cellboard_id cellboard_id = 1;
+	uint32 offset = 2;
+	double voltage_0 = 3;
+	double voltage_1 = 4;
+	double voltage_2 = 5;
+	uint64 _inner_timestamp = 6;
+}
+message CELLBOARD_CELLS_TEMPERATURE{
+	bms_cellboard_cells_temperature_cellboard_id cellboard_id = 1;
+	uint32 offset = 2;
+	double temperature_0 = 3;
+	double temperature_1 = 4;
+	double temperature_2 = 5;
+	double temperature_3 = 6;
+	uint64 _inner_timestamp = 7;
+}
+message CELLBOARD_SET_BALANCING_STATUS{
+	bool start = 1;
+	double target = 2;
+	double threshold = 3;
+	uint64 _inner_timestamp = 4;
+}
+message CELLBOARD_BALANCING_STATUS{
+	bms_cellboard_balancing_status_status status = 1;
+	bms_cellboard_balancing_status_cellboard_id cellboard_id = 2;
+	bool discharging_cell_0 = 3;
+	bool discharging_cell_1 = 4;
+	bool discharging_cell_2 = 5;
+	bool discharging_cell_3 = 6;
+	bool discharging_cell_4 = 7;
+	bool discharging_cell_5 = 8;
+	bool discharging_cell_6 = 9;
+	bool discharging_cell_7 = 10;
+	bool discharging_cell_8 = 11;
+	bool discharging_cell_9 = 12;
+	bool discharging_cell_10 = 13;
+	bool discharging_cell_11 = 14;
+	bool discharging_cell_12 = 15;
+	bool discharging_cell_13 = 16;
+	bool discharging_cell_14 = 17;
+	bool discharging_cell_15 = 18;
+	bool discharging_cell_16 = 19;
+	bool discharging_cell_17 = 20;
+	bool discharging_cell_18 = 21;
+	bool discharging_cell_19 = 22;
+	bool discharging_cell_20 = 23;
+	bool discharging_cell_21 = 24;
+	bool discharging_cell_22 = 25;
+	bool discharging_cell_23 = 26;
+	uint64 _inner_timestamp = 27;
+}
+message CELLBOARD_ERRORS{
+	bms_cellboard_errors_post post = 1;
+	bms_cellboard_errors_undervoltage undervoltage = 2;
+	bms_cellboard_errors_overvoltage overvoltage = 3;
+	bms_cellboard_errors_undertemperature_cells undertemperature_cells = 4;
+	bms_cellboard_errors_undertemperature_discharge undertemperature_discharge = 5;
+	bms_cellboard_errors_overtemperature_cells overtemperature_cells = 6;
+	bms_cellboard_errors_overtemperature_discharge overtemperature_discharge = 7;
+	bms_cellboard_errors_can can = 8;
+	bms_cellboard_errors_flash flash = 9;
+	bms_cellboard_errors_bms_monitor bms_monitor = 10;
+	bms_cellboard_errors_open_wire open_wire = 11;
+	uint64 _inner_timestamp = 12;
 }
 
 
 message Pack{
-	repeated BOARD_STATUS BOARD_STATUS = 1;
-	repeated TEMPERATURES_INFO TEMPERATURES_INFO = 2;
-	repeated TEMPERATURES TEMPERATURES = 3;
-	repeated VOLTAGES_INFO VOLTAGES_INFO = 4;
-	repeated VOLTAGES VOLTAGES = 5;
-	repeated SET_BALANCING_STATUS SET_BALANCING_STATUS = 6;
-	repeated JMP_TO_BLT JMP_TO_BLT = 7;
-	repeated FLASH_CELLBOARD_0_TX FLASH_CELLBOARD_0_TX = 8;
-	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 9;
-	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 10;
-	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 11;
-	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 12;
-	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 13;
-	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 14;
-	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 15;
-	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 16;
-	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 17;
-	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 18;
-	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 19;
-	repeated CELLBOARD_VERSION CELLBOARD_VERSION = 20;
+	repeated IVT_Msg_Result_Wh IVT_Msg_Result_Wh = 1;
+	repeated IVT_Msg_Result_As IVT_Msg_Result_As = 2;
+	repeated IVT_Msg_Result_W IVT_Msg_Result_W = 3;
+	repeated IVT_Msg_Response IVT_Msg_Response = 4;
+	repeated IVT_Msg_Result_T IVT_Msg_Result_T = 5;
+	repeated IVT_Msg_Result_U3 IVT_Msg_Result_U3 = 6;
+	repeated IVT_Msg_Result_U2 IVT_Msg_Result_U2 = 7;
+	repeated IVT_Msg_Result_U1 IVT_Msg_Result_U1 = 8;
+	repeated IVT_Msg_Result_I IVT_Msg_Result_I = 9;
+	repeated IVT_Msg_Cmd IVT_Msg_Cmd = 10;
+	repeated BOARD_STATUS BOARD_STATUS = 11;
+	repeated TEMPERATURES_INFO TEMPERATURES_INFO = 12;
+	repeated TEMPERATURES TEMPERATURES = 13;
+	repeated VOLTAGES_INFO VOLTAGES_INFO = 14;
+	repeated VOLTAGES VOLTAGES = 15;
+	repeated SET_BALANCING_STATUS SET_BALANCING_STATUS = 16;
+	repeated FLASH_CELLBOARD_0_RX FLASH_CELLBOARD_0_RX = 17;
+	repeated FLASH_CELLBOARD_1_TX FLASH_CELLBOARD_1_TX = 18;
+	repeated FLASH_CELLBOARD_1_RX FLASH_CELLBOARD_1_RX = 19;
+	repeated FLASH_CELLBOARD_2_TX FLASH_CELLBOARD_2_TX = 20;
+	repeated FLASH_CELLBOARD_2_RX FLASH_CELLBOARD_2_RX = 21;
+	repeated FLASH_CELLBOARD_3_TX FLASH_CELLBOARD_3_TX = 22;
+	repeated FLASH_CELLBOARD_3_RX FLASH_CELLBOARD_3_RX = 23;
+	repeated FLASH_CELLBOARD_4_TX FLASH_CELLBOARD_4_TX = 24;
+	repeated FLASH_CELLBOARD_4_RX FLASH_CELLBOARD_4_RX = 25;
+	repeated FLASH_CELLBOARD_5_TX FLASH_CELLBOARD_5_TX = 26;
+	repeated FLASH_CELLBOARD_5_RX FLASH_CELLBOARD_5_RX = 27;
+	repeated CELLBOARD_FLASH CELLBOARD_FLASH = 28;
+	repeated CELLBOARD_FLASH_TX CELLBOARD_FLASH_TX = 29;
+	repeated CELLBOARD_FLASH_RX CELLBOARD_FLASH_RX = 30;
+	repeated CELLBOARD_FLASH_REQUEST CELLBOARD_FLASH_REQUEST = 31;
+	repeated CELLBOARD_FLASH_RESPONSE CELLBOARD_FLASH_RESPONSE = 32;
+	repeated CELLBOARD_DISCOVERY CELLBOARD_DISCOVERY = 33;
+	repeated CELLBOARD_VERSION CELLBOARD_VERSION = 34;
+	repeated CELLBOARD_STATUS CELLBOARD_STATUS = 35;
+	repeated CELLBOARD_CELLS_VOLTAGE CELLBOARD_CELLS_VOLTAGE = 36;
+	repeated CELLBOARD_CELLS_TEMPERATURE CELLBOARD_CELLS_TEMPERATURE = 37;
+	repeated CELLBOARD_SET_BALANCING_STATUS CELLBOARD_SET_BALANCING_STATUS = 38;
+	repeated CELLBOARD_BALANCING_STATUS CELLBOARD_BALANCING_STATUS = 39;
+	repeated CELLBOARD_ERRORS CELLBOARD_ERRORS = 40;
 }
 

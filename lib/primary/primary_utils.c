@@ -121,9 +121,10 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 0:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_JMP_TO_BLT_FORWARD);
-		snprintf(v[1], string_size, HV_JMP_TO_BLT_CELLBOARD_ID);
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_FLASH_START);
+		snprintf(v[1], string_size, HV_FLASH_FORWARD);
+		snprintf(v[2], string_size, HV_FLASH_CELLBOARD_ID);
 
 		return 0;
 	case 700:
@@ -159,8 +160,8 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 	case 705:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, HV_CELLBOARD_VERSION_CELLBOARD_ID);
-		snprintf(v[1], string_size, HV_CELLBOARD_VERSION_COMPONENT_VERSION);
-		snprintf(v[2], string_size, HV_CELLBOARD_VERSION_CANLIB_BUILD_TIME);
+		snprintf(v[1], string_size, HV_CELLBOARD_VERSION_CANLIB_BUILD_TIME);
+		snprintf(v[2], string_size, HV_CELLBOARD_VERSION_COMPONENT_BUILD_TIME);
 
 		return 0;
 	case 32:
@@ -234,27 +235,39 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 520:
-		if(20 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_FEEDBACK_STATUS_FEEDBACK_IMPLAUSIBILITY_DETECTED);
-		snprintf(v[1], string_size, HV_FEEDBACK_STATUS_FEEDBACK_IMD_COCKPIT);
-		snprintf(v[2], string_size, HV_FEEDBACK_STATUS_FEEDBACK_TSAL_GREEN_FAULT_LATCHED);
-		snprintf(v[3], string_size, HV_FEEDBACK_STATUS_FEEDBACK_BMS_COCKPIT);
-		snprintf(v[4], string_size, HV_FEEDBACK_STATUS_FEEDBACK_EXT_LATCHED);
-		snprintf(v[5], string_size, HV_FEEDBACK_STATUS_FEEDBACK_TSAL_GREEN);
-		snprintf(v[6], string_size, HV_FEEDBACK_STATUS_FEEDBACK_TS_OVER_60V_STATUS);
-		snprintf(v[7], string_size, HV_FEEDBACK_STATUS_FEEDBACK_AIRN_STATUS);
-		snprintf(v[8], string_size, HV_FEEDBACK_STATUS_FEEDBACK_AIRP_STATUS);
-		snprintf(v[9], string_size, HV_FEEDBACK_STATUS_FEEDBACK_AIRP_GATE);
-		snprintf(v[10], string_size, HV_FEEDBACK_STATUS_FEEDBACK_AIRN_GATE);
-		snprintf(v[11], string_size, HV_FEEDBACK_STATUS_FEEDBACK_PRECHARGE_STATUS);
-		snprintf(v[12], string_size, HV_FEEDBACK_STATUS_FEEDBACK_TSP_OVER_60V_STATUS);
-		snprintf(v[13], string_size, HV_FEEDBACK_STATUS_FEEDBACK_IMD_FAULT);
-		snprintf(v[14], string_size, HV_FEEDBACK_STATUS_FEEDBACK_CHECK_MUX);
-		snprintf(v[15], string_size, HV_FEEDBACK_STATUS_FEEDBACK_SD_END);
-		snprintf(v[16], string_size, HV_FEEDBACK_STATUS_FEEDBACK_SD_OUT);
-		snprintf(v[17], string_size, HV_FEEDBACK_STATUS_FEEDBACK_SD_IN);
-		snprintf(v[18], string_size, HV_FEEDBACK_STATUS_FEEDBACK_SD_BMS);
-		snprintf(v[19], string_size, HV_FEEDBACK_STATUS_FEEDBACK_SD_IMD);
+		if(32 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_FEEDBACK_STATUS_AIRN_OPEN_COM);
+		snprintf(v[1], string_size, HV_FEEDBACK_STATUS_PRECHARGE_OPEN_COM);
+		snprintf(v[2], string_size, HV_FEEDBACK_STATUS_AIRP_OPEN_COM);
+		snprintf(v[3], string_size, HV_FEEDBACK_STATUS_AIRN_OPEN_MEC);
+		snprintf(v[4], string_size, HV_FEEDBACK_STATUS_PRECHARGE_OPEN_MEC);
+		snprintf(v[5], string_size, HV_FEEDBACK_STATUS_AIRP_OPEN_MEC);
+		snprintf(v[6], string_size, HV_FEEDBACK_STATUS_SD_IMD_FB);
+		snprintf(v[7], string_size, HV_FEEDBACK_STATUS_SD_BMS_FB);
+		snprintf(v[8], string_size, HV_FEEDBACK_STATUS_TS_LESS_THAN_60V);
+		snprintf(v[9], string_size, HV_FEEDBACK_STATUS_PLAUSIBLE_STATE_PERSISTED);
+		snprintf(v[10], string_size, HV_FEEDBACK_STATUS_PLAUSIBLE_STATE);
+		snprintf(v[11], string_size, HV_FEEDBACK_STATUS_NOT_BMS_FAULT_COCKPIT_LED);
+		snprintf(v[12], string_size, HV_FEEDBACK_STATUS_NOT_IMD_FAULT_COCKPIT_LED);
+		snprintf(v[13], string_size, HV_FEEDBACK_STATUS_INDICATOR_CONNECTED);
+		snprintf(v[14], string_size, HV_FEEDBACK_STATUS_NOT_LATCH_RESET);
+		snprintf(v[15], string_size, HV_FEEDBACK_STATUS_PLAUSIBLE_STATE_LATCHED);
+		snprintf(v[16], string_size, HV_FEEDBACK_STATUS_NOT_BMS_FAULT_LATCHED);
+		snprintf(v[17], string_size, HV_FEEDBACK_STATUS_NOT_IMD_FAULT_LATCHED);
+		snprintf(v[18], string_size, HV_FEEDBACK_STATUS_NOT_EXT_FAULT_LATCHED);
+		snprintf(v[19], string_size, HV_FEEDBACK_STATUS_IMD_OK);
+		snprintf(v[20], string_size, HV_FEEDBACK_STATUS_PLAUSIBLE_STATE_RC);
+		snprintf(v[21], string_size, HV_FEEDBACK_STATUS_TSAL_GREEN);
+		snprintf(v[22], string_size, HV_FEEDBACK_STATUS_PROBING_3V3);
+		snprintf(v[23], string_size, HV_FEEDBACK_STATUS_SD_OUT);
+		snprintf(v[24], string_size, HV_FEEDBACK_STATUS_SD_IN);
+		snprintf(v[25], string_size, HV_FEEDBACK_STATUS_SD_END);
+		snprintf(v[26], string_size, HV_FEEDBACK_STATUS_V5_MCU);
+		snprintf(v[27], string_size, HV_FEEDBACK_STATUS_FEEDBACK_TSAL_GREEN_FAULT_LATCHED);
+		snprintf(v[28], string_size, HV_FEEDBACK_STATUS_FEEDBACK_EXT_LATCHED);
+		snprintf(v[29], string_size, HV_FEEDBACK_STATUS_FEEDBACK_PRECHARGE_STATUS);
+		snprintf(v[30], string_size, HV_FEEDBACK_STATUS_FEEDBACK_TSP_OVER_60V_STATUS);
+		snprintf(v[31], string_size, HV_FEEDBACK_STATUS_FEEDBACK_CHECK_MUX);
 
 		return 0;
 	case 528:
@@ -290,32 +303,42 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 552:
-		if(6 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_IMD_STATUS_IMD_FAULT);
-		snprintf(v[1], string_size, HV_IMD_STATUS_IMD_STATUS);
-		snprintf(v[2], string_size, HV_IMD_STATUS_IMD_DETAILS);
-		snprintf(v[3], string_size, HV_IMD_STATUS_IMD_DUTY_CYCLE);
-		snprintf(v[4], string_size, HV_IMD_STATUS_IMD_FREQ);
-		snprintf(v[5], string_size, HV_IMD_STATUS_IMD_PERIOD);
+		if(8 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_IMD_STATUS_STATUS);
+		snprintf(v[1], string_size, HV_IMD_STATUS_FREQUENCY);
+		snprintf(v[2], string_size, HV_IMD_STATUS_DUTY_CYCLE);
+		snprintf(v[3], string_size, HV_IMD_STATUS_FEEDBACK_NOT_IMD_FAULT_COCKPIT_LED);
+		snprintf(v[4], string_size, HV_IMD_STATUS_FEEDBACK_NOT_IMD_FAULT_LATCHED);
+		snprintf(v[5], string_size, HV_IMD_STATUS_IMD_FAULT);
+		snprintf(v[6], string_size, HV_IMD_STATUS_IMD_DETAILS);
+		snprintf(v[7], string_size, HV_IMD_STATUS_IMD_PERIOD);
 
 		return 0;
 	case 560:
-		if(1 > fields_size) return 1;
+		if(7 > fields_size) return 1;
 		snprintf(v[0], string_size, HV_STATUS_STATUS);
+		snprintf(v[1], string_size, HV_STATUS_CELLBOARD_0);
+		snprintf(v[2], string_size, HV_STATUS_CELLBOARD_1);
+		snprintf(v[3], string_size, HV_STATUS_CELLBOARD_2);
+		snprintf(v[4], string_size, HV_STATUS_CELLBOARD_3);
+		snprintf(v[5], string_size, HV_STATUS_CELLBOARD_4);
+		snprintf(v[6], string_size, HV_STATUS_CELLBOARD_5);
 
 		return 0;
 	case 40:
-		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_SET_STATUS_ECU_HV_STATUS_SET);
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_SET_STATUS_ECU_STATUS);
+		snprintf(v[1], string_size, HV_SET_STATUS_ECU_HV_STATUS_SET);
 
 		return 0;
 	case 48:
-		if(1 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_SET_STATUS_HANDCART_HV_STATUS_SET);
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_SET_STATUS_HANDCART_STATUS);
+		snprintf(v[1], string_size, HV_SET_STATUS_HANDCART_HV_STATUS_SET);
 
 		return 0;
 	case 1544:
-		if(29 > fields_size) return 1;
+		if(54 > fields_size) return 1;
 		snprintf(v[0], string_size, HV_BALANCING_STATUS_CELLBOARD_ID);
 		snprintf(v[1], string_size, HV_BALANCING_STATUS_BALANCING_STATUS);
 		snprintf(v[2], string_size, HV_BALANCING_STATUS_ERRORS_CAN_COMM);
@@ -345,18 +368,47 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[26], string_size, HV_BALANCING_STATUS_BALANCING_CELLS_CELL15);
 		snprintf(v[27], string_size, HV_BALANCING_STATUS_BALANCING_CELLS_CELL16);
 		snprintf(v[28], string_size, HV_BALANCING_STATUS_BALANCING_CELLS_CELL17);
+		snprintf(v[29], string_size, HV_BALANCING_STATUS_STATUS);
+		snprintf(v[30], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_0);
+		snprintf(v[31], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_1);
+		snprintf(v[32], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_2);
+		snprintf(v[33], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_3);
+		snprintf(v[34], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_4);
+		snprintf(v[35], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_5);
+		snprintf(v[36], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_6);
+		snprintf(v[37], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_7);
+		snprintf(v[38], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_8);
+		snprintf(v[39], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_9);
+		snprintf(v[40], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_10);
+		snprintf(v[41], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_11);
+		snprintf(v[42], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_12);
+		snprintf(v[43], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_13);
+		snprintf(v[44], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_14);
+		snprintf(v[45], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_15);
+		snprintf(v[46], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_16);
+		snprintf(v[47], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_17);
+		snprintf(v[48], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_18);
+		snprintf(v[49], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_19);
+		snprintf(v[50], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_20);
+		snprintf(v[51], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_21);
+		snprintf(v[52], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_22);
+		snprintf(v[53], string_size, HV_BALANCING_STATUS_DISCHARGING_CELL_23);
 
 		return 0;
 	case 1032:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_SET_BALANCING_STATUS_HANDCART_SET_BALANCING_STATUS);
-		snprintf(v[1], string_size, HV_SET_BALANCING_STATUS_HANDCART_BALANCING_THRESHOLD);
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_SET_BALANCING_STATUS_STEERING_WHEEL_STATUS);
+		snprintf(v[1], string_size, HV_SET_BALANCING_STATUS_STEERING_WHEEL_THRESHOLD);
+		snprintf(v[2], string_size, HV_SET_BALANCING_STATUS_STEERING_WHEEL_SET_BALANCING_STATUS);
+		snprintf(v[3], string_size, HV_SET_BALANCING_STATUS_STEERING_WHEEL_BALANCING_THRESHOLD);
 
 		return 0;
 	case 1040:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_SET_BALANCING_STATUS_STEERING_WHEEL_SET_BALANCING_STATUS);
-		snprintf(v[1], string_size, HV_SET_BALANCING_STATUS_STEERING_WHEEL_BALANCING_THRESHOLD);
+		if(4 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_SET_BALANCING_STATUS_HANDCART_STATUS);
+		snprintf(v[1], string_size, HV_SET_BALANCING_STATUS_HANDCART_THRESHOLD);
+		snprintf(v[2], string_size, HV_SET_BALANCING_STATUS_HANDCART_SET_BALANCING_STATUS);
+		snprintf(v[3], string_size, HV_SET_BALANCING_STATUS_HANDCART_BALANCING_THRESHOLD);
 
 		return 0;
 	case 568:
@@ -741,11 +793,12 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 1720:
-		if(4 > fields_size) return 1;
-		snprintf(v[0], string_size, HV_CELLS_VOLTAGE_START_INDEX);
-		snprintf(v[1], string_size, HV_CELLS_VOLTAGE_VOLTAGE_0);
-		snprintf(v[2], string_size, HV_CELLS_VOLTAGE_VOLTAGE_1);
-		snprintf(v[3], string_size, HV_CELLS_VOLTAGE_VOLTAGE_2);
+		if(5 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_CELLS_VOLTAGE_CELLBOARD_ID);
+		snprintf(v[1], string_size, HV_CELLS_VOLTAGE_OFFSET);
+		snprintf(v[2], string_size, HV_CELLS_VOLTAGE_VOLTAGE_0);
+		snprintf(v[3], string_size, HV_CELLS_VOLTAGE_VOLTAGE_1);
+		snprintf(v[4], string_size, HV_CELLS_VOLTAGE_VOLTAGE_2);
 
 		return 0;
 	case 1728:
@@ -844,6 +897,37 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[1], string_size, DEBUG_SIGNAL_4_FIELD_1);
 		snprintf(v[2], string_size, DEBUG_SIGNAL_4_FIELD_2);
 		snprintf(v[3], string_size, DEBUG_SIGNAL_4_FIELD_3);
+
+		return 0;
+	case 50:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_FLASH_REQUEST_MAINBOARD);
+		snprintf(v[1], string_size, HV_FLASH_REQUEST_CELLBOARD_ID);
+
+		return 0;
+	case 51:
+		if(1 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_FLASH_RESPONSE_READY);
+
+		return 0;
+	case 1120:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_TS_VOLTAGE_TS);
+		snprintf(v[1], string_size, HV_TS_VOLTAGE_PACK);
+		snprintf(v[2], string_size, HV_TS_VOLTAGE_CELLS_SUM);
+
+		return 0;
+	case 1832:
+		if(9 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_CELLS_TEMPERATURE_CELLBOARD_ID);
+		snprintf(v[1], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_ID_0);
+		snprintf(v[2], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_ID_1);
+		snprintf(v[3], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_ID_2);
+		snprintf(v[4], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_ID_3);
+		snprintf(v[5], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_0);
+		snprintf(v[6], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_1);
+		snprintf(v[7], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_2);
+		snprintf(v[8], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_3);
 
 		return 0;
 	case 256:
@@ -1074,6 +1158,54 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[7], string_size, CHARGER_19_DATA_7);
 
 		return 0;
+	case 696:
+		if(17 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_AIRN_OPEN_COM);
+		snprintf(v[1], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_AIRP_OPEN_COM);
+		snprintf(v[2], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_SD_IMD_FB);
+		snprintf(v[3], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_SD_BMS_FB);
+		snprintf(v[4], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_PRECHARGE_OPEN_COM);
+		snprintf(v[5], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_PRECHARGE_OPEN_MEC);
+		snprintf(v[6], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_TS_LESS_THAN_60V);
+		snprintf(v[7], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_PLAUSIBLE_STATE_PERSISTED);
+		snprintf(v[8], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_PLAUSIBLE_STATE);
+		snprintf(v[9], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_NOT_BMS_FAULT_COCKPIT_LED);
+		snprintf(v[10], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_NOT_IMD_FAULT_COCKPIT_LED);
+		snprintf(v[11], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_INDICATOR_CONNECTED);
+		snprintf(v[12], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_NOT_LATCH_RESET);
+		snprintf(v[13], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_PLAUSIBLE_STATE_LATCHED);
+		snprintf(v[14], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_NOT_BMS_FAULT_LATCHED);
+		snprintf(v[15], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_NOT_IMD_FAULT_LATCHED);
+		snprintf(v[16], string_size, HV_FEEDBACK_DIGITAL_DIGITAL_NOT_EXT_FAULT_LATCHED);
+
+		return 0;
+	case 712:
+		if(7 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_FEEDBACK_ANALOG_ANALOG_AIRN_OPEN_MEC);
+		snprintf(v[1], string_size, HV_FEEDBACK_ANALOG_ANALOG_AIRP_OPEN_MEC);
+		snprintf(v[2], string_size, HV_FEEDBACK_ANALOG_ANALOG_IMD_OK);
+		snprintf(v[3], string_size, HV_FEEDBACK_ANALOG_ANALOG_PLAUSIBLE_STATE_RC);
+		snprintf(v[4], string_size, HV_FEEDBACK_ANALOG_ANALOG_TSAL_GREEN);
+		snprintf(v[5], string_size, HV_FEEDBACK_ANALOG_ANALOG_PROBING_3V3);
+		snprintf(v[6], string_size, HV_FEEDBACK_ANALOG_ANALOG_V5_MCU);
+
+		return 0;
+	case 720:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_FEEDBACK_ANALOG_SD_SD_OUT);
+		snprintf(v[1], string_size, HV_FEEDBACK_ANALOG_SD_SD_IN);
+		snprintf(v[2], string_size, HV_FEEDBACK_ANALOG_SD_SD_END);
+
+		return 0;
+	case 728:
+		if(5 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_FEEDBACK_ENZOMMA_FEEDBACK);
+		snprintf(v[1], string_size, HV_FEEDBACK_ENZOMMA_STATUS);
+		snprintf(v[2], string_size, HV_FEEDBACK_ENZOMMA_IS_DIGITAL);
+		snprintf(v[3], string_size, HV_FEEDBACK_ENZOMMA_DIGITAL);
+		snprintf(v[4], string_size, HV_FEEDBACK_ENZOMMA_ANALOG);
+
+		return 0;
 
     }
     return 0;
@@ -1084,18 +1216,18 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
     {
 	case 0:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_jmp_to_blt_forward_off");
-		snprintf(v[1], string_size, "primary_hv_jmp_to_blt_forward_on");
+		snprintf(v[0], string_size, "primary_hv_flash_forward_off");
+		snprintf(v[1], string_size, "primary_hv_flash_forward_on");
 
 		return 0;
 	case 1:
 		if(6 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_0");
-		snprintf(v[1], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_1");
-		snprintf(v[2], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_2");
-		snprintf(v[3], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_3");
-		snprintf(v[4], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_4");
-		snprintf(v[5], string_size, "primary_hv_jmp_to_blt_cellboard_id_cellboard_5");
+		snprintf(v[0], string_size, "primary_hv_flash_cellboard_id_cellboard_0");
+		snprintf(v[1], string_size, "primary_hv_flash_cellboard_id_cellboard_1");
+		snprintf(v[2], string_size, "primary_hv_flash_cellboard_id_cellboard_2");
+		snprintf(v[3], string_size, "primary_hv_flash_cellboard_id_cellboard_3");
+		snprintf(v[4], string_size, "primary_hv_flash_cellboard_id_cellboard_4");
+		snprintf(v[5], string_size, "primary_hv_flash_cellboard_id_cellboard_5");
 
 		return 0;
 	case 2:
@@ -1122,178 +1254,339 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		return 0;
 	case 5:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_implausibility_detected_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_implausibility_detected_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_implausibility_detected_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_airn_open_com_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_airn_open_com_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_airn_open_com_high");
 
 		return 0;
 	case 6:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_imd_cockpit_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_imd_cockpit_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_imd_cockpit_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_precharge_open_com_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_precharge_open_com_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_precharge_open_com_high");
 
 		return 0;
 	case 7:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_tsal_green_fault_latched_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_tsal_green_fault_latched_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_tsal_green_fault_latched_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_airp_open_com_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_airp_open_com_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_airp_open_com_high");
 
 		return 0;
 	case 8:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_bms_cockpit_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_bms_cockpit_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_bms_cockpit_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_airn_open_mec_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_airn_open_mec_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_airn_open_mec_high");
 
 		return 0;
 	case 9:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_ext_latched_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_ext_latched_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_ext_latched_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_precharge_open_mec_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_precharge_open_mec_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_precharge_open_mec_high");
 
 		return 0;
 	case 10:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_tsal_green_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_tsal_green_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_tsal_green_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_airp_open_mec_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_airp_open_mec_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_airp_open_mec_high");
 
 		return 0;
 	case 11:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_ts_over_60v_status_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_ts_over_60v_status_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_ts_over_60v_status_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_sd_imd_fb_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_sd_imd_fb_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_sd_imd_fb_high");
 
 		return 0;
 	case 12:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_airn_status_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_airn_status_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_airn_status_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_sd_bms_fb_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_sd_bms_fb_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_sd_bms_fb_high");
 
 		return 0;
 	case 13:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_airp_status_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_airp_status_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_airp_status_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_ts_less_than_60v_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_ts_less_than_60v_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_ts_less_than_60v_high");
 
 		return 0;
 	case 14:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_airp_gate_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_airp_gate_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_airp_gate_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_plausible_state_persisted_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_plausible_state_persisted_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_plausible_state_persisted_high");
 
 		return 0;
 	case 15:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_airn_gate_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_airn_gate_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_airn_gate_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_plausible_state_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_plausible_state_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_plausible_state_high");
 
 		return 0;
 	case 16:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_precharge_status_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_precharge_status_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_precharge_status_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_not_bms_fault_cockpit_led_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_not_bms_fault_cockpit_led_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_not_bms_fault_cockpit_led_high");
 
 		return 0;
 	case 17:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_tsp_over_60v_status_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_tsp_over_60v_status_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_tsp_over_60v_status_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_not_imd_fault_cockpit_led_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_not_imd_fault_cockpit_led_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_not_imd_fault_cockpit_led_high");
 
 		return 0;
 	case 18:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_imd_fault_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_imd_fault_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_imd_fault_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_indicator_connected_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_indicator_connected_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_indicator_connected_high");
 
 		return 0;
 	case 19:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_check_mux_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_check_mux_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_check_mux_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_not_latch_reset_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_not_latch_reset_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_not_latch_reset_high");
 
 		return 0;
 	case 20:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_sd_end_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_sd_end_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_sd_end_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_plausible_state_latched_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_plausible_state_latched_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_plausible_state_latched_high");
 
 		return 0;
 	case 21:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_sd_out_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_sd_out_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_sd_out_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_not_bms_fault_latched_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_not_bms_fault_latched_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_not_bms_fault_latched_high");
 
 		return 0;
 	case 22:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_sd_in_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_sd_in_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_sd_in_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_not_imd_fault_latched_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_not_imd_fault_latched_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_not_imd_fault_latched_high");
 
 		return 0;
 	case 23:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_sd_bms_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_sd_bms_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_sd_bms_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_not_ext_fault_latched_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_not_ext_fault_latched_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_not_ext_fault_latched_high");
 
 		return 0;
 	case 24:
 		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_sd_imd_feedback_state_low");
-		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_sd_imd_feedback_state_error");
-		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_sd_imd_feedback_state_high");
+		snprintf(v[0], string_size, "primary_hv_feedback_status_imd_ok_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_imd_ok_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_imd_ok_high");
 
 		return 0;
 	case 25:
-		if(6 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_imd_status_imd_status_sc");
-		snprintf(v[1], string_size, "primary_hv_imd_status_imd_status_normal");
-		snprintf(v[2], string_size, "primary_hv_imd_status_imd_status_under_voltage");
-		snprintf(v[3], string_size, "primary_hv_imd_status_imd_status_start_measure");
-		snprintf(v[4], string_size, "primary_hv_imd_status_imd_status_device_error");
-		snprintf(v[5], string_size, "primary_hv_imd_status_imd_status_earth_fault");
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_plausible_state_rc_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_plausible_state_rc_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_plausible_state_rc_high");
 
 		return 0;
 	case 26:
-		if(7 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_status_status_init");
-		snprintf(v[1], string_size, "primary_hv_status_status_idle");
-		snprintf(v[2], string_size, "primary_hv_status_status_airn_close");
-		snprintf(v[3], string_size, "primary_hv_status_status_precharge");
-		snprintf(v[4], string_size, "primary_hv_status_status_airp_close");
-		snprintf(v[5], string_size, "primary_hv_status_status_ts_on");
-		snprintf(v[6], string_size, "primary_hv_status_status_fatal_error");
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_tsal_green_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_tsal_green_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_tsal_green_high");
 
 		return 0;
 	case 27:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_probing_3v3_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_probing_3v3_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_probing_3v3_high");
+
+		return 0;
+	case 28:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_sd_out_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_sd_out_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_sd_out_high");
+
+		return 0;
+	case 29:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_sd_in_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_sd_in_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_sd_in_high");
+
+		return 0;
+	case 30:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_sd_end_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_sd_end_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_sd_end_high");
+
+		return 0;
+	case 31:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_v5_mcu_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_v5_mcu_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_v5_mcu_high");
+
+		return 0;
+	case 32:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_tsal_green_fault_latched_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_tsal_green_fault_latched_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_tsal_green_fault_latched_high");
+
+		return 0;
+	case 33:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_ext_latched_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_ext_latched_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_ext_latched_high");
+
+		return 0;
+	case 34:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_precharge_status_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_precharge_status_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_precharge_status_high");
+
+		return 0;
+	case 35:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_tsp_over_60v_status_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_tsp_over_60v_status_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_tsp_over_60v_status_high");
+
+		return 0;
+	case 36:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_status_feedback_check_mux_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_status_feedback_check_mux_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_status_feedback_check_mux_high");
+
+		return 0;
+	case 37:
+		if(7 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_imd_status_status_unknown");
+		snprintf(v[1], string_size, "primary_hv_imd_status_status_short_circuit");
+		snprintf(v[2], string_size, "primary_hv_imd_status_status_normal");
+		snprintf(v[3], string_size, "primary_hv_imd_status_status_under_voltage");
+		snprintf(v[4], string_size, "primary_hv_imd_status_status_start_measure");
+		snprintf(v[5], string_size, "primary_hv_imd_status_status_device_error");
+		snprintf(v[6], string_size, "primary_hv_imd_status_status_earth_fault");
+
+		return 0;
+	case 38:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_imd_status_feedback_not_imd_fault_cockpit_led_low");
+		snprintf(v[1], string_size, "primary_hv_imd_status_feedback_not_imd_fault_cockpit_led_error");
+		snprintf(v[2], string_size, "primary_hv_imd_status_feedback_not_imd_fault_cockpit_led_high");
+
+		return 0;
+	case 39:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_imd_status_feedback_not_imd_fault_latched_low");
+		snprintf(v[1], string_size, "primary_hv_imd_status_feedback_not_imd_fault_latched_error");
+		snprintf(v[2], string_size, "primary_hv_imd_status_feedback_not_imd_fault_latched_high");
+
+		return 0;
+	case 40:
+		if(9 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_status_status_init");
+		snprintf(v[1], string_size, "primary_hv_status_status_idle");
+		snprintf(v[2], string_size, "primary_hv_status_status_fatal");
+		snprintf(v[3], string_size, "primary_hv_status_status_flash");
+		snprintf(v[4], string_size, "primary_hv_status_status_balancing");
+		snprintf(v[5], string_size, "primary_hv_status_status_airn_check");
+		snprintf(v[6], string_size, "primary_hv_status_status_precharge_check");
+		snprintf(v[7], string_size, "primary_hv_status_status_airp_check");
+		snprintf(v[8], string_size, "primary_hv_status_status_ts_on");
+
+		return 0;
+	case 41:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_status_cellboard_0_init");
+		snprintf(v[1], string_size, "primary_hv_status_cellboard_0_idle");
+		snprintf(v[2], string_size, "primary_hv_status_cellboard_0_fatal");
+		snprintf(v[3], string_size, "primary_hv_status_cellboard_0_flash");
+		snprintf(v[4], string_size, "primary_hv_status_cellboard_0_discharge");
+		snprintf(v[5], string_size, "primary_hv_status_cellboard_0_cooldown");
+
+		return 0;
+	case 42:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_status_cellboard_1_init");
+		snprintf(v[1], string_size, "primary_hv_status_cellboard_1_idle");
+		snprintf(v[2], string_size, "primary_hv_status_cellboard_1_fatal");
+		snprintf(v[3], string_size, "primary_hv_status_cellboard_1_flash");
+		snprintf(v[4], string_size, "primary_hv_status_cellboard_1_discharge");
+		snprintf(v[5], string_size, "primary_hv_status_cellboard_1_cooldown");
+
+		return 0;
+	case 43:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_status_cellboard_2_init");
+		snprintf(v[1], string_size, "primary_hv_status_cellboard_2_idle");
+		snprintf(v[2], string_size, "primary_hv_status_cellboard_2_fatal");
+		snprintf(v[3], string_size, "primary_hv_status_cellboard_2_flash");
+		snprintf(v[4], string_size, "primary_hv_status_cellboard_2_discharge");
+		snprintf(v[5], string_size, "primary_hv_status_cellboard_2_cooldown");
+
+		return 0;
+	case 44:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_status_cellboard_3_init");
+		snprintf(v[1], string_size, "primary_hv_status_cellboard_3_idle");
+		snprintf(v[2], string_size, "primary_hv_status_cellboard_3_fatal");
+		snprintf(v[3], string_size, "primary_hv_status_cellboard_3_flash");
+		snprintf(v[4], string_size, "primary_hv_status_cellboard_3_discharge");
+		snprintf(v[5], string_size, "primary_hv_status_cellboard_3_cooldown");
+
+		return 0;
+	case 45:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_status_cellboard_4_init");
+		snprintf(v[1], string_size, "primary_hv_status_cellboard_4_idle");
+		snprintf(v[2], string_size, "primary_hv_status_cellboard_4_fatal");
+		snprintf(v[3], string_size, "primary_hv_status_cellboard_4_flash");
+		snprintf(v[4], string_size, "primary_hv_status_cellboard_4_discharge");
+		snprintf(v[5], string_size, "primary_hv_status_cellboard_4_cooldown");
+
+		return 0;
+	case 46:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_status_cellboard_5_init");
+		snprintf(v[1], string_size, "primary_hv_status_cellboard_5_idle");
+		snprintf(v[2], string_size, "primary_hv_status_cellboard_5_fatal");
+		snprintf(v[3], string_size, "primary_hv_status_cellboard_5_flash");
+		snprintf(v[4], string_size, "primary_hv_status_cellboard_5_discharge");
+		snprintf(v[5], string_size, "primary_hv_status_cellboard_5_cooldown");
+
+		return 0;
+	case 47:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_status_ecu_hv_status_set_off");
 		snprintf(v[1], string_size, "primary_hv_set_status_ecu_hv_status_set_on");
 
 		return 0;
-	case 28:
+	case 48:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_status_handcart_hv_status_set_off");
 		snprintf(v[1], string_size, "primary_hv_set_status_handcart_hv_status_set_on");
 
 		return 0;
-	case 29:
+	case 49:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_0");
 		snprintf(v[1], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_1");
@@ -1303,25 +1596,32 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[5], string_size, "primary_hv_balancing_status_cellboard_id_cellboard_5");
 
 		return 0;
-	case 30:
+	case 50:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_balancing_status_balancing_status_off");
 		snprintf(v[1], string_size, "primary_hv_balancing_status_balancing_status_on");
 
 		return 0;
-	case 31:
-		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, "primary_hv_set_balancing_status_handcart_set_balancing_status_off");
-		snprintf(v[1], string_size, "primary_hv_set_balancing_status_handcart_set_balancing_status_on");
+	case 51:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_balancing_status_status_stopped");
+		snprintf(v[1], string_size, "primary_hv_balancing_status_status_paused");
+		snprintf(v[2], string_size, "primary_hv_balancing_status_status_running");
 
 		return 0;
-	case 32:
+	case 52:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_hv_set_balancing_status_steering_wheel_set_balancing_status_off");
 		snprintf(v[1], string_size, "primary_hv_set_balancing_status_steering_wheel_set_balancing_status_on");
 
 		return 0;
-	case 33:
+	case 53:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_set_balancing_status_handcart_set_balancing_status_off");
+		snprintf(v[1], string_size, "primary_hv_set_balancing_status_handcart_set_balancing_status_on");
+
+		return 0;
+	case 54:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_status_status_init");
 		snprintf(v[1], string_size, "primary_lv_status_status_idle");
@@ -1331,91 +1631,91 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[5], string_size, "primary_lv_status_status_error");
 
 		return 0;
-	case 34:
+	case 55:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_charging_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_charging_status_status_on");
 
 		return 0;
-	case 35:
+	case 56:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_cooling_aggressiveness_status_weak");
 		snprintf(v[1], string_size, "primary_lv_cooling_aggressiveness_status_normal");
 		snprintf(v[2], string_size, "primary_lv_cooling_aggressiveness_status_aggressive");
 
 		return 0;
-	case 36:
+	case 57:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_cooling_aggressiveness_status_weak");
 		snprintf(v[1], string_size, "primary_lv_set_cooling_aggressiveness_status_normal");
 		snprintf(v[2], string_size, "primary_lv_set_cooling_aggressiveness_status_aggressive");
 
 		return 0;
-	case 37:
+	case 58:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_radiator_speed_status_off");
 		snprintf(v[1], string_size, "primary_lv_radiator_speed_status_auto");
 		snprintf(v[2], string_size, "primary_lv_radiator_speed_status_manual");
 
 		return 0;
-	case 38:
+	case 59:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_pumps_speed_status_off");
 		snprintf(v[1], string_size, "primary_lv_pumps_speed_status_auto");
 		snprintf(v[2], string_size, "primary_lv_pumps_speed_status_manual");
 
 		return 0;
-	case 39:
+	case 60:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_radiator_speed_status_off");
 		snprintf(v[1], string_size, "primary_lv_set_radiator_speed_status_auto");
 		snprintf(v[2], string_size, "primary_lv_set_radiator_speed_status_manual");
 
 		return 0;
-	case 40:
+	case 61:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_pumps_speed_status_off");
 		snprintf(v[1], string_size, "primary_lv_set_pumps_speed_status_auto");
 		snprintf(v[2], string_size, "primary_lv_set_pumps_speed_status_manual");
 
 		return 0;
-	case 41:
+	case 62:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_inverter_connection_status_status_on");
 
 		return 0;
-	case 42:
+	case 63:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_lv_set_inverter_connection_status_status_off");
 		snprintf(v[1], string_size, "primary_lv_set_inverter_connection_status_status_on");
 
 		return 0;
-	case 43:
+	case 64:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_status_status_on");
 
 		return 0;
-	case 44:
+	case 65:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_tlm_set_status_status_off");
 		snprintf(v[1], string_size, "primary_tlm_set_status_status_on");
 
 		return 0;
-	case 45:
+	case 66:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_status_connected_off");
 		snprintf(v[1], string_size, "primary_handcart_status_connected_on");
 
 		return 0;
-	case 46:
+	case 67:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_settings_fans_override_on");
 
 		return 0;
-	case 47:
+	case 68:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_settings_status_check");
@@ -1428,13 +1728,13 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_settings_status_error");
 
 		return 0;
-	case 48:
+	case 69:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_fans_override_off");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_fans_override_on");
 
 		return 0;
-	case 49:
+	case 70:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_handcart_set_settings_status_none");
 		snprintf(v[1], string_size, "primary_handcart_set_settings_status_check");
@@ -1447,7 +1747,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_handcart_set_settings_status_error");
 
 		return 0;
-	case 50:
+	case 71:
 		if(14 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_status_status_init");
 		snprintf(v[1], string_size, "primary_ecu_status_status_enable_inv_updates");
@@ -1465,14 +1765,14 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[13], string_size, "primary_ecu_status_status_fatal_error");
 
 		return 0;
-	case 51:
+	case 72:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_status_status_idle");
 		snprintf(v[1], string_size, "primary_ecu_set_status_status_ready");
 		snprintf(v[2], string_size, "primary_ecu_set_status_status_drive");
 
 		return 0;
-	case 52:
+	case 73:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rl_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rl_rfe_on");
@@ -1480,7 +1780,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rl_enabled");
 
 		return 0;
-	case 53:
+	case 74:
 		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_inverter_status_rr_disabled");
 		snprintf(v[1], string_size, "primary_ecu_inverter_status_rr_rfe_on");
@@ -1488,91 +1788,101 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[3], string_size, "primary_ecu_inverter_status_rr_enabled");
 
 		return 0;
-	case 54:
+	case 75:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_power_maps_sc_state_off");
 		snprintf(v[1], string_size, "primary_ecu_power_maps_sc_state_on");
 
 		return 0;
-	case 55:
+	case 76:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_power_maps_tv_state_off");
 		snprintf(v[1], string_size, "primary_ecu_power_maps_tv_state_on");
 
 		return 0;
-	case 56:
+	case 77:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_power_maps_reg_state_off");
 		snprintf(v[1], string_size, "primary_ecu_power_maps_reg_state_on");
 
 		return 0;
-	case 57:
+	case 78:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_power_maps_sc_state_off");
 		snprintf(v[1], string_size, "primary_ecu_set_power_maps_sc_state_on");
 
 		return 0;
-	case 58:
+	case 79:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_power_maps_tv_state_off");
 		snprintf(v[1], string_size, "primary_ecu_set_power_maps_tv_state_on");
 
 		return 0;
-	case 59:
+	case 80:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_power_maps_reg_state_off");
 		snprintf(v[1], string_size, "primary_ecu_set_power_maps_reg_state_on");
 
 		return 0;
-	case 60:
+	case 81:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_ptt_status_status_on");
 
 		return 0;
-	case 61:
+	case 82:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_ptt_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_ptt_status_status_on");
 
 		return 0;
-	case 62:
+	case 83:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_control_status_sc_state_off");
 		snprintf(v[1], string_size, "primary_control_status_sc_state_on");
 
 		return 0;
-	case 63:
+	case 84:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_control_status_tv_state_off");
 		snprintf(v[1], string_size, "primary_control_status_tv_state_on");
 
 		return 0;
-	case 64:
+	case 85:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_control_status_reg_state_off");
 		snprintf(v[1], string_size, "primary_control_status_reg_state_on");
 
 		return 0;
-	case 65:
+	case 86:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_cells_voltage_cellboard_id_cellboard_0");
+		snprintf(v[1], string_size, "primary_hv_cells_voltage_cellboard_id_cellboard_1");
+		snprintf(v[2], string_size, "primary_hv_cells_voltage_cellboard_id_cellboard_2");
+		snprintf(v[3], string_size, "primary_hv_cells_voltage_cellboard_id_cellboard_3");
+		snprintf(v[4], string_size, "primary_hv_cells_voltage_cellboard_id_cellboard_4");
+		snprintf(v[5], string_size, "primary_hv_cells_voltage_cellboard_id_cellboard_5");
+
+		return 0;
+	case 87:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_steer_actuator_status_status_off");
 		snprintf(v[1], string_size, "primary_ecu_steer_actuator_status_status_on");
 
 		return 0;
-	case 66:
+	case 88:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_steering_wheel_status_on");
 
 		return 0;
-	case 67:
+	case 89:
 		if(2 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_off");
 		snprintf(v[1], string_size, "primary_ecu_set_steer_actuator_status_tlm_status_on");
 
 		return 0;
-	case 68:
+	case 90:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_1_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_1_device_id_hv_cellboard");
@@ -1585,7 +1895,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_debug_signal_1_device_id_acquisinator");
 
 		return 0;
-	case 69:
+	case 91:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_2_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_2_device_id_hv_cellboard");
@@ -1598,7 +1908,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_debug_signal_2_device_id_acquisinator");
 
 		return 0;
-	case 70:
+	case 92:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_3_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_3_device_id_hv_cellboard");
@@ -1611,7 +1921,7 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[8], string_size, "primary_debug_signal_3_device_id_acquisinator");
 
 		return 0;
-	case 71:
+	case 93:
 		if(9 > fields_size) return 1;
 		snprintf(v[0], string_size, "primary_debug_signal_4_device_id_hv_mainboard");
 		snprintf(v[1], string_size, "primary_debug_signal_4_device_id_hv_cellboard");
@@ -1622,6 +1932,65 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[6], string_size, "primary_debug_signal_4_device_id_steeering_wheel");
 		snprintf(v[7], string_size, "primary_debug_signal_4_device_id_handcart");
 		snprintf(v[8], string_size, "primary_debug_signal_4_device_id_acquisinator");
+
+		return 0;
+	case 94:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_flash_request_cellboard_id_cellboard_0");
+		snprintf(v[1], string_size, "primary_hv_flash_request_cellboard_id_cellboard_1");
+		snprintf(v[2], string_size, "primary_hv_flash_request_cellboard_id_cellboard_2");
+		snprintf(v[3], string_size, "primary_hv_flash_request_cellboard_id_cellboard_3");
+		snprintf(v[4], string_size, "primary_hv_flash_request_cellboard_id_cellboard_4");
+		snprintf(v[5], string_size, "primary_hv_flash_request_cellboard_id_cellboard_5");
+
+		return 0;
+	case 95:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_cells_temperature_cellboard_id_cellboard_0");
+		snprintf(v[1], string_size, "primary_hv_cells_temperature_cellboard_id_cellboard_1");
+		snprintf(v[2], string_size, "primary_hv_cells_temperature_cellboard_id_cellboard_2");
+		snprintf(v[3], string_size, "primary_hv_cells_temperature_cellboard_id_cellboard_3");
+		snprintf(v[4], string_size, "primary_hv_cells_temperature_cellboard_id_cellboard_4");
+		snprintf(v[5], string_size, "primary_hv_cells_temperature_cellboard_id_cellboard_5");
+
+		return 0;
+	case 96:
+		if(28 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_enzomma_feedback_airn_open_com");
+		snprintf(v[1], string_size, "primary_hv_feedback_enzomma_feedback_precharge_open_com");
+		snprintf(v[2], string_size, "primary_hv_feedback_enzomma_feedback_airp_open_com");
+		snprintf(v[3], string_size, "primary_hv_feedback_enzomma_feedback_airn_open_mec");
+		snprintf(v[4], string_size, "primary_hv_feedback_enzomma_feedback_precharge_open_mec");
+		snprintf(v[5], string_size, "primary_hv_feedback_enzomma_feedback_airp_open_mec");
+		snprintf(v[6], string_size, "primary_hv_feedback_enzomma_feedback_sd_imd_fb");
+		snprintf(v[7], string_size, "primary_hv_feedback_enzomma_feedback_sd_bms_fb");
+		snprintf(v[8], string_size, "primary_hv_feedback_enzomma_feedback_ts_less_than_60v");
+		snprintf(v[9], string_size, "primary_hv_feedback_enzomma_feedback_plausible_state_persisted");
+		snprintf(v[10], string_size, "primary_hv_feedback_enzomma_feedback_plausible_state");
+		snprintf(v[11], string_size, "primary_hv_feedback_enzomma_feedback_not_bms_fault_cockpit_led");
+		snprintf(v[12], string_size, "primary_hv_feedback_enzomma_feedback_not_imd_fault_cockpit_led");
+		snprintf(v[13], string_size, "primary_hv_feedback_enzomma_feedback_indicator_connected");
+		snprintf(v[14], string_size, "primary_hv_feedback_enzomma_feedback_not_latch_reset");
+		snprintf(v[15], string_size, "primary_hv_feedback_enzomma_feedback_plausible_state_latched");
+		snprintf(v[16], string_size, "primary_hv_feedback_enzomma_feedback_not_bms_fault_latched");
+		snprintf(v[17], string_size, "primary_hv_feedback_enzomma_feedback_not_imd_fault_latched");
+		snprintf(v[18], string_size, "primary_hv_feedback_enzomma_feedback_not_ext_fault_latched");
+		snprintf(v[19], string_size, "primary_hv_feedback_enzomma_feedback_imd_ok");
+		snprintf(v[20], string_size, "primary_hv_feedback_enzomma_feedback_plausible_state_rc");
+		snprintf(v[21], string_size, "primary_hv_feedback_enzomma_feedback_tsal_green");
+		snprintf(v[22], string_size, "primary_hv_feedback_enzomma_feedback_probing_3v3");
+		snprintf(v[23], string_size, "primary_hv_feedback_enzomma_feedback_sd_out");
+		snprintf(v[24], string_size, "primary_hv_feedback_enzomma_feedback_sd_in");
+		snprintf(v[25], string_size, "primary_hv_feedback_enzomma_feedback_sd_end");
+		snprintf(v[26], string_size, "primary_hv_feedback_enzomma_feedback_v5_mcu");
+		snprintf(v[27], string_size, "primary_hv_feedback_enzomma_feedback_unknown");
+
+		return 0;
+	case 97:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_feedback_enzomma_status_low");
+		snprintf(v[1], string_size, "primary_hv_feedback_enzomma_status_error");
+		snprintf(v[2], string_size, "primary_hv_feedback_enzomma_status_high");
 
 		return 0;
 
@@ -2050,21 +2419,25 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 0:
 	{
-		primary_hv_jmp_to_blt_t tmp;
-		primary_hv_jmp_to_blt_converted_t tmp_converted;
+		primary_hv_flash_t tmp;
+		primary_hv_flash_converted_t tmp_converted;
+		uint8_t r_start;
 		uint8_t r_forward;
 		uint8_t r_cellboard_id;
 
 		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
 			"%" SCNu8 ","  ,
+			&r_start,
 			&r_forward,
 			&r_cellboard_id);
-		tmp_converted.forward = (primary_hv_jmp_to_blt_forward)r_forward;
-		tmp_converted.cellboard_id = (primary_hv_jmp_to_blt_cellboard_id)r_cellboard_id;
+		tmp_converted.start = (uint8_t)r_start;
+		tmp_converted.forward = (primary_hv_flash_forward)r_forward;
+		tmp_converted.cellboard_id = (primary_hv_flash_cellboard_id)r_cellboard_id;
 
-		primary_hv_jmp_to_blt_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_HV_JMP_TO_BLT_BYTE_SIZE;
-		return primary_hv_jmp_to_blt_pack(data, &tmp, PRIMARY_HV_JMP_TO_BLT_BYTE_SIZE);
+		primary_hv_flash_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_FLASH_BYTE_SIZE;
+		return primary_hv_flash_pack(data, &tmp, PRIMARY_HV_FLASH_BYTE_SIZE);
 	}
 	case 700:
 	{
@@ -2161,18 +2534,18 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		primary_hv_cellboard_version_t tmp;
 		primary_hv_cellboard_version_converted_t tmp_converted;
 		uint8_t r_cellboard_id;
-		uint16_t r_component_version;
 		uint32_t r_canlib_build_time;
+		uint32_t r_component_build_time;
 
 		sscanf(s, "%" SCNu8 ","  
-			"%" SCNu16 "," 
+			"%" SCNu32 "," 
 			"%" SCNu32 "," ,
 			&r_cellboard_id,
-			&r_component_version,
-			&r_canlib_build_time);
+			&r_canlib_build_time,
+			&r_component_build_time);
 		tmp_converted.cellboard_id = (primary_hv_cellboard_version_cellboard_id)r_cellboard_id;
-		tmp_converted.component_version = (uint16_t)r_component_version;
 		tmp_converted.canlib_build_time = (uint32_t)r_canlib_build_time;
+		tmp_converted.component_build_time = (uint32_t)r_component_build_time;
 
 		primary_hv_cellboard_version_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_HV_CELLBOARD_VERSION_BYTE_SIZE;
@@ -2438,26 +2811,38 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_hv_feedback_status_t tmp;
 		primary_hv_feedback_status_converted_t tmp_converted;
-		uint8_t r_feedback_implausibility_detected;
-		uint8_t r_feedback_imd_cockpit;
+		uint8_t r_airn_open_com;
+		uint8_t r_precharge_open_com;
+		uint8_t r_airp_open_com;
+		uint8_t r_airn_open_mec;
+		uint8_t r_precharge_open_mec;
+		uint8_t r_airp_open_mec;
+		uint8_t r_sd_imd_fb;
+		uint8_t r_sd_bms_fb;
+		uint8_t r_ts_less_than_60v;
+		uint8_t r_plausible_state_persisted;
+		uint8_t r_plausible_state;
+		uint8_t r_not_bms_fault_cockpit_led;
+		uint8_t r_not_imd_fault_cockpit_led;
+		uint8_t r_indicator_connected;
+		uint8_t r_not_latch_reset;
+		uint8_t r_plausible_state_latched;
+		uint8_t r_not_bms_fault_latched;
+		uint8_t r_not_imd_fault_latched;
+		uint8_t r_not_ext_fault_latched;
+		uint8_t r_imd_ok;
+		uint8_t r_plausible_state_rc;
+		uint8_t r_tsal_green;
+		uint8_t r_probing_3v3;
+		uint8_t r_sd_out;
+		uint8_t r_sd_in;
+		uint8_t r_sd_end;
+		uint8_t r_v5_mcu;
 		uint8_t r_feedback_tsal_green_fault_latched;
-		uint8_t r_feedback_bms_cockpit;
 		uint8_t r_feedback_ext_latched;
-		uint8_t r_feedback_tsal_green;
-		uint8_t r_feedback_ts_over_60v_status;
-		uint8_t r_feedback_airn_status;
-		uint8_t r_feedback_airp_status;
-		uint8_t r_feedback_airp_gate;
-		uint8_t r_feedback_airn_gate;
 		uint8_t r_feedback_precharge_status;
 		uint8_t r_feedback_tsp_over_60v_status;
-		uint8_t r_feedback_imd_fault;
 		uint8_t r_feedback_check_mux;
-		uint8_t r_feedback_sd_end;
-		uint8_t r_feedback_sd_out;
-		uint8_t r_feedback_sd_in;
-		uint8_t r_feedback_sd_bms;
-		uint8_t r_feedback_sd_imd;
 
 		sscanf(s, "%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -2478,47 +2863,83 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
 			"%" SCNu8 ","  ,
-			&r_feedback_implausibility_detected,
-			&r_feedback_imd_cockpit,
+			&r_airn_open_com,
+			&r_precharge_open_com,
+			&r_airp_open_com,
+			&r_airn_open_mec,
+			&r_precharge_open_mec,
+			&r_airp_open_mec,
+			&r_sd_imd_fb,
+			&r_sd_bms_fb,
+			&r_ts_less_than_60v,
+			&r_plausible_state_persisted,
+			&r_plausible_state,
+			&r_not_bms_fault_cockpit_led,
+			&r_not_imd_fault_cockpit_led,
+			&r_indicator_connected,
+			&r_not_latch_reset,
+			&r_plausible_state_latched,
+			&r_not_bms_fault_latched,
+			&r_not_imd_fault_latched,
+			&r_not_ext_fault_latched,
+			&r_imd_ok,
+			&r_plausible_state_rc,
+			&r_tsal_green,
+			&r_probing_3v3,
+			&r_sd_out,
+			&r_sd_in,
+			&r_sd_end,
+			&r_v5_mcu,
 			&r_feedback_tsal_green_fault_latched,
-			&r_feedback_bms_cockpit,
 			&r_feedback_ext_latched,
-			&r_feedback_tsal_green,
-			&r_feedback_ts_over_60v_status,
-			&r_feedback_airn_status,
-			&r_feedback_airp_status,
-			&r_feedback_airp_gate,
-			&r_feedback_airn_gate,
 			&r_feedback_precharge_status,
 			&r_feedback_tsp_over_60v_status,
-			&r_feedback_imd_fault,
-			&r_feedback_check_mux,
-			&r_feedback_sd_end,
-			&r_feedback_sd_out,
-			&r_feedback_sd_in,
-			&r_feedback_sd_bms,
-			&r_feedback_sd_imd);
-		tmp_converted.feedback_implausibility_detected = (primary_hv_feedback_status_feedback_implausibility_detected)r_feedback_implausibility_detected;
-		tmp_converted.feedback_imd_cockpit = (primary_hv_feedback_status_feedback_imd_cockpit)r_feedback_imd_cockpit;
+			&r_feedback_check_mux);
+		tmp_converted.airn_open_com = (primary_hv_feedback_status_airn_open_com)r_airn_open_com;
+		tmp_converted.precharge_open_com = (primary_hv_feedback_status_precharge_open_com)r_precharge_open_com;
+		tmp_converted.airp_open_com = (primary_hv_feedback_status_airp_open_com)r_airp_open_com;
+		tmp_converted.airn_open_mec = (primary_hv_feedback_status_airn_open_mec)r_airn_open_mec;
+		tmp_converted.precharge_open_mec = (primary_hv_feedback_status_precharge_open_mec)r_precharge_open_mec;
+		tmp_converted.airp_open_mec = (primary_hv_feedback_status_airp_open_mec)r_airp_open_mec;
+		tmp_converted.sd_imd_fb = (primary_hv_feedback_status_sd_imd_fb)r_sd_imd_fb;
+		tmp_converted.sd_bms_fb = (primary_hv_feedback_status_sd_bms_fb)r_sd_bms_fb;
+		tmp_converted.ts_less_than_60v = (primary_hv_feedback_status_ts_less_than_60v)r_ts_less_than_60v;
+		tmp_converted.plausible_state_persisted = (primary_hv_feedback_status_plausible_state_persisted)r_plausible_state_persisted;
+		tmp_converted.plausible_state = (primary_hv_feedback_status_plausible_state)r_plausible_state;
+		tmp_converted.not_bms_fault_cockpit_led = (primary_hv_feedback_status_not_bms_fault_cockpit_led)r_not_bms_fault_cockpit_led;
+		tmp_converted.not_imd_fault_cockpit_led = (primary_hv_feedback_status_not_imd_fault_cockpit_led)r_not_imd_fault_cockpit_led;
+		tmp_converted.indicator_connected = (primary_hv_feedback_status_indicator_connected)r_indicator_connected;
+		tmp_converted.not_latch_reset = (primary_hv_feedback_status_not_latch_reset)r_not_latch_reset;
+		tmp_converted.plausible_state_latched = (primary_hv_feedback_status_plausible_state_latched)r_plausible_state_latched;
+		tmp_converted.not_bms_fault_latched = (primary_hv_feedback_status_not_bms_fault_latched)r_not_bms_fault_latched;
+		tmp_converted.not_imd_fault_latched = (primary_hv_feedback_status_not_imd_fault_latched)r_not_imd_fault_latched;
+		tmp_converted.not_ext_fault_latched = (primary_hv_feedback_status_not_ext_fault_latched)r_not_ext_fault_latched;
+		tmp_converted.imd_ok = (primary_hv_feedback_status_imd_ok)r_imd_ok;
+		tmp_converted.plausible_state_rc = (primary_hv_feedback_status_plausible_state_rc)r_plausible_state_rc;
+		tmp_converted.tsal_green = (primary_hv_feedback_status_tsal_green)r_tsal_green;
+		tmp_converted.probing_3v3 = (primary_hv_feedback_status_probing_3v3)r_probing_3v3;
+		tmp_converted.sd_out = (primary_hv_feedback_status_sd_out)r_sd_out;
+		tmp_converted.sd_in = (primary_hv_feedback_status_sd_in)r_sd_in;
+		tmp_converted.sd_end = (primary_hv_feedback_status_sd_end)r_sd_end;
+		tmp_converted.v5_mcu = (primary_hv_feedback_status_v5_mcu)r_v5_mcu;
 		tmp_converted.feedback_tsal_green_fault_latched = (primary_hv_feedback_status_feedback_tsal_green_fault_latched)r_feedback_tsal_green_fault_latched;
-		tmp_converted.feedback_bms_cockpit = (primary_hv_feedback_status_feedback_bms_cockpit)r_feedback_bms_cockpit;
 		tmp_converted.feedback_ext_latched = (primary_hv_feedback_status_feedback_ext_latched)r_feedback_ext_latched;
-		tmp_converted.feedback_tsal_green = (primary_hv_feedback_status_feedback_tsal_green)r_feedback_tsal_green;
-		tmp_converted.feedback_ts_over_60v_status = (primary_hv_feedback_status_feedback_ts_over_60v_status)r_feedback_ts_over_60v_status;
-		tmp_converted.feedback_airn_status = (primary_hv_feedback_status_feedback_airn_status)r_feedback_airn_status;
-		tmp_converted.feedback_airp_status = (primary_hv_feedback_status_feedback_airp_status)r_feedback_airp_status;
-		tmp_converted.feedback_airp_gate = (primary_hv_feedback_status_feedback_airp_gate)r_feedback_airp_gate;
-		tmp_converted.feedback_airn_gate = (primary_hv_feedback_status_feedback_airn_gate)r_feedback_airn_gate;
 		tmp_converted.feedback_precharge_status = (primary_hv_feedback_status_feedback_precharge_status)r_feedback_precharge_status;
 		tmp_converted.feedback_tsp_over_60v_status = (primary_hv_feedback_status_feedback_tsp_over_60v_status)r_feedback_tsp_over_60v_status;
-		tmp_converted.feedback_imd_fault = (primary_hv_feedback_status_feedback_imd_fault)r_feedback_imd_fault;
 		tmp_converted.feedback_check_mux = (primary_hv_feedback_status_feedback_check_mux)r_feedback_check_mux;
-		tmp_converted.feedback_sd_end = (primary_hv_feedback_status_feedback_sd_end)r_feedback_sd_end;
-		tmp_converted.feedback_sd_out = (primary_hv_feedback_status_feedback_sd_out)r_feedback_sd_out;
-		tmp_converted.feedback_sd_in = (primary_hv_feedback_status_feedback_sd_in)r_feedback_sd_in;
-		tmp_converted.feedback_sd_bms = (primary_hv_feedback_status_feedback_sd_bms)r_feedback_sd_bms;
-		tmp_converted.feedback_sd_imd = (primary_hv_feedback_status_feedback_sd_imd)r_feedback_sd_imd;
 
 		primary_hv_feedback_status_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_HV_FEEDBACK_STATUS_BYTE_SIZE;
@@ -2638,30 +3059,38 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_hv_imd_status_t tmp;
 		primary_hv_imd_status_converted_t tmp_converted;
+		uint8_t r_status;
+		float r_frequency;
+		float r_duty_cycle;
+		uint8_t r_feedback_not_imd_fault_cockpit_led;
+		uint8_t r_feedback_not_imd_fault_latched;
 		uint8_t r_imd_fault;
-		uint8_t r_imd_status;
 		uint16_t r_imd_details;
-		uint8_t r_imd_duty_cycle;
-		uint8_t r_imd_freq;
 		uint8_t r_imd_period;
 
 		sscanf(s, "%" SCNu8 ","  
+			"%f,"       
+			"%f,"       
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu16 "," 
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
 			"%" SCNu8 ","  ,
+			&r_status,
+			&r_frequency,
+			&r_duty_cycle,
+			&r_feedback_not_imd_fault_cockpit_led,
+			&r_feedback_not_imd_fault_latched,
 			&r_imd_fault,
-			&r_imd_status,
 			&r_imd_details,
-			&r_imd_duty_cycle,
-			&r_imd_freq,
 			&r_imd_period);
+		tmp_converted.status = (primary_hv_imd_status_status)r_status;
+		tmp_converted.frequency = (float)r_frequency;
+		tmp_converted.duty_cycle = (float)r_duty_cycle;
+		tmp_converted.feedback_not_imd_fault_cockpit_led = (primary_hv_imd_status_feedback_not_imd_fault_cockpit_led)r_feedback_not_imd_fault_cockpit_led;
+		tmp_converted.feedback_not_imd_fault_latched = (primary_hv_imd_status_feedback_not_imd_fault_latched)r_feedback_not_imd_fault_latched;
 		tmp_converted.imd_fault = (uint8_t)r_imd_fault;
-		tmp_converted.imd_status = (primary_hv_imd_status_imd_status)r_imd_status;
 		tmp_converted.imd_details = (uint16_t)r_imd_details;
-		tmp_converted.imd_duty_cycle = (uint8_t)r_imd_duty_cycle;
-		tmp_converted.imd_freq = (uint8_t)r_imd_freq;
 		tmp_converted.imd_period = (uint8_t)r_imd_period;
 
 		primary_hv_imd_status_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -2673,10 +3102,34 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		primary_hv_status_t tmp;
 		primary_hv_status_converted_t tmp_converted;
 		uint8_t r_status;
+		uint8_t r_cellboard_0;
+		uint8_t r_cellboard_1;
+		uint8_t r_cellboard_2;
+		uint8_t r_cellboard_3;
+		uint8_t r_cellboard_4;
+		uint8_t r_cellboard_5;
 
-		sscanf(s, "%" SCNu8 ","  ,
-			&r_status);
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_status,
+			&r_cellboard_0,
+			&r_cellboard_1,
+			&r_cellboard_2,
+			&r_cellboard_3,
+			&r_cellboard_4,
+			&r_cellboard_5);
 		tmp_converted.status = (primary_hv_status_status)r_status;
+		tmp_converted.cellboard_0 = (primary_hv_status_cellboard_0)r_cellboard_0;
+		tmp_converted.cellboard_1 = (primary_hv_status_cellboard_1)r_cellboard_1;
+		tmp_converted.cellboard_2 = (primary_hv_status_cellboard_2)r_cellboard_2;
+		tmp_converted.cellboard_3 = (primary_hv_status_cellboard_3)r_cellboard_3;
+		tmp_converted.cellboard_4 = (primary_hv_status_cellboard_4)r_cellboard_4;
+		tmp_converted.cellboard_5 = (primary_hv_status_cellboard_5)r_cellboard_5;
 
 		primary_hv_status_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_HV_STATUS_BYTE_SIZE;
@@ -2686,10 +3139,14 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_hv_set_status_ecu_t tmp;
 		primary_hv_set_status_ecu_converted_t tmp_converted;
+		uint8_t r_status;
 		uint8_t r_hv_status_set;
 
-		sscanf(s, "%" SCNu8 ","  ,
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_status,
 			&r_hv_status_set);
+		tmp_converted.status = (uint8_t)r_status;
 		tmp_converted.hv_status_set = (primary_hv_set_status_ecu_hv_status_set)r_hv_status_set;
 
 		primary_hv_set_status_ecu_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -2700,10 +3157,14 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_hv_set_status_handcart_t tmp;
 		primary_hv_set_status_handcart_converted_t tmp_converted;
+		uint8_t r_status;
 		uint8_t r_hv_status_set;
 
-		sscanf(s, "%" SCNu8 ","  ,
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_status,
 			&r_hv_status_set);
+		tmp_converted.status = (uint8_t)r_status;
 		tmp_converted.hv_status_set = (primary_hv_set_status_handcart_hv_status_set)r_hv_status_set;
 
 		primary_hv_set_status_handcart_conversion_to_raw_struct(&tmp, &tmp_converted);
@@ -2743,8 +3204,58 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_balancing_cells_cell15;
 		uint8_t r_balancing_cells_cell16;
 		uint8_t r_balancing_cells_cell17;
+		uint8_t r_status;
+		uint8_t r_discharging_cell_0;
+		uint8_t r_discharging_cell_1;
+		uint8_t r_discharging_cell_2;
+		uint8_t r_discharging_cell_3;
+		uint8_t r_discharging_cell_4;
+		uint8_t r_discharging_cell_5;
+		uint8_t r_discharging_cell_6;
+		uint8_t r_discharging_cell_7;
+		uint8_t r_discharging_cell_8;
+		uint8_t r_discharging_cell_9;
+		uint8_t r_discharging_cell_10;
+		uint8_t r_discharging_cell_11;
+		uint8_t r_discharging_cell_12;
+		uint8_t r_discharging_cell_13;
+		uint8_t r_discharging_cell_14;
+		uint8_t r_discharging_cell_15;
+		uint8_t r_discharging_cell_16;
+		uint8_t r_discharging_cell_17;
+		uint8_t r_discharging_cell_18;
+		uint8_t r_discharging_cell_19;
+		uint8_t r_discharging_cell_20;
+		uint8_t r_discharging_cell_21;
+		uint8_t r_discharging_cell_22;
+		uint8_t r_discharging_cell_23;
 
 		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
@@ -2801,7 +3312,32 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 			&r_balancing_cells_cell14,
 			&r_balancing_cells_cell15,
 			&r_balancing_cells_cell16,
-			&r_balancing_cells_cell17);
+			&r_balancing_cells_cell17,
+			&r_status,
+			&r_discharging_cell_0,
+			&r_discharging_cell_1,
+			&r_discharging_cell_2,
+			&r_discharging_cell_3,
+			&r_discharging_cell_4,
+			&r_discharging_cell_5,
+			&r_discharging_cell_6,
+			&r_discharging_cell_7,
+			&r_discharging_cell_8,
+			&r_discharging_cell_9,
+			&r_discharging_cell_10,
+			&r_discharging_cell_11,
+			&r_discharging_cell_12,
+			&r_discharging_cell_13,
+			&r_discharging_cell_14,
+			&r_discharging_cell_15,
+			&r_discharging_cell_16,
+			&r_discharging_cell_17,
+			&r_discharging_cell_18,
+			&r_discharging_cell_19,
+			&r_discharging_cell_20,
+			&r_discharging_cell_21,
+			&r_discharging_cell_22,
+			&r_discharging_cell_23);
 		tmp_converted.cellboard_id = (primary_hv_balancing_status_cellboard_id)r_cellboard_id;
 		tmp_converted.balancing_status = (primary_hv_balancing_status_balancing_status)r_balancing_status;
 		tmp_converted.errors_can_comm = (uint8_t)r_errors_can_comm;
@@ -2831,6 +3367,31 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.balancing_cells_cell15 = (uint8_t)r_balancing_cells_cell15;
 		tmp_converted.balancing_cells_cell16 = (uint8_t)r_balancing_cells_cell16;
 		tmp_converted.balancing_cells_cell17 = (uint8_t)r_balancing_cells_cell17;
+		tmp_converted.status = (primary_hv_balancing_status_status)r_status;
+		tmp_converted.discharging_cell_0 = (uint8_t)r_discharging_cell_0;
+		tmp_converted.discharging_cell_1 = (uint8_t)r_discharging_cell_1;
+		tmp_converted.discharging_cell_2 = (uint8_t)r_discharging_cell_2;
+		tmp_converted.discharging_cell_3 = (uint8_t)r_discharging_cell_3;
+		tmp_converted.discharging_cell_4 = (uint8_t)r_discharging_cell_4;
+		tmp_converted.discharging_cell_5 = (uint8_t)r_discharging_cell_5;
+		tmp_converted.discharging_cell_6 = (uint8_t)r_discharging_cell_6;
+		tmp_converted.discharging_cell_7 = (uint8_t)r_discharging_cell_7;
+		tmp_converted.discharging_cell_8 = (uint8_t)r_discharging_cell_8;
+		tmp_converted.discharging_cell_9 = (uint8_t)r_discharging_cell_9;
+		tmp_converted.discharging_cell_10 = (uint8_t)r_discharging_cell_10;
+		tmp_converted.discharging_cell_11 = (uint8_t)r_discharging_cell_11;
+		tmp_converted.discharging_cell_12 = (uint8_t)r_discharging_cell_12;
+		tmp_converted.discharging_cell_13 = (uint8_t)r_discharging_cell_13;
+		tmp_converted.discharging_cell_14 = (uint8_t)r_discharging_cell_14;
+		tmp_converted.discharging_cell_15 = (uint8_t)r_discharging_cell_15;
+		tmp_converted.discharging_cell_16 = (uint8_t)r_discharging_cell_16;
+		tmp_converted.discharging_cell_17 = (uint8_t)r_discharging_cell_17;
+		tmp_converted.discharging_cell_18 = (uint8_t)r_discharging_cell_18;
+		tmp_converted.discharging_cell_19 = (uint8_t)r_discharging_cell_19;
+		tmp_converted.discharging_cell_20 = (uint8_t)r_discharging_cell_20;
+		tmp_converted.discharging_cell_21 = (uint8_t)r_discharging_cell_21;
+		tmp_converted.discharging_cell_22 = (uint8_t)r_discharging_cell_22;
+		tmp_converted.discharging_cell_23 = (uint8_t)r_discharging_cell_23;
 
 		primary_hv_balancing_status_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_HV_BALANCING_STATUS_BYTE_SIZE;
@@ -2838,39 +3399,55 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 1032:
 	{
-		primary_hv_set_balancing_status_handcart_t tmp;
-		primary_hv_set_balancing_status_handcart_converted_t tmp_converted;
-		uint8_t r_set_balancing_status;
-		uint8_t r_balancing_threshold;
-
-		sscanf(s, "%" SCNu8 ","  
-			"%" SCNu8 ","  ,
-			&r_set_balancing_status,
-			&r_balancing_threshold);
-		tmp_converted.set_balancing_status = (primary_hv_set_balancing_status_handcart_set_balancing_status)r_set_balancing_status;
-		tmp_converted.balancing_threshold = (uint8_t)r_balancing_threshold;
-
-		primary_hv_set_balancing_status_handcart_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = PRIMARY_HV_SET_BALANCING_STATUS_HANDCART_BYTE_SIZE;
-		return primary_hv_set_balancing_status_handcart_pack(data, &tmp, PRIMARY_HV_SET_BALANCING_STATUS_HANDCART_BYTE_SIZE);
-	}
-	case 1040:
-	{
 		primary_hv_set_balancing_status_steering_wheel_t tmp;
 		primary_hv_set_balancing_status_steering_wheel_converted_t tmp_converted;
+		uint8_t r_status;
+		float r_threshold;
 		uint8_t r_set_balancing_status;
 		uint8_t r_balancing_threshold;
 
 		sscanf(s, "%" SCNu8 ","  
+			"%f,"       
+			"%" SCNu8 ","  
 			"%" SCNu8 ","  ,
+			&r_status,
+			&r_threshold,
 			&r_set_balancing_status,
 			&r_balancing_threshold);
+		tmp_converted.status = (uint8_t)r_status;
+		tmp_converted.threshold = (float)r_threshold;
 		tmp_converted.set_balancing_status = (primary_hv_set_balancing_status_steering_wheel_set_balancing_status)r_set_balancing_status;
 		tmp_converted.balancing_threshold = (uint8_t)r_balancing_threshold;
 
 		primary_hv_set_balancing_status_steering_wheel_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_HV_SET_BALANCING_STATUS_STEERING_WHEEL_BYTE_SIZE;
 		return primary_hv_set_balancing_status_steering_wheel_pack(data, &tmp, PRIMARY_HV_SET_BALANCING_STATUS_STEERING_WHEEL_BYTE_SIZE);
+	}
+	case 1040:
+	{
+		primary_hv_set_balancing_status_handcart_t tmp;
+		primary_hv_set_balancing_status_handcart_converted_t tmp_converted;
+		uint8_t r_status;
+		float r_threshold;
+		uint8_t r_set_balancing_status;
+		uint8_t r_balancing_threshold;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_status,
+			&r_threshold,
+			&r_set_balancing_status,
+			&r_balancing_threshold);
+		tmp_converted.status = (uint8_t)r_status;
+		tmp_converted.threshold = (float)r_threshold;
+		tmp_converted.set_balancing_status = (primary_hv_set_balancing_status_handcart_set_balancing_status)r_set_balancing_status;
+		tmp_converted.balancing_threshold = (uint8_t)r_balancing_threshold;
+
+		primary_hv_set_balancing_status_handcart_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_SET_BALANCING_STATUS_HANDCART_BYTE_SIZE;
+		return primary_hv_set_balancing_status_handcart_pack(data, &tmp, PRIMARY_HV_SET_BALANCING_STATUS_HANDCART_BYTE_SIZE);
 	}
 	case 568:
 	{
@@ -4106,20 +4683,24 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 	{
 		primary_hv_cells_voltage_t tmp;
 		primary_hv_cells_voltage_converted_t tmp_converted;
-		uint8_t r_start_index;
+		uint8_t r_cellboard_id;
+		uint8_t r_offset;
 		float r_voltage_0;
 		float r_voltage_1;
 		float r_voltage_2;
 
 		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
 			"%f,"       
 			"%f,"       
 			"%f,"       ,
-			&r_start_index,
+			&r_cellboard_id,
+			&r_offset,
 			&r_voltage_0,
 			&r_voltage_1,
 			&r_voltage_2);
-		tmp_converted.start_index = (uint8_t)r_start_index;
+		tmp_converted.cellboard_id = (primary_hv_cells_voltage_cellboard_id)r_cellboard_id;
+		tmp_converted.offset = (uint8_t)r_offset;
 		tmp_converted.voltage_0 = (float)r_voltage_0;
 		tmp_converted.voltage_1 = (float)r_voltage_1;
 		tmp_converted.voltage_2 = (float)r_voltage_2;
@@ -4435,6 +5016,106 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		primary_debug_signal_4_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_DEBUG_SIGNAL_4_BYTE_SIZE;
 		return primary_debug_signal_4_pack(data, &tmp, PRIMARY_DEBUG_SIGNAL_4_BYTE_SIZE);
+	}
+	case 50:
+	{
+		primary_hv_flash_request_t tmp;
+		primary_hv_flash_request_converted_t tmp_converted;
+		uint8_t r_mainboard;
+		uint8_t r_cellboard_id;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_mainboard,
+			&r_cellboard_id);
+		tmp_converted.mainboard = (uint8_t)r_mainboard;
+		tmp_converted.cellboard_id = (primary_hv_flash_request_cellboard_id)r_cellboard_id;
+
+		primary_hv_flash_request_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_FLASH_REQUEST_BYTE_SIZE;
+		return primary_hv_flash_request_pack(data, &tmp, PRIMARY_HV_FLASH_REQUEST_BYTE_SIZE);
+	}
+	case 51:
+	{
+		primary_hv_flash_response_t tmp;
+		primary_hv_flash_response_converted_t tmp_converted;
+		uint8_t r_ready;
+
+		sscanf(s, "%" SCNu8 ","  ,
+			&r_ready);
+		tmp_converted.ready = (uint8_t)r_ready;
+
+		primary_hv_flash_response_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_FLASH_RESPONSE_BYTE_SIZE;
+		return primary_hv_flash_response_pack(data, &tmp, PRIMARY_HV_FLASH_RESPONSE_BYTE_SIZE);
+	}
+	case 1120:
+	{
+		primary_hv_ts_voltage_t tmp;
+		primary_hv_ts_voltage_converted_t tmp_converted;
+		float r_ts;
+		float r_pack;
+		float r_cells_sum;
+
+		sscanf(s, "%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_ts,
+			&r_pack,
+			&r_cells_sum);
+		tmp_converted.ts = (float)r_ts;
+		tmp_converted.pack = (float)r_pack;
+		tmp_converted.cells_sum = (float)r_cells_sum;
+
+		primary_hv_ts_voltage_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_TS_VOLTAGE_BYTE_SIZE;
+		return primary_hv_ts_voltage_pack(data, &tmp, PRIMARY_HV_TS_VOLTAGE_BYTE_SIZE);
+	}
+	case 1832:
+	{
+		primary_hv_cells_temperature_t tmp;
+		primary_hv_cells_temperature_converted_t tmp_converted;
+		uint8_t r_cellboard_id;
+		uint8_t r_temperature_id_0;
+		uint8_t r_temperature_id_1;
+		uint8_t r_temperature_id_2;
+		uint8_t r_temperature_id_3;
+		float r_temperature_0;
+		float r_temperature_1;
+		float r_temperature_2;
+		float r_temperature_3;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_cellboard_id,
+			&r_temperature_id_0,
+			&r_temperature_id_1,
+			&r_temperature_id_2,
+			&r_temperature_id_3,
+			&r_temperature_0,
+			&r_temperature_1,
+			&r_temperature_2,
+			&r_temperature_3);
+		tmp_converted.cellboard_id = (primary_hv_cells_temperature_cellboard_id)r_cellboard_id;
+		tmp_converted.temperature_id_0 = (uint8_t)r_temperature_id_0;
+		tmp_converted.temperature_id_1 = (uint8_t)r_temperature_id_1;
+		tmp_converted.temperature_id_2 = (uint8_t)r_temperature_id_2;
+		tmp_converted.temperature_id_3 = (uint8_t)r_temperature_id_3;
+		tmp_converted.temperature_0 = (float)r_temperature_0;
+		tmp_converted.temperature_1 = (float)r_temperature_1;
+		tmp_converted.temperature_2 = (float)r_temperature_2;
+		tmp_converted.temperature_3 = (float)r_temperature_3;
+
+		primary_hv_cells_temperature_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_CELLS_TEMPERATURE_BYTE_SIZE;
+		return primary_hv_cells_temperature_pack(data, &tmp, PRIMARY_HV_CELLS_TEMPERATURE_BYTE_SIZE);
 	}
 	case 256:
 	{
@@ -5234,6 +5915,174 @@ int primary_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_CHARGER_19_BYTE_SIZE;
 		return primary_charger_19_pack(data, &tmp, PRIMARY_CHARGER_19_BYTE_SIZE);
 	}
+	case 696:
+	{
+		primary_hv_feedback_digital_t tmp;
+		primary_hv_feedback_digital_converted_t tmp_converted;
+		uint8_t r_digital_airn_open_com;
+		uint8_t r_digital_airp_open_com;
+		uint8_t r_digital_sd_imd_fb;
+		uint8_t r_digital_sd_bms_fb;
+		uint8_t r_digital_precharge_open_com;
+		uint8_t r_digital_precharge_open_mec;
+		uint8_t r_digital_ts_less_than_60v;
+		uint8_t r_digital_plausible_state_persisted;
+		uint8_t r_digital_plausible_state;
+		uint8_t r_digital_not_bms_fault_cockpit_led;
+		uint8_t r_digital_not_imd_fault_cockpit_led;
+		uint8_t r_digital_indicator_connected;
+		uint8_t r_digital_not_latch_reset;
+		uint8_t r_digital_plausible_state_latched;
+		uint8_t r_digital_not_bms_fault_latched;
+		uint8_t r_digital_not_imd_fault_latched;
+		uint8_t r_digital_not_ext_fault_latched;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_digital_airn_open_com,
+			&r_digital_airp_open_com,
+			&r_digital_sd_imd_fb,
+			&r_digital_sd_bms_fb,
+			&r_digital_precharge_open_com,
+			&r_digital_precharge_open_mec,
+			&r_digital_ts_less_than_60v,
+			&r_digital_plausible_state_persisted,
+			&r_digital_plausible_state,
+			&r_digital_not_bms_fault_cockpit_led,
+			&r_digital_not_imd_fault_cockpit_led,
+			&r_digital_indicator_connected,
+			&r_digital_not_latch_reset,
+			&r_digital_plausible_state_latched,
+			&r_digital_not_bms_fault_latched,
+			&r_digital_not_imd_fault_latched,
+			&r_digital_not_ext_fault_latched);
+		tmp_converted.digital_airn_open_com = (uint8_t)r_digital_airn_open_com;
+		tmp_converted.digital_airp_open_com = (uint8_t)r_digital_airp_open_com;
+		tmp_converted.digital_sd_imd_fb = (uint8_t)r_digital_sd_imd_fb;
+		tmp_converted.digital_sd_bms_fb = (uint8_t)r_digital_sd_bms_fb;
+		tmp_converted.digital_precharge_open_com = (uint8_t)r_digital_precharge_open_com;
+		tmp_converted.digital_precharge_open_mec = (uint8_t)r_digital_precharge_open_mec;
+		tmp_converted.digital_ts_less_than_60v = (uint8_t)r_digital_ts_less_than_60v;
+		tmp_converted.digital_plausible_state_persisted = (uint8_t)r_digital_plausible_state_persisted;
+		tmp_converted.digital_plausible_state = (uint8_t)r_digital_plausible_state;
+		tmp_converted.digital_not_bms_fault_cockpit_led = (uint8_t)r_digital_not_bms_fault_cockpit_led;
+		tmp_converted.digital_not_imd_fault_cockpit_led = (uint8_t)r_digital_not_imd_fault_cockpit_led;
+		tmp_converted.digital_indicator_connected = (uint8_t)r_digital_indicator_connected;
+		tmp_converted.digital_not_latch_reset = (uint8_t)r_digital_not_latch_reset;
+		tmp_converted.digital_plausible_state_latched = (uint8_t)r_digital_plausible_state_latched;
+		tmp_converted.digital_not_bms_fault_latched = (uint8_t)r_digital_not_bms_fault_latched;
+		tmp_converted.digital_not_imd_fault_latched = (uint8_t)r_digital_not_imd_fault_latched;
+		tmp_converted.digital_not_ext_fault_latched = (uint8_t)r_digital_not_ext_fault_latched;
+
+		primary_hv_feedback_digital_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_FEEDBACK_DIGITAL_BYTE_SIZE;
+		return primary_hv_feedback_digital_pack(data, &tmp, PRIMARY_HV_FEEDBACK_DIGITAL_BYTE_SIZE);
+	}
+	case 712:
+	{
+		primary_hv_feedback_analog_t tmp;
+		primary_hv_feedback_analog_converted_t tmp_converted;
+		float r_analog_airn_open_mec;
+		float r_analog_airp_open_mec;
+		float r_analog_imd_ok;
+		float r_analog_plausible_state_rc;
+		float r_analog_tsal_green;
+		float r_analog_probing_3v3;
+		float r_analog_v5_mcu;
+
+		sscanf(s, "%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_analog_airn_open_mec,
+			&r_analog_airp_open_mec,
+			&r_analog_imd_ok,
+			&r_analog_plausible_state_rc,
+			&r_analog_tsal_green,
+			&r_analog_probing_3v3,
+			&r_analog_v5_mcu);
+		tmp_converted.analog_airn_open_mec = (float)r_analog_airn_open_mec;
+		tmp_converted.analog_airp_open_mec = (float)r_analog_airp_open_mec;
+		tmp_converted.analog_imd_ok = (float)r_analog_imd_ok;
+		tmp_converted.analog_plausible_state_rc = (float)r_analog_plausible_state_rc;
+		tmp_converted.analog_tsal_green = (float)r_analog_tsal_green;
+		tmp_converted.analog_probing_3v3 = (float)r_analog_probing_3v3;
+		tmp_converted.analog_v5_mcu = (float)r_analog_v5_mcu;
+
+		primary_hv_feedback_analog_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_FEEDBACK_ANALOG_BYTE_SIZE;
+		return primary_hv_feedback_analog_pack(data, &tmp, PRIMARY_HV_FEEDBACK_ANALOG_BYTE_SIZE);
+	}
+	case 720:
+	{
+		primary_hv_feedback_analog_sd_t tmp;
+		primary_hv_feedback_analog_sd_converted_t tmp_converted;
+		float r_sd_out;
+		float r_sd_in;
+		float r_sd_end;
+
+		sscanf(s, "%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_sd_out,
+			&r_sd_in,
+			&r_sd_end);
+		tmp_converted.sd_out = (float)r_sd_out;
+		tmp_converted.sd_in = (float)r_sd_in;
+		tmp_converted.sd_end = (float)r_sd_end;
+
+		primary_hv_feedback_analog_sd_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_FEEDBACK_ANALOG_SD_BYTE_SIZE;
+		return primary_hv_feedback_analog_sd_pack(data, &tmp, PRIMARY_HV_FEEDBACK_ANALOG_SD_BYTE_SIZE);
+	}
+	case 728:
+	{
+		primary_hv_feedback_enzomma_t tmp;
+		primary_hv_feedback_enzomma_converted_t tmp_converted;
+		uint8_t r_feedback;
+		uint8_t r_status;
+		uint8_t r_is_digital;
+		uint8_t r_digital;
+		float r_analog;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%f,"       ,
+			&r_feedback,
+			&r_status,
+			&r_is_digital,
+			&r_digital,
+			&r_analog);
+		tmp_converted.feedback = (primary_hv_feedback_enzomma_feedback)r_feedback;
+		tmp_converted.status = (primary_hv_feedback_enzomma_status)r_status;
+		tmp_converted.is_digital = (uint8_t)r_is_digital;
+		tmp_converted.digital = (uint8_t)r_digital;
+		tmp_converted.analog = (float)r_analog;
+
+		primary_hv_feedback_enzomma_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_FEEDBACK_ENZOMMA_BYTE_SIZE;
+		return primary_hv_feedback_enzomma_pack(data, &tmp, PRIMARY_HV_FEEDBACK_ENZOMMA_BYTE_SIZE);
+	}
 
     }
     return 0;
@@ -5250,7 +6099,7 @@ int primary_n_fields_from_id(int id)
 		case 1553: return 4;
 		case 1552: return 25;
 		case 1560: return 7;
-		case 0: return 2;
+		case 0: return 3;
 		case 1: return 0;
 		case 2: return 0;
 		case 4: return 0;
@@ -5284,17 +6133,17 @@ int primary_n_fields_from_id(int id)
 		case 512: return 35;
 		case 1536: return 2;
 		case 1024: return 2;
-		case 520: return 20;
+		case 520: return 32;
 		case 528: return 7;
 		case 536: return 8;
 		case 544: return 5;
-		case 552: return 6;
-		case 560: return 1;
-		case 40: return 1;
-		case 48: return 1;
-		case 1544: return 29;
-		case 1032: return 2;
-		case 1040: return 2;
+		case 552: return 8;
+		case 560: return 7;
+		case 40: return 2;
+		case 48: return 2;
+		case 1544: return 54;
+		case 1032: return 4;
+		case 1040: return 4;
 		case 568: return 1;
 		case 1568: return 1;
 		case 1576: return 1;
@@ -5347,7 +6196,7 @@ int primary_n_fields_from_id(int id)
 		case 1696: return 1;
 		case 1704: return 1;
 		case 1712: return 3;
-		case 1720: return 4;
+		case 1720: return 5;
 		case 1728: return 4;
 		case 1736: return 5;
 		case 1744: return 3;
@@ -5362,6 +6211,10 @@ int primary_n_fields_from_id(int id)
 		case 1800: return 4;
 		case 1808: return 4;
 		case 1824: return 4;
+		case 50: return 2;
+		case 51: return 1;
+		case 1120: return 3;
+		case 1832: return 9;
 		case 256: return 8;
 		case 272: return 8;
 		case 288: return 8;
@@ -5381,6 +6234,10 @@ int primary_n_fields_from_id(int id)
 		case 464: return 8;
 		case 480: return 8;
 		case 496: return 8;
+		case 696: return 17;
+		case 712: return 7;
+		case 720: return 3;
+		case 728: return 5;
     }
     return 0;
 }
@@ -5497,10 +6354,11 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[6] = e_primary_float;
 		return 7;
 	case 0:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_hv_jmp_to_blt_forward;
-		fields_types[1] = e_primary_hv_jmp_to_blt_cellboard_id;
-		return 2;
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_hv_flash_forward;
+		fields_types[2] = e_primary_hv_flash_cellboard_id;
+		return 3;
 	case 700:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_primary_uint32_t;
@@ -5529,7 +6387,7 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 	case 705:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_primary_hv_cellboard_version_cellboard_id;
-		fields_types[1] = e_primary_uint16_t;
+		fields_types[1] = e_primary_uint32_t;
 		fields_types[2] = e_primary_uint32_t;
 		return 3;
 	case 32:
@@ -5599,28 +6457,40 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[1] = e_primary_float;
 		return 2;
 	case 520:
-		if(fields_types_size < 20) return 0;
-		fields_types[0] = e_primary_hv_feedback_status_feedback_implausibility_detected;
-		fields_types[1] = e_primary_hv_feedback_status_feedback_imd_cockpit;
-		fields_types[2] = e_primary_hv_feedback_status_feedback_tsal_green_fault_latched;
-		fields_types[3] = e_primary_hv_feedback_status_feedback_bms_cockpit;
-		fields_types[4] = e_primary_hv_feedback_status_feedback_ext_latched;
-		fields_types[5] = e_primary_hv_feedback_status_feedback_tsal_green;
-		fields_types[6] = e_primary_hv_feedback_status_feedback_ts_over_60v_status;
-		fields_types[7] = e_primary_hv_feedback_status_feedback_airn_status;
-		fields_types[8] = e_primary_hv_feedback_status_feedback_airp_status;
-		fields_types[9] = e_primary_hv_feedback_status_feedback_airp_gate;
-		fields_types[10] = e_primary_hv_feedback_status_feedback_airn_gate;
-		fields_types[11] = e_primary_hv_feedback_status_feedback_precharge_status;
-		fields_types[12] = e_primary_hv_feedback_status_feedback_tsp_over_60v_status;
-		fields_types[13] = e_primary_hv_feedback_status_feedback_imd_fault;
-		fields_types[14] = e_primary_hv_feedback_status_feedback_check_mux;
-		fields_types[15] = e_primary_hv_feedback_status_feedback_sd_end;
-		fields_types[16] = e_primary_hv_feedback_status_feedback_sd_out;
-		fields_types[17] = e_primary_hv_feedback_status_feedback_sd_in;
-		fields_types[18] = e_primary_hv_feedback_status_feedback_sd_bms;
-		fields_types[19] = e_primary_hv_feedback_status_feedback_sd_imd;
-		return 20;
+		if(fields_types_size < 32) return 0;
+		fields_types[0] = e_primary_hv_feedback_status_airn_open_com;
+		fields_types[1] = e_primary_hv_feedback_status_precharge_open_com;
+		fields_types[2] = e_primary_hv_feedback_status_airp_open_com;
+		fields_types[3] = e_primary_hv_feedback_status_airn_open_mec;
+		fields_types[4] = e_primary_hv_feedback_status_precharge_open_mec;
+		fields_types[5] = e_primary_hv_feedback_status_airp_open_mec;
+		fields_types[6] = e_primary_hv_feedback_status_sd_imd_fb;
+		fields_types[7] = e_primary_hv_feedback_status_sd_bms_fb;
+		fields_types[8] = e_primary_hv_feedback_status_ts_less_than_60v;
+		fields_types[9] = e_primary_hv_feedback_status_plausible_state_persisted;
+		fields_types[10] = e_primary_hv_feedback_status_plausible_state;
+		fields_types[11] = e_primary_hv_feedback_status_not_bms_fault_cockpit_led;
+		fields_types[12] = e_primary_hv_feedback_status_not_imd_fault_cockpit_led;
+		fields_types[13] = e_primary_hv_feedback_status_indicator_connected;
+		fields_types[14] = e_primary_hv_feedback_status_not_latch_reset;
+		fields_types[15] = e_primary_hv_feedback_status_plausible_state_latched;
+		fields_types[16] = e_primary_hv_feedback_status_not_bms_fault_latched;
+		fields_types[17] = e_primary_hv_feedback_status_not_imd_fault_latched;
+		fields_types[18] = e_primary_hv_feedback_status_not_ext_fault_latched;
+		fields_types[19] = e_primary_hv_feedback_status_imd_ok;
+		fields_types[20] = e_primary_hv_feedback_status_plausible_state_rc;
+		fields_types[21] = e_primary_hv_feedback_status_tsal_green;
+		fields_types[22] = e_primary_hv_feedback_status_probing_3v3;
+		fields_types[23] = e_primary_hv_feedback_status_sd_out;
+		fields_types[24] = e_primary_hv_feedback_status_sd_in;
+		fields_types[25] = e_primary_hv_feedback_status_sd_end;
+		fields_types[26] = e_primary_hv_feedback_status_v5_mcu;
+		fields_types[27] = e_primary_hv_feedback_status_feedback_tsal_green_fault_latched;
+		fields_types[28] = e_primary_hv_feedback_status_feedback_ext_latched;
+		fields_types[29] = e_primary_hv_feedback_status_feedback_precharge_status;
+		fields_types[30] = e_primary_hv_feedback_status_feedback_tsp_over_60v_status;
+		fields_types[31] = e_primary_hv_feedback_status_feedback_check_mux;
+		return 32;
 	case 528:
 		if(fields_types_size < 7) return 0;
 		fields_types[0] = e_primary_float;
@@ -5651,28 +6521,38 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[4] = e_primary_float;
 		return 5;
 	case 552:
-		if(fields_types_size < 6) return 0;
-		fields_types[0] = e_primary_uint8_t;
-		fields_types[1] = e_primary_hv_imd_status_imd_status;
-		fields_types[2] = e_primary_uint16_t;
-		fields_types[3] = e_primary_uint8_t;
-		fields_types[4] = e_primary_uint8_t;
+		if(fields_types_size < 8) return 0;
+		fields_types[0] = e_primary_hv_imd_status_status;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_float;
+		fields_types[3] = e_primary_hv_imd_status_feedback_not_imd_fault_cockpit_led;
+		fields_types[4] = e_primary_hv_imd_status_feedback_not_imd_fault_latched;
 		fields_types[5] = e_primary_uint8_t;
-		return 6;
+		fields_types[6] = e_primary_uint16_t;
+		fields_types[7] = e_primary_uint8_t;
+		return 8;
 	case 560:
-		if(fields_types_size < 1) return 0;
+		if(fields_types_size < 7) return 0;
 		fields_types[0] = e_primary_hv_status_status;
-		return 1;
+		fields_types[1] = e_primary_hv_status_cellboard_0;
+		fields_types[2] = e_primary_hv_status_cellboard_1;
+		fields_types[3] = e_primary_hv_status_cellboard_2;
+		fields_types[4] = e_primary_hv_status_cellboard_3;
+		fields_types[5] = e_primary_hv_status_cellboard_4;
+		fields_types[6] = e_primary_hv_status_cellboard_5;
+		return 7;
 	case 40:
-		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_primary_hv_set_status_ecu_hv_status_set;
-		return 1;
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_hv_set_status_ecu_hv_status_set;
+		return 2;
 	case 48:
-		if(fields_types_size < 1) return 0;
-		fields_types[0] = e_primary_hv_set_status_handcart_hv_status_set;
-		return 1;
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_hv_set_status_handcart_hv_status_set;
+		return 2;
 	case 1544:
-		if(fields_types_size < 29) return 0;
+		if(fields_types_size < 54) return 0;
 		fields_types[0] = e_primary_hv_balancing_status_cellboard_id;
 		fields_types[1] = e_primary_hv_balancing_status_balancing_status;
 		fields_types[2] = e_primary_uint8_t;
@@ -5702,17 +6582,46 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[26] = e_primary_uint8_t;
 		fields_types[27] = e_primary_uint8_t;
 		fields_types[28] = e_primary_uint8_t;
-		return 29;
+		fields_types[29] = e_primary_hv_balancing_status_status;
+		fields_types[30] = e_primary_uint8_t;
+		fields_types[31] = e_primary_uint8_t;
+		fields_types[32] = e_primary_uint8_t;
+		fields_types[33] = e_primary_uint8_t;
+		fields_types[34] = e_primary_uint8_t;
+		fields_types[35] = e_primary_uint8_t;
+		fields_types[36] = e_primary_uint8_t;
+		fields_types[37] = e_primary_uint8_t;
+		fields_types[38] = e_primary_uint8_t;
+		fields_types[39] = e_primary_uint8_t;
+		fields_types[40] = e_primary_uint8_t;
+		fields_types[41] = e_primary_uint8_t;
+		fields_types[42] = e_primary_uint8_t;
+		fields_types[43] = e_primary_uint8_t;
+		fields_types[44] = e_primary_uint8_t;
+		fields_types[45] = e_primary_uint8_t;
+		fields_types[46] = e_primary_uint8_t;
+		fields_types[47] = e_primary_uint8_t;
+		fields_types[48] = e_primary_uint8_t;
+		fields_types[49] = e_primary_uint8_t;
+		fields_types[50] = e_primary_uint8_t;
+		fields_types[51] = e_primary_uint8_t;
+		fields_types[52] = e_primary_uint8_t;
+		fields_types[53] = e_primary_uint8_t;
+		return 54;
 	case 1032:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_hv_set_balancing_status_handcart_set_balancing_status;
-		fields_types[1] = e_primary_uint8_t;
-		return 2;
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_hv_set_balancing_status_steering_wheel_set_balancing_status;
+		fields_types[3] = e_primary_uint8_t;
+		return 4;
 	case 1040:
-		if(fields_types_size < 2) return 0;
-		fields_types[0] = e_primary_hv_set_balancing_status_steering_wheel_set_balancing_status;
-		fields_types[1] = e_primary_uint8_t;
-		return 2;
+		if(fields_types_size < 4) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_hv_set_balancing_status_handcart_set_balancing_status;
+		fields_types[3] = e_primary_uint8_t;
+		return 4;
 	case 568:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_primary_lv_status_status;
@@ -6046,12 +6955,13 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[2] = e_primary_float;
 		return 3;
 	case 1720:
-		if(fields_types_size < 4) return 0;
-		fields_types[0] = e_primary_uint8_t;
-		fields_types[1] = e_primary_float;
+		if(fields_types_size < 5) return 0;
+		fields_types[0] = e_primary_hv_cells_voltage_cellboard_id;
+		fields_types[1] = e_primary_uint8_t;
 		fields_types[2] = e_primary_float;
 		fields_types[3] = e_primary_float;
-		return 4;
+		fields_types[4] = e_primary_float;
+		return 5;
 	case 1728:
 		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_primary_float;
@@ -6136,6 +7046,33 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[2] = e_primary_float;
 		fields_types[3] = e_primary_float;
 		return 4;
+	case 50:
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_hv_flash_request_cellboard_id;
+		return 2;
+	case 51:
+		if(fields_types_size < 1) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		return 1;
+	case 1120:
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_primary_float;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_float;
+		return 3;
+	case 1832:
+		if(fields_types_size < 9) return 0;
+		fields_types[0] = e_primary_hv_cells_temperature_cellboard_id;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_float;
+		fields_types[6] = e_primary_float;
+		fields_types[7] = e_primary_float;
+		fields_types[8] = e_primary_float;
+		return 9;
 	case 256:
 		if(fields_types_size < 8) return 0;
 		fields_types[0] = e_primary_uint8_t;
@@ -6345,13 +7282,57 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[6] = e_primary_uint8_t;
 		fields_types[7] = e_primary_uint8_t;
 		return 8;
+	case 696:
+		if(fields_types_size < 17) return 0;
+		fields_types[0] = e_primary_uint8_t;
+		fields_types[1] = e_primary_uint8_t;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_uint8_t;
+		fields_types[5] = e_primary_uint8_t;
+		fields_types[6] = e_primary_uint8_t;
+		fields_types[7] = e_primary_uint8_t;
+		fields_types[8] = e_primary_uint8_t;
+		fields_types[9] = e_primary_uint8_t;
+		fields_types[10] = e_primary_uint8_t;
+		fields_types[11] = e_primary_uint8_t;
+		fields_types[12] = e_primary_uint8_t;
+		fields_types[13] = e_primary_uint8_t;
+		fields_types[14] = e_primary_uint8_t;
+		fields_types[15] = e_primary_uint8_t;
+		fields_types[16] = e_primary_uint8_t;
+		return 17;
+	case 712:
+		if(fields_types_size < 7) return 0;
+		fields_types[0] = e_primary_float;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_float;
+		fields_types[3] = e_primary_float;
+		fields_types[4] = e_primary_float;
+		fields_types[5] = e_primary_float;
+		fields_types[6] = e_primary_float;
+		return 7;
+	case 720:
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_primary_float;
+		fields_types[1] = e_primary_float;
+		fields_types[2] = e_primary_float;
+		return 3;
+	case 728:
+		if(fields_types_size < 5) return 0;
+		fields_types[0] = e_primary_hv_feedback_enzomma_feedback;
+		fields_types[1] = e_primary_hv_feedback_enzomma_status;
+		fields_types[2] = e_primary_uint8_t;
+		fields_types[3] = e_primary_uint8_t;
+		fields_types[4] = e_primary_float;
+		return 5;
 
     }
     return 0;
 }
 int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, char **v)
 {
-	if(!strcmp(msg_name, "HV_JMP_TO_BLT"))
+	if(!strcmp(msg_name, "HV_FLASH"))
 	{
 		if(!strcmp(sgn_name, "forward"))
 		{
@@ -6403,158 +7384,257 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 	}
 	if(!strcmp(msg_name, "HV_FEEDBACK_STATUS"))
 	{
-		if(!strcmp(sgn_name, "feedback_implausibility_detected"))
+		if(!strcmp(sgn_name, "airn_open_com"))
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
 			return 3;
 		}
-		if(!strcmp(sgn_name, "feedback_imd_cockpit"))
+		if(!strcmp(sgn_name, "precharge_open_com"))
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "airp_open_com"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "airn_open_mec"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "precharge_open_mec"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "airp_open_mec"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "sd_imd_fb"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "sd_bms_fb"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "ts_less_than_60v"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "plausible_state_persisted"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "plausible_state"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "not_bms_fault_cockpit_led"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "not_imd_fault_cockpit_led"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "indicator_connected"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "not_latch_reset"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "plausible_state_latched"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "not_bms_fault_latched"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "not_imd_fault_latched"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "not_ext_fault_latched"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "imd_ok"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "plausible_state_rc"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "tsal_green"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "probing_3v3"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "sd_out"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "sd_in"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "sd_end"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "v5_mcu"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
 			return 3;
 		}
 		if(!strcmp(sgn_name, "feedback_tsal_green_fault_latched"))
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_bms_cockpit"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
 			return 3;
 		}
 		if(!strcmp(sgn_name, "feedback_ext_latched"))
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_tsal_green"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_ts_over_60v_status"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_airn_status"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_airp_status"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_airp_gate"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_airn_gate"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
 			return 3;
 		}
 		if(!strcmp(sgn_name, "feedback_precharge_status"))
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
 			return 3;
 		}
 		if(!strcmp(sgn_name, "feedback_tsp_over_60v_status"))
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_imd_fault"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
 			return 3;
 		}
 		if(!strcmp(sgn_name, "feedback_check_mux"))
 		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_sd_end"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_sd_out"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_sd_in"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_sd_bms"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
-			return 3;
-		}
-		if(!strcmp(sgn_name, "feedback_sd_imd"))
-		{
-			sprintf(v[0], "feedback_state_low");
-			sprintf(v[1], "feedback_state_error");
-			sprintf(v[2], "feedback_state_high");
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
 			return 3;
 		}
 	}
 	if(!strcmp(msg_name, "HV_IMD_STATUS"))
 	{
-		if(!strcmp(sgn_name, "imd_status"))
+		if(!strcmp(sgn_name, "status"))
 		{
-			sprintf(v[0], "sc");
-			sprintf(v[1], "normal");
-			sprintf(v[2], "under_voltage");
-			sprintf(v[3], "start_measure");
-			sprintf(v[4], "device_error");
-			sprintf(v[5], "earth_fault");
-			return 6;
+			sprintf(v[0], "unknown");
+			sprintf(v[1], "short_circuit");
+			sprintf(v[2], "normal");
+			sprintf(v[3], "under_voltage");
+			sprintf(v[4], "start_measure");
+			sprintf(v[5], "device_error");
+			sprintf(v[6], "earth_fault");
+			return 7;
+		}
+		if(!strcmp(sgn_name, "feedback_not_imd_fault_cockpit_led"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
+		}
+		if(!strcmp(sgn_name, "feedback_not_imd_fault_latched"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
 		}
 	}
 	if(!strcmp(msg_name, "HV_STATUS"))
@@ -6563,12 +7643,74 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 		{
 			sprintf(v[0], "init");
 			sprintf(v[1], "idle");
-			sprintf(v[2], "airn_close");
-			sprintf(v[3], "precharge");
-			sprintf(v[4], "airp_close");
-			sprintf(v[5], "ts_on");
-			sprintf(v[6], "fatal_error");
-			return 7;
+			sprintf(v[2], "fatal");
+			sprintf(v[3], "flash");
+			sprintf(v[4], "balancing");
+			sprintf(v[5], "airn_check");
+			sprintf(v[6], "precharge_check");
+			sprintf(v[7], "airp_check");
+			sprintf(v[8], "ts_on");
+			return 9;
+		}
+		if(!strcmp(sgn_name, "cellboard_0"))
+		{
+			sprintf(v[0], "init");
+			sprintf(v[1], "idle");
+			sprintf(v[2], "fatal");
+			sprintf(v[3], "flash");
+			sprintf(v[4], "discharge");
+			sprintf(v[5], "cooldown");
+			return 6;
+		}
+		if(!strcmp(sgn_name, "cellboard_1"))
+		{
+			sprintf(v[0], "init");
+			sprintf(v[1], "idle");
+			sprintf(v[2], "fatal");
+			sprintf(v[3], "flash");
+			sprintf(v[4], "discharge");
+			sprintf(v[5], "cooldown");
+			return 6;
+		}
+		if(!strcmp(sgn_name, "cellboard_2"))
+		{
+			sprintf(v[0], "init");
+			sprintf(v[1], "idle");
+			sprintf(v[2], "fatal");
+			sprintf(v[3], "flash");
+			sprintf(v[4], "discharge");
+			sprintf(v[5], "cooldown");
+			return 6;
+		}
+		if(!strcmp(sgn_name, "cellboard_3"))
+		{
+			sprintf(v[0], "init");
+			sprintf(v[1], "idle");
+			sprintf(v[2], "fatal");
+			sprintf(v[3], "flash");
+			sprintf(v[4], "discharge");
+			sprintf(v[5], "cooldown");
+			return 6;
+		}
+		if(!strcmp(sgn_name, "cellboard_4"))
+		{
+			sprintf(v[0], "init");
+			sprintf(v[1], "idle");
+			sprintf(v[2], "fatal");
+			sprintf(v[3], "flash");
+			sprintf(v[4], "discharge");
+			sprintf(v[5], "cooldown");
+			return 6;
+		}
+		if(!strcmp(sgn_name, "cellboard_5"))
+		{
+			sprintf(v[0], "init");
+			sprintf(v[1], "idle");
+			sprintf(v[2], "fatal");
+			sprintf(v[3], "flash");
+			sprintf(v[4], "discharge");
+			sprintf(v[5], "cooldown");
+			return 6;
 		}
 	}
 	if(!strcmp(msg_name, "HV_SET_STATUS_ECU"))
@@ -6607,8 +7749,15 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 			sprintf(v[1], "on");
 			return 2;
 		}
+		if(!strcmp(sgn_name, "status"))
+		{
+			sprintf(v[0], "stopped");
+			sprintf(v[1], "paused");
+			sprintf(v[2], "running");
+			return 3;
+		}
 	}
-	if(!strcmp(msg_name, "HV_SET_BALANCING_STATUS_HANDCART"))
+	if(!strcmp(msg_name, "HV_SET_BALANCING_STATUS_STEERING_WHEEL"))
 	{
 		if(!strcmp(sgn_name, "set_balancing_status"))
 		{
@@ -6617,7 +7766,7 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 			return 2;
 		}
 	}
-	if(!strcmp(msg_name, "HV_SET_BALANCING_STATUS_STEERING_WHEEL"))
+	if(!strcmp(msg_name, "HV_SET_BALANCING_STATUS_HANDCART"))
 	{
 		if(!strcmp(sgn_name, "set_balancing_status"))
 		{
@@ -6928,6 +8077,19 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 			return 2;
 		}
 	}
+	if(!strcmp(msg_name, "HV_CELLS_VOLTAGE"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "cellboard_0");
+			sprintf(v[1], "cellboard_1");
+			sprintf(v[2], "cellboard_2");
+			sprintf(v[3], "cellboard_3");
+			sprintf(v[4], "cellboard_4");
+			sprintf(v[5], "cellboard_5");
+			return 6;
+		}
+	}
 	if(!strcmp(msg_name, "ECU_STEER_ACTUATOR_STATUS"))
 	{
 		if(!strcmp(sgn_name, "status"))
@@ -7017,6 +8179,74 @@ int primary_enum_fields_from_name(const char *msg_name, const char *sgn_name, ch
 			sprintf(v[7], "handcart");
 			sprintf(v[8], "acquisinator");
 			return 9;
+		}
+	}
+	if(!strcmp(msg_name, "HV_FLASH_REQUEST"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "cellboard_0");
+			sprintf(v[1], "cellboard_1");
+			sprintf(v[2], "cellboard_2");
+			sprintf(v[3], "cellboard_3");
+			sprintf(v[4], "cellboard_4");
+			sprintf(v[5], "cellboard_5");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "HV_CELLS_TEMPERATURE"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "cellboard_0");
+			sprintf(v[1], "cellboard_1");
+			sprintf(v[2], "cellboard_2");
+			sprintf(v[3], "cellboard_3");
+			sprintf(v[4], "cellboard_4");
+			sprintf(v[5], "cellboard_5");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "HV_FEEDBACK_ENZOMMA"))
+	{
+		if(!strcmp(sgn_name, "feedback"))
+		{
+			sprintf(v[0], "airn_open_com");
+			sprintf(v[1], "precharge_open_com");
+			sprintf(v[2], "airp_open_com");
+			sprintf(v[3], "airn_open_mec");
+			sprintf(v[4], "precharge_open_mec");
+			sprintf(v[5], "airp_open_mec");
+			sprintf(v[6], "sd_imd_fb");
+			sprintf(v[7], "sd_bms_fb");
+			sprintf(v[8], "ts_less_than_60v");
+			sprintf(v[9], "plausible_state_persisted");
+			sprintf(v[10], "plausible_state");
+			sprintf(v[11], "not_bms_fault_cockpit_led");
+			sprintf(v[12], "not_imd_fault_cockpit_led");
+			sprintf(v[13], "indicator_connected");
+			sprintf(v[14], "not_latch_reset");
+			sprintf(v[15], "plausible_state_latched");
+			sprintf(v[16], "not_bms_fault_latched");
+			sprintf(v[17], "not_imd_fault_latched");
+			sprintf(v[18], "not_ext_fault_latched");
+			sprintf(v[19], "imd_ok");
+			sprintf(v[20], "plausible_state_rc");
+			sprintf(v[21], "tsal_green");
+			sprintf(v[22], "probing_3v3");
+			sprintf(v[23], "sd_out");
+			sprintf(v[24], "sd_in");
+			sprintf(v[25], "sd_end");
+			sprintf(v[26], "v5_mcu");
+			sprintf(v[27], "unknown");
+			return 28;
+		}
+		if(!strcmp(sgn_name, "status"))
+		{
+			sprintf(v[0], "low");
+			sprintf(v[1], "error");
+			sprintf(v[2], "high");
+			return 3;
 		}
 	}
 	return 0;

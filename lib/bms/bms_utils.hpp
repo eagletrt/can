@@ -9,6 +9,318 @@
 #include "bms_network.h"
 
 /* START */
+#define IVT_MSG_RESULT_WH "IVT_MSG_RESULT_WH"
+
+#define IVT_MSG_RESULT_WH_IVT_ID_RESULT_WH "ivt_msg_result_wh_ivt_id_result_wh"
+#define IVT_MSG_RESULT_WH_IVT_RESULT_WH_SYSTEM_ERROR "ivt_msg_result_wh_ivt_result_wh_system_error"
+#define IVT_MSG_RESULT_WH_IVT_RESULT_WH_MEASUREMENT_ERROR "ivt_msg_result_wh_ivt_result_wh_measurement_error"
+#define IVT_MSG_RESULT_WH_IVT_RESULT_WH_CHANNEL_ERROR "ivt_msg_result_wh_ivt_result_wh_channel_error"
+#define IVT_MSG_RESULT_WH_IVT_RESULT_WH_OCS "ivt_msg_result_wh_ivt_result_wh_ocs"
+#define IVT_MSG_RESULT_WH_IVT_MSGCOUNT_RESULT_WH "ivt_msg_result_wh_ivt_msgcount_result_wh"
+#define IVT_MSG_RESULT_WH_IVT_RESULT_WH "ivt_msg_result_wh_ivt_result_wh"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_AS "IVT_MSG_RESULT_AS"
+
+#define IVT_MSG_RESULT_AS_IVT_ID_RESULT_AS "ivt_msg_result_as_ivt_id_result_as"
+#define IVT_MSG_RESULT_AS_IVT_RESULT_AS_SYSTEM_ERROR "ivt_msg_result_as_ivt_result_as_system_error"
+#define IVT_MSG_RESULT_AS_IVT_RESULT_AS_MEASUREMENT_ERROR "ivt_msg_result_as_ivt_result_as_measurement_error"
+#define IVT_MSG_RESULT_AS_IVT_RESULT_AS_CHANNEL_ERROR "ivt_msg_result_as_ivt_result_as_channel_error"
+#define IVT_MSG_RESULT_AS_IVT_RESULT_AS_OCS "ivt_msg_result_as_ivt_result_as_ocs"
+#define IVT_MSG_RESULT_AS_IVT_MSGCOUNT_RESULT_AS "ivt_msg_result_as_ivt_msgcount_result_as"
+#define IVT_MSG_RESULT_AS_IVT_RESULT_AS "ivt_msg_result_as_ivt_result_as"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_W "IVT_MSG_RESULT_W"
+
+#define IVT_MSG_RESULT_W_IVT_ID_RESULT_W "ivt_msg_result_w_ivt_id_result_w"
+#define IVT_MSG_RESULT_W_IVT_RESULT_W_SYSTEM_ERROR "ivt_msg_result_w_ivt_result_w_system_error"
+#define IVT_MSG_RESULT_W_IVT_RESULT_W_MEASUREMENT_ERROR "ivt_msg_result_w_ivt_result_w_measurement_error"
+#define IVT_MSG_RESULT_W_IVT_RESULT_W_CHANNEL_ERROR "ivt_msg_result_w_ivt_result_w_channel_error"
+#define IVT_MSG_RESULT_W_IVT_RESULT_W_OCS "ivt_msg_result_w_ivt_result_w_ocs"
+#define IVT_MSG_RESULT_W_IVT_MSGCOUNT_RESULT_W "ivt_msg_result_w_ivt_msgcount_result_w"
+#define IVT_MSG_RESULT_W_IVT_RESULT_W "ivt_msg_result_w_ivt_result_w"
+/* END */
+
+/* START */
+#define IVT_MSG_RESPONSE "IVT_MSG_RESPONSE"
+
+#define IVT_MSG_RESPONSE_IVT_ID_RESPONSE "ivt_msg_response_ivt_id_response"
+#define IVT_MSG_RESPONSE__B1_TRIGGER_SPARE "ivt_msg_response__b1_trigger_spare"
+#define IVT_MSG_RESPONSE__FF_WRONG_COMMAND "ivt_msg_response__ff_wrong_command"
+#define IVT_MSG_RESPONSE__BF_RESTART_ALIVE_CMD_ID "ivt_msg_response__bf_restart_alive_cmd_id"
+#define IVT_MSG_RESPONSE__80_RESP_MEASERROR_ITEM "ivt_msg_response__80_resp_measerror_item"
+#define IVT_MSG_RESPONSE__81_RESP_SYSTEMERROR_ITEM "ivt_msg_response__81_resp_systemerror_item"
+#define IVT_MSG_RESPONSE__82_RESP_ALLLOGDATA_ITEM "ivt_msg_response__82_resp_alllogdata_item"
+#define IVT_MSG_RESPONSE__83_RESP_LOGDATA_ITEM "ivt_msg_response__83_resp_logdata_item"
+#define IVT_MSG_RESPONSE__90_RESP_CAN_ID_VAL_I "ivt_msg_response__90_resp_can_id_val_i"
+#define IVT_MSG_RESPONSE__91_RESP_CAN_ID_VAL_U1 "ivt_msg_response__91_resp_can_id_val_u1"
+#define IVT_MSG_RESPONSE__92_RESP_CAN_ID_VAL_U2 "ivt_msg_response__92_resp_can_id_val_u2"
+#define IVT_MSG_RESPONSE__93_RESP_CAN_ID_VAL_U3 "ivt_msg_response__93_resp_can_id_val_u3"
+#define IVT_MSG_RESPONSE__94_RESP_CAN_ID_VAL_T "ivt_msg_response__94_resp_can_id_val_t"
+#define IVT_MSG_RESPONSE__95_RESP_CAN_ID_VAL_W "ivt_msg_response__95_resp_can_id_val_w"
+#define IVT_MSG_RESPONSE__96_RESP_CAN_ID_VAL_AS "ivt_msg_response__96_resp_can_id_val_as"
+#define IVT_MSG_RESPONSE__97_RESP_CAN_ID_VAL_WH "ivt_msg_response__97_resp_can_id_val_wh"
+#define IVT_MSG_RESPONSE__9D_RESP_CAN_ID_VAL_COMMAND "ivt_msg_response__9d_resp_can_id_val_command"
+#define IVT_MSG_RESPONSE__9F_RESP_CAN_ID_VAL_RESPONSE "ivt_msg_response__9f_resp_can_id_val_response"
+#define IVT_MSG_RESPONSE__A0_RESP_SIGN_I "ivt_msg_response__a0_resp_sign_i"
+#define IVT_MSG_RESPONSE__A1_RESP_SIGN_U1 "ivt_msg_response__a1_resp_sign_u1"
+#define IVT_MSG_RESPONSE__A2_RESP_SIGN_U2 "ivt_msg_response__a2_resp_sign_u2"
+#define IVT_MSG_RESPONSE__A3_RESP_SIGN_U3 "ivt_msg_response__a3_resp_sign_u3"
+#define IVT_MSG_RESPONSE__A4_RESP_SIGN_T "ivt_msg_response__a4_resp_sign_t"
+#define IVT_MSG_RESPONSE__A5_RESP_SIGN_W "ivt_msg_response__a5_resp_sign_w"
+#define IVT_MSG_RESPONSE__A6_RESP_SIGN_AS "ivt_msg_response__a6_resp_sign_as"
+#define IVT_MSG_RESPONSE__A7_RESP_SIGN_WH "ivt_msg_response__a7_resp_sign_wh"
+#define IVT_MSG_RESPONSE__B0_RESP_RESET_ITEM "ivt_msg_response__b0_resp_reset_item"
+#define IVT_MSG_RESPONSE__B2_RESP_STORE_DUMMY "ivt_msg_response__b2_resp_store_dummy"
+#define IVT_MSG_RESPONSE__B3_RESP_OC_TEST_TIME "ivt_msg_response__b3_resp_oc_test_time"
+#define IVT_MSG_RESPONSE__B5_RESP_OC_POS_SET_THRESHOLD "ivt_msg_response__b5_resp_oc_pos_set_threshold"
+#define IVT_MSG_RESPONSE__B6_RESP_OC_NEG_SET_THRESHOLD "ivt_msg_response__b6_resp_oc_neg_set_threshold"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_TYPE "ivt_msg_response__b9_resp_device_type"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_MAJOR_HW "ivt_msg_response__ba_resp_sw_ver_major_hw"
+#define IVT_MSG_RESPONSE__BB_RESP_SERIEN_NR "ivt_msg_response__bb_resp_serien_nr"
+#define IVT_MSG_RESPONSE__BC_RESP_ART_N "ivt_msg_response__bc_resp_art_n"
+#define IVT_MSG_RESPONSE__A0_RESP_ENDIANESS_I "ivt_msg_response__a0_resp_endianess_i"
+#define IVT_MSG_RESPONSE__A1_RESP_ENDIANESS_U1 "ivt_msg_response__a1_resp_endianess_u1"
+#define IVT_MSG_RESPONSE__A2_RESP_ENDIANESS_U2 "ivt_msg_response__a2_resp_endianess_u2"
+#define IVT_MSG_RESPONSE__A3_RESP_ENDIANESS_U3 "ivt_msg_response__a3_resp_endianess_u3"
+#define IVT_MSG_RESPONSE__A4_RESP_ENDIANESS_T "ivt_msg_response__a4_resp_endianess_t"
+#define IVT_MSG_RESPONSE__A5_RESP_ENDIANESS_W "ivt_msg_response__a5_resp_endianess_w"
+#define IVT_MSG_RESPONSE__A6_RESP_ENDIANESS_AS "ivt_msg_response__a6_resp_endianess_as"
+#define IVT_MSG_RESPONSE__A7_RESP_ENDIANESS_WH "ivt_msg_response__a7_resp_endianess_wh"
+#define IVT_MSG_RESPONSE__A0_RESP_TRIGGERMODE_I "ivt_msg_response__a0_resp_triggermode_i"
+#define IVT_MSG_RESPONSE__A1_RESP_TRIGGERMODE_U1 "ivt_msg_response__a1_resp_triggermode_u1"
+#define IVT_MSG_RESPONSE__A2_RESP_TRIGGERMODE_U2 "ivt_msg_response__a2_resp_triggermode_u2"
+#define IVT_MSG_RESPONSE__A3_RESP_TRIGGERMODE_U3 "ivt_msg_response__a3_resp_triggermode_u3"
+#define IVT_MSG_RESPONSE__A4_RESP_TRIGGERMODE_T "ivt_msg_response__a4_resp_triggermode_t"
+#define IVT_MSG_RESPONSE__A5_RESP_TRIGGERMODE_W "ivt_msg_response__a5_resp_triggermode_w"
+#define IVT_MSG_RESPONSE__A6_RESP_TRIGGERMODE_AS "ivt_msg_response__a6_resp_triggermode_as"
+#define IVT_MSG_RESPONSE__A7_RESP_TRIGGERMODE_WH "ivt_msg_response__a7_resp_triggermode_wh"
+#define IVT_MSG_RESPONSE__B4_RESP_ACTUAL_MODE "ivt_msg_response__b4_resp_actual_mode"
+#define IVT_MSG_RESPONSE__B1_07_TRIGGER_WH "ivt_msg_response__b1_07_trigger_wh"
+#define IVT_MSG_RESPONSE__B2_RESP_STORE_DEVICE_SN "ivt_msg_response__b2_resp_store_device_sn"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_MINOR "ivt_msg_response__ba_resp_sw_ver_minor"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_CURRENT "ivt_msg_response__b9_resp_device_current"
+#define IVT_MSG_RESPONSE__80_RESP_MEASERROR_COUNT_MASK "ivt_msg_response__80_resp_measerror_count_mask"
+#define IVT_MSG_RESPONSE__81_RESP_SYSTEMERROR_COUNT_MASK "ivt_msg_response__81_resp_systemerror_count_mask"
+#define IVT_MSG_RESPONSE__82_RESP_ALLLOGDATA_COUNTER "ivt_msg_response__82_resp_alllogdata_counter"
+#define IVT_MSG_RESPONSE__83_RESP_LOGDATA_COUNTER "ivt_msg_response__83_resp_logdata_counter"
+#define IVT_MSG_RESPONSE__A0_RESP_CYCLETIME_I "ivt_msg_response__a0_resp_cycletime_i"
+#define IVT_MSG_RESPONSE__A1_RESP_CYCLETIME_U1 "ivt_msg_response__a1_resp_cycletime_u1"
+#define IVT_MSG_RESPONSE__A2_RESP_CYCLETIME_U2 "ivt_msg_response__a2_resp_cycletime_u2"
+#define IVT_MSG_RESPONSE__A3_RESP_CYCLETIME_U3 "ivt_msg_response__a3_resp_cycletime_u3"
+#define IVT_MSG_RESPONSE__A4_RESP_CYCLETIME_T "ivt_msg_response__a4_resp_cycletime_t"
+#define IVT_MSG_RESPONSE__A5_RESP_CYCLETIME_W "ivt_msg_response__a5_resp_cycletime_w"
+#define IVT_MSG_RESPONSE__A6_RESP_CYCLETIME_AS "ivt_msg_response__a6_resp_cycletime_as"
+#define IVT_MSG_RESPONSE__A7_RESP_CYCLETIME_WH "ivt_msg_response__a7_resp_cycletime_wh"
+#define IVT_MSG_RESPONSE__B1_06_TRIGGER_AS "ivt_msg_response__b1_06_trigger_as"
+#define IVT_MSG_RESPONSE__B1_05_TRIGGER_W "ivt_msg_response__b1_05_trigger_w"
+#define IVT_MSG_RESPONSE__B1_04_TRIGGER_T "ivt_msg_response__b1_04_trigger_t"
+#define IVT_MSG_RESPONSE__B1_03_TRIGGER_U3 "ivt_msg_response__b1_03_trigger_u3"
+#define IVT_MSG_RESPONSE__B1_02_TRIGGER_U2 "ivt_msg_response__b1_02_trigger_u2"
+#define IVT_MSG_RESPONSE__B1_01_TRIGGER_U1 "ivt_msg_response__b1_01_trigger_u1"
+#define IVT_MSG_RESPONSE__B1_00_TRIGGER_I "ivt_msg_response__b1_00_trigger_i"
+#define IVT_MSG_RESPONSE__B4_RESP_STARTUP_MODE "ivt_msg_response__b4_resp_startup_mode"
+#define IVT_MSG_RESPONSE__BF_RESTART_ALIVE_SN "ivt_msg_response__bf_restart_alive_sn"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_REVISION "ivt_msg_response__ba_resp_sw_ver_revision"
+#define IVT_MSG_RESPONSE__90_RESP_CAN_ID_SN_I "ivt_msg_response__90_resp_can_id_sn_i"
+#define IVT_MSG_RESPONSE__91_RESP_CAN_ID_SN_U1 "ivt_msg_response__91_resp_can_id_sn_u1"
+#define IVT_MSG_RESPONSE__92_RESP_CAN_ID_SN_U2 "ivt_msg_response__92_resp_can_id_sn_u2"
+#define IVT_MSG_RESPONSE__93_RESP_CAN_ID_SN_U3 "ivt_msg_response__93_resp_can_id_sn_u3"
+#define IVT_MSG_RESPONSE__94_RESP_CAN_ID_SN_T "ivt_msg_response__94_resp_can_id_sn_t"
+#define IVT_MSG_RESPONSE__95_RESP_CAN_ID_SN_W "ivt_msg_response__95_resp_can_id_sn_w"
+#define IVT_MSG_RESPONSE__96_RESP_CAN_ID_SN_AS "ivt_msg_response__96_resp_can_id_sn_as"
+#define IVT_MSG_RESPONSE__97_RESP_CAN_ID_SN_WH "ivt_msg_response__97_resp_can_id_sn_wh"
+#define IVT_MSG_RESPONSE__9D_RESP_CAN_ID_SN_COMMAND "ivt_msg_response__9d_resp_can_id_sn_command"
+#define IVT_MSG_RESPONSE__9F_RESP_CAN_ID_SN_RESPONSE "ivt_msg_response__9f_resp_can_id_sn_response"
+#define IVT_MSG_RESPONSE__B0_RESP_RESET_DEVICE_SN "ivt_msg_response__b0_resp_reset_device_sn"
+#define IVT_MSG_RESPONSE__B4_RESP_CODE_LEVEL "ivt_msg_response__b4_resp_code_level"
+#define IVT_MSG_RESPONSE__B5_RESP_OC_POS_RESET_THRESHOLD "ivt_msg_response__b5_resp_oc_pos_reset_threshold"
+#define IVT_MSG_RESPONSE__B6_RESP_OC_NEG_RESET_THRESHOLD "ivt_msg_response__b6_resp_oc_neg_reset_threshold"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_VOLTAGE_CHAN "ivt_msg_response__b9_resp_device_voltage_chan"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_VEAR "ivt_msg_response__ba_resp_sw_ver_vear"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_TOI "ivt_msg_response__b9_resp_device_toi"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_MONTH "ivt_msg_response__ba_resp_sw_ver_month"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_COM "ivt_msg_response__b9_resp_device_com"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_DAY "ivt_msg_response__ba_resp_sw_ver_day"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_V_SUPPLY "ivt_msg_response__b9_resp_device_v_supply"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_INTERNAL "ivt_msg_response__ba_resp_sw_ver_internal"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_T "IVT_MSG_RESULT_T"
+
+#define IVT_MSG_RESULT_T_IVT_ID_RESULT_T "ivt_msg_result_t_ivt_id_result_t"
+#define IVT_MSG_RESULT_T_IVT_RESULT_T_SYSTEM_ERROR "ivt_msg_result_t_ivt_result_t_system_error"
+#define IVT_MSG_RESULT_T_IVT_RESULT_T_MEASUREMENT_ERROR "ivt_msg_result_t_ivt_result_t_measurement_error"
+#define IVT_MSG_RESULT_T_IVT_RESULT_T_CHANNEL_ERROR "ivt_msg_result_t_ivt_result_t_channel_error"
+#define IVT_MSG_RESULT_T_IVT_RESULT_T_OCS "ivt_msg_result_t_ivt_result_t_ocs"
+#define IVT_MSG_RESULT_T_IVT_MSGCOUNT_RESULT_T "ivt_msg_result_t_ivt_msgcount_result_t"
+#define IVT_MSG_RESULT_T_IVT_RESULT_T "ivt_msg_result_t_ivt_result_t"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_U3 "IVT_MSG_RESULT_U3"
+
+#define IVT_MSG_RESULT_U3_IVT_ID_RESULT_U3 "ivt_msg_result_u3_ivt_id_result_u3"
+#define IVT_MSG_RESULT_U3_IVT_RESULT_U3_SYSTEM_ERROR "ivt_msg_result_u3_ivt_result_u3_system_error"
+#define IVT_MSG_RESULT_U3_IVT_RESULT_U3_MEASUREMENT_ERROR "ivt_msg_result_u3_ivt_result_u3_measurement_error"
+#define IVT_MSG_RESULT_U3_IVT_RESULT_U3_CHANNEL_ERROR "ivt_msg_result_u3_ivt_result_u3_channel_error"
+#define IVT_MSG_RESULT_U3_IVT_RESULT_U3_OCS "ivt_msg_result_u3_ivt_result_u3_ocs"
+#define IVT_MSG_RESULT_U3_IVT_MSGCOUNT_RESULT_U3 "ivt_msg_result_u3_ivt_msgcount_result_u3"
+#define IVT_MSG_RESULT_U3_IVT_RESULT_U3 "ivt_msg_result_u3_ivt_result_u3"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_U2 "IVT_MSG_RESULT_U2"
+
+#define IVT_MSG_RESULT_U2_IVT_ID_RESULT_U2 "ivt_msg_result_u2_ivt_id_result_u2"
+#define IVT_MSG_RESULT_U2_IVT_RESULT_U2_SYSTEM_ERROR "ivt_msg_result_u2_ivt_result_u2_system_error"
+#define IVT_MSG_RESULT_U2_IVT_RESULT_U2_MEASUREMENT_ERROR "ivt_msg_result_u2_ivt_result_u2_measurement_error"
+#define IVT_MSG_RESULT_U2_IVT_RESULT_U2_CHANNEL_ERROR "ivt_msg_result_u2_ivt_result_u2_channel_error"
+#define IVT_MSG_RESULT_U2_IVT_RESULT_U2_OCS "ivt_msg_result_u2_ivt_result_u2_ocs"
+#define IVT_MSG_RESULT_U2_IVT_MSGCOUNT_RESULT_U2 "ivt_msg_result_u2_ivt_msgcount_result_u2"
+#define IVT_MSG_RESULT_U2_IVT_RESULT_U2 "ivt_msg_result_u2_ivt_result_u2"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_U1 "IVT_MSG_RESULT_U1"
+
+#define IVT_MSG_RESULT_U1_IVT_ID_RESULT_U1 "ivt_msg_result_u1_ivt_id_result_u1"
+#define IVT_MSG_RESULT_U1_IVT_RESULT_U1_SYSTEM_ERROR "ivt_msg_result_u1_ivt_result_u1_system_error"
+#define IVT_MSG_RESULT_U1_IVT_RESULT_U1_MEASUREMENT_ERROR "ivt_msg_result_u1_ivt_result_u1_measurement_error"
+#define IVT_MSG_RESULT_U1_IVT_RESULT_U1_CHANNEL_ERROR "ivt_msg_result_u1_ivt_result_u1_channel_error"
+#define IVT_MSG_RESULT_U1_IVT_RESULT_U1_OCS "ivt_msg_result_u1_ivt_result_u1_ocs"
+#define IVT_MSG_RESULT_U1_IVT_MSGCOUNT_RESULT_U1 "ivt_msg_result_u1_ivt_msgcount_result_u1"
+#define IVT_MSG_RESULT_U1_IVT_RESULT_U1 "ivt_msg_result_u1_ivt_result_u1"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_I "IVT_MSG_RESULT_I"
+
+#define IVT_MSG_RESULT_I_IVT_ID_RESULT_I "ivt_msg_result_i_ivt_id_result_i"
+#define IVT_MSG_RESULT_I_IVT_RESULT_I_SYSTEM_ERROR "ivt_msg_result_i_ivt_result_i_system_error"
+#define IVT_MSG_RESULT_I_IVT_RESULT_I_MEASUREMENT_ERROR "ivt_msg_result_i_ivt_result_i_measurement_error"
+#define IVT_MSG_RESULT_I_IVT_RESULT_I_CHANNEL_ERROR "ivt_msg_result_i_ivt_result_i_channel_error"
+#define IVT_MSG_RESULT_I_IVT_RESULT_I_OCS "ivt_msg_result_i_ivt_result_i_ocs"
+#define IVT_MSG_RESULT_I_IVT_MSGCOUNT_RESULT_I "ivt_msg_result_i_ivt_msgcount_result_i"
+#define IVT_MSG_RESULT_I_IVT_RESULT_I "ivt_msg_result_i_ivt_result_i"
+/* END */
+
+/* START */
+#define IVT_MSG_CMD "IVT_MSG_CMD"
+
+#define IVT_MSG_CMD_IVT_ID_CMD "ivt_msg_cmd_ivt_id_cmd"
+#define IVT_MSG_CMD__31_TRIGGER_SPARE "ivt_msg_cmd__31_trigger_spare"
+#define IVT_MSG_CMD__10_SET_CAN_ID_VAL_I "ivt_msg_cmd__10_set_can_id_val_i"
+#define IVT_MSG_CMD__11_SET_CAN_ID_VAL_U1 "ivt_msg_cmd__11_set_can_id_val_u1"
+#define IVT_MSG_CMD__12_SET_CAN_ID_VAL_U2 "ivt_msg_cmd__12_set_can_id_val_u2"
+#define IVT_MSG_CMD__13_SET_CAN_ID_VAL_U3 "ivt_msg_cmd__13_set_can_id_val_u3"
+#define IVT_MSG_CMD__14_SET_CAN_ID_VAL_T "ivt_msg_cmd__14_set_can_id_val_t"
+#define IVT_MSG_CMD__15_SET_CAN_ID_VAL_W "ivt_msg_cmd__15_set_can_id_val_w"
+#define IVT_MSG_CMD__16_SET_CAN_ID_VAL_AS "ivt_msg_cmd__16_set_can_id_val_as"
+#define IVT_MSG_CMD__17_SET_CAN_ID_VAL_WH "ivt_msg_cmd__17_set_can_id_val_wh"
+#define IVT_MSG_CMD__1D_SET_CAN_ID_VAL_COMMAND "ivt_msg_cmd__1d_set_can_id_val_command"
+#define IVT_MSG_CMD__1F_SET_CAN_ID_VAL_RESPONSE "ivt_msg_cmd__1f_set_can_id_val_response"
+#define IVT_MSG_CMD__20_CONF_SIGN_I "ivt_msg_cmd__20_conf_sign_i"
+#define IVT_MSG_CMD__21_CONF_SIGN_U1 "ivt_msg_cmd__21_conf_sign_u1"
+#define IVT_MSG_CMD__22_CONF_SIGN_U2 "ivt_msg_cmd__22_conf_sign_u2"
+#define IVT_MSG_CMD__23_CONF_SIGN_U3 "ivt_msg_cmd__23_conf_sign_u3"
+#define IVT_MSG_CMD__24_CONF_SIGN_T "ivt_msg_cmd__24_conf_sign_t"
+#define IVT_MSG_CMD__25_CONF_SIGN_W "ivt_msg_cmd__25_conf_sign_w"
+#define IVT_MSG_CMD__26_CONF_SIGN_AS "ivt_msg_cmd__26_conf_sign_as"
+#define IVT_MSG_CMD__27_CONF_SIGN_WH "ivt_msg_cmd__27_conf_sign_wh"
+#define IVT_MSG_CMD__30_RESET_ITEM "ivt_msg_cmd__30_reset_item"
+#define IVT_MSG_CMD__32_STORE_DUMMY "ivt_msg_cmd__32_store_dummy"
+#define IVT_MSG_CMD__33_OC_TEST_TIME "ivt_msg_cmd__33_oc_test_time"
+#define IVT_MSG_CMD__35_OC_POS_SET_THRESHOLD "ivt_msg_cmd__35_oc_pos_set_threshold"
+#define IVT_MSG_CMD__36_OC_NEG_SET_THRESHOLD "ivt_msg_cmd__36_oc_neg_set_threshold"
+#define IVT_MSG_CMD__3A_RESTART_TO_BITRATE "ivt_msg_cmd__3a_restart_to_bitrate"
+#define IVT_MSG_CMD__3D_RESTART_DEFAULT_DUMMY "ivt_msg_cmd__3d_restart_default_dummy"
+#define IVT_MSG_CMD__3F_RESTART_DUMMY "ivt_msg_cmd__3f_restart_dummy"
+#define IVT_MSG_CMD__40_GET_MEASERROR_ITEM "ivt_msg_cmd__40_get_measerror_item"
+#define IVT_MSG_CMD__41_GET_SYSTEMERROR_ITEM "ivt_msg_cmd__41_get_systemerror_item"
+#define IVT_MSG_CMD__42_GET_ALLLOGDATA_ITEM "ivt_msg_cmd__42_get_alllogdata_item"
+#define IVT_MSG_CMD__43_GET_LOGDATA_ITEM "ivt_msg_cmd__43_get_logdata_item"
+#define IVT_MSG_CMD__60_GET_RESULT_DUMMY_I "ivt_msg_cmd__60_get_result_dummy_i"
+#define IVT_MSG_CMD__61_GET_RESULT_DUMMY_U1 "ivt_msg_cmd__61_get_result_dummy_u1"
+#define IVT_MSG_CMD__62_GET_RESULT_DUMMY_U2 "ivt_msg_cmd__62_get_result_dummy_u2"
+#define IVT_MSG_CMD__63_GET_RESULT_DUMMY_U3 "ivt_msg_cmd__63_get_result_dummy_u3"
+#define IVT_MSG_CMD__64_GET_RESULT_DUMMY_T "ivt_msg_cmd__64_get_result_dummy_t"
+#define IVT_MSG_CMD__65_GET_RESULT_DUMMY_W "ivt_msg_cmd__65_get_result_dummy_w"
+#define IVT_MSG_CMD__66_GET_RESULT_DUMMY_AS "ivt_msg_cmd__66_get_result_dummy_as"
+#define IVT_MSG_CMD__67_GET_RESULT_DUMMY_WH "ivt_msg_cmd__67_get_result_dummy_wh"
+#define IVT_MSG_CMD__73_GET_OC_TEST_DUMMY "ivt_msg_cmd__73_get_oc_test_dummy"
+#define IVT_MSG_CMD__74_GET_MODE_DUMMY "ivt_msg_cmd__74_get_mode_dummy"
+#define IVT_MSG_CMD__75_GET_OC_POS_DUMMY "ivt_msg_cmd__75_get_oc_pos_dummy"
+#define IVT_MSG_CMD__76_GET_OC_NEG_DUMMY "ivt_msg_cmd__76_get_oc_neg_dummy"
+#define IVT_MSG_CMD__79_GET_DEVICE_ID_DUMMY "ivt_msg_cmd__79_get_device_id_dummy"
+#define IVT_MSG_CMD__7A_GET_SW_VERSION_DUMMY "ivt_msg_cmd__7a_get_sw_version_dummy"
+#define IVT_MSG_CMD__7B_GET_SERIEN_NR_DUMMY "ivt_msg_cmd__7b_get_serien_nr_dummy"
+#define IVT_MSG_CMD__7C_GET_ART_NR_DUMMY "ivt_msg_cmd__7c_get_art_nr_dummy"
+#define IVT_MSG_CMD__20_CONF_ENDIANESS_I "ivt_msg_cmd__20_conf_endianess_i"
+#define IVT_MSG_CMD__21_CONF_ENDIANESS_U1 "ivt_msg_cmd__21_conf_endianess_u1"
+#define IVT_MSG_CMD__22_CONF_ENDIANESS_U2 "ivt_msg_cmd__22_conf_endianess_u2"
+#define IVT_MSG_CMD__23_CONF_ENDIANESS_U3 "ivt_msg_cmd__23_conf_endianess_u3"
+#define IVT_MSG_CMD__24_CONF_ENDIANESS_T "ivt_msg_cmd__24_conf_endianess_t"
+#define IVT_MSG_CMD__25_CONF_ENDIANESS_W "ivt_msg_cmd__25_conf_endianess_w"
+#define IVT_MSG_CMD__26_CONF_ENDIANESS_AS "ivt_msg_cmd__26_conf_endianess_as"
+#define IVT_MSG_CMD__27_CONF_ENDIANESS_WH "ivt_msg_cmd__27_conf_endianess_wh"
+#define IVT_MSG_CMD__20_CONF_TRIGGERMODE_I "ivt_msg_cmd__20_conf_triggermode_i"
+#define IVT_MSG_CMD__21_CONF_TRIGGERMODE_U1 "ivt_msg_cmd__21_conf_triggermode_u1"
+#define IVT_MSG_CMD__22_CONF_TRIGGERMODE_U2 "ivt_msg_cmd__22_conf_triggermode_u2"
+#define IVT_MSG_CMD__23_CONF_TRIGGERMODE_U3 "ivt_msg_cmd__23_conf_triggermode_u3"
+#define IVT_MSG_CMD__24_CONF_TRIGGERMODE_T "ivt_msg_cmd__24_conf_triggermode_t"
+#define IVT_MSG_CMD__25_CONF_TRIGGERMODE_W "ivt_msg_cmd__25_conf_triggermode_w"
+#define IVT_MSG_CMD__26_CONF_TRIGGERMODE_AS "ivt_msg_cmd__26_conf_triggermode_as"
+#define IVT_MSG_CMD__27_CONF_TRIGGERMODE_WH "ivt_msg_cmd__27_conf_triggermode_wh"
+#define IVT_MSG_CMD__34_ACTUAL_MODE "ivt_msg_cmd__34_actual_mode"
+#define IVT_MSG_CMD__31_07_TRIGGER_WH "ivt_msg_cmd__31_07_trigger_wh"
+#define IVT_MSG_CMD__20_CONF_CYCLETIME_I "ivt_msg_cmd__20_conf_cycletime_i"
+#define IVT_MSG_CMD__21_CONF_CYCLETIME_U1 "ivt_msg_cmd__21_conf_cycletime_u1"
+#define IVT_MSG_CMD__22_CONF_CYCLETIME_U2 "ivt_msg_cmd__22_conf_cycletime_u2"
+#define IVT_MSG_CMD__23_CONF_CYCLETIME_U3 "ivt_msg_cmd__23_conf_cycletime_u3"
+#define IVT_MSG_CMD__24_CONF_CYCLETIME_T "ivt_msg_cmd__24_conf_cycletime_t"
+#define IVT_MSG_CMD__25_CONF_CYCLETIME_W "ivt_msg_cmd__25_conf_cycletime_w"
+#define IVT_MSG_CMD__26_CONF_CYCLETIME_AS "ivt_msg_cmd__26_conf_cycletime_as"
+#define IVT_MSG_CMD__27_CONF_CYCLETIME_WH "ivt_msg_cmd__27_conf_cycletime_wh"
+#define IVT_MSG_CMD__31_06_TRIGGER_AS "ivt_msg_cmd__31_06_trigger_as"
+#define IVT_MSG_CMD__31_05_TRIGGER_W "ivt_msg_cmd__31_05_trigger_w"
+#define IVT_MSG_CMD__31_04_TRIGGER_T "ivt_msg_cmd__31_04_trigger_t"
+#define IVT_MSG_CMD__31_03_TRIGGER_U3 "ivt_msg_cmd__31_03_trigger_u3"
+#define IVT_MSG_CMD__31_02_TRIGGER_U2 "ivt_msg_cmd__31_02_trigger_u2"
+#define IVT_MSG_CMD__31_01_TRIGGER_U1 "ivt_msg_cmd__31_01_trigger_u1"
+#define IVT_MSG_CMD__31_00_TRIGGER_I "ivt_msg_cmd__31_00_trigger_i"
+#define IVT_MSG_CMD__34_STARTUP_MODE "ivt_msg_cmd__34_startup_mode"
+#define IVT_MSG_CMD__10_SET_CAN_ID_SN_I "ivt_msg_cmd__10_set_can_id_sn_i"
+#define IVT_MSG_CMD__11_SET_CAN_ID_SN_U1 "ivt_msg_cmd__11_set_can_id_sn_u1"
+#define IVT_MSG_CMD__12_SET_CAN_ID_SN_U2 "ivt_msg_cmd__12_set_can_id_sn_u2"
+#define IVT_MSG_CMD__13_SET_CAN_ID_SN_U3 "ivt_msg_cmd__13_set_can_id_sn_u3"
+#define IVT_MSG_CMD__14_SET_CAN_ID_SN_T "ivt_msg_cmd__14_set_can_id_sn_t"
+#define IVT_MSG_CMD__15_SET_CAN_ID_SN_W "ivt_msg_cmd__15_set_can_id_sn_w"
+#define IVT_MSG_CMD__16_SET_CAN_ID_SN_AS "ivt_msg_cmd__16_set_can_id_sn_as"
+#define IVT_MSG_CMD__17_SET_CAN_ID_SN_WH "ivt_msg_cmd__17_set_can_id_sn_wh"
+#define IVT_MSG_CMD__1D_SET_CAN_ID_SN_COMMAND "ivt_msg_cmd__1d_set_can_id_sn_command"
+#define IVT_MSG_CMD__1F_SET_CAN_ID_SN_RESPONSE "ivt_msg_cmd__1f_set_can_id_sn_response"
+#define IVT_MSG_CMD__30_RESET_DEVICE_SN "ivt_msg_cmd__30_reset_device_sn"
+#define IVT_MSG_CMD__34_CODE_LEVEL "ivt_msg_cmd__34_code_level"
+#define IVT_MSG_CMD__35_OC_POS_RESET_THRESHOLD "ivt_msg_cmd__35_oc_pos_reset_threshold"
+#define IVT_MSG_CMD__36_OC_NEG_RESET_THRESHOLD "ivt_msg_cmd__36_oc_neg_reset_threshold"
+#define IVT_MSG_CMD__50_GET_CAN_ID_SN_I "ivt_msg_cmd__50_get_can_id_sn_i"
+#define IVT_MSG_CMD__51_GET_CAN_ID_SN_U1 "ivt_msg_cmd__51_get_can_id_sn_u1"
+#define IVT_MSG_CMD__52_GET_CAN_ID_SN_U2 "ivt_msg_cmd__52_get_can_id_sn_u2"
+#define IVT_MSG_CMD__53_GET_CAN_ID_SN_U3 "ivt_msg_cmd__53_get_can_id_sn_u3"
+#define IVT_MSG_CMD__54_GET_CAN_ID_SN_T "ivt_msg_cmd__54_get_can_id_sn_t"
+#define IVT_MSG_CMD__55_GET_CAN_ID_SN_W "ivt_msg_cmd__55_get_can_id_sn_w"
+#define IVT_MSG_CMD__56_GET_CAN_ID_SN_AS "ivt_msg_cmd__56_get_can_id_sn_as"
+#define IVT_MSG_CMD__57_GET_CAN_ID_SN_WH "ivt_msg_cmd__57_get_can_id_sn_wh"
+#define IVT_MSG_CMD__5D_GET_CAN_ID_SN_COMMAND "ivt_msg_cmd__5d_get_can_id_sn_command"
+#define IVT_MSG_CMD__5F_GET_CAN_ID_SN_RESPONSE "ivt_msg_cmd__5f_get_can_id_sn_response"
+/* END */
+
+/* START */
 #define BOARD_STATUS "BOARD_STATUS"
 
 #define BOARD_STATUS_CELLBOARD_ID "board_status_cellboard_id"
@@ -90,18 +402,6 @@
 /* END */
 
 /* START */
-#define JMP_TO_BLT "JMP_TO_BLT"
-
-#define JMP_TO_BLT_CELLBOARD_ID "jmp_to_blt_cellboard_id"
-#define JMP_TO_BLT_BOARD_INDEX "jmp_to_blt_board_index"
-/* END */
-
-/* START */
-#define FLASH_CELLBOARD_0_TX "FLASH_CELLBOARD_0_TX"
-
-/* END */
-
-/* START */
 #define FLASH_CELLBOARD_0_RX "FLASH_CELLBOARD_0_RX"
 
 /* END */
@@ -157,19 +457,191 @@
 /* END */
 
 /* START */
+#define CELLBOARD_FLASH "CELLBOARD_FLASH"
+
+#define CELLBOARD_FLASH_START "cellboard_flash_start"
+#define CELLBOARD_FLASH_CELLBOARD_ID "cellboard_flash_cellboard_id"
+#define CELLBOARD_FLASH_BOARD_INDEX "cellboard_flash_board_index"
+/* END */
+
+/* START */
+#define CELLBOARD_FLASH_TX "CELLBOARD_FLASH_TX"
+
+/* END */
+
+/* START */
+#define CELLBOARD_FLASH_RX "CELLBOARD_FLASH_RX"
+
+/* END */
+
+/* START */
+#define CELLBOARD_FLASH_REQUEST "CELLBOARD_FLASH_REQUEST"
+
+#define CELLBOARD_FLASH_REQUEST_MAINBOARD "cellboard_flash_request_mainboard"
+#define CELLBOARD_FLASH_REQUEST_CELLBOARD_ID "cellboard_flash_request_cellboard_id"
+/* END */
+
+/* START */
+#define CELLBOARD_FLASH_RESPONSE "CELLBOARD_FLASH_RESPONSE"
+
+#define CELLBOARD_FLASH_RESPONSE_CELLBOARD_ID "cellboard_flash_response_cellboard_id"
+#define CELLBOARD_FLASH_RESPONSE_READY "cellboard_flash_response_ready"
+/* END */
+
+/* START */
+#define CELLBOARD_DISCOVERY "CELLBOARD_DISCOVERY"
+
+#define CELLBOARD_DISCOVERY_CELLBOARD_ID "cellboard_discovery_cellboard_id"
+/* END */
+
+/* START */
 #define CELLBOARD_VERSION "CELLBOARD_VERSION"
 
 #define CELLBOARD_VERSION_CELLBOARD_ID "cellboard_version_cellboard_id"
-#define CELLBOARD_VERSION_COMPONENT_VERSION "cellboard_version_component_version"
 #define CELLBOARD_VERSION_CANLIB_BUILD_TIME "cellboard_version_canlib_build_time"
+#define CELLBOARD_VERSION_COMPONENT_BUILD_TIME "cellboard_version_component_build_time"
+/* END */
+
+/* START */
+#define CELLBOARD_STATUS "CELLBOARD_STATUS"
+
+#define CELLBOARD_STATUS_CELLBOARD_ID "cellboard_status_cellboard_id"
+#define CELLBOARD_STATUS_STATUS "cellboard_status_status"
+/* END */
+
+/* START */
+#define CELLBOARD_CELLS_VOLTAGE "CELLBOARD_CELLS_VOLTAGE"
+
+#define CELLBOARD_CELLS_VOLTAGE_CELLBOARD_ID "cellboard_cells_voltage_cellboard_id"
+#define CELLBOARD_CELLS_VOLTAGE_OFFSET "cellboard_cells_voltage_offset"
+#define CELLBOARD_CELLS_VOLTAGE_VOLTAGE_0 "cellboard_cells_voltage_voltage_0"
+#define CELLBOARD_CELLS_VOLTAGE_VOLTAGE_1 "cellboard_cells_voltage_voltage_1"
+#define CELLBOARD_CELLS_VOLTAGE_VOLTAGE_2 "cellboard_cells_voltage_voltage_2"
+/* END */
+
+/* START */
+#define CELLBOARD_CELLS_TEMPERATURE "CELLBOARD_CELLS_TEMPERATURE"
+
+#define CELLBOARD_CELLS_TEMPERATURE_CELLBOARD_ID "cellboard_cells_temperature_cellboard_id"
+#define CELLBOARD_CELLS_TEMPERATURE_OFFSET "cellboard_cells_temperature_offset"
+#define CELLBOARD_CELLS_TEMPERATURE_TEMPERATURE_0 "cellboard_cells_temperature_temperature_0"
+#define CELLBOARD_CELLS_TEMPERATURE_TEMPERATURE_1 "cellboard_cells_temperature_temperature_1"
+#define CELLBOARD_CELLS_TEMPERATURE_TEMPERATURE_2 "cellboard_cells_temperature_temperature_2"
+#define CELLBOARD_CELLS_TEMPERATURE_TEMPERATURE_3 "cellboard_cells_temperature_temperature_3"
+/* END */
+
+/* START */
+#define CELLBOARD_SET_BALANCING_STATUS "CELLBOARD_SET_BALANCING_STATUS"
+
+#define CELLBOARD_SET_BALANCING_STATUS_START "cellboard_set_balancing_status_start"
+#define CELLBOARD_SET_BALANCING_STATUS_TARGET "cellboard_set_balancing_status_target"
+#define CELLBOARD_SET_BALANCING_STATUS_THRESHOLD "cellboard_set_balancing_status_threshold"
+/* END */
+
+/* START */
+#define CELLBOARD_BALANCING_STATUS "CELLBOARD_BALANCING_STATUS"
+
+#define CELLBOARD_BALANCING_STATUS_STATUS "cellboard_balancing_status_status"
+#define CELLBOARD_BALANCING_STATUS_CELLBOARD_ID "cellboard_balancing_status_cellboard_id"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_0 "cellboard_balancing_status_discharging_cell_0"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_1 "cellboard_balancing_status_discharging_cell_1"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_2 "cellboard_balancing_status_discharging_cell_2"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_3 "cellboard_balancing_status_discharging_cell_3"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_4 "cellboard_balancing_status_discharging_cell_4"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_5 "cellboard_balancing_status_discharging_cell_5"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_6 "cellboard_balancing_status_discharging_cell_6"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_7 "cellboard_balancing_status_discharging_cell_7"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_8 "cellboard_balancing_status_discharging_cell_8"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_9 "cellboard_balancing_status_discharging_cell_9"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_10 "cellboard_balancing_status_discharging_cell_10"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_11 "cellboard_balancing_status_discharging_cell_11"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_12 "cellboard_balancing_status_discharging_cell_12"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_13 "cellboard_balancing_status_discharging_cell_13"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_14 "cellboard_balancing_status_discharging_cell_14"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_15 "cellboard_balancing_status_discharging_cell_15"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_16 "cellboard_balancing_status_discharging_cell_16"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_17 "cellboard_balancing_status_discharging_cell_17"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_18 "cellboard_balancing_status_discharging_cell_18"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_19 "cellboard_balancing_status_discharging_cell_19"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_20 "cellboard_balancing_status_discharging_cell_20"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_21 "cellboard_balancing_status_discharging_cell_21"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_22 "cellboard_balancing_status_discharging_cell_22"
+#define CELLBOARD_BALANCING_STATUS_DISCHARGING_CELL_23 "cellboard_balancing_status_discharging_cell_23"
+/* END */
+
+/* START */
+#define CELLBOARD_ERRORS "CELLBOARD_ERRORS"
+
+#define CELLBOARD_ERRORS_POST "cellboard_errors_post"
+#define CELLBOARD_ERRORS_UNDERVOLTAGE "cellboard_errors_undervoltage"
+#define CELLBOARD_ERRORS_OVERVOLTAGE "cellboard_errors_overvoltage"
+#define CELLBOARD_ERRORS_UNDERTEMPERATURE_CELLS "cellboard_errors_undertemperature_cells"
+#define CELLBOARD_ERRORS_UNDERTEMPERATURE_DISCHARGE "cellboard_errors_undertemperature_discharge"
+#define CELLBOARD_ERRORS_OVERTEMPERATURE_CELLS "cellboard_errors_overtemperature_cells"
+#define CELLBOARD_ERRORS_OVERTEMPERATURE_DISCHARGE "cellboard_errors_overtemperature_discharge"
+#define CELLBOARD_ERRORS_CAN "cellboard_errors_can"
+#define CELLBOARD_ERRORS_FLASH "cellboard_errors_flash"
+#define CELLBOARD_ERRORS_BMS_MONITOR "cellboard_errors_bms_monitor"
+#define CELLBOARD_ERRORS_OPEN_WIRE "cellboard_errors_open_wire"
 /* END */
 
 enum bms_types_id{
-	e_bms_uint8_t = -4,
+	e_bms_uint64_t = -8,
+	e_bms_int16_t,
+	e_bms_float,
+	e_bms_int8_t,
 	e_bms_uint32_t,
 	e_bms_uint16_t,
-	e_bms_float,
+	e_bms_uint8_t,
+	e_bms_int32_t,
 
+	e_bms_ivt_msg_result_wh_ivt_id_result_wh,
+	e_bms_ivt_msg_result_as_ivt_id_result_as,
+	e_bms_ivt_msg_result_w_ivt_id_result_w,
+	e_bms_ivt_msg_response_ivt_id_response,
+	e_bms_ivt_msg_response__80_resp_measerror_item,
+	e_bms_ivt_msg_response__81_resp_systemerror_item,
+	e_bms_ivt_msg_response__82_resp_alllogdata_item,
+	e_bms_ivt_msg_response__83_resp_logdata_item,
+	e_bms_ivt_msg_response__b0_resp_reset_item,
+	e_bms_ivt_msg_response__b9_resp_device_type,
+	e_bms_ivt_msg_response__a0_resp_triggermode_i,
+	e_bms_ivt_msg_response__a1_resp_triggermode_u1,
+	e_bms_ivt_msg_response__a2_resp_triggermode_u2,
+	e_bms_ivt_msg_response__a3_resp_triggermode_u3,
+	e_bms_ivt_msg_response__a4_resp_triggermode_t,
+	e_bms_ivt_msg_response__a5_resp_triggermode_w,
+	e_bms_ivt_msg_response__a6_resp_triggermode_as,
+	e_bms_ivt_msg_response__a7_resp_triggermode_wh,
+	e_bms_ivt_msg_response__b4_resp_actual_mode,
+	e_bms_ivt_msg_response__b9_resp_device_current,
+	e_bms_ivt_msg_response__b4_resp_startup_mode,
+	e_bms_ivt_msg_response__b9_resp_device_voltage_chan,
+	e_bms_ivt_msg_response__b9_resp_device_toi,
+	e_bms_ivt_msg_response__b9_resp_device_com,
+	e_bms_ivt_msg_response__b9_resp_device_v_supply,
+	e_bms_ivt_msg_result_t_ivt_id_result_t,
+	e_bms_ivt_msg_result_u3_ivt_id_result_u3,
+	e_bms_ivt_msg_result_u2_ivt_id_result_u2,
+	e_bms_ivt_msg_result_u1_ivt_id_result_u1,
+	e_bms_ivt_msg_result_i_ivt_id_result_i,
+	e_bms_ivt_msg_cmd_ivt_id_cmd,
+	e_bms_ivt_msg_cmd__30_reset_item,
+	e_bms_ivt_msg_cmd__3a_restart_to_bitrate,
+	e_bms_ivt_msg_cmd__40_get_measerror_item,
+	e_bms_ivt_msg_cmd__41_get_systemerror_item,
+	e_bms_ivt_msg_cmd__42_get_alllogdata_item,
+	e_bms_ivt_msg_cmd__43_get_logdata_item,
+	e_bms_ivt_msg_cmd__20_conf_triggermode_i,
+	e_bms_ivt_msg_cmd__21_conf_triggermode_u1,
+	e_bms_ivt_msg_cmd__22_conf_triggermode_u2,
+	e_bms_ivt_msg_cmd__23_conf_triggermode_u3,
+	e_bms_ivt_msg_cmd__24_conf_triggermode_t,
+	e_bms_ivt_msg_cmd__25_conf_triggermode_w,
+	e_bms_ivt_msg_cmd__26_conf_triggermode_as,
+	e_bms_ivt_msg_cmd__27_conf_triggermode_wh,
+	e_bms_ivt_msg_cmd__34_actual_mode,
+	e_bms_ivt_msg_cmd__34_startup_mode,
 	e_bms_board_status_cellboard_id,
 	e_bms_board_status_balancing_status,
 	e_bms_temperatures_info_cellboard_id,
@@ -177,8 +649,28 @@ enum bms_types_id{
 	e_bms_voltages_info_cellboard_id,
 	e_bms_voltages_cellboard_id,
 	e_bms_set_balancing_status_balancing_status,
-	e_bms_jmp_to_blt_cellboard_id,
-	e_bms_cellboard_version_cellboard_id
+	e_bms_cellboard_flash_cellboard_id,
+	e_bms_cellboard_flash_request_cellboard_id,
+	e_bms_cellboard_flash_response_cellboard_id,
+	e_bms_cellboard_discovery_cellboard_id,
+	e_bms_cellboard_version_cellboard_id,
+	e_bms_cellboard_status_cellboard_id,
+	e_bms_cellboard_status_status,
+	e_bms_cellboard_cells_voltage_cellboard_id,
+	e_bms_cellboard_cells_temperature_cellboard_id,
+	e_bms_cellboard_balancing_status_status,
+	e_bms_cellboard_balancing_status_cellboard_id,
+	e_bms_cellboard_errors_post,
+	e_bms_cellboard_errors_undervoltage,
+	e_bms_cellboard_errors_overvoltage,
+	e_bms_cellboard_errors_undertemperature_cells,
+	e_bms_cellboard_errors_undertemperature_discharge,
+	e_bms_cellboard_errors_overtemperature_cells,
+	e_bms_cellboard_errors_overtemperature_discharge,
+	e_bms_cellboard_errors_can,
+	e_bms_cellboard_errors_flash,
+	e_bms_cellboard_errors_bms_monitor,
+	e_bms_cellboard_errors_open_wire
 };
 
 /**

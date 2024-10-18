@@ -2,17 +2,17 @@ syntax = "proto3";
 package primary;
 
 
-enum primary_hv_jmp_to_blt_forward {
-	primary_hv_jmp_to_blt_forward_off = 0;
-	primary_hv_jmp_to_blt_forward_on = 1;
+enum primary_hv_flash_forward {
+	primary_hv_flash_forward_off = 0;
+	primary_hv_flash_forward_on = 1;
 }
-enum primary_hv_jmp_to_blt_cellboard_id {
-	primary_hv_jmp_to_blt_cellboard_id_cellboard_0 = 0;
-	primary_hv_jmp_to_blt_cellboard_id_cellboard_1 = 1;
-	primary_hv_jmp_to_blt_cellboard_id_cellboard_2 = 2;
-	primary_hv_jmp_to_blt_cellboard_id_cellboard_3 = 3;
-	primary_hv_jmp_to_blt_cellboard_id_cellboard_4 = 4;
-	primary_hv_jmp_to_blt_cellboard_id_cellboard_5 = 5;
+enum primary_hv_flash_cellboard_id {
+	primary_hv_flash_cellboard_id_cellboard_0 = 0;
+	primary_hv_flash_cellboard_id_cellboard_1 = 1;
+	primary_hv_flash_cellboard_id_cellboard_2 = 2;
+	primary_hv_flash_cellboard_id_cellboard_3 = 3;
+	primary_hv_flash_cellboard_id_cellboard_4 = 4;
+	primary_hv_flash_cellboard_id_cellboard_5 = 5;
 }
 enum primary_hv_cellboard_version_cellboard_id {
 	primary_hv_cellboard_version_cellboard_id_cellboard_0 = 0;
@@ -30,122 +30,243 @@ enum primary_hv_set_fans_status_fans_override {
 	primary_hv_set_fans_status_fans_override_off = 0;
 	primary_hv_set_fans_status_fans_override_on = 1;
 }
-enum primary_hv_feedback_status_feedback_implausibility_detected {
-	primary_hv_feedback_status_feedback_implausibility_detected_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_implausibility_detected_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_implausibility_detected_feedback_state_high = 2;
+enum primary_hv_feedback_status_airn_open_com {
+	primary_hv_feedback_status_airn_open_com_low = 0;
+	primary_hv_feedback_status_airn_open_com_error = 1;
+	primary_hv_feedback_status_airn_open_com_high = 2;
 }
-enum primary_hv_feedback_status_feedback_imd_cockpit {
-	primary_hv_feedback_status_feedback_imd_cockpit_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_imd_cockpit_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_imd_cockpit_feedback_state_high = 2;
+enum primary_hv_feedback_status_precharge_open_com {
+	primary_hv_feedback_status_precharge_open_com_low = 0;
+	primary_hv_feedback_status_precharge_open_com_error = 1;
+	primary_hv_feedback_status_precharge_open_com_high = 2;
+}
+enum primary_hv_feedback_status_airp_open_com {
+	primary_hv_feedback_status_airp_open_com_low = 0;
+	primary_hv_feedback_status_airp_open_com_error = 1;
+	primary_hv_feedback_status_airp_open_com_high = 2;
+}
+enum primary_hv_feedback_status_airn_open_mec {
+	primary_hv_feedback_status_airn_open_mec_low = 0;
+	primary_hv_feedback_status_airn_open_mec_error = 1;
+	primary_hv_feedback_status_airn_open_mec_high = 2;
+}
+enum primary_hv_feedback_status_precharge_open_mec {
+	primary_hv_feedback_status_precharge_open_mec_low = 0;
+	primary_hv_feedback_status_precharge_open_mec_error = 1;
+	primary_hv_feedback_status_precharge_open_mec_high = 2;
+}
+enum primary_hv_feedback_status_airp_open_mec {
+	primary_hv_feedback_status_airp_open_mec_low = 0;
+	primary_hv_feedback_status_airp_open_mec_error = 1;
+	primary_hv_feedback_status_airp_open_mec_high = 2;
+}
+enum primary_hv_feedback_status_sd_imd_fb {
+	primary_hv_feedback_status_sd_imd_fb_low = 0;
+	primary_hv_feedback_status_sd_imd_fb_error = 1;
+	primary_hv_feedback_status_sd_imd_fb_high = 2;
+}
+enum primary_hv_feedback_status_sd_bms_fb {
+	primary_hv_feedback_status_sd_bms_fb_low = 0;
+	primary_hv_feedback_status_sd_bms_fb_error = 1;
+	primary_hv_feedback_status_sd_bms_fb_high = 2;
+}
+enum primary_hv_feedback_status_ts_less_than_60v {
+	primary_hv_feedback_status_ts_less_than_60v_low = 0;
+	primary_hv_feedback_status_ts_less_than_60v_error = 1;
+	primary_hv_feedback_status_ts_less_than_60v_high = 2;
+}
+enum primary_hv_feedback_status_plausible_state_persisted {
+	primary_hv_feedback_status_plausible_state_persisted_low = 0;
+	primary_hv_feedback_status_plausible_state_persisted_error = 1;
+	primary_hv_feedback_status_plausible_state_persisted_high = 2;
+}
+enum primary_hv_feedback_status_plausible_state {
+	primary_hv_feedback_status_plausible_state_low = 0;
+	primary_hv_feedback_status_plausible_state_error = 1;
+	primary_hv_feedback_status_plausible_state_high = 2;
+}
+enum primary_hv_feedback_status_not_bms_fault_cockpit_led {
+	primary_hv_feedback_status_not_bms_fault_cockpit_led_low = 0;
+	primary_hv_feedback_status_not_bms_fault_cockpit_led_error = 1;
+	primary_hv_feedback_status_not_bms_fault_cockpit_led_high = 2;
+}
+enum primary_hv_feedback_status_not_imd_fault_cockpit_led {
+	primary_hv_feedback_status_not_imd_fault_cockpit_led_low = 0;
+	primary_hv_feedback_status_not_imd_fault_cockpit_led_error = 1;
+	primary_hv_feedback_status_not_imd_fault_cockpit_led_high = 2;
+}
+enum primary_hv_feedback_status_indicator_connected {
+	primary_hv_feedback_status_indicator_connected_low = 0;
+	primary_hv_feedback_status_indicator_connected_error = 1;
+	primary_hv_feedback_status_indicator_connected_high = 2;
+}
+enum primary_hv_feedback_status_not_latch_reset {
+	primary_hv_feedback_status_not_latch_reset_low = 0;
+	primary_hv_feedback_status_not_latch_reset_error = 1;
+	primary_hv_feedback_status_not_latch_reset_high = 2;
+}
+enum primary_hv_feedback_status_plausible_state_latched {
+	primary_hv_feedback_status_plausible_state_latched_low = 0;
+	primary_hv_feedback_status_plausible_state_latched_error = 1;
+	primary_hv_feedback_status_plausible_state_latched_high = 2;
+}
+enum primary_hv_feedback_status_not_bms_fault_latched {
+	primary_hv_feedback_status_not_bms_fault_latched_low = 0;
+	primary_hv_feedback_status_not_bms_fault_latched_error = 1;
+	primary_hv_feedback_status_not_bms_fault_latched_high = 2;
+}
+enum primary_hv_feedback_status_not_imd_fault_latched {
+	primary_hv_feedback_status_not_imd_fault_latched_low = 0;
+	primary_hv_feedback_status_not_imd_fault_latched_error = 1;
+	primary_hv_feedback_status_not_imd_fault_latched_high = 2;
+}
+enum primary_hv_feedback_status_not_ext_fault_latched {
+	primary_hv_feedback_status_not_ext_fault_latched_low = 0;
+	primary_hv_feedback_status_not_ext_fault_latched_error = 1;
+	primary_hv_feedback_status_not_ext_fault_latched_high = 2;
+}
+enum primary_hv_feedback_status_imd_ok {
+	primary_hv_feedback_status_imd_ok_low = 0;
+	primary_hv_feedback_status_imd_ok_error = 1;
+	primary_hv_feedback_status_imd_ok_high = 2;
+}
+enum primary_hv_feedback_status_plausible_state_rc {
+	primary_hv_feedback_status_plausible_state_rc_low = 0;
+	primary_hv_feedback_status_plausible_state_rc_error = 1;
+	primary_hv_feedback_status_plausible_state_rc_high = 2;
+}
+enum primary_hv_feedback_status_tsal_green {
+	primary_hv_feedback_status_tsal_green_low = 0;
+	primary_hv_feedback_status_tsal_green_error = 1;
+	primary_hv_feedback_status_tsal_green_high = 2;
+}
+enum primary_hv_feedback_status_probing_3v3 {
+	primary_hv_feedback_status_probing_3v3_low = 0;
+	primary_hv_feedback_status_probing_3v3_error = 1;
+	primary_hv_feedback_status_probing_3v3_high = 2;
+}
+enum primary_hv_feedback_status_sd_out {
+	primary_hv_feedback_status_sd_out_low = 0;
+	primary_hv_feedback_status_sd_out_error = 1;
+	primary_hv_feedback_status_sd_out_high = 2;
+}
+enum primary_hv_feedback_status_sd_in {
+	primary_hv_feedback_status_sd_in_low = 0;
+	primary_hv_feedback_status_sd_in_error = 1;
+	primary_hv_feedback_status_sd_in_high = 2;
+}
+enum primary_hv_feedback_status_sd_end {
+	primary_hv_feedback_status_sd_end_low = 0;
+	primary_hv_feedback_status_sd_end_error = 1;
+	primary_hv_feedback_status_sd_end_high = 2;
+}
+enum primary_hv_feedback_status_v5_mcu {
+	primary_hv_feedback_status_v5_mcu_low = 0;
+	primary_hv_feedback_status_v5_mcu_error = 1;
+	primary_hv_feedback_status_v5_mcu_high = 2;
 }
 enum primary_hv_feedback_status_feedback_tsal_green_fault_latched {
-	primary_hv_feedback_status_feedback_tsal_green_fault_latched_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_tsal_green_fault_latched_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_tsal_green_fault_latched_feedback_state_high = 2;
-}
-enum primary_hv_feedback_status_feedback_bms_cockpit {
-	primary_hv_feedback_status_feedback_bms_cockpit_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_bms_cockpit_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_bms_cockpit_feedback_state_high = 2;
+	primary_hv_feedback_status_feedback_tsal_green_fault_latched_low = 0;
+	primary_hv_feedback_status_feedback_tsal_green_fault_latched_error = 1;
+	primary_hv_feedback_status_feedback_tsal_green_fault_latched_high = 2;
 }
 enum primary_hv_feedback_status_feedback_ext_latched {
-	primary_hv_feedback_status_feedback_ext_latched_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_ext_latched_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_ext_latched_feedback_state_high = 2;
-}
-enum primary_hv_feedback_status_feedback_tsal_green {
-	primary_hv_feedback_status_feedback_tsal_green_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_tsal_green_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_tsal_green_feedback_state_high = 2;
-}
-enum primary_hv_feedback_status_feedback_ts_over_60v_status {
-	primary_hv_feedback_status_feedback_ts_over_60v_status_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_ts_over_60v_status_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_ts_over_60v_status_feedback_state_high = 2;
-}
-enum primary_hv_feedback_status_feedback_airn_status {
-	primary_hv_feedback_status_feedback_airn_status_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_airn_status_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_airn_status_feedback_state_high = 2;
-}
-enum primary_hv_feedback_status_feedback_airp_status {
-	primary_hv_feedback_status_feedback_airp_status_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_airp_status_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_airp_status_feedback_state_high = 2;
-}
-enum primary_hv_feedback_status_feedback_airp_gate {
-	primary_hv_feedback_status_feedback_airp_gate_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_airp_gate_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_airp_gate_feedback_state_high = 2;
-}
-enum primary_hv_feedback_status_feedback_airn_gate {
-	primary_hv_feedback_status_feedback_airn_gate_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_airn_gate_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_airn_gate_feedback_state_high = 2;
+	primary_hv_feedback_status_feedback_ext_latched_low = 0;
+	primary_hv_feedback_status_feedback_ext_latched_error = 1;
+	primary_hv_feedback_status_feedback_ext_latched_high = 2;
 }
 enum primary_hv_feedback_status_feedback_precharge_status {
-	primary_hv_feedback_status_feedback_precharge_status_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_precharge_status_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_precharge_status_feedback_state_high = 2;
+	primary_hv_feedback_status_feedback_precharge_status_low = 0;
+	primary_hv_feedback_status_feedback_precharge_status_error = 1;
+	primary_hv_feedback_status_feedback_precharge_status_high = 2;
 }
 enum primary_hv_feedback_status_feedback_tsp_over_60v_status {
-	primary_hv_feedback_status_feedback_tsp_over_60v_status_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_tsp_over_60v_status_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_tsp_over_60v_status_feedback_state_high = 2;
-}
-enum primary_hv_feedback_status_feedback_imd_fault {
-	primary_hv_feedback_status_feedback_imd_fault_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_imd_fault_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_imd_fault_feedback_state_high = 2;
+	primary_hv_feedback_status_feedback_tsp_over_60v_status_low = 0;
+	primary_hv_feedback_status_feedback_tsp_over_60v_status_error = 1;
+	primary_hv_feedback_status_feedback_tsp_over_60v_status_high = 2;
 }
 enum primary_hv_feedback_status_feedback_check_mux {
-	primary_hv_feedback_status_feedback_check_mux_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_check_mux_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_check_mux_feedback_state_high = 2;
+	primary_hv_feedback_status_feedback_check_mux_low = 0;
+	primary_hv_feedback_status_feedback_check_mux_error = 1;
+	primary_hv_feedback_status_feedback_check_mux_high = 2;
 }
-enum primary_hv_feedback_status_feedback_sd_end {
-	primary_hv_feedback_status_feedback_sd_end_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_sd_end_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_sd_end_feedback_state_high = 2;
+enum primary_hv_imd_status_status {
+	primary_hv_imd_status_status_unknown = 0;
+	primary_hv_imd_status_status_short_circuit = 1;
+	primary_hv_imd_status_status_normal = 2;
+	primary_hv_imd_status_status_under_voltage = 3;
+	primary_hv_imd_status_status_start_measure = 4;
+	primary_hv_imd_status_status_device_error = 5;
+	primary_hv_imd_status_status_earth_fault = 6;
 }
-enum primary_hv_feedback_status_feedback_sd_out {
-	primary_hv_feedback_status_feedback_sd_out_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_sd_out_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_sd_out_feedback_state_high = 2;
+enum primary_hv_imd_status_feedback_not_imd_fault_cockpit_led {
+	primary_hv_imd_status_feedback_not_imd_fault_cockpit_led_low = 0;
+	primary_hv_imd_status_feedback_not_imd_fault_cockpit_led_error = 1;
+	primary_hv_imd_status_feedback_not_imd_fault_cockpit_led_high = 2;
 }
-enum primary_hv_feedback_status_feedback_sd_in {
-	primary_hv_feedback_status_feedback_sd_in_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_sd_in_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_sd_in_feedback_state_high = 2;
-}
-enum primary_hv_feedback_status_feedback_sd_bms {
-	primary_hv_feedback_status_feedback_sd_bms_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_sd_bms_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_sd_bms_feedback_state_high = 2;
-}
-enum primary_hv_feedback_status_feedback_sd_imd {
-	primary_hv_feedback_status_feedback_sd_imd_feedback_state_low = 0;
-	primary_hv_feedback_status_feedback_sd_imd_feedback_state_error = 1;
-	primary_hv_feedback_status_feedback_sd_imd_feedback_state_high = 2;
-}
-enum primary_hv_imd_status_imd_status {
-	primary_hv_imd_status_imd_status_sc = 0;
-	primary_hv_imd_status_imd_status_normal = 1;
-	primary_hv_imd_status_imd_status_under_voltage = 2;
-	primary_hv_imd_status_imd_status_start_measure = 3;
-	primary_hv_imd_status_imd_status_device_error = 4;
-	primary_hv_imd_status_imd_status_earth_fault = 5;
+enum primary_hv_imd_status_feedback_not_imd_fault_latched {
+	primary_hv_imd_status_feedback_not_imd_fault_latched_low = 0;
+	primary_hv_imd_status_feedback_not_imd_fault_latched_error = 1;
+	primary_hv_imd_status_feedback_not_imd_fault_latched_high = 2;
 }
 enum primary_hv_status_status {
 	primary_hv_status_status_init = 0;
 	primary_hv_status_status_idle = 1;
-	primary_hv_status_status_airn_close = 2;
-	primary_hv_status_status_precharge = 3;
-	primary_hv_status_status_airp_close = 4;
-	primary_hv_status_status_ts_on = 5;
-	primary_hv_status_status_fatal_error = 6;
+	primary_hv_status_status_fatal = 2;
+	primary_hv_status_status_flash = 3;
+	primary_hv_status_status_balancing = 4;
+	primary_hv_status_status_airn_check = 5;
+	primary_hv_status_status_precharge_check = 6;
+	primary_hv_status_status_airp_check = 7;
+	primary_hv_status_status_ts_on = 8;
+}
+enum primary_hv_status_cellboard_0 {
+	primary_hv_status_cellboard_0_init = 0;
+	primary_hv_status_cellboard_0_idle = 1;
+	primary_hv_status_cellboard_0_fatal = 2;
+	primary_hv_status_cellboard_0_flash = 3;
+	primary_hv_status_cellboard_0_discharge = 4;
+	primary_hv_status_cellboard_0_cooldown = 5;
+}
+enum primary_hv_status_cellboard_1 {
+	primary_hv_status_cellboard_1_init = 0;
+	primary_hv_status_cellboard_1_idle = 1;
+	primary_hv_status_cellboard_1_fatal = 2;
+	primary_hv_status_cellboard_1_flash = 3;
+	primary_hv_status_cellboard_1_discharge = 4;
+	primary_hv_status_cellboard_1_cooldown = 5;
+}
+enum primary_hv_status_cellboard_2 {
+	primary_hv_status_cellboard_2_init = 0;
+	primary_hv_status_cellboard_2_idle = 1;
+	primary_hv_status_cellboard_2_fatal = 2;
+	primary_hv_status_cellboard_2_flash = 3;
+	primary_hv_status_cellboard_2_discharge = 4;
+	primary_hv_status_cellboard_2_cooldown = 5;
+}
+enum primary_hv_status_cellboard_3 {
+	primary_hv_status_cellboard_3_init = 0;
+	primary_hv_status_cellboard_3_idle = 1;
+	primary_hv_status_cellboard_3_fatal = 2;
+	primary_hv_status_cellboard_3_flash = 3;
+	primary_hv_status_cellboard_3_discharge = 4;
+	primary_hv_status_cellboard_3_cooldown = 5;
+}
+enum primary_hv_status_cellboard_4 {
+	primary_hv_status_cellboard_4_init = 0;
+	primary_hv_status_cellboard_4_idle = 1;
+	primary_hv_status_cellboard_4_fatal = 2;
+	primary_hv_status_cellboard_4_flash = 3;
+	primary_hv_status_cellboard_4_discharge = 4;
+	primary_hv_status_cellboard_4_cooldown = 5;
+}
+enum primary_hv_status_cellboard_5 {
+	primary_hv_status_cellboard_5_init = 0;
+	primary_hv_status_cellboard_5_idle = 1;
+	primary_hv_status_cellboard_5_fatal = 2;
+	primary_hv_status_cellboard_5_flash = 3;
+	primary_hv_status_cellboard_5_discharge = 4;
+	primary_hv_status_cellboard_5_cooldown = 5;
 }
 enum primary_hv_set_status_ecu_hv_status_set {
 	primary_hv_set_status_ecu_hv_status_set_off = 0;
@@ -167,13 +288,18 @@ enum primary_hv_balancing_status_balancing_status {
 	primary_hv_balancing_status_balancing_status_off = 0;
 	primary_hv_balancing_status_balancing_status_on = 1;
 }
-enum primary_hv_set_balancing_status_handcart_set_balancing_status {
-	primary_hv_set_balancing_status_handcart_set_balancing_status_off = 0;
-	primary_hv_set_balancing_status_handcart_set_balancing_status_on = 1;
+enum primary_hv_balancing_status_status {
+	primary_hv_balancing_status_status_stopped = 0;
+	primary_hv_balancing_status_status_paused = 1;
+	primary_hv_balancing_status_status_running = 2;
 }
 enum primary_hv_set_balancing_status_steering_wheel_set_balancing_status {
 	primary_hv_set_balancing_status_steering_wheel_set_balancing_status_off = 0;
 	primary_hv_set_balancing_status_steering_wheel_set_balancing_status_on = 1;
+}
+enum primary_hv_set_balancing_status_handcart_set_balancing_status {
+	primary_hv_set_balancing_status_handcart_set_balancing_status_off = 0;
+	primary_hv_set_balancing_status_handcart_set_balancing_status_on = 1;
 }
 enum primary_lv_status_status {
 	primary_lv_status_status_init = 0;
@@ -344,6 +470,14 @@ enum primary_control_status_reg_state {
 	primary_control_status_reg_state_off = 0;
 	primary_control_status_reg_state_on = 1;
 }
+enum primary_hv_cells_voltage_cellboard_id {
+	primary_hv_cells_voltage_cellboard_id_cellboard_0 = 0;
+	primary_hv_cells_voltage_cellboard_id_cellboard_1 = 1;
+	primary_hv_cells_voltage_cellboard_id_cellboard_2 = 2;
+	primary_hv_cells_voltage_cellboard_id_cellboard_3 = 3;
+	primary_hv_cells_voltage_cellboard_id_cellboard_4 = 4;
+	primary_hv_cells_voltage_cellboard_id_cellboard_5 = 5;
+}
 enum primary_ecu_steer_actuator_status_status {
 	primary_ecu_steer_actuator_status_status_off = 0;
 	primary_ecu_steer_actuator_status_status_on = 1;
@@ -399,6 +533,57 @@ enum primary_debug_signal_4_device_id {
 	primary_debug_signal_4_device_id_steeering_wheel = 6;
 	primary_debug_signal_4_device_id_handcart = 7;
 	primary_debug_signal_4_device_id_acquisinator = 8;
+}
+enum primary_hv_flash_request_cellboard_id {
+	primary_hv_flash_request_cellboard_id_cellboard_0 = 0;
+	primary_hv_flash_request_cellboard_id_cellboard_1 = 1;
+	primary_hv_flash_request_cellboard_id_cellboard_2 = 2;
+	primary_hv_flash_request_cellboard_id_cellboard_3 = 3;
+	primary_hv_flash_request_cellboard_id_cellboard_4 = 4;
+	primary_hv_flash_request_cellboard_id_cellboard_5 = 5;
+}
+enum primary_hv_cells_temperature_cellboard_id {
+	primary_hv_cells_temperature_cellboard_id_cellboard_0 = 0;
+	primary_hv_cells_temperature_cellboard_id_cellboard_1 = 1;
+	primary_hv_cells_temperature_cellboard_id_cellboard_2 = 2;
+	primary_hv_cells_temperature_cellboard_id_cellboard_3 = 3;
+	primary_hv_cells_temperature_cellboard_id_cellboard_4 = 4;
+	primary_hv_cells_temperature_cellboard_id_cellboard_5 = 5;
+}
+enum primary_hv_feedback_enzomma_feedback {
+	primary_hv_feedback_enzomma_feedback_airn_open_com = 0;
+	primary_hv_feedback_enzomma_feedback_precharge_open_com = 1;
+	primary_hv_feedback_enzomma_feedback_airp_open_com = 2;
+	primary_hv_feedback_enzomma_feedback_airn_open_mec = 3;
+	primary_hv_feedback_enzomma_feedback_precharge_open_mec = 4;
+	primary_hv_feedback_enzomma_feedback_airp_open_mec = 5;
+	primary_hv_feedback_enzomma_feedback_sd_imd_fb = 6;
+	primary_hv_feedback_enzomma_feedback_sd_bms_fb = 7;
+	primary_hv_feedback_enzomma_feedback_ts_less_than_60v = 8;
+	primary_hv_feedback_enzomma_feedback_plausible_state_persisted = 9;
+	primary_hv_feedback_enzomma_feedback_plausible_state = 10;
+	primary_hv_feedback_enzomma_feedback_not_bms_fault_cockpit_led = 11;
+	primary_hv_feedback_enzomma_feedback_not_imd_fault_cockpit_led = 12;
+	primary_hv_feedback_enzomma_feedback_indicator_connected = 13;
+	primary_hv_feedback_enzomma_feedback_not_latch_reset = 14;
+	primary_hv_feedback_enzomma_feedback_plausible_state_latched = 15;
+	primary_hv_feedback_enzomma_feedback_not_bms_fault_latched = 16;
+	primary_hv_feedback_enzomma_feedback_not_imd_fault_latched = 17;
+	primary_hv_feedback_enzomma_feedback_not_ext_fault_latched = 18;
+	primary_hv_feedback_enzomma_feedback_imd_ok = 19;
+	primary_hv_feedback_enzomma_feedback_plausible_state_rc = 20;
+	primary_hv_feedback_enzomma_feedback_tsal_green = 21;
+	primary_hv_feedback_enzomma_feedback_probing_3v3 = 22;
+	primary_hv_feedback_enzomma_feedback_sd_out = 23;
+	primary_hv_feedback_enzomma_feedback_sd_in = 24;
+	primary_hv_feedback_enzomma_feedback_sd_end = 25;
+	primary_hv_feedback_enzomma_feedback_v5_mcu = 26;
+	primary_hv_feedback_enzomma_feedback_unknown = 27;
+}
+enum primary_hv_feedback_enzomma_status {
+	primary_hv_feedback_enzomma_status_low = 0;
+	primary_hv_feedback_enzomma_status_error = 1;
+	primary_hv_feedback_enzomma_status_high = 2;
 }
 
 
@@ -510,10 +695,11 @@ message NLG5_CTL{
 	double NLG5_OC_COM = 7;
 	uint64 _inner_timestamp = 8;
 }
-message HV_JMP_TO_BLT{
-	primary_hv_jmp_to_blt_forward forward = 1;
-	primary_hv_jmp_to_blt_cellboard_id cellboard_id = 2;
-	uint64 _inner_timestamp = 3;
+message HV_FLASH{
+	bool start = 1;
+	primary_hv_flash_forward forward = 2;
+	primary_hv_flash_cellboard_id cellboard_id = 3;
+	uint64 _inner_timestamp = 4;
 }
 message HV_FLASH_MAINBOARD_TX{
 	uint64 _inner_timestamp = 1;
@@ -611,8 +797,8 @@ message HV_MAINBOARD_VERSION{
 }
 message HV_CELLBOARD_VERSION{
 	primary_hv_cellboard_version_cellboard_id cellboard_id = 1;
-	uint32 component_version = 2;
-	uint32 canlib_build_time = 3;
+	uint32 canlib_build_time = 2;
+	uint32 component_build_time = 3;
 	uint64 _inner_timestamp = 4;
 }
 message HV_ERRORS{
@@ -682,27 +868,39 @@ message HV_SET_FANS_STATUS{
 	uint64 _inner_timestamp = 3;
 }
 message HV_FEEDBACK_STATUS{
-	primary_hv_feedback_status_feedback_implausibility_detected feedback_implausibility_detected = 1;
-	primary_hv_feedback_status_feedback_imd_cockpit feedback_imd_cockpit = 2;
-	primary_hv_feedback_status_feedback_tsal_green_fault_latched feedback_tsal_green_fault_latched = 3;
-	primary_hv_feedback_status_feedback_bms_cockpit feedback_bms_cockpit = 4;
-	primary_hv_feedback_status_feedback_ext_latched feedback_ext_latched = 5;
-	primary_hv_feedback_status_feedback_tsal_green feedback_tsal_green = 6;
-	primary_hv_feedback_status_feedback_ts_over_60v_status feedback_ts_over_60v_status = 7;
-	primary_hv_feedback_status_feedback_airn_status feedback_airn_status = 8;
-	primary_hv_feedback_status_feedback_airp_status feedback_airp_status = 9;
-	primary_hv_feedback_status_feedback_airp_gate feedback_airp_gate = 10;
-	primary_hv_feedback_status_feedback_airn_gate feedback_airn_gate = 11;
-	primary_hv_feedback_status_feedback_precharge_status feedback_precharge_status = 12;
-	primary_hv_feedback_status_feedback_tsp_over_60v_status feedback_tsp_over_60v_status = 13;
-	primary_hv_feedback_status_feedback_imd_fault feedback_imd_fault = 14;
-	primary_hv_feedback_status_feedback_check_mux feedback_check_mux = 15;
-	primary_hv_feedback_status_feedback_sd_end feedback_sd_end = 16;
-	primary_hv_feedback_status_feedback_sd_out feedback_sd_out = 17;
-	primary_hv_feedback_status_feedback_sd_in feedback_sd_in = 18;
-	primary_hv_feedback_status_feedback_sd_bms feedback_sd_bms = 19;
-	primary_hv_feedback_status_feedback_sd_imd feedback_sd_imd = 20;
-	uint64 _inner_timestamp = 21;
+	primary_hv_feedback_status_airn_open_com airn_open_com = 1;
+	primary_hv_feedback_status_precharge_open_com precharge_open_com = 2;
+	primary_hv_feedback_status_airp_open_com airp_open_com = 3;
+	primary_hv_feedback_status_airn_open_mec airn_open_mec = 4;
+	primary_hv_feedback_status_precharge_open_mec precharge_open_mec = 5;
+	primary_hv_feedback_status_airp_open_mec airp_open_mec = 6;
+	primary_hv_feedback_status_sd_imd_fb sd_imd_fb = 7;
+	primary_hv_feedback_status_sd_bms_fb sd_bms_fb = 8;
+	primary_hv_feedback_status_ts_less_than_60v ts_less_than_60v = 9;
+	primary_hv_feedback_status_plausible_state_persisted plausible_state_persisted = 10;
+	primary_hv_feedback_status_plausible_state plausible_state = 11;
+	primary_hv_feedback_status_not_bms_fault_cockpit_led not_bms_fault_cockpit_led = 12;
+	primary_hv_feedback_status_not_imd_fault_cockpit_led not_imd_fault_cockpit_led = 13;
+	primary_hv_feedback_status_indicator_connected indicator_connected = 14;
+	primary_hv_feedback_status_not_latch_reset not_latch_reset = 15;
+	primary_hv_feedback_status_plausible_state_latched plausible_state_latched = 16;
+	primary_hv_feedback_status_not_bms_fault_latched not_bms_fault_latched = 17;
+	primary_hv_feedback_status_not_imd_fault_latched not_imd_fault_latched = 18;
+	primary_hv_feedback_status_not_ext_fault_latched not_ext_fault_latched = 19;
+	primary_hv_feedback_status_imd_ok imd_ok = 20;
+	primary_hv_feedback_status_plausible_state_rc plausible_state_rc = 21;
+	primary_hv_feedback_status_tsal_green tsal_green = 22;
+	primary_hv_feedback_status_probing_3v3 probing_3v3 = 23;
+	primary_hv_feedback_status_sd_out sd_out = 24;
+	primary_hv_feedback_status_sd_in sd_in = 25;
+	primary_hv_feedback_status_sd_end sd_end = 26;
+	primary_hv_feedback_status_v5_mcu v5_mcu = 27;
+	primary_hv_feedback_status_feedback_tsal_green_fault_latched feedback_tsal_green_fault_latched = 28;
+	primary_hv_feedback_status_feedback_ext_latched feedback_ext_latched = 29;
+	primary_hv_feedback_status_feedback_precharge_status feedback_precharge_status = 30;
+	primary_hv_feedback_status_feedback_tsp_over_60v_status feedback_tsp_over_60v_status = 31;
+	primary_hv_feedback_status_feedback_check_mux feedback_check_mux = 32;
+	uint64 _inner_timestamp = 33;
 }
 message HV_FEEDBACK_TS_VOLTAGE{
 	double ts_over_60v_status = 1;
@@ -734,25 +932,35 @@ message HV_FEEDBACK_SD_VOLTAGE{
 	uint64 _inner_timestamp = 6;
 }
 message HV_IMD_STATUS{
-	bool imd_fault = 1;
-	primary_hv_imd_status_imd_status imd_status = 2;
-	uint32 imd_details = 3;
-	uint32 imd_duty_cycle = 4;
-	uint32 imd_freq = 5;
-	uint32 imd_period = 6;
-	uint64 _inner_timestamp = 7;
+	primary_hv_imd_status_status status = 1;
+	double frequency = 2;
+	double duty_cycle = 3;
+	primary_hv_imd_status_feedback_not_imd_fault_cockpit_led feedback_not_imd_fault_cockpit_led = 4;
+	primary_hv_imd_status_feedback_not_imd_fault_latched feedback_not_imd_fault_latched = 5;
+	bool imd_fault = 6;
+	uint32 imd_details = 7;
+	uint32 imd_period = 8;
+	uint64 _inner_timestamp = 9;
 }
 message HV_STATUS{
 	primary_hv_status_status status = 1;
-	uint64 _inner_timestamp = 2;
+	primary_hv_status_cellboard_0 cellboard_0 = 2;
+	primary_hv_status_cellboard_1 cellboard_1 = 3;
+	primary_hv_status_cellboard_2 cellboard_2 = 4;
+	primary_hv_status_cellboard_3 cellboard_3 = 5;
+	primary_hv_status_cellboard_4 cellboard_4 = 6;
+	primary_hv_status_cellboard_5 cellboard_5 = 7;
+	uint64 _inner_timestamp = 8;
 }
 message HV_SET_STATUS_ECU{
-	primary_hv_set_status_ecu_hv_status_set hv_status_set = 1;
-	uint64 _inner_timestamp = 2;
+	bool status = 1;
+	primary_hv_set_status_ecu_hv_status_set hv_status_set = 2;
+	uint64 _inner_timestamp = 3;
 }
 message HV_SET_STATUS_HANDCART{
-	primary_hv_set_status_handcart_hv_status_set hv_status_set = 1;
-	uint64 _inner_timestamp = 2;
+	bool status = 1;
+	primary_hv_set_status_handcart_hv_status_set hv_status_set = 2;
+	uint64 _inner_timestamp = 3;
 }
 message HV_BALANCING_STATUS{
 	primary_hv_balancing_status_cellboard_id cellboard_id = 1;
@@ -784,17 +992,46 @@ message HV_BALANCING_STATUS{
 	bool balancing_cells_cell15 = 27;
 	bool balancing_cells_cell16 = 28;
 	bool balancing_cells_cell17 = 29;
-	uint64 _inner_timestamp = 30;
-}
-message HV_SET_BALANCING_STATUS_HANDCART{
-	primary_hv_set_balancing_status_handcart_set_balancing_status set_balancing_status = 1;
-	uint32 balancing_threshold = 2;
-	uint64 _inner_timestamp = 3;
+	primary_hv_balancing_status_status status = 30;
+	bool discharging_cell_0 = 31;
+	bool discharging_cell_1 = 32;
+	bool discharging_cell_2 = 33;
+	bool discharging_cell_3 = 34;
+	bool discharging_cell_4 = 35;
+	bool discharging_cell_5 = 36;
+	bool discharging_cell_6 = 37;
+	bool discharging_cell_7 = 38;
+	bool discharging_cell_8 = 39;
+	bool discharging_cell_9 = 40;
+	bool discharging_cell_10 = 41;
+	bool discharging_cell_11 = 42;
+	bool discharging_cell_12 = 43;
+	bool discharging_cell_13 = 44;
+	bool discharging_cell_14 = 45;
+	bool discharging_cell_15 = 46;
+	bool discharging_cell_16 = 47;
+	bool discharging_cell_17 = 48;
+	bool discharging_cell_18 = 49;
+	bool discharging_cell_19 = 50;
+	bool discharging_cell_20 = 51;
+	bool discharging_cell_21 = 52;
+	bool discharging_cell_22 = 53;
+	bool discharging_cell_23 = 54;
+	uint64 _inner_timestamp = 55;
 }
 message HV_SET_BALANCING_STATUS_STEERING_WHEEL{
-	primary_hv_set_balancing_status_steering_wheel_set_balancing_status set_balancing_status = 1;
-	uint32 balancing_threshold = 2;
-	uint64 _inner_timestamp = 3;
+	bool status = 1;
+	double threshold = 2;
+	primary_hv_set_balancing_status_steering_wheel_set_balancing_status set_balancing_status = 3;
+	uint32 balancing_threshold = 4;
+	uint64 _inner_timestamp = 5;
+}
+message HV_SET_BALANCING_STATUS_HANDCART{
+	bool status = 1;
+	double threshold = 2;
+	primary_hv_set_balancing_status_handcart_set_balancing_status set_balancing_status = 3;
+	uint32 balancing_threshold = 4;
+	uint64 _inner_timestamp = 5;
 }
 message LV_STATUS{
 	primary_lv_status_status status = 1;
@@ -1116,7 +1353,7 @@ message LV_CELLS_TEMP_STATS{
 	uint64 _inner_timestamp = 4;
 }
 message HV_CURRENT{
-	double current = 1;
+	float current = 1;
 	uint64 _inner_timestamp = 2;
 }
 message HV_POWER{
@@ -1138,11 +1375,12 @@ message HV_TOTAL_VOLTAGE{
 	uint64 _inner_timestamp = 4;
 }
 message HV_CELLS_VOLTAGE{
-	uint32 start_index = 1;
-	double voltage_0 = 2;
-	double voltage_1 = 3;
-	double voltage_2 = 4;
-	uint64 _inner_timestamp = 5;
+	primary_hv_cells_voltage_cellboard_id cellboard_id = 1;
+	uint32 offset = 2;
+	double voltage_0 = 3;
+	double voltage_1 = 4;
+	double voltage_2 = 5;
+	uint64 _inner_timestamp = 6;
 }
 message HV_CELLS_VOLTAGE_STATS{
 	double max = 1;
@@ -1227,6 +1465,33 @@ message DEBUG_SIGNAL_4{
 	double field_2 = 3;
 	double field_3 = 4;
 	uint64 _inner_timestamp = 5;
+}
+message HV_FLASH_REQUEST{
+	bool mainboard = 1;
+	primary_hv_flash_request_cellboard_id cellboard_id = 2;
+	uint64 _inner_timestamp = 3;
+}
+message HV_FLASH_RESPONSE{
+	bool ready = 1;
+	uint64 _inner_timestamp = 2;
+}
+message HV_TS_VOLTAGE{
+	double ts = 1;
+	double pack = 2;
+	double cells_sum = 3;
+	uint64 _inner_timestamp = 4;
+}
+message HV_CELLS_TEMPERATURE{
+	primary_hv_cells_temperature_cellboard_id cellboard_id = 1;
+	uint32 temperature_id_0 = 2;
+	uint32 temperature_id_1 = 3;
+	uint32 temperature_id_2 = 4;
+	uint32 temperature_id_3 = 5;
+	double temperature_0 = 6;
+	double temperature_1 = 7;
+	double temperature_2 = 8;
+	double temperature_3 = 9;
+	uint64 _inner_timestamp = 10;
 }
 message CHARGER_1{
 	uint32 data_0 = 1;
@@ -1437,6 +1702,50 @@ message CHARGER_19{
 	uint32 data_7 = 8;
 	uint64 _inner_timestamp = 9;
 }
+message HV_FEEDBACK_DIGITAL{
+	bool digital_airn_open_com = 1;
+	bool digital_airp_open_com = 2;
+	bool digital_sd_imd_fb = 3;
+	bool digital_sd_bms_fb = 4;
+	bool digital_precharge_open_com = 5;
+	bool digital_precharge_open_mec = 6;
+	bool digital_ts_less_than_60v = 7;
+	bool digital_plausible_state_persisted = 8;
+	bool digital_plausible_state = 9;
+	bool digital_not_bms_fault_cockpit_led = 10;
+	bool digital_not_imd_fault_cockpit_led = 11;
+	bool digital_indicator_connected = 12;
+	bool digital_not_latch_reset = 13;
+	bool digital_plausible_state_latched = 14;
+	bool digital_not_bms_fault_latched = 15;
+	bool digital_not_imd_fault_latched = 16;
+	bool digital_not_ext_fault_latched = 17;
+	uint64 _inner_timestamp = 18;
+}
+message HV_FEEDBACK_ANALOG{
+	double analog_airn_open_mec = 1;
+	double analog_airp_open_mec = 2;
+	double analog_imd_ok = 3;
+	double analog_plausible_state_rc = 4;
+	double analog_tsal_green = 5;
+	double analog_probing_3v3 = 6;
+	double analog_v5_mcu = 7;
+	uint64 _inner_timestamp = 8;
+}
+message HV_FEEDBACK_ANALOG_SD{
+	double sd_out = 1;
+	double sd_in = 2;
+	double sd_end = 3;
+	uint64 _inner_timestamp = 4;
+}
+message HV_FEEDBACK_ENZOMMA{
+	primary_hv_feedback_enzomma_feedback feedback = 1;
+	primary_hv_feedback_enzomma_status status = 2;
+	bool is_digital = 3;
+	bool digital = 4;
+	double analog = 5;
+	uint64 _inner_timestamp = 6;
+}
 
 
 message Pack{
@@ -1448,7 +1757,7 @@ message Pack{
 	repeated NLG5_ACT_I NLG5_ACT_I = 6;
 	repeated NLG5_ST NLG5_ST = 7;
 	repeated NLG5_CTL NLG5_CTL = 8;
-	repeated HV_JMP_TO_BLT HV_JMP_TO_BLT = 9;
+	repeated HV_FLASH HV_FLASH = 9;
 	repeated HV_FLASH_MAINBOARD_TX HV_FLASH_MAINBOARD_TX = 10;
 	repeated HV_FLASH_MAINBOARD_RX HV_FLASH_MAINBOARD_RX = 11;
 	repeated HV_FLASH_CELLBOARD_0_TX HV_FLASH_CELLBOARD_0_TX = 12;
@@ -1491,8 +1800,8 @@ message Pack{
 	repeated HV_SET_STATUS_ECU HV_SET_STATUS_ECU = 49;
 	repeated HV_SET_STATUS_HANDCART HV_SET_STATUS_HANDCART = 50;
 	repeated HV_BALANCING_STATUS HV_BALANCING_STATUS = 51;
-	repeated HV_SET_BALANCING_STATUS_HANDCART HV_SET_BALANCING_STATUS_HANDCART = 52;
-	repeated HV_SET_BALANCING_STATUS_STEERING_WHEEL HV_SET_BALANCING_STATUS_STEERING_WHEEL = 53;
+	repeated HV_SET_BALANCING_STATUS_STEERING_WHEEL HV_SET_BALANCING_STATUS_STEERING_WHEEL = 52;
+	repeated HV_SET_BALANCING_STATUS_HANDCART HV_SET_BALANCING_STATUS_HANDCART = 53;
 	repeated LV_STATUS LV_STATUS = 54;
 	repeated LV_CHARGING_STATUS LV_CHARGING_STATUS = 55;
 	repeated LV_COOLING_AGGRESSIVENESS LV_COOLING_AGGRESSIVENESS = 56;
@@ -1560,24 +1869,32 @@ message Pack{
 	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 118;
 	repeated DEBUG_SIGNAL_3 DEBUG_SIGNAL_3 = 119;
 	repeated DEBUG_SIGNAL_4 DEBUG_SIGNAL_4 = 120;
-	repeated CHARGER_1 CHARGER_1 = 121;
-	repeated CHARGER_2 CHARGER_2 = 122;
-	repeated CHARGER_3 CHARGER_3 = 123;
-	repeated CHARGER_4 CHARGER_4 = 124;
-	repeated CHARGER_5 CHARGER_5 = 125;
-	repeated CHARGER_6 CHARGER_6 = 126;
-	repeated CHARGER_7 CHARGER_7 = 127;
-	repeated CHARGER_8 CHARGER_8 = 128;
-	repeated CHARGER_9 CHARGER_9 = 129;
-	repeated CHARGER_10 CHARGER_10 = 130;
-	repeated CHARGER_11 CHARGER_11 = 131;
-	repeated CHARGER_12 CHARGER_12 = 132;
-	repeated CHARGER_13 CHARGER_13 = 133;
-	repeated CHARGER_14 CHARGER_14 = 134;
-	repeated CHARGER_15 CHARGER_15 = 135;
-	repeated CHARGER_16 CHARGER_16 = 136;
-	repeated CHARGER_17 CHARGER_17 = 137;
-	repeated CHARGER_18 CHARGER_18 = 138;
-	repeated CHARGER_19 CHARGER_19 = 139;
+	repeated HV_FLASH_REQUEST HV_FLASH_REQUEST = 121;
+	repeated HV_FLASH_RESPONSE HV_FLASH_RESPONSE = 122;
+	repeated HV_TS_VOLTAGE HV_TS_VOLTAGE = 123;
+	repeated HV_CELLS_TEMPERATURE HV_CELLS_TEMPERATURE = 124;
+	repeated CHARGER_1 CHARGER_1 = 125;
+	repeated CHARGER_2 CHARGER_2 = 126;
+	repeated CHARGER_3 CHARGER_3 = 127;
+	repeated CHARGER_4 CHARGER_4 = 128;
+	repeated CHARGER_5 CHARGER_5 = 129;
+	repeated CHARGER_6 CHARGER_6 = 130;
+	repeated CHARGER_7 CHARGER_7 = 131;
+	repeated CHARGER_8 CHARGER_8 = 132;
+	repeated CHARGER_9 CHARGER_9 = 133;
+	repeated CHARGER_10 CHARGER_10 = 134;
+	repeated CHARGER_11 CHARGER_11 = 135;
+	repeated CHARGER_12 CHARGER_12 = 136;
+	repeated CHARGER_13 CHARGER_13 = 137;
+	repeated CHARGER_14 CHARGER_14 = 138;
+	repeated CHARGER_15 CHARGER_15 = 139;
+	repeated CHARGER_16 CHARGER_16 = 140;
+	repeated CHARGER_17 CHARGER_17 = 141;
+	repeated CHARGER_18 CHARGER_18 = 142;
+	repeated CHARGER_19 CHARGER_19 = 143;
+	repeated HV_FEEDBACK_DIGITAL HV_FEEDBACK_DIGITAL = 144;
+	repeated HV_FEEDBACK_ANALOG HV_FEEDBACK_ANALOG = 145;
+	repeated HV_FEEDBACK_ANALOG_SD HV_FEEDBACK_ANALOG_SD = 146;
+	repeated HV_FEEDBACK_ENZOMMA HV_FEEDBACK_ENZOMMA = 147;
 }
 
