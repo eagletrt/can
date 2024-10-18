@@ -1,6 +1,157 @@
 {
     "version": 2.0,
     "types": {
+        "HvCellboardId": {
+            "type": "enum",
+            "items": [
+                "cellboard_0",
+                "cellboard_1",
+                "cellboard_2",
+                "cellboard_3",
+                "cellboard_4",
+                "cellboard_5"
+            ]
+        },
+        "HvMainboardStatus": {
+            "type": "enum",
+            "items": [
+                "init",
+                "idle",
+                "fatal",
+                "flash",
+                "balancing",
+                "airn_check",
+                "precharge_check",
+                "airp_check",
+                "ts_on"
+            ]
+        },
+        "HvCellboardStatus": {
+            "type": "enum",
+            "items": [
+                "init",
+                "idle",
+                "fatal",
+                "flash",
+                "discharge",
+                "cooldown"
+            ]
+        },
+        "HvFeedback": {
+            "type": "enum",
+            "items": [
+                "airn_open_com",
+                "precharge_open_com",
+                "airp_open_com",
+                "airn_open_mec",
+                "precharge_open_mec",
+                "airp_open_mec",
+                "sd_imd_fb",
+                "sd_bms_fb",
+                "ts_less_than_60v",
+                "plausible_state_persisted",
+                "plausible_state",
+                "not_bms_fault_cockpit_led",
+                "not_imd_fault_cockpit_led",
+                "indicator_connected",
+                "not_latch_reset",
+                "plausible_state_latched",
+                "not_bms_fault_latched",
+                "not_imd_fault_latched",
+                "not_ext_fault_latched",
+                "imd_ok",
+                "plausible_state_rc",
+                "tsal_green",
+                "probing_3v3",
+                "sd_out",
+                "sd_in",
+                "sd_end",
+                "v5_mcu",
+                "unknown"
+            ]
+        },
+        "HvFeedbackDigital": {
+            "type": "bitset",
+            "items": [
+                "airn_open_com",
+                "airp_open_com",
+                "sd_imd_fb",
+                "sd_bms_fb",
+                "precharge_open_com",
+                "precharge_open_mec",
+                "ts_less_than_60v",
+                "plausible_state_persisted",
+                "plausible_state",
+                "not_bms_fault_cockpit_led",
+                "not_imd_fault_cockpit_led",
+                "indicator_connected",
+                "not_latch_reset",
+                "plausible_state_latched",
+                "not_bms_fault_latched",
+                "not_imd_fault_latched",
+                "not_ext_fault_latched"
+            ]
+        },
+        "HvFeedbackStatus": {
+            "type": "enum",
+            "comment": "Conflict with legacy version",
+            "items": [
+                "low",
+                "error",
+                "high"
+            ]
+        },
+        "HvImdStatus": {
+            "type": "enum",
+            "comment": "Conflict with legacy version",
+            "items": [
+                "unknown",
+                "short_circuit",
+                "normal",
+                "under_voltage",
+                "start_measure",
+                "device_error",
+                "earth_fault"
+            ]
+        },
+        "HvBalancingStatus": {
+            "type": "enum",
+            "items": [
+                "stopped",
+                "paused",
+                "running"
+            ]
+        },
+        "HvDischargingCells": {
+            "type": "bitset",
+            "items": [
+                "cell_0",
+                "cell_1",
+                "cell_2",
+                "cell_3",
+                "cell_4",
+                "cell_5",
+                "cell_6",
+                "cell_7",
+                "cell_8",
+                "cell_9",
+                "cell_10",
+                "cell_11",
+                "cell_12",
+                "cell_13",
+                "cell_14",
+                "cell_15",
+                "cell_16",
+                "cell_17",
+                "cell_18",
+                "cell_19",
+                "cell_20",
+                "cell_21",
+                "cell_22",
+                "cell_23"
+            ]
+        },
+
         "DeviceId": {
             "type": "enum",
             "items": [
@@ -21,14 +172,6 @@
                 "weak",
                 "normal",
                 "aggressive"
-            ]
-        },
-        "HvFeedbackStatus": {
-            "type": "enum",
-            "items": [
-                "feedback_state_low",
-                "feedback_state_error",
-                "feedback_state_high"
             ]
         },
         "CoolingStatus": {
@@ -88,6 +231,7 @@
         },
         "HvCellsErrors": {
             "type": "bitset",
+            "description": "[LEGACY]: Cellboard errors",
             "items": [
                 "can_comm",
                 "ltc_comm",
@@ -100,19 +244,9 @@
                 "open_wire"
             ]
         },
-        "HvCellboardId": {
-            "type": "enum",
-            "items": [
-                "cellboard_0",
-                "cellboard_1",
-                "cellboard_2",
-                "cellboard_3",
-                "cellboard_4",
-                "cellboard_5"
-            ]
-        },
         "HvBalancingCells": {
             "type": "bitset",
+            "description": "[LEGACY]: Cellboard discharging cells",
             "items": [
                 "cell0",
                 "cell1",
@@ -136,6 +270,7 @@
         },
         "HvFeedbacks": {
             "type": "bitset",
+            "description": "[LEGACY]: Mainboard feedbacks",
             "items": [
                 "implausibility_detected",
                 "imd_cockpit",
@@ -161,6 +296,7 @@
         },
         "HvErrors": {
             "type": "bitset",
+            "description": "[LEGACY]: Mainboard errors",
             "items": [
                 "cell_under_voltage",
                 "cell_over_voltage",
@@ -181,6 +317,7 @@
         },
         "HvStatus": {
             "type": "enum",
+            "description": "[LEGACY]: Mainboard status",
             "items": [
                 "init",
                 "idle",
@@ -189,17 +326,6 @@
                 "airp_close",
                 "ts_on",
                 "fatal_error"
-            ]
-        },
-        "HvImdStatus": {
-            "type": "enum",
-            "items": [
-                "sc",
-                "normal",
-                "under_voltage",
-                "start_measure",
-                "device_error",
-                "earth_fault"
             ]
         },
         "LvStatus": {
@@ -324,15 +450,20 @@
     },
     "messages": [
         {
-            "name": "HV_JMP_TO_BLT",
+            "name": "HV_FLASH",
             "fixed_id": 0,
+            "interval": 200,
             "sending": [
                 "TLM"
             ],
             "receiving": [
                 "HV"
             ],
+            "description": "Start or stop the actual flash procedure, need a request first",
+            "comment": "[LEGACY]: Equivalent of HV_JMP_TO_BLT - starts firmware update",
             "contents": {
+                "start": "bool",
+
                 "forward": "Toggle",
                 "cellboard_id": "HvCellboardId"
             }
@@ -341,11 +472,10 @@
             "name": "HV_FLASH_MAINBOARD_TX",
             "fixed_id": 1,
             "sending": [
-                "TLM"
-            ],
-            "receiving": [
                 "HV"
             ],
+            "receiving": [],
+            "description": "Message used by openblt to receive data data FROM the microcontroller",
             "contents": {}
         },
         {
@@ -357,17 +487,17 @@
             "receiving": [
                 "HV"
             ],
+            "description": "Message used by openblt to send data TO the microcontroller",
             "contents": {}
         },
         {
             "name": "HV_FLASH_CELLBOARD_0_TX",
             "fixed_id": 4,
             "sending": [
-                "TLM"
-            ],
-            "receiving": [
                 "HV"
             ],
+            "receiving": [],
+            "description": "[LEGACY]: Message used by openblt to receive data data FROM the microcontroller",
             "contents": {}
         },
         {
@@ -379,17 +509,17 @@
             "receiving": [
                 "HV"
             ],
+            "description": "[LEGACY]: Message used by openblt to send data TO the microcontroller",
             "contents": {}
         },
         {
             "name": "HV_FLASH_CELLBOARD_1_TX",
             "fixed_id": 6,
             "sending": [
-                "TLM"
-            ],
-            "receiving": [
                 "HV"
             ],
+            "receiving": [],
+            "description": "[LEGACY]: Message used by openblt to receive data data FROM the microcontroller",
             "contents": {}
         },
         {
@@ -401,17 +531,17 @@
             "receiving": [
                 "HV"
             ],
+            "description": "[LEGACY]: Message used by openblt to send data TO the microcontroller",
             "contents": {}
         },
         {
             "name": "HV_FLASH_CELLBOARD_2_TX",
             "fixed_id": 8,
             "sending": [
-                "TLM"
-            ],
-            "receiving": [
                 "HV"
             ],
+            "receiving": [],
+            "description": "[LEGACY]: Message used by openblt to receive data data FROM the microcontroller",
             "contents": {}
         },
         {
@@ -423,17 +553,17 @@
             "receiving": [
                 "HV"
             ],
+            "description": "[LEGACY]: Message used by openblt to send data TO the microcontroller",
             "contents": {}
         },
         {
             "name": "HV_FLASH_CELLBOARD_3_TX",
             "fixed_id": 10,
             "sending": [
-                "TLM"
-            ],
-            "receiving": [
                 "HV"
             ],
+            "receiving": [],
+            "description": "[LEGACY]: Message used by openblt to receive data data FROM the microcontroller",
             "contents": {}
         },
         {
@@ -445,17 +575,17 @@
             "receiving": [
                 "HV"
             ],
+            "description": "[LEGACY]: Message used by openblt to send data TO the microcontroller",
             "contents": {}
         },
         {
             "name": "HV_FLASH_CELLBOARD_4_TX",
             "fixed_id": 12,
             "sending": [
-                "TLM"
-            ],
-            "receiving": [
                 "HV"
             ],
+            "receiving": [],
+            "description": "[LEGACY]: Message used by openblt to receive data data FROM the microcontroller",
             "contents": {}
         },
         {
@@ -467,17 +597,17 @@
             "receiving": [
                 "HV"
             ],
+            "description": "[LEGACY]: Message used by openblt to send data TO the microcontroller",
             "contents": {}
         },
         {
             "name": "HV_FLASH_CELLBOARD_5_TX",
             "fixed_id": 14,
             "sending": [
-                "TLM"
-            ],
-            "receiving": [
                 "HV"
             ],
+            "receiving": [],
+            "description": "[LEGACY]: Message used by openblt to receive data data FROM the microcontroller",
             "contents": {}
         },
         {
@@ -489,6 +619,7 @@
             "receiving": [
                 "HV"
             ],
+            "description": "[LEGACY]: Message used by openblt to send data TO the microcontroller",
             "contents": {}
         },
         {
@@ -665,16 +796,24 @@
         {
             "name": "HV_CELLBOARD_VERSION",
             "fixed_id": 705,
+            "interval": 1000,
             "sending": [
                 "HV"
             ],
             "receiving": [],
-            "description": "Hv cellboard version: build-time timestamp and canlib build-time timestamp",
-            "interval": 1000,
+            "description": "High-Voltage cellboard version: build-time timestamp and canlib build-time timestamp",
             "contents": {
                 "cellboard_id": "HvCellboardId",
-                "component_version": "uint16",
-                "canlib_build_time": "uint32"
+                "canlib_build_time": "uint32",
+                "component_build_time": {
+                    "type": "uint32",
+                    "range": [
+                        0,
+                        536870911
+                    ],
+                    "precision": 1,
+                    "comment": "The build time is expressed in seconds with the 3 least significant bits truncated to fit into the CAN payload"
+                }
             }
         },
         {
@@ -689,6 +828,7 @@
                 "ECU",
                 "HANDCART"
             ],
+            "description": "[LEGACY]: Mainboard errors",
             "contents": {
                 "errors": "HvErrors"
             }
@@ -705,6 +845,7 @@
                 "ECU",
                 "HANDCART"
             ],
+            "description": "[LEGACY]: Mainboard debug signals",
             "contents": {
                 "feedbacks": "HvFeedbacks",
                 "errors": "HvErrors"
@@ -722,6 +863,7 @@
                 "ECU",
                 "HANDCART"
             ],
+            "description": "[LEGACY]: Status of the fans",
             "contents": {
                 "fans_override": "Toggle",
                 "fans_speed": {
@@ -745,6 +887,7 @@
             "receiving": [
                 "HV"
             ],
+            "description": "[LEGACY]: Set the status of the fans",
             "contents": {
                 "fans_override": "Toggle",
                 "fans_speed": {
@@ -769,27 +912,42 @@
                 "ECU",
                 "HANDCART"
             ],
+            "description": "Status of all the BMS HV feedbacks",
+            "comment": "[LEGACY]: Some fields added for legacy reasons",
             "contents": {
-                "feedback_implausibility_detected": "HvFeedbackStatus",
-                "feedback_imd_cockpit": "HvFeedbackStatus",
+                "airn_open_com": "HvFeedbackStatus",
+                "precharge_open_com": "HvFeedbackStatus",
+                "airp_open_com": "HvFeedbackStatus",
+                "airn_open_mec": "HvFeedbackStatus",
+                "precharge_open_mec": "HvFeedbackStatus",
+                "airp_open_mec": "HvFeedbackStatus",
+                "sd_imd_fb": "HvFeedbackStatus",
+                "sd_bms_fb": "HvFeedbackStatus",
+                "ts_less_than_60v": "HvFeedbackStatus",
+                "plausible_state_persisted": "HvFeedbackStatus",
+                "plausible_state": "HvFeedbackStatus",
+                "not_bms_fault_cockpit_led": "HvFeedbackStatus",
+                "not_imd_fault_cockpit_led": "HvFeedbackStatus",
+                "indicator_connected": "HvFeedbackStatus",
+                "not_latch_reset": "HvFeedbackStatus",
+                "plausible_state_latched": "HvFeedbackStatus",
+                "not_bms_fault_latched": "HvFeedbackStatus",
+                "not_imd_fault_latched": "HvFeedbackStatus",
+                "not_ext_fault_latched": "HvFeedbackStatus",
+                "imd_ok": "HvFeedbackStatus",
+                "plausible_state_rc": "HvFeedbackStatus",
+                "tsal_green": "HvFeedbackStatus",
+                "probing_3v3": "HvFeedbackStatus",
+                "sd_out": "HvFeedbackStatus",
+                "sd_in": "HvFeedbackStatus",
+                "sd_end": "HvFeedbackStatus",
+                "v5_mcu": "HvFeedbackStatus",
+
                 "feedback_tsal_green_fault_latched": "HvFeedbackStatus",
-                "feedback_bms_cockpit": "HvFeedbackStatus",
                 "feedback_ext_latched": "HvFeedbackStatus",
-                "feedback_tsal_green": "HvFeedbackStatus",
-                "feedback_ts_over_60v_status": "HvFeedbackStatus",
-                "feedback_airn_status": "HvFeedbackStatus",
-                "feedback_airp_status": "HvFeedbackStatus",
-                "feedback_airp_gate": "HvFeedbackStatus",
-                "feedback_airn_gate": "HvFeedbackStatus",
                 "feedback_precharge_status": "HvFeedbackStatus",
                 "feedback_tsp_over_60v_status": "HvFeedbackStatus",
-                "feedback_imd_fault": "HvFeedbackStatus",
-                "feedback_check_mux": "HvFeedbackStatus",
-                "feedback_sd_end": "HvFeedbackStatus",
-                "feedback_sd_out": "HvFeedbackStatus",
-                "feedback_sd_in": "HvFeedbackStatus",
-                "feedback_sd_bms": "HvFeedbackStatus",
-                "feedback_sd_imd": "HvFeedbackStatus"
+                "feedback_check_mux": "HvFeedbackStatus"
             }
         },
         {
@@ -804,6 +962,7 @@
                 "ECU",
                 "HANDCART"
             ],
+            "description": "[LEGACY]: Feedback TS voltage",
             "contents": {
                 "ts_over_60v_status": {
                     "type": "float32",
@@ -875,6 +1034,7 @@
                 "ECU",
                 "HANDCART"
             ],
+            "description": "[LEGACY]: Feedback MISC voltage",
             "contents": {
                 "implausibility_detected": {
                     "type": "float32",
@@ -954,6 +1114,7 @@
                 "ECU",
                 "HANDCART"
             ],
+            "description": "[LEGACY]: Feedback SD voltage",
             "contents": {
                 "sd_end": {
                     "type": "float32",
@@ -1009,12 +1170,33 @@
                 "ECU",
                 "HANDCART"
             ],
+            "description": "Internal status of the IMD",
+            "comment": "[LEGACY]: Some fields added for legacy reasons",
             "contents": {
+                "status": "HvImdStatus",
+                "frequency": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0.0,
+                        60.0
+                    ],
+                    "comment": "IMD frequency in Hz"
+                },
+                "duty_cycle": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "comment": "IMD duty cycle percentage"
+                },
+                "feedback_not_imd_fault_cockpit_led": "HvFeedbackStatus",
+                "feedback_not_imd_fault_latched": "HvFeedbackStatus",
+
                 "imd_fault": "bool",
-                "imd_status": "HvImdStatus",
                 "imd_details": "uint16",
-                "imd_duty_cycle": "uint8",
-                "imd_freq": "uint8",
                 "imd_period": "uint8"
             }
         },
@@ -1026,13 +1208,16 @@
             "sending": [
                 "HV"
             ],
-            "receiving": [
-                "ECU",
-                "HANDCART"
-            ],
-            "description": "Bms hv status",
+            "receiving": [],
+            "description": "Mainboard and cellboard internal FSM status",
             "contents": {
-                "status": "HvStatus"
+                "status": "HvMainboardStatus",
+                "cellboard_0": "HvCellboardStatus",
+                "cellboard_1": "HvCellboardStatus",
+                "cellboard_2": "HvCellboardStatus",
+                "cellboard_3": "HvCellboardStatus",
+                "cellboard_4": "HvCellboardStatus",
+                "cellboard_5": "HvCellboardStatus"
             }
         },
         {
@@ -1046,7 +1231,10 @@
             "receiving": [
                 "HV"
             ],
+            "comment": "[LEGACY]: Some fields added for legacy reasons",
             "contents": {
+                "status": "bool",
+
                 "hv_status_set": "Toggle"
             }
         },
@@ -1061,7 +1249,11 @@
             "receiving": [
                 "HV"
             ],
+            "description": "Change the mainboard status from the handcart",
+            "comment": "[LEGACY]: Some fields added for legacy reasons",
             "contents": {
+                "status": "bool",
+
                 "hv_status_set": "Toggle"
             }
         },
@@ -1076,11 +1268,16 @@
             "receiving": [
                 "ECU"
             ],
+            "comment": "[LEGACY]: Some fields added for legacy reasons",
             "contents": {
                 "cellboard_id": "HvCellboardId",
                 "balancing_status": "Toggle",
                 "errors": "HvCellsErrors",
-                "balancing_cells": "HvBalancingCells"
+                "balancing_cells": "HvBalancingCells",
+
+                "status": "HvBalancingStatus",
+                "discharging": "HvDischargingCells"
+
             }
         },
         {
@@ -1089,13 +1286,26 @@
             "priority": 2,
             "interval": 200,
             "sending": [
-                "HANDCART",
-                "STEERING_WHEEL"
+                "STEERING_WHEEL",
+                "HANDCART"
             ],
             "receiving": [
                 "HV"
             ],
+            "description": "Start or stop the balancing procedure",
+            "comment": "[LEGACY]: Some fields added for legacy reasons",
             "contents": {
+                "status": "bool",
+                "threshold": {
+                    "type": "float32",
+                    "force": "uint16",
+                    "range": [
+                        0.005,
+                        0.2
+                    ],
+                    "comment": "The maximum allowed delta between the highest and lowest cell voltages in V"
+                },
+
                 "set_balancing_status": "Toggle",
                 "balancing_threshold": {
                     "type": "uint16",
@@ -1104,6 +1314,7 @@
                         200
                     ]
                 }
+
             }
         },
         {
@@ -2166,14 +2377,16 @@
                 "HV"
             ],
             "receiving": [],
+            "description": "Mainboard current in A",
             "contents": {
                 "current": {
                     "type": "float32",
                     "range": [
-                        -200,
-                        200
+                        -39,
+                        135
                     ],
-                    "force": "uint16"
+                    "precision": 0.001,
+                    "comment": "The current sensor has a resolution of +/-10mA"
                 }
             }
         },
@@ -2186,14 +2399,15 @@
                 "HV"
             ],
             "receiving": [],
+            "description": "Mainboard power in kW",
             "contents": {
                 "power": {
                     "type": "float32",
+                    "force": "uint16",
                     "range": [
                         -100,
                         100
-                    ],
-                    "force": "uint16"
+                    ]
                 }
             }
         },
@@ -2206,6 +2420,7 @@
                 "HV"
             ],
             "receiving": [],
+            "description": "[LEGACY]: Energy of the HV battery pack",
             "contents": {
                 "energy": {
                     "type": "float32",
@@ -2229,11 +2444,11 @@
             "contents": {
                 "soc": {
                     "type": "float32",
+                    "force": "uint8",
                     "range": [
                         0,
-                        100
-                    ],
-                    "force": "uint8"
+                        1
+                    ]
                 }
             }
         },
@@ -2246,6 +2461,7 @@
                 "HV"
             ],
             "receiving": [],
+            "description": "[LEGACY]: mainboard TS voltage",
             "contents": {
                 "pack": {
                     "type": "float32",
@@ -2279,31 +2495,42 @@
                 "HV"
             ],
             "receiving": [],
+            "description": "HV cells voltages in V",
             "contents": {
-                "start_index": "uint8",
+                "cellboard_id": "HvCellboardId",
+                "offset": {
+                    "type": "uint8",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        21
+                    ],
+                    "precision": 3,
+                    "comment": "Offset from the first cell of the segment"
+                },
                 "voltage_0": {
                     "type": "float32",
+                    "force": "uint16",
                     "range": [
                         0,
                         5
-                    ],
-                    "precision": 0.0001
+                    ]
                 },
                 "voltage_1": {
                     "type": "float32",
+                    "force": "uint16",
                     "range": [
                         0,
                         5
-                    ],
-                    "precision": 0.0001
+                    ]
                 },
                 "voltage_2": {
                     "type": "float32",
+                    "force": "uint16",
                     "range": [
                         0,
                         5
-                    ],
-                    "precision": 0.0001
+                    ]
                 }
             }
         },
@@ -2316,6 +2543,7 @@
                 "HV"
             ],
             "receiving": [],
+            "description": "[LEGACY]: Cellboard cells voltages statistics",
             "contents": {
                 "max": {
                     "type": "float32",
@@ -2360,6 +2588,7 @@
                 "HV"
             ],
             "receiving": [],
+            "description": "[LEGACY]: Cellboard cells temperature",
             "contents": {
                 "start_index": "uint8",
                 "temp_0": {
@@ -2405,6 +2634,7 @@
                 "HV"
             ],
             "receiving": [],
+            "description": "[LEGACY]: Cellboard cells temperature statistics",
             "contents": {
                 "max": {
                     "type": "float32",
@@ -2681,6 +2911,147 @@
                         1
                     ],
                     "force": "uint16"
+                }
+            }
+        },
+        {
+            "name": "HV_FLASH_REQUEST",
+            "fixed_id": 50,
+            "sending": [
+                "TLM"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "description": "Flash procedure request for a single board of the High-Voltage BMS",
+            "contents": {
+                "mainboard": "bool",
+                "cellboard_id": "HvCellboardId"
+            }
+        },
+        {
+            "name": "HV_FLASH_RESPONSE",
+            "fixed_id": 51,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Reponse to a flash request",
+            "contents": {
+                "ready": "bool"
+            }
+        },
+        {
+            "name": "HV_TS_VOLTAGE",
+            "topic": "HYDRA",
+            "priority": 2,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "Voltage present on the tractive system in V",
+            "contents": {
+                "ts": {
+                    "type": "float32",
+                    "force": "uint16",
+                    "range": [
+                        0,
+                        605
+                    ],
+                    "comment": "Voltage of the Tractive System of the car in V"
+                },
+                "pack": {
+                    "type": "float32",
+                    "force": "uint16",
+                    "range": [
+                        0,
+                        605
+                    ],
+                    "comment": "Total voltage of the BMS in V"
+                },
+                "cells_sum": {
+                    "type": "float32",
+                    "force": "uint16",
+                    "range": [
+                        0,
+                        605
+                    ],
+                    "comment": "Sum of all the cells voltages of the BMS in V"
+                }
+            }
+        },
+        {
+            "name": "HV_CELLS_TEMPERATURE",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [],
+            "description": "HV cells temperatures in °C",
+            "contents": {
+                "cellboard_id": "HvCellboardId",
+                "temperature_id_0": {
+                    "type": "uint8",
+                    "range": [
+                        1,
+                        75
+                    ]
+                },
+                "temperature_id_1": {
+                    "type": "uint8",
+                    "range": [
+                        1,
+                        75
+                    ]
+                },
+                "temperature_id_2": {
+                    "type": "uint8",
+                    "range": [
+                        1,
+                        75
+                    ]
+                },
+                "temperature_id_3": {
+                    "type": "uint8",
+                    "range": [
+                        1,
+                        75
+                    ]
+                },
+                "temperature_0": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                },
+                "temperature_1": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                },
+                "temperature_2": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                },
+                "temperature_3": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
                 }
             }
         },
@@ -3081,6 +3452,162 @@
                 "data_5": "uint8",
                 "data_6": "uint8",
                 "data_7": "uint8"
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_DIGITAL",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Values of the BMS HV digital feedbacks",
+            "contents": {
+                "digital": "HvFeedbackDigital"
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_ANALOG",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Voltages of the BMS HV analog feedbacks",
+            "contents": {
+                "analog_airn_open_mec": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_airp_open_mec": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_imd_ok": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_plausible_state_rc": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_tsal_green": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_probing_3v3": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                },
+                "analog_v5_mcu": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        0,
+                        5
+                    ]
+                }
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_ANALOG_SD",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Voltages of the BMS HV analog shutdown circuit feedbacks",
+            "contents": {
+                "sd_out": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        12
+                    ],
+                    "precision": 0.001
+                },
+                "sd_in": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        12
+                    ],
+                    "precision": 0.001
+                },
+                "sd_end": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        12
+                    ],
+                    "precision": 0.001
+                }
+            }
+        },
+        {
+            "name": "HV_FEEDBACK_ENZOMMA",
+            "topic": "HYDRA",
+            "priority": 1,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Info regarding the feedback that did not allow the BMS to go in the TS ON state",
+            "contents": {
+                "feedback": "HvFeedback",
+                "status": "HvFeedbackStatus",
+                "is_digital": "bool",
+                "digital": "bool",
+                "analog": {
+                    "type": "float32",
+                    "force": "uint16",
+                    "range": [
+                        0,
+                        3.3
+                    ]
+                }
             }
         }
     ]
