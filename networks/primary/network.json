@@ -12,6 +12,39 @@
                 "cellboard_5"
             ]
         },
+        "HvErrorGroup": {
+            "type": "enum",
+            "items": [
+                "post",
+                "over_current",
+                "over_power",
+                "under_voltage",
+                "over_voltage",
+                "under_temperature",
+                "over_temperature",
+                "can_communication",
+                "current_sensor_communication",
+                "cooling_under_temperature",
+                "cooling_over_temperature",
+                "cellboard_error"
+            ]
+        },
+        "HvCellboardErrorGroup": {
+            "type": "enum",
+            "items": [
+                "post",
+                "under_voltage",
+                "over_voltage",
+                "under_temperature_cells",
+                "over_temperature_cells",
+                "under_temperature_discharge",
+                "over_temperature_discharge",
+                "can_communication",
+                "flash",
+                "bms_monitor_communication",
+                "open_wire"
+            ]
+        },
         "HvMainboardStatus": {
             "type": "enum",
             "items": [
@@ -939,6 +972,26 @@
                 },
                 "feedback_not_imd_fault_cockpit_led": "HvFeedbackStatus",
                 "feedback_not_imd_fault_latched": "HvFeedbackStatus"
+            }
+        },
+        {
+            "name": "HV_SET_ERROR",
+            "topic": "HYDRA",
+            "priority": 0,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Info regarding the error which has occoured",
+            "contents": {
+                "group": "HvErrorGroup",
+                "instance": "uint16",
+                "cellboard_group": "HvCellboardErrorGroup",
+                "cellboard_id": "HvCellboardId"
             }
         }
     ]

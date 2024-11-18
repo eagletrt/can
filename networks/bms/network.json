@@ -368,7 +368,7 @@
             }
         },
         {
-            "name": "CELLBOARD_ERRORS",
+            "name": "CELLBOARD_ERROR",
             "topic": "HYDRA",
             "priority": 1,
             "interval": 20,
@@ -382,14 +382,7 @@
             "contents": {
                 "cellboard_id": "CellboardId",
                 "group": "CellboardErrorGroup",
-                "instance": {
-                    "type": "uint16",
-                    "range": [
-                        0,
-                        48
-                    ],
-                    "comment": "The instance of the error"
-                }
+                "instance": "uint16"
             }
         }
     ]
