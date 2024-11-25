@@ -617,6 +617,15 @@ message COOLING_TEMP_RADIATORS{
 	double air_temp = 1;
 	uint64 _inner_timestamp = 2;
 }
+message LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS{
+	double heading = 1;
+	double distance = 2;
+	uint64 _inner_timestamp = 3;
+}
+message LATERAL_CONTROLLER_ERRORS{
+	double com_distance = 1;
+	uint64 _inner_timestamp = 2;
+}
 
 
 message Pack{
@@ -740,5 +749,7 @@ message Pack{
 	repeated DEBUG_SIGNAL_8 DEBUG_SIGNAL_8 = 118;
 	repeated COOLING_TEMP_PUMPS COOLING_TEMP_PUMPS = 119;
 	repeated COOLING_TEMP_RADIATORS COOLING_TEMP_RADIATORS = 120;
+	repeated LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS = 121;
+	repeated LATERAL_CONTROLLER_ERRORS LATERAL_CONTROLLER_ERRORS = 122;
 }
 

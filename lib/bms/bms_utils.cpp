@@ -475,18 +475,10 @@ int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t strin
 
 		return 0;
 	case 521:
-		if(11 > fields_size) return 1;
-		snprintf(v[0], string_size, CELLBOARD_ERRORS_POST);
-		snprintf(v[1], string_size, CELLBOARD_ERRORS_UNDERVOLTAGE);
-		snprintf(v[2], string_size, CELLBOARD_ERRORS_OVERVOLTAGE);
-		snprintf(v[3], string_size, CELLBOARD_ERRORS_UNDERTEMPERATURE_CELLS);
-		snprintf(v[4], string_size, CELLBOARD_ERRORS_UNDERTEMPERATURE_DISCHARGE);
-		snprintf(v[5], string_size, CELLBOARD_ERRORS_OVERTEMPERATURE_CELLS);
-		snprintf(v[6], string_size, CELLBOARD_ERRORS_OVERTEMPERATURE_DISCHARGE);
-		snprintf(v[7], string_size, CELLBOARD_ERRORS_CAN);
-		snprintf(v[8], string_size, CELLBOARD_ERRORS_FLASH);
-		snprintf(v[9], string_size, CELLBOARD_ERRORS_BMS_MONITOR);
-		snprintf(v[10], string_size, CELLBOARD_ERRORS_OPEN_WIRE);
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, CELLBOARD_ERROR_CELLBOARD_ID);
+		snprintf(v[1], string_size, CELLBOARD_ERROR_GROUP);
+		snprintf(v[2], string_size, CELLBOARD_ERROR_INSTANCE);
 
 		return 0;
 
@@ -1341,80 +1333,28 @@ int bms_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_siz
 
 		return 0;
 	case 65:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_post_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_post_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_post_expired");
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "bms_cellboard_error_cellboard_id_cellboard_0");
+		snprintf(v[1], string_size, "bms_cellboard_error_cellboard_id_cellboard_1");
+		snprintf(v[2], string_size, "bms_cellboard_error_cellboard_id_cellboard_2");
+		snprintf(v[3], string_size, "bms_cellboard_error_cellboard_id_cellboard_3");
+		snprintf(v[4], string_size, "bms_cellboard_error_cellboard_id_cellboard_4");
+		snprintf(v[5], string_size, "bms_cellboard_error_cellboard_id_cellboard_5");
 
 		return 0;
 	case 66:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_undervoltage_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_undervoltage_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_undervoltage_expired");
-
-		return 0;
-	case 67:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_overvoltage_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_overvoltage_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_overvoltage_expired");
-
-		return 0;
-	case 68:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_undertemperature_cells_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_undertemperature_cells_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_undertemperature_cells_expired");
-
-		return 0;
-	case 69:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_undertemperature_discharge_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_undertemperature_discharge_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_undertemperature_discharge_expired");
-
-		return 0;
-	case 70:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_overtemperature_cells_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_overtemperature_cells_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_overtemperature_cells_expired");
-
-		return 0;
-	case 71:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_overtemperature_discharge_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_overtemperature_discharge_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_overtemperature_discharge_expired");
-
-		return 0;
-	case 72:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_can_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_can_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_can_expired");
-
-		return 0;
-	case 73:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_flash_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_flash_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_flash_expired");
-
-		return 0;
-	case 74:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_bms_monitor_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_bms_monitor_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_bms_monitor_expired");
-
-		return 0;
-	case 75:
-		if(3 > fields_size) return 1;
-		snprintf(v[0], string_size, "bms_cellboard_errors_open_wire_unset");
-		snprintf(v[1], string_size, "bms_cellboard_errors_open_wire_running");
-		snprintf(v[2], string_size, "bms_cellboard_errors_open_wire_expired");
+		if(11 > fields_size) return 1;
+		snprintf(v[0], string_size, "bms_cellboard_error_group_post");
+		snprintf(v[1], string_size, "bms_cellboard_error_group_under_voltage");
+		snprintf(v[2], string_size, "bms_cellboard_error_group_over_voltage");
+		snprintf(v[3], string_size, "bms_cellboard_error_group_under_temperature_cells");
+		snprintf(v[4], string_size, "bms_cellboard_error_group_over_temperature_cells");
+		snprintf(v[5], string_size, "bms_cellboard_error_group_under_temperature_discharge");
+		snprintf(v[6], string_size, "bms_cellboard_error_group_over_temperature_discharge");
+		snprintf(v[7], string_size, "bms_cellboard_error_group_can_communication");
+		snprintf(v[8], string_size, "bms_cellboard_error_group_flash");
+		snprintf(v[9], string_size, "bms_cellboard_error_group_bms_monitor_communication");
+		snprintf(v[10], string_size, "bms_cellboard_error_group_open_wire");
 
 		return 0;
 
@@ -3151,57 +3091,25 @@ int bms_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 521:
 	{
-		bms_cellboard_errors_t tmp;
-		bms_cellboard_errors_converted_t tmp_converted;
-		uint8_t r_post;
-		uint8_t r_undervoltage;
-		uint8_t r_overvoltage;
-		uint8_t r_undertemperature_cells;
-		uint8_t r_undertemperature_discharge;
-		uint8_t r_overtemperature_cells;
-		uint8_t r_overtemperature_discharge;
-		uint8_t r_can;
-		uint8_t r_flash;
-		uint8_t r_bms_monitor;
-		uint8_t r_open_wire;
+		bms_cellboard_error_t tmp;
+		bms_cellboard_error_converted_t tmp_converted;
+		uint8_t r_cellboard_id;
+		uint8_t r_group;
+		uint16_t r_instance;
 
 		sscanf(s, "%" SCNu8 ","  
 			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  ,
-			&r_post,
-			&r_undervoltage,
-			&r_overvoltage,
-			&r_undertemperature_cells,
-			&r_undertemperature_discharge,
-			&r_overtemperature_cells,
-			&r_overtemperature_discharge,
-			&r_can,
-			&r_flash,
-			&r_bms_monitor,
-			&r_open_wire);
-		tmp_converted.post = (bms_cellboard_errors_post)r_post;
-		tmp_converted.undervoltage = (bms_cellboard_errors_undervoltage)r_undervoltage;
-		tmp_converted.overvoltage = (bms_cellboard_errors_overvoltage)r_overvoltage;
-		tmp_converted.undertemperature_cells = (bms_cellboard_errors_undertemperature_cells)r_undertemperature_cells;
-		tmp_converted.undertemperature_discharge = (bms_cellboard_errors_undertemperature_discharge)r_undertemperature_discharge;
-		tmp_converted.overtemperature_cells = (bms_cellboard_errors_overtemperature_cells)r_overtemperature_cells;
-		tmp_converted.overtemperature_discharge = (bms_cellboard_errors_overtemperature_discharge)r_overtemperature_discharge;
-		tmp_converted.can = (bms_cellboard_errors_can)r_can;
-		tmp_converted.flash = (bms_cellboard_errors_flash)r_flash;
-		tmp_converted.bms_monitor = (bms_cellboard_errors_bms_monitor)r_bms_monitor;
-		tmp_converted.open_wire = (bms_cellboard_errors_open_wire)r_open_wire;
+			"%" SCNu16 "," ,
+			&r_cellboard_id,
+			&r_group,
+			&r_instance);
+		tmp_converted.cellboard_id = (bms_cellboard_error_cellboard_id)r_cellboard_id;
+		tmp_converted.group = (bms_cellboard_error_group)r_group;
+		tmp_converted.instance = (uint16_t)r_instance;
 
-		bms_cellboard_errors_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = BMS_CELLBOARD_ERRORS_BYTE_SIZE;
-		return bms_cellboard_errors_pack(data, &tmp, BMS_CELLBOARD_ERRORS_BYTE_SIZE);
+		bms_cellboard_error_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = BMS_CELLBOARD_ERROR_BYTE_SIZE;
+		return bms_cellboard_error_pack(data, &tmp, BMS_CELLBOARD_ERROR_BYTE_SIZE);
 	}
 
     }
@@ -3250,7 +3158,7 @@ int bms_n_fields_from_id(int id)
 		case 1561: return 6;
 		case 1025: return 3;
 		case 1569: return 26;
-		case 521: return 11;
+		case 521: return 3;
     }
     return 0;
 }
@@ -3703,19 +3611,11 @@ int bms_fields_types_from_id(int id, int* fields_types, int fields_types_size)
 		fields_types[25] = e_bms_uint8_t;
 		return 26;
 	case 521:
-		if(fields_types_size < 11) return 0;
-		fields_types[0] = e_bms_cellboard_errors_post;
-		fields_types[1] = e_bms_cellboard_errors_undervoltage;
-		fields_types[2] = e_bms_cellboard_errors_overvoltage;
-		fields_types[3] = e_bms_cellboard_errors_undertemperature_cells;
-		fields_types[4] = e_bms_cellboard_errors_undertemperature_discharge;
-		fields_types[5] = e_bms_cellboard_errors_overtemperature_cells;
-		fields_types[6] = e_bms_cellboard_errors_overtemperature_discharge;
-		fields_types[7] = e_bms_cellboard_errors_can;
-		fields_types[8] = e_bms_cellboard_errors_flash;
-		fields_types[9] = e_bms_cellboard_errors_bms_monitor;
-		fields_types[10] = e_bms_cellboard_errors_open_wire;
-		return 11;
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_bms_cellboard_error_cellboard_id;
+		fields_types[1] = e_bms_cellboard_error_group;
+		fields_types[2] = e_bms_uint16_t;
+		return 3;
 
     }
     return 0;
@@ -3896,18 +3796,9 @@ std::vector<std::string> bms_enum_fields_from_message(const std::string& msg_nam
 		ret.push_back("discharging_cell_22");
 		ret.push_back("discharging_cell_23");
 	}
-	if(msg_name == CELLBOARD_ERRORS) {
-		ret.push_back("post");
-		ret.push_back("undervoltage");
-		ret.push_back("overvoltage");
-		ret.push_back("undertemperature_cells");
-		ret.push_back("undertemperature_discharge");
-		ret.push_back("overtemperature_cells");
-		ret.push_back("overtemperature_discharge");
-		ret.push_back("can");
-		ret.push_back("flash");
-		ret.push_back("bms_monitor");
-		ret.push_back("open_wire");
+	if(msg_name == CELLBOARD_ERROR) {
+		ret.push_back("cellboard_id");
+		ret.push_back("group");
 	}
 
 	return ret;
@@ -4834,83 +4725,31 @@ std::vector<std::string> bms_enum_names_from_fields(const std::string& msg_name,
 			return ret;
 		}
 	}
-	if(msg_name == CELLBOARD_ERRORS)
+	if(msg_name == CELLBOARD_ERROR)
 	{
-		if(sgn_name == "post")
+		if(sgn_name == "cellboard_id")
 		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
+			ret.push_back("cellboard_0");
+			ret.push_back("cellboard_1");
+			ret.push_back("cellboard_2");
+			ret.push_back("cellboard_3");
+			ret.push_back("cellboard_4");
+			ret.push_back("cellboard_5");
 			return ret;
 		}
-		if(sgn_name == "undervoltage")
+		if(sgn_name == "group")
 		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
-			return ret;
-		}
-		if(sgn_name == "overvoltage")
-		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
-			return ret;
-		}
-		if(sgn_name == "undertemperature_cells")
-		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
-			return ret;
-		}
-		if(sgn_name == "undertemperature_discharge")
-		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
-			return ret;
-		}
-		if(sgn_name == "overtemperature_cells")
-		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
-			return ret;
-		}
-		if(sgn_name == "overtemperature_discharge")
-		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
-			return ret;
-		}
-		if(sgn_name == "can")
-		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
-			return ret;
-		}
-		if(sgn_name == "flash")
-		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
-			return ret;
-		}
-		if(sgn_name == "bms_monitor")
-		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
-			return ret;
-		}
-		if(sgn_name == "open_wire")
-		{
-			ret.push_back("unset");
-			ret.push_back("running");
-			ret.push_back("expired");
+			ret.push_back("post");
+			ret.push_back("under_voltage");
+			ret.push_back("over_voltage");
+			ret.push_back("under_temperature_cells");
+			ret.push_back("over_temperature_cells");
+			ret.push_back("under_temperature_discharge");
+			ret.push_back("over_temperature_discharge");
+			ret.push_back("can_communication");
+			ret.push_back("flash");
+			ret.push_back("bms_monitor_communication");
+			ret.push_back("open_wire");
 			return ret;
 		}
 	}

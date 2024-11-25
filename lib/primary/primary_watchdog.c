@@ -112,6 +112,7 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 696: return PRIMARY_INTERVAL_HV_FEEDBACK_DIGITAL;
        case 712: return PRIMARY_INTERVAL_HV_FEEDBACK_ANALOG;
        case 720: return PRIMARY_INTERVAL_HV_FEEDBACK_ANALOG_SD;
+       case 736: return PRIMARY_INTERVAL_HV_ERROR;
 
     }
     return -1;
@@ -266,6 +267,7 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 712: return PRIMARY_INDEX_HV_FEEDBACK_ANALOG;
        case 720: return PRIMARY_INDEX_HV_FEEDBACK_ANALOG_SD;
        case 728: return PRIMARY_INDEX_HV_FEEDBACK_ENZOMMA;
+       case 736: return PRIMARY_INDEX_HV_ERROR;
 
     }
     return -1;
@@ -277,7 +279,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 147 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 148 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -1050,6 +1052,13 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_FEEDBACK_ANALOG_SD] > PRIMARY_INTERVAL_HV_FEEDBACK_ANALOG_SD * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_FEEDBACK_ANALOG_SD);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_ERROR)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_ERROR] > PRIMARY_INTERVAL_HV_ERROR * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_ERROR);
     }
 
 }

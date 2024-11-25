@@ -1206,6 +1206,15 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 		snprintf(v[4], string_size, HV_FEEDBACK_ENZOMMA_ANALOG);
 
 		return 0;
+	case 736:
+		if(5 > fields_size) return 1;
+		snprintf(v[0], string_size, HV_ERROR_GROUP);
+		snprintf(v[1], string_size, HV_ERROR_INSTANCE);
+		snprintf(v[2], string_size, HV_ERROR_CELLBOARD_ID);
+		snprintf(v[3], string_size, HV_ERROR_CELLBOARD_GROUP);
+		snprintf(v[4], string_size, HV_ERROR_CELLBOARD_INSTANCE);
+
+		return 0;
 
     }
     return 0;
@@ -1991,6 +2000,47 @@ int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string
 		snprintf(v[0], string_size, "primary_hv_feedback_enzomma_status_low");
 		snprintf(v[1], string_size, "primary_hv_feedback_enzomma_status_error");
 		snprintf(v[2], string_size, "primary_hv_feedback_enzomma_status_high");
+
+		return 0;
+	case 98:
+		if(12 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_error_group_post");
+		snprintf(v[1], string_size, "primary_hv_error_group_over_current");
+		snprintf(v[2], string_size, "primary_hv_error_group_over_power");
+		snprintf(v[3], string_size, "primary_hv_error_group_under_voltage");
+		snprintf(v[4], string_size, "primary_hv_error_group_over_voltage");
+		snprintf(v[5], string_size, "primary_hv_error_group_under_temperature");
+		snprintf(v[6], string_size, "primary_hv_error_group_over_temperature");
+		snprintf(v[7], string_size, "primary_hv_error_group_can_communication");
+		snprintf(v[8], string_size, "primary_hv_error_group_current_sensor_communication");
+		snprintf(v[9], string_size, "primary_hv_error_group_cooling_under_temperature");
+		snprintf(v[10], string_size, "primary_hv_error_group_cooling_over_temperature");
+		snprintf(v[11], string_size, "primary_hv_error_group_cellboard_error");
+
+		return 0;
+	case 99:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_error_cellboard_id_cellboard_0");
+		snprintf(v[1], string_size, "primary_hv_error_cellboard_id_cellboard_1");
+		snprintf(v[2], string_size, "primary_hv_error_cellboard_id_cellboard_2");
+		snprintf(v[3], string_size, "primary_hv_error_cellboard_id_cellboard_3");
+		snprintf(v[4], string_size, "primary_hv_error_cellboard_id_cellboard_4");
+		snprintf(v[5], string_size, "primary_hv_error_cellboard_id_cellboard_5");
+
+		return 0;
+	case 100:
+		if(11 > fields_size) return 1;
+		snprintf(v[0], string_size, "primary_hv_error_cellboard_group_post");
+		snprintf(v[1], string_size, "primary_hv_error_cellboard_group_under_voltage");
+		snprintf(v[2], string_size, "primary_hv_error_cellboard_group_over_voltage");
+		snprintf(v[3], string_size, "primary_hv_error_cellboard_group_under_temperature_cells");
+		snprintf(v[4], string_size, "primary_hv_error_cellboard_group_over_temperature_cells");
+		snprintf(v[5], string_size, "primary_hv_error_cellboard_group_under_temperature_discharge");
+		snprintf(v[6], string_size, "primary_hv_error_cellboard_group_over_temperature_discharge");
+		snprintf(v[7], string_size, "primary_hv_error_cellboard_group_can_communication");
+		snprintf(v[8], string_size, "primary_hv_error_cellboard_group_flash");
+		snprintf(v[9], string_size, "primary_hv_error_cellboard_group_bms_monitor_communication");
+		snprintf(v[10], string_size, "primary_hv_error_cellboard_group_open_wire");
 
 		return 0;
 
@@ -6083,6 +6133,36 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = PRIMARY_HV_FEEDBACK_ENZOMMA_BYTE_SIZE;
 		return primary_hv_feedback_enzomma_pack(data, &tmp, PRIMARY_HV_FEEDBACK_ENZOMMA_BYTE_SIZE);
 	}
+	case 736:
+	{
+		primary_hv_error_t tmp;
+		primary_hv_error_converted_t tmp_converted;
+		uint8_t r_group;
+		uint16_t r_instance;
+		uint8_t r_cellboard_id;
+		uint8_t r_cellboard_group;
+		uint16_t r_cellboard_instance;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu16 "," 
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu16 "," ,
+			&r_group,
+			&r_instance,
+			&r_cellboard_id,
+			&r_cellboard_group,
+			&r_cellboard_instance);
+		tmp_converted.group = (primary_hv_error_group)r_group;
+		tmp_converted.instance = (uint16_t)r_instance;
+		tmp_converted.cellboard_id = (primary_hv_error_cellboard_id)r_cellboard_id;
+		tmp_converted.cellboard_group = (primary_hv_error_cellboard_group)r_cellboard_group;
+		tmp_converted.cellboard_instance = (uint16_t)r_cellboard_instance;
+
+		primary_hv_error_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = PRIMARY_HV_ERROR_BYTE_SIZE;
+		return primary_hv_error_pack(data, &tmp, PRIMARY_HV_ERROR_BYTE_SIZE);
+	}
 
     }
     return 0;
@@ -6238,6 +6318,7 @@ int primary_n_fields_from_id(int id)
 		case 712: return 7;
 		case 720: return 3;
 		case 728: return 5;
+		case 736: return 5;
     }
     return 0;
 }
@@ -7326,6 +7407,14 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[3] = e_primary_uint8_t;
 		fields_types[4] = e_primary_float;
 		return 5;
+	case 736:
+		if(fields_types_size < 5) return 0;
+		fields_types[0] = e_primary_hv_error_group;
+		fields_types[1] = e_primary_uint16_t;
+		fields_types[2] = e_primary_hv_error_cellboard_id;
+		fields_types[3] = e_primary_hv_error_cellboard_group;
+		fields_types[4] = e_primary_uint16_t;
+		return 5;
 
     }
     return 0;
@@ -7804,6 +7893,11 @@ std::vector<std::string> primary_enum_fields_from_message(const std::string& msg
 		ret.push_back("status");
 		ret.push_back("is_digital");
 		ret.push_back("digital");
+	}
+	if(msg_name == HV_ERROR) {
+		ret.push_back("group");
+		ret.push_back("cellboard_id");
+		ret.push_back("cellboard_group");
 	}
 
 	return ret;
@@ -8726,6 +8820,50 @@ std::vector<std::string> primary_enum_names_from_fields(const std::string& msg_n
 			ret.push_back("low");
 			ret.push_back("error");
 			ret.push_back("high");
+			return ret;
+		}
+	}
+	if(msg_name == HV_ERROR)
+	{
+		if(sgn_name == "group")
+		{
+			ret.push_back("post");
+			ret.push_back("over_current");
+			ret.push_back("over_power");
+			ret.push_back("under_voltage");
+			ret.push_back("over_voltage");
+			ret.push_back("under_temperature");
+			ret.push_back("over_temperature");
+			ret.push_back("can_communication");
+			ret.push_back("current_sensor_communication");
+			ret.push_back("cooling_under_temperature");
+			ret.push_back("cooling_over_temperature");
+			ret.push_back("cellboard_error");
+			return ret;
+		}
+		if(sgn_name == "cellboard_id")
+		{
+			ret.push_back("cellboard_0");
+			ret.push_back("cellboard_1");
+			ret.push_back("cellboard_2");
+			ret.push_back("cellboard_3");
+			ret.push_back("cellboard_4");
+			ret.push_back("cellboard_5");
+			return ret;
+		}
+		if(sgn_name == "cellboard_group")
+		{
+			ret.push_back("post");
+			ret.push_back("under_voltage");
+			ret.push_back("over_voltage");
+			ret.push_back("under_temperature_cells");
+			ret.push_back("over_temperature_cells");
+			ret.push_back("under_temperature_discharge");
+			ret.push_back("over_temperature_discharge");
+			ret.push_back("can_communication");
+			ret.push_back("flash");
+			ret.push_back("bms_monitor_communication");
+			ret.push_back("open_wire");
 			return ret;
 		}
 	}

@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: ECU LV HV HV HV TLM HANDCART HV STEERING_WHEEL HV ECU HV HV HV HV HV HANDCART HV TLM HV HV ECU HV HANDCART LV LV ECU LV HV LV HANDCART LV ECU LV HV LV HANDCART ECU HANDCART ECU INVERTER_L ECU HV ECU HV HANDCART HV INVERTER_L HANDCART HV ECU ECU INVERTER_L ECU HV ECU HV TLM HANDCART ECU HANDCART STEERING_WHEEL ECU TLM ECU HV HV ECU HV HV TLM HANDCART HANDCART STEERING_WHEEL INVERTER_L ECU HV HANDCART TLM ECU HV ECU ECU CHARGER HV LV STEERING_WHEEL HANDCART HANDCART TLM ECU CHARGER ECU TLM ECU HANDCART HV ECU STEERING_WHEEL CHARGER HANDCART TLM ECU HANDCART ECU ECU ECU CHARGER HV TLM ECU HANDCART TLM ECU HANDCART TLM ECU ECU CHARGER STEERING_WHEEL ECU HANDCART TLM TLM STEERING_WHEEL CHARGER TLM STEERING_WHEEL ECU CHARGER HV LV HANDCART HANDCART HV TLM TLM CHARGER HV TLM LV HANDCART HANDCART HV TLM HANDCART CHARGER LV STEERING_WHEEL ECU HANDCART TLM TLM HANDCART HV LV CHARGER HV ECU LV HANDCART ECU CHARGER HV LV HANDCART LV CHARGER LV HANDCART STEERING_WHEEL CHARGER TLM HANDCART ECU CHARGER LV LV HANDCART ECU CHARGER LV HANDCART ECU CHARGER LV CHARGER ECU HANDCART LV HANDCART HV LV CHARGER ECU CHARGER LV HANDCART TLM LV HV STEERING_WHEEL HV TLM LV HV STEERING_WHEEL HV LV TLM HV LV ANY HV HV LV ANY STEERING_WHEEL ANY ANY ANY ANY ECU ECU TLM ECU TLM HV HV STEERING_WHEEL
+BU_: HV HV HV HV HV HV HV HV HV LV LV LV LV LV LV HANDCART LV ECU ECU HV LV HANDCART HV INVERTER_L ECU HANDCART STEERING_WHEEL ECU HV ECU INVERTER_L HANDCART HV INVERTER_L ECU HV ECU HV HANDCART ECU HANDCART HV TLM ECU ECU ECU HV HV HV TLM HANDCART HANDCART INVERTER_L ECU ECU ECU TLM HV HV ECU CHARGER HANDCART STEERING_WHEEL HANDCART ECU ECU CHARGER HV ECU HANDCART HANDCART STEERING_WHEEL HV CHARGER ECU ECU HANDCART HV ECU CHARGER HANDCART ECU HANDCART ECU ECU HANDCART HV ECU CHARGER HANDCART ECU HANDCART ECU STEERING_WHEEL CHARGER HV ECU CHARGER HV HANDCART HANDCART HANDCART TLM CHARGER HANDCART HANDCART HANDCART ECU HANDCART CHARGER TLM HV STEERING_WHEEL HANDCART HANDCART TLM HANDCART ECU LV CHARGER HV ECU HANDCART HV HANDCART ECU CHARGER ECU LV HANDCART HV LV CHARGER HV LV HANDCART HV TLM STEERING_WHEEL CHARGER HV TLM HANDCART TLM TLM ECU CHARGER TLM LV LV HANDCART TLM ECU CHARGER TLM HV LV HANDCART HV TLM ECU CHARGER HV HV LV CHARGER HV HV ECU HANDCART LV HANDCART LV CHARGER ECU CHARGER LV LV HANDCART HV LV HV ECU STEERING_WHEEL HV HV TLM STEERING_WHEEL LV HV STEERING_WHEEL TLM TLM STEERING_WHEEL TLM HV LV TLM LV LV ANY TLM LV ANY HV TLM STEERING_WHEEL ANY HV ECU LV ANY TLM LV ANY ECU ECU ANY TLM ECU TLM ECU ECU TLM STEERING_WHEEL ECU TLM TLM STEERING_WHEEL STEERING_WHEEL ECU LV HV
 
 
 BO_ 1818 NLG5_DIAG_TX: 8 NLG5
@@ -1048,6 +1048,13 @@ BO_ 728 HV_FEEDBACK_ENZOMMA: 4 Vector__XXX
  SG_ status : 5|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ feedback : 0|5@1+ (1,0) [0|31] "" Vector__XXX
 
+BO_ 736 HV_ERROR: 6 Vector__XXX
+ SG_ cellboard_instance : 27|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ cellboard_group : 23|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ cellboard_id : 20|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ instance : 4|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ group : 0|4@1+ (1,0) [0|15] "" Vector__XXX
+
 
 
 
@@ -1277,6 +1284,7 @@ CM_ BO_ 696 "Values of the BMS HV digital feedbacks";
 CM_ BO_ 712 "Voltages of the BMS HV analog feedbacks";
 CM_ BO_ 720 "Voltages of the BMS HV analog shutdown circuit feedbacks";
 CM_ BO_ 728 "Info regarding the feedback that did not allow the BMS to go in the TS ON state";
+CM_ BO_ 736 "Info regarding the error which has occoured";
 BA_DEF_  "Bus Speed" STRING ;
 BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
 BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
@@ -1403,6 +1411,7 @@ BA_ "GenMsgCycleTime" BO_ 496 1000;
 BA_ "GenMsgCycleTime" BO_ 696 50;
 BA_ "GenMsgCycleTime" BO_ 712 50;
 BA_ "GenMsgCycleTime" BO_ 720 50;
+BA_ "GenMsgCycleTime" BO_ 736 20;
 VAL_ 0 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 0 forward 0 "off" 1 "on" ;
 VAL_ 705 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
@@ -1501,6 +1510,9 @@ VAL_ 50 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboar
 VAL_ 1832 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 728 status 0 "low" 1 "error" 2 "high" ;
 VAL_ 728 feedback 0 "airn_open_com" 1 "precharge_open_com" 2 "airp_open_com" 3 "airn_open_mec" 4 "precharge_open_mec" 5 "airp_open_mec" 6 "sd_imd_fb" 7 "sd_bms_fb" 8 "ts_less_than_60v" 9 "plausible_state_persisted" 10 "plausible_state" 11 "not_bms_fault_cockpit_led" 12 "not_imd_fault_cockpit_led" 13 "indicator_connected" 14 "not_latch_reset" 15 "plausible_state_latched" 16 "not_bms_fault_latched" 17 "not_imd_fault_latched" 18 "not_ext_fault_latched" 19 "imd_ok" 20 "plausible_state_rc" 21 "tsal_green" 22 "probing_3v3" 23 "sd_out" 24 "sd_in" 25 "sd_end" 26 "v5_mcu" 27 "unknown" ;
+VAL_ 736 cellboard_group 0 "post" 1 "under_voltage" 2 "over_voltage" 3 "under_temperature_cells" 4 "over_temperature_cells" 5 "under_temperature_discharge" 6 "over_temperature_discharge" 7 "can_communication" 8 "flash" 9 "bms_monitor_communication" 10 "open_wire" ;
+VAL_ 736 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
+VAL_ 736 group 0 "post" 1 "over_current" 2 "over_power" 3 "under_voltage" 4 "over_voltage" 5 "under_temperature" 6 "over_temperature" 7 "can_communication" 8 "current_sensor_communication" 9 "cooling_under_temperature" 10 "cooling_over_temperature" 11 "cellboard_error" ;
 
 
 

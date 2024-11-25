@@ -161,6 +161,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define PRIMARY_INTERVAL_HV_FEEDBACK_DIGITAL 50
 #define PRIMARY_INTERVAL_HV_FEEDBACK_ANALOG 50
 #define PRIMARY_INTERVAL_HV_FEEDBACK_ANALOG_SD 50
+#define PRIMARY_INTERVAL_HV_ERROR 20
 
 
 #define PRIMARY_INDEX_NLG5_DIAG_TX 0
@@ -310,13 +311,14 @@ typedef void (*canlib_watchdog_callback)(int);
 #define PRIMARY_INDEX_HV_FEEDBACK_ANALOG 144
 #define PRIMARY_INDEX_HV_FEEDBACK_ANALOG_SD 145
 #define PRIMARY_INDEX_HV_FEEDBACK_ENZOMMA 146
+#define PRIMARY_INDEX_HV_ERROR 147
 
 
 
 typedef struct {
     uint8_t activated[19];
     uint8_t timeout[19];
-    canlib_watchdog_timestamp last_reset[147];
+    canlib_watchdog_timestamp last_reset[148];
 } primary_watchdog;
 
 int primary_watchdog_interval_from_id(uint16_t message_id);

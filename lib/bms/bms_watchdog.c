@@ -10,7 +10,7 @@ int bms_watchdog_interval_from_id(uint16_t message_id) {
        case 1561: return BMS_INTERVAL_CELLBOARD_CELLS_TEMPERATURE;
        case 1025: return BMS_INTERVAL_CELLBOARD_SET_BALANCING_STATUS;
        case 1569: return BMS_INTERVAL_CELLBOARD_BALANCING_STATUS;
-       case 521: return BMS_INTERVAL_CELLBOARD_ERRORS;
+       case 521: return BMS_INTERVAL_CELLBOARD_ERROR;
 
     }
     return -1;
@@ -57,7 +57,7 @@ int bms_watchdog_index_from_id(uint16_t message_id) {
        case 1561: return BMS_INDEX_CELLBOARD_CELLS_TEMPERATURE;
        case 1025: return BMS_INDEX_CELLBOARD_SET_BALANCING_STATUS;
        case 1569: return BMS_INDEX_CELLBOARD_BALANCING_STATUS;
-       case 521: return BMS_INDEX_CELLBOARD_ERRORS;
+       case 521: return BMS_INDEX_CELLBOARD_ERROR;
 
     }
     return -1;
@@ -131,10 +131,10 @@ void bms_watchdog_timeout(bms_watchdog *watchdog, canlib_watchdog_timestamp time
     }
 
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, BMS_INDEX_CELLBOARD_ERRORS)
-        && timestamp - watchdog->last_reset[BMS_INDEX_CELLBOARD_ERRORS] > BMS_INTERVAL_CELLBOARD_ERRORS * 3
+        CANLIB_BITTEST_ARRAY(watchdog->activated, BMS_INDEX_CELLBOARD_ERROR)
+        && timestamp - watchdog->last_reset[BMS_INDEX_CELLBOARD_ERROR] > BMS_INTERVAL_CELLBOARD_ERROR * 3
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, BMS_INDEX_CELLBOARD_ERRORS);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, BMS_INDEX_CELLBOARD_ERROR);
     }
 
 }

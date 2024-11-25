@@ -574,29 +574,21 @@ extern "C" {
 /* END */
 
 /* START */
-#define CELLBOARD_ERRORS "CELLBOARD_ERRORS"
+#define CELLBOARD_ERROR "CELLBOARD_ERROR"
 
-#define CELLBOARD_ERRORS_POST "cellboard_errors_post"
-#define CELLBOARD_ERRORS_UNDERVOLTAGE "cellboard_errors_undervoltage"
-#define CELLBOARD_ERRORS_OVERVOLTAGE "cellboard_errors_overvoltage"
-#define CELLBOARD_ERRORS_UNDERTEMPERATURE_CELLS "cellboard_errors_undertemperature_cells"
-#define CELLBOARD_ERRORS_UNDERTEMPERATURE_DISCHARGE "cellboard_errors_undertemperature_discharge"
-#define CELLBOARD_ERRORS_OVERTEMPERATURE_CELLS "cellboard_errors_overtemperature_cells"
-#define CELLBOARD_ERRORS_OVERTEMPERATURE_DISCHARGE "cellboard_errors_overtemperature_discharge"
-#define CELLBOARD_ERRORS_CAN "cellboard_errors_can"
-#define CELLBOARD_ERRORS_FLASH "cellboard_errors_flash"
-#define CELLBOARD_ERRORS_BMS_MONITOR "cellboard_errors_bms_monitor"
-#define CELLBOARD_ERRORS_OPEN_WIRE "cellboard_errors_open_wire"
+#define CELLBOARD_ERROR_CELLBOARD_ID "cellboard_error_cellboard_id"
+#define CELLBOARD_ERROR_GROUP "cellboard_error_group"
+#define CELLBOARD_ERROR_INSTANCE "cellboard_error_instance"
 /* END */
 
 enum bms_types_id{
-	e_bms_float = -8,
+	e_bms_uint32_t = -8,
 	e_bms_int32_t,
-	e_bms_uint8_t,
 	e_bms_uint64_t,
+	e_bms_float,
 	e_bms_uint16_t,
+	e_bms_uint8_t,
 	e_bms_int16_t,
-	e_bms_uint32_t,
 	e_bms_int8_t,
 
 	e_bms_ivt_msg_result_wh_ivt_id_result_wh,
@@ -664,17 +656,8 @@ enum bms_types_id{
 	e_bms_cellboard_cells_temperature_cellboard_id,
 	e_bms_cellboard_balancing_status_status,
 	e_bms_cellboard_balancing_status_cellboard_id,
-	e_bms_cellboard_errors_post,
-	e_bms_cellboard_errors_undervoltage,
-	e_bms_cellboard_errors_overvoltage,
-	e_bms_cellboard_errors_undertemperature_cells,
-	e_bms_cellboard_errors_undertemperature_discharge,
-	e_bms_cellboard_errors_overtemperature_cells,
-	e_bms_cellboard_errors_overtemperature_discharge,
-	e_bms_cellboard_errors_can,
-	e_bms_cellboard_errors_flash,
-	e_bms_cellboard_errors_bms_monitor,
-	e_bms_cellboard_errors_open_wire
+	e_bms_cellboard_error_cellboard_id,
+	e_bms_cellboard_error_group
 };
 
 /**

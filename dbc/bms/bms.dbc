@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: HV MAINBOARD BMS_HV HV HANDCART HANDCART HV HV HANDCART HV BMS_HV BMS_HV HV HV CELLBOARD BMS_HV HV HV HANDCART HANDCART HV HV HANDCART HV MAINBOARD BMS_HV HANDCART HV HV CELLBOARD HV CELLBOARD BMS_HV HV MAINBOARD HANDCART HV BMS_HV HV HV CELLBOARD HV HV MAINBOARD HV HV HANDCART CELLBOARD HV HV MAINBOARD BMS_HV HANDCART HV BMS_HV CELLBOARD BMS_HV MAINBOARD BMS_HV HANDCART
+BU_: HV BMS_HV HV BMS_HV HV BMS_HV HV HANDCART HV HANDCART HV HANDCART HANDCART HANDCART HV BMS_HV HV BMS_HV HV BMS_HV HV HANDCART HV HANDCART HV HANDCART HV CELLBOARD MAINBOARD CELLBOARD BMS_HV HV MAINBOARD HV MAINBOARD HV BMS_HV HV CELLBOARD MAINBOARD HANDCART MAINBOARD HV HV HV MAINBOARD BMS_HV HV HV CELLBOARD HV BMS_HV HV CELLBOARD BMS_HV HV HV HANDCART CELLBOARD HANDCART
 VAL_TABLE_ _B9_Voltage_Channels 3 "3_Channels" 0 "0_Channels" ;
 VAL_TABLE_ _B9_Supply_Voltage 1 "12__24_V_nominal_supply_voltage" ;
 VAL_TABLE_ _B9_Current 2500 "2500_A" 1000 "1000_A" 500 "500_A" 300 "300_A" 100 "100_A" ;
@@ -492,18 +492,10 @@ BO_ 1569 CELLBOARD_BALANCING_STATUS: 4 Vector__XXX
  SG_ cellboard_id : 2|3@1+ (1,0) [0|7] "" Vector__XXX
  SG_ status : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
-BO_ 521 CELLBOARD_ERRORS: 3 Vector__XXX
- SG_ open_wire : 20|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ bms_monitor : 18|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ flash : 16|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ can : 14|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ overtemperature_discharge : 12|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ overtemperature_cells : 10|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ undertemperature_discharge : 8|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ undertemperature_cells : 6|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ overvoltage : 4|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ undervoltage : 2|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ post : 0|2@1+ (1,0) [0|3] "" Vector__XXX
+BO_ 521 CELLBOARD_ERROR: 3 Vector__XXX
+ SG_ instance : 7|16@1+ (1,0) [0|65535] "" Vector__XXX
+ SG_ group : 3|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
 
 
@@ -537,7 +529,7 @@ CM_ BO_ 1553 "Cellboard cells voltages in V";
 CM_ BO_ 1561 "Cellboard cells temperatures in Â°C";
 CM_ BO_ 1025 "Start or stop the balancing procedure, if started needs to be sent continuously";
 CM_ BO_ 1569 "Info about the cells that are currently discharging";
-CM_ BO_ 521 "Cellboard errors status";
+CM_ BO_ 521 "Info regarding the error which has occured";
 BA_DEF_ BU_  "Manufacturer" STRING ;
 BA_DEF_ BU_  "ILUsed" ENUM  "No","Yes";
 BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 1000;
@@ -692,17 +684,8 @@ VAL_ 1553 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellbo
 VAL_ 1561 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 1569 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 1569 status 0 "stopped" 1 "paused" 2 "running" ;
-VAL_ 521 open_wire 0 "unset" 1 "running" 2 "expired" ;
-VAL_ 521 bms_monitor 0 "unset" 1 "running" 2 "expired" ;
-VAL_ 521 flash 0 "unset" 1 "running" 2 "expired" ;
-VAL_ 521 can 0 "unset" 1 "running" 2 "expired" ;
-VAL_ 521 overtemperature_discharge 0 "unset" 1 "running" 2 "expired" ;
-VAL_ 521 overtemperature_cells 0 "unset" 1 "running" 2 "expired" ;
-VAL_ 521 undertemperature_discharge 0 "unset" 1 "running" 2 "expired" ;
-VAL_ 521 undertemperature_cells 0 "unset" 1 "running" 2 "expired" ;
-VAL_ 521 overvoltage 0 "unset" 1 "running" 2 "expired" ;
-VAL_ 521 undervoltage 0 "unset" 1 "running" 2 "expired" ;
-VAL_ 521 post 0 "unset" 1 "running" 2 "expired" ;
+VAL_ 521 group 0 "post" 1 "under_voltage" 2 "over_voltage" 3 "under_temperature_cells" 4 "over_temperature_cells" 5 "under_temperature_discharge" 6 "over_temperature_discharge" 7 "can_communication" 8 "flash" 9 "bms_monitor_communication" 10 "open_wire" ;
+VAL_ 521 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 
 
 

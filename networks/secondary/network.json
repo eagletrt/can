@@ -2633,6 +2633,56 @@
           "force": "uint16"
         }
       }
+    },
+    {
+      "name": "LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "Lateral controller (preview point) controller errors",
+      "interval": 50,
+      "contents": {
+        "heading": {
+          "type": "float16",
+          "range": [
+            -3.14159,
+            3.14159
+          ],
+          "force": "uint16"
+        },
+        "distance": {
+          "type": "float16",
+          "range": [
+            -10,
+            10
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "LATERAL_CONTROLLER_ERRORS",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "Lateral controller errors",
+      "interval": 50,
+      "contents": {
+        "com_distance": {
+          "type": "float16",
+          "range": [
+            -10,
+            10
+          ],
+          "force": "uint16"
+        }
+      }
     }
   ]
 }

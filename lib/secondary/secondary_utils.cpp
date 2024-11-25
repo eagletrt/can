@@ -383,6 +383,17 @@ int secondary_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[0], string_size, COOLING_TEMP_RADIATORS_AIR_TEMP);
 
 		return 0;
+	case 1808:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS_HEADING);
+		snprintf(v[1], string_size, LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS_DISTANCE);
+
+		return 0;
+	case 1816:
+		if(1 > fields_size) return 1;
+		snprintf(v[0], string_size, LATERAL_CONTROLLER_ERRORS_COM_DISTANCE);
+
+		return 0;
 
     }
     return 0;
@@ -1701,6 +1712,38 @@ int secondary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SECONDARY_COOLING_TEMP_RADIATORS_BYTE_SIZE;
 		return secondary_cooling_temp_radiators_pack(data, &tmp, SECONDARY_COOLING_TEMP_RADIATORS_BYTE_SIZE);
 	}
+	case 1808:
+	{
+		secondary_lateral_controller_preview_point_errors_t tmp;
+		secondary_lateral_controller_preview_point_errors_converted_t tmp_converted;
+		float r_heading;
+		float r_distance;
+
+		sscanf(s, "%f,"       
+			"%f,"       ,
+			&r_heading,
+			&r_distance);
+		tmp_converted.heading = (float)r_heading;
+		tmp_converted.distance = (float)r_distance;
+
+		secondary_lateral_controller_preview_point_errors_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS_BYTE_SIZE;
+		return secondary_lateral_controller_preview_point_errors_pack(data, &tmp, SECONDARY_LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS_BYTE_SIZE);
+	}
+	case 1816:
+	{
+		secondary_lateral_controller_errors_t tmp;
+		secondary_lateral_controller_errors_converted_t tmp_converted;
+		float r_com_distance;
+
+		sscanf(s, "%f,"       ,
+			&r_com_distance);
+		tmp_converted.com_distance = (float)r_com_distance;
+
+		secondary_lateral_controller_errors_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SECONDARY_LATERAL_CONTROLLER_ERRORS_BYTE_SIZE;
+		return secondary_lateral_controller_errors_pack(data, &tmp, SECONDARY_LATERAL_CONTROLLER_ERRORS_BYTE_SIZE);
+	}
 
     }
     return 0;
@@ -1829,6 +1872,8 @@ int secondary_n_fields_from_id(int id)
 		case 1784: return 4;
 		case 1792: return 2;
 		case 1800: return 1;
+		case 1808: return 2;
+		case 1816: return 1;
     }
     return 0;
 }
@@ -2158,6 +2203,15 @@ int secondary_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[1] = e_secondary_float;
 		return 2;
 	case 1800:
+		if(fields_types_size < 1) return 0;
+		fields_types[0] = e_secondary_float;
+		return 1;
+	case 1808:
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_secondary_float;
+		fields_types[1] = e_secondary_float;
+		return 2;
+	case 1816:
 		if(fields_types_size < 1) return 0;
 		fields_types[0] = e_secondary_float;
 		return 1;

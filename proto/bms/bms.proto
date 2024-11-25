@@ -729,60 +729,26 @@ enum bms_cellboard_balancing_status_cellboard_id {
 	bms_cellboard_balancing_status_cellboard_id_cellboard_4 = 4;
 	bms_cellboard_balancing_status_cellboard_id_cellboard_5 = 5;
 }
-enum bms_cellboard_errors_post {
-	bms_cellboard_errors_post_unset = 0;
-	bms_cellboard_errors_post_running = 1;
-	bms_cellboard_errors_post_expired = 2;
+enum bms_cellboard_error_cellboard_id {
+	bms_cellboard_error_cellboard_id_cellboard_0 = 0;
+	bms_cellboard_error_cellboard_id_cellboard_1 = 1;
+	bms_cellboard_error_cellboard_id_cellboard_2 = 2;
+	bms_cellboard_error_cellboard_id_cellboard_3 = 3;
+	bms_cellboard_error_cellboard_id_cellboard_4 = 4;
+	bms_cellboard_error_cellboard_id_cellboard_5 = 5;
 }
-enum bms_cellboard_errors_undervoltage {
-	bms_cellboard_errors_undervoltage_unset = 0;
-	bms_cellboard_errors_undervoltage_running = 1;
-	bms_cellboard_errors_undervoltage_expired = 2;
-}
-enum bms_cellboard_errors_overvoltage {
-	bms_cellboard_errors_overvoltage_unset = 0;
-	bms_cellboard_errors_overvoltage_running = 1;
-	bms_cellboard_errors_overvoltage_expired = 2;
-}
-enum bms_cellboard_errors_undertemperature_cells {
-	bms_cellboard_errors_undertemperature_cells_unset = 0;
-	bms_cellboard_errors_undertemperature_cells_running = 1;
-	bms_cellboard_errors_undertemperature_cells_expired = 2;
-}
-enum bms_cellboard_errors_undertemperature_discharge {
-	bms_cellboard_errors_undertemperature_discharge_unset = 0;
-	bms_cellboard_errors_undertemperature_discharge_running = 1;
-	bms_cellboard_errors_undertemperature_discharge_expired = 2;
-}
-enum bms_cellboard_errors_overtemperature_cells {
-	bms_cellboard_errors_overtemperature_cells_unset = 0;
-	bms_cellboard_errors_overtemperature_cells_running = 1;
-	bms_cellboard_errors_overtemperature_cells_expired = 2;
-}
-enum bms_cellboard_errors_overtemperature_discharge {
-	bms_cellboard_errors_overtemperature_discharge_unset = 0;
-	bms_cellboard_errors_overtemperature_discharge_running = 1;
-	bms_cellboard_errors_overtemperature_discharge_expired = 2;
-}
-enum bms_cellboard_errors_can {
-	bms_cellboard_errors_can_unset = 0;
-	bms_cellboard_errors_can_running = 1;
-	bms_cellboard_errors_can_expired = 2;
-}
-enum bms_cellboard_errors_flash {
-	bms_cellboard_errors_flash_unset = 0;
-	bms_cellboard_errors_flash_running = 1;
-	bms_cellboard_errors_flash_expired = 2;
-}
-enum bms_cellboard_errors_bms_monitor {
-	bms_cellboard_errors_bms_monitor_unset = 0;
-	bms_cellboard_errors_bms_monitor_running = 1;
-	bms_cellboard_errors_bms_monitor_expired = 2;
-}
-enum bms_cellboard_errors_open_wire {
-	bms_cellboard_errors_open_wire_unset = 0;
-	bms_cellboard_errors_open_wire_running = 1;
-	bms_cellboard_errors_open_wire_expired = 2;
+enum bms_cellboard_error_group {
+	bms_cellboard_error_group_post = 0;
+	bms_cellboard_error_group_under_voltage = 1;
+	bms_cellboard_error_group_over_voltage = 2;
+	bms_cellboard_error_group_under_temperature_cells = 3;
+	bms_cellboard_error_group_over_temperature_cells = 4;
+	bms_cellboard_error_group_under_temperature_discharge = 5;
+	bms_cellboard_error_group_over_temperature_discharge = 6;
+	bms_cellboard_error_group_can_communication = 7;
+	bms_cellboard_error_group_flash = 8;
+	bms_cellboard_error_group_bms_monitor_communication = 9;
+	bms_cellboard_error_group_open_wire = 10;
 }
 
 
@@ -1269,19 +1235,11 @@ message CELLBOARD_BALANCING_STATUS{
 	bool discharging_cell_23 = 26;
 	uint64 _inner_timestamp = 27;
 }
-message CELLBOARD_ERRORS{
-	bms_cellboard_errors_post post = 1;
-	bms_cellboard_errors_undervoltage undervoltage = 2;
-	bms_cellboard_errors_overvoltage overvoltage = 3;
-	bms_cellboard_errors_undertemperature_cells undertemperature_cells = 4;
-	bms_cellboard_errors_undertemperature_discharge undertemperature_discharge = 5;
-	bms_cellboard_errors_overtemperature_cells overtemperature_cells = 6;
-	bms_cellboard_errors_overtemperature_discharge overtemperature_discharge = 7;
-	bms_cellboard_errors_can can = 8;
-	bms_cellboard_errors_flash flash = 9;
-	bms_cellboard_errors_bms_monitor bms_monitor = 10;
-	bms_cellboard_errors_open_wire open_wire = 11;
-	uint64 _inner_timestamp = 12;
+message CELLBOARD_ERROR{
+	bms_cellboard_error_cellboard_id cellboard_id = 1;
+	bms_cellboard_error_group group = 2;
+	uint32 instance = 3;
+	uint64 _inner_timestamp = 4;
 }
 
 
@@ -1325,6 +1283,6 @@ message Pack{
 	repeated CELLBOARD_CELLS_TEMPERATURE CELLBOARD_CELLS_TEMPERATURE = 37;
 	repeated CELLBOARD_SET_BALANCING_STATUS CELLBOARD_SET_BALANCING_STATUS = 38;
 	repeated CELLBOARD_BALANCING_STATUS CELLBOARD_BALANCING_STATUS = 39;
-	repeated CELLBOARD_ERRORS CELLBOARD_ERRORS = 40;
+	repeated CELLBOARD_ERROR CELLBOARD_ERROR = 40;
 }
 

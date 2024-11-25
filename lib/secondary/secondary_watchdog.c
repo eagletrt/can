@@ -35,6 +35,8 @@ int secondary_watchdog_interval_from_id(uint16_t message_id) {
        case 1784: return SECONDARY_INTERVAL_DEBUG_SIGNAL_8;
        case 1792: return SECONDARY_INTERVAL_COOLING_TEMP_PUMPS;
        case 1800: return SECONDARY_INTERVAL_COOLING_TEMP_RADIATORS;
+       case 1808: return SECONDARY_INTERVAL_LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS;
+       case 1816: return SECONDARY_INTERVAL_LATERAL_CONTROLLER_ERRORS;
 
     }
     return -1;
@@ -162,6 +164,8 @@ int secondary_watchdog_index_from_id(uint16_t message_id) {
        case 1784: return SECONDARY_INDEX_DEBUG_SIGNAL_8;
        case 1792: return SECONDARY_INDEX_COOLING_TEMP_PUMPS;
        case 1800: return SECONDARY_INDEX_COOLING_TEMP_RADIATORS;
+       case 1808: return SECONDARY_INDEX_LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS;
+       case 1816: return SECONDARY_INDEX_LATERAL_CONTROLLER_ERRORS;
 
     }
     return -1;
@@ -173,7 +177,7 @@ void secondary_watchdog_free(secondary_watchdog *watchdog) {
 
 void secondary_watchdog_reset(secondary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = secondary_watchdog_index_from_id(id);
-    if (index < 120 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 122 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -407,6 +411,20 @@ void secondary_watchdog_timeout(secondary_watchdog *watchdog, canlib_watchdog_ti
         && timestamp - watchdog->last_reset[SECONDARY_INDEX_COOLING_TEMP_RADIATORS] > SECONDARY_INTERVAL_COOLING_TEMP_RADIATORS * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_COOLING_TEMP_RADIATORS);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS] > SECONDARY_INTERVAL_LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, SECONDARY_INDEX_LATERAL_CONTROLLER_ERRORS)
+        && timestamp - watchdog->last_reset[SECONDARY_INDEX_LATERAL_CONTROLLER_ERRORS] > SECONDARY_INTERVAL_LATERAL_CONTROLLER_ERRORS * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, SECONDARY_INDEX_LATERAL_CONTROLLER_ERRORS);
     }
 
 }

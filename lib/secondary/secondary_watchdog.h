@@ -84,6 +84,8 @@ typedef void (*canlib_watchdog_callback)(int);
 #define SECONDARY_INTERVAL_DEBUG_SIGNAL_8 10
 #define SECONDARY_INTERVAL_COOLING_TEMP_PUMPS 500
 #define SECONDARY_INTERVAL_COOLING_TEMP_RADIATORS 500
+#define SECONDARY_INTERVAL_LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS 50
+#define SECONDARY_INTERVAL_LATERAL_CONTROLLER_ERRORS 50
 
 
 #define SECONDARY_INDEX_ACQUISINATOR_JMP_TO_BLT 0
@@ -206,13 +208,15 @@ typedef void (*canlib_watchdog_callback)(int);
 #define SECONDARY_INDEX_DEBUG_SIGNAL_8 117
 #define SECONDARY_INDEX_COOLING_TEMP_PUMPS 118
 #define SECONDARY_INDEX_COOLING_TEMP_RADIATORS 119
+#define SECONDARY_INDEX_LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS 120
+#define SECONDARY_INDEX_LATERAL_CONTROLLER_ERRORS 121
 
 
 
 typedef struct {
-    uint8_t activated[15];
-    uint8_t timeout[15];
-    canlib_watchdog_timestamp last_reset[120];
+    uint8_t activated[16];
+    uint8_t timeout[16];
+    canlib_watchdog_timestamp last_reset[122];
 } secondary_watchdog;
 
 int secondary_watchdog_interval_from_id(uint16_t message_id);

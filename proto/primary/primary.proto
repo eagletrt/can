@@ -585,6 +585,41 @@ enum primary_hv_feedback_enzomma_status {
 	primary_hv_feedback_enzomma_status_error = 1;
 	primary_hv_feedback_enzomma_status_high = 2;
 }
+enum primary_hv_error_group {
+	primary_hv_error_group_post = 0;
+	primary_hv_error_group_over_current = 1;
+	primary_hv_error_group_over_power = 2;
+	primary_hv_error_group_under_voltage = 3;
+	primary_hv_error_group_over_voltage = 4;
+	primary_hv_error_group_under_temperature = 5;
+	primary_hv_error_group_over_temperature = 6;
+	primary_hv_error_group_can_communication = 7;
+	primary_hv_error_group_current_sensor_communication = 8;
+	primary_hv_error_group_cooling_under_temperature = 9;
+	primary_hv_error_group_cooling_over_temperature = 10;
+	primary_hv_error_group_cellboard_error = 11;
+}
+enum primary_hv_error_cellboard_id {
+	primary_hv_error_cellboard_id_cellboard_0 = 0;
+	primary_hv_error_cellboard_id_cellboard_1 = 1;
+	primary_hv_error_cellboard_id_cellboard_2 = 2;
+	primary_hv_error_cellboard_id_cellboard_3 = 3;
+	primary_hv_error_cellboard_id_cellboard_4 = 4;
+	primary_hv_error_cellboard_id_cellboard_5 = 5;
+}
+enum primary_hv_error_cellboard_group {
+	primary_hv_error_cellboard_group_post = 0;
+	primary_hv_error_cellboard_group_under_voltage = 1;
+	primary_hv_error_cellboard_group_over_voltage = 2;
+	primary_hv_error_cellboard_group_under_temperature_cells = 3;
+	primary_hv_error_cellboard_group_over_temperature_cells = 4;
+	primary_hv_error_cellboard_group_under_temperature_discharge = 5;
+	primary_hv_error_cellboard_group_over_temperature_discharge = 6;
+	primary_hv_error_cellboard_group_can_communication = 7;
+	primary_hv_error_cellboard_group_flash = 8;
+	primary_hv_error_cellboard_group_bms_monitor_communication = 9;
+	primary_hv_error_cellboard_group_open_wire = 10;
+}
 
 
 message NLG5_DIAG_TX{
@@ -1746,6 +1781,14 @@ message HV_FEEDBACK_ENZOMMA{
 	double analog = 5;
 	uint64 _inner_timestamp = 6;
 }
+message HV_ERROR{
+	primary_hv_error_group group = 1;
+	uint32 instance = 2;
+	primary_hv_error_cellboard_id cellboard_id = 3;
+	primary_hv_error_cellboard_group cellboard_group = 4;
+	uint32 cellboard_instance = 5;
+	uint64 _inner_timestamp = 6;
+}
 
 
 message Pack{
@@ -1896,5 +1939,6 @@ message Pack{
 	repeated HV_FEEDBACK_ANALOG HV_FEEDBACK_ANALOG = 145;
 	repeated HV_FEEDBACK_ANALOG_SD HV_FEEDBACK_ANALOG_SD = 146;
 	repeated HV_FEEDBACK_ENZOMMA HV_FEEDBACK_ENZOMMA = 147;
+	repeated HV_ERROR HV_ERROR = 148;
 }
 

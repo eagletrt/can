@@ -1461,12 +1461,22 @@
 #define HV_FEEDBACK_ENZOMMA_ANALOG "hv_feedback_enzomma_analog"
 /* END */
 
+/* START */
+#define HV_ERROR "HV_ERROR"
+
+#define HV_ERROR_GROUP "hv_error_group"
+#define HV_ERROR_INSTANCE "hv_error_instance"
+#define HV_ERROR_CELLBOARD_ID "hv_error_cellboard_id"
+#define HV_ERROR_CELLBOARD_GROUP "hv_error_cellboard_group"
+#define HV_ERROR_CELLBOARD_INSTANCE "hv_error_cellboard_instance"
+/* END */
+
 enum primary_types_id{
 	e_primary_uint8_t = -5,
-	e_primary_uint16_t,
-	e_primary_float,
 	e_primary_uint64_t,
 	e_primary_uint32_t,
+	e_primary_float,
+	e_primary_uint16_t,
 
 	e_primary_hv_flash_forward,
 	e_primary_hv_flash_cellboard_id,
@@ -1565,7 +1575,10 @@ enum primary_types_id{
 	e_primary_hv_flash_request_cellboard_id,
 	e_primary_hv_cells_temperature_cellboard_id,
 	e_primary_hv_feedback_enzomma_feedback,
-	e_primary_hv_feedback_enzomma_status
+	e_primary_hv_feedback_enzomma_status,
+	e_primary_hv_error_group,
+	e_primary_hv_error_cellboard_id,
+	e_primary_hv_error_cellboard_group
 };
 
 /**

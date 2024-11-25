@@ -1762,6 +1762,31 @@ void secondary_proto_interface_deserialize(secondary::Pack* pack, network_enums*
 
     }
 
+    for(int i = 0; i < pack->lateral_controller_preview_point_errors_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->lateral_controller_preview_point_errors(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lateral_controller_preview_point_errors(i)._inner_timestamp();
+        (*net_signals)["LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS"]["_timestamp"].push(pack->lateral_controller_preview_point_errors(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS"]["heading"].push(pack->lateral_controller_preview_point_errors(i).heading());
+		(*net_signals)["LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS"]["distance"].push(pack->lateral_controller_preview_point_errors(i).distance());
+
+    }
+
+    for(int i = 0; i < pack->lateral_controller_errors_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->lateral_controller_errors(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->lateral_controller_errors(i)._inner_timestamp();
+        (*net_signals)["LATERAL_CONTROLLER_ERRORS"]["_timestamp"].push(pack->lateral_controller_errors(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["LATERAL_CONTROLLER_ERRORS"]["com_distance"].push(pack->lateral_controller_errors(i).com_distance());
+
+    }
+
 }
 
 void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary::Pack* pack, device_t* device) {
@@ -3127,6 +3152,29 @@ void secondary_proto_interface_serialize_from_id(canlib_message_id id, secondary
             secondary_cooling_temp_radiators_converted_t* msg = (secondary_cooling_temp_radiators_converted_t*)(device->message);
             secondary::COOLING_TEMP_RADIATORS* proto_msg = pack->add_cooling_temp_radiators();
 			proto_msg->set_air_temp(msg->air_temp);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1808: {
+            secondary_lateral_controller_preview_point_errors_converted_t* msg = (secondary_lateral_controller_preview_point_errors_converted_t*)(device->message);
+            secondary::LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS* proto_msg = pack->add_lateral_controller_preview_point_errors();
+			proto_msg->set_heading(msg->heading);
+			proto_msg->set_distance(msg->distance);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1816: {
+            secondary_lateral_controller_errors_converted_t* msg = (secondary_lateral_controller_errors_converted_t*)(device->message);
+            secondary::LATERAL_CONTROLLER_ERRORS* proto_msg = pack->add_lateral_controller_errors();
+			proto_msg->set_com_distance(msg->com_distance);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

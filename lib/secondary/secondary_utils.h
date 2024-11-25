@@ -775,13 +775,26 @@ extern "C" {
 #define COOLING_TEMP_RADIATORS_AIR_TEMP "cooling_temp_radiators_air_temp"
 /* END */
 
+/* START */
+#define LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS "LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS"
+
+#define LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS_HEADING "lateral_controller_preview_point_errors_heading"
+#define LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS_DISTANCE "lateral_controller_preview_point_errors_distance"
+/* END */
+
+/* START */
+#define LATERAL_CONTROLLER_ERRORS "LATERAL_CONTROLLER_ERRORS"
+
+#define LATERAL_CONTROLLER_ERRORS_COM_DISTANCE "lateral_controller_errors_com_distance"
+/* END */
+
 enum secondary_types_id{
-	e_secondary_float = -6,
-	e_secondary_uint32_t,
-	e_secondary_uint16_t,
-	e_secondary_int16_t,
+	e_secondary_uint16_t = -6,
 	e_secondary_uint8_t,
+	e_secondary_int16_t,
 	e_secondary_uint64_t,
+	e_secondary_uint32_t,
+	e_secondary_float,
 
 	e_secondary_link_deformation_debug_voltages_wheel_id,
 	e_secondary_link_deformation_debug_voltages_rod_id,

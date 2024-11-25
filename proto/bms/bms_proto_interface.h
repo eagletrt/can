@@ -1184,47 +1184,21 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
 
     }
 
-    for(int i = 0; i < pack->cellboard_errors_size(); i++){
+    for(int i = 0; i < pack->cellboard_error_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->cellboard_errors(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->cellboard_errors(i)._inner_timestamp();
-        (*net_signals)["CELLBOARD_ERRORS"]["_timestamp"].push(pack->cellboard_errors(i)._inner_timestamp());
+        if(pack->cellboard_error(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->cellboard_error(i)._inner_timestamp();
+        (*net_signals)["CELLBOARD_ERROR"]["_timestamp"].push(pack->cellboard_error(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["CELLBOARD_ERRORS"]["post"].push(pack->cellboard_errors(i).post());
-		bms_cellboard_errors_post_enum_to_string((bms_cellboard_errors_post)pack->cellboard_errors(i).post(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["post"].push(buffer);
-		(*net_enums)["CELLBOARD_ERRORS"]["undervoltage"].push(pack->cellboard_errors(i).undervoltage());
-		bms_cellboard_errors_undervoltage_enum_to_string((bms_cellboard_errors_undervoltage)pack->cellboard_errors(i).undervoltage(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["undervoltage"].push(buffer);
-		(*net_enums)["CELLBOARD_ERRORS"]["overvoltage"].push(pack->cellboard_errors(i).overvoltage());
-		bms_cellboard_errors_overvoltage_enum_to_string((bms_cellboard_errors_overvoltage)pack->cellboard_errors(i).overvoltage(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["overvoltage"].push(buffer);
-		(*net_enums)["CELLBOARD_ERRORS"]["undertemperature_cells"].push(pack->cellboard_errors(i).undertemperature_cells());
-		bms_cellboard_errors_undertemperature_cells_enum_to_string((bms_cellboard_errors_undertemperature_cells)pack->cellboard_errors(i).undertemperature_cells(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["undertemperature_cells"].push(buffer);
-		(*net_enums)["CELLBOARD_ERRORS"]["undertemperature_discharge"].push(pack->cellboard_errors(i).undertemperature_discharge());
-		bms_cellboard_errors_undertemperature_discharge_enum_to_string((bms_cellboard_errors_undertemperature_discharge)pack->cellboard_errors(i).undertemperature_discharge(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["undertemperature_discharge"].push(buffer);
-		(*net_enums)["CELLBOARD_ERRORS"]["overtemperature_cells"].push(pack->cellboard_errors(i).overtemperature_cells());
-		bms_cellboard_errors_overtemperature_cells_enum_to_string((bms_cellboard_errors_overtemperature_cells)pack->cellboard_errors(i).overtemperature_cells(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["overtemperature_cells"].push(buffer);
-		(*net_enums)["CELLBOARD_ERRORS"]["overtemperature_discharge"].push(pack->cellboard_errors(i).overtemperature_discharge());
-		bms_cellboard_errors_overtemperature_discharge_enum_to_string((bms_cellboard_errors_overtemperature_discharge)pack->cellboard_errors(i).overtemperature_discharge(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["overtemperature_discharge"].push(buffer);
-		(*net_enums)["CELLBOARD_ERRORS"]["can"].push(pack->cellboard_errors(i).can());
-		bms_cellboard_errors_can_enum_to_string((bms_cellboard_errors_can)pack->cellboard_errors(i).can(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["can"].push(buffer);
-		(*net_enums)["CELLBOARD_ERRORS"]["flash"].push(pack->cellboard_errors(i).flash());
-		bms_cellboard_errors_flash_enum_to_string((bms_cellboard_errors_flash)pack->cellboard_errors(i).flash(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["flash"].push(buffer);
-		(*net_enums)["CELLBOARD_ERRORS"]["bms_monitor"].push(pack->cellboard_errors(i).bms_monitor());
-		bms_cellboard_errors_bms_monitor_enum_to_string((bms_cellboard_errors_bms_monitor)pack->cellboard_errors(i).bms_monitor(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["bms_monitor"].push(buffer);
-		(*net_enums)["CELLBOARD_ERRORS"]["open_wire"].push(pack->cellboard_errors(i).open_wire());
-		bms_cellboard_errors_open_wire_enum_to_string((bms_cellboard_errors_open_wire)pack->cellboard_errors(i).open_wire(), buffer);
-		(*net_strings)["CELLBOARD_ERRORS"]["open_wire"].push(buffer);
+		(*net_enums)["CELLBOARD_ERROR"]["cellboard_id"].push(pack->cellboard_error(i).cellboard_id());
+		bms_cellboard_error_cellboard_id_enum_to_string((bms_cellboard_error_cellboard_id)pack->cellboard_error(i).cellboard_id(), buffer);
+		(*net_strings)["CELLBOARD_ERROR"]["cellboard_id"].push(buffer);
+		(*net_enums)["CELLBOARD_ERROR"]["group"].push(pack->cellboard_error(i).group());
+		bms_cellboard_error_group_enum_to_string((bms_cellboard_error_group)pack->cellboard_error(i).group(), buffer);
+		(*net_strings)["CELLBOARD_ERROR"]["group"].push(buffer);
+		(*net_signals)["CELLBOARD_ERROR"]["instance"].push(pack->cellboard_error(i).instance());
 
     }
 
@@ -1994,19 +1968,11 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
         }
 
         case 521: {
-            bms_cellboard_errors_t* msg = (bms_cellboard_errors_t*)(device->message);
-            bms::CELLBOARD_ERRORS* proto_msg = pack->add_cellboard_errors();
-			proto_msg->set_post((bms::bms_cellboard_errors_post)msg->post);
-			proto_msg->set_undervoltage((bms::bms_cellboard_errors_undervoltage)msg->undervoltage);
-			proto_msg->set_overvoltage((bms::bms_cellboard_errors_overvoltage)msg->overvoltage);
-			proto_msg->set_undertemperature_cells((bms::bms_cellboard_errors_undertemperature_cells)msg->undertemperature_cells);
-			proto_msg->set_undertemperature_discharge((bms::bms_cellboard_errors_undertemperature_discharge)msg->undertemperature_discharge);
-			proto_msg->set_overtemperature_cells((bms::bms_cellboard_errors_overtemperature_cells)msg->overtemperature_cells);
-			proto_msg->set_overtemperature_discharge((bms::bms_cellboard_errors_overtemperature_discharge)msg->overtemperature_discharge);
-			proto_msg->set_can((bms::bms_cellboard_errors_can)msg->can);
-			proto_msg->set_flash((bms::bms_cellboard_errors_flash)msg->flash);
-			proto_msg->set_bms_monitor((bms::bms_cellboard_errors_bms_monitor)msg->bms_monitor);
-			proto_msg->set_open_wire((bms::bms_cellboard_errors_open_wire)msg->open_wire);
+            bms_cellboard_error_t* msg = (bms_cellboard_error_t*)(device->message);
+            bms::CELLBOARD_ERROR* proto_msg = pack->add_cellboard_error();
+			proto_msg->set_cellboard_id((bms::bms_cellboard_error_cellboard_id)msg->cellboard_id);
+			proto_msg->set_group((bms::bms_cellboard_error_group)msg->group);
+			proto_msg->set_instance(msg->instance);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

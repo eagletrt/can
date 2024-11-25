@@ -2790,6 +2790,28 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
+    for(int i = 0; i < pack->hv_error_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_error(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_error(i)._inner_timestamp();
+        (*net_signals)["HV_ERROR"]["_timestamp"].push(pack->hv_error(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["HV_ERROR"]["group"].push(pack->hv_error(i).group());
+		primary_hv_error_group_enum_to_string((primary_hv_error_group)pack->hv_error(i).group(), buffer);
+		(*net_strings)["HV_ERROR"]["group"].push(buffer);
+		(*net_signals)["HV_ERROR"]["instance"].push(pack->hv_error(i).instance());
+		(*net_enums)["HV_ERROR"]["cellboard_id"].push(pack->hv_error(i).cellboard_id());
+		primary_hv_error_cellboard_id_enum_to_string((primary_hv_error_cellboard_id)pack->hv_error(i).cellboard_id(), buffer);
+		(*net_strings)["HV_ERROR"]["cellboard_id"].push(buffer);
+		(*net_enums)["HV_ERROR"]["cellboard_group"].push(pack->hv_error(i).cellboard_group());
+		primary_hv_error_cellboard_group_enum_to_string((primary_hv_error_cellboard_group)pack->hv_error(i).cellboard_group(), buffer);
+		(*net_strings)["HV_ERROR"]["cellboard_group"].push(buffer);
+		(*net_signals)["HV_ERROR"]["cellboard_instance"].push(pack->hv_error(i).cellboard_instance());
+
+    }
+
 }
 
 void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pack* pack, device_t* device) {
@@ -4980,6 +5002,21 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 			proto_msg->set_is_digital(msg->is_digital);
 			proto_msg->set_digital(msg->digital);
 			proto_msg->set_analog(msg->analog);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 736: {
+            primary_hv_error_t* msg = (primary_hv_error_t*)(device->message);
+            primary::HV_ERROR* proto_msg = pack->add_hv_error();
+			proto_msg->set_group((primary::primary_hv_error_group)msg->group);
+			proto_msg->set_instance(msg->instance);
+			proto_msg->set_cellboard_id((primary::primary_hv_error_cellboard_id)msg->cellboard_id);
+			proto_msg->set_cellboard_group((primary::primary_hv_error_cellboard_group)msg->cellboard_group);
+			proto_msg->set_cellboard_instance(msg->cellboard_instance);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
