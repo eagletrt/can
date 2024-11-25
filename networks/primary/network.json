@@ -446,6 +446,39 @@
                 "off",
                 "on"
             ]
+        },
+        "HvErrorGroup": {
+            "type": "enum",
+            "items": [
+                "post",
+                "over_current",
+                "over_power",
+                "under_voltage",
+                "over_voltage",
+                "under_temperature",
+                "over_temperature",
+                "can_communication",
+                "current_sensor_communication",
+                "cooling_under_temperature",
+                "cooling_over_temperature",
+                "cellboard_error"
+            ]
+        },
+        "HvCellboardErrorGroup": {
+            "type": "enum",
+            "items": [
+                "post",
+                "under_voltage",
+                "over_voltage",
+                "under_temperature_cells",
+                "over_temperature_cells",
+                "under_temperature_discharge",
+                "over_temperature_discharge",
+                "can_communication",
+                "flash",
+                "bms_monitor_communication",
+                "open_wire"
+            ]
         }
     },
     "messages": [
