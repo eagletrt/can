@@ -3609,6 +3609,27 @@
                     ]
                 }
             }
+        },
+        {
+            "name": "HV_ERROR",
+            "topic": "HYDRA",
+            "priority": 1,
+            "interval": 20,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "ECU",
+                "HANDCART"
+            ],
+            "description": "Info regarding the error which has occoured",
+            "contents": {
+                "group": "HvErrorGroup",
+                "instance": "uint16",
+                "cellboard_id": "HvCellboardId",
+                "cellboard_group": "HvCellboardErrorGroup",
+                "cellboard_instance": "uint16"
+            }
         }
     ]
 }

@@ -643,7 +643,7 @@
             }
         },
         {
-            "name": "CELLBOARD_ERRORS",
+            "name": "CELLBOARD_ERROR",
             "topic": "HYDRA",
             "priority": 1,
             "interval": 20,
@@ -653,19 +653,11 @@
             "receiving": [
                 "HV"
             ],
-            "description": "Cellboard errors status",
+            "description": "Info regarding the error which has occured",
             "contents": {
-                "post" : "CellboardErrorStatus",
-                "undervoltage": "CellboardErrorStatus",
-                "overvoltage": "CellboardErrorStatus",
-                "undertemperature_cells": "CellboardErrorStatus",
-                "undertemperature_discharge": "CellboardErrorStatus",
-                "overtemperature_cells": "CellboardErrorStatus",
-                "overtemperature_discharge": "CellboardErrorStatus",
-                "can": "CellboardErrorStatus",
-                "flash": "CellboardErrorStatus",
-                "bms_monitor": "CellboardErrorStatus",
-                "open_wire": "CellboardErrorStatus"
+                "cellboard_id": "CellboardId",
+                "group": "CellboardErrorGroup",
+                "instance": "uint16"
             }
         }
     ]
