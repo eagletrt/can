@@ -535,6 +535,17 @@ extern "C" {
 /* END */
 
 /* START */
+#define CELLBOARD_DISCHARGE_TEMPERATURE "CELLBOARD_DISCHARGE_TEMPERATURE"
+
+#define CELLBOARD_DISCHARGE_TEMPERATURE_CELLBOARD_ID "cellboard_discharge_temperature_cellboard_id"
+#define CELLBOARD_DISCHARGE_TEMPERATURE_TEMPERATURE_0 "cellboard_discharge_temperature_temperature_0"
+#define CELLBOARD_DISCHARGE_TEMPERATURE_TEMPERATURE_1 "cellboard_discharge_temperature_temperature_1"
+#define CELLBOARD_DISCHARGE_TEMPERATURE_TEMPERATURE_2 "cellboard_discharge_temperature_temperature_2"
+#define CELLBOARD_DISCHARGE_TEMPERATURE_TEMPERATURE_3 "cellboard_discharge_temperature_temperature_3"
+#define CELLBOARD_DISCHARGE_TEMPERATURE_TEMPERATURE_4 "cellboard_discharge_temperature_temperature_4"
+/* END */
+
+/* START */
 #define CELLBOARD_SET_BALANCING_STATUS "CELLBOARD_SET_BALANCING_STATUS"
 
 #define CELLBOARD_SET_BALANCING_STATUS_START "cellboard_set_balancing_status_start"
@@ -582,14 +593,14 @@ extern "C" {
 /* END */
 
 enum bms_types_id{
-	e_bms_uint32_t = -8,
+	e_bms_int16_t = -8,
+	e_bms_int8_t,
 	e_bms_int32_t,
-	e_bms_uint64_t,
+	e_bms_uint32_t,
 	e_bms_float,
+	e_bms_uint64_t,
 	e_bms_uint16_t,
 	e_bms_uint8_t,
-	e_bms_int16_t,
-	e_bms_int8_t,
 
 	e_bms_ivt_msg_result_wh_ivt_id_result_wh,
 	e_bms_ivt_msg_result_as_ivt_id_result_as,
@@ -654,6 +665,7 @@ enum bms_types_id{
 	e_bms_cellboard_status_status,
 	e_bms_cellboard_cells_voltage_cellboard_id,
 	e_bms_cellboard_cells_temperature_cellboard_id,
+	e_bms_cellboard_discharge_temperature_cellboard_id,
 	e_bms_cellboard_balancing_status_status,
 	e_bms_cellboard_balancing_status_cellboard_id,
 	e_bms_cellboard_error_cellboard_id,

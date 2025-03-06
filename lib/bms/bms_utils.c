@@ -437,6 +437,16 @@ int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t strin
 		snprintf(v[5], string_size, CELLBOARD_CELLS_TEMPERATURE_TEMPERATURE_3);
 
 		return 0;
+	case 1569:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, CELLBOARD_DISCHARGE_TEMPERATURE_CELLBOARD_ID);
+		snprintf(v[1], string_size, CELLBOARD_DISCHARGE_TEMPERATURE_TEMPERATURE_0);
+		snprintf(v[2], string_size, CELLBOARD_DISCHARGE_TEMPERATURE_TEMPERATURE_1);
+		snprintf(v[3], string_size, CELLBOARD_DISCHARGE_TEMPERATURE_TEMPERATURE_2);
+		snprintf(v[4], string_size, CELLBOARD_DISCHARGE_TEMPERATURE_TEMPERATURE_3);
+		snprintf(v[5], string_size, CELLBOARD_DISCHARGE_TEMPERATURE_TEMPERATURE_4);
+
+		return 0;
 	case 1025:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, CELLBOARD_SET_BALANCING_STATUS_START);
@@ -444,7 +454,7 @@ int bms_fields_string_from_id(int id, char **v, size_t fields_size, size_t strin
 		snprintf(v[2], string_size, CELLBOARD_SET_BALANCING_STATUS_THRESHOLD);
 
 		return 0;
-	case 1569:
+	case 1577:
 		if(26 > fields_size) return 1;
 		snprintf(v[0], string_size, CELLBOARD_BALANCING_STATUS_STATUS);
 		snprintf(v[1], string_size, CELLBOARD_BALANCING_STATUS_CELLBOARD_ID);
@@ -1316,13 +1326,23 @@ int bms_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_siz
 
 		return 0;
 	case 63:
+		if(6 > fields_size) return 1;
+		snprintf(v[0], string_size, "bms_cellboard_discharge_temperature_cellboard_id_cellboard_0");
+		snprintf(v[1], string_size, "bms_cellboard_discharge_temperature_cellboard_id_cellboard_1");
+		snprintf(v[2], string_size, "bms_cellboard_discharge_temperature_cellboard_id_cellboard_2");
+		snprintf(v[3], string_size, "bms_cellboard_discharge_temperature_cellboard_id_cellboard_3");
+		snprintf(v[4], string_size, "bms_cellboard_discharge_temperature_cellboard_id_cellboard_4");
+		snprintf(v[5], string_size, "bms_cellboard_discharge_temperature_cellboard_id_cellboard_5");
+
+		return 0;
+	case 64:
 		if(3 > fields_size) return 1;
 		snprintf(v[0], string_size, "bms_cellboard_balancing_status_status_stopped");
 		snprintf(v[1], string_size, "bms_cellboard_balancing_status_status_paused");
 		snprintf(v[2], string_size, "bms_cellboard_balancing_status_status_running");
 
 		return 0;
-	case 64:
+	case 65:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "bms_cellboard_balancing_status_cellboard_id_cellboard_0");
 		snprintf(v[1], string_size, "bms_cellboard_balancing_status_cellboard_id_cellboard_1");
@@ -1332,7 +1352,7 @@ int bms_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_siz
 		snprintf(v[5], string_size, "bms_cellboard_balancing_status_cellboard_id_cellboard_5");
 
 		return 0;
-	case 65:
+	case 66:
 		if(6 > fields_size) return 1;
 		snprintf(v[0], string_size, "bms_cellboard_error_cellboard_id_cellboard_0");
 		snprintf(v[1], string_size, "bms_cellboard_error_cellboard_id_cellboard_1");
@@ -1342,7 +1362,7 @@ int bms_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_siz
 		snprintf(v[5], string_size, "bms_cellboard_error_cellboard_id_cellboard_5");
 
 		return 0;
-	case 66:
+	case 67:
 		if(11 > fields_size) return 1;
 		snprintf(v[0], string_size, "bms_cellboard_error_group_post");
 		snprintf(v[1], string_size, "bms_cellboard_error_group_under_voltage");
@@ -2953,6 +2973,40 @@ int bms_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = BMS_CELLBOARD_CELLS_TEMPERATURE_BYTE_SIZE;
 		return bms_cellboard_cells_temperature_pack(data, &tmp, BMS_CELLBOARD_CELLS_TEMPERATURE_BYTE_SIZE);
 	}
+	case 1569:
+	{
+		bms_cellboard_discharge_temperature_t tmp;
+		bms_cellboard_discharge_temperature_converted_t tmp_converted;
+		uint8_t r_cellboard_id;
+		float r_temperature_0;
+		float r_temperature_1;
+		float r_temperature_2;
+		float r_temperature_3;
+		float r_temperature_4;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_cellboard_id,
+			&r_temperature_0,
+			&r_temperature_1,
+			&r_temperature_2,
+			&r_temperature_3,
+			&r_temperature_4);
+		tmp_converted.cellboard_id = (bms_cellboard_discharge_temperature_cellboard_id)r_cellboard_id;
+		tmp_converted.temperature_0 = (float)r_temperature_0;
+		tmp_converted.temperature_1 = (float)r_temperature_1;
+		tmp_converted.temperature_2 = (float)r_temperature_2;
+		tmp_converted.temperature_3 = (float)r_temperature_3;
+		tmp_converted.temperature_4 = (float)r_temperature_4;
+
+		bms_cellboard_discharge_temperature_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = BMS_CELLBOARD_DISCHARGE_TEMPERATURE_BYTE_SIZE;
+		return bms_cellboard_discharge_temperature_pack(data, &tmp, BMS_CELLBOARD_DISCHARGE_TEMPERATURE_BYTE_SIZE);
+	}
 	case 1025:
 	{
 		bms_cellboard_set_balancing_status_t tmp;
@@ -2975,7 +3029,7 @@ int bms_serialize_from_string(int id, char *s, uint8_t *data, size_t *size)
 		*size = BMS_CELLBOARD_SET_BALANCING_STATUS_BYTE_SIZE;
 		return bms_cellboard_set_balancing_status_pack(data, &tmp, BMS_CELLBOARD_SET_BALANCING_STATUS_BYTE_SIZE);
 	}
-	case 1569:
+	case 1577:
 	{
 		bms_cellboard_balancing_status_t tmp;
 		bms_cellboard_balancing_status_converted_t tmp_converted;
@@ -3156,8 +3210,9 @@ int bms_n_fields_from_id(int id)
 		case 513: return 2;
 		case 1553: return 5;
 		case 1561: return 6;
+		case 1569: return 6;
 		case 1025: return 3;
-		case 1569: return 26;
+		case 1577: return 26;
 		case 521: return 3;
     }
     return 0;
@@ -3575,13 +3630,22 @@ int bms_fields_types_from_id(int id, int* fields_types, int fields_types_size)
 		fields_types[4] = e_bms_float;
 		fields_types[5] = e_bms_float;
 		return 6;
+	case 1569:
+		if(fields_types_size < 6) return 0;
+		fields_types[0] = e_bms_cellboard_discharge_temperature_cellboard_id;
+		fields_types[1] = e_bms_float;
+		fields_types[2] = e_bms_float;
+		fields_types[3] = e_bms_float;
+		fields_types[4] = e_bms_float;
+		fields_types[5] = e_bms_float;
+		return 6;
 	case 1025:
 		if(fields_types_size < 3) return 0;
 		fields_types[0] = e_bms_uint8_t;
 		fields_types[1] = e_bms_float;
 		fields_types[2] = e_bms_float;
 		return 3;
-	case 1569:
+	case 1577:
 		if(fields_types_size < 26) return 0;
 		fields_types[0] = e_bms_cellboard_balancing_status_status;
 		fields_types[1] = e_bms_cellboard_balancing_status_cellboard_id;
@@ -4508,6 +4572,19 @@ int bms_enum_fields_from_name(const char *msg_name, const char *sgn_name, char *
 		}
 	}
 	if(!strcmp(msg_name, "CELLBOARD_CELLS_TEMPERATURE"))
+	{
+		if(!strcmp(sgn_name, "cellboard_id"))
+		{
+			sprintf(v[0], "cellboard_0");
+			sprintf(v[1], "cellboard_1");
+			sprintf(v[2], "cellboard_2");
+			sprintf(v[3], "cellboard_3");
+			sprintf(v[4], "cellboard_4");
+			sprintf(v[5], "cellboard_5");
+			return 6;
+		}
+	}
+	if(!strcmp(msg_name, "CELLBOARD_DISCHARGE_TEMPERATURE"))
 	{
 		if(!strcmp(sgn_name, "cellboard_id"))
 		{

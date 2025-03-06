@@ -478,17 +478,29 @@ enum primary_hv_cells_voltage_cellboard_id {
 	primary_hv_cells_voltage_cellboard_id_cellboard_4 = 4;
 	primary_hv_cells_voltage_cellboard_id_cellboard_5 = 5;
 }
-enum primary_ecu_steer_actuator_status_status {
-	primary_ecu_steer_actuator_status_status_off = 0;
-	primary_ecu_steer_actuator_status_status_on = 1;
+enum primary_as_commands_status_steerstatus {
+	primary_as_commands_status_steerstatus_off = 0;
+	primary_as_commands_status_steerstatus_on = 1;
 }
-enum primary_ecu_set_steer_actuator_status_steering_wheel_status {
-	primary_ecu_set_steer_actuator_status_steering_wheel_status_off = 0;
-	primary_ecu_set_steer_actuator_status_steering_wheel_status_on = 1;
+enum primary_as_commands_status_throttlestatus {
+	primary_as_commands_status_throttlestatus_off = 0;
+	primary_as_commands_status_throttlestatus_on = 1;
 }
-enum primary_ecu_set_steer_actuator_status_tlm_status {
-	primary_ecu_set_steer_actuator_status_tlm_status_off = 0;
-	primary_ecu_set_steer_actuator_status_tlm_status_on = 1;
+enum primary_as_commands_status_brakestatus {
+	primary_as_commands_status_brakestatus_off = 0;
+	primary_as_commands_status_brakestatus_on = 1;
+}
+enum primary_as_commands_set_status_steerstatus {
+	primary_as_commands_set_status_steerstatus_off = 0;
+	primary_as_commands_set_status_steerstatus_on = 1;
+}
+enum primary_as_commands_set_status_throttlestatus {
+	primary_as_commands_set_status_throttlestatus_off = 0;
+	primary_as_commands_set_status_throttlestatus_on = 1;
+}
+enum primary_as_commands_set_status_brakestatus {
+	primary_as_commands_set_status_brakestatus_off = 0;
+	primary_as_commands_set_status_brakestatus_on = 1;
 }
 enum primary_debug_signal_1_device_id {
 	primary_debug_signal_1_device_id_hv_mainboard = 0;
@@ -549,6 +561,14 @@ enum primary_hv_cells_temperature_cellboard_id {
 	primary_hv_cells_temperature_cellboard_id_cellboard_3 = 3;
 	primary_hv_cells_temperature_cellboard_id_cellboard_4 = 4;
 	primary_hv_cells_temperature_cellboard_id_cellboard_5 = 5;
+}
+enum primary_hv_discharge_temperature_cellboard_id {
+	primary_hv_discharge_temperature_cellboard_id_cellboard_0 = 0;
+	primary_hv_discharge_temperature_cellboard_id_cellboard_1 = 1;
+	primary_hv_discharge_temperature_cellboard_id_cellboard_2 = 2;
+	primary_hv_discharge_temperature_cellboard_id_cellboard_3 = 3;
+	primary_hv_discharge_temperature_cellboard_id_cellboard_4 = 4;
+	primary_hv_discharge_temperature_cellboard_id_cellboard_5 = 5;
 }
 enum primary_hv_feedback_enzomma_feedback {
 	primary_hv_feedback_enzomma_feedback_airn_open_com = 0;
@@ -1438,21 +1458,23 @@ message HV_CELLS_TEMP_STATS{
 	double avg = 3;
 	uint64 _inner_timestamp = 4;
 }
-message ECU_STEER_ACTUATOR_STATUS{
-	primary_ecu_steer_actuator_status_status status = 1;
-	uint64 _inner_timestamp = 2;
+message AS_COMMANDS_STATUS{
+	primary_as_commands_status_steerstatus steerStatus = 1;
+	primary_as_commands_status_throttlestatus throttleStatus = 2;
+	primary_as_commands_status_brakestatus brakeStatus = 3;
+	uint64 _inner_timestamp = 4;
 }
-message ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL{
-	primary_ecu_set_steer_actuator_status_steering_wheel_status status = 1;
-	uint64 _inner_timestamp = 2;
+message AS_COMMANDS_SET_STATUS{
+	primary_as_commands_set_status_steerstatus steerStatus = 1;
+	primary_as_commands_set_status_throttlestatus throttleStatus = 2;
+	primary_as_commands_set_status_brakestatus brakeStatus = 3;
+	uint64 _inner_timestamp = 4;
 }
-message ECU_SET_STEER_ACTUATOR_STATUS_TLM{
-	primary_ecu_set_steer_actuator_status_tlm_status status = 1;
-	uint64 _inner_timestamp = 2;
-}
-message ECU_SET_STEER_ACTUATOR_ANGLE{
-	double angle = 1;
-	uint64 _inner_timestamp = 2;
+message AS_COMMANDS_SET_VALUE{
+	double steerAngle = 1;
+	double throttle = 2;
+	double brake = 3;
+	uint64 _inner_timestamp = 4;
 }
 message ECU_STEER_ACTUATOR_CURRENT{
 	double current = 1;
@@ -1527,6 +1549,25 @@ message HV_CELLS_TEMPERATURE{
 	double temperature_2 = 8;
 	double temperature_3 = 9;
 	uint64 _inner_timestamp = 10;
+}
+message HV_DISCHARGE_TEMPERATURE{
+	primary_hv_discharge_temperature_cellboard_id cellboard_id = 1;
+	double temperature_0 = 2;
+	double temperature_1 = 3;
+	double temperature_2 = 4;
+	double temperature_3 = 5;
+	double temperature_4 = 6;
+	uint64 _inner_timestamp = 7;
+}
+message HV_COOLING_TEMPERATURE{
+	double inlet = 1;
+	double outlet_0 = 2;
+	double outlet_1 = 3;
+	double outlet_2 = 4;
+	double outlet_3 = 5;
+	double outlet_4 = 6;
+	double outlet_5 = 7;
+	uint64 _inner_timestamp = 8;
 }
 message CHARGER_1{
 	uint32 data_0 = 1;
@@ -1901,44 +1942,45 @@ message Pack{
 	repeated HV_CELLS_VOLTAGE_STATS HV_CELLS_VOLTAGE_STATS = 107;
 	repeated HV_CELLS_TEMP HV_CELLS_TEMP = 108;
 	repeated HV_CELLS_TEMP_STATS HV_CELLS_TEMP_STATS = 109;
-	repeated ECU_STEER_ACTUATOR_STATUS ECU_STEER_ACTUATOR_STATUS = 110;
-	repeated ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL = 111;
-	repeated ECU_SET_STEER_ACTUATOR_STATUS_TLM ECU_SET_STEER_ACTUATOR_STATUS_TLM = 112;
-	repeated ECU_SET_STEER_ACTUATOR_ANGLE ECU_SET_STEER_ACTUATOR_ANGLE = 113;
-	repeated ECU_STEER_ACTUATOR_CURRENT ECU_STEER_ACTUATOR_CURRENT = 114;
-	repeated DEBUG_SIGNAL_CRASH_DEBUG DEBUG_SIGNAL_CRASH_DEBUG = 115;
-	repeated DEBUG_SIGNAL_CRASH_DEBUG_ACK DEBUG_SIGNAL_CRASH_DEBUG_ACK = 116;
-	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 117;
-	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 118;
-	repeated DEBUG_SIGNAL_3 DEBUG_SIGNAL_3 = 119;
-	repeated DEBUG_SIGNAL_4 DEBUG_SIGNAL_4 = 120;
-	repeated HV_FLASH_REQUEST HV_FLASH_REQUEST = 121;
-	repeated HV_FLASH_RESPONSE HV_FLASH_RESPONSE = 122;
-	repeated HV_TS_VOLTAGE HV_TS_VOLTAGE = 123;
-	repeated HV_CELLS_TEMPERATURE HV_CELLS_TEMPERATURE = 124;
-	repeated CHARGER_1 CHARGER_1 = 125;
-	repeated CHARGER_2 CHARGER_2 = 126;
-	repeated CHARGER_3 CHARGER_3 = 127;
-	repeated CHARGER_4 CHARGER_4 = 128;
-	repeated CHARGER_5 CHARGER_5 = 129;
-	repeated CHARGER_6 CHARGER_6 = 130;
-	repeated CHARGER_7 CHARGER_7 = 131;
-	repeated CHARGER_8 CHARGER_8 = 132;
-	repeated CHARGER_9 CHARGER_9 = 133;
-	repeated CHARGER_10 CHARGER_10 = 134;
-	repeated CHARGER_11 CHARGER_11 = 135;
-	repeated CHARGER_12 CHARGER_12 = 136;
-	repeated CHARGER_13 CHARGER_13 = 137;
-	repeated CHARGER_14 CHARGER_14 = 138;
-	repeated CHARGER_15 CHARGER_15 = 139;
-	repeated CHARGER_16 CHARGER_16 = 140;
-	repeated CHARGER_17 CHARGER_17 = 141;
-	repeated CHARGER_18 CHARGER_18 = 142;
-	repeated CHARGER_19 CHARGER_19 = 143;
-	repeated HV_FEEDBACK_DIGITAL HV_FEEDBACK_DIGITAL = 144;
-	repeated HV_FEEDBACK_ANALOG HV_FEEDBACK_ANALOG = 145;
-	repeated HV_FEEDBACK_ANALOG_SD HV_FEEDBACK_ANALOG_SD = 146;
-	repeated HV_FEEDBACK_ENZOMMA HV_FEEDBACK_ENZOMMA = 147;
-	repeated HV_ERROR HV_ERROR = 148;
+	repeated AS_COMMANDS_STATUS AS_COMMANDS_STATUS = 110;
+	repeated AS_COMMANDS_SET_STATUS AS_COMMANDS_SET_STATUS = 111;
+	repeated AS_COMMANDS_SET_VALUE AS_COMMANDS_SET_VALUE = 112;
+	repeated ECU_STEER_ACTUATOR_CURRENT ECU_STEER_ACTUATOR_CURRENT = 113;
+	repeated DEBUG_SIGNAL_CRASH_DEBUG DEBUG_SIGNAL_CRASH_DEBUG = 114;
+	repeated DEBUG_SIGNAL_CRASH_DEBUG_ACK DEBUG_SIGNAL_CRASH_DEBUG_ACK = 115;
+	repeated DEBUG_SIGNAL_1 DEBUG_SIGNAL_1 = 116;
+	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 117;
+	repeated DEBUG_SIGNAL_3 DEBUG_SIGNAL_3 = 118;
+	repeated DEBUG_SIGNAL_4 DEBUG_SIGNAL_4 = 119;
+	repeated HV_FLASH_REQUEST HV_FLASH_REQUEST = 120;
+	repeated HV_FLASH_RESPONSE HV_FLASH_RESPONSE = 121;
+	repeated HV_TS_VOLTAGE HV_TS_VOLTAGE = 122;
+	repeated HV_CELLS_TEMPERATURE HV_CELLS_TEMPERATURE = 123;
+	repeated HV_DISCHARGE_TEMPERATURE HV_DISCHARGE_TEMPERATURE = 124;
+	repeated HV_COOLING_TEMPERATURE HV_COOLING_TEMPERATURE = 125;
+	repeated CHARGER_1 CHARGER_1 = 126;
+	repeated CHARGER_2 CHARGER_2 = 127;
+	repeated CHARGER_3 CHARGER_3 = 128;
+	repeated CHARGER_4 CHARGER_4 = 129;
+	repeated CHARGER_5 CHARGER_5 = 130;
+	repeated CHARGER_6 CHARGER_6 = 131;
+	repeated CHARGER_7 CHARGER_7 = 132;
+	repeated CHARGER_8 CHARGER_8 = 133;
+	repeated CHARGER_9 CHARGER_9 = 134;
+	repeated CHARGER_10 CHARGER_10 = 135;
+	repeated CHARGER_11 CHARGER_11 = 136;
+	repeated CHARGER_12 CHARGER_12 = 137;
+	repeated CHARGER_13 CHARGER_13 = 138;
+	repeated CHARGER_14 CHARGER_14 = 139;
+	repeated CHARGER_15 CHARGER_15 = 140;
+	repeated CHARGER_16 CHARGER_16 = 141;
+	repeated CHARGER_17 CHARGER_17 = 142;
+	repeated CHARGER_18 CHARGER_18 = 143;
+	repeated CHARGER_19 CHARGER_19 = 144;
+	repeated HV_FEEDBACK_DIGITAL HV_FEEDBACK_DIGITAL = 145;
+	repeated HV_FEEDBACK_ANALOG HV_FEEDBACK_ANALOG = 146;
+	repeated HV_FEEDBACK_ANALOG_SD HV_FEEDBACK_ANALOG_SD = 147;
+	repeated HV_FEEDBACK_ENZOMMA HV_FEEDBACK_ENZOMMA = 148;
+	repeated HV_ERROR HV_ERROR = 149;
 }
 

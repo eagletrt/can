@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: HV HV HV HV HV HV HV HV HV LV LV LV LV LV LV HANDCART LV ECU ECU HV LV HANDCART HV INVERTER_L ECU HANDCART STEERING_WHEEL ECU HV ECU INVERTER_L HANDCART HV INVERTER_L ECU HV ECU HV HANDCART ECU HANDCART HV TLM ECU ECU ECU HV HV HV TLM HANDCART HANDCART INVERTER_L ECU ECU ECU TLM HV HV ECU CHARGER HANDCART STEERING_WHEEL HANDCART ECU ECU CHARGER HV ECU HANDCART HANDCART STEERING_WHEEL HV CHARGER ECU ECU HANDCART HV ECU CHARGER HANDCART ECU HANDCART ECU ECU HANDCART HV ECU CHARGER HANDCART ECU HANDCART ECU STEERING_WHEEL CHARGER HV ECU CHARGER HV HANDCART HANDCART HANDCART TLM CHARGER HANDCART HANDCART HANDCART ECU HANDCART CHARGER TLM HV STEERING_WHEEL HANDCART HANDCART TLM HANDCART ECU LV CHARGER HV ECU HANDCART HV HANDCART ECU CHARGER ECU LV HANDCART HV LV CHARGER HV LV HANDCART HV TLM STEERING_WHEEL CHARGER HV TLM HANDCART TLM TLM ECU CHARGER TLM LV LV HANDCART TLM ECU CHARGER TLM HV LV HANDCART HV TLM ECU CHARGER HV HV LV CHARGER HV HV ECU HANDCART LV HANDCART LV CHARGER ECU CHARGER LV LV HANDCART HV LV HV ECU STEERING_WHEEL HV HV TLM STEERING_WHEEL LV HV STEERING_WHEEL TLM TLM STEERING_WHEEL TLM HV LV TLM LV LV ANY TLM LV ANY HV TLM STEERING_WHEEL ANY HV ECU LV ANY TLM LV ANY ECU ECU ANY TLM ECU TLM ECU ECU TLM STEERING_WHEEL ECU TLM TLM STEERING_WHEEL STEERING_WHEEL ECU LV HV
+BU_: STEERING_WHEEL HANDCART ECU TLM CHARGER ECU ECU HANDCART ECU LV CHARGER STEERING_WHEEL TLM HANDCART ECU HV CHARGER ECU HV HANDCART STEERING_WHEEL HV CHARGER ECU ECU HV ECU HV HANDCART ECU INVERTER_L HV HANDCART TLM ECU HV ECU HANDCART ECU TLM HV HANDCART ECU ECU HV ECU HANDCART HANDCART INVERTER_L ECU HANDCART HANDCART INVERTER_L HV HV ECU HV ECU INVERTER_L ECU HANDCART ECU HANDCART HV LV HV ECU LV ECU HANDCART LV HANDCART LV HV LV ECU LV HANDCART LV HV HV ECU HV HANDCART HV TLM TLM HV HV HV ECU HV HANDCART HV HV HV HV ECU HV HV HV TLM HANDCART ECU HV TLM HV ECU HV ECU TLM STEERING_WHEEL ECU HANDCART ECU HV ANY LV ANY ECU ANY LV ANY LV ANY STEERING_WHEEL ANY LV HV TLM LV HV TLM LV HV STEERING_WHEEL HV LV HV STEERING_WHEEL HV LV HV HV LV HV HANDCART ECU TLM CHARGER LV HV CHARGER LV HV HANDCART ECU TLM HANDCART LV HV CHARGER ECU HV CHARGER LV TLM HANDCART ECU HV CHARGER LV HV HANDCART ECU TLM CHARGER TLM HV HANDCART STEERING_WHEEL TLM CHARGER LV LV HANDCART HV LV TLM CHARGER LV LV HANDCART ECU TLM CHARGER ECU LV HANDCART LV TLM CHARGER TLM ECU HANDCART STEERING_WHEEL TLM HANDCART HANDCART ECU CHARGER HANDCART TLM HANDCART TLM ECU CHARGER HANDCART TLM HANDCART ECU STEERING_WHEEL CHARGER STEERING_WHEEL TLM CHARGER ECU STEERING_WHEEL HANDCART ECU TLM CHARGER ECU STEERING_WHEEL
 
 
 BO_ 1818 NLG5_DIAG_TX: 8 NLG5
@@ -743,17 +743,20 @@ BO_ 1744 HV_CELLS_TEMP_STATS: 6 Vector__XXX
  SG_ min : 16|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
  SG_ max : 0|16@1+ (0.0061038881767686015,-20) [-20|80] "" Vector__XXX
 
-BO_ 1752 ECU_STEER_ACTUATOR_STATUS: 1 Vector__XXX
- SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+BO_ 1752 AS_COMMANDS_STATUS: 1 Vector__XXX
+ SG_ brakeStatus : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ throttleStatus : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ steerStatus : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1104 ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL: 1 Vector__XXX
- SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+BO_ 1104 AS_COMMANDS_SET_STATUS: 1 Vector__XXX
+ SG_ brakeStatus : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ throttleStatus : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ steerStatus : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1112 ECU_SET_STEER_ACTUATOR_STATUS_TLM: 1 Vector__XXX
- SG_ status : 0|1@1+ (1,0) [0|1] "" Vector__XXX
-
-BO_ 1760 ECU_SET_STEER_ACTUATOR_ANGLE: 2 Vector__XXX
- SG_ angle : 0|16@1+ (0.005493247882810712,-180) [-180|180] "" Vector__XXX
+BO_ 1760 AS_COMMANDS_SET_VALUE: 6 Vector__XXX
+ SG_ brake : 32|16@1+ (1.5259021896696422e-05,-1) [-1|0] "" Vector__XXX
+ SG_ throttle : 16|16@1+ (1.5259021896696422e-05,0) [0|1] "" Vector__XXX
+ SG_ steerAngle : 0|16@1+ (0.005493247882810712,-180) [-180|180] "" Vector__XXX
 
 BO_ 1768 ECU_STEER_ACTUATOR_CURRENT: 1 Vector__XXX
  SG_ current : 0|8@1+ (0.19607843137254902,-25) [-25|25] "" Vector__XXX
@@ -802,7 +805,7 @@ BO_ 50 HV_FLASH_REQUEST: 1 Vector__XXX
 BO_ 51 HV_FLASH_RESPONSE: 1 Vector__XXX
  SG_ ready : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1120 HV_TS_VOLTAGE: 6 Vector__XXX
+BO_ 1112 HV_TS_VOLTAGE: 6 Vector__XXX
  SG_ cells_sum : 32|16@1+ (0.009231708247501335,0) [0|605] "" Vector__XXX
  SG_ pack : 16|16@1+ (0.009231708247501335,0) [0|605] "" Vector__XXX
  SG_ ts : 0|16@1+ (0.009231708247501335,0) [0|605] "" Vector__XXX
@@ -817,6 +820,23 @@ BO_ 1832 HV_CELLS_TEMPERATURE: 8 Vector__XXX
  SG_ temperature_id_1 : 10|7@1+ (1,1) [1|75] "" Vector__XXX
  SG_ temperature_id_0 : 3|7@1+ (1,1) [1|75] "" Vector__XXX
  SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 1840 HV_DISCHARGE_TEMPERATURE: 6 Vector__XXX
+ SG_ temperature_4 : 35|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ temperature_3 : 27|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ temperature_2 : 19|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ temperature_1 : 11|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ temperature_0 : 3|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 1848 HV_COOLING_TEMPERATURE: 7 Vector__XXX
+ SG_ outlet_5 : 48|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ outlet_4 : 40|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ outlet_3 : 32|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ outlet_2 : 24|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ outlet_1 : 16|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ outlet_0 : 8|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ inlet : 0|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
 
 BO_ 256 CHARGER_1: 8 Vector__XXX
  SG_ data_7 : 56|8@1+ (1,0) [0|255] "" Vector__XXX
@@ -1248,7 +1268,6 @@ CM_ BO_ 1736 "[LEGACY]: Cellboard cells temperature";
 CM_ BO_ 1744 "[LEGACY]: Cellboard cells temperature statistics";
 CM_ BO_ 1752 "";
 CM_ BO_ 1104 "";
-CM_ BO_ 1112 "";
 CM_ BO_ 1760 "";
 CM_ BO_ 1768 "";
 CM_ BO_ 1776 "";
@@ -1259,8 +1278,10 @@ CM_ BO_ 1808 "";
 CM_ BO_ 1824 "";
 CM_ BO_ 50 "Flash procedure request for a single board of the High-Voltage BMS";
 CM_ BO_ 51 "Reponse to a flash request";
-CM_ BO_ 1120 "Voltage present on the tractive system in V";
+CM_ BO_ 1112 "Voltage present on the tractive system in V";
 CM_ BO_ 1832 "HV cells temperatures in Â°C";
+CM_ BO_ 1840 "HV cellboard discharge resistor temperatures in Â°C";
+CM_ BO_ 1848 "HV cooling temperatures in Â°C";
 CM_ BO_ 256 "";
 CM_ BO_ 272 "";
 CM_ BO_ 288 "";
@@ -1378,7 +1399,6 @@ BA_ "GenMsgCycleTime" BO_ 1736 50;
 BA_ "GenMsgCycleTime" BO_ 1744 50;
 BA_ "GenMsgCycleTime" BO_ 1752 200;
 BA_ "GenMsgCycleTime" BO_ 1104 200;
-BA_ "GenMsgCycleTime" BO_ 1112 200;
 BA_ "GenMsgCycleTime" BO_ 1760 50;
 BA_ "GenMsgCycleTime" BO_ 1768 200;
 BA_ "GenMsgCycleTime" BO_ 1776 10;
@@ -1387,8 +1407,10 @@ BA_ "GenMsgCycleTime" BO_ 1792 20;
 BA_ "GenMsgCycleTime" BO_ 1800 20;
 BA_ "GenMsgCycleTime" BO_ 1808 20;
 BA_ "GenMsgCycleTime" BO_ 1824 20;
-BA_ "GenMsgCycleTime" BO_ 1120 50;
+BA_ "GenMsgCycleTime" BO_ 1112 50;
 BA_ "GenMsgCycleTime" BO_ 1832 50;
+BA_ "GenMsgCycleTime" BO_ 1840 50;
+BA_ "GenMsgCycleTime" BO_ 1848 200;
 BA_ "GenMsgCycleTime" BO_ 256 100;
 BA_ "GenMsgCycleTime" BO_ 272 100;
 BA_ "GenMsgCycleTime" BO_ 288 1000;
@@ -1499,15 +1521,19 @@ VAL_ 688 reg_state 0 "off" 1 "on" ;
 VAL_ 688 tv_state 0 "off" 1 "on" ;
 VAL_ 688 sc_state 0 "off" 1 "on" ;
 VAL_ 1720 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
-VAL_ 1752 status 0 "off" 1 "on" ;
-VAL_ 1104 status 0 "off" 1 "on" ;
-VAL_ 1112 status 0 "off" 1 "on" ;
+VAL_ 1752 brakeStatus 0 "off" 1 "on" ;
+VAL_ 1752 throttleStatus 0 "off" 1 "on" ;
+VAL_ 1752 steerStatus 0 "off" 1 "on" ;
+VAL_ 1104 brakeStatus 0 "off" 1 "on" ;
+VAL_ 1104 throttleStatus 0 "off" 1 "on" ;
+VAL_ 1104 steerStatus 0 "off" 1 "on" ;
 VAL_ 1792 device_id 0 "hv_mainboard" 1 "hv_cellboard" 2 "lv" 3 "ecu" 4 "tlm" 5 "traction_control" 6 "steeering_wheel" 7 "handcart" 8 "acquisinator" ;
 VAL_ 1800 device_id 0 "hv_mainboard" 1 "hv_cellboard" 2 "lv" 3 "ecu" 4 "tlm" 5 "traction_control" 6 "steeering_wheel" 7 "handcart" 8 "acquisinator" ;
 VAL_ 1808 device_id 0 "hv_mainboard" 1 "hv_cellboard" 2 "lv" 3 "ecu" 4 "tlm" 5 "traction_control" 6 "steeering_wheel" 7 "handcart" 8 "acquisinator" ;
 VAL_ 1824 device_id 0 "hv_mainboard" 1 "hv_cellboard" 2 "lv" 3 "ecu" 4 "tlm" 5 "traction_control" 6 "steeering_wheel" 7 "handcart" 8 "acquisinator" ;
 VAL_ 50 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 1832 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
+VAL_ 1840 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 728 status 0 "low" 1 "error" 2 "high" ;
 VAL_ 728 feedback 0 "airn_open_com" 1 "precharge_open_com" 2 "airp_open_com" 3 "airn_open_mec" 4 "precharge_open_mec" 5 "airp_open_mec" 6 "sd_imd_fb" 7 "sd_bms_fb" 8 "ts_less_than_60v" 9 "plausible_state_persisted" 10 "plausible_state" 11 "not_bms_fault_cockpit_led" 12 "not_imd_fault_cockpit_led" 13 "indicator_connected" 14 "not_latch_reset" 15 "plausible_state_latched" 16 "not_bms_fault_latched" 17 "not_imd_fault_latched" 18 "not_ext_fault_latched" 19 "imd_ok" 20 "plausible_state_rc" 21 "tsal_green" 22 "probing_3v3" 23 "sd_out" 24 "sd_in" 25 "sd_end" 26 "v5_mcu" 27 "unknown" ;
 VAL_ 736 cellboard_group 0 "post" 1 "under_voltage" 2 "over_voltage" 3 "under_temperature_cells" 4 "over_temperature_cells" 5 "under_temperature_discharge" 6 "over_temperature_discharge" 7 "can_communication" 8 "flash" 9 "bms_monitor_communication" 10 "open_wire" ;

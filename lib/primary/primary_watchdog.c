@@ -77,10 +77,9 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 1728: return PRIMARY_INTERVAL_HV_CELLS_VOLTAGE_STATS;
        case 1736: return PRIMARY_INTERVAL_HV_CELLS_TEMP;
        case 1744: return PRIMARY_INTERVAL_HV_CELLS_TEMP_STATS;
-       case 1752: return PRIMARY_INTERVAL_ECU_STEER_ACTUATOR_STATUS;
-       case 1104: return PRIMARY_INTERVAL_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL;
-       case 1112: return PRIMARY_INTERVAL_ECU_SET_STEER_ACTUATOR_STATUS_TLM;
-       case 1760: return PRIMARY_INTERVAL_ECU_SET_STEER_ACTUATOR_ANGLE;
+       case 1752: return PRIMARY_INTERVAL_AS_COMMANDS_STATUS;
+       case 1104: return PRIMARY_INTERVAL_AS_COMMANDS_SET_STATUS;
+       case 1760: return PRIMARY_INTERVAL_AS_COMMANDS_SET_VALUE;
        case 1768: return PRIMARY_INTERVAL_ECU_STEER_ACTUATOR_CURRENT;
        case 1776: return PRIMARY_INTERVAL_DEBUG_SIGNAL_CRASH_DEBUG;
        case 1784: return PRIMARY_INTERVAL_DEBUG_SIGNAL_CRASH_DEBUG_ACK;
@@ -88,8 +87,10 @@ int primary_watchdog_interval_from_id(uint16_t message_id) {
        case 1800: return PRIMARY_INTERVAL_DEBUG_SIGNAL_2;
        case 1808: return PRIMARY_INTERVAL_DEBUG_SIGNAL_3;
        case 1824: return PRIMARY_INTERVAL_DEBUG_SIGNAL_4;
-       case 1120: return PRIMARY_INTERVAL_HV_TS_VOLTAGE;
+       case 1112: return PRIMARY_INTERVAL_HV_TS_VOLTAGE;
        case 1832: return PRIMARY_INTERVAL_HV_CELLS_TEMPERATURE;
+       case 1840: return PRIMARY_INTERVAL_HV_DISCHARGE_TEMPERATURE;
+       case 1848: return PRIMARY_INTERVAL_HV_COOLING_TEMPERATURE;
        case 256: return PRIMARY_INTERVAL_CHARGER_1;
        case 272: return PRIMARY_INTERVAL_CHARGER_2;
        case 288: return PRIMARY_INTERVAL_CHARGER_3;
@@ -229,10 +230,9 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 1728: return PRIMARY_INDEX_HV_CELLS_VOLTAGE_STATS;
        case 1736: return PRIMARY_INDEX_HV_CELLS_TEMP;
        case 1744: return PRIMARY_INDEX_HV_CELLS_TEMP_STATS;
-       case 1752: return PRIMARY_INDEX_ECU_STEER_ACTUATOR_STATUS;
-       case 1104: return PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL;
-       case 1112: return PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_TLM;
-       case 1760: return PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_ANGLE;
+       case 1752: return PRIMARY_INDEX_AS_COMMANDS_STATUS;
+       case 1104: return PRIMARY_INDEX_AS_COMMANDS_SET_STATUS;
+       case 1760: return PRIMARY_INDEX_AS_COMMANDS_SET_VALUE;
        case 1768: return PRIMARY_INDEX_ECU_STEER_ACTUATOR_CURRENT;
        case 1776: return PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG;
        case 1784: return PRIMARY_INDEX_DEBUG_SIGNAL_CRASH_DEBUG_ACK;
@@ -242,8 +242,10 @@ int primary_watchdog_index_from_id(uint16_t message_id) {
        case 1824: return PRIMARY_INDEX_DEBUG_SIGNAL_4;
        case 50: return PRIMARY_INDEX_HV_FLASH_REQUEST;
        case 51: return PRIMARY_INDEX_HV_FLASH_RESPONSE;
-       case 1120: return PRIMARY_INDEX_HV_TS_VOLTAGE;
+       case 1112: return PRIMARY_INDEX_HV_TS_VOLTAGE;
        case 1832: return PRIMARY_INDEX_HV_CELLS_TEMPERATURE;
+       case 1840: return PRIMARY_INDEX_HV_DISCHARGE_TEMPERATURE;
+       case 1848: return PRIMARY_INDEX_HV_COOLING_TEMPERATURE;
        case 256: return PRIMARY_INDEX_CHARGER_1;
        case 272: return PRIMARY_INDEX_CHARGER_2;
        case 288: return PRIMARY_INDEX_CHARGER_3;
@@ -279,7 +281,7 @@ void primary_watchdog_free(primary_watchdog *watchdog) {
 
 void primary_watchdog_reset(primary_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = primary_watchdog_index_from_id(id);
-    if (index < 148 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 149 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -810,31 +812,24 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
     }
 
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_ECU_STEER_ACTUATOR_STATUS)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_ECU_STEER_ACTUATOR_STATUS] > PRIMARY_INTERVAL_ECU_STEER_ACTUATOR_STATUS * 3
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_AS_COMMANDS_STATUS)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_AS_COMMANDS_STATUS] > PRIMARY_INTERVAL_AS_COMMANDS_STATUS * 3
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_ECU_STEER_ACTUATOR_STATUS);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_AS_COMMANDS_STATUS);
     }
 
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL] > PRIMARY_INTERVAL_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL * 3
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_AS_COMMANDS_SET_STATUS)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_AS_COMMANDS_SET_STATUS] > PRIMARY_INTERVAL_AS_COMMANDS_SET_STATUS * 3
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_AS_COMMANDS_SET_STATUS);
     }
 
     if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_TLM)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_TLM] > PRIMARY_INTERVAL_ECU_SET_STEER_ACTUATOR_STATUS_TLM * 3
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_AS_COMMANDS_SET_VALUE)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_AS_COMMANDS_SET_VALUE] > PRIMARY_INTERVAL_AS_COMMANDS_SET_VALUE * 3
     ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_STATUS_TLM);
-    }
-
-    if (
-        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_ANGLE)
-        && timestamp - watchdog->last_reset[PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_ANGLE] > PRIMARY_INTERVAL_ECU_SET_STEER_ACTUATOR_ANGLE * 3
-    ) {
-        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_ECU_SET_STEER_ACTUATOR_ANGLE);
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_AS_COMMANDS_SET_VALUE);
     }
 
     if (
@@ -898,6 +893,20 @@ void primary_watchdog_timeout(primary_watchdog *watchdog, canlib_watchdog_timest
         && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_CELLS_TEMPERATURE] > PRIMARY_INTERVAL_HV_CELLS_TEMPERATURE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_CELLS_TEMPERATURE);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_DISCHARGE_TEMPERATURE)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_DISCHARGE_TEMPERATURE] > PRIMARY_INTERVAL_HV_DISCHARGE_TEMPERATURE * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_DISCHARGE_TEMPERATURE);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, PRIMARY_INDEX_HV_COOLING_TEMPERATURE)
+        && timestamp - watchdog->last_reset[PRIMARY_INDEX_HV_COOLING_TEMPERATURE] > PRIMARY_INTERVAL_HV_COOLING_TEMPERATURE * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, PRIMARY_INDEX_HV_COOLING_TEMPERATURE);
     }
 
     if (

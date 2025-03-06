@@ -1129,6 +1129,25 @@ void bms_proto_interface_deserialize(bms::Pack* pack, network_enums* net_enums, 
 
     }
 
+    for(int i = 0; i < pack->cellboard_discharge_temperature_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->cellboard_discharge_temperature(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->cellboard_discharge_temperature(i)._inner_timestamp();
+        (*net_signals)["CELLBOARD_DISCHARGE_TEMPERATURE"]["_timestamp"].push(pack->cellboard_discharge_temperature(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["CELLBOARD_DISCHARGE_TEMPERATURE"]["cellboard_id"].push(pack->cellboard_discharge_temperature(i).cellboard_id());
+		bms_cellboard_discharge_temperature_cellboard_id_enum_to_string((bms_cellboard_discharge_temperature_cellboard_id)pack->cellboard_discharge_temperature(i).cellboard_id(), buffer);
+		(*net_strings)["CELLBOARD_DISCHARGE_TEMPERATURE"]["cellboard_id"].push(buffer);
+		(*net_signals)["CELLBOARD_DISCHARGE_TEMPERATURE"]["temperature_0"].push(pack->cellboard_discharge_temperature(i).temperature_0());
+		(*net_signals)["CELLBOARD_DISCHARGE_TEMPERATURE"]["temperature_1"].push(pack->cellboard_discharge_temperature(i).temperature_1());
+		(*net_signals)["CELLBOARD_DISCHARGE_TEMPERATURE"]["temperature_2"].push(pack->cellboard_discharge_temperature(i).temperature_2());
+		(*net_signals)["CELLBOARD_DISCHARGE_TEMPERATURE"]["temperature_3"].push(pack->cellboard_discharge_temperature(i).temperature_3());
+		(*net_signals)["CELLBOARD_DISCHARGE_TEMPERATURE"]["temperature_4"].push(pack->cellboard_discharge_temperature(i).temperature_4());
+
+    }
+
     for(int i = 0; i < pack->cellboard_set_balancing_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
@@ -1918,6 +1937,22 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
+        case 1569: {
+            bms_cellboard_discharge_temperature_converted_t* msg = (bms_cellboard_discharge_temperature_converted_t*)(device->message);
+            bms::CELLBOARD_DISCHARGE_TEMPERATURE* proto_msg = pack->add_cellboard_discharge_temperature();
+			proto_msg->set_cellboard_id((bms::bms_cellboard_discharge_temperature_cellboard_id)msg->cellboard_id);
+			proto_msg->set_temperature_0(msg->temperature_0);
+			proto_msg->set_temperature_1(msg->temperature_1);
+			proto_msg->set_temperature_2(msg->temperature_2);
+			proto_msg->set_temperature_3(msg->temperature_3);
+			proto_msg->set_temperature_4(msg->temperature_4);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
         case 1025: {
             bms_cellboard_set_balancing_status_converted_t* msg = (bms_cellboard_set_balancing_status_converted_t*)(device->message);
             bms::CELLBOARD_SET_BALANCING_STATUS* proto_msg = pack->add_cellboard_set_balancing_status();
@@ -1931,7 +1966,7 @@ void bms_proto_interface_serialize_from_id(canlib_message_id id, bms::Pack* pack
             break;
         }
 
-        case 1569: {
+        case 1577: {
             bms_cellboard_balancing_status_t* msg = (bms_cellboard_balancing_status_t*)(device->message);
             bms::CELLBOARD_BALANCING_STATUS* proto_msg = pack->add_cellboard_balancing_status();
 			proto_msg->set_status((bms::bms_cellboard_balancing_status_status)msg->status);

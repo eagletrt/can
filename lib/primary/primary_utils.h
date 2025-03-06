@@ -1047,27 +1047,27 @@ extern "C" {
 /* END */
 
 /* START */
-#define ECU_STEER_ACTUATOR_STATUS "ECU_STEER_ACTUATOR_STATUS"
+#define AS_COMMANDS_STATUS "AS_COMMANDS_STATUS"
 
-#define ECU_STEER_ACTUATOR_STATUS_STATUS "ecu_steer_actuator_status_status"
+#define AS_COMMANDS_STATUS_STEERSTATUS "as_commands_status_steerstatus"
+#define AS_COMMANDS_STATUS_THROTTLESTATUS "as_commands_status_throttlestatus"
+#define AS_COMMANDS_STATUS_BRAKESTATUS "as_commands_status_brakestatus"
 /* END */
 
 /* START */
-#define ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL "ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"
+#define AS_COMMANDS_SET_STATUS "AS_COMMANDS_SET_STATUS"
 
-#define ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL_STATUS "ecu_set_steer_actuator_status_steering_wheel_status"
+#define AS_COMMANDS_SET_STATUS_STEERSTATUS "as_commands_set_status_steerstatus"
+#define AS_COMMANDS_SET_STATUS_THROTTLESTATUS "as_commands_set_status_throttlestatus"
+#define AS_COMMANDS_SET_STATUS_BRAKESTATUS "as_commands_set_status_brakestatus"
 /* END */
 
 /* START */
-#define ECU_SET_STEER_ACTUATOR_STATUS_TLM "ECU_SET_STEER_ACTUATOR_STATUS_TLM"
+#define AS_COMMANDS_SET_VALUE "AS_COMMANDS_SET_VALUE"
 
-#define ECU_SET_STEER_ACTUATOR_STATUS_TLM_STATUS "ecu_set_steer_actuator_status_tlm_status"
-/* END */
-
-/* START */
-#define ECU_SET_STEER_ACTUATOR_ANGLE "ECU_SET_STEER_ACTUATOR_ANGLE"
-
-#define ECU_SET_STEER_ACTUATOR_ANGLE_ANGLE "ecu_set_steer_actuator_angle_angle"
+#define AS_COMMANDS_SET_VALUE_STEERANGLE "as_commands_set_value_steerangle"
+#define AS_COMMANDS_SET_VALUE_THROTTLE "as_commands_set_value_throttle"
+#define AS_COMMANDS_SET_VALUE_BRAKE "as_commands_set_value_brake"
 /* END */
 
 /* START */
@@ -1164,6 +1164,29 @@ extern "C" {
 #define HV_CELLS_TEMPERATURE_TEMPERATURE_1 "hv_cells_temperature_temperature_1"
 #define HV_CELLS_TEMPERATURE_TEMPERATURE_2 "hv_cells_temperature_temperature_2"
 #define HV_CELLS_TEMPERATURE_TEMPERATURE_3 "hv_cells_temperature_temperature_3"
+/* END */
+
+/* START */
+#define HV_DISCHARGE_TEMPERATURE "HV_DISCHARGE_TEMPERATURE"
+
+#define HV_DISCHARGE_TEMPERATURE_CELLBOARD_ID "hv_discharge_temperature_cellboard_id"
+#define HV_DISCHARGE_TEMPERATURE_TEMPERATURE_0 "hv_discharge_temperature_temperature_0"
+#define HV_DISCHARGE_TEMPERATURE_TEMPERATURE_1 "hv_discharge_temperature_temperature_1"
+#define HV_DISCHARGE_TEMPERATURE_TEMPERATURE_2 "hv_discharge_temperature_temperature_2"
+#define HV_DISCHARGE_TEMPERATURE_TEMPERATURE_3 "hv_discharge_temperature_temperature_3"
+#define HV_DISCHARGE_TEMPERATURE_TEMPERATURE_4 "hv_discharge_temperature_temperature_4"
+/* END */
+
+/* START */
+#define HV_COOLING_TEMPERATURE "HV_COOLING_TEMPERATURE"
+
+#define HV_COOLING_TEMPERATURE_INLET "hv_cooling_temperature_inlet"
+#define HV_COOLING_TEMPERATURE_OUTLET_0 "hv_cooling_temperature_outlet_0"
+#define HV_COOLING_TEMPERATURE_OUTLET_1 "hv_cooling_temperature_outlet_1"
+#define HV_COOLING_TEMPERATURE_OUTLET_2 "hv_cooling_temperature_outlet_2"
+#define HV_COOLING_TEMPERATURE_OUTLET_3 "hv_cooling_temperature_outlet_3"
+#define HV_COOLING_TEMPERATURE_OUTLET_4 "hv_cooling_temperature_outlet_4"
+#define HV_COOLING_TEMPERATURE_OUTLET_5 "hv_cooling_temperature_outlet_5"
 /* END */
 
 /* START */
@@ -1477,10 +1500,10 @@ extern "C" {
 
 enum primary_types_id{
 	e_primary_uint8_t = -5,
-	e_primary_uint64_t,
 	e_primary_uint32_t,
-	e_primary_float,
 	e_primary_uint16_t,
+	e_primary_uint64_t,
+	e_primary_float,
 
 	e_primary_hv_flash_forward,
 	e_primary_hv_flash_cellboard_id,
@@ -1569,15 +1592,19 @@ enum primary_types_id{
 	e_primary_control_status_tv_state,
 	e_primary_control_status_reg_state,
 	e_primary_hv_cells_voltage_cellboard_id,
-	e_primary_ecu_steer_actuator_status_status,
-	e_primary_ecu_set_steer_actuator_status_steering_wheel_status,
-	e_primary_ecu_set_steer_actuator_status_tlm_status,
+	e_primary_as_commands_status_steerstatus,
+	e_primary_as_commands_status_throttlestatus,
+	e_primary_as_commands_status_brakestatus,
+	e_primary_as_commands_set_status_steerstatus,
+	e_primary_as_commands_set_status_throttlestatus,
+	e_primary_as_commands_set_status_brakestatus,
 	e_primary_debug_signal_1_device_id,
 	e_primary_debug_signal_2_device_id,
 	e_primary_debug_signal_3_device_id,
 	e_primary_debug_signal_4_device_id,
 	e_primary_hv_flash_request_cellboard_id,
 	e_primary_hv_cells_temperature_cellboard_id,
+	e_primary_hv_discharge_temperature_cellboard_id,
 	e_primary_hv_feedback_enzomma_feedback,
 	e_primary_hv_feedback_enzomma_status,
 	e_primary_hv_error_group,

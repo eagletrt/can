@@ -609,6 +609,62 @@
             }
         },
         {
+            "name": "CELLBOARD_DISCHARGE_TEMPERATURE",
+            "topic": "HYDRA",
+            "priority": 3,
+            "interval": 50,
+            "sending": [
+                "HV"
+            ],
+            "receiving": [
+                "HV"
+            ],
+            "description": "Cellboard discharge resistor temperatures in °C",
+            "contents": {
+                "cellboard_id": "CellboardId",
+                "temperature_0": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                },
+                "temperature_1": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                },
+                "temperature_2": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                },
+                "temperature_3": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                },
+                "temperature_4": {
+                    "type": "float32",
+                    "force": "uint8",
+                    "range": [
+                        -25.0,
+                        100.0
+                    ]
+                }
+            }
+        },
+        {
             "name": "CELLBOARD_SET_BALANCING_STATUS",
             "topic": "HYDRA",
             "priority": 2,

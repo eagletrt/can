@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: HV BMS_HV HV BMS_HV HV BMS_HV HV HANDCART HV HANDCART HV HANDCART HANDCART HANDCART HV BMS_HV HV BMS_HV HV BMS_HV HV HANDCART HV HANDCART HV HANDCART HV CELLBOARD MAINBOARD CELLBOARD BMS_HV HV MAINBOARD HV MAINBOARD HV BMS_HV HV CELLBOARD MAINBOARD HANDCART MAINBOARD HV HV HV MAINBOARD BMS_HV HV HV CELLBOARD HV BMS_HV HV CELLBOARD BMS_HV HV HV HANDCART CELLBOARD HANDCART
+BU_: HV BMS_HV HV CELLBOARD BMS_HV HV HANDCART MAINBOARD HV HANDCART HV MAINBOARD HANDCART HV BMS_HV CELLBOARD HV BMS_HV HV HV BMS_HV HV HANDCART HV HANDCART HV HV HANDCART HV BMS_HV HV HV BMS_HV HV HV HV BMS_HV HV MAINBOARD HV BMS_HV HANDCART HV HV HV MAINBOARD HANDCART BMS_HV MAINBOARD HV HANDCART CELLBOARD HV HANDCART CELLBOARD HV MAINBOARD HANDCART CELLBOARD HV BMS_HV CELLBOARD
 VAL_TABLE_ _B9_Voltage_Channels 3 "3_Channels" 0 "0_Channels" ;
 VAL_TABLE_ _B9_Supply_Voltage 1 "12__24_V_nominal_supply_voltage" ;
 VAL_TABLE_ _B9_Current 2500 "2500_A" 1000 "1000_A" 500 "500_A" 300 "300_A" 100 "100_A" ;
@@ -459,12 +459,20 @@ BO_ 1561 CELLBOARD_CELLS_TEMPERATURE: 6 Vector__XXX
  SG_ offset : 3|6@1+ (1,0) [0|44] "" Vector__XXX
  SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
 
+BO_ 1569 CELLBOARD_DISCHARGE_TEMPERATURE: 6 Vector__XXX
+ SG_ temperature_4 : 35|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ temperature_3 : 27|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ temperature_2 : 19|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ temperature_1 : 11|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ temperature_0 : 3|8@1+ (0.49019607843137253,-25.0) [-25.0|100.0] "" Vector__XXX
+ SG_ cellboard_id : 0|3@1+ (1,0) [0|7] "" Vector__XXX
+
 BO_ 1025 CELLBOARD_SET_BALANCING_STATUS: 5 Vector__XXX
  SG_ threshold : 17|16@1+ (2.9755092698558025e-06,0.005) [0.005|0.2] "" Vector__XXX
  SG_ target : 1|16@1+ (2.1362630655374995e-05,2.8) [2.8|4.2] "" Vector__XXX
  SG_ start : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
-BO_ 1569 CELLBOARD_BALANCING_STATUS: 4 Vector__XXX
+BO_ 1577 CELLBOARD_BALANCING_STATUS: 4 Vector__XXX
  SG_ discharging_cell_23 : 28|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ discharging_cell_22 : 27|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ discharging_cell_21 : 26|1@1+ (1,0) [0|1] "" Vector__XXX
@@ -527,8 +535,9 @@ CM_ BO_ 1545 "Cellboard version: build-time timestamp and canlib build-time time
 CM_ BO_ 513 "Cellboard internal FSM status";
 CM_ BO_ 1553 "Cellboard cells voltages in V";
 CM_ BO_ 1561 "Cellboard cells temperatures in Â°C";
+CM_ BO_ 1569 "Cellboard discharge resistor temperatures in Â°C";
 CM_ BO_ 1025 "Start or stop the balancing procedure, if started needs to be sent continuously";
-CM_ BO_ 1569 "Info about the cells that are currently discharging";
+CM_ BO_ 1577 "Info about the cells that are currently discharging";
 CM_ BO_ 521 "Info regarding the error which has occured";
 BA_DEF_ BU_  "Manufacturer" STRING ;
 BA_DEF_ BU_  "ILUsed" ENUM  "No","Yes";
@@ -616,8 +625,9 @@ BA_ "GenMsgCycleTime" BO_ 1545 1000;
 BA_ "GenMsgCycleTime" BO_ 513 20;
 BA_ "GenMsgCycleTime" BO_ 1553 50;
 BA_ "GenMsgCycleTime" BO_ 1561 50;
-BA_ "GenMsgCycleTime" BO_ 1025 200;
 BA_ "GenMsgCycleTime" BO_ 1569 50;
+BA_ "GenMsgCycleTime" BO_ 1025 200;
+BA_ "GenMsgCycleTime" BO_ 1577 50;
 BA_ "GenMsgCycleTime" BO_ 521 20;
 VAL_ 1320 IVT_ID_Result_Wh 7 "Vt_Result_Wh" ;
 VAL_ 1319 IVT_ID_Result_As 6 "Vt_Result_As" ;
@@ -683,7 +693,8 @@ VAL_ 513 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboa
 VAL_ 1553 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 1561 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 VAL_ 1569 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
-VAL_ 1569 status 0 "stopped" 1 "paused" 2 "running" ;
+VAL_ 1577 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
+VAL_ 1577 status 0 "stopped" 1 "paused" 2 "running" ;
 VAL_ 521 group 0 "post" 1 "under_voltage" 2 "over_voltage" 3 "under_temperature_cells" 4 "over_temperature_cells" 5 "under_temperature_discharge" 6 "over_temperature_discharge" 7 "can_communication" 8 "flash" 9 "bms_monitor_communication" 10 "open_wire" ;
 VAL_ 521 cellboard_id 0 "cellboard_0" 1 "cellboard_1" 2 "cellboard_2" 3 "cellboard_3" 4 "cellboard_4" 5 "cellboard_5" ;
 

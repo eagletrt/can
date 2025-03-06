@@ -2121,57 +2121,57 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 
     }
 
-    for(int i = 0; i < pack->ecu_steer_actuator_status_size(); i++){
+    for(int i = 0; i < pack->as_commands_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->ecu_steer_actuator_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ecu_steer_actuator_status(i)._inner_timestamp();
-        (*net_signals)["ECU_STEER_ACTUATOR_STATUS"]["_timestamp"].push(pack->ecu_steer_actuator_status(i)._inner_timestamp());
+        if(pack->as_commands_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->as_commands_status(i)._inner_timestamp();
+        (*net_signals)["AS_COMMANDS_STATUS"]["_timestamp"].push(pack->as_commands_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["ECU_STEER_ACTUATOR_STATUS"]["status"].push(pack->ecu_steer_actuator_status(i).status());
-		primary_ecu_steer_actuator_status_status_enum_to_string((primary_ecu_steer_actuator_status_status)pack->ecu_steer_actuator_status(i).status(), buffer);
-		(*net_strings)["ECU_STEER_ACTUATOR_STATUS"]["status"].push(buffer);
+		(*net_enums)["AS_COMMANDS_STATUS"]["steerstatus"].push(pack->as_commands_status(i).steerstatus());
+		primary_as_commands_status_steerstatus_enum_to_string((primary_as_commands_status_steerstatus)pack->as_commands_status(i).steerstatus(), buffer);
+		(*net_strings)["AS_COMMANDS_STATUS"]["steerstatus"].push(buffer);
+		(*net_enums)["AS_COMMANDS_STATUS"]["throttlestatus"].push(pack->as_commands_status(i).throttlestatus());
+		primary_as_commands_status_throttlestatus_enum_to_string((primary_as_commands_status_throttlestatus)pack->as_commands_status(i).throttlestatus(), buffer);
+		(*net_strings)["AS_COMMANDS_STATUS"]["throttlestatus"].push(buffer);
+		(*net_enums)["AS_COMMANDS_STATUS"]["brakestatus"].push(pack->as_commands_status(i).brakestatus());
+		primary_as_commands_status_brakestatus_enum_to_string((primary_as_commands_status_brakestatus)pack->as_commands_status(i).brakestatus(), buffer);
+		(*net_strings)["AS_COMMANDS_STATUS"]["brakestatus"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->ecu_set_steer_actuator_status_steering_wheel_size(); i++){
+    for(int i = 0; i < pack->as_commands_set_status_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->ecu_set_steer_actuator_status_steering_wheel(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ecu_set_steer_actuator_status_steering_wheel(i)._inner_timestamp();
-        (*net_signals)["ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"]["_timestamp"].push(pack->ecu_set_steer_actuator_status_steering_wheel(i)._inner_timestamp());
+        if(pack->as_commands_set_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->as_commands_set_status(i)._inner_timestamp();
+        (*net_signals)["AS_COMMANDS_SET_STATUS"]["_timestamp"].push(pack->as_commands_set_status(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"]["status"].push(pack->ecu_set_steer_actuator_status_steering_wheel(i).status());
-		primary_ecu_set_steer_actuator_status_steering_wheel_status_enum_to_string((primary_ecu_set_steer_actuator_status_steering_wheel_status)pack->ecu_set_steer_actuator_status_steering_wheel(i).status(), buffer);
-		(*net_strings)["ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL"]["status"].push(buffer);
+		(*net_enums)["AS_COMMANDS_SET_STATUS"]["steerstatus"].push(pack->as_commands_set_status(i).steerstatus());
+		primary_as_commands_set_status_steerstatus_enum_to_string((primary_as_commands_set_status_steerstatus)pack->as_commands_set_status(i).steerstatus(), buffer);
+		(*net_strings)["AS_COMMANDS_SET_STATUS"]["steerstatus"].push(buffer);
+		(*net_enums)["AS_COMMANDS_SET_STATUS"]["throttlestatus"].push(pack->as_commands_set_status(i).throttlestatus());
+		primary_as_commands_set_status_throttlestatus_enum_to_string((primary_as_commands_set_status_throttlestatus)pack->as_commands_set_status(i).throttlestatus(), buffer);
+		(*net_strings)["AS_COMMANDS_SET_STATUS"]["throttlestatus"].push(buffer);
+		(*net_enums)["AS_COMMANDS_SET_STATUS"]["brakestatus"].push(pack->as_commands_set_status(i).brakestatus());
+		primary_as_commands_set_status_brakestatus_enum_to_string((primary_as_commands_set_status_brakestatus)pack->as_commands_set_status(i).brakestatus(), buffer);
+		(*net_strings)["AS_COMMANDS_SET_STATUS"]["brakestatus"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->ecu_set_steer_actuator_status_tlm_size(); i++){
+    for(int i = 0; i < pack->as_commands_set_value_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->ecu_set_steer_actuator_status_tlm(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ecu_set_steer_actuator_status_tlm(i)._inner_timestamp();
-        (*net_signals)["ECU_SET_STEER_ACTUATOR_STATUS_TLM"]["_timestamp"].push(pack->ecu_set_steer_actuator_status_tlm(i)._inner_timestamp());
+        if(pack->as_commands_set_value(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->as_commands_set_value(i)._inner_timestamp();
+        (*net_signals)["AS_COMMANDS_SET_VALUE"]["_timestamp"].push(pack->as_commands_set_value(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_enums)["ECU_SET_STEER_ACTUATOR_STATUS_TLM"]["status"].push(pack->ecu_set_steer_actuator_status_tlm(i).status());
-		primary_ecu_set_steer_actuator_status_tlm_status_enum_to_string((primary_ecu_set_steer_actuator_status_tlm_status)pack->ecu_set_steer_actuator_status_tlm(i).status(), buffer);
-		(*net_strings)["ECU_SET_STEER_ACTUATOR_STATUS_TLM"]["status"].push(buffer);
-
-    }
-
-    for(int i = 0; i < pack->ecu_set_steer_actuator_angle_size(); i++){
-#ifdef CANLIB_TIMESTAMP
-        static uint64_t last_timestamp = 0;
-        if(pack->ecu_set_steer_actuator_angle(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->ecu_set_steer_actuator_angle(i)._inner_timestamp();
-        (*net_signals)["ECU_SET_STEER_ACTUATOR_ANGLE"]["_timestamp"].push(pack->ecu_set_steer_actuator_angle(i)._inner_timestamp());
-#endif // CANLIB_TIMESTAMP
-
-		(*net_signals)["ECU_SET_STEER_ACTUATOR_ANGLE"]["angle"].push(pack->ecu_set_steer_actuator_angle(i).angle());
+		(*net_signals)["AS_COMMANDS_SET_VALUE"]["steerangle"].push(pack->as_commands_set_value(i).steerangle());
+		(*net_signals)["AS_COMMANDS_SET_VALUE"]["throttle"].push(pack->as_commands_set_value(i).throttle());
+		(*net_signals)["AS_COMMANDS_SET_VALUE"]["brake"].push(pack->as_commands_set_value(i).brake());
 
     }
 
@@ -2346,6 +2346,43 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_1"].push(pack->hv_cells_temperature(i).temperature_1());
 		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_2"].push(pack->hv_cells_temperature(i).temperature_2());
 		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_3"].push(pack->hv_cells_temperature(i).temperature_3());
+
+    }
+
+    for(int i = 0; i < pack->hv_discharge_temperature_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_discharge_temperature(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_discharge_temperature(i)._inner_timestamp();
+        (*net_signals)["HV_DISCHARGE_TEMPERATURE"]["_timestamp"].push(pack->hv_discharge_temperature(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["HV_DISCHARGE_TEMPERATURE"]["cellboard_id"].push(pack->hv_discharge_temperature(i).cellboard_id());
+		primary_hv_discharge_temperature_cellboard_id_enum_to_string((primary_hv_discharge_temperature_cellboard_id)pack->hv_discharge_temperature(i).cellboard_id(), buffer);
+		(*net_strings)["HV_DISCHARGE_TEMPERATURE"]["cellboard_id"].push(buffer);
+		(*net_signals)["HV_DISCHARGE_TEMPERATURE"]["temperature_0"].push(pack->hv_discharge_temperature(i).temperature_0());
+		(*net_signals)["HV_DISCHARGE_TEMPERATURE"]["temperature_1"].push(pack->hv_discharge_temperature(i).temperature_1());
+		(*net_signals)["HV_DISCHARGE_TEMPERATURE"]["temperature_2"].push(pack->hv_discharge_temperature(i).temperature_2());
+		(*net_signals)["HV_DISCHARGE_TEMPERATURE"]["temperature_3"].push(pack->hv_discharge_temperature(i).temperature_3());
+		(*net_signals)["HV_DISCHARGE_TEMPERATURE"]["temperature_4"].push(pack->hv_discharge_temperature(i).temperature_4());
+
+    }
+
+    for(int i = 0; i < pack->hv_cooling_temperature_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->hv_cooling_temperature(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->hv_cooling_temperature(i)._inner_timestamp();
+        (*net_signals)["HV_COOLING_TEMPERATURE"]["_timestamp"].push(pack->hv_cooling_temperature(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["HV_COOLING_TEMPERATURE"]["inlet"].push(pack->hv_cooling_temperature(i).inlet());
+		(*net_signals)["HV_COOLING_TEMPERATURE"]["outlet_0"].push(pack->hv_cooling_temperature(i).outlet_0());
+		(*net_signals)["HV_COOLING_TEMPERATURE"]["outlet_1"].push(pack->hv_cooling_temperature(i).outlet_1());
+		(*net_signals)["HV_COOLING_TEMPERATURE"]["outlet_2"].push(pack->hv_cooling_temperature(i).outlet_2());
+		(*net_signals)["HV_COOLING_TEMPERATURE"]["outlet_3"].push(pack->hv_cooling_temperature(i).outlet_3());
+		(*net_signals)["HV_COOLING_TEMPERATURE"]["outlet_4"].push(pack->hv_cooling_temperature(i).outlet_4());
+		(*net_signals)["HV_COOLING_TEMPERATURE"]["outlet_5"].push(pack->hv_cooling_temperature(i).outlet_5());
 
     }
 
@@ -4401,9 +4438,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1752: {
-            primary_ecu_steer_actuator_status_t* msg = (primary_ecu_steer_actuator_status_t*)(device->message);
-            primary::ECU_STEER_ACTUATOR_STATUS* proto_msg = pack->add_ecu_steer_actuator_status();
-			proto_msg->set_status((primary::primary_ecu_steer_actuator_status_status)msg->status);
+            primary_as_commands_status_t* msg = (primary_as_commands_status_t*)(device->message);
+            primary::AS_COMMANDS_STATUS* proto_msg = pack->add_as_commands_status();
+			proto_msg->set_steerstatus((primary::primary_as_commands_status_steerstatus)msg->steerstatus);
+			proto_msg->set_throttlestatus((primary::primary_as_commands_status_throttlestatus)msg->throttlestatus);
+			proto_msg->set_brakestatus((primary::primary_as_commands_status_brakestatus)msg->brakestatus);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -4412,20 +4451,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1104: {
-            primary_ecu_set_steer_actuator_status_steering_wheel_t* msg = (primary_ecu_set_steer_actuator_status_steering_wheel_t*)(device->message);
-            primary::ECU_SET_STEER_ACTUATOR_STATUS_STEERING_WHEEL* proto_msg = pack->add_ecu_set_steer_actuator_status_steering_wheel();
-			proto_msg->set_status((primary::primary_ecu_set_steer_actuator_status_steering_wheel_status)msg->status);
-
-#ifdef CANLIB_TIMESTAMP
-            proto_msg->set__inner_timestamp(msg->_timestamp);
-#endif // CANLIB_TIMESTAMP
-            break;
-        }
-
-        case 1112: {
-            primary_ecu_set_steer_actuator_status_tlm_t* msg = (primary_ecu_set_steer_actuator_status_tlm_t*)(device->message);
-            primary::ECU_SET_STEER_ACTUATOR_STATUS_TLM* proto_msg = pack->add_ecu_set_steer_actuator_status_tlm();
-			proto_msg->set_status((primary::primary_ecu_set_steer_actuator_status_tlm_status)msg->status);
+            primary_as_commands_set_status_t* msg = (primary_as_commands_set_status_t*)(device->message);
+            primary::AS_COMMANDS_SET_STATUS* proto_msg = pack->add_as_commands_set_status();
+			proto_msg->set_steerstatus((primary::primary_as_commands_set_status_steerstatus)msg->steerstatus);
+			proto_msg->set_throttlestatus((primary::primary_as_commands_set_status_throttlestatus)msg->throttlestatus);
+			proto_msg->set_brakestatus((primary::primary_as_commands_set_status_brakestatus)msg->brakestatus);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -4434,9 +4464,11 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
         }
 
         case 1760: {
-            primary_ecu_set_steer_actuator_angle_converted_t* msg = (primary_ecu_set_steer_actuator_angle_converted_t*)(device->message);
-            primary::ECU_SET_STEER_ACTUATOR_ANGLE* proto_msg = pack->add_ecu_set_steer_actuator_angle();
-			proto_msg->set_angle(msg->angle);
+            primary_as_commands_set_value_converted_t* msg = (primary_as_commands_set_value_converted_t*)(device->message);
+            primary::AS_COMMANDS_SET_VALUE* proto_msg = pack->add_as_commands_set_value();
+			proto_msg->set_steerangle(msg->steerangle);
+			proto_msg->set_throttle(msg->throttle);
+			proto_msg->set_brake(msg->brake);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -4563,7 +4595,7 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
             break;
         }
 
-        case 1120: {
+        case 1112: {
             primary_hv_ts_voltage_converted_t* msg = (primary_hv_ts_voltage_converted_t*)(device->message);
             primary::HV_TS_VOLTAGE* proto_msg = pack->add_hv_ts_voltage();
 			proto_msg->set_ts(msg->ts);
@@ -4588,6 +4620,39 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 			proto_msg->set_temperature_1(msg->temperature_1);
 			proto_msg->set_temperature_2(msg->temperature_2);
 			proto_msg->set_temperature_3(msg->temperature_3);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1840: {
+            primary_hv_discharge_temperature_converted_t* msg = (primary_hv_discharge_temperature_converted_t*)(device->message);
+            primary::HV_DISCHARGE_TEMPERATURE* proto_msg = pack->add_hv_discharge_temperature();
+			proto_msg->set_cellboard_id((primary::primary_hv_discharge_temperature_cellboard_id)msg->cellboard_id);
+			proto_msg->set_temperature_0(msg->temperature_0);
+			proto_msg->set_temperature_1(msg->temperature_1);
+			proto_msg->set_temperature_2(msg->temperature_2);
+			proto_msg->set_temperature_3(msg->temperature_3);
+			proto_msg->set_temperature_4(msg->temperature_4);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1848: {
+            primary_hv_cooling_temperature_converted_t* msg = (primary_hv_cooling_temperature_converted_t*)(device->message);
+            primary::HV_COOLING_TEMPERATURE* proto_msg = pack->add_hv_cooling_temperature();
+			proto_msg->set_inlet(msg->inlet);
+			proto_msg->set_outlet_0(msg->outlet_0);
+			proto_msg->set_outlet_1(msg->outlet_1);
+			proto_msg->set_outlet_2(msg->outlet_2);
+			proto_msg->set_outlet_3(msg->outlet_3);
+			proto_msg->set_outlet_4(msg->outlet_4);
+			proto_msg->set_outlet_5(msg->outlet_5);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

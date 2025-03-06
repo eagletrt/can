@@ -2696,7 +2696,7 @@
             }
         },
         {
-            "name": "ECU_STEER_ACTUATOR_STATUS",
+            "name": "AS_COMMANDS_STATUS",
             "topic": "HYDRA",
             "priority": 3,
             "interval": 200,
@@ -2705,27 +2705,30 @@
             ],
             "receiving": [],
             "contents": {
-                "status": "Toggle"
+                "steerStatus": "Toggle",
+                "throttleStatus": "Toggle",
+                "brakeStatus": "Toggle"
             }
         },
         {
-            "name": "ECU_SET_STEER_ACTUATOR_STATUS",
+            "name": "AS_COMMANDS_SET_STATUS",
             "topic": "HYDRA",
             "priority": 2,
             "interval": 200,
             "sending": [
-                "STEERING_WHEEL",
                 "TLM"
             ],
             "receiving": [
                 "ECU"
             ],
             "contents": {
-                "status": "Toggle"
+                "steerStatus": "Toggle",
+                "throttleStatus": "Toggle",
+                "brakeStatus": "Toggle"
             }
         },
         {
-            "name": "ECU_SET_STEER_ACTUATOR_ANGLE",
+            "name": "AS_COMMANDS_SET_VALUE",
             "topic": "HYDRA",
             "priority": 3,
             "interval": 50,
@@ -2736,11 +2739,27 @@
                 "ECU"
             ],
             "contents": {
-                "angle": {
+                "steerAngle": {
                     "type": "float32",
                     "range": [
                         -180,
                         180
+                    ],
+                    "force": "uint16"
+                },
+                "throttle": {
+                    "type": "float32",
+                    "range": [
+                        0,
+                        1
+                    ],
+                    "force": "uint16"
+                },
+                "brake": {
+                    "type": "float32",
+                    "range": [
+                        -1,
+                        0
                     ],
                     "force": "uint16"
                 }
@@ -3088,6 +3107,130 @@
                 }
             }
         },
+        {
+          "name": "HV_DISCHARGE_TEMPERATURE",
+          "topic": "HYDRA",
+          "priority": 3,
+          "interval": 50,
+          "sending": [
+              "HV"
+          ],
+          "receiving": [],
+          "description": "HV cellboard discharge resistor temperatures in °C",
+          "contents": {
+              "cellboard_id": "HvCellboardId",
+              "temperature_0": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              },
+              "temperature_1": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              },
+              "temperature_2": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              },
+              "temperature_3": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              },
+              "temperature_4": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              }
+          }
+      },
+      {
+          "name": "HV_COOLING_TEMPERATURE",
+          "topic": "HYDRA",
+          "priority": 3,
+          "interval": 200,
+          "sending": [
+              "HV"
+          ],
+          "receiving": [],
+          "description": "HV cooling temperatures in °C",
+          "contents": {
+              "inlet": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              },
+              "outlet_0": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              },
+              "outlet_1": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              },
+              "outlet_2": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              },
+              "outlet_3": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              },
+              "outlet_4": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              },
+              "outlet_5": {
+                  "type": "float32",
+                  "force": "uint8",
+                  "range": [
+                      -25.0,
+                      100.0
+                  ]
+              }
+          }
+
+      },
         {
             "name": "CHARGER_1",
             "fixed_id": 256,

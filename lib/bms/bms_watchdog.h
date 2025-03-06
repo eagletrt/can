@@ -57,6 +57,7 @@ typedef void (*canlib_watchdog_callback)(int);
 #define BMS_INTERVAL_CELLBOARD_STATUS 20
 #define BMS_INTERVAL_CELLBOARD_CELLS_VOLTAGE 50
 #define BMS_INTERVAL_CELLBOARD_CELLS_TEMPERATURE 50
+#define BMS_INTERVAL_CELLBOARD_DISCHARGE_TEMPERATURE 50
 #define BMS_INTERVAL_CELLBOARD_SET_BALANCING_STATUS 200
 #define BMS_INTERVAL_CELLBOARD_BALANCING_STATUS 50
 #define BMS_INTERVAL_CELLBOARD_ERROR 20
@@ -99,16 +100,17 @@ typedef void (*canlib_watchdog_callback)(int);
 #define BMS_INDEX_CELLBOARD_STATUS 34
 #define BMS_INDEX_CELLBOARD_CELLS_VOLTAGE 35
 #define BMS_INDEX_CELLBOARD_CELLS_TEMPERATURE 36
-#define BMS_INDEX_CELLBOARD_SET_BALANCING_STATUS 37
-#define BMS_INDEX_CELLBOARD_BALANCING_STATUS 38
-#define BMS_INDEX_CELLBOARD_ERROR 39
+#define BMS_INDEX_CELLBOARD_DISCHARGE_TEMPERATURE 37
+#define BMS_INDEX_CELLBOARD_SET_BALANCING_STATUS 38
+#define BMS_INDEX_CELLBOARD_BALANCING_STATUS 39
+#define BMS_INDEX_CELLBOARD_ERROR 40
 
 
 
 typedef struct {
-    uint8_t activated[5];
-    uint8_t timeout[5];
-    canlib_watchdog_timestamp last_reset[40];
+    uint8_t activated[6];
+    uint8_t timeout[6];
+    canlib_watchdog_timestamp last_reset[41];
 } bms_watchdog;
 
 int bms_watchdog_interval_from_id(uint16_t message_id);

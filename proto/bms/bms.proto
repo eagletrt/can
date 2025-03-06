@@ -716,6 +716,14 @@ enum bms_cellboard_cells_temperature_cellboard_id {
 	bms_cellboard_cells_temperature_cellboard_id_cellboard_4 = 4;
 	bms_cellboard_cells_temperature_cellboard_id_cellboard_5 = 5;
 }
+enum bms_cellboard_discharge_temperature_cellboard_id {
+	bms_cellboard_discharge_temperature_cellboard_id_cellboard_0 = 0;
+	bms_cellboard_discharge_temperature_cellboard_id_cellboard_1 = 1;
+	bms_cellboard_discharge_temperature_cellboard_id_cellboard_2 = 2;
+	bms_cellboard_discharge_temperature_cellboard_id_cellboard_3 = 3;
+	bms_cellboard_discharge_temperature_cellboard_id_cellboard_4 = 4;
+	bms_cellboard_discharge_temperature_cellboard_id_cellboard_5 = 5;
+}
 enum bms_cellboard_balancing_status_status {
 	bms_cellboard_balancing_status_status_stopped = 0;
 	bms_cellboard_balancing_status_status_paused = 1;
@@ -1200,6 +1208,15 @@ message CELLBOARD_CELLS_TEMPERATURE{
 	double temperature_3 = 6;
 	uint64 _inner_timestamp = 7;
 }
+message CELLBOARD_DISCHARGE_TEMPERATURE{
+	bms_cellboard_discharge_temperature_cellboard_id cellboard_id = 1;
+	double temperature_0 = 2;
+	double temperature_1 = 3;
+	double temperature_2 = 4;
+	double temperature_3 = 5;
+	double temperature_4 = 6;
+	uint64 _inner_timestamp = 7;
+}
 message CELLBOARD_SET_BALANCING_STATUS{
 	bool start = 1;
 	double target = 2;
@@ -1281,8 +1298,9 @@ message Pack{
 	repeated CELLBOARD_STATUS CELLBOARD_STATUS = 35;
 	repeated CELLBOARD_CELLS_VOLTAGE CELLBOARD_CELLS_VOLTAGE = 36;
 	repeated CELLBOARD_CELLS_TEMPERATURE CELLBOARD_CELLS_TEMPERATURE = 37;
-	repeated CELLBOARD_SET_BALANCING_STATUS CELLBOARD_SET_BALANCING_STATUS = 38;
-	repeated CELLBOARD_BALANCING_STATUS CELLBOARD_BALANCING_STATUS = 39;
-	repeated CELLBOARD_ERROR CELLBOARD_ERROR = 40;
+	repeated CELLBOARD_DISCHARGE_TEMPERATURE CELLBOARD_DISCHARGE_TEMPERATURE = 38;
+	repeated CELLBOARD_SET_BALANCING_STATUS CELLBOARD_SET_BALANCING_STATUS = 39;
+	repeated CELLBOARD_BALANCING_STATUS CELLBOARD_BALANCING_STATUS = 40;
+	repeated CELLBOARD_ERROR CELLBOARD_ERROR = 41;
 }
 

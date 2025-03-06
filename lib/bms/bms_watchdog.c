@@ -8,8 +8,9 @@ int bms_watchdog_interval_from_id(uint16_t message_id) {
        case 513: return BMS_INTERVAL_CELLBOARD_STATUS;
        case 1553: return BMS_INTERVAL_CELLBOARD_CELLS_VOLTAGE;
        case 1561: return BMS_INTERVAL_CELLBOARD_CELLS_TEMPERATURE;
+       case 1569: return BMS_INTERVAL_CELLBOARD_DISCHARGE_TEMPERATURE;
        case 1025: return BMS_INTERVAL_CELLBOARD_SET_BALANCING_STATUS;
-       case 1569: return BMS_INTERVAL_CELLBOARD_BALANCING_STATUS;
+       case 1577: return BMS_INTERVAL_CELLBOARD_BALANCING_STATUS;
        case 521: return BMS_INTERVAL_CELLBOARD_ERROR;
 
     }
@@ -55,8 +56,9 @@ int bms_watchdog_index_from_id(uint16_t message_id) {
        case 513: return BMS_INDEX_CELLBOARD_STATUS;
        case 1553: return BMS_INDEX_CELLBOARD_CELLS_VOLTAGE;
        case 1561: return BMS_INDEX_CELLBOARD_CELLS_TEMPERATURE;
+       case 1569: return BMS_INDEX_CELLBOARD_DISCHARGE_TEMPERATURE;
        case 1025: return BMS_INDEX_CELLBOARD_SET_BALANCING_STATUS;
-       case 1569: return BMS_INDEX_CELLBOARD_BALANCING_STATUS;
+       case 1577: return BMS_INDEX_CELLBOARD_BALANCING_STATUS;
        case 521: return BMS_INDEX_CELLBOARD_ERROR;
 
     }
@@ -69,7 +71,7 @@ void bms_watchdog_free(bms_watchdog *watchdog) {
 
 void bms_watchdog_reset(bms_watchdog *watchdog, canlib_message_id id, canlib_watchdog_timestamp timestamp) {
     int index = bms_watchdog_index_from_id(id);
-    if (index < 40 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
+    if (index < 41 && CANLIB_BITTEST_ARRAY(watchdog->activated, index)) {
         CANLIB_BITCLEAR_ARRAY(watchdog->timeout, index);
         watchdog->last_reset[index] = timestamp;
     }
@@ -114,6 +116,13 @@ void bms_watchdog_timeout(bms_watchdog *watchdog, canlib_watchdog_timestamp time
         && timestamp - watchdog->last_reset[BMS_INDEX_CELLBOARD_CELLS_TEMPERATURE] > BMS_INTERVAL_CELLBOARD_CELLS_TEMPERATURE * 3
     ) {
         CANLIB_BITSET_ARRAY(watchdog->timeout, BMS_INDEX_CELLBOARD_CELLS_TEMPERATURE);
+    }
+
+    if (
+        CANLIB_BITTEST_ARRAY(watchdog->activated, BMS_INDEX_CELLBOARD_DISCHARGE_TEMPERATURE)
+        && timestamp - watchdog->last_reset[BMS_INDEX_CELLBOARD_DISCHARGE_TEMPERATURE] > BMS_INTERVAL_CELLBOARD_DISCHARGE_TEMPERATURE * 3
+    ) {
+        CANLIB_BITSET_ARRAY(watchdog->timeout, BMS_INDEX_CELLBOARD_DISCHARGE_TEMPERATURE);
     }
 
     if (
