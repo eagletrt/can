@@ -3118,7 +3118,7 @@
           "receiving": [],
           "description": "HV cellboard discharge resistor temperatures in °C",
           "contents": {
-              "cellboard_id": "CellboardId",
+              "cellboard_id": "HvCellboardId",
               "temperature_0": {
                   "type": "float32",
                   "force": "uint8",
