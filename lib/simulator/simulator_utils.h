@@ -62,15 +62,16 @@ extern "C" {
 #define CONTROL_STATUS "CONTROL_STATUS"
 
 #define CONTROL_STATUS_MAP_PW "control_status_map_pw"
-#define CONTROL_STATUS_MAP_SC "control_status_map_sc"
-#define CONTROL_STATUS_MAP_TV "control_status_map_tv"
+#define CONTROL_STATUS_SC_STATE "control_status_sc_state"
+#define CONTROL_STATUS_TV_STATE "control_status_tv_state"
+#define CONTROL_STATUS_REG_STATE "control_status_reg_state"
 /* END */
 
 /* START */
-#define SPEED "SPEED"
+#define FRONT_ANGULAR_VELOCITY "FRONT_ANGULAR_VELOCITY"
 
-#define SPEED_FL "speed_fl"
-#define SPEED_FR "speed_fr"
+#define FRONT_ANGULAR_VELOCITY_FL "front_angular_velocity_fl"
+#define FRONT_ANGULAR_VELOCITY_FR "front_angular_velocity_fr"
 /* END */
 
 /* START */
@@ -82,11 +83,72 @@ extern "C" {
 #define DEBUG_SIGNAL_2_FIELD_4 "debug_signal_2_field_4"
 /* END */
 
+/* START */
+#define INV_L_RCV "INV_L_RCV"
+
+#define INV_L_RCV_N_ACTUAL_FILT "inv_l_rcv_n_actual_filt"
+#define INV_L_RCV_M_SETDIG__IQ "inv_l_rcv_m_setdig__iq"
+/* END */
+
+/* START */
+#define INV_R_RCV "INV_R_RCV"
+
+#define INV_R_RCV_N_ACTUAL_FILT "inv_r_rcv_n_actual_filt"
+#define INV_R_RCV_M_SETDIG__IQ "inv_r_rcv_m_setdig__iq"
+/* END */
+
+/* START */
+#define AS_COMMANDS_STATUS "AS_COMMANDS_STATUS"
+
+#define AS_COMMANDS_STATUS_STEERSTATUS "as_commands_status_steerstatus"
+#define AS_COMMANDS_STATUS_THROTTLESTATUS "as_commands_status_throttlestatus"
+#define AS_COMMANDS_STATUS_BRAKESTATUS "as_commands_status_brakestatus"
+/* END */
+
+/* START */
+#define AS_COMMANDS_SET_STATUS "AS_COMMANDS_SET_STATUS"
+
+#define AS_COMMANDS_SET_STATUS_STEERSTATUS "as_commands_set_status_steerstatus"
+#define AS_COMMANDS_SET_STATUS_THROTTLESTATUS "as_commands_set_status_throttlestatus"
+#define AS_COMMANDS_SET_STATUS_BRAKESTATUS "as_commands_set_status_brakestatus"
+/* END */
+
+/* START */
+#define AS_COMMANDS_SET_VALUE "AS_COMMANDS_SET_VALUE"
+
+#define AS_COMMANDS_SET_VALUE_STEERANGLE "as_commands_set_value_steerangle"
+#define AS_COMMANDS_SET_VALUE_THROTTLE "as_commands_set_value_throttle"
+#define AS_COMMANDS_SET_VALUE_BRAKE "as_commands_set_value_brake"
+/* END */
+
+/* START */
+#define VEHICLE_POSITION "VEHICLE_POSITION"
+
+#define VEHICLE_POSITION_X "vehicle_position_x"
+#define VEHICLE_POSITION_Y "vehicle_position_y"
+#define VEHICLE_POSITION_HEADING "vehicle_position_heading"
+/* END */
+
+/* START */
+#define VEHICLE_SPEED "VEHICLE_SPEED"
+
+#define VEHICLE_SPEED_U "vehicle_speed_u"
+#define VEHICLE_SPEED_V "vehicle_speed_v"
+/* END */
+
 enum simulator_types_id{
 	e_simulator_int16_t = -2,
 	e_simulator_float,
 
-	
+	e_simulator_control_status_sc_state,
+	e_simulator_control_status_tv_state,
+	e_simulator_control_status_reg_state,
+	e_simulator_as_commands_status_steerstatus,
+	e_simulator_as_commands_status_throttlestatus,
+	e_simulator_as_commands_status_brakestatus,
+	e_simulator_as_commands_set_status_steerstatus,
+	e_simulator_as_commands_set_status_throttlestatus,
+	e_simulator_as_commands_set_status_brakestatus
 };
 
 /**

@@ -45,16 +45,17 @@ int simulator_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 
 		return 0;
 	case 520:
-		if(3 > fields_size) return 1;
+		if(4 > fields_size) return 1;
 		snprintf(v[0], string_size, CONTROL_STATUS_MAP_PW);
-		snprintf(v[1], string_size, CONTROL_STATUS_MAP_SC);
-		snprintf(v[2], string_size, CONTROL_STATUS_MAP_TV);
+		snprintf(v[1], string_size, CONTROL_STATUS_SC_STATE);
+		snprintf(v[2], string_size, CONTROL_STATUS_TV_STATE);
+		snprintf(v[3], string_size, CONTROL_STATUS_REG_STATE);
 
 		return 0;
 	case 1560:
 		if(2 > fields_size) return 1;
-		snprintf(v[0], string_size, SPEED_FL);
-		snprintf(v[1], string_size, SPEED_FR);
+		snprintf(v[0], string_size, FRONT_ANGULAR_VELOCITY_FL);
+		snprintf(v[1], string_size, FRONT_ANGULAR_VELOCITY_FR);
 
 		return 0;
 	case 1568:
@@ -65,6 +66,52 @@ int simulator_fields_string_from_id(int id, char **v, size_t fields_size, size_t
 		snprintf(v[3], string_size, DEBUG_SIGNAL_2_FIELD_4);
 
 		return 0;
+	case 1576:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, INV_L_RCV_N_ACTUAL_FILT);
+		snprintf(v[1], string_size, INV_L_RCV_M_SETDIG__IQ);
+
+		return 0;
+	case 1584:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, INV_R_RCV_N_ACTUAL_FILT);
+		snprintf(v[1], string_size, INV_R_RCV_M_SETDIG__IQ);
+
+		return 0;
+	case 1592:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, AS_COMMANDS_STATUS_STEERSTATUS);
+		snprintf(v[1], string_size, AS_COMMANDS_STATUS_THROTTLESTATUS);
+		snprintf(v[2], string_size, AS_COMMANDS_STATUS_BRAKESTATUS);
+
+		return 0;
+	case 1024:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, AS_COMMANDS_SET_STATUS_STEERSTATUS);
+		snprintf(v[1], string_size, AS_COMMANDS_SET_STATUS_THROTTLESTATUS);
+		snprintf(v[2], string_size, AS_COMMANDS_SET_STATUS_BRAKESTATUS);
+
+		return 0;
+	case 1600:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, AS_COMMANDS_SET_VALUE_STEERANGLE);
+		snprintf(v[1], string_size, AS_COMMANDS_SET_VALUE_THROTTLE);
+		snprintf(v[2], string_size, AS_COMMANDS_SET_VALUE_BRAKE);
+
+		return 0;
+	case 1608:
+		if(3 > fields_size) return 1;
+		snprintf(v[0], string_size, VEHICLE_POSITION_X);
+		snprintf(v[1], string_size, VEHICLE_POSITION_Y);
+		snprintf(v[2], string_size, VEHICLE_POSITION_HEADING);
+
+		return 0;
+	case 1616:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, VEHICLE_SPEED_U);
+		snprintf(v[1], string_size, VEHICLE_SPEED_V);
+
+		return 0;
 
     }
     return 0;
@@ -73,6 +120,60 @@ int simulator_enum_fields(int enum_id, char **v, size_t fields_size, size_t stri
 {
     switch(enum_id)
     {
+	case 0:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "simulator_control_status_sc_state_off");
+		snprintf(v[1], string_size, "simulator_control_status_sc_state_on");
+
+		return 0;
+	case 1:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "simulator_control_status_tv_state_off");
+		snprintf(v[1], string_size, "simulator_control_status_tv_state_on");
+
+		return 0;
+	case 2:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "simulator_control_status_reg_state_off");
+		snprintf(v[1], string_size, "simulator_control_status_reg_state_on");
+
+		return 0;
+	case 3:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "simulator_as_commands_status_steerstatus_off");
+		snprintf(v[1], string_size, "simulator_as_commands_status_steerstatus_on");
+
+		return 0;
+	case 4:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "simulator_as_commands_status_throttlestatus_off");
+		snprintf(v[1], string_size, "simulator_as_commands_status_throttlestatus_on");
+
+		return 0;
+	case 5:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "simulator_as_commands_status_brakestatus_off");
+		snprintf(v[1], string_size, "simulator_as_commands_status_brakestatus_on");
+
+		return 0;
+	case 6:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "simulator_as_commands_set_status_steerstatus_off");
+		snprintf(v[1], string_size, "simulator_as_commands_set_status_steerstatus_on");
+
+		return 0;
+	case 7:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "simulator_as_commands_set_status_throttlestatus_off");
+		snprintf(v[1], string_size, "simulator_as_commands_set_status_throttlestatus_on");
+
+		return 0;
+	case 8:
+		if(2 > fields_size) return 1;
+		snprintf(v[0], string_size, "simulator_as_commands_set_status_brakestatus_off");
+		snprintf(v[1], string_size, "simulator_as_commands_set_status_brakestatus_on");
+
+		return 0;
 
     }
     return 0;
@@ -210,18 +311,22 @@ int simulator_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		simulator_control_status_t tmp;
 		simulator_control_status_converted_t tmp_converted;
 		float r_map_pw;
-		float r_map_sc;
-		float r_map_tv;
+		uint8_t r_sc_state;
+		uint8_t r_tv_state;
+		uint8_t r_reg_state;
 
 		sscanf(s, "%f,"       
-			"%f,"       
-			"%f,"       ,
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
 			&r_map_pw,
-			&r_map_sc,
-			&r_map_tv);
+			&r_sc_state,
+			&r_tv_state,
+			&r_reg_state);
 		tmp_converted.map_pw = (float)r_map_pw;
-		tmp_converted.map_sc = (float)r_map_sc;
-		tmp_converted.map_tv = (float)r_map_tv;
+		tmp_converted.sc_state = (simulator_control_status_sc_state)r_sc_state;
+		tmp_converted.tv_state = (simulator_control_status_tv_state)r_tv_state;
+		tmp_converted.reg_state = (simulator_control_status_reg_state)r_reg_state;
 
 		simulator_control_status_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = SIMULATOR_CONTROL_STATUS_BYTE_SIZE;
@@ -229,8 +334,8 @@ int simulator_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 	}
 	case 1560:
 	{
-		simulator_speed_t tmp;
-		simulator_speed_converted_t tmp_converted;
+		simulator_front_angular_velocity_t tmp;
+		simulator_front_angular_velocity_converted_t tmp_converted;
 		float r_fl;
 		float r_fr;
 
@@ -241,9 +346,9 @@ int simulator_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		tmp_converted.fl = (float)r_fl;
 		tmp_converted.fr = (float)r_fr;
 
-		simulator_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
-		*size = SIMULATOR_SPEED_BYTE_SIZE;
-		return simulator_speed_pack(data, &tmp, SIMULATOR_SPEED_BYTE_SIZE);
+		simulator_front_angular_velocity_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SIMULATOR_FRONT_ANGULAR_VELOCITY_BYTE_SIZE;
+		return simulator_front_angular_velocity_pack(data, &tmp, SIMULATOR_FRONT_ANGULAR_VELOCITY_BYTE_SIZE);
 	}
 	case 1568:
 	{
@@ -271,6 +376,148 @@ int simulator_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		*size = SIMULATOR_DEBUG_SIGNAL_2_BYTE_SIZE;
 		return simulator_debug_signal_2_pack(data, &tmp, SIMULATOR_DEBUG_SIGNAL_2_BYTE_SIZE);
 	}
+	case 1576:
+	{
+		simulator_inv_l_rcv_t tmp;
+		simulator_inv_l_rcv_converted_t tmp_converted;
+		float r_n_actual_filt;
+		float r_m_setdig__iq;
+
+		sscanf(s, "%f,"       
+			"%f,"       ,
+			&r_n_actual_filt,
+			&r_m_setdig__iq);
+		tmp_converted.n_actual_filt = (float)r_n_actual_filt;
+		tmp_converted.m_setdig__iq = (float)r_m_setdig__iq;
+
+		simulator_inv_l_rcv_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SIMULATOR_INV_L_RCV_BYTE_SIZE;
+		return simulator_inv_l_rcv_pack(data, &tmp, SIMULATOR_INV_L_RCV_BYTE_SIZE);
+	}
+	case 1584:
+	{
+		simulator_inv_r_rcv_t tmp;
+		simulator_inv_r_rcv_converted_t tmp_converted;
+		float r_n_actual_filt;
+		float r_m_setdig__iq;
+
+		sscanf(s, "%f,"       
+			"%f,"       ,
+			&r_n_actual_filt,
+			&r_m_setdig__iq);
+		tmp_converted.n_actual_filt = (float)r_n_actual_filt;
+		tmp_converted.m_setdig__iq = (float)r_m_setdig__iq;
+
+		simulator_inv_r_rcv_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SIMULATOR_INV_R_RCV_BYTE_SIZE;
+		return simulator_inv_r_rcv_pack(data, &tmp, SIMULATOR_INV_R_RCV_BYTE_SIZE);
+	}
+	case 1592:
+	{
+		simulator_as_commands_status_t tmp;
+		simulator_as_commands_status_converted_t tmp_converted;
+		uint8_t r_steerstatus;
+		uint8_t r_throttlestatus;
+		uint8_t r_brakestatus;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_steerstatus,
+			&r_throttlestatus,
+			&r_brakestatus);
+		tmp_converted.steerstatus = (simulator_as_commands_status_steerstatus)r_steerstatus;
+		tmp_converted.throttlestatus = (simulator_as_commands_status_throttlestatus)r_throttlestatus;
+		tmp_converted.brakestatus = (simulator_as_commands_status_brakestatus)r_brakestatus;
+
+		simulator_as_commands_status_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SIMULATOR_AS_COMMANDS_STATUS_BYTE_SIZE;
+		return simulator_as_commands_status_pack(data, &tmp, SIMULATOR_AS_COMMANDS_STATUS_BYTE_SIZE);
+	}
+	case 1024:
+	{
+		simulator_as_commands_set_status_t tmp;
+		simulator_as_commands_set_status_converted_t tmp_converted;
+		uint8_t r_steerstatus;
+		uint8_t r_throttlestatus;
+		uint8_t r_brakestatus;
+
+		sscanf(s, "%" SCNu8 ","  
+			"%" SCNu8 ","  
+			"%" SCNu8 ","  ,
+			&r_steerstatus,
+			&r_throttlestatus,
+			&r_brakestatus);
+		tmp_converted.steerstatus = (simulator_as_commands_set_status_steerstatus)r_steerstatus;
+		tmp_converted.throttlestatus = (simulator_as_commands_set_status_throttlestatus)r_throttlestatus;
+		tmp_converted.brakestatus = (simulator_as_commands_set_status_brakestatus)r_brakestatus;
+
+		simulator_as_commands_set_status_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SIMULATOR_AS_COMMANDS_SET_STATUS_BYTE_SIZE;
+		return simulator_as_commands_set_status_pack(data, &tmp, SIMULATOR_AS_COMMANDS_SET_STATUS_BYTE_SIZE);
+	}
+	case 1600:
+	{
+		simulator_as_commands_set_value_t tmp;
+		simulator_as_commands_set_value_converted_t tmp_converted;
+		float r_steerangle;
+		float r_throttle;
+		float r_brake;
+
+		sscanf(s, "%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_steerangle,
+			&r_throttle,
+			&r_brake);
+		tmp_converted.steerangle = (float)r_steerangle;
+		tmp_converted.throttle = (float)r_throttle;
+		tmp_converted.brake = (float)r_brake;
+
+		simulator_as_commands_set_value_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SIMULATOR_AS_COMMANDS_SET_VALUE_BYTE_SIZE;
+		return simulator_as_commands_set_value_pack(data, &tmp, SIMULATOR_AS_COMMANDS_SET_VALUE_BYTE_SIZE);
+	}
+	case 1608:
+	{
+		simulator_vehicle_position_t tmp;
+		simulator_vehicle_position_converted_t tmp_converted;
+		float r_x;
+		float r_y;
+		float r_heading;
+
+		sscanf(s, "%f,"       
+			"%f,"       
+			"%f,"       ,
+			&r_x,
+			&r_y,
+			&r_heading);
+		tmp_converted.x = (float)r_x;
+		tmp_converted.y = (float)r_y;
+		tmp_converted.heading = (float)r_heading;
+
+		simulator_vehicle_position_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SIMULATOR_VEHICLE_POSITION_BYTE_SIZE;
+		return simulator_vehicle_position_pack(data, &tmp, SIMULATOR_VEHICLE_POSITION_BYTE_SIZE);
+	}
+	case 1616:
+	{
+		simulator_vehicle_speed_t tmp;
+		simulator_vehicle_speed_converted_t tmp_converted;
+		float r_u;
+		float r_v;
+
+		sscanf(s, "%f,"       
+			"%f,"       ,
+			&r_u,
+			&r_v);
+		tmp_converted.u = (float)r_u;
+		tmp_converted.v = (float)r_v;
+
+		simulator_vehicle_speed_conversion_to_raw_struct(&tmp, &tmp_converted);
+		*size = SIMULATOR_VEHICLE_SPEED_BYTE_SIZE;
+		return simulator_vehicle_speed_pack(data, &tmp, SIMULATOR_VEHICLE_SPEED_BYTE_SIZE);
+	}
 
     }
     return 0;
@@ -285,9 +532,16 @@ int simulator_n_fields_from_id(int id)
 		case 1544: return 2;
 		case 1552: return 1;
 		case 512: return 5;
-		case 520: return 3;
+		case 520: return 4;
 		case 1560: return 2;
 		case 1568: return 4;
+		case 1576: return 2;
+		case 1584: return 2;
+		case 1592: return 3;
+		case 1024: return 3;
+		case 1600: return 3;
+		case 1608: return 3;
+		case 1616: return 2;
     }
     return 0;
 }
@@ -330,11 +584,12 @@ int simulator_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[4] = e_simulator_float;
 		return 5;
 	case 520:
-		if(fields_types_size < 3) return 0;
+		if(fields_types_size < 4) return 0;
 		fields_types[0] = e_simulator_float;
-		fields_types[1] = e_simulator_float;
-		fields_types[2] = e_simulator_float;
-		return 3;
+		fields_types[1] = e_simulator_control_status_sc_state;
+		fields_types[2] = e_simulator_control_status_tv_state;
+		fields_types[3] = e_simulator_control_status_reg_state;
+		return 4;
 	case 1560:
 		if(fields_types_size < 2) return 0;
 		fields_types[0] = e_simulator_float;
@@ -347,6 +602,45 @@ int simulator_fields_types_from_id(int id, int* fields_types, int fields_types_s
 		fields_types[2] = e_simulator_float;
 		fields_types[3] = e_simulator_float;
 		return 4;
+	case 1576:
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_simulator_float;
+		fields_types[1] = e_simulator_float;
+		return 2;
+	case 1584:
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_simulator_float;
+		fields_types[1] = e_simulator_float;
+		return 2;
+	case 1592:
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_simulator_as_commands_status_steerstatus;
+		fields_types[1] = e_simulator_as_commands_status_throttlestatus;
+		fields_types[2] = e_simulator_as_commands_status_brakestatus;
+		return 3;
+	case 1024:
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_simulator_as_commands_set_status_steerstatus;
+		fields_types[1] = e_simulator_as_commands_set_status_throttlestatus;
+		fields_types[2] = e_simulator_as_commands_set_status_brakestatus;
+		return 3;
+	case 1600:
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_simulator_float;
+		fields_types[1] = e_simulator_float;
+		fields_types[2] = e_simulator_float;
+		return 3;
+	case 1608:
+		if(fields_types_size < 3) return 0;
+		fields_types[0] = e_simulator_float;
+		fields_types[1] = e_simulator_float;
+		fields_types[2] = e_simulator_float;
+		return 3;
+	case 1616:
+		if(fields_types_size < 2) return 0;
+		fields_types[0] = e_simulator_float;
+		fields_types[1] = e_simulator_float;
+		return 2;
 
     }
     return 0;
@@ -355,6 +649,21 @@ std::vector<std::string> simulator_enum_fields_from_message(const std::string& m
 {
 	std::vector<std::string> ret;
 
+	if(msg_name == CONTROL_STATUS) {
+		ret.push_back("sc_state");
+		ret.push_back("tv_state");
+		ret.push_back("reg_state");
+	}
+	if(msg_name == AS_COMMANDS_STATUS) {
+		ret.push_back("steerstatus");
+		ret.push_back("throttlestatus");
+		ret.push_back("brakestatus");
+	}
+	if(msg_name == AS_COMMANDS_SET_STATUS) {
+		ret.push_back("steerstatus");
+		ret.push_back("throttlestatus");
+		ret.push_back("brakestatus");
+	}
 
 	return ret;
 }
@@ -362,6 +671,69 @@ std::vector<std::string> simulator_enum_names_from_fields(const std::string& msg
 {
 	std::vector<std::string> ret;
 
+	if(msg_name == CONTROL_STATUS)
+	{
+		if(sgn_name == "sc_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "tv_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "reg_state")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+	}
+	if(msg_name == AS_COMMANDS_STATUS)
+	{
+		if(sgn_name == "steerstatus")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "throttlestatus")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "brakestatus")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+	}
+	if(msg_name == AS_COMMANDS_SET_STATUS)
+	{
+		if(sgn_name == "steerstatus")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "throttlestatus")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+		if(sgn_name == "brakestatus")
+		{
+			ret.push_back("off");
+			ret.push_back("on");
+			return ret;
+		}
+	}
 
 	return ret;
 }

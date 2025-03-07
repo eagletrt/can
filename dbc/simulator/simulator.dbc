@@ -33,7 +33,7 @@ NS_ :
 
 BS_:
 
-BU_: ECU TLM IMU ECU IMU TLM TLM ECU ECU ECU ECU
+BU_: TLM ECU TLM ECU TLM ECU ECU ECU TLM ECU ECU TLM ECU TLM ECU ECU ECU IMU IMU TLM
 
 
 BO_ 1260 IMU_ANGULAR_RATE: 6 Vector__XXX
@@ -58,18 +58,19 @@ BO_ 1552 STEER_ANGLE: 4 Vector__XXX
  SG_ angle : 0|32@1+ (8.38190317349087e-08,-180) [-180|180] "" Vector__XXX
 
 BO_ 512 CONTROL_OUTPUT: 8 Vector__XXX
- SG_ torque_r : 48|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
- SG_ torque_l : 32|16@1+ (0.0015259021896696422,0) [0|100] "" Vector__XXX
- SG_ torque_max_r : 24|8@1+ (0.39215686274509803,0) [0|100] "" Vector__XXX
- SG_ torque_max_l : 16|8@1+ (0.39215686274509803,0) [0|100] "" Vector__XXX
+ SG_ torque_r : 48|16@1+ (0.0030518043793392844,-100) [-100|100] "" Vector__XXX
+ SG_ torque_l : 32|16@1+ (0.0030518043793392844,-100) [-100|100] "" Vector__XXX
+ SG_ torque_max_r : 24|8@1+ (0.7843137254901961,-100) [-100|100] "" Vector__XXX
+ SG_ torque_max_l : 16|8@1+ (0.7843137254901961,-100) [-100|100] "" Vector__XXX
  SG_ estimated_velocity : 0|16@1+ (0.000686655985351339,-10) [-10|35] "" Vector__XXX
 
-BO_ 520 CONTROL_STATUS: 3 Vector__XXX
- SG_ map_tv : 16|8@1+ (0.01,0) [0|1] "" Vector__XXX
- SG_ map_sc : 8|8@1+ (0.01,0) [0|1] "" Vector__XXX
+BO_ 520 CONTROL_STATUS: 2 Vector__XXX
+ SG_ reg_state : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ tv_state : 9|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ sc_state : 8|1@1+ (1,0) [0|1] "" Vector__XXX
  SG_ map_pw : 0|8@1+ (0.01,-0.5) [-0.5|1] "" Vector__XXX
 
-BO_ 1560 SPEED: 4 Vector__XXX
+BO_ 1560 FRONT_ANGULAR_VELOCITY: 4 Vector__XXX
  SG_ fr : 16|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
  SG_ fl : 0|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
 
@@ -78,6 +79,38 @@ BO_ 1568 DEBUG_SIGNAL_2: 8 Vector__XXX
  SG_ field_3 : 32|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_2 : 16|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
  SG_ field_1 : 0|16@1+ (3.0518043793392844e-05,-1) [-1|1] "" Vector__XXX
+
+BO_ 1576 INV_L_RCV: 4 Vector__XXX
+ SG_ M_setdig__Iq : 16|16@1+ (0.0030518043793392844,-100) [-100|100] "" Vector__XXX
+ SG_ N_Actual_Filt : 0|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+
+BO_ 1584 INV_R_RCV: 4 Vector__XXX
+ SG_ M_setdig__Iq : 16|16@1+ (0.0030518043793392844,-100) [-100|100] "" Vector__XXX
+ SG_ N_Actual_Filt : 0|16@1+ (0.006103608758678569,-200) [-200|200] "" Vector__XXX
+
+BO_ 1592 AS_COMMANDS_STATUS: 1 Vector__XXX
+ SG_ brakeStatus : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ throttleStatus : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ steerStatus : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1024 AS_COMMANDS_SET_STATUS: 1 Vector__XXX
+ SG_ brakeStatus : 2|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ throttleStatus : 1|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ steerStatus : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 1600 AS_COMMANDS_SET_VALUE: 6 Vector__XXX
+ SG_ brake : 32|16@1+ (1.5259021896696422e-05,0) [0|1] "" Vector__XXX
+ SG_ throttle : 16|16@1+ (1.5259021896696422e-05,0) [0|1] "" Vector__XXX
+ SG_ steerAngle : 0|16@1+ (0.005493247882810712,-180) [-180|180] "" Vector__XXX
+
+BO_ 1608 VEHICLE_POSITION: 6 Vector__XXX
+ SG_ heading : 32|16@1+ (9.587518120088503e-05,-3.14159) [-3.14159|3.14159] "" Vector__XXX
+ SG_ y : 16|16@1+ (0.030518043793392843,-1000) [-1000|1000] "" Vector__XXX
+ SG_ x : 0|16@1+ (0.030518043793392843,-1000) [-1000|1000] "" Vector__XXX
+
+BO_ 1616 VEHICLE_SPEED: 4 Vector__XXX
+ SG_ v : 16|16@1+ (0.0006103608758678569,-20) [-20|20] "" Vector__XXX
+ SG_ u : 0|16@1+ (0.0006103608758678569,0) [0|40] "" Vector__XXX
 
 
 
@@ -91,6 +124,13 @@ CM_ BO_ 512 "Torques and signals calculated by the controls algorithms";
 CM_ BO_ 520 "Power maps used by the control algotirhm. (ECU checks if are coherent with the ones in the ECU)";
 CM_ BO_ 1560 "Encoder and inverter speed in rad/sec";
 CM_ BO_ 1568 "Debug signals";
+CM_ BO_ 1576 "Output from simulator, inverter torques and speed";
+CM_ BO_ 1584 "Output from simulator, inverter torques and speed";
+CM_ BO_ 1592 "";
+CM_ BO_ 1024 "";
+CM_ BO_ 1600 "";
+CM_ BO_ 1608 "Vehicle position in meters and heading in radians";
+CM_ BO_ 1616 "Vehicle speed in m/s";
 BA_DEF_ BO_  "GenMsgCycleTime" INT 0 65535;
 BA_DEF_DEF_  "GenMsgCycleTime" 0;
 BA_ "GenMsgCycleTime" BO_ 1536 10;
@@ -100,7 +140,22 @@ BA_ "GenMsgCycleTime" BO_ 512 20;
 BA_ "GenMsgCycleTime" BO_ 520 20;
 BA_ "GenMsgCycleTime" BO_ 1560 10;
 BA_ "GenMsgCycleTime" BO_ 1568 10;
-
+BA_ "GenMsgCycleTime" BO_ 1576 10;
+BA_ "GenMsgCycleTime" BO_ 1584 10;
+BA_ "GenMsgCycleTime" BO_ 1592 200;
+BA_ "GenMsgCycleTime" BO_ 1024 200;
+BA_ "GenMsgCycleTime" BO_ 1600 50;
+BA_ "GenMsgCycleTime" BO_ 1608 10;
+BA_ "GenMsgCycleTime" BO_ 1616 10;
+VAL_ 520 reg_state 0 "off" 1 "on" ;
+VAL_ 520 tv_state 0 "off" 1 "on" ;
+VAL_ 520 sc_state 0 "off" 1 "on" ;
+VAL_ 1592 brakeStatus 0 "off" 1 "on" ;
+VAL_ 1592 throttleStatus 0 "off" 1 "on" ;
+VAL_ 1592 steerStatus 0 "off" 1 "on" ;
+VAL_ 1024 brakeStatus 0 "off" 1 "on" ;
+VAL_ 1024 throttleStatus 0 "off" 1 "on" ;
+VAL_ 1024 steerStatus 0 "off" 1 "on" ;
 
 
 

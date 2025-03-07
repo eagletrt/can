@@ -350,21 +350,28 @@ void simulator_proto_interface_deserialize(simulator::Pack* pack, network_enums*
 #endif // CANLIB_TIMESTAMP
 
 		(*net_signals)["CONTROL_STATUS"]["map_pw"].push(pack->control_status(i).map_pw());
-		(*net_signals)["CONTROL_STATUS"]["map_sc"].push(pack->control_status(i).map_sc());
-		(*net_signals)["CONTROL_STATUS"]["map_tv"].push(pack->control_status(i).map_tv());
+		(*net_enums)["CONTROL_STATUS"]["sc_state"].push(pack->control_status(i).sc_state());
+		simulator_control_status_sc_state_enum_to_string((simulator_control_status_sc_state)pack->control_status(i).sc_state(), buffer);
+		(*net_strings)["CONTROL_STATUS"]["sc_state"].push(buffer);
+		(*net_enums)["CONTROL_STATUS"]["tv_state"].push(pack->control_status(i).tv_state());
+		simulator_control_status_tv_state_enum_to_string((simulator_control_status_tv_state)pack->control_status(i).tv_state(), buffer);
+		(*net_strings)["CONTROL_STATUS"]["tv_state"].push(buffer);
+		(*net_enums)["CONTROL_STATUS"]["reg_state"].push(pack->control_status(i).reg_state());
+		simulator_control_status_reg_state_enum_to_string((simulator_control_status_reg_state)pack->control_status(i).reg_state(), buffer);
+		(*net_strings)["CONTROL_STATUS"]["reg_state"].push(buffer);
 
     }
 
-    for(int i = 0; i < pack->speed_size(); i++){
+    for(int i = 0; i < pack->front_angular_velocity_size(); i++){
 #ifdef CANLIB_TIMESTAMP
         static uint64_t last_timestamp = 0;
-        if(pack->speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
-        else last_timestamp = pack->speed(i)._inner_timestamp();
-        (*net_signals)["SPEED"]["_timestamp"].push(pack->speed(i)._inner_timestamp());
+        if(pack->front_angular_velocity(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->front_angular_velocity(i)._inner_timestamp();
+        (*net_signals)["FRONT_ANGULAR_VELOCITY"]["_timestamp"].push(pack->front_angular_velocity(i)._inner_timestamp());
 #endif // CANLIB_TIMESTAMP
 
-		(*net_signals)["SPEED"]["fl"].push(pack->speed(i).fl());
-		(*net_signals)["SPEED"]["fr"].push(pack->speed(i).fr());
+		(*net_signals)["FRONT_ANGULAR_VELOCITY"]["fl"].push(pack->front_angular_velocity(i).fl());
+		(*net_signals)["FRONT_ANGULAR_VELOCITY"]["fr"].push(pack->front_angular_velocity(i).fr());
 
     }
 
@@ -380,6 +387,113 @@ void simulator_proto_interface_deserialize(simulator::Pack* pack, network_enums*
 		(*net_signals)["DEBUG_SIGNAL_2"]["field_2"].push(pack->debug_signal_2(i).field_2());
 		(*net_signals)["DEBUG_SIGNAL_2"]["field_3"].push(pack->debug_signal_2(i).field_3());
 		(*net_signals)["DEBUG_SIGNAL_2"]["field_4"].push(pack->debug_signal_2(i).field_4());
+
+    }
+
+    for(int i = 0; i < pack->inv_l_rcv_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->inv_l_rcv(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->inv_l_rcv(i)._inner_timestamp();
+        (*net_signals)["INV_L_RCV"]["_timestamp"].push(pack->inv_l_rcv(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["INV_L_RCV"]["n_actual_filt"].push(pack->inv_l_rcv(i).n_actual_filt());
+		(*net_signals)["INV_L_RCV"]["m_setdig__iq"].push(pack->inv_l_rcv(i).m_setdig__iq());
+
+    }
+
+    for(int i = 0; i < pack->inv_r_rcv_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->inv_r_rcv(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->inv_r_rcv(i)._inner_timestamp();
+        (*net_signals)["INV_R_RCV"]["_timestamp"].push(pack->inv_r_rcv(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["INV_R_RCV"]["n_actual_filt"].push(pack->inv_r_rcv(i).n_actual_filt());
+		(*net_signals)["INV_R_RCV"]["m_setdig__iq"].push(pack->inv_r_rcv(i).m_setdig__iq());
+
+    }
+
+    for(int i = 0; i < pack->as_commands_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->as_commands_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->as_commands_status(i)._inner_timestamp();
+        (*net_signals)["AS_COMMANDS_STATUS"]["_timestamp"].push(pack->as_commands_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["AS_COMMANDS_STATUS"]["steerstatus"].push(pack->as_commands_status(i).steerstatus());
+		simulator_as_commands_status_steerstatus_enum_to_string((simulator_as_commands_status_steerstatus)pack->as_commands_status(i).steerstatus(), buffer);
+		(*net_strings)["AS_COMMANDS_STATUS"]["steerstatus"].push(buffer);
+		(*net_enums)["AS_COMMANDS_STATUS"]["throttlestatus"].push(pack->as_commands_status(i).throttlestatus());
+		simulator_as_commands_status_throttlestatus_enum_to_string((simulator_as_commands_status_throttlestatus)pack->as_commands_status(i).throttlestatus(), buffer);
+		(*net_strings)["AS_COMMANDS_STATUS"]["throttlestatus"].push(buffer);
+		(*net_enums)["AS_COMMANDS_STATUS"]["brakestatus"].push(pack->as_commands_status(i).brakestatus());
+		simulator_as_commands_status_brakestatus_enum_to_string((simulator_as_commands_status_brakestatus)pack->as_commands_status(i).brakestatus(), buffer);
+		(*net_strings)["AS_COMMANDS_STATUS"]["brakestatus"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->as_commands_set_status_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->as_commands_set_status(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->as_commands_set_status(i)._inner_timestamp();
+        (*net_signals)["AS_COMMANDS_SET_STATUS"]["_timestamp"].push(pack->as_commands_set_status(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_enums)["AS_COMMANDS_SET_STATUS"]["steerstatus"].push(pack->as_commands_set_status(i).steerstatus());
+		simulator_as_commands_set_status_steerstatus_enum_to_string((simulator_as_commands_set_status_steerstatus)pack->as_commands_set_status(i).steerstatus(), buffer);
+		(*net_strings)["AS_COMMANDS_SET_STATUS"]["steerstatus"].push(buffer);
+		(*net_enums)["AS_COMMANDS_SET_STATUS"]["throttlestatus"].push(pack->as_commands_set_status(i).throttlestatus());
+		simulator_as_commands_set_status_throttlestatus_enum_to_string((simulator_as_commands_set_status_throttlestatus)pack->as_commands_set_status(i).throttlestatus(), buffer);
+		(*net_strings)["AS_COMMANDS_SET_STATUS"]["throttlestatus"].push(buffer);
+		(*net_enums)["AS_COMMANDS_SET_STATUS"]["brakestatus"].push(pack->as_commands_set_status(i).brakestatus());
+		simulator_as_commands_set_status_brakestatus_enum_to_string((simulator_as_commands_set_status_brakestatus)pack->as_commands_set_status(i).brakestatus(), buffer);
+		(*net_strings)["AS_COMMANDS_SET_STATUS"]["brakestatus"].push(buffer);
+
+    }
+
+    for(int i = 0; i < pack->as_commands_set_value_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->as_commands_set_value(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->as_commands_set_value(i)._inner_timestamp();
+        (*net_signals)["AS_COMMANDS_SET_VALUE"]["_timestamp"].push(pack->as_commands_set_value(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["AS_COMMANDS_SET_VALUE"]["steerangle"].push(pack->as_commands_set_value(i).steerangle());
+		(*net_signals)["AS_COMMANDS_SET_VALUE"]["throttle"].push(pack->as_commands_set_value(i).throttle());
+		(*net_signals)["AS_COMMANDS_SET_VALUE"]["brake"].push(pack->as_commands_set_value(i).brake());
+
+    }
+
+    for(int i = 0; i < pack->vehicle_position_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->vehicle_position(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->vehicle_position(i)._inner_timestamp();
+        (*net_signals)["VEHICLE_POSITION"]["_timestamp"].push(pack->vehicle_position(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["VEHICLE_POSITION"]["x"].push(pack->vehicle_position(i).x());
+		(*net_signals)["VEHICLE_POSITION"]["y"].push(pack->vehicle_position(i).y());
+		(*net_signals)["VEHICLE_POSITION"]["heading"].push(pack->vehicle_position(i).heading());
+
+    }
+
+    for(int i = 0; i < pack->vehicle_speed_size(); i++){
+#ifdef CANLIB_TIMESTAMP
+        static uint64_t last_timestamp = 0;
+        if(pack->vehicle_speed(i)._inner_timestamp() - last_timestamp < resample_us) continue;
+        else last_timestamp = pack->vehicle_speed(i)._inner_timestamp();
+        (*net_signals)["VEHICLE_SPEED"]["_timestamp"].push(pack->vehicle_speed(i)._inner_timestamp());
+#endif // CANLIB_TIMESTAMP
+
+		(*net_signals)["VEHICLE_SPEED"]["u"].push(pack->vehicle_speed(i).u());
+		(*net_signals)["VEHICLE_SPEED"]["v"].push(pack->vehicle_speed(i).v());
 
     }
 
@@ -472,8 +586,9 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
             simulator_control_status_converted_t* msg = (simulator_control_status_converted_t*)(device->message);
             simulator::CONTROL_STATUS* proto_msg = pack->add_control_status();
 			proto_msg->set_map_pw(msg->map_pw);
-			proto_msg->set_map_sc(msg->map_sc);
-			proto_msg->set_map_tv(msg->map_tv);
+			proto_msg->set_sc_state((simulator::simulator_control_status_sc_state)msg->sc_state);
+			proto_msg->set_tv_state((simulator::simulator_control_status_tv_state)msg->tv_state);
+			proto_msg->set_reg_state((simulator::simulator_control_status_reg_state)msg->reg_state);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);
@@ -482,8 +597,8 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
         }
 
         case 1560: {
-            simulator_speed_converted_t* msg = (simulator_speed_converted_t*)(device->message);
-            simulator::SPEED* proto_msg = pack->add_speed();
+            simulator_front_angular_velocity_converted_t* msg = (simulator_front_angular_velocity_converted_t*)(device->message);
+            simulator::FRONT_ANGULAR_VELOCITY* proto_msg = pack->add_front_angular_velocity();
 			proto_msg->set_fl(msg->fl);
 			proto_msg->set_fr(msg->fr);
 
@@ -500,6 +615,94 @@ void simulator_proto_interface_serialize_from_id(canlib_message_id id, simulator
 			proto_msg->set_field_2(msg->field_2);
 			proto_msg->set_field_3(msg->field_3);
 			proto_msg->set_field_4(msg->field_4);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1576: {
+            simulator_inv_l_rcv_converted_t* msg = (simulator_inv_l_rcv_converted_t*)(device->message);
+            simulator::INV_L_RCV* proto_msg = pack->add_inv_l_rcv();
+			proto_msg->set_n_actual_filt(msg->n_actual_filt);
+			proto_msg->set_m_setdig__iq(msg->m_setdig__iq);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1584: {
+            simulator_inv_r_rcv_converted_t* msg = (simulator_inv_r_rcv_converted_t*)(device->message);
+            simulator::INV_R_RCV* proto_msg = pack->add_inv_r_rcv();
+			proto_msg->set_n_actual_filt(msg->n_actual_filt);
+			proto_msg->set_m_setdig__iq(msg->m_setdig__iq);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1592: {
+            simulator_as_commands_status_t* msg = (simulator_as_commands_status_t*)(device->message);
+            simulator::AS_COMMANDS_STATUS* proto_msg = pack->add_as_commands_status();
+			proto_msg->set_steerstatus((simulator::simulator_as_commands_status_steerstatus)msg->steerstatus);
+			proto_msg->set_throttlestatus((simulator::simulator_as_commands_status_throttlestatus)msg->throttlestatus);
+			proto_msg->set_brakestatus((simulator::simulator_as_commands_status_brakestatus)msg->brakestatus);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1024: {
+            simulator_as_commands_set_status_t* msg = (simulator_as_commands_set_status_t*)(device->message);
+            simulator::AS_COMMANDS_SET_STATUS* proto_msg = pack->add_as_commands_set_status();
+			proto_msg->set_steerstatus((simulator::simulator_as_commands_set_status_steerstatus)msg->steerstatus);
+			proto_msg->set_throttlestatus((simulator::simulator_as_commands_set_status_throttlestatus)msg->throttlestatus);
+			proto_msg->set_brakestatus((simulator::simulator_as_commands_set_status_brakestatus)msg->brakestatus);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1600: {
+            simulator_as_commands_set_value_converted_t* msg = (simulator_as_commands_set_value_converted_t*)(device->message);
+            simulator::AS_COMMANDS_SET_VALUE* proto_msg = pack->add_as_commands_set_value();
+			proto_msg->set_steerangle(msg->steerangle);
+			proto_msg->set_throttle(msg->throttle);
+			proto_msg->set_brake(msg->brake);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1608: {
+            simulator_vehicle_position_converted_t* msg = (simulator_vehicle_position_converted_t*)(device->message);
+            simulator::VEHICLE_POSITION* proto_msg = pack->add_vehicle_position();
+			proto_msg->set_x(msg->x);
+			proto_msg->set_y(msg->y);
+			proto_msg->set_heading(msg->heading);
+
+#ifdef CANLIB_TIMESTAMP
+            proto_msg->set__inner_timestamp(msg->_timestamp);
+#endif // CANLIB_TIMESTAMP
+            break;
+        }
+
+        case 1616: {
+            simulator_vehicle_speed_converted_t* msg = (simulator_vehicle_speed_converted_t*)(device->message);
+            simulator::VEHICLE_SPEED* proto_msg = pack->add_vehicle_speed();
+			proto_msg->set_u(msg->u);
+			proto_msg->set_v(msg->v);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

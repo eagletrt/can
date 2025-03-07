@@ -2758,8 +2758,8 @@
                 "brake": {
                     "type": "float32",
                     "range": [
-                        -1,
-                        0
+                        0,
+                        1
                     ],
                     "force": "uint16"
                 }
