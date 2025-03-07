@@ -1,6 +1,14 @@
 {
   "version": 1.0,
-  "types": {},
+  "types": {
+    "Toggle": {
+      "type": "enum",
+      "items": [
+        "off",
+        "on"
+      ]
+    }
+  },
   "messages": [
     {
       "name": "IMU_ANGULAR_RATE",
@@ -182,7 +190,7 @@
         "torque_max_l": {
           "type": "float32",
           "range": [
-            0,
+            -100,
             100
           ],
           "force": "uint8"
@@ -190,7 +198,7 @@
         "torque_max_r": {
           "type": "float32",
           "range": [
-            0,
+            -100,
             100
           ],
           "force": "uint8"
@@ -198,7 +206,7 @@
         "torque_l": {
           "type": "float32",
           "range": [
-            0,
+            -100,
             100
           ],
           "force": "uint16"
@@ -206,7 +214,7 @@
         "torque_r": {
           "type": "float32",
           "range": [
-            0,
+            -100,
             100
           ],
           "force": "uint16"
@@ -235,28 +243,13 @@
           "precision": 0.01,
           "optimize": false
         },
-        "map_sc": {
-          "type": "float32",
-          "range": [
-            0,
-            1
-          ],
-          "precision": 0.01,
-          "optimize": false
-        },
-        "map_tv": {
-          "type": "float32",
-          "range": [
-            0,
-            1
-          ],
-          "precision": 0.01,
-          "optimize": false
-        }
+        "sc_state": "Toggle",
+        "tv_state": "Toggle",
+        "reg_state": "Toggle"
       }
     },
     {
-      "name": "SPEED",
+      "name": "FRONT_ANGULAR_VELOCITY",
       "topic": "HYDRA",
       "priority": 3,
       "sending": [
@@ -324,6 +317,200 @@
           "range": [
             -1,
             1
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "INV_L_RCV",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ECU"
+      ],
+      "receiving": [],
+      "description": "Output from simulator, inverter torques and speed",
+      "interval": 10,
+      "contents": {
+        "N_Actual_Filt": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [
+            -200,
+            200
+          ]
+        },
+        "M_setdig__Iq": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [
+            -100,
+            100
+          ]
+        }
+      }
+    },
+    {
+      "name": "INV_R_RCV",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "ECU"
+      ],
+      "receiving": [],
+      "description": "Output from simulator, inverter torques and speed",
+      "interval": 10,
+      "contents": {
+        "N_Actual_Filt": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [
+            -200,
+            200
+          ]
+        },
+        "M_setdig__Iq": {
+          "type": "float32",
+          "force": "uint16",
+          "range": [
+            -100,
+            100
+          ]
+        }
+      }
+    },
+    {
+      "name": "AS_COMMANDS_STATUS",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 200,
+      "sending": [
+        "ECU"
+      ],
+      "receiving": [],
+      "contents": {
+        "steerStatus": "Toggle",
+        "throttleStatus": "Toggle",
+        "brakeStatus": "Toggle"
+      }
+    },
+    {
+      "name": "AS_COMMANDS_SET_STATUS",
+      "topic": "HYDRA",
+      "priority": 2,
+      "interval": 200,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ECU"
+      ],
+      "contents": {
+        "steerStatus": "Toggle",
+        "throttleStatus": "Toggle",
+        "brakeStatus": "Toggle"
+      }
+    },
+    {
+      "name": "AS_COMMANDS_SET_VALUE",
+      "topic": "HYDRA",
+      "priority": 3,
+      "interval": 50,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [
+        "ECU"
+      ],
+      "contents": {
+        "steerAngle": {
+          "type": "float32",
+          "range": [
+            -180,
+            180
+          ],
+          "force": "uint16"
+        },
+        "throttle": {
+          "type": "float32",
+          "range": [
+            0,
+            1
+          ],
+          "force": "uint16"
+        },
+        "brake": {
+          "type": "float32",
+          "range": [
+            0,
+            1
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "VEHICLE_POSITION",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "Vehicle position in meters and heading in radians",
+      "interval": 10,
+      "contents": {
+        "x": {
+          "type": "float32",
+          "range": [
+            -1000,
+            1000
+          ],
+          "force": "uint16"
+        },
+        "y": {
+          "type": "float32",
+          "range": [
+            -1000,
+            1000
+          ],
+          "force": "uint16"
+        },
+        "heading": {
+          "type": "float32",
+          "range": [
+            -3.14159,
+            3.14159
+          ],
+          "force": "uint16"
+        }
+      }
+    },
+    {
+      "name": "VEHICLE_SPEED",
+      "topic": "HYDRA",
+      "priority": 3,
+      "sending": [
+        "TLM"
+      ],
+      "receiving": [],
+      "description": "Vehicle speed in m/s",
+      "interval": 10,
+      "contents": {
+        "u": {
+          "type": "float32",
+          "range": [
+            0,
+            40
+          ],
+          "force": "uint16"
+        },
+        "v": {
+          "type": "float32",
+          "range": [
+            -20,
+            20
           ],
           "force": "uint16"
         }
