@@ -1,0 +1,155 @@
+syntax = "proto3";
+package simulator;
+
+
+enum simulator_control_status_sc_state {
+	simulator_control_status_sc_state_off = 0;
+	simulator_control_status_sc_state_on = 1;
+}
+enum simulator_control_status_tv_state {
+	simulator_control_status_tv_state_off = 0;
+	simulator_control_status_tv_state_on = 1;
+}
+enum simulator_control_status_reg_state {
+	simulator_control_status_reg_state_off = 0;
+	simulator_control_status_reg_state_on = 1;
+}
+enum simulator_as_commands_status_steerstatus {
+	simulator_as_commands_status_steerstatus_off = 0;
+	simulator_as_commands_status_steerstatus_on = 1;
+}
+enum simulator_as_commands_status_throttlestatus {
+	simulator_as_commands_status_throttlestatus_off = 0;
+	simulator_as_commands_status_throttlestatus_on = 1;
+}
+enum simulator_as_commands_status_brakestatus {
+	simulator_as_commands_status_brakestatus_off = 0;
+	simulator_as_commands_status_brakestatus_on = 1;
+}
+enum simulator_as_commands_set_status_steerstatus {
+	simulator_as_commands_set_status_steerstatus_off = 0;
+	simulator_as_commands_set_status_steerstatus_on = 1;
+}
+enum simulator_as_commands_set_status_throttlestatus {
+	simulator_as_commands_set_status_throttlestatus_off = 0;
+	simulator_as_commands_set_status_throttlestatus_on = 1;
+}
+enum simulator_as_commands_set_status_brakestatus {
+	simulator_as_commands_set_status_brakestatus_off = 0;
+	simulator_as_commands_set_status_brakestatus_on = 1;
+}
+
+
+message IMU_ANGULAR_RATE{
+	double x = 1;
+	double y = 2;
+	double z = 3;
+	uint64 _inner_timestamp = 4;
+}
+message IMU_ACCELERATION{
+	double x = 1;
+	double y = 2;
+	double z = 3;
+	int32 imu_temperature = 4;
+	uint64 _inner_timestamp = 5;
+}
+message PEDAL_THROTTLE{
+	double throttle = 1;
+	uint64 _inner_timestamp = 2;
+}
+message PEDAL_BRAKES_PRESSURE{
+	double front = 1;
+	double rear = 2;
+	uint64 _inner_timestamp = 3;
+}
+message STEER_ANGLE{
+	float angle = 1;
+	uint64 _inner_timestamp = 2;
+}
+message CONTROL_OUTPUT{
+	double estimated_velocity = 1;
+	double torque_max_l = 2;
+	double torque_max_r = 3;
+	double torque_l = 4;
+	double torque_r = 5;
+	uint64 _inner_timestamp = 6;
+}
+message CONTROL_STATUS{
+	double map_pw = 1;
+	simulator_control_status_sc_state sc_state = 2;
+	simulator_control_status_tv_state tv_state = 3;
+	simulator_control_status_reg_state reg_state = 4;
+	uint64 _inner_timestamp = 5;
+}
+message FRONT_ANGULAR_VELOCITY{
+	double fl = 1;
+	double fr = 2;
+	uint64 _inner_timestamp = 3;
+}
+message DEBUG_SIGNAL_2{
+	double field_1 = 1;
+	double field_2 = 2;
+	double field_3 = 3;
+	double field_4 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message INV_L_RCV{
+	double N_Actual_Filt = 1;
+	double M_setdig__Iq = 2;
+	uint64 _inner_timestamp = 3;
+}
+message INV_R_RCV{
+	double N_Actual_Filt = 1;
+	double M_setdig__Iq = 2;
+	uint64 _inner_timestamp = 3;
+}
+message AS_COMMANDS_STATUS{
+	simulator_as_commands_status_steerstatus steerStatus = 1;
+	simulator_as_commands_status_throttlestatus throttleStatus = 2;
+	simulator_as_commands_status_brakestatus brakeStatus = 3;
+	uint64 _inner_timestamp = 4;
+}
+message AS_COMMANDS_SET_STATUS{
+	simulator_as_commands_set_status_steerstatus steerStatus = 1;
+	simulator_as_commands_set_status_throttlestatus throttleStatus = 2;
+	simulator_as_commands_set_status_brakestatus brakeStatus = 3;
+	uint64 _inner_timestamp = 4;
+}
+message AS_COMMANDS_SET_VALUE{
+	double steerAngle = 1;
+	double throttle = 2;
+	double brake = 3;
+	uint64 _inner_timestamp = 4;
+}
+message VEHICLE_POSITION{
+	double x = 1;
+	double y = 2;
+	double heading = 3;
+	uint64 _inner_timestamp = 4;
+}
+message VEHICLE_SPEED{
+	double u = 1;
+	double v = 2;
+	uint64 _inner_timestamp = 3;
+}
+
+
+message Pack{
+	repeated IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 1;
+	repeated IMU_ACCELERATION IMU_ACCELERATION = 2;
+	repeated PEDAL_THROTTLE PEDAL_THROTTLE = 3;
+	repeated PEDAL_BRAKES_PRESSURE PEDAL_BRAKES_PRESSURE = 4;
+	repeated STEER_ANGLE STEER_ANGLE = 5;
+	repeated CONTROL_OUTPUT CONTROL_OUTPUT = 6;
+	repeated CONTROL_STATUS CONTROL_STATUS = 7;
+	repeated FRONT_ANGULAR_VELOCITY FRONT_ANGULAR_VELOCITY = 8;
+	repeated DEBUG_SIGNAL_2 DEBUG_SIGNAL_2 = 9;
+	repeated INV_L_RCV INV_L_RCV = 10;
+	repeated INV_R_RCV INV_R_RCV = 11;
+	repeated AS_COMMANDS_STATUS AS_COMMANDS_STATUS = 12;
+	repeated AS_COMMANDS_SET_STATUS AS_COMMANDS_SET_STATUS = 13;
+	repeated AS_COMMANDS_SET_VALUE AS_COMMANDS_SET_VALUE = 14;
+	repeated VEHICLE_POSITION VEHICLE_POSITION = 15;
+	repeated VEHICLE_SPEED VEHICLE_SPEED = 16;
+}
+

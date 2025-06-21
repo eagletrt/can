@@ -1,0 +1,2050 @@
+#ifndef primary_UTILS_HPP
+#define primary_UTILS_HPP
+
+#include <inttypes.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <vector>
+#include <string>
+#include "primary_network.h"
+
+/* START */
+#define NLG5_DIAG_TX "NLG5_DIAG_TX"
+
+#define NLG5_DIAG_TX_LAD_D_PARAMRP "nlg5_diag_tx_lad_d_paramrp"
+/* END */
+
+/* START */
+#define NLG5_DIAG_RX "NLG5_DIAG_RX"
+
+#define NLG5_DIAG_RX_LAD_D_PARAMRQ "nlg5_diag_rx_lad_d_paramrq"
+/* END */
+
+/* START */
+#define NLG5_ERR "NLG5_ERR"
+
+#define NLG5_ERR_NLG5_E_OOV "nlg5_err_nlg5_e_oov"
+#define NLG5_ERR_NLG5_E_MOV_II "nlg5_err_nlg5_e_mov_ii"
+#define NLG5_ERR_NLG5_E_MOV_I "nlg5_err_nlg5_e_mov_i"
+#define NLG5_ERR_NLG5_E_SC "nlg5_err_nlg5_e_sc"
+#define NLG5_ERR_NLG5_E_P_OM "nlg5_err_nlg5_e_p_om"
+#define NLG5_ERR_NLG5_E_P_MV "nlg5_err_nlg5_e_p_mv"
+#define NLG5_ERR_NLG5_E_OF "nlg5_err_nlg5_e_of"
+#define NLG5_ERR_NLG5_E_MF "nlg5_err_nlg5_e_mf"
+#define NLG5_ERR_NLG5_E_B_P "nlg5_err_nlg5_e_b_p"
+#define NLG5_ERR_NLG5_E_T_C "nlg5_err_nlg5_e_t_c"
+#define NLG5_ERR_NLG5_E_T_POW "nlg5_err_nlg5_e_t_pow"
+#define NLG5_ERR_NLG5_E_T_DIO "nlg5_err_nlg5_e_t_dio"
+#define NLG5_ERR_NLG5_E_T_TR "nlg5_err_nlg5_e_t_tr"
+#define NLG5_ERR_NLG5_E_T_EXT1 "nlg5_err_nlg5_e_t_ext1"
+#define NLG5_ERR_NLG5_E_T_EXT2 "nlg5_err_nlg5_e_t_ext2"
+#define NLG5_ERR_NLG5_E_T_EXT3 "nlg5_err_nlg5_e_t_ext3"
+#define NLG5_ERR_NLG5_E_F_CRC "nlg5_err_nlg5_e_f_crc"
+#define NLG5_ERR_NLG5_E_NV_CRC "nlg5_err_nlg5_e_nv_crc"
+#define NLG5_ERR_NLG5_E_ES_CRC "nlg5_err_nlg5_e_es_crc"
+#define NLG5_ERR_NLG5_E_EP_CRC "nlg5_err_nlg5_e_ep_crc"
+#define NLG5_ERR_NLG5_E_WDT "nlg5_err_nlg5_e_wdt"
+#define NLG5_ERR_NLG5_E_INIT "nlg5_err_nlg5_e_init"
+#define NLG5_ERR_NLG5_E_C_TO "nlg5_err_nlg5_e_c_to"
+#define NLG5_ERR_NLG5_E_C_OFF "nlg5_err_nlg5_e_c_off"
+#define NLG5_ERR_NLG5_E_C_TX "nlg5_err_nlg5_e_c_tx"
+#define NLG5_ERR_NLG5_E_C_RX "nlg5_err_nlg5_e_c_rx"
+#define NLG5_ERR_NLG5_E_SDT_BT "nlg5_err_nlg5_e_sdt_bt"
+#define NLG5_ERR_NLG5_E_SDT_BV "nlg5_err_nlg5_e_sdt_bv"
+#define NLG5_ERR_NLG5_E_SDT_AH "nlg5_err_nlg5_e_sdt_ah"
+#define NLG5_ERR_NLG5_E_SDT_CT "nlg5_err_nlg5_e_sdt_ct"
+#define NLG5_ERR_NLG5_W_PL_MV "nlg5_err_nlg5_w_pl_mv"
+#define NLG5_ERR_NLG5_W_PL_BV "nlg5_err_nlg5_w_pl_bv"
+#define NLG5_ERR_NLG5_W_PL_IT "nlg5_err_nlg5_w_pl_it"
+#define NLG5_ERR_NLG5_W_C_VOR "nlg5_err_nlg5_w_c_vor"
+#define NLG5_ERR_NLG5_W_CM_NA "nlg5_err_nlg5_w_cm_na"
+#define NLG5_ERR_NLG5_W_OD "nlg5_err_nlg5_w_od"
+#define NLG5_ERR_NLG5_W_SC_M "nlg5_err_nlg5_w_sc_m"
+/* END */
+
+/* START */
+#define NLG5_TEMP "NLG5_TEMP"
+
+#define NLG5_TEMP_NLG5_P_TMP "nlg5_temp_nlg5_p_tmp"
+#define NLG5_TEMP_NLG5_TMP_EXT1 "nlg5_temp_nlg5_tmp_ext1"
+#define NLG5_TEMP_NLG5_TEMP_EXT2 "nlg5_temp_nlg5_temp_ext2"
+#define NLG5_TEMP_NLG5_TMP_EXT3 "nlg5_temp_nlg5_tmp_ext3"
+/* END */
+
+/* START */
+#define NLG5_ACT_II "NLG5_ACT_II"
+
+#define NLG5_ACT_II_NLG5_S_MC_M_CP "nlg5_act_ii_nlg5_s_mc_m_cp"
+#define NLG5_ACT_II_NLG5_S_MC_M_PI "nlg5_act_ii_nlg5_s_mc_m_pi"
+#define NLG5_ACT_II_NLG5_ABV "nlg5_act_ii_nlg5_abv"
+#define NLG5_ACT_II_NLG5_AHC_EXT "nlg5_act_ii_nlg5_ahc_ext"
+#define NLG5_ACT_II_NLG5_OC_BO "nlg5_act_ii_nlg5_oc_bo"
+/* END */
+
+/* START */
+#define NLG5_ACT_I "NLG5_ACT_I"
+
+#define NLG5_ACT_I_NLG5_MC_ACT "nlg5_act_i_nlg5_mc_act"
+#define NLG5_ACT_I_NLG5_MV_ACT "nlg5_act_i_nlg5_mv_act"
+#define NLG5_ACT_I_NLG5_OV_ACT "nlg5_act_i_nlg5_ov_act"
+#define NLG5_ACT_I_NLG5_OC_ACT "nlg5_act_i_nlg5_oc_act"
+/* END */
+
+/* START */
+#define NLG5_ST "NLG5_ST"
+
+#define NLG5_ST_NLG5_S_HE "nlg5_st_nlg5_s_he"
+#define NLG5_ST_NLG5_S_ERR "nlg5_st_nlg5_s_err"
+#define NLG5_ST_NLG5_S_WAR "nlg5_st_nlg5_s_war"
+#define NLG5_ST_NLG5_S_FAN "nlg5_st_nlg5_s_fan"
+#define NLG5_ST_NLG5_S_EUM "nlg5_st_nlg5_s_eum"
+#define NLG5_ST_NLG5_S_UM_I "nlg5_st_nlg5_s_um_i"
+#define NLG5_ST_NLG5_S_UM_II "nlg5_st_nlg5_s_um_ii"
+#define NLG5_ST_NLG5_S_CP_DT "nlg5_st_nlg5_s_cp_dt"
+#define NLG5_ST_NLG5_S_BPD_I "nlg5_st_nlg5_s_bpd_i"
+#define NLG5_ST_NLG5_S_BPD_II "nlg5_st_nlg5_s_bpd_ii"
+#define NLG5_ST_NLG5_S_L_OV "nlg5_st_nlg5_s_l_ov"
+#define NLG5_ST_NLG5_S_L_OC "nlg5_st_nlg5_s_l_oc"
+#define NLG5_ST_NLG5_S_L_MC "nlg5_st_nlg5_s_l_mc"
+#define NLG5_ST_NLG5_S_L_PI "nlg5_st_nlg5_s_l_pi"
+#define NLG5_ST_NLG5_S_L_CP "nlg5_st_nlg5_s_l_cp"
+#define NLG5_ST_NLG5_S_L_PMAX "nlg5_st_nlg5_s_l_pmax"
+#define NLG5_ST_NLG5_S_L_MC_MAX "nlg5_st_nlg5_s_l_mc_max"
+#define NLG5_ST_NLG5_S_L_OC_MAX "nlg5_st_nlg5_s_l_oc_max"
+#define NLG5_ST_NLG5_S_L_MO_MAX "nlg5_st_nlg5_s_l_mo_max"
+#define NLG5_ST_NLG5_S_L_T_CPRIM "nlg5_st_nlg5_s_l_t_cprim"
+#define NLG5_ST_NLG5_S_L_T_POW "nlg5_st_nlg5_s_l_t_pow"
+#define NLG5_ST_NLG5_S_L_T_DIO "nlg5_st_nlg5_s_l_t_dio"
+#define NLG5_ST_NLG5_S_L_T_TR "nlg5_st_nlg5_s_l_t_tr"
+#define NLG5_ST_NLG5_S_L_T_BATT "nlg5_st_nlg5_s_l_t_batt"
+#define NLG5_ST_NLG5_S_AAC "nlg5_st_nlg5_s_aac"
+/* END */
+
+/* START */
+#define NLG5_CTL "NLG5_CTL"
+
+#define NLG5_CTL_NLG5_C_C_EN "nlg5_ctl_nlg5_c_c_en"
+#define NLG5_CTL_NLG5_C_C_EL "nlg5_ctl_nlg5_c_c_el"
+#define NLG5_CTL_NLG5_C_CP_V "nlg5_ctl_nlg5_c_cp_v"
+#define NLG5_CTL_NLG5_C_MR "nlg5_ctl_nlg5_c_mr"
+#define NLG5_CTL_NLG5_MC_MAX "nlg5_ctl_nlg5_mc_max"
+#define NLG5_CTL_NLG5_OV_COM "nlg5_ctl_nlg5_ov_com"
+#define NLG5_CTL_NLG5_OC_COM "nlg5_ctl_nlg5_oc_com"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_WH "IVT_MSG_RESULT_WH"
+
+#define IVT_MSG_RESULT_WH_IVT_ID_RESULT_WH "ivt_msg_result_wh_ivt_id_result_wh"
+#define IVT_MSG_RESULT_WH_IVT_RESULT_WH_SYSTEM_ERROR "ivt_msg_result_wh_ivt_result_wh_system_error"
+#define IVT_MSG_RESULT_WH_IVT_RESULT_WH_MEASUREMENT_ERROR "ivt_msg_result_wh_ivt_result_wh_measurement_error"
+#define IVT_MSG_RESULT_WH_IVT_RESULT_WH_CHANNEL_ERROR "ivt_msg_result_wh_ivt_result_wh_channel_error"
+#define IVT_MSG_RESULT_WH_IVT_RESULT_WH_OCS "ivt_msg_result_wh_ivt_result_wh_ocs"
+#define IVT_MSG_RESULT_WH_IVT_MSGCOUNT_RESULT_WH "ivt_msg_result_wh_ivt_msgcount_result_wh"
+#define IVT_MSG_RESULT_WH_IVT_RESULT_WH "ivt_msg_result_wh_ivt_result_wh"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_AS "IVT_MSG_RESULT_AS"
+
+#define IVT_MSG_RESULT_AS_IVT_ID_RESULT_AS "ivt_msg_result_as_ivt_id_result_as"
+#define IVT_MSG_RESULT_AS_IVT_RESULT_AS_SYSTEM_ERROR "ivt_msg_result_as_ivt_result_as_system_error"
+#define IVT_MSG_RESULT_AS_IVT_RESULT_AS_MEASUREMENT_ERROR "ivt_msg_result_as_ivt_result_as_measurement_error"
+#define IVT_MSG_RESULT_AS_IVT_RESULT_AS_CHANNEL_ERROR "ivt_msg_result_as_ivt_result_as_channel_error"
+#define IVT_MSG_RESULT_AS_IVT_RESULT_AS_OCS "ivt_msg_result_as_ivt_result_as_ocs"
+#define IVT_MSG_RESULT_AS_IVT_MSGCOUNT_RESULT_AS "ivt_msg_result_as_ivt_msgcount_result_as"
+#define IVT_MSG_RESULT_AS_IVT_RESULT_AS "ivt_msg_result_as_ivt_result_as"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_W "IVT_MSG_RESULT_W"
+
+#define IVT_MSG_RESULT_W_IVT_ID_RESULT_W "ivt_msg_result_w_ivt_id_result_w"
+#define IVT_MSG_RESULT_W_IVT_RESULT_W_SYSTEM_ERROR "ivt_msg_result_w_ivt_result_w_system_error"
+#define IVT_MSG_RESULT_W_IVT_RESULT_W_MEASUREMENT_ERROR "ivt_msg_result_w_ivt_result_w_measurement_error"
+#define IVT_MSG_RESULT_W_IVT_RESULT_W_CHANNEL_ERROR "ivt_msg_result_w_ivt_result_w_channel_error"
+#define IVT_MSG_RESULT_W_IVT_RESULT_W_OCS "ivt_msg_result_w_ivt_result_w_ocs"
+#define IVT_MSG_RESULT_W_IVT_MSGCOUNT_RESULT_W "ivt_msg_result_w_ivt_msgcount_result_w"
+#define IVT_MSG_RESULT_W_IVT_RESULT_W "ivt_msg_result_w_ivt_result_w"
+/* END */
+
+/* START */
+#define IVT_MSG_RESPONSE "IVT_MSG_RESPONSE"
+
+#define IVT_MSG_RESPONSE_IVT_ID_RESPONSE "ivt_msg_response_ivt_id_response"
+#define IVT_MSG_RESPONSE__B1_TRIGGER_SPARE "ivt_msg_response__b1_trigger_spare"
+#define IVT_MSG_RESPONSE__FF_WRONG_COMMAND "ivt_msg_response__ff_wrong_command"
+#define IVT_MSG_RESPONSE__BF_RESTART_ALIVE_CMD_ID "ivt_msg_response__bf_restart_alive_cmd_id"
+#define IVT_MSG_RESPONSE__80_RESP_MEASERROR_ITEM "ivt_msg_response__80_resp_measerror_item"
+#define IVT_MSG_RESPONSE__81_RESP_SYSTEMERROR_ITEM "ivt_msg_response__81_resp_systemerror_item"
+#define IVT_MSG_RESPONSE__82_RESP_ALLLOGDATA_ITEM "ivt_msg_response__82_resp_alllogdata_item"
+#define IVT_MSG_RESPONSE__83_RESP_LOGDATA_ITEM "ivt_msg_response__83_resp_logdata_item"
+#define IVT_MSG_RESPONSE__90_RESP_CAN_ID_VAL_I "ivt_msg_response__90_resp_can_id_val_i"
+#define IVT_MSG_RESPONSE__91_RESP_CAN_ID_VAL_U1 "ivt_msg_response__91_resp_can_id_val_u1"
+#define IVT_MSG_RESPONSE__92_RESP_CAN_ID_VAL_U2 "ivt_msg_response__92_resp_can_id_val_u2"
+#define IVT_MSG_RESPONSE__93_RESP_CAN_ID_VAL_U3 "ivt_msg_response__93_resp_can_id_val_u3"
+#define IVT_MSG_RESPONSE__94_RESP_CAN_ID_VAL_T "ivt_msg_response__94_resp_can_id_val_t"
+#define IVT_MSG_RESPONSE__95_RESP_CAN_ID_VAL_W "ivt_msg_response__95_resp_can_id_val_w"
+#define IVT_MSG_RESPONSE__96_RESP_CAN_ID_VAL_AS "ivt_msg_response__96_resp_can_id_val_as"
+#define IVT_MSG_RESPONSE__97_RESP_CAN_ID_VAL_WH "ivt_msg_response__97_resp_can_id_val_wh"
+#define IVT_MSG_RESPONSE__9D_RESP_CAN_ID_VAL_COMMAND "ivt_msg_response__9d_resp_can_id_val_command"
+#define IVT_MSG_RESPONSE__9F_RESP_CAN_ID_VAL_RESPONSE "ivt_msg_response__9f_resp_can_id_val_response"
+#define IVT_MSG_RESPONSE__A0_RESP_SIGN_I "ivt_msg_response__a0_resp_sign_i"
+#define IVT_MSG_RESPONSE__A1_RESP_SIGN_U1 "ivt_msg_response__a1_resp_sign_u1"
+#define IVT_MSG_RESPONSE__A2_RESP_SIGN_U2 "ivt_msg_response__a2_resp_sign_u2"
+#define IVT_MSG_RESPONSE__A3_RESP_SIGN_U3 "ivt_msg_response__a3_resp_sign_u3"
+#define IVT_MSG_RESPONSE__A4_RESP_SIGN_T "ivt_msg_response__a4_resp_sign_t"
+#define IVT_MSG_RESPONSE__A5_RESP_SIGN_W "ivt_msg_response__a5_resp_sign_w"
+#define IVT_MSG_RESPONSE__A6_RESP_SIGN_AS "ivt_msg_response__a6_resp_sign_as"
+#define IVT_MSG_RESPONSE__A7_RESP_SIGN_WH "ivt_msg_response__a7_resp_sign_wh"
+#define IVT_MSG_RESPONSE__B0_RESP_RESET_ITEM "ivt_msg_response__b0_resp_reset_item"
+#define IVT_MSG_RESPONSE__B2_RESP_STORE_DUMMY "ivt_msg_response__b2_resp_store_dummy"
+#define IVT_MSG_RESPONSE__B3_RESP_OC_TEST_TIME "ivt_msg_response__b3_resp_oc_test_time"
+#define IVT_MSG_RESPONSE__B5_RESP_OC_POS_SET_THRESHOLD "ivt_msg_response__b5_resp_oc_pos_set_threshold"
+#define IVT_MSG_RESPONSE__B6_RESP_OC_NEG_SET_THRESHOLD "ivt_msg_response__b6_resp_oc_neg_set_threshold"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_TYPE "ivt_msg_response__b9_resp_device_type"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_MAJOR_HW "ivt_msg_response__ba_resp_sw_ver_major_hw"
+#define IVT_MSG_RESPONSE__BB_RESP_SERIEN_NR "ivt_msg_response__bb_resp_serien_nr"
+#define IVT_MSG_RESPONSE__BC_RESP_ART_N "ivt_msg_response__bc_resp_art_n"
+#define IVT_MSG_RESPONSE__A0_RESP_ENDIANESS_I "ivt_msg_response__a0_resp_endianess_i"
+#define IVT_MSG_RESPONSE__A1_RESP_ENDIANESS_U1 "ivt_msg_response__a1_resp_endianess_u1"
+#define IVT_MSG_RESPONSE__A2_RESP_ENDIANESS_U2 "ivt_msg_response__a2_resp_endianess_u2"
+#define IVT_MSG_RESPONSE__A3_RESP_ENDIANESS_U3 "ivt_msg_response__a3_resp_endianess_u3"
+#define IVT_MSG_RESPONSE__A4_RESP_ENDIANESS_T "ivt_msg_response__a4_resp_endianess_t"
+#define IVT_MSG_RESPONSE__A5_RESP_ENDIANESS_W "ivt_msg_response__a5_resp_endianess_w"
+#define IVT_MSG_RESPONSE__A6_RESP_ENDIANESS_AS "ivt_msg_response__a6_resp_endianess_as"
+#define IVT_MSG_RESPONSE__A7_RESP_ENDIANESS_WH "ivt_msg_response__a7_resp_endianess_wh"
+#define IVT_MSG_RESPONSE__A0_RESP_TRIGGERMODE_I "ivt_msg_response__a0_resp_triggermode_i"
+#define IVT_MSG_RESPONSE__A1_RESP_TRIGGERMODE_U1 "ivt_msg_response__a1_resp_triggermode_u1"
+#define IVT_MSG_RESPONSE__A2_RESP_TRIGGERMODE_U2 "ivt_msg_response__a2_resp_triggermode_u2"
+#define IVT_MSG_RESPONSE__A3_RESP_TRIGGERMODE_U3 "ivt_msg_response__a3_resp_triggermode_u3"
+#define IVT_MSG_RESPONSE__A4_RESP_TRIGGERMODE_T "ivt_msg_response__a4_resp_triggermode_t"
+#define IVT_MSG_RESPONSE__A5_RESP_TRIGGERMODE_W "ivt_msg_response__a5_resp_triggermode_w"
+#define IVT_MSG_RESPONSE__A6_RESP_TRIGGERMODE_AS "ivt_msg_response__a6_resp_triggermode_as"
+#define IVT_MSG_RESPONSE__A7_RESP_TRIGGERMODE_WH "ivt_msg_response__a7_resp_triggermode_wh"
+#define IVT_MSG_RESPONSE__B4_RESP_ACTUAL_MODE "ivt_msg_response__b4_resp_actual_mode"
+#define IVT_MSG_RESPONSE__B1_07_TRIGGER_WH "ivt_msg_response__b1_07_trigger_wh"
+#define IVT_MSG_RESPONSE__B2_RESP_STORE_DEVICE_SN "ivt_msg_response__b2_resp_store_device_sn"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_MINOR "ivt_msg_response__ba_resp_sw_ver_minor"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_CURRENT "ivt_msg_response__b9_resp_device_current"
+#define IVT_MSG_RESPONSE__80_RESP_MEASERROR_COUNT_MASK "ivt_msg_response__80_resp_measerror_count_mask"
+#define IVT_MSG_RESPONSE__81_RESP_SYSTEMERROR_COUNT_MASK "ivt_msg_response__81_resp_systemerror_count_mask"
+#define IVT_MSG_RESPONSE__82_RESP_ALLLOGDATA_COUNTER "ivt_msg_response__82_resp_alllogdata_counter"
+#define IVT_MSG_RESPONSE__83_RESP_LOGDATA_COUNTER "ivt_msg_response__83_resp_logdata_counter"
+#define IVT_MSG_RESPONSE__A0_RESP_CYCLETIME_I "ivt_msg_response__a0_resp_cycletime_i"
+#define IVT_MSG_RESPONSE__A1_RESP_CYCLETIME_U1 "ivt_msg_response__a1_resp_cycletime_u1"
+#define IVT_MSG_RESPONSE__A2_RESP_CYCLETIME_U2 "ivt_msg_response__a2_resp_cycletime_u2"
+#define IVT_MSG_RESPONSE__A3_RESP_CYCLETIME_U3 "ivt_msg_response__a3_resp_cycletime_u3"
+#define IVT_MSG_RESPONSE__A4_RESP_CYCLETIME_T "ivt_msg_response__a4_resp_cycletime_t"
+#define IVT_MSG_RESPONSE__A5_RESP_CYCLETIME_W "ivt_msg_response__a5_resp_cycletime_w"
+#define IVT_MSG_RESPONSE__A6_RESP_CYCLETIME_AS "ivt_msg_response__a6_resp_cycletime_as"
+#define IVT_MSG_RESPONSE__A7_RESP_CYCLETIME_WH "ivt_msg_response__a7_resp_cycletime_wh"
+#define IVT_MSG_RESPONSE__B1_06_TRIGGER_AS "ivt_msg_response__b1_06_trigger_as"
+#define IVT_MSG_RESPONSE__B1_05_TRIGGER_W "ivt_msg_response__b1_05_trigger_w"
+#define IVT_MSG_RESPONSE__B1_04_TRIGGER_T "ivt_msg_response__b1_04_trigger_t"
+#define IVT_MSG_RESPONSE__B1_03_TRIGGER_U3 "ivt_msg_response__b1_03_trigger_u3"
+#define IVT_MSG_RESPONSE__B1_02_TRIGGER_U2 "ivt_msg_response__b1_02_trigger_u2"
+#define IVT_MSG_RESPONSE__B1_01_TRIGGER_U1 "ivt_msg_response__b1_01_trigger_u1"
+#define IVT_MSG_RESPONSE__B1_00_TRIGGER_I "ivt_msg_response__b1_00_trigger_i"
+#define IVT_MSG_RESPONSE__B4_RESP_STARTUP_MODE "ivt_msg_response__b4_resp_startup_mode"
+#define IVT_MSG_RESPONSE__BF_RESTART_ALIVE_SN "ivt_msg_response__bf_restart_alive_sn"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_REVISION "ivt_msg_response__ba_resp_sw_ver_revision"
+#define IVT_MSG_RESPONSE__90_RESP_CAN_ID_SN_I "ivt_msg_response__90_resp_can_id_sn_i"
+#define IVT_MSG_RESPONSE__91_RESP_CAN_ID_SN_U1 "ivt_msg_response__91_resp_can_id_sn_u1"
+#define IVT_MSG_RESPONSE__92_RESP_CAN_ID_SN_U2 "ivt_msg_response__92_resp_can_id_sn_u2"
+#define IVT_MSG_RESPONSE__93_RESP_CAN_ID_SN_U3 "ivt_msg_response__93_resp_can_id_sn_u3"
+#define IVT_MSG_RESPONSE__94_RESP_CAN_ID_SN_T "ivt_msg_response__94_resp_can_id_sn_t"
+#define IVT_MSG_RESPONSE__95_RESP_CAN_ID_SN_W "ivt_msg_response__95_resp_can_id_sn_w"
+#define IVT_MSG_RESPONSE__96_RESP_CAN_ID_SN_AS "ivt_msg_response__96_resp_can_id_sn_as"
+#define IVT_MSG_RESPONSE__97_RESP_CAN_ID_SN_WH "ivt_msg_response__97_resp_can_id_sn_wh"
+#define IVT_MSG_RESPONSE__9D_RESP_CAN_ID_SN_COMMAND "ivt_msg_response__9d_resp_can_id_sn_command"
+#define IVT_MSG_RESPONSE__9F_RESP_CAN_ID_SN_RESPONSE "ivt_msg_response__9f_resp_can_id_sn_response"
+#define IVT_MSG_RESPONSE__B0_RESP_RESET_DEVICE_SN "ivt_msg_response__b0_resp_reset_device_sn"
+#define IVT_MSG_RESPONSE__B4_RESP_CODE_LEVEL "ivt_msg_response__b4_resp_code_level"
+#define IVT_MSG_RESPONSE__B5_RESP_OC_POS_RESET_THRESHOLD "ivt_msg_response__b5_resp_oc_pos_reset_threshold"
+#define IVT_MSG_RESPONSE__B6_RESP_OC_NEG_RESET_THRESHOLD "ivt_msg_response__b6_resp_oc_neg_reset_threshold"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_VOLTAGE_CHAN "ivt_msg_response__b9_resp_device_voltage_chan"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_VEAR "ivt_msg_response__ba_resp_sw_ver_vear"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_TOI "ivt_msg_response__b9_resp_device_toi"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_MONTH "ivt_msg_response__ba_resp_sw_ver_month"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_COM "ivt_msg_response__b9_resp_device_com"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_DAY "ivt_msg_response__ba_resp_sw_ver_day"
+#define IVT_MSG_RESPONSE__B9_RESP_DEVICE_V_SUPPLY "ivt_msg_response__b9_resp_device_v_supply"
+#define IVT_MSG_RESPONSE__BA_RESP_SW_VER_INTERNAL "ivt_msg_response__ba_resp_sw_ver_internal"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_T "IVT_MSG_RESULT_T"
+
+#define IVT_MSG_RESULT_T_IVT_ID_RESULT_T "ivt_msg_result_t_ivt_id_result_t"
+#define IVT_MSG_RESULT_T_IVT_RESULT_T_SYSTEM_ERROR "ivt_msg_result_t_ivt_result_t_system_error"
+#define IVT_MSG_RESULT_T_IVT_RESULT_T_MEASUREMENT_ERROR "ivt_msg_result_t_ivt_result_t_measurement_error"
+#define IVT_MSG_RESULT_T_IVT_RESULT_T_CHANNEL_ERROR "ivt_msg_result_t_ivt_result_t_channel_error"
+#define IVT_MSG_RESULT_T_IVT_RESULT_T_OCS "ivt_msg_result_t_ivt_result_t_ocs"
+#define IVT_MSG_RESULT_T_IVT_MSGCOUNT_RESULT_T "ivt_msg_result_t_ivt_msgcount_result_t"
+#define IVT_MSG_RESULT_T_IVT_RESULT_T "ivt_msg_result_t_ivt_result_t"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_U3 "IVT_MSG_RESULT_U3"
+
+#define IVT_MSG_RESULT_U3_IVT_ID_RESULT_U3 "ivt_msg_result_u3_ivt_id_result_u3"
+#define IVT_MSG_RESULT_U3_IVT_RESULT_U3_SYSTEM_ERROR "ivt_msg_result_u3_ivt_result_u3_system_error"
+#define IVT_MSG_RESULT_U3_IVT_RESULT_U3_MEASUREMENT_ERROR "ivt_msg_result_u3_ivt_result_u3_measurement_error"
+#define IVT_MSG_RESULT_U3_IVT_RESULT_U3_CHANNEL_ERROR "ivt_msg_result_u3_ivt_result_u3_channel_error"
+#define IVT_MSG_RESULT_U3_IVT_RESULT_U3_OCS "ivt_msg_result_u3_ivt_result_u3_ocs"
+#define IVT_MSG_RESULT_U3_IVT_MSGCOUNT_RESULT_U3 "ivt_msg_result_u3_ivt_msgcount_result_u3"
+#define IVT_MSG_RESULT_U3_IVT_RESULT_U3 "ivt_msg_result_u3_ivt_result_u3"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_U2 "IVT_MSG_RESULT_U2"
+
+#define IVT_MSG_RESULT_U2_IVT_ID_RESULT_U2 "ivt_msg_result_u2_ivt_id_result_u2"
+#define IVT_MSG_RESULT_U2_IVT_RESULT_U2_SYSTEM_ERROR "ivt_msg_result_u2_ivt_result_u2_system_error"
+#define IVT_MSG_RESULT_U2_IVT_RESULT_U2_MEASUREMENT_ERROR "ivt_msg_result_u2_ivt_result_u2_measurement_error"
+#define IVT_MSG_RESULT_U2_IVT_RESULT_U2_CHANNEL_ERROR "ivt_msg_result_u2_ivt_result_u2_channel_error"
+#define IVT_MSG_RESULT_U2_IVT_RESULT_U2_OCS "ivt_msg_result_u2_ivt_result_u2_ocs"
+#define IVT_MSG_RESULT_U2_IVT_MSGCOUNT_RESULT_U2 "ivt_msg_result_u2_ivt_msgcount_result_u2"
+#define IVT_MSG_RESULT_U2_IVT_RESULT_U2 "ivt_msg_result_u2_ivt_result_u2"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_U1 "IVT_MSG_RESULT_U1"
+
+#define IVT_MSG_RESULT_U1_IVT_ID_RESULT_U1 "ivt_msg_result_u1_ivt_id_result_u1"
+#define IVT_MSG_RESULT_U1_IVT_RESULT_U1_SYSTEM_ERROR "ivt_msg_result_u1_ivt_result_u1_system_error"
+#define IVT_MSG_RESULT_U1_IVT_RESULT_U1_MEASUREMENT_ERROR "ivt_msg_result_u1_ivt_result_u1_measurement_error"
+#define IVT_MSG_RESULT_U1_IVT_RESULT_U1_CHANNEL_ERROR "ivt_msg_result_u1_ivt_result_u1_channel_error"
+#define IVT_MSG_RESULT_U1_IVT_RESULT_U1_OCS "ivt_msg_result_u1_ivt_result_u1_ocs"
+#define IVT_MSG_RESULT_U1_IVT_MSGCOUNT_RESULT_U1 "ivt_msg_result_u1_ivt_msgcount_result_u1"
+#define IVT_MSG_RESULT_U1_IVT_RESULT_U1 "ivt_msg_result_u1_ivt_result_u1"
+/* END */
+
+/* START */
+#define IVT_MSG_RESULT_I "IVT_MSG_RESULT_I"
+
+#define IVT_MSG_RESULT_I_IVT_ID_RESULT_I "ivt_msg_result_i_ivt_id_result_i"
+#define IVT_MSG_RESULT_I_IVT_RESULT_I_SYSTEM_ERROR "ivt_msg_result_i_ivt_result_i_system_error"
+#define IVT_MSG_RESULT_I_IVT_RESULT_I_MEASUREMENT_ERROR "ivt_msg_result_i_ivt_result_i_measurement_error"
+#define IVT_MSG_RESULT_I_IVT_RESULT_I_CHANNEL_ERROR "ivt_msg_result_i_ivt_result_i_channel_error"
+#define IVT_MSG_RESULT_I_IVT_RESULT_I_OCS "ivt_msg_result_i_ivt_result_i_ocs"
+#define IVT_MSG_RESULT_I_IVT_MSGCOUNT_RESULT_I "ivt_msg_result_i_ivt_msgcount_result_i"
+#define IVT_MSG_RESULT_I_IVT_RESULT_I "ivt_msg_result_i_ivt_result_i"
+/* END */
+
+/* START */
+#define IVT_MSG_CMD "IVT_MSG_CMD"
+
+#define IVT_MSG_CMD_IVT_ID_CMD "ivt_msg_cmd_ivt_id_cmd"
+#define IVT_MSG_CMD__31_TRIGGER_SPARE "ivt_msg_cmd__31_trigger_spare"
+#define IVT_MSG_CMD__10_SET_CAN_ID_VAL_I "ivt_msg_cmd__10_set_can_id_val_i"
+#define IVT_MSG_CMD__11_SET_CAN_ID_VAL_U1 "ivt_msg_cmd__11_set_can_id_val_u1"
+#define IVT_MSG_CMD__12_SET_CAN_ID_VAL_U2 "ivt_msg_cmd__12_set_can_id_val_u2"
+#define IVT_MSG_CMD__13_SET_CAN_ID_VAL_U3 "ivt_msg_cmd__13_set_can_id_val_u3"
+#define IVT_MSG_CMD__14_SET_CAN_ID_VAL_T "ivt_msg_cmd__14_set_can_id_val_t"
+#define IVT_MSG_CMD__15_SET_CAN_ID_VAL_W "ivt_msg_cmd__15_set_can_id_val_w"
+#define IVT_MSG_CMD__16_SET_CAN_ID_VAL_AS "ivt_msg_cmd__16_set_can_id_val_as"
+#define IVT_MSG_CMD__17_SET_CAN_ID_VAL_WH "ivt_msg_cmd__17_set_can_id_val_wh"
+#define IVT_MSG_CMD__1D_SET_CAN_ID_VAL_COMMAND "ivt_msg_cmd__1d_set_can_id_val_command"
+#define IVT_MSG_CMD__1F_SET_CAN_ID_VAL_RESPONSE "ivt_msg_cmd__1f_set_can_id_val_response"
+#define IVT_MSG_CMD__20_CONF_SIGN_I "ivt_msg_cmd__20_conf_sign_i"
+#define IVT_MSG_CMD__21_CONF_SIGN_U1 "ivt_msg_cmd__21_conf_sign_u1"
+#define IVT_MSG_CMD__22_CONF_SIGN_U2 "ivt_msg_cmd__22_conf_sign_u2"
+#define IVT_MSG_CMD__23_CONF_SIGN_U3 "ivt_msg_cmd__23_conf_sign_u3"
+#define IVT_MSG_CMD__24_CONF_SIGN_T "ivt_msg_cmd__24_conf_sign_t"
+#define IVT_MSG_CMD__25_CONF_SIGN_W "ivt_msg_cmd__25_conf_sign_w"
+#define IVT_MSG_CMD__26_CONF_SIGN_AS "ivt_msg_cmd__26_conf_sign_as"
+#define IVT_MSG_CMD__27_CONF_SIGN_WH "ivt_msg_cmd__27_conf_sign_wh"
+#define IVT_MSG_CMD__30_RESET_ITEM "ivt_msg_cmd__30_reset_item"
+#define IVT_MSG_CMD__32_STORE_DUMMY "ivt_msg_cmd__32_store_dummy"
+#define IVT_MSG_CMD__33_OC_TEST_TIME "ivt_msg_cmd__33_oc_test_time"
+#define IVT_MSG_CMD__35_OC_POS_SET_THRESHOLD "ivt_msg_cmd__35_oc_pos_set_threshold"
+#define IVT_MSG_CMD__36_OC_NEG_SET_THRESHOLD "ivt_msg_cmd__36_oc_neg_set_threshold"
+#define IVT_MSG_CMD__3A_RESTART_TO_BITRATE "ivt_msg_cmd__3a_restart_to_bitrate"
+#define IVT_MSG_CMD__3D_RESTART_DEFAULT_DUMMY "ivt_msg_cmd__3d_restart_default_dummy"
+#define IVT_MSG_CMD__3F_RESTART_DUMMY "ivt_msg_cmd__3f_restart_dummy"
+#define IVT_MSG_CMD__40_GET_MEASERROR_ITEM "ivt_msg_cmd__40_get_measerror_item"
+#define IVT_MSG_CMD__41_GET_SYSTEMERROR_ITEM "ivt_msg_cmd__41_get_systemerror_item"
+#define IVT_MSG_CMD__42_GET_ALLLOGDATA_ITEM "ivt_msg_cmd__42_get_alllogdata_item"
+#define IVT_MSG_CMD__43_GET_LOGDATA_ITEM "ivt_msg_cmd__43_get_logdata_item"
+#define IVT_MSG_CMD__60_GET_RESULT_DUMMY_I "ivt_msg_cmd__60_get_result_dummy_i"
+#define IVT_MSG_CMD__61_GET_RESULT_DUMMY_U1 "ivt_msg_cmd__61_get_result_dummy_u1"
+#define IVT_MSG_CMD__62_GET_RESULT_DUMMY_U2 "ivt_msg_cmd__62_get_result_dummy_u2"
+#define IVT_MSG_CMD__63_GET_RESULT_DUMMY_U3 "ivt_msg_cmd__63_get_result_dummy_u3"
+#define IVT_MSG_CMD__64_GET_RESULT_DUMMY_T "ivt_msg_cmd__64_get_result_dummy_t"
+#define IVT_MSG_CMD__65_GET_RESULT_DUMMY_W "ivt_msg_cmd__65_get_result_dummy_w"
+#define IVT_MSG_CMD__66_GET_RESULT_DUMMY_AS "ivt_msg_cmd__66_get_result_dummy_as"
+#define IVT_MSG_CMD__67_GET_RESULT_DUMMY_WH "ivt_msg_cmd__67_get_result_dummy_wh"
+#define IVT_MSG_CMD__73_GET_OC_TEST_DUMMY "ivt_msg_cmd__73_get_oc_test_dummy"
+#define IVT_MSG_CMD__74_GET_MODE_DUMMY "ivt_msg_cmd__74_get_mode_dummy"
+#define IVT_MSG_CMD__75_GET_OC_POS_DUMMY "ivt_msg_cmd__75_get_oc_pos_dummy"
+#define IVT_MSG_CMD__76_GET_OC_NEG_DUMMY "ivt_msg_cmd__76_get_oc_neg_dummy"
+#define IVT_MSG_CMD__79_GET_DEVICE_ID_DUMMY "ivt_msg_cmd__79_get_device_id_dummy"
+#define IVT_MSG_CMD__7A_GET_SW_VERSION_DUMMY "ivt_msg_cmd__7a_get_sw_version_dummy"
+#define IVT_MSG_CMD__7B_GET_SERIEN_NR_DUMMY "ivt_msg_cmd__7b_get_serien_nr_dummy"
+#define IVT_MSG_CMD__7C_GET_ART_NR_DUMMY "ivt_msg_cmd__7c_get_art_nr_dummy"
+#define IVT_MSG_CMD__20_CONF_ENDIANESS_I "ivt_msg_cmd__20_conf_endianess_i"
+#define IVT_MSG_CMD__21_CONF_ENDIANESS_U1 "ivt_msg_cmd__21_conf_endianess_u1"
+#define IVT_MSG_CMD__22_CONF_ENDIANESS_U2 "ivt_msg_cmd__22_conf_endianess_u2"
+#define IVT_MSG_CMD__23_CONF_ENDIANESS_U3 "ivt_msg_cmd__23_conf_endianess_u3"
+#define IVT_MSG_CMD__24_CONF_ENDIANESS_T "ivt_msg_cmd__24_conf_endianess_t"
+#define IVT_MSG_CMD__25_CONF_ENDIANESS_W "ivt_msg_cmd__25_conf_endianess_w"
+#define IVT_MSG_CMD__26_CONF_ENDIANESS_AS "ivt_msg_cmd__26_conf_endianess_as"
+#define IVT_MSG_CMD__27_CONF_ENDIANESS_WH "ivt_msg_cmd__27_conf_endianess_wh"
+#define IVT_MSG_CMD__20_CONF_TRIGGERMODE_I "ivt_msg_cmd__20_conf_triggermode_i"
+#define IVT_MSG_CMD__21_CONF_TRIGGERMODE_U1 "ivt_msg_cmd__21_conf_triggermode_u1"
+#define IVT_MSG_CMD__22_CONF_TRIGGERMODE_U2 "ivt_msg_cmd__22_conf_triggermode_u2"
+#define IVT_MSG_CMD__23_CONF_TRIGGERMODE_U3 "ivt_msg_cmd__23_conf_triggermode_u3"
+#define IVT_MSG_CMD__24_CONF_TRIGGERMODE_T "ivt_msg_cmd__24_conf_triggermode_t"
+#define IVT_MSG_CMD__25_CONF_TRIGGERMODE_W "ivt_msg_cmd__25_conf_triggermode_w"
+#define IVT_MSG_CMD__26_CONF_TRIGGERMODE_AS "ivt_msg_cmd__26_conf_triggermode_as"
+#define IVT_MSG_CMD__27_CONF_TRIGGERMODE_WH "ivt_msg_cmd__27_conf_triggermode_wh"
+#define IVT_MSG_CMD__34_ACTUAL_MODE "ivt_msg_cmd__34_actual_mode"
+#define IVT_MSG_CMD__31_07_TRIGGER_WH "ivt_msg_cmd__31_07_trigger_wh"
+#define IVT_MSG_CMD__20_CONF_CYCLETIME_I "ivt_msg_cmd__20_conf_cycletime_i"
+#define IVT_MSG_CMD__21_CONF_CYCLETIME_U1 "ivt_msg_cmd__21_conf_cycletime_u1"
+#define IVT_MSG_CMD__22_CONF_CYCLETIME_U2 "ivt_msg_cmd__22_conf_cycletime_u2"
+#define IVT_MSG_CMD__23_CONF_CYCLETIME_U3 "ivt_msg_cmd__23_conf_cycletime_u3"
+#define IVT_MSG_CMD__24_CONF_CYCLETIME_T "ivt_msg_cmd__24_conf_cycletime_t"
+#define IVT_MSG_CMD__25_CONF_CYCLETIME_W "ivt_msg_cmd__25_conf_cycletime_w"
+#define IVT_MSG_CMD__26_CONF_CYCLETIME_AS "ivt_msg_cmd__26_conf_cycletime_as"
+#define IVT_MSG_CMD__27_CONF_CYCLETIME_WH "ivt_msg_cmd__27_conf_cycletime_wh"
+#define IVT_MSG_CMD__31_06_TRIGGER_AS "ivt_msg_cmd__31_06_trigger_as"
+#define IVT_MSG_CMD__31_05_TRIGGER_W "ivt_msg_cmd__31_05_trigger_w"
+#define IVT_MSG_CMD__31_04_TRIGGER_T "ivt_msg_cmd__31_04_trigger_t"
+#define IVT_MSG_CMD__31_03_TRIGGER_U3 "ivt_msg_cmd__31_03_trigger_u3"
+#define IVT_MSG_CMD__31_02_TRIGGER_U2 "ivt_msg_cmd__31_02_trigger_u2"
+#define IVT_MSG_CMD__31_01_TRIGGER_U1 "ivt_msg_cmd__31_01_trigger_u1"
+#define IVT_MSG_CMD__31_00_TRIGGER_I "ivt_msg_cmd__31_00_trigger_i"
+#define IVT_MSG_CMD__34_STARTUP_MODE "ivt_msg_cmd__34_startup_mode"
+#define IVT_MSG_CMD__10_SET_CAN_ID_SN_I "ivt_msg_cmd__10_set_can_id_sn_i"
+#define IVT_MSG_CMD__11_SET_CAN_ID_SN_U1 "ivt_msg_cmd__11_set_can_id_sn_u1"
+#define IVT_MSG_CMD__12_SET_CAN_ID_SN_U2 "ivt_msg_cmd__12_set_can_id_sn_u2"
+#define IVT_MSG_CMD__13_SET_CAN_ID_SN_U3 "ivt_msg_cmd__13_set_can_id_sn_u3"
+#define IVT_MSG_CMD__14_SET_CAN_ID_SN_T "ivt_msg_cmd__14_set_can_id_sn_t"
+#define IVT_MSG_CMD__15_SET_CAN_ID_SN_W "ivt_msg_cmd__15_set_can_id_sn_w"
+#define IVT_MSG_CMD__16_SET_CAN_ID_SN_AS "ivt_msg_cmd__16_set_can_id_sn_as"
+#define IVT_MSG_CMD__17_SET_CAN_ID_SN_WH "ivt_msg_cmd__17_set_can_id_sn_wh"
+#define IVT_MSG_CMD__1D_SET_CAN_ID_SN_COMMAND "ivt_msg_cmd__1d_set_can_id_sn_command"
+#define IVT_MSG_CMD__1F_SET_CAN_ID_SN_RESPONSE "ivt_msg_cmd__1f_set_can_id_sn_response"
+#define IVT_MSG_CMD__30_RESET_DEVICE_SN "ivt_msg_cmd__30_reset_device_sn"
+#define IVT_MSG_CMD__34_CODE_LEVEL "ivt_msg_cmd__34_code_level"
+#define IVT_MSG_CMD__35_OC_POS_RESET_THRESHOLD "ivt_msg_cmd__35_oc_pos_reset_threshold"
+#define IVT_MSG_CMD__36_OC_NEG_RESET_THRESHOLD "ivt_msg_cmd__36_oc_neg_reset_threshold"
+#define IVT_MSG_CMD__50_GET_CAN_ID_SN_I "ivt_msg_cmd__50_get_can_id_sn_i"
+#define IVT_MSG_CMD__51_GET_CAN_ID_SN_U1 "ivt_msg_cmd__51_get_can_id_sn_u1"
+#define IVT_MSG_CMD__52_GET_CAN_ID_SN_U2 "ivt_msg_cmd__52_get_can_id_sn_u2"
+#define IVT_MSG_CMD__53_GET_CAN_ID_SN_U3 "ivt_msg_cmd__53_get_can_id_sn_u3"
+#define IVT_MSG_CMD__54_GET_CAN_ID_SN_T "ivt_msg_cmd__54_get_can_id_sn_t"
+#define IVT_MSG_CMD__55_GET_CAN_ID_SN_W "ivt_msg_cmd__55_get_can_id_sn_w"
+#define IVT_MSG_CMD__56_GET_CAN_ID_SN_AS "ivt_msg_cmd__56_get_can_id_sn_as"
+#define IVT_MSG_CMD__57_GET_CAN_ID_SN_WH "ivt_msg_cmd__57_get_can_id_sn_wh"
+#define IVT_MSG_CMD__5D_GET_CAN_ID_SN_COMMAND "ivt_msg_cmd__5d_get_can_id_sn_command"
+#define IVT_MSG_CMD__5F_GET_CAN_ID_SN_RESPONSE "ivt_msg_cmd__5f_get_can_id_sn_response"
+/* END */
+
+/* START */
+#define HV_FLASH "HV_FLASH"
+
+#define HV_FLASH_START "hv_flash_start"
+#define HV_FLASH_FORWARD "hv_flash_forward"
+#define HV_FLASH_CELLBOARD_ID "hv_flash_cellboard_id"
+/* END */
+
+/* START */
+#define HV_FLASH_MAINBOARD_TX "HV_FLASH_MAINBOARD_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_MAINBOARD_RX "HV_FLASH_MAINBOARD_RX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_0_TX "HV_FLASH_CELLBOARD_0_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_0_RX "HV_FLASH_CELLBOARD_0_RX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_1_TX "HV_FLASH_CELLBOARD_1_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_1_RX "HV_FLASH_CELLBOARD_1_RX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_2_TX "HV_FLASH_CELLBOARD_2_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_2_RX "HV_FLASH_CELLBOARD_2_RX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_3_TX "HV_FLASH_CELLBOARD_3_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_3_RX "HV_FLASH_CELLBOARD_3_RX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_4_TX "HV_FLASH_CELLBOARD_4_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_4_RX "HV_FLASH_CELLBOARD_4_RX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_5_TX "HV_FLASH_CELLBOARD_5_TX"
+
+/* END */
+
+/* START */
+#define HV_FLASH_CELLBOARD_5_RX "HV_FLASH_CELLBOARD_5_RX"
+
+/* END */
+
+/* START */
+#define LV_JMP_TO_BLT "LV_JMP_TO_BLT"
+
+/* END */
+
+/* START */
+#define LV_FLASH_TX "LV_FLASH_TX"
+
+/* END */
+
+/* START */
+#define LV_FLASH_RX "LV_FLASH_RX"
+
+/* END */
+
+/* START */
+#define ECU_JMP_TO_BLT "ECU_JMP_TO_BLT"
+
+/* END */
+
+/* START */
+#define ECU_FLASH_TX "ECU_FLASH_TX"
+
+/* END */
+
+/* START */
+#define ECU_FLASH_RX "ECU_FLASH_RX"
+
+/* END */
+
+/* START */
+#define STEERING_WHEEL_JMP_TO_BLT "STEERING_WHEEL_JMP_TO_BLT"
+
+/* END */
+
+/* START */
+#define STEERING_WHEEL_FLASH_TX "STEERING_WHEEL_FLASH_TX"
+
+/* END */
+
+/* START */
+#define STEERING_WHEEL_FLASH_RX "STEERING_WHEEL_FLASH_RX"
+
+/* END */
+
+/* START */
+#define STEERING_WHEEL_VERSION "STEERING_WHEEL_VERSION"
+
+#define STEERING_WHEEL_VERSION_COMPONENT_BUILD_TIME "steering_wheel_version_component_build_time"
+#define STEERING_WHEEL_VERSION_CANLIB_BUILD_TIME "steering_wheel_version_canlib_build_time"
+/* END */
+
+/* START */
+#define ECU_VERSION "ECU_VERSION"
+
+#define ECU_VERSION_COMPONENT_BUILD_TIME "ecu_version_component_build_time"
+#define ECU_VERSION_CANLIB_BUILD_TIME "ecu_version_canlib_build_time"
+/* END */
+
+/* START */
+#define LV_VERSION "LV_VERSION"
+
+#define LV_VERSION_COMPONENT_BUILD_TIME "lv_version_component_build_time"
+#define LV_VERSION_CANLIB_BUILD_TIME "lv_version_canlib_build_time"
+/* END */
+
+/* START */
+#define TLM_VERSION "TLM_VERSION"
+
+#define TLM_VERSION_COMPONENT_BUILD_TIME "tlm_version_component_build_time"
+#define TLM_VERSION_CANLIB_BUILD_TIME "tlm_version_canlib_build_time"
+/* END */
+
+/* START */
+#define HV_MAINBOARD_VERSION "HV_MAINBOARD_VERSION"
+
+#define HV_MAINBOARD_VERSION_COMPONENT_BUILD_TIME "hv_mainboard_version_component_build_time"
+#define HV_MAINBOARD_VERSION_CANLIB_BUILD_TIME "hv_mainboard_version_canlib_build_time"
+/* END */
+
+/* START */
+#define HV_CELLBOARD_VERSION "HV_CELLBOARD_VERSION"
+
+#define HV_CELLBOARD_VERSION_CELLBOARD_ID "hv_cellboard_version_cellboard_id"
+#define HV_CELLBOARD_VERSION_CANLIB_BUILD_TIME "hv_cellboard_version_canlib_build_time"
+#define HV_CELLBOARD_VERSION_COMPONENT_BUILD_TIME "hv_cellboard_version_component_build_time"
+/* END */
+
+/* START */
+#define HV_ERRORS "HV_ERRORS"
+
+#define HV_ERRORS_ERRORS_CELL_UNDER_VOLTAGE "hv_errors_errors_cell_under_voltage"
+#define HV_ERRORS_ERRORS_CELL_OVER_VOLTAGE "hv_errors_errors_cell_over_voltage"
+#define HV_ERRORS_ERRORS_CELL_UNDER_TEMPERATURE "hv_errors_errors_cell_under_temperature"
+#define HV_ERRORS_ERRORS_CELL_OVER_TEMPERATURE "hv_errors_errors_cell_over_temperature"
+#define HV_ERRORS_ERRORS_OVER_CURRENT "hv_errors_errors_over_current"
+#define HV_ERRORS_ERRORS_CAN "hv_errors_errors_can"
+#define HV_ERRORS_ERRORS_INT_VOLTAGE_MISMATCH "hv_errors_errors_int_voltage_mismatch"
+#define HV_ERRORS_ERRORS_CELLBOARD_COMM "hv_errors_errors_cellboard_comm"
+#define HV_ERRORS_ERRORS_CELLBOARD_INTERNAL "hv_errors_errors_cellboard_internal"
+#define HV_ERRORS_ERRORS_CONNECTOR_DISCONNECTED "hv_errors_errors_connector_disconnected"
+#define HV_ERRORS_ERRORS_FANS_DISCONNECTED "hv_errors_errors_fans_disconnected"
+#define HV_ERRORS_ERRORS_FEEDBACK "hv_errors_errors_feedback"
+#define HV_ERRORS_ERRORS_FEEDBACK_CIRCUITRY "hv_errors_errors_feedback_circuitry"
+#define HV_ERRORS_ERRORS_EEPROM_COMM "hv_errors_errors_eeprom_comm"
+#define HV_ERRORS_ERRORS_EEPROM_WRITE "hv_errors_errors_eeprom_write"
+/* END */
+
+/* START */
+#define HV_DEBUG_SIGNALS "HV_DEBUG_SIGNALS"
+
+#define HV_DEBUG_SIGNALS_FEEDBACKS_IMPLAUSIBILITY_DETECTED "hv_debug_signals_feedbacks_implausibility_detected"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_IMD_COCKPIT "hv_debug_signals_feedbacks_imd_cockpit"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_TSAL_GREEN_FAULT_LATCHED "hv_debug_signals_feedbacks_tsal_green_fault_latched"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_BMS_COCKPIT "hv_debug_signals_feedbacks_bms_cockpit"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_EXT_LATCHED "hv_debug_signals_feedbacks_ext_latched"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_TSAL_GREEN "hv_debug_signals_feedbacks_tsal_green"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_TS_OVER_60V_STATUS "hv_debug_signals_feedbacks_ts_over_60v_status"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_AIRN_STATUS "hv_debug_signals_feedbacks_airn_status"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_AIRP_STATUS "hv_debug_signals_feedbacks_airp_status"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_AIRP_GATE "hv_debug_signals_feedbacks_airp_gate"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_AIRN_GATE "hv_debug_signals_feedbacks_airn_gate"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_PRECHARGE_STATUS "hv_debug_signals_feedbacks_precharge_status"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_TSP_OVER_60V_STATUS "hv_debug_signals_feedbacks_tsp_over_60v_status"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_IMD_FAULT "hv_debug_signals_feedbacks_imd_fault"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_CHECK_MUX "hv_debug_signals_feedbacks_check_mux"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_SD_END "hv_debug_signals_feedbacks_sd_end"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_SD_OUT "hv_debug_signals_feedbacks_sd_out"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_SD_IN "hv_debug_signals_feedbacks_sd_in"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_SD_BMS "hv_debug_signals_feedbacks_sd_bms"
+#define HV_DEBUG_SIGNALS_FEEDBACKS_SD_IMD "hv_debug_signals_feedbacks_sd_imd"
+#define HV_DEBUG_SIGNALS_ERRORS_CELL_UNDER_VOLTAGE "hv_debug_signals_errors_cell_under_voltage"
+#define HV_DEBUG_SIGNALS_ERRORS_CELL_OVER_VOLTAGE "hv_debug_signals_errors_cell_over_voltage"
+#define HV_DEBUG_SIGNALS_ERRORS_CELL_UNDER_TEMPERATURE "hv_debug_signals_errors_cell_under_temperature"
+#define HV_DEBUG_SIGNALS_ERRORS_CELL_OVER_TEMPERATURE "hv_debug_signals_errors_cell_over_temperature"
+#define HV_DEBUG_SIGNALS_ERRORS_OVER_CURRENT "hv_debug_signals_errors_over_current"
+#define HV_DEBUG_SIGNALS_ERRORS_CAN "hv_debug_signals_errors_can"
+#define HV_DEBUG_SIGNALS_ERRORS_INT_VOLTAGE_MISMATCH "hv_debug_signals_errors_int_voltage_mismatch"
+#define HV_DEBUG_SIGNALS_ERRORS_CELLBOARD_COMM "hv_debug_signals_errors_cellboard_comm"
+#define HV_DEBUG_SIGNALS_ERRORS_CELLBOARD_INTERNAL "hv_debug_signals_errors_cellboard_internal"
+#define HV_DEBUG_SIGNALS_ERRORS_CONNECTOR_DISCONNECTED "hv_debug_signals_errors_connector_disconnected"
+#define HV_DEBUG_SIGNALS_ERRORS_FANS_DISCONNECTED "hv_debug_signals_errors_fans_disconnected"
+#define HV_DEBUG_SIGNALS_ERRORS_FEEDBACK "hv_debug_signals_errors_feedback"
+#define HV_DEBUG_SIGNALS_ERRORS_FEEDBACK_CIRCUITRY "hv_debug_signals_errors_feedback_circuitry"
+#define HV_DEBUG_SIGNALS_ERRORS_EEPROM_COMM "hv_debug_signals_errors_eeprom_comm"
+#define HV_DEBUG_SIGNALS_ERRORS_EEPROM_WRITE "hv_debug_signals_errors_eeprom_write"
+/* END */
+
+/* START */
+#define HV_FANS_STATUS "HV_FANS_STATUS"
+
+#define HV_FANS_STATUS_FANS_OVERRIDE "hv_fans_status_fans_override"
+#define HV_FANS_STATUS_FANS_SPEED "hv_fans_status_fans_speed"
+/* END */
+
+/* START */
+#define HV_SET_FANS_STATUS "HV_SET_FANS_STATUS"
+
+#define HV_SET_FANS_STATUS_FANS_OVERRIDE "hv_set_fans_status_fans_override"
+#define HV_SET_FANS_STATUS_FANS_SPEED "hv_set_fans_status_fans_speed"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_STATUS "HV_FEEDBACK_STATUS"
+
+#define HV_FEEDBACK_STATUS_AIRN_OPEN_COM "hv_feedback_status_airn_open_com"
+#define HV_FEEDBACK_STATUS_PRECHARGE_OPEN_COM "hv_feedback_status_precharge_open_com"
+#define HV_FEEDBACK_STATUS_AIRP_OPEN_COM "hv_feedback_status_airp_open_com"
+#define HV_FEEDBACK_STATUS_AIRN_OPEN_MEC "hv_feedback_status_airn_open_mec"
+#define HV_FEEDBACK_STATUS_PRECHARGE_OPEN_MEC "hv_feedback_status_precharge_open_mec"
+#define HV_FEEDBACK_STATUS_AIRP_OPEN_MEC "hv_feedback_status_airp_open_mec"
+#define HV_FEEDBACK_STATUS_SD_IMD_FB "hv_feedback_status_sd_imd_fb"
+#define HV_FEEDBACK_STATUS_SD_BMS_FB "hv_feedback_status_sd_bms_fb"
+#define HV_FEEDBACK_STATUS_TS_LESS_THAN_60V "hv_feedback_status_ts_less_than_60v"
+#define HV_FEEDBACK_STATUS_PLAUSIBLE_STATE_PERSISTED "hv_feedback_status_plausible_state_persisted"
+#define HV_FEEDBACK_STATUS_PLAUSIBLE_STATE "hv_feedback_status_plausible_state"
+#define HV_FEEDBACK_STATUS_NOT_BMS_FAULT_COCKPIT_LED "hv_feedback_status_not_bms_fault_cockpit_led"
+#define HV_FEEDBACK_STATUS_NOT_IMD_FAULT_COCKPIT_LED "hv_feedback_status_not_imd_fault_cockpit_led"
+#define HV_FEEDBACK_STATUS_INDICATOR_CONNECTED "hv_feedback_status_indicator_connected"
+#define HV_FEEDBACK_STATUS_NOT_LATCH_RESET "hv_feedback_status_not_latch_reset"
+#define HV_FEEDBACK_STATUS_PLAUSIBLE_STATE_LATCHED "hv_feedback_status_plausible_state_latched"
+#define HV_FEEDBACK_STATUS_NOT_BMS_FAULT_LATCHED "hv_feedback_status_not_bms_fault_latched"
+#define HV_FEEDBACK_STATUS_NOT_IMD_FAULT_LATCHED "hv_feedback_status_not_imd_fault_latched"
+#define HV_FEEDBACK_STATUS_NOT_EXT_FAULT_LATCHED "hv_feedback_status_not_ext_fault_latched"
+#define HV_FEEDBACK_STATUS_IMD_OK "hv_feedback_status_imd_ok"
+#define HV_FEEDBACK_STATUS_PLAUSIBLE_STATE_RC "hv_feedback_status_plausible_state_rc"
+#define HV_FEEDBACK_STATUS_TSAL_GREEN "hv_feedback_status_tsal_green"
+#define HV_FEEDBACK_STATUS_PROBING_3V3 "hv_feedback_status_probing_3v3"
+#define HV_FEEDBACK_STATUS_SD_OUT "hv_feedback_status_sd_out"
+#define HV_FEEDBACK_STATUS_SD_IN "hv_feedback_status_sd_in"
+#define HV_FEEDBACK_STATUS_SD_END "hv_feedback_status_sd_end"
+#define HV_FEEDBACK_STATUS_V5_MCU "hv_feedback_status_v5_mcu"
+#define HV_FEEDBACK_STATUS_FEEDBACK_TSAL_GREEN_FAULT_LATCHED "hv_feedback_status_feedback_tsal_green_fault_latched"
+#define HV_FEEDBACK_STATUS_FEEDBACK_EXT_LATCHED "hv_feedback_status_feedback_ext_latched"
+#define HV_FEEDBACK_STATUS_FEEDBACK_PRECHARGE_STATUS "hv_feedback_status_feedback_precharge_status"
+#define HV_FEEDBACK_STATUS_FEEDBACK_TSP_OVER_60V_STATUS "hv_feedback_status_feedback_tsp_over_60v_status"
+#define HV_FEEDBACK_STATUS_FEEDBACK_CHECK_MUX "hv_feedback_status_feedback_check_mux"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_TS_VOLTAGE "HV_FEEDBACK_TS_VOLTAGE"
+
+#define HV_FEEDBACK_TS_VOLTAGE_TS_OVER_60V_STATUS "hv_feedback_ts_voltage_ts_over_60v_status"
+#define HV_FEEDBACK_TS_VOLTAGE_AIRN_STATUS "hv_feedback_ts_voltage_airn_status"
+#define HV_FEEDBACK_TS_VOLTAGE_AIRP_STATUS "hv_feedback_ts_voltage_airp_status"
+#define HV_FEEDBACK_TS_VOLTAGE_AIRP_GATE "hv_feedback_ts_voltage_airp_gate"
+#define HV_FEEDBACK_TS_VOLTAGE_AIRN_GATE "hv_feedback_ts_voltage_airn_gate"
+#define HV_FEEDBACK_TS_VOLTAGE_PRECHARGE_STATUS "hv_feedback_ts_voltage_precharge_status"
+#define HV_FEEDBACK_TS_VOLTAGE_TSP_OVER_60V_STATUS "hv_feedback_ts_voltage_tsp_over_60v_status"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_MISC_VOLTAGE "HV_FEEDBACK_MISC_VOLTAGE"
+
+#define HV_FEEDBACK_MISC_VOLTAGE_IMPLAUSIBILITY_DETECTED "hv_feedback_misc_voltage_implausibility_detected"
+#define HV_FEEDBACK_MISC_VOLTAGE_IMD_COCKPIT "hv_feedback_misc_voltage_imd_cockpit"
+#define HV_FEEDBACK_MISC_VOLTAGE_TSAL_GREEN_FAULT_LATCHED "hv_feedback_misc_voltage_tsal_green_fault_latched"
+#define HV_FEEDBACK_MISC_VOLTAGE_BMS_COCKPIT "hv_feedback_misc_voltage_bms_cockpit"
+#define HV_FEEDBACK_MISC_VOLTAGE_EXT_LATCHED "hv_feedback_misc_voltage_ext_latched"
+#define HV_FEEDBACK_MISC_VOLTAGE_TSAL_GREEN "hv_feedback_misc_voltage_tsal_green"
+#define HV_FEEDBACK_MISC_VOLTAGE_IMD_FAULT "hv_feedback_misc_voltage_imd_fault"
+#define HV_FEEDBACK_MISC_VOLTAGE_CHECK_MUX "hv_feedback_misc_voltage_check_mux"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_SD_VOLTAGE "HV_FEEDBACK_SD_VOLTAGE"
+
+#define HV_FEEDBACK_SD_VOLTAGE_SD_END "hv_feedback_sd_voltage_sd_end"
+#define HV_FEEDBACK_SD_VOLTAGE_SD_OUT "hv_feedback_sd_voltage_sd_out"
+#define HV_FEEDBACK_SD_VOLTAGE_SD_IN "hv_feedback_sd_voltage_sd_in"
+#define HV_FEEDBACK_SD_VOLTAGE_SD_BMS "hv_feedback_sd_voltage_sd_bms"
+#define HV_FEEDBACK_SD_VOLTAGE_SD_IMD "hv_feedback_sd_voltage_sd_imd"
+/* END */
+
+/* START */
+#define HV_IMD_STATUS "HV_IMD_STATUS"
+
+#define HV_IMD_STATUS_STATUS "hv_imd_status_status"
+#define HV_IMD_STATUS_FREQUENCY "hv_imd_status_frequency"
+#define HV_IMD_STATUS_DUTY_CYCLE "hv_imd_status_duty_cycle"
+#define HV_IMD_STATUS_FEEDBACK_NOT_IMD_FAULT_COCKPIT_LED "hv_imd_status_feedback_not_imd_fault_cockpit_led"
+#define HV_IMD_STATUS_FEEDBACK_NOT_IMD_FAULT_LATCHED "hv_imd_status_feedback_not_imd_fault_latched"
+#define HV_IMD_STATUS_IMD_FAULT "hv_imd_status_imd_fault"
+#define HV_IMD_STATUS_IMD_DETAILS "hv_imd_status_imd_details"
+#define HV_IMD_STATUS_IMD_PERIOD "hv_imd_status_imd_period"
+/* END */
+
+/* START */
+#define HV_STATUS "HV_STATUS"
+
+#define HV_STATUS_STATUS "hv_status_status"
+#define HV_STATUS_CELLBOARD_0 "hv_status_cellboard_0"
+#define HV_STATUS_CELLBOARD_1 "hv_status_cellboard_1"
+#define HV_STATUS_CELLBOARD_2 "hv_status_cellboard_2"
+#define HV_STATUS_CELLBOARD_3 "hv_status_cellboard_3"
+#define HV_STATUS_CELLBOARD_4 "hv_status_cellboard_4"
+#define HV_STATUS_CELLBOARD_5 "hv_status_cellboard_5"
+/* END */
+
+/* START */
+#define HV_SET_STATUS_ECU "HV_SET_STATUS_ECU"
+
+#define HV_SET_STATUS_ECU_STATUS "hv_set_status_ecu_status"
+#define HV_SET_STATUS_ECU_HV_STATUS_SET "hv_set_status_ecu_hv_status_set"
+/* END */
+
+/* START */
+#define HV_SET_STATUS_HANDCART "HV_SET_STATUS_HANDCART"
+
+#define HV_SET_STATUS_HANDCART_STATUS "hv_set_status_handcart_status"
+#define HV_SET_STATUS_HANDCART_HV_STATUS_SET "hv_set_status_handcart_hv_status_set"
+/* END */
+
+/* START */
+#define HV_BALANCING_STATUS "HV_BALANCING_STATUS"
+
+#define HV_BALANCING_STATUS_CELLBOARD_ID "hv_balancing_status_cellboard_id"
+#define HV_BALANCING_STATUS_BALANCING_STATUS "hv_balancing_status_balancing_status"
+#define HV_BALANCING_STATUS_ERRORS_CAN_COMM "hv_balancing_status_errors_can_comm"
+#define HV_BALANCING_STATUS_ERRORS_LTC_COMM "hv_balancing_status_errors_ltc_comm"
+#define HV_BALANCING_STATUS_ERRORS_TEMP_COMM_0 "hv_balancing_status_errors_temp_comm_0"
+#define HV_BALANCING_STATUS_ERRORS_TEMP_COMM_1 "hv_balancing_status_errors_temp_comm_1"
+#define HV_BALANCING_STATUS_ERRORS_TEMP_COMM_2 "hv_balancing_status_errors_temp_comm_2"
+#define HV_BALANCING_STATUS_ERRORS_TEMP_COMM_3 "hv_balancing_status_errors_temp_comm_3"
+#define HV_BALANCING_STATUS_ERRORS_TEMP_COMM_4 "hv_balancing_status_errors_temp_comm_4"
+#define HV_BALANCING_STATUS_ERRORS_TEMP_COMM_5 "hv_balancing_status_errors_temp_comm_5"
+#define HV_BALANCING_STATUS_ERRORS_OPEN_WIRE "hv_balancing_status_errors_open_wire"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL0 "hv_balancing_status_balancing_cells_cell0"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL1 "hv_balancing_status_balancing_cells_cell1"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL2 "hv_balancing_status_balancing_cells_cell2"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL3 "hv_balancing_status_balancing_cells_cell3"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL4 "hv_balancing_status_balancing_cells_cell4"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL5 "hv_balancing_status_balancing_cells_cell5"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL6 "hv_balancing_status_balancing_cells_cell6"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL7 "hv_balancing_status_balancing_cells_cell7"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL8 "hv_balancing_status_balancing_cells_cell8"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL9 "hv_balancing_status_balancing_cells_cell9"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL10 "hv_balancing_status_balancing_cells_cell10"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL11 "hv_balancing_status_balancing_cells_cell11"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL12 "hv_balancing_status_balancing_cells_cell12"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL13 "hv_balancing_status_balancing_cells_cell13"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL14 "hv_balancing_status_balancing_cells_cell14"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL15 "hv_balancing_status_balancing_cells_cell15"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL16 "hv_balancing_status_balancing_cells_cell16"
+#define HV_BALANCING_STATUS_BALANCING_CELLS_CELL17 "hv_balancing_status_balancing_cells_cell17"
+#define HV_BALANCING_STATUS_STATUS "hv_balancing_status_status"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_0 "hv_balancing_status_discharging_cell_0"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_1 "hv_balancing_status_discharging_cell_1"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_2 "hv_balancing_status_discharging_cell_2"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_3 "hv_balancing_status_discharging_cell_3"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_4 "hv_balancing_status_discharging_cell_4"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_5 "hv_balancing_status_discharging_cell_5"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_6 "hv_balancing_status_discharging_cell_6"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_7 "hv_balancing_status_discharging_cell_7"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_8 "hv_balancing_status_discharging_cell_8"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_9 "hv_balancing_status_discharging_cell_9"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_10 "hv_balancing_status_discharging_cell_10"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_11 "hv_balancing_status_discharging_cell_11"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_12 "hv_balancing_status_discharging_cell_12"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_13 "hv_balancing_status_discharging_cell_13"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_14 "hv_balancing_status_discharging_cell_14"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_15 "hv_balancing_status_discharging_cell_15"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_16 "hv_balancing_status_discharging_cell_16"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_17 "hv_balancing_status_discharging_cell_17"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_18 "hv_balancing_status_discharging_cell_18"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_19 "hv_balancing_status_discharging_cell_19"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_20 "hv_balancing_status_discharging_cell_20"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_21 "hv_balancing_status_discharging_cell_21"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_22 "hv_balancing_status_discharging_cell_22"
+#define HV_BALANCING_STATUS_DISCHARGING_CELL_23 "hv_balancing_status_discharging_cell_23"
+/* END */
+
+/* START */
+#define HV_SET_BALANCING_STATUS_STEERING_WHEEL "HV_SET_BALANCING_STATUS_STEERING_WHEEL"
+
+#define HV_SET_BALANCING_STATUS_STEERING_WHEEL_STATUS "hv_set_balancing_status_steering_wheel_status"
+#define HV_SET_BALANCING_STATUS_STEERING_WHEEL_THRESHOLD "hv_set_balancing_status_steering_wheel_threshold"
+#define HV_SET_BALANCING_STATUS_STEERING_WHEEL_SET_BALANCING_STATUS "hv_set_balancing_status_steering_wheel_set_balancing_status"
+#define HV_SET_BALANCING_STATUS_STEERING_WHEEL_BALANCING_THRESHOLD "hv_set_balancing_status_steering_wheel_balancing_threshold"
+/* END */
+
+/* START */
+#define HV_SET_BALANCING_STATUS_HANDCART "HV_SET_BALANCING_STATUS_HANDCART"
+
+#define HV_SET_BALANCING_STATUS_HANDCART_STATUS "hv_set_balancing_status_handcart_status"
+#define HV_SET_BALANCING_STATUS_HANDCART_THRESHOLD "hv_set_balancing_status_handcart_threshold"
+#define HV_SET_BALANCING_STATUS_HANDCART_SET_BALANCING_STATUS "hv_set_balancing_status_handcart_set_balancing_status"
+#define HV_SET_BALANCING_STATUS_HANDCART_BALANCING_THRESHOLD "hv_set_balancing_status_handcart_balancing_threshold"
+/* END */
+
+/* START */
+#define LV_STATUS "LV_STATUS"
+
+#define LV_STATUS_STATUS "lv_status_status"
+/* END */
+
+/* START */
+#define LV_CHARGING_STATUS "LV_CHARGING_STATUS"
+
+#define LV_CHARGING_STATUS_STATUS "lv_charging_status_status"
+/* END */
+
+/* START */
+#define LV_COOLING_AGGRESSIVENESS "LV_COOLING_AGGRESSIVENESS"
+
+#define LV_COOLING_AGGRESSIVENESS_STATUS "lv_cooling_aggressiveness_status"
+/* END */
+
+/* START */
+#define LV_SET_COOLING_AGGRESSIVENESS "LV_SET_COOLING_AGGRESSIVENESS"
+
+#define LV_SET_COOLING_AGGRESSIVENESS_STATUS "lv_set_cooling_aggressiveness_status"
+/* END */
+
+/* START */
+#define LV_RADIATOR_SPEED "LV_RADIATOR_SPEED"
+
+#define LV_RADIATOR_SPEED_STATUS "lv_radiator_speed_status"
+#define LV_RADIATOR_SPEED_RADIATOR_SPEED "lv_radiator_speed_radiator_speed"
+/* END */
+
+/* START */
+#define LV_PUMPS_SPEED "LV_PUMPS_SPEED"
+
+#define LV_PUMPS_SPEED_STATUS "lv_pumps_speed_status"
+#define LV_PUMPS_SPEED_PUMPS_SPEED "lv_pumps_speed_pumps_speed"
+/* END */
+
+/* START */
+#define LV_SET_RADIATOR_SPEED "LV_SET_RADIATOR_SPEED"
+
+#define LV_SET_RADIATOR_SPEED_STATUS "lv_set_radiator_speed_status"
+#define LV_SET_RADIATOR_SPEED_RADIATOR_SPEED "lv_set_radiator_speed_radiator_speed"
+/* END */
+
+/* START */
+#define LV_SET_PUMPS_SPEED "LV_SET_PUMPS_SPEED"
+
+#define LV_SET_PUMPS_SPEED_STATUS "lv_set_pumps_speed_status"
+#define LV_SET_PUMPS_SPEED_PUMPS_SPEED "lv_set_pumps_speed_pumps_speed"
+/* END */
+
+/* START */
+#define LV_ERRORS "LV_ERRORS"
+
+#define LV_ERRORS_ERRORS_CELL_UNDERVOLTAGE "lv_errors_errors_cell_undervoltage"
+#define LV_ERRORS_ERRORS_CELL_OVERVOLTAGE "lv_errors_errors_cell_overvoltage"
+#define LV_ERRORS_ERRORS_BATTERY_OPEN_WIRE "lv_errors_errors_battery_open_wire"
+#define LV_ERRORS_ERRORS_CAN "lv_errors_errors_can"
+#define LV_ERRORS_ERRORS_SPI "lv_errors_errors_spi"
+#define LV_ERRORS_ERRORS_OVER_CURRENT "lv_errors_errors_over_current"
+#define LV_ERRORS_ERRORS_CELL_UNDER_TEMPERATURE "lv_errors_errors_cell_under_temperature"
+#define LV_ERRORS_ERRORS_CELL_OVER_TEMPERATURE "lv_errors_errors_cell_over_temperature"
+#define LV_ERRORS_ERRORS_RELAY "lv_errors_errors_relay"
+#define LV_ERRORS_ERRORS_BMS_MONITOR "lv_errors_errors_bms_monitor"
+#define LV_ERRORS_ERRORS_VOLTAGES_NOT_READY "lv_errors_errors_voltages_not_ready"
+#define LV_ERRORS_ERRORS_MCP23017 "lv_errors_errors_mcp23017"
+#define LV_ERRORS_ERRORS_RADIATOR "lv_errors_errors_radiator"
+#define LV_ERRORS_ERRORS_FAN "lv_errors_errors_fan"
+#define LV_ERRORS_ERRORS_PUMP "lv_errors_errors_pump"
+#define LV_ERRORS_ERRORS_ADC_INIT "lv_errors_errors_adc_init"
+#define LV_ERRORS_ERRORS_MUX "lv_errors_errors_mux"
+#define LV_ERRORS_HEALTH_SIGNALS_LVMS_OUT "lv_errors_health_signals_lvms_out"
+#define LV_ERRORS_HEALTH_SIGNALS_RELAY_OUT "lv_errors_health_signals_relay_out"
+#define LV_ERRORS_HEALTH_SIGNALS_BATTERY_VOLTAGE_OUT "lv_errors_health_signals_battery_voltage_out"
+#define LV_ERRORS_HEALTH_SIGNALS_CHARGER_CURRENT "lv_errors_health_signals_charger_current"
+#define LV_ERRORS_HEALTH_SIGNALS_BATTERY_CURRENT "lv_errors_health_signals_battery_current"
+#define LV_ERRORS_HEALTH_SIGNALS_SIGN_BATTERY_CURRENT "lv_errors_health_signals_sign_battery_current"
+/* END */
+
+/* START */
+#define LV_FEEDBACK "LV_FEEDBACK"
+
+#define LV_FEEDBACK_FEEDBACKS_BSPD "lv_feedback_feedbacks_bspd"
+#define LV_FEEDBACK_FEEDBACKS_HVD "lv_feedback_feedbacks_hvd"
+#define LV_FEEDBACK_FEEDBACKS_INVC_INTERLOCK "lv_feedback_feedbacks_invc_interlock"
+#define LV_FEEDBACK_FEEDBACKS_AMS "lv_feedback_feedbacks_ams"
+#define LV_FEEDBACK_FEEDBACKS_SD_END "lv_feedback_feedbacks_sd_end"
+#define LV_FEEDBACK_FEEDBACKS_LVMS "lv_feedback_feedbacks_lvms"
+#define LV_FEEDBACK_FEEDBACKS_INTERLOCK "lv_feedback_feedbacks_interlock"
+#define LV_FEEDBACK_FEEDBACKS_SD_START "lv_feedback_feedbacks_sd_start"
+/* END */
+
+/* START */
+#define LV_FEEDBACK_TS_VOLTAGE "LV_FEEDBACK_TS_VOLTAGE"
+
+#define LV_FEEDBACK_TS_VOLTAGE_BSPD "lv_feedback_ts_voltage_bspd"
+#define LV_FEEDBACK_TS_VOLTAGE_HVD "lv_feedback_ts_voltage_hvd"
+#define LV_FEEDBACK_TS_VOLTAGE_INVC_INTERLOCK "lv_feedback_ts_voltage_invc_interlock"
+#define LV_FEEDBACK_TS_VOLTAGE_AMS "lv_feedback_ts_voltage_ams"
+/* END */
+
+/* START */
+#define LV_FEEDBACK_SD_VOLTAGE "LV_FEEDBACK_SD_VOLTAGE"
+
+#define LV_FEEDBACK_SD_VOLTAGE_SD_END "lv_feedback_sd_voltage_sd_end"
+#define LV_FEEDBACK_SD_VOLTAGE_LVMS "lv_feedback_sd_voltage_lvms"
+#define LV_FEEDBACK_SD_VOLTAGE_INTERLOCK "lv_feedback_sd_voltage_interlock"
+#define LV_FEEDBACK_SD_VOLTAGE_SD_START "lv_feedback_sd_voltage_sd_start"
+/* END */
+
+/* START */
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE "LV_FEEDBACK_ENCLOSURE_VOLTAGE"
+
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE_LV_ENCL "lv_feedback_enclosure_voltage_lv_encl"
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE_INVC_LID "lv_feedback_enclosure_voltage_invc_lid"
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE_HV_ENCL_2 "lv_feedback_enclosure_voltage_hv_encl_2"
+#define LV_FEEDBACK_ENCLOSURE_VOLTAGE_BACKPLATE "lv_feedback_enclosure_voltage_backplate"
+/* END */
+
+/* START */
+#define LV_FEEDBACK_GPIO_EXTENDER "LV_FEEDBACK_GPIO_EXTENDER"
+
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_INVERTERS "lv_feedback_gpio_extender_feedback_inverters"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_PCBS "lv_feedback_gpio_extender_feedback_pcbs"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_PUMPS "lv_feedback_gpio_extender_feedback_pumps"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_RADIATORS "lv_feedback_gpio_extender_feedback_radiators"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_SHUTDOWN "lv_feedback_gpio_extender_feedback_shutdown"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_HV_FANS "lv_feedback_gpio_extender_feedback_hv_fans"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_AUTONOMOUS_SYSTEM_ACTUATION "lv_feedback_gpio_extender_feedback_autonomous_system_actuation"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_RFE "lv_feedback_gpio_extender_feedback_rfe"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_FRG "lv_feedback_gpio_extender_feedback_frg"
+#define LV_FEEDBACK_GPIO_EXTENDER_FEEDBACK_DISCHARGE "lv_feedback_gpio_extender_feedback_discharge"
+/* END */
+
+/* START */
+#define LV_CAN_FLASH_REQ_TLM "LV_CAN_FLASH_REQ_TLM"
+
+/* END */
+
+/* START */
+#define LV_CAN_FLASH_REQ_STEERING_WHEEL "LV_CAN_FLASH_REQ_STEERING_WHEEL"
+
+/* END */
+
+/* START */
+#define LV_CAN_FLASH_ACK "LV_CAN_FLASH_ACK"
+
+/* END */
+
+/* START */
+#define LV_INVERTER_CONNECTION_STATUS "LV_INVERTER_CONNECTION_STATUS"
+
+#define LV_INVERTER_CONNECTION_STATUS_STATUS "lv_inverter_connection_status_status"
+/* END */
+
+/* START */
+#define LV_SET_INVERTER_CONNECTION_STATUS "LV_SET_INVERTER_CONNECTION_STATUS"
+
+#define LV_SET_INVERTER_CONNECTION_STATUS_STATUS "lv_set_inverter_connection_status_status"
+/* END */
+
+/* START */
+#define TLM_STATUS "TLM_STATUS"
+
+#define TLM_STATUS_STATUS "tlm_status_status"
+/* END */
+
+/* START */
+#define TLM_SET_STATUS "TLM_SET_STATUS"
+
+#define TLM_SET_STATUS_STATUS "tlm_set_status_status"
+/* END */
+
+/* START */
+#define HANDCART_STATUS "HANDCART_STATUS"
+
+#define HANDCART_STATUS_CONNECTED "handcart_status_connected"
+/* END */
+
+/* START */
+#define HANDCART_SETTINGS "HANDCART_SETTINGS"
+
+#define HANDCART_SETTINGS_TARGET_VOLTAGE "handcart_settings_target_voltage"
+#define HANDCART_SETTINGS_FANS_OVERRIDE "handcart_settings_fans_override"
+#define HANDCART_SETTINGS_FANS_SPEED "handcart_settings_fans_speed"
+#define HANDCART_SETTINGS_ACC_CHARGE_CURRENT "handcart_settings_acc_charge_current"
+#define HANDCART_SETTINGS_GRID_MAX_CURRENT "handcart_settings_grid_max_current"
+#define HANDCART_SETTINGS_STATUS "handcart_settings_status"
+/* END */
+
+/* START */
+#define HANDCART_SET_SETTINGS "HANDCART_SET_SETTINGS"
+
+#define HANDCART_SET_SETTINGS_TARGET_VOLTAGE "handcart_set_settings_target_voltage"
+#define HANDCART_SET_SETTINGS_FANS_OVERRIDE "handcart_set_settings_fans_override"
+#define HANDCART_SET_SETTINGS_FANS_SPEED "handcart_set_settings_fans_speed"
+#define HANDCART_SET_SETTINGS_ACC_CHARGE_CURRENT "handcart_set_settings_acc_charge_current"
+#define HANDCART_SET_SETTINGS_GRID_MAX_CURRENT "handcart_set_settings_grid_max_current"
+#define HANDCART_SET_SETTINGS_STATUS "handcart_set_settings_status"
+/* END */
+
+/* START */
+#define ECU_STATUS "ECU_STATUS"
+
+#define ECU_STATUS_STATUS "ecu_status_status"
+/* END */
+
+/* START */
+#define ECU_SET_STATUS "ECU_SET_STATUS"
+
+#define ECU_SET_STATUS_STATUS "ecu_set_status_status"
+/* END */
+
+/* START */
+#define ECU_INVERTER_STATUS "ECU_INVERTER_STATUS"
+
+#define ECU_INVERTER_STATUS_RL "ecu_inverter_status_rl"
+#define ECU_INVERTER_STATUS_RR "ecu_inverter_status_rr"
+/* END */
+
+/* START */
+#define ECU_CONTROL_STATUS "ECU_CONTROL_STATUS"
+
+#define ECU_CONTROL_STATUS_CONTROL_ENABLED "ecu_control_status_control_enabled"
+#define ECU_CONTROL_STATUS_CONTROL_ERRORS_DISABLED_FROM_ECU "ecu_control_status_control_errors_disabled_from_ecu"
+#define ECU_CONTROL_STATUS_CONTROL_ERRORS_WRONG_MAPS "ecu_control_status_control_errors_wrong_maps"
+#define ECU_CONTROL_STATUS_CONTROL_ERRORS_CONTROL_WATCHDOG "ecu_control_status_control_errors_control_watchdog"
+/* END */
+
+/* START */
+#define ECU_ERRORS "ECU_ERRORS"
+
+#define ECU_ERRORS_ERROR_PEDAL_ADC "ecu_errors_error_pedal_adc"
+#define ECU_ERRORS_ERROR_PEDAL_IMPLAUSIBILITY "ecu_errors_error_pedal_implausibility"
+#define ECU_ERRORS_ERROR_IMU_TOUT "ecu_errors_error_imu_tout"
+#define ECU_ERRORS_ERROR_IRTS_TOUT "ecu_errors_error_irts_tout"
+#define ECU_ERRORS_ERROR_TS_TOUT "ecu_errors_error_ts_tout"
+#define ECU_ERRORS_ERROR_INVL_TOUT "ecu_errors_error_invl_tout"
+#define ECU_ERRORS_ERROR_INVR_TOUT "ecu_errors_error_invr_tout"
+#define ECU_ERRORS_ERROR_STEER_TOUT "ecu_errors_error_steer_tout"
+#define ECU_ERRORS_ERROR_FSM "ecu_errors_error_fsm"
+#define ECU_ERRORS_ERROR_BSPD_LIMITS "ecu_errors_error_bspd_limits"
+#define ECU_ERRORS_ERROR_NO_BRAKE_TO_RTD "ecu_errors_error_no_brake_to_rtd"
+/* END */
+
+/* START */
+#define ECU_FEEDBACKS "ECU_FEEDBACKS"
+
+#define ECU_FEEDBACKS_FEEDBACKS_SD_COCK_FB "ecu_feedbacks_feedbacks_sd_cock_fb"
+#define ECU_FEEDBACKS_FEEDBACKS_SD_FB1 "ecu_feedbacks_feedbacks_sd_fb1"
+#define ECU_FEEDBACKS_FEEDBACKS_SD_BOTS_FB "ecu_feedbacks_feedbacks_sd_bots_fb"
+#define ECU_FEEDBACKS_FEEDBACKS_SD_INTERIAL_FB "ecu_feedbacks_feedbacks_sd_interial_fb"
+#define ECU_FEEDBACKS_FEEDBACKS_SD_FB4 "ecu_feedbacks_feedbacks_sd_fb4"
+#define ECU_FEEDBACKS_FEEDBACKS_SD_IN "ecu_feedbacks_feedbacks_sd_in"
+#define ECU_FEEDBACKS_FEEDBACKS_SD_OUT "ecu_feedbacks_feedbacks_sd_out"
+#define ECU_FEEDBACKS_FEEDBACKS_SD_CTRL_PIN "ecu_feedbacks_feedbacks_sd_ctrl_pin"
+/* END */
+
+/* START */
+#define ECU_POWER_MAPS "ECU_POWER_MAPS"
+
+#define ECU_POWER_MAPS_MAP_POWER "ecu_power_maps_map_power"
+#define ECU_POWER_MAPS_SC_STATE "ecu_power_maps_sc_state"
+#define ECU_POWER_MAPS_TV_STATE "ecu_power_maps_tv_state"
+#define ECU_POWER_MAPS_REG_STATE "ecu_power_maps_reg_state"
+/* END */
+
+/* START */
+#define ECU_SET_POWER_MAPS "ECU_SET_POWER_MAPS"
+
+#define ECU_SET_POWER_MAPS_MAP_POWER "ecu_set_power_maps_map_power"
+#define ECU_SET_POWER_MAPS_SC_STATE "ecu_set_power_maps_sc_state"
+#define ECU_SET_POWER_MAPS_TV_STATE "ecu_set_power_maps_tv_state"
+#define ECU_SET_POWER_MAPS_REG_STATE "ecu_set_power_maps_reg_state"
+/* END */
+
+/* START */
+#define ECU_PTT_STATUS "ECU_PTT_STATUS"
+
+#define ECU_PTT_STATUS_STATUS "ecu_ptt_status_status"
+/* END */
+
+/* START */
+#define ECU_SET_PTT_STATUS "ECU_SET_PTT_STATUS"
+
+#define ECU_SET_PTT_STATUS_STATUS "ecu_set_ptt_status_status"
+/* END */
+
+/* START */
+#define INV_L_REQUEST "INV_L_REQUEST"
+
+#define INV_L_REQUEST_DATA_0 "inv_l_request_data_0"
+#define INV_L_REQUEST_DATA_1 "inv_l_request_data_1"
+#define INV_L_REQUEST_DATA_2 "inv_l_request_data_2"
+#define INV_L_REQUEST_DATA_3 "inv_l_request_data_3"
+#define INV_L_REQUEST_DATA_4 "inv_l_request_data_4"
+#define INV_L_REQUEST_DATA_5 "inv_l_request_data_5"
+#define INV_L_REQUEST_DATA_6 "inv_l_request_data_6"
+#define INV_L_REQUEST_DATA_7 "inv_l_request_data_7"
+/* END */
+
+/* START */
+#define CONTROL_OUTPUT "CONTROL_OUTPUT"
+
+#define CONTROL_OUTPUT_ESTIMATED_VELOCITY "control_output_estimated_velocity"
+#define CONTROL_OUTPUT_TORQUE_MAX_L "control_output_torque_max_l"
+#define CONTROL_OUTPUT_TORQUE_MAX_R "control_output_torque_max_r"
+#define CONTROL_OUTPUT_TORQUE_L "control_output_torque_l"
+#define CONTROL_OUTPUT_TORQUE_R "control_output_torque_r"
+/* END */
+
+/* START */
+#define CONTROL_STATUS "CONTROL_STATUS"
+
+#define CONTROL_STATUS_MAP_POWER "control_status_map_power"
+#define CONTROL_STATUS_SC_STATE "control_status_sc_state"
+#define CONTROL_STATUS_TV_STATE "control_status_tv_state"
+#define CONTROL_STATUS_REG_STATE "control_status_reg_state"
+/* END */
+
+/* START */
+#define INV_R_REQUEST "INV_R_REQUEST"
+
+#define INV_R_REQUEST_DATA_0 "inv_r_request_data_0"
+#define INV_R_REQUEST_DATA_1 "inv_r_request_data_1"
+#define INV_R_REQUEST_DATA_2 "inv_r_request_data_2"
+#define INV_R_REQUEST_DATA_3 "inv_r_request_data_3"
+#define INV_R_REQUEST_DATA_4 "inv_r_request_data_4"
+#define INV_R_REQUEST_DATA_5 "inv_r_request_data_5"
+#define INV_R_REQUEST_DATA_6 "inv_r_request_data_6"
+#define INV_R_REQUEST_DATA_7 "inv_r_request_data_7"
+/* END */
+
+/* START */
+#define INV_L_RESPONSE "INV_L_RESPONSE"
+
+#define INV_L_RESPONSE_REG_ID "inv_l_response_reg_id"
+#define INV_L_RESPONSE_DATA_0 "inv_l_response_data_0"
+#define INV_L_RESPONSE_DATA_1 "inv_l_response_data_1"
+#define INV_L_RESPONSE_DATA_2 "inv_l_response_data_2"
+#define INV_L_RESPONSE_DATA_3 "inv_l_response_data_3"
+#define INV_L_RESPONSE_DATA_4 "inv_l_response_data_4"
+#define INV_L_RESPONSE_DATA_5 "inv_l_response_data_5"
+#define INV_L_RESPONSE_DATA_6 "inv_l_response_data_6"
+/* END */
+
+/* START */
+#define INV_R_RESPONSE "INV_R_RESPONSE"
+
+#define INV_R_RESPONSE_REG_ID "inv_r_response_reg_id"
+#define INV_R_RESPONSE_DATA_0 "inv_r_response_data_0"
+#define INV_R_RESPONSE_DATA_1 "inv_r_response_data_1"
+#define INV_R_RESPONSE_DATA_2 "inv_r_response_data_2"
+#define INV_R_RESPONSE_DATA_3 "inv_r_response_data_3"
+#define INV_R_RESPONSE_DATA_4 "inv_r_response_data_4"
+#define INV_R_RESPONSE_DATA_5 "inv_r_response_data_5"
+#define INV_R_RESPONSE_DATA_6 "inv_r_response_data_6"
+/* END */
+
+/* START */
+#define LV_CURRENT_BATTERY "LV_CURRENT_BATTERY"
+
+#define LV_CURRENT_BATTERY_LV_CURRENT "lv_current_battery_lv_current"
+/* END */
+
+/* START */
+#define LV_CURRENT_CHARGER "LV_CURRENT_CHARGER"
+
+#define LV_CURRENT_CHARGER_CHARGER_CURRENT "lv_current_charger_charger_current"
+/* END */
+
+/* START */
+#define LV_TOTAL_VOLTAGE "LV_TOTAL_VOLTAGE"
+
+#define LV_TOTAL_VOLTAGE_TOTAL "lv_total_voltage_total"
+/* END */
+
+/* START */
+#define LV_CELLS_VOLTAGE "LV_CELLS_VOLTAGE"
+
+#define LV_CELLS_VOLTAGE_START_INDEX "lv_cells_voltage_start_index"
+#define LV_CELLS_VOLTAGE_VOLTAGE_0 "lv_cells_voltage_voltage_0"
+#define LV_CELLS_VOLTAGE_VOLTAGE_1 "lv_cells_voltage_voltage_1"
+#define LV_CELLS_VOLTAGE_VOLTAGE_2 "lv_cells_voltage_voltage_2"
+/* END */
+
+/* START */
+#define LV_CELLS_VOLTAGE_STATS "LV_CELLS_VOLTAGE_STATS"
+
+#define LV_CELLS_VOLTAGE_STATS_MAX "lv_cells_voltage_stats_max"
+#define LV_CELLS_VOLTAGE_STATS_MIN "lv_cells_voltage_stats_min"
+#define LV_CELLS_VOLTAGE_STATS_DELTA "lv_cells_voltage_stats_delta"
+#define LV_CELLS_VOLTAGE_STATS_AVG "lv_cells_voltage_stats_avg"
+/* END */
+
+/* START */
+#define LV_CELLS_TEMP "LV_CELLS_TEMP"
+
+#define LV_CELLS_TEMP_START_INDEX "lv_cells_temp_start_index"
+#define LV_CELLS_TEMP_TEMP_0 "lv_cells_temp_temp_0"
+#define LV_CELLS_TEMP_TEMP_1 "lv_cells_temp_temp_1"
+#define LV_CELLS_TEMP_TEMP_2 "lv_cells_temp_temp_2"
+/* END */
+
+/* START */
+#define LV_CELLS_TEMP_STATS "LV_CELLS_TEMP_STATS"
+
+#define LV_CELLS_TEMP_STATS_MAX "lv_cells_temp_stats_max"
+#define LV_CELLS_TEMP_STATS_MIN "lv_cells_temp_stats_min"
+#define LV_CELLS_TEMP_STATS_AVG "lv_cells_temp_stats_avg"
+/* END */
+
+/* START */
+#define HV_CURRENT "HV_CURRENT"
+
+#define HV_CURRENT_CURRENT "hv_current_current"
+/* END */
+
+/* START */
+#define HV_POWER "HV_POWER"
+
+#define HV_POWER_POWER "hv_power_power"
+/* END */
+
+/* START */
+#define HV_ENERGY "HV_ENERGY"
+
+#define HV_ENERGY_ENERGY "hv_energy_energy"
+/* END */
+
+/* START */
+#define HV_SOC "HV_SOC"
+
+#define HV_SOC_SOC "hv_soc_soc"
+/* END */
+
+/* START */
+#define HV_TOTAL_VOLTAGE "HV_TOTAL_VOLTAGE"
+
+#define HV_TOTAL_VOLTAGE_PACK "hv_total_voltage_pack"
+#define HV_TOTAL_VOLTAGE_SUM_CELL "hv_total_voltage_sum_cell"
+#define HV_TOTAL_VOLTAGE_BUS "hv_total_voltage_bus"
+/* END */
+
+/* START */
+#define HV_CELLS_VOLTAGE "HV_CELLS_VOLTAGE"
+
+#define HV_CELLS_VOLTAGE_CELLBOARD_ID "hv_cells_voltage_cellboard_id"
+#define HV_CELLS_VOLTAGE_OFFSET "hv_cells_voltage_offset"
+#define HV_CELLS_VOLTAGE_VOLTAGE_0 "hv_cells_voltage_voltage_0"
+#define HV_CELLS_VOLTAGE_VOLTAGE_1 "hv_cells_voltage_voltage_1"
+#define HV_CELLS_VOLTAGE_VOLTAGE_2 "hv_cells_voltage_voltage_2"
+/* END */
+
+/* START */
+#define HV_CELLS_VOLTAGE_STATS "HV_CELLS_VOLTAGE_STATS"
+
+#define HV_CELLS_VOLTAGE_STATS_MAX "hv_cells_voltage_stats_max"
+#define HV_CELLS_VOLTAGE_STATS_MIN "hv_cells_voltage_stats_min"
+#define HV_CELLS_VOLTAGE_STATS_DELTA "hv_cells_voltage_stats_delta"
+#define HV_CELLS_VOLTAGE_STATS_AVG "hv_cells_voltage_stats_avg"
+/* END */
+
+/* START */
+#define HV_CELLS_TEMP "HV_CELLS_TEMP"
+
+#define HV_CELLS_TEMP_START_INDEX "hv_cells_temp_start_index"
+#define HV_CELLS_TEMP_TEMP_0 "hv_cells_temp_temp_0"
+#define HV_CELLS_TEMP_TEMP_1 "hv_cells_temp_temp_1"
+#define HV_CELLS_TEMP_TEMP_2 "hv_cells_temp_temp_2"
+#define HV_CELLS_TEMP_TEMP_3 "hv_cells_temp_temp_3"
+/* END */
+
+/* START */
+#define HV_CELLS_TEMP_STATS "HV_CELLS_TEMP_STATS"
+
+#define HV_CELLS_TEMP_STATS_MAX "hv_cells_temp_stats_max"
+#define HV_CELLS_TEMP_STATS_MIN "hv_cells_temp_stats_min"
+#define HV_CELLS_TEMP_STATS_AVG "hv_cells_temp_stats_avg"
+/* END */
+
+/* START */
+#define AS_COMMANDS_STATUS "AS_COMMANDS_STATUS"
+
+#define AS_COMMANDS_STATUS_STEERSTATUS "as_commands_status_steerstatus"
+#define AS_COMMANDS_STATUS_THROTTLESTATUS "as_commands_status_throttlestatus"
+#define AS_COMMANDS_STATUS_BRAKESTATUS "as_commands_status_brakestatus"
+/* END */
+
+/* START */
+#define AS_COMMANDS_SET_STATUS "AS_COMMANDS_SET_STATUS"
+
+#define AS_COMMANDS_SET_STATUS_STEERSTATUS "as_commands_set_status_steerstatus"
+#define AS_COMMANDS_SET_STATUS_THROTTLESTATUS "as_commands_set_status_throttlestatus"
+#define AS_COMMANDS_SET_STATUS_BRAKESTATUS "as_commands_set_status_brakestatus"
+/* END */
+
+/* START */
+#define AS_COMMANDS_SET_VALUE "AS_COMMANDS_SET_VALUE"
+
+#define AS_COMMANDS_SET_VALUE_STEERANGLE "as_commands_set_value_steerangle"
+#define AS_COMMANDS_SET_VALUE_THROTTLE "as_commands_set_value_throttle"
+#define AS_COMMANDS_SET_VALUE_BRAKE "as_commands_set_value_brake"
+/* END */
+
+/* START */
+#define ECU_STEER_ACTUATOR_CURRENT "ECU_STEER_ACTUATOR_CURRENT"
+
+#define ECU_STEER_ACTUATOR_CURRENT_CURRENT "ecu_steer_actuator_current_current"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_CRASH_DEBUG "DEBUG_SIGNAL_CRASH_DEBUG"
+
+#define DEBUG_SIGNAL_CRASH_DEBUG_SEQ_NUMBER "debug_signal_crash_debug_seq_number"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_1 "debug_signal_crash_debug_byte_1"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_2 "debug_signal_crash_debug_byte_2"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_3 "debug_signal_crash_debug_byte_3"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_4 "debug_signal_crash_debug_byte_4"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_5 "debug_signal_crash_debug_byte_5"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_6 "debug_signal_crash_debug_byte_6"
+#define DEBUG_SIGNAL_CRASH_DEBUG_BYTE_7 "debug_signal_crash_debug_byte_7"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_CRASH_DEBUG_ACK "DEBUG_SIGNAL_CRASH_DEBUG_ACK"
+
+#define DEBUG_SIGNAL_CRASH_DEBUG_ACK_SEQ_NUMBER "debug_signal_crash_debug_ack_seq_number"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_1 "DEBUG_SIGNAL_1"
+
+#define DEBUG_SIGNAL_1_DEVICE_ID "debug_signal_1_device_id"
+#define DEBUG_SIGNAL_1_FIELD_1 "debug_signal_1_field_1"
+#define DEBUG_SIGNAL_1_FIELD_2 "debug_signal_1_field_2"
+#define DEBUG_SIGNAL_1_FIELD_3 "debug_signal_1_field_3"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_2 "DEBUG_SIGNAL_2"
+
+#define DEBUG_SIGNAL_2_DEVICE_ID "debug_signal_2_device_id"
+#define DEBUG_SIGNAL_2_FIELD_1 "debug_signal_2_field_1"
+#define DEBUG_SIGNAL_2_FIELD_2 "debug_signal_2_field_2"
+#define DEBUG_SIGNAL_2_FIELD_3 "debug_signal_2_field_3"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_3 "DEBUG_SIGNAL_3"
+
+#define DEBUG_SIGNAL_3_DEVICE_ID "debug_signal_3_device_id"
+#define DEBUG_SIGNAL_3_FIELD_1 "debug_signal_3_field_1"
+#define DEBUG_SIGNAL_3_FIELD_2 "debug_signal_3_field_2"
+#define DEBUG_SIGNAL_3_FIELD_3 "debug_signal_3_field_3"
+/* END */
+
+/* START */
+#define DEBUG_SIGNAL_4 "DEBUG_SIGNAL_4"
+
+#define DEBUG_SIGNAL_4_DEVICE_ID "debug_signal_4_device_id"
+#define DEBUG_SIGNAL_4_FIELD_1 "debug_signal_4_field_1"
+#define DEBUG_SIGNAL_4_FIELD_2 "debug_signal_4_field_2"
+#define DEBUG_SIGNAL_4_FIELD_3 "debug_signal_4_field_3"
+/* END */
+
+/* START */
+#define HV_FLASH_REQUEST "HV_FLASH_REQUEST"
+
+#define HV_FLASH_REQUEST_MAINBOARD "hv_flash_request_mainboard"
+#define HV_FLASH_REQUEST_CELLBOARD_ID "hv_flash_request_cellboard_id"
+/* END */
+
+/* START */
+#define HV_FLASH_RESPONSE "HV_FLASH_RESPONSE"
+
+#define HV_FLASH_RESPONSE_READY "hv_flash_response_ready"
+/* END */
+
+/* START */
+#define HV_TS_VOLTAGE "HV_TS_VOLTAGE"
+
+#define HV_TS_VOLTAGE_TS "hv_ts_voltage_ts"
+#define HV_TS_VOLTAGE_PACK "hv_ts_voltage_pack"
+#define HV_TS_VOLTAGE_CELLS_SUM "hv_ts_voltage_cells_sum"
+/* END */
+
+/* START */
+#define HV_CELLS_TEMPERATURE "HV_CELLS_TEMPERATURE"
+
+#define HV_CELLS_TEMPERATURE_CELLBOARD_ID "hv_cells_temperature_cellboard_id"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_0 "hv_cells_temperature_temperature_id_0"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_1 "hv_cells_temperature_temperature_id_1"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_2 "hv_cells_temperature_temperature_id_2"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_3 "hv_cells_temperature_temperature_id_3"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_0 "hv_cells_temperature_temperature_0"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_1 "hv_cells_temperature_temperature_1"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_2 "hv_cells_temperature_temperature_2"
+#define HV_CELLS_TEMPERATURE_TEMPERATURE_3 "hv_cells_temperature_temperature_3"
+/* END */
+
+/* START */
+#define HV_DISCHARGE_TEMPERATURE "HV_DISCHARGE_TEMPERATURE"
+
+#define HV_DISCHARGE_TEMPERATURE_CELLBOARD_ID "hv_discharge_temperature_cellboard_id"
+#define HV_DISCHARGE_TEMPERATURE_TEMPERATURE_0 "hv_discharge_temperature_temperature_0"
+#define HV_DISCHARGE_TEMPERATURE_TEMPERATURE_1 "hv_discharge_temperature_temperature_1"
+#define HV_DISCHARGE_TEMPERATURE_TEMPERATURE_2 "hv_discharge_temperature_temperature_2"
+#define HV_DISCHARGE_TEMPERATURE_TEMPERATURE_3 "hv_discharge_temperature_temperature_3"
+#define HV_DISCHARGE_TEMPERATURE_TEMPERATURE_4 "hv_discharge_temperature_temperature_4"
+/* END */
+
+/* START */
+#define HV_COOLING_TEMPERATURE "HV_COOLING_TEMPERATURE"
+
+#define HV_COOLING_TEMPERATURE_INLET "hv_cooling_temperature_inlet"
+#define HV_COOLING_TEMPERATURE_OUTLET_0 "hv_cooling_temperature_outlet_0"
+#define HV_COOLING_TEMPERATURE_OUTLET_1 "hv_cooling_temperature_outlet_1"
+#define HV_COOLING_TEMPERATURE_OUTLET_2 "hv_cooling_temperature_outlet_2"
+#define HV_COOLING_TEMPERATURE_OUTLET_3 "hv_cooling_temperature_outlet_3"
+#define HV_COOLING_TEMPERATURE_OUTLET_4 "hv_cooling_temperature_outlet_4"
+#define HV_COOLING_TEMPERATURE_OUTLET_5 "hv_cooling_temperature_outlet_5"
+/* END */
+
+/* START */
+#define CHARGER_1 "CHARGER_1"
+
+#define CHARGER_1_DATA_0 "charger_1_data_0"
+#define CHARGER_1_DATA_1 "charger_1_data_1"
+#define CHARGER_1_DATA_2 "charger_1_data_2"
+#define CHARGER_1_DATA_3 "charger_1_data_3"
+#define CHARGER_1_DATA_4 "charger_1_data_4"
+#define CHARGER_1_DATA_5 "charger_1_data_5"
+#define CHARGER_1_DATA_6 "charger_1_data_6"
+#define CHARGER_1_DATA_7 "charger_1_data_7"
+/* END */
+
+/* START */
+#define CHARGER_2 "CHARGER_2"
+
+#define CHARGER_2_DATA_0 "charger_2_data_0"
+#define CHARGER_2_DATA_1 "charger_2_data_1"
+#define CHARGER_2_DATA_2 "charger_2_data_2"
+#define CHARGER_2_DATA_3 "charger_2_data_3"
+#define CHARGER_2_DATA_4 "charger_2_data_4"
+#define CHARGER_2_DATA_5 "charger_2_data_5"
+#define CHARGER_2_DATA_6 "charger_2_data_6"
+#define CHARGER_2_DATA_7 "charger_2_data_7"
+/* END */
+
+/* START */
+#define CHARGER_3 "CHARGER_3"
+
+#define CHARGER_3_DATA_0 "charger_3_data_0"
+#define CHARGER_3_DATA_1 "charger_3_data_1"
+#define CHARGER_3_DATA_2 "charger_3_data_2"
+#define CHARGER_3_DATA_3 "charger_3_data_3"
+#define CHARGER_3_DATA_4 "charger_3_data_4"
+#define CHARGER_3_DATA_5 "charger_3_data_5"
+#define CHARGER_3_DATA_6 "charger_3_data_6"
+#define CHARGER_3_DATA_7 "charger_3_data_7"
+/* END */
+
+/* START */
+#define CHARGER_4 "CHARGER_4"
+
+#define CHARGER_4_DATA_0 "charger_4_data_0"
+#define CHARGER_4_DATA_1 "charger_4_data_1"
+#define CHARGER_4_DATA_2 "charger_4_data_2"
+#define CHARGER_4_DATA_3 "charger_4_data_3"
+#define CHARGER_4_DATA_4 "charger_4_data_4"
+#define CHARGER_4_DATA_5 "charger_4_data_5"
+#define CHARGER_4_DATA_6 "charger_4_data_6"
+#define CHARGER_4_DATA_7 "charger_4_data_7"
+/* END */
+
+/* START */
+#define CHARGER_5 "CHARGER_5"
+
+#define CHARGER_5_DATA_0 "charger_5_data_0"
+#define CHARGER_5_DATA_1 "charger_5_data_1"
+#define CHARGER_5_DATA_2 "charger_5_data_2"
+#define CHARGER_5_DATA_3 "charger_5_data_3"
+#define CHARGER_5_DATA_4 "charger_5_data_4"
+#define CHARGER_5_DATA_5 "charger_5_data_5"
+#define CHARGER_5_DATA_6 "charger_5_data_6"
+#define CHARGER_5_DATA_7 "charger_5_data_7"
+/* END */
+
+/* START */
+#define CHARGER_6 "CHARGER_6"
+
+#define CHARGER_6_DATA_0 "charger_6_data_0"
+#define CHARGER_6_DATA_1 "charger_6_data_1"
+#define CHARGER_6_DATA_2 "charger_6_data_2"
+#define CHARGER_6_DATA_3 "charger_6_data_3"
+#define CHARGER_6_DATA_4 "charger_6_data_4"
+#define CHARGER_6_DATA_5 "charger_6_data_5"
+#define CHARGER_6_DATA_6 "charger_6_data_6"
+#define CHARGER_6_DATA_7 "charger_6_data_7"
+/* END */
+
+/* START */
+#define CHARGER_7 "CHARGER_7"
+
+#define CHARGER_7_DATA_0 "charger_7_data_0"
+#define CHARGER_7_DATA_1 "charger_7_data_1"
+#define CHARGER_7_DATA_2 "charger_7_data_2"
+#define CHARGER_7_DATA_3 "charger_7_data_3"
+#define CHARGER_7_DATA_4 "charger_7_data_4"
+#define CHARGER_7_DATA_5 "charger_7_data_5"
+#define CHARGER_7_DATA_6 "charger_7_data_6"
+#define CHARGER_7_DATA_7 "charger_7_data_7"
+/* END */
+
+/* START */
+#define CHARGER_8 "CHARGER_8"
+
+#define CHARGER_8_DATA_0 "charger_8_data_0"
+#define CHARGER_8_DATA_1 "charger_8_data_1"
+#define CHARGER_8_DATA_2 "charger_8_data_2"
+#define CHARGER_8_DATA_3 "charger_8_data_3"
+#define CHARGER_8_DATA_4 "charger_8_data_4"
+#define CHARGER_8_DATA_5 "charger_8_data_5"
+#define CHARGER_8_DATA_6 "charger_8_data_6"
+#define CHARGER_8_DATA_7 "charger_8_data_7"
+/* END */
+
+/* START */
+#define CHARGER_9 "CHARGER_9"
+
+#define CHARGER_9_DATA_0 "charger_9_data_0"
+#define CHARGER_9_DATA_1 "charger_9_data_1"
+#define CHARGER_9_DATA_2 "charger_9_data_2"
+#define CHARGER_9_DATA_3 "charger_9_data_3"
+#define CHARGER_9_DATA_4 "charger_9_data_4"
+#define CHARGER_9_DATA_5 "charger_9_data_5"
+#define CHARGER_9_DATA_6 "charger_9_data_6"
+#define CHARGER_9_DATA_7 "charger_9_data_7"
+/* END */
+
+/* START */
+#define CHARGER_10 "CHARGER_10"
+
+#define CHARGER_10_DATA_0 "charger_10_data_0"
+#define CHARGER_10_DATA_1 "charger_10_data_1"
+#define CHARGER_10_DATA_2 "charger_10_data_2"
+#define CHARGER_10_DATA_3 "charger_10_data_3"
+#define CHARGER_10_DATA_4 "charger_10_data_4"
+#define CHARGER_10_DATA_5 "charger_10_data_5"
+#define CHARGER_10_DATA_6 "charger_10_data_6"
+#define CHARGER_10_DATA_7 "charger_10_data_7"
+/* END */
+
+/* START */
+#define CHARGER_11 "CHARGER_11"
+
+#define CHARGER_11_DATA_0 "charger_11_data_0"
+#define CHARGER_11_DATA_1 "charger_11_data_1"
+#define CHARGER_11_DATA_2 "charger_11_data_2"
+#define CHARGER_11_DATA_3 "charger_11_data_3"
+#define CHARGER_11_DATA_4 "charger_11_data_4"
+#define CHARGER_11_DATA_5 "charger_11_data_5"
+#define CHARGER_11_DATA_6 "charger_11_data_6"
+#define CHARGER_11_DATA_7 "charger_11_data_7"
+/* END */
+
+/* START */
+#define CHARGER_12 "CHARGER_12"
+
+#define CHARGER_12_DATA_0 "charger_12_data_0"
+#define CHARGER_12_DATA_1 "charger_12_data_1"
+#define CHARGER_12_DATA_2 "charger_12_data_2"
+#define CHARGER_12_DATA_3 "charger_12_data_3"
+#define CHARGER_12_DATA_4 "charger_12_data_4"
+#define CHARGER_12_DATA_5 "charger_12_data_5"
+#define CHARGER_12_DATA_6 "charger_12_data_6"
+#define CHARGER_12_DATA_7 "charger_12_data_7"
+/* END */
+
+/* START */
+#define CHARGER_13 "CHARGER_13"
+
+#define CHARGER_13_DATA_0 "charger_13_data_0"
+#define CHARGER_13_DATA_1 "charger_13_data_1"
+#define CHARGER_13_DATA_2 "charger_13_data_2"
+#define CHARGER_13_DATA_3 "charger_13_data_3"
+#define CHARGER_13_DATA_4 "charger_13_data_4"
+#define CHARGER_13_DATA_5 "charger_13_data_5"
+#define CHARGER_13_DATA_6 "charger_13_data_6"
+#define CHARGER_13_DATA_7 "charger_13_data_7"
+/* END */
+
+/* START */
+#define CHARGER_14 "CHARGER_14"
+
+#define CHARGER_14_DATA_0 "charger_14_data_0"
+#define CHARGER_14_DATA_1 "charger_14_data_1"
+#define CHARGER_14_DATA_2 "charger_14_data_2"
+#define CHARGER_14_DATA_3 "charger_14_data_3"
+#define CHARGER_14_DATA_4 "charger_14_data_4"
+#define CHARGER_14_DATA_5 "charger_14_data_5"
+#define CHARGER_14_DATA_6 "charger_14_data_6"
+#define CHARGER_14_DATA_7 "charger_14_data_7"
+/* END */
+
+/* START */
+#define CHARGER_15 "CHARGER_15"
+
+#define CHARGER_15_DATA_0 "charger_15_data_0"
+#define CHARGER_15_DATA_1 "charger_15_data_1"
+#define CHARGER_15_DATA_2 "charger_15_data_2"
+#define CHARGER_15_DATA_3 "charger_15_data_3"
+#define CHARGER_15_DATA_4 "charger_15_data_4"
+#define CHARGER_15_DATA_5 "charger_15_data_5"
+#define CHARGER_15_DATA_6 "charger_15_data_6"
+#define CHARGER_15_DATA_7 "charger_15_data_7"
+/* END */
+
+/* START */
+#define CHARGER_16 "CHARGER_16"
+
+#define CHARGER_16_DATA_0 "charger_16_data_0"
+#define CHARGER_16_DATA_1 "charger_16_data_1"
+#define CHARGER_16_DATA_2 "charger_16_data_2"
+#define CHARGER_16_DATA_3 "charger_16_data_3"
+#define CHARGER_16_DATA_4 "charger_16_data_4"
+#define CHARGER_16_DATA_5 "charger_16_data_5"
+#define CHARGER_16_DATA_6 "charger_16_data_6"
+#define CHARGER_16_DATA_7 "charger_16_data_7"
+/* END */
+
+/* START */
+#define CHARGER_17 "CHARGER_17"
+
+#define CHARGER_17_DATA_0 "charger_17_data_0"
+#define CHARGER_17_DATA_1 "charger_17_data_1"
+#define CHARGER_17_DATA_2 "charger_17_data_2"
+#define CHARGER_17_DATA_3 "charger_17_data_3"
+#define CHARGER_17_DATA_4 "charger_17_data_4"
+#define CHARGER_17_DATA_5 "charger_17_data_5"
+#define CHARGER_17_DATA_6 "charger_17_data_6"
+#define CHARGER_17_DATA_7 "charger_17_data_7"
+/* END */
+
+/* START */
+#define CHARGER_18 "CHARGER_18"
+
+#define CHARGER_18_DATA_0 "charger_18_data_0"
+#define CHARGER_18_DATA_1 "charger_18_data_1"
+#define CHARGER_18_DATA_2 "charger_18_data_2"
+#define CHARGER_18_DATA_3 "charger_18_data_3"
+#define CHARGER_18_DATA_4 "charger_18_data_4"
+#define CHARGER_18_DATA_5 "charger_18_data_5"
+#define CHARGER_18_DATA_6 "charger_18_data_6"
+#define CHARGER_18_DATA_7 "charger_18_data_7"
+/* END */
+
+/* START */
+#define CHARGER_19 "CHARGER_19"
+
+#define CHARGER_19_DATA_0 "charger_19_data_0"
+#define CHARGER_19_DATA_1 "charger_19_data_1"
+#define CHARGER_19_DATA_2 "charger_19_data_2"
+#define CHARGER_19_DATA_3 "charger_19_data_3"
+#define CHARGER_19_DATA_4 "charger_19_data_4"
+#define CHARGER_19_DATA_5 "charger_19_data_5"
+#define CHARGER_19_DATA_6 "charger_19_data_6"
+#define CHARGER_19_DATA_7 "charger_19_data_7"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_DIGITAL "HV_FEEDBACK_DIGITAL"
+
+#define HV_FEEDBACK_DIGITAL_DIGITAL_AIRN_OPEN_COM "hv_feedback_digital_digital_airn_open_com"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_AIRP_OPEN_COM "hv_feedback_digital_digital_airp_open_com"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_SD_IMD_FB "hv_feedback_digital_digital_sd_imd_fb"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_SD_BMS_FB "hv_feedback_digital_digital_sd_bms_fb"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_PRECHARGE_OPEN_COM "hv_feedback_digital_digital_precharge_open_com"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_PRECHARGE_OPEN_MEC "hv_feedback_digital_digital_precharge_open_mec"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_TS_LESS_THAN_60V "hv_feedback_digital_digital_ts_less_than_60v"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_PLAUSIBLE_STATE_PERSISTED "hv_feedback_digital_digital_plausible_state_persisted"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_PLAUSIBLE_STATE "hv_feedback_digital_digital_plausible_state"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_BMS_FAULT_COCKPIT_LED "hv_feedback_digital_digital_not_bms_fault_cockpit_led"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_IMD_FAULT_COCKPIT_LED "hv_feedback_digital_digital_not_imd_fault_cockpit_led"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_INDICATOR_CONNECTED "hv_feedback_digital_digital_indicator_connected"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_LATCH_RESET "hv_feedback_digital_digital_not_latch_reset"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_PLAUSIBLE_STATE_LATCHED "hv_feedback_digital_digital_plausible_state_latched"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_BMS_FAULT_LATCHED "hv_feedback_digital_digital_not_bms_fault_latched"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_IMD_FAULT_LATCHED "hv_feedback_digital_digital_not_imd_fault_latched"
+#define HV_FEEDBACK_DIGITAL_DIGITAL_NOT_EXT_FAULT_LATCHED "hv_feedback_digital_digital_not_ext_fault_latched"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_ANALOG "HV_FEEDBACK_ANALOG"
+
+#define HV_FEEDBACK_ANALOG_ANALOG_AIRN_OPEN_MEC "hv_feedback_analog_analog_airn_open_mec"
+#define HV_FEEDBACK_ANALOG_ANALOG_AIRP_OPEN_MEC "hv_feedback_analog_analog_airp_open_mec"
+#define HV_FEEDBACK_ANALOG_ANALOG_IMD_OK "hv_feedback_analog_analog_imd_ok"
+#define HV_FEEDBACK_ANALOG_ANALOG_PLAUSIBLE_STATE_RC "hv_feedback_analog_analog_plausible_state_rc"
+#define HV_FEEDBACK_ANALOG_ANALOG_TSAL_GREEN "hv_feedback_analog_analog_tsal_green"
+#define HV_FEEDBACK_ANALOG_ANALOG_PROBING_3V3 "hv_feedback_analog_analog_probing_3v3"
+#define HV_FEEDBACK_ANALOG_ANALOG_V5_MCU "hv_feedback_analog_analog_v5_mcu"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_ANALOG_SD "HV_FEEDBACK_ANALOG_SD"
+
+#define HV_FEEDBACK_ANALOG_SD_SD_OUT "hv_feedback_analog_sd_sd_out"
+#define HV_FEEDBACK_ANALOG_SD_SD_IN "hv_feedback_analog_sd_sd_in"
+#define HV_FEEDBACK_ANALOG_SD_SD_END "hv_feedback_analog_sd_sd_end"
+/* END */
+
+/* START */
+#define HV_FEEDBACK_ENZOMMA "HV_FEEDBACK_ENZOMMA"
+
+#define HV_FEEDBACK_ENZOMMA_FEEDBACK "hv_feedback_enzomma_feedback"
+#define HV_FEEDBACK_ENZOMMA_STATUS "hv_feedback_enzomma_status"
+#define HV_FEEDBACK_ENZOMMA_IS_DIGITAL "hv_feedback_enzomma_is_digital"
+#define HV_FEEDBACK_ENZOMMA_DIGITAL "hv_feedback_enzomma_digital"
+#define HV_FEEDBACK_ENZOMMA_ANALOG "hv_feedback_enzomma_analog"
+/* END */
+
+/* START */
+#define HV_ERROR "HV_ERROR"
+
+#define HV_ERROR_GROUP "hv_error_group"
+#define HV_ERROR_INSTANCE "hv_error_instance"
+#define HV_ERROR_CELLBOARD_ID "hv_error_cellboard_id"
+#define HV_ERROR_CELLBOARD_GROUP "hv_error_cellboard_group"
+#define HV_ERROR_CELLBOARD_INSTANCE "hv_error_cellboard_instance"
+/* END */
+
+enum primary_types_id{
+	e_primary_uint32_t = -8,
+	e_primary_int16_t,
+	e_primary_int32_t,
+	e_primary_float,
+	e_primary_int8_t,
+	e_primary_uint8_t,
+	e_primary_uint64_t,
+	e_primary_uint16_t,
+
+	e_primary_ivt_msg_result_wh_ivt_id_result_wh,
+	e_primary_ivt_msg_result_as_ivt_id_result_as,
+	e_primary_ivt_msg_result_w_ivt_id_result_w,
+	e_primary_ivt_msg_response_ivt_id_response,
+	e_primary_ivt_msg_response__80_resp_measerror_item,
+	e_primary_ivt_msg_response__81_resp_systemerror_item,
+	e_primary_ivt_msg_response__82_resp_alllogdata_item,
+	e_primary_ivt_msg_response__83_resp_logdata_item,
+	e_primary_ivt_msg_response__b0_resp_reset_item,
+	e_primary_ivt_msg_response__b9_resp_device_type,
+	e_primary_ivt_msg_response__a0_resp_triggermode_i,
+	e_primary_ivt_msg_response__a1_resp_triggermode_u1,
+	e_primary_ivt_msg_response__a2_resp_triggermode_u2,
+	e_primary_ivt_msg_response__a3_resp_triggermode_u3,
+	e_primary_ivt_msg_response__a4_resp_triggermode_t,
+	e_primary_ivt_msg_response__a5_resp_triggermode_w,
+	e_primary_ivt_msg_response__a6_resp_triggermode_as,
+	e_primary_ivt_msg_response__a7_resp_triggermode_wh,
+	e_primary_ivt_msg_response__b4_resp_actual_mode,
+	e_primary_ivt_msg_response__b9_resp_device_current,
+	e_primary_ivt_msg_response__b4_resp_startup_mode,
+	e_primary_ivt_msg_response__b9_resp_device_voltage_chan,
+	e_primary_ivt_msg_response__b9_resp_device_toi,
+	e_primary_ivt_msg_response__b9_resp_device_com,
+	e_primary_ivt_msg_response__b9_resp_device_v_supply,
+	e_primary_ivt_msg_result_t_ivt_id_result_t,
+	e_primary_ivt_msg_result_u3_ivt_id_result_u3,
+	e_primary_ivt_msg_result_u2_ivt_id_result_u2,
+	e_primary_ivt_msg_result_u1_ivt_id_result_u1,
+	e_primary_ivt_msg_result_i_ivt_id_result_i,
+	e_primary_ivt_msg_cmd_ivt_id_cmd,
+	e_primary_ivt_msg_cmd__30_reset_item,
+	e_primary_ivt_msg_cmd__3a_restart_to_bitrate,
+	e_primary_ivt_msg_cmd__40_get_measerror_item,
+	e_primary_ivt_msg_cmd__41_get_systemerror_item,
+	e_primary_ivt_msg_cmd__42_get_alllogdata_item,
+	e_primary_ivt_msg_cmd__43_get_logdata_item,
+	e_primary_ivt_msg_cmd__20_conf_triggermode_i,
+	e_primary_ivt_msg_cmd__21_conf_triggermode_u1,
+	e_primary_ivt_msg_cmd__22_conf_triggermode_u2,
+	e_primary_ivt_msg_cmd__23_conf_triggermode_u3,
+	e_primary_ivt_msg_cmd__24_conf_triggermode_t,
+	e_primary_ivt_msg_cmd__25_conf_triggermode_w,
+	e_primary_ivt_msg_cmd__26_conf_triggermode_as,
+	e_primary_ivt_msg_cmd__27_conf_triggermode_wh,
+	e_primary_ivt_msg_cmd__34_actual_mode,
+	e_primary_ivt_msg_cmd__34_startup_mode,
+	e_primary_hv_flash_forward,
+	e_primary_hv_flash_cellboard_id,
+	e_primary_hv_cellboard_version_cellboard_id,
+	e_primary_hv_fans_status_fans_override,
+	e_primary_hv_set_fans_status_fans_override,
+	e_primary_hv_feedback_status_airn_open_com,
+	e_primary_hv_feedback_status_precharge_open_com,
+	e_primary_hv_feedback_status_airp_open_com,
+	e_primary_hv_feedback_status_airn_open_mec,
+	e_primary_hv_feedback_status_precharge_open_mec,
+	e_primary_hv_feedback_status_airp_open_mec,
+	e_primary_hv_feedback_status_sd_imd_fb,
+	e_primary_hv_feedback_status_sd_bms_fb,
+	e_primary_hv_feedback_status_ts_less_than_60v,
+	e_primary_hv_feedback_status_plausible_state_persisted,
+	e_primary_hv_feedback_status_plausible_state,
+	e_primary_hv_feedback_status_not_bms_fault_cockpit_led,
+	e_primary_hv_feedback_status_not_imd_fault_cockpit_led,
+	e_primary_hv_feedback_status_indicator_connected,
+	e_primary_hv_feedback_status_not_latch_reset,
+	e_primary_hv_feedback_status_plausible_state_latched,
+	e_primary_hv_feedback_status_not_bms_fault_latched,
+	e_primary_hv_feedback_status_not_imd_fault_latched,
+	e_primary_hv_feedback_status_not_ext_fault_latched,
+	e_primary_hv_feedback_status_imd_ok,
+	e_primary_hv_feedback_status_plausible_state_rc,
+	e_primary_hv_feedback_status_tsal_green,
+	e_primary_hv_feedback_status_probing_3v3,
+	e_primary_hv_feedback_status_sd_out,
+	e_primary_hv_feedback_status_sd_in,
+	e_primary_hv_feedback_status_sd_end,
+	e_primary_hv_feedback_status_v5_mcu,
+	e_primary_hv_feedback_status_feedback_tsal_green_fault_latched,
+	e_primary_hv_feedback_status_feedback_ext_latched,
+	e_primary_hv_feedback_status_feedback_precharge_status,
+	e_primary_hv_feedback_status_feedback_tsp_over_60v_status,
+	e_primary_hv_feedback_status_feedback_check_mux,
+	e_primary_hv_imd_status_status,
+	e_primary_hv_imd_status_feedback_not_imd_fault_cockpit_led,
+	e_primary_hv_imd_status_feedback_not_imd_fault_latched,
+	e_primary_hv_status_status,
+	e_primary_hv_status_cellboard_0,
+	e_primary_hv_status_cellboard_1,
+	e_primary_hv_status_cellboard_2,
+	e_primary_hv_status_cellboard_3,
+	e_primary_hv_status_cellboard_4,
+	e_primary_hv_status_cellboard_5,
+	e_primary_hv_set_status_ecu_hv_status_set,
+	e_primary_hv_set_status_handcart_hv_status_set,
+	e_primary_hv_balancing_status_cellboard_id,
+	e_primary_hv_balancing_status_balancing_status,
+	e_primary_hv_balancing_status_status,
+	e_primary_hv_set_balancing_status_steering_wheel_set_balancing_status,
+	e_primary_hv_set_balancing_status_handcart_set_balancing_status,
+	e_primary_lv_status_status,
+	e_primary_lv_charging_status_status,
+	e_primary_lv_cooling_aggressiveness_status,
+	e_primary_lv_set_cooling_aggressiveness_status,
+	e_primary_lv_radiator_speed_status,
+	e_primary_lv_pumps_speed_status,
+	e_primary_lv_set_radiator_speed_status,
+	e_primary_lv_set_pumps_speed_status,
+	e_primary_lv_inverter_connection_status_status,
+	e_primary_lv_set_inverter_connection_status_status,
+	e_primary_tlm_status_status,
+	e_primary_tlm_set_status_status,
+	e_primary_handcart_status_connected,
+	e_primary_handcart_settings_fans_override,
+	e_primary_handcart_settings_status,
+	e_primary_handcart_set_settings_fans_override,
+	e_primary_handcart_set_settings_status,
+	e_primary_ecu_status_status,
+	e_primary_ecu_set_status_status,
+	e_primary_ecu_inverter_status_rl,
+	e_primary_ecu_inverter_status_rr,
+	e_primary_ecu_power_maps_sc_state,
+	e_primary_ecu_power_maps_tv_state,
+	e_primary_ecu_power_maps_reg_state,
+	e_primary_ecu_set_power_maps_sc_state,
+	e_primary_ecu_set_power_maps_tv_state,
+	e_primary_ecu_set_power_maps_reg_state,
+	e_primary_ecu_ptt_status_status,
+	e_primary_ecu_set_ptt_status_status,
+	e_primary_control_status_sc_state,
+	e_primary_control_status_tv_state,
+	e_primary_control_status_reg_state,
+	e_primary_hv_cells_voltage_cellboard_id,
+	e_primary_as_commands_status_steerstatus,
+	e_primary_as_commands_status_throttlestatus,
+	e_primary_as_commands_status_brakestatus,
+	e_primary_as_commands_set_status_steerstatus,
+	e_primary_as_commands_set_status_throttlestatus,
+	e_primary_as_commands_set_status_brakestatus,
+	e_primary_debug_signal_1_device_id,
+	e_primary_debug_signal_2_device_id,
+	e_primary_debug_signal_3_device_id,
+	e_primary_debug_signal_4_device_id,
+	e_primary_hv_flash_request_cellboard_id,
+	e_primary_hv_cells_temperature_cellboard_id,
+	e_primary_hv_discharge_temperature_cellboard_id,
+	e_primary_hv_feedback_enzomma_feedback,
+	e_primary_hv_feedback_enzomma_status,
+	e_primary_hv_error_group,
+	e_primary_hv_error_cellboard_id,
+	e_primary_hv_error_cellboard_group
+};
+
+/**
+ * @brief get the name of the signals in the message
+ * 
+ * @param[in] id message id
+ * @param[out] v array of strings containing the name of the signals
+ * @param[in] fields_size maximum size of v
+ * @param[in] string_size maximum size of v[i]
+ * 
+ * @return 0 if ok 1 otherwise
+*/
+int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t string_size);
+
+/**
+ * @brief get the fields of an enum given the id of the enum (get the id from fields_types_from_id)
+ * 
+ * @param[in] enum_id the id of the enum, you can get it from fields_types_from_id
+ * @param[out] v array of strings containing the enum fields
+ * @param[in] fields_size maximum size of v
+ * @param[in] string_size maximum size of v[i]
+ * 
+ * @return 0 if ok 1 otherwise
+*/
+int primary_enum_fields(int enum_id, char **v, size_t fields_size, size_t string_size);
+
+/**
+ * @brief serialize to a data pointer from a message id
+ * 
+ * @param[in] id message id
+ * @param[in] s string containing the data to serialize (comma separated)
+ * @param[out] data pointer to the serialized data
+ * @param[out] size size of the message
+ * 
+ * @return Size of packed data, or negative error code.
+*/
+int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size);
+
+/**
+ * @brief get the number of signals in the message
+ * 
+ * @param[in] id the id of the message
+ * 
+ * @return return the number of the signals
+*/
+int primary_n_fields_from_id(int id);
+
+/**
+ * @brief get the types of the signals in the message
+ * 
+ * @param[in] id the id of the message
+ * @param[out] fields_types fields_types[i] contains the type id of the signal i (must be already allocated)
+ * @param[in] fields_types_size max size of fields_types
+ * 
+ * @return the number of types set, 0 if the id is invalid or fields_types_size is too small
+*/
+int primary_fields_types_from_id(int id, int *fields_types, int fields_types_size);
+
+/**
+ * @brief get the fields of a message that are enums
+ * 
+ * @param[in] msg_name name of the message to find
+ * @param[in] sgn_name name of the signal to find
+ * 
+ * @return fields' strings vector
+*/
+std::vector<std::string> primary_enum_fields_from_message(const std::string& msg_name);
+
+/**
+ * @brief get the fields of an enum given the name of the message and the name of the signal
+ * 
+ * @param[in] msg_name name of the message to find
+ * @param[in] sgn_name name of the signal to find
+ * 
+ * @return fields' strings vector
+*/
+std::vector<std::string> primary_enum_names_from_fields(const std::string& msg_name, const std::string& sgn_name);
+
+
+#endif

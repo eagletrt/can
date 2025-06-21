@@ -1,0 +1,755 @@
+syntax = "proto3";
+package secondary;
+
+
+enum secondary_link_deformation_debug_voltages_wheel_id {
+	secondary_link_deformation_debug_voltages_wheel_id_fl = 0;
+	secondary_link_deformation_debug_voltages_wheel_id_fr = 1;
+	secondary_link_deformation_debug_voltages_wheel_id_rl = 2;
+	secondary_link_deformation_debug_voltages_wheel_id_rr = 3;
+}
+enum secondary_link_deformation_debug_voltages_rod_id {
+	secondary_link_deformation_debug_voltages_rod_id_F1011 = 0;
+	secondary_link_deformation_debug_voltages_rod_id_F36 = 1;
+	secondary_link_deformation_debug_voltages_rod_id_F46 = 2;
+	secondary_link_deformation_debug_voltages_rod_id_F27 = 3;
+	secondary_link_deformation_debug_voltages_rod_id_F17 = 4;
+	secondary_link_deformation_debug_voltages_rod_id_F58 = 5;
+}
+enum secondary_link_deformation_fl_wheel_rod_id {
+	secondary_link_deformation_fl_wheel_rod_id_F1011 = 0;
+	secondary_link_deformation_fl_wheel_rod_id_F36 = 1;
+	secondary_link_deformation_fl_wheel_rod_id_F46 = 2;
+	secondary_link_deformation_fl_wheel_rod_id_F27 = 3;
+	secondary_link_deformation_fl_wheel_rod_id_F17 = 4;
+	secondary_link_deformation_fl_wheel_rod_id_F58 = 5;
+}
+enum secondary_link_deformation_fr_wheel_rod_id {
+	secondary_link_deformation_fr_wheel_rod_id_F1011 = 0;
+	secondary_link_deformation_fr_wheel_rod_id_F36 = 1;
+	secondary_link_deformation_fr_wheel_rod_id_F46 = 2;
+	secondary_link_deformation_fr_wheel_rod_id_F27 = 3;
+	secondary_link_deformation_fr_wheel_rod_id_F17 = 4;
+	secondary_link_deformation_fr_wheel_rod_id_F58 = 5;
+}
+enum secondary_link_deformation_rl_wheel_rod_id {
+	secondary_link_deformation_rl_wheel_rod_id_F1011 = 0;
+	secondary_link_deformation_rl_wheel_rod_id_F36 = 1;
+	secondary_link_deformation_rl_wheel_rod_id_F46 = 2;
+	secondary_link_deformation_rl_wheel_rod_id_F27 = 3;
+	secondary_link_deformation_rl_wheel_rod_id_F17 = 4;
+	secondary_link_deformation_rl_wheel_rod_id_F58 = 5;
+}
+enum secondary_link_deformation_rr_wheel_rod_id {
+	secondary_link_deformation_rr_wheel_rod_id_F1011 = 0;
+	secondary_link_deformation_rr_wheel_rod_id_F36 = 1;
+	secondary_link_deformation_rr_wheel_rod_id_F46 = 2;
+	secondary_link_deformation_rr_wheel_rod_id_F27 = 3;
+	secondary_link_deformation_rr_wheel_rod_id_F17 = 4;
+	secondary_link_deformation_rr_wheel_rod_id_F58 = 5;
+}
+enum secondary_debug_signal_5_device_id {
+	secondary_debug_signal_5_device_id_hv_mainboard = 0;
+	secondary_debug_signal_5_device_id_hv_cellboard = 1;
+	secondary_debug_signal_5_device_id_lv = 2;
+	secondary_debug_signal_5_device_id_ecu = 3;
+	secondary_debug_signal_5_device_id_tlm = 4;
+	secondary_debug_signal_5_device_id_traction_control = 5;
+	secondary_debug_signal_5_device_id_steeering_wheel = 6;
+	secondary_debug_signal_5_device_id_handcart = 7;
+	secondary_debug_signal_5_device_id_acquisinator = 8;
+}
+enum secondary_debug_signal_6_device_id {
+	secondary_debug_signal_6_device_id_hv_mainboard = 0;
+	secondary_debug_signal_6_device_id_hv_cellboard = 1;
+	secondary_debug_signal_6_device_id_lv = 2;
+	secondary_debug_signal_6_device_id_ecu = 3;
+	secondary_debug_signal_6_device_id_tlm = 4;
+	secondary_debug_signal_6_device_id_traction_control = 5;
+	secondary_debug_signal_6_device_id_steeering_wheel = 6;
+	secondary_debug_signal_6_device_id_handcart = 7;
+	secondary_debug_signal_6_device_id_acquisinator = 8;
+}
+enum secondary_debug_signal_7_device_id {
+	secondary_debug_signal_7_device_id_hv_mainboard = 0;
+	secondary_debug_signal_7_device_id_hv_cellboard = 1;
+	secondary_debug_signal_7_device_id_lv = 2;
+	secondary_debug_signal_7_device_id_ecu = 3;
+	secondary_debug_signal_7_device_id_tlm = 4;
+	secondary_debug_signal_7_device_id_traction_control = 5;
+	secondary_debug_signal_7_device_id_steeering_wheel = 6;
+	secondary_debug_signal_7_device_id_handcart = 7;
+	secondary_debug_signal_7_device_id_acquisinator = 8;
+}
+enum secondary_debug_signal_8_device_id {
+	secondary_debug_signal_8_device_id_hv_mainboard = 0;
+	secondary_debug_signal_8_device_id_hv_cellboard = 1;
+	secondary_debug_signal_8_device_id_lv = 2;
+	secondary_debug_signal_8_device_id_ecu = 3;
+	secondary_debug_signal_8_device_id_tlm = 4;
+	secondary_debug_signal_8_device_id_traction_control = 5;
+	secondary_debug_signal_8_device_id_steeering_wheel = 6;
+	secondary_debug_signal_8_device_id_handcart = 7;
+	secondary_debug_signal_8_device_id_acquisinator = 8;
+}
+
+
+message ACQUISINATOR_JMP_TO_BLT{
+	uint32 acquisinatore_id = 1;
+	uint64 _inner_timestamp = 2;
+}
+message ACQUISINATOR_FLASH_0_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_0_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_1_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_1_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_2_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_2_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_3_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_3_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_4_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_4_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_5_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_5_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_6_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_6_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_7_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_7_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_8_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_8_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_9_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_9_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_10_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_10_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_11_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_11_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_12_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_12_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_13_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_13_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_14_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_14_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_15_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_15_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_16_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_16_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_17_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_17_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_18_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_18_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_19_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_19_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_20_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_20_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_21_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_21_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_22_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_22_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_23_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_23_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_24_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_24_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_25_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_25_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_26_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_26_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_27_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_27_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_28_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_28_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_29_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_29_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_30_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_30_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_31_TX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_FLASH_31_RX{
+	uint64 _inner_timestamp = 1;
+}
+message ACQUISINATOR_VERSION{
+	uint32 acquisinator_id = 1;
+	uint32 canlib_build_time = 2;
+	uint64 _inner_timestamp = 3;
+}
+message IMU_ANGULAR_RATE{
+	double x = 1;
+	double y = 2;
+	double z = 3;
+	uint64 _inner_timestamp = 4;
+}
+message IMU_ACCELERATION{
+	double x = 1;
+	double y = 2;
+	double z = 3;
+	int32 imu_temperature = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_FL_0{
+	double channel1 = 1;
+	double channel2 = 2;
+	double channel3 = 3;
+	double channel4 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_FL_1{
+	double channel5 = 1;
+	double channel6 = 2;
+	double channel7 = 3;
+	double channel8 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_FL_2{
+	double channel9 = 1;
+	double channel10 = 2;
+	double channel11 = 3;
+	double channel12 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_FL_3{
+	double channel13 = 1;
+	double channel14 = 2;
+	double channel15 = 3;
+	double channel16 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_FR_0{
+	double channel1 = 1;
+	double channel2 = 2;
+	double channel3 = 3;
+	double channel4 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_FR_1{
+	double channel5 = 1;
+	double channel6 = 2;
+	double channel7 = 3;
+	double channel8 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_FR_2{
+	double channel9 = 1;
+	double channel10 = 2;
+	double channel11 = 3;
+	double channel12 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_FR_3{
+	double channel13 = 1;
+	double channel14 = 2;
+	double channel15 = 3;
+	double channel16 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_RL_0{
+	double channel1 = 1;
+	double channel2 = 2;
+	double channel3 = 3;
+	double channel4 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_RL_1{
+	double channel5 = 1;
+	double channel6 = 2;
+	double channel7 = 3;
+	double channel8 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_RL_2{
+	double channel9 = 1;
+	double channel10 = 2;
+	double channel11 = 3;
+	double channel12 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_RL_3{
+	double channel13 = 1;
+	double channel14 = 2;
+	double channel15 = 3;
+	double channel16 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_RR_0{
+	double channel1 = 1;
+	double channel2 = 2;
+	double channel3 = 3;
+	double channel4 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_RR_1{
+	double channel5 = 1;
+	double channel6 = 2;
+	double channel7 = 3;
+	double channel8 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_RR_2{
+	double channel9 = 1;
+	double channel10 = 2;
+	double channel11 = 3;
+	double channel12 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message IRTS_RR_3{
+	double channel13 = 1;
+	double channel14 = 2;
+	double channel15 = 3;
+	double channel16 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message VEHICLE_POSITION{
+	double x = 1;
+	double y = 2;
+	double heading = 3;
+	uint64 _inner_timestamp = 4;
+}
+message VEHICLE_SPEED{
+	double u = 1;
+	double v = 2;
+	uint64 _inner_timestamp = 3;
+}
+message VEHICLE_CURVILINEAR_COORDINATES{
+	float s = 1;
+	double n = 2;
+	uint64 _inner_timestamp = 3;
+}
+message FRONT_ANGULAR_VELOCITY{
+	double fl = 1;
+	double fr = 2;
+	uint64 _inner_timestamp = 3;
+}
+message REAR_ANGULAR_VELOCITY{
+	double rl = 1;
+	double rr = 2;
+	uint64 _inner_timestamp = 3;
+}
+message HV_SOC_ESTIMATION_STATE{
+	double soc = 1;
+	double rc1 = 2;
+	double rc2 = 3;
+	uint64 _inner_timestamp = 4;
+}
+message HV_SOC_ESTIMATION_COVARIANCE{
+	double soc = 1;
+	double rc1 = 2;
+	double rc2 = 3;
+	uint64 _inner_timestamp = 4;
+}
+message LV_SOC_ESTIMATION_STATE{
+	double soc = 1;
+	double rc1 = 2;
+	double rc2 = 3;
+	uint64 _inner_timestamp = 4;
+}
+message LV_SOC_ESTIMATION_COVARIANCE{
+	double soc = 1;
+	double rc1 = 2;
+	double rc2 = 3;
+	uint64 _inner_timestamp = 4;
+}
+message PEDAL_THROTTLE{
+	double throttle = 1;
+	uint64 _inner_timestamp = 2;
+}
+message PEDAL_BRAKES_PRESSURE{
+	double front = 1;
+	double rear = 2;
+	uint64 _inner_timestamp = 3;
+}
+message STEER_ANGLE{
+	float angle = 1;
+	uint64 _inner_timestamp = 2;
+}
+message ODOMETER{
+	float kilometers = 1;
+	uint64 _inner_timestamp = 2;
+}
+message TPMS_PRESSURE{
+	uint32 fl = 1;
+	uint32 fr = 2;
+	uint32 rl = 3;
+	uint32 rr = 4;
+	uint64 _inner_timestamp = 5;
+}
+message TPMS_TEMPERATURE{
+	uint32 fl = 1;
+	uint32 fr = 2;
+	uint32 rl = 3;
+	uint32 rr = 4;
+	uint64 _inner_timestamp = 5;
+}
+message TLM_UNIX_TIMESTAMP{
+	uint64 timestamp = 1;
+	uint64 _inner_timestamp = 2;
+}
+message TLM_LAP_TIME{
+	uint32 lap_count = 1;
+	double lap_time = 2;
+	uint64 _inner_timestamp = 3;
+}
+message TLM_LAPS_STATS{
+	uint32 lap_number = 1;
+	double best_time = 2;
+	double last_time = 3;
+	uint64 _inner_timestamp = 4;
+}
+message TLM_NETWORK_INTERFACE{
+	uint32 iname_0 = 1;
+	uint32 iname_1 = 2;
+	uint32 iname_2 = 3;
+	uint32 iname_3 = 4;
+	uint32 ip_address = 5;
+	uint64 _inner_timestamp = 6;
+}
+message FRONT_AMMO_COMPRESSION{
+	double fl = 1;
+	double fr = 2;
+	uint64 _inner_timestamp = 3;
+}
+message REAR_AMMO_COMPRESSION{
+	double rl = 1;
+	double rr = 2;
+	uint64 _inner_timestamp = 3;
+}
+message ACQUISINATOR_CALIBRATIONS_OFFSETS{
+	uint32 acquisinator_id = 1;
+	double offset1 = 2;
+	float offset2 = 3;
+	uint64 _inner_timestamp = 4;
+}
+message ACQUISINATOR_ERRORS{
+	uint32 acquisinator_id = 1;
+	bool acquisinator_errors_acquisinatore_led_code_can_not_working = 2;
+	bool acquisinator_errors_acquisinatore_led_code_spi_error = 3;
+	bool acquisinator_errors_acquisinatore_led_code_read_write_flash = 4;
+	bool acquisinator_errors_acquisinatore_led_code_flashed_firmware_with_wrong_id = 5;
+	uint64 _inner_timestamp = 6;
+}
+message LINK_DEFORMATION_DEBUG_VOLTAGES{
+	secondary_link_deformation_debug_voltages_wheel_id wheel_id = 1;
+	secondary_link_deformation_debug_voltages_rod_id rod_id = 2;
+	float raw_voltage = 3;
+	uint64 _inner_timestamp = 4;
+}
+message LINK_DEFORMATION_FL_WHEEL{
+	secondary_link_deformation_fl_wheel_rod_id rod_id = 1;
+	float deformation = 2;
+	uint64 _inner_timestamp = 3;
+}
+message LINK_DEFORMATION_FR_WHEEL{
+	secondary_link_deformation_fr_wheel_rod_id rod_id = 1;
+	float deformation = 2;
+	uint64 _inner_timestamp = 3;
+}
+message LINK_DEFORMATION_RL_WHEEL{
+	secondary_link_deformation_rl_wheel_rod_id rod_id = 1;
+	float deformation = 2;
+	uint64 _inner_timestamp = 3;
+}
+message LINK_DEFORMATION_RR_WHEEL{
+	secondary_link_deformation_rr_wheel_rod_id rod_id = 1;
+	float deformation = 2;
+	uint64 _inner_timestamp = 3;
+}
+message LINK_DEFORMATION_SET_CALIBRATION{
+	uint64 _inner_timestamp = 1;
+}
+message AMMO_COMPRESSION_SET_CALIBRATION{
+	uint64 _inner_timestamp = 1;
+}
+message DEBUG_SIGNAL_5{
+	secondary_debug_signal_5_device_id device_id = 1;
+	double field_1 = 2;
+	double field_2 = 3;
+	double field_3 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message DEBUG_SIGNAL_6{
+	secondary_debug_signal_6_device_id device_id = 1;
+	double field_1 = 2;
+	double field_2 = 3;
+	double field_3 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message DEBUG_SIGNAL_7{
+	secondary_debug_signal_7_device_id device_id = 1;
+	double field_1 = 2;
+	double field_2 = 3;
+	double field_3 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message DEBUG_SIGNAL_8{
+	secondary_debug_signal_8_device_id device_id = 1;
+	double field_1 = 2;
+	double field_2 = 3;
+	double field_3 = 4;
+	uint64 _inner_timestamp = 5;
+}
+message COOLING_TEMP_PUMPS{
+	double input = 1;
+	double output = 2;
+	uint64 _inner_timestamp = 3;
+}
+message COOLING_TEMP_RADIATORS{
+	double air_temp = 1;
+	uint64 _inner_timestamp = 2;
+}
+message LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS{
+	double heading = 1;
+	double distance = 2;
+	uint64 _inner_timestamp = 3;
+}
+message LATERAL_CONTROLLER_ERRORS{
+	double com_distance = 1;
+	uint64 _inner_timestamp = 2;
+}
+
+
+message Pack{
+	repeated ACQUISINATOR_JMP_TO_BLT ACQUISINATOR_JMP_TO_BLT = 1;
+	repeated ACQUISINATOR_FLASH_0_TX ACQUISINATOR_FLASH_0_TX = 2;
+	repeated ACQUISINATOR_FLASH_0_RX ACQUISINATOR_FLASH_0_RX = 3;
+	repeated ACQUISINATOR_FLASH_1_TX ACQUISINATOR_FLASH_1_TX = 4;
+	repeated ACQUISINATOR_FLASH_1_RX ACQUISINATOR_FLASH_1_RX = 5;
+	repeated ACQUISINATOR_FLASH_2_TX ACQUISINATOR_FLASH_2_TX = 6;
+	repeated ACQUISINATOR_FLASH_2_RX ACQUISINATOR_FLASH_2_RX = 7;
+	repeated ACQUISINATOR_FLASH_3_TX ACQUISINATOR_FLASH_3_TX = 8;
+	repeated ACQUISINATOR_FLASH_3_RX ACQUISINATOR_FLASH_3_RX = 9;
+	repeated ACQUISINATOR_FLASH_4_TX ACQUISINATOR_FLASH_4_TX = 10;
+	repeated ACQUISINATOR_FLASH_4_RX ACQUISINATOR_FLASH_4_RX = 11;
+	repeated ACQUISINATOR_FLASH_5_TX ACQUISINATOR_FLASH_5_TX = 12;
+	repeated ACQUISINATOR_FLASH_5_RX ACQUISINATOR_FLASH_5_RX = 13;
+	repeated ACQUISINATOR_FLASH_6_TX ACQUISINATOR_FLASH_6_TX = 14;
+	repeated ACQUISINATOR_FLASH_6_RX ACQUISINATOR_FLASH_6_RX = 15;
+	repeated ACQUISINATOR_FLASH_7_TX ACQUISINATOR_FLASH_7_TX = 16;
+	repeated ACQUISINATOR_FLASH_7_RX ACQUISINATOR_FLASH_7_RX = 17;
+	repeated ACQUISINATOR_FLASH_8_TX ACQUISINATOR_FLASH_8_TX = 18;
+	repeated ACQUISINATOR_FLASH_8_RX ACQUISINATOR_FLASH_8_RX = 19;
+	repeated ACQUISINATOR_FLASH_9_TX ACQUISINATOR_FLASH_9_TX = 20;
+	repeated ACQUISINATOR_FLASH_9_RX ACQUISINATOR_FLASH_9_RX = 21;
+	repeated ACQUISINATOR_FLASH_10_TX ACQUISINATOR_FLASH_10_TX = 22;
+	repeated ACQUISINATOR_FLASH_10_RX ACQUISINATOR_FLASH_10_RX = 23;
+	repeated ACQUISINATOR_FLASH_11_TX ACQUISINATOR_FLASH_11_TX = 24;
+	repeated ACQUISINATOR_FLASH_11_RX ACQUISINATOR_FLASH_11_RX = 25;
+	repeated ACQUISINATOR_FLASH_12_TX ACQUISINATOR_FLASH_12_TX = 26;
+	repeated ACQUISINATOR_FLASH_12_RX ACQUISINATOR_FLASH_12_RX = 27;
+	repeated ACQUISINATOR_FLASH_13_TX ACQUISINATOR_FLASH_13_TX = 28;
+	repeated ACQUISINATOR_FLASH_13_RX ACQUISINATOR_FLASH_13_RX = 29;
+	repeated ACQUISINATOR_FLASH_14_TX ACQUISINATOR_FLASH_14_TX = 30;
+	repeated ACQUISINATOR_FLASH_14_RX ACQUISINATOR_FLASH_14_RX = 31;
+	repeated ACQUISINATOR_FLASH_15_TX ACQUISINATOR_FLASH_15_TX = 32;
+	repeated ACQUISINATOR_FLASH_15_RX ACQUISINATOR_FLASH_15_RX = 33;
+	repeated ACQUISINATOR_FLASH_16_TX ACQUISINATOR_FLASH_16_TX = 34;
+	repeated ACQUISINATOR_FLASH_16_RX ACQUISINATOR_FLASH_16_RX = 35;
+	repeated ACQUISINATOR_FLASH_17_TX ACQUISINATOR_FLASH_17_TX = 36;
+	repeated ACQUISINATOR_FLASH_17_RX ACQUISINATOR_FLASH_17_RX = 37;
+	repeated ACQUISINATOR_FLASH_18_TX ACQUISINATOR_FLASH_18_TX = 38;
+	repeated ACQUISINATOR_FLASH_18_RX ACQUISINATOR_FLASH_18_RX = 39;
+	repeated ACQUISINATOR_FLASH_19_TX ACQUISINATOR_FLASH_19_TX = 40;
+	repeated ACQUISINATOR_FLASH_19_RX ACQUISINATOR_FLASH_19_RX = 41;
+	repeated ACQUISINATOR_FLASH_20_TX ACQUISINATOR_FLASH_20_TX = 42;
+	repeated ACQUISINATOR_FLASH_20_RX ACQUISINATOR_FLASH_20_RX = 43;
+	repeated ACQUISINATOR_FLASH_21_TX ACQUISINATOR_FLASH_21_TX = 44;
+	repeated ACQUISINATOR_FLASH_21_RX ACQUISINATOR_FLASH_21_RX = 45;
+	repeated ACQUISINATOR_FLASH_22_TX ACQUISINATOR_FLASH_22_TX = 46;
+	repeated ACQUISINATOR_FLASH_22_RX ACQUISINATOR_FLASH_22_RX = 47;
+	repeated ACQUISINATOR_FLASH_23_TX ACQUISINATOR_FLASH_23_TX = 48;
+	repeated ACQUISINATOR_FLASH_23_RX ACQUISINATOR_FLASH_23_RX = 49;
+	repeated ACQUISINATOR_FLASH_24_TX ACQUISINATOR_FLASH_24_TX = 50;
+	repeated ACQUISINATOR_FLASH_24_RX ACQUISINATOR_FLASH_24_RX = 51;
+	repeated ACQUISINATOR_FLASH_25_TX ACQUISINATOR_FLASH_25_TX = 52;
+	repeated ACQUISINATOR_FLASH_25_RX ACQUISINATOR_FLASH_25_RX = 53;
+	repeated ACQUISINATOR_FLASH_26_TX ACQUISINATOR_FLASH_26_TX = 54;
+	repeated ACQUISINATOR_FLASH_26_RX ACQUISINATOR_FLASH_26_RX = 55;
+	repeated ACQUISINATOR_FLASH_27_TX ACQUISINATOR_FLASH_27_TX = 56;
+	repeated ACQUISINATOR_FLASH_27_RX ACQUISINATOR_FLASH_27_RX = 57;
+	repeated ACQUISINATOR_FLASH_28_TX ACQUISINATOR_FLASH_28_TX = 58;
+	repeated ACQUISINATOR_FLASH_28_RX ACQUISINATOR_FLASH_28_RX = 59;
+	repeated ACQUISINATOR_FLASH_29_TX ACQUISINATOR_FLASH_29_TX = 60;
+	repeated ACQUISINATOR_FLASH_29_RX ACQUISINATOR_FLASH_29_RX = 61;
+	repeated ACQUISINATOR_FLASH_30_TX ACQUISINATOR_FLASH_30_TX = 62;
+	repeated ACQUISINATOR_FLASH_30_RX ACQUISINATOR_FLASH_30_RX = 63;
+	repeated ACQUISINATOR_FLASH_31_TX ACQUISINATOR_FLASH_31_TX = 64;
+	repeated ACQUISINATOR_FLASH_31_RX ACQUISINATOR_FLASH_31_RX = 65;
+	repeated ACQUISINATOR_VERSION ACQUISINATOR_VERSION = 66;
+	repeated IMU_ANGULAR_RATE IMU_ANGULAR_RATE = 67;
+	repeated IMU_ACCELERATION IMU_ACCELERATION = 68;
+	repeated IRTS_FL_0 IRTS_FL_0 = 69;
+	repeated IRTS_FL_1 IRTS_FL_1 = 70;
+	repeated IRTS_FL_2 IRTS_FL_2 = 71;
+	repeated IRTS_FL_3 IRTS_FL_3 = 72;
+	repeated IRTS_FR_0 IRTS_FR_0 = 73;
+	repeated IRTS_FR_1 IRTS_FR_1 = 74;
+	repeated IRTS_FR_2 IRTS_FR_2 = 75;
+	repeated IRTS_FR_3 IRTS_FR_3 = 76;
+	repeated IRTS_RL_0 IRTS_RL_0 = 77;
+	repeated IRTS_RL_1 IRTS_RL_1 = 78;
+	repeated IRTS_RL_2 IRTS_RL_2 = 79;
+	repeated IRTS_RL_3 IRTS_RL_3 = 80;
+	repeated IRTS_RR_0 IRTS_RR_0 = 81;
+	repeated IRTS_RR_1 IRTS_RR_1 = 82;
+	repeated IRTS_RR_2 IRTS_RR_2 = 83;
+	repeated IRTS_RR_3 IRTS_RR_3 = 84;
+	repeated VEHICLE_POSITION VEHICLE_POSITION = 85;
+	repeated VEHICLE_SPEED VEHICLE_SPEED = 86;
+	repeated VEHICLE_CURVILINEAR_COORDINATES VEHICLE_CURVILINEAR_COORDINATES = 87;
+	repeated FRONT_ANGULAR_VELOCITY FRONT_ANGULAR_VELOCITY = 88;
+	repeated REAR_ANGULAR_VELOCITY REAR_ANGULAR_VELOCITY = 89;
+	repeated HV_SOC_ESTIMATION_STATE HV_SOC_ESTIMATION_STATE = 90;
+	repeated HV_SOC_ESTIMATION_COVARIANCE HV_SOC_ESTIMATION_COVARIANCE = 91;
+	repeated LV_SOC_ESTIMATION_STATE LV_SOC_ESTIMATION_STATE = 92;
+	repeated LV_SOC_ESTIMATION_COVARIANCE LV_SOC_ESTIMATION_COVARIANCE = 93;
+	repeated PEDAL_THROTTLE PEDAL_THROTTLE = 94;
+	repeated PEDAL_BRAKES_PRESSURE PEDAL_BRAKES_PRESSURE = 95;
+	repeated STEER_ANGLE STEER_ANGLE = 96;
+	repeated ODOMETER ODOMETER = 97;
+	repeated TPMS_PRESSURE TPMS_PRESSURE = 98;
+	repeated TPMS_TEMPERATURE TPMS_TEMPERATURE = 99;
+	repeated TLM_UNIX_TIMESTAMP TLM_UNIX_TIMESTAMP = 100;
+	repeated TLM_LAP_TIME TLM_LAP_TIME = 101;
+	repeated TLM_LAPS_STATS TLM_LAPS_STATS = 102;
+	repeated TLM_NETWORK_INTERFACE TLM_NETWORK_INTERFACE = 103;
+	repeated FRONT_AMMO_COMPRESSION FRONT_AMMO_COMPRESSION = 104;
+	repeated REAR_AMMO_COMPRESSION REAR_AMMO_COMPRESSION = 105;
+	repeated ACQUISINATOR_CALIBRATIONS_OFFSETS ACQUISINATOR_CALIBRATIONS_OFFSETS = 106;
+	repeated ACQUISINATOR_ERRORS ACQUISINATOR_ERRORS = 107;
+	repeated LINK_DEFORMATION_DEBUG_VOLTAGES LINK_DEFORMATION_DEBUG_VOLTAGES = 108;
+	repeated LINK_DEFORMATION_FL_WHEEL LINK_DEFORMATION_FL_WHEEL = 109;
+	repeated LINK_DEFORMATION_FR_WHEEL LINK_DEFORMATION_FR_WHEEL = 110;
+	repeated LINK_DEFORMATION_RL_WHEEL LINK_DEFORMATION_RL_WHEEL = 111;
+	repeated LINK_DEFORMATION_RR_WHEEL LINK_DEFORMATION_RR_WHEEL = 112;
+	repeated LINK_DEFORMATION_SET_CALIBRATION LINK_DEFORMATION_SET_CALIBRATION = 113;
+	repeated AMMO_COMPRESSION_SET_CALIBRATION AMMO_COMPRESSION_SET_CALIBRATION = 114;
+	repeated DEBUG_SIGNAL_5 DEBUG_SIGNAL_5 = 115;
+	repeated DEBUG_SIGNAL_6 DEBUG_SIGNAL_6 = 116;
+	repeated DEBUG_SIGNAL_7 DEBUG_SIGNAL_7 = 117;
+	repeated DEBUG_SIGNAL_8 DEBUG_SIGNAL_8 = 118;
+	repeated COOLING_TEMP_PUMPS COOLING_TEMP_PUMPS = 119;
+	repeated COOLING_TEMP_RADIATORS COOLING_TEMP_RADIATORS = 120;
+	repeated LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS LATERAL_CONTROLLER_PREVIEW_POINT_ERRORS = 121;
+	repeated LATERAL_CONTROLLER_ERRORS LATERAL_CONTROLLER_ERRORS = 122;
+}
+
