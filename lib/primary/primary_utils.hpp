@@ -1466,12 +1466,8 @@
 #define HV_CELLS_TEMPERATURE_CELLBOARD_ID "hv_cells_temperature_cellboard_id"
 #define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_0 "hv_cells_temperature_temperature_id_0"
 #define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_1 "hv_cells_temperature_temperature_id_1"
-#define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_2 "hv_cells_temperature_temperature_id_2"
-#define HV_CELLS_TEMPERATURE_TEMPERATURE_ID_3 "hv_cells_temperature_temperature_id_3"
 #define HV_CELLS_TEMPERATURE_TEMPERATURE_0 "hv_cells_temperature_temperature_0"
 #define HV_CELLS_TEMPERATURE_TEMPERATURE_1 "hv_cells_temperature_temperature_1"
-#define HV_CELLS_TEMPERATURE_TEMPERATURE_2 "hv_cells_temperature_temperature_2"
-#define HV_CELLS_TEMPERATURE_TEMPERATURE_3 "hv_cells_temperature_temperature_3"
 /* END */
 
 /* START */
@@ -1807,13 +1803,13 @@
 /* END */
 
 enum primary_types_id{
-	e_primary_uint8_t = -8,
-	e_primary_int8_t,
-	e_primary_uint16_t,
-	e_primary_float,
-	e_primary_int32_t,
+	e_primary_int8_t = -8,
 	e_primary_int16_t,
+	e_primary_float,
+	e_primary_uint16_t,
+	e_primary_uint8_t,
 	e_primary_uint64_t,
+	e_primary_int32_t,
 	e_primary_uint32_t,
 
 	e_primary_ivt_msg_result_wh_ivt_id_result_wh,

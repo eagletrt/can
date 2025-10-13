@@ -2428,13 +2428,9 @@ message HV_CELLS_TEMPERATURE{
 	primary_hv_cells_temperature_cellboard_id cellboard_id = 1;
 	uint32 temperature_id_0 = 2;
 	uint32 temperature_id_1 = 3;
-	uint32 temperature_id_2 = 4;
-	uint32 temperature_id_3 = 5;
-	double temperature_0 = 6;
-	double temperature_1 = 7;
-	double temperature_2 = 8;
-	double temperature_3 = 9;
-	uint64 _inner_timestamp = 10;
+	double temperature_0 = 4;
+	double temperature_1 = 5;
+	uint64 _inner_timestamp = 6;
 }
 message HV_DISCHARGE_TEMPERATURE{
 	primary_hv_discharge_temperature_cellboard_id cellboard_id = 1;

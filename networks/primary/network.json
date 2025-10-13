@@ -3048,34 +3048,20 @@
                 "temperature_id_0": {
                     "type": "uint8",
                     "range": [
-                        1,
-                        75
+                        0,
+                        255
                     ]
                 },
                 "temperature_id_1": {
                     "type": "uint8",
                     "range": [
-                        1,
-                        75
-                    ]
-                },
-                "temperature_id_2": {
-                    "type": "uint8",
-                    "range": [
-                        1,
-                        75
-                    ]
-                },
-                "temperature_id_3": {
-                    "type": "uint8",
-                    "range": [
-                        1,
-                        75
+                        0,
+                        255
                     ]
                 },
                 "temperature_0": {
                     "type": "float32",
-                    "force": "uint8",
+                    "force": "uint16",
                     "range": [
                         -25.0,
                         100.0
@@ -3083,23 +3069,7 @@
                 },
                 "temperature_1": {
                     "type": "float32",
-                    "force": "uint8",
-                    "range": [
-                        -25.0,
-                        100.0
-                    ]
-                },
-                "temperature_2": {
-                    "type": "float32",
-                    "force": "uint8",
-                    "range": [
-                        -25.0,
-                        100.0
-                    ]
-                },
-                "temperature_3": {
-                    "type": "float32",
-                    "force": "uint8",
+                    "force": "uint16",
                     "range": [
                         -25.0,
                         100.0

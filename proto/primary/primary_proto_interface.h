@@ -2806,12 +2806,8 @@ void primary_proto_interface_deserialize(primary::Pack* pack, network_enums* net
 		(*net_strings)["HV_CELLS_TEMPERATURE"]["cellboard_id"].push(buffer);
 		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_id_0"].push(pack->hv_cells_temperature(i).temperature_id_0());
 		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_id_1"].push(pack->hv_cells_temperature(i).temperature_id_1());
-		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_id_2"].push(pack->hv_cells_temperature(i).temperature_id_2());
-		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_id_3"].push(pack->hv_cells_temperature(i).temperature_id_3());
 		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_0"].push(pack->hv_cells_temperature(i).temperature_0());
 		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_1"].push(pack->hv_cells_temperature(i).temperature_1());
-		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_2"].push(pack->hv_cells_temperature(i).temperature_2());
-		(*net_signals)["HV_CELLS_TEMPERATURE"]["temperature_3"].push(pack->hv_cells_temperature(i).temperature_3());
 
     }
 
@@ -5442,12 +5438,8 @@ void primary_proto_interface_serialize_from_id(canlib_message_id id, primary::Pa
 			proto_msg->set_cellboard_id((primary::primary_hv_cells_temperature_cellboard_id)msg->cellboard_id);
 			proto_msg->set_temperature_id_0(msg->temperature_id_0);
 			proto_msg->set_temperature_id_1(msg->temperature_id_1);
-			proto_msg->set_temperature_id_2(msg->temperature_id_2);
-			proto_msg->set_temperature_id_3(msg->temperature_id_3);
 			proto_msg->set_temperature_0(msg->temperature_0);
 			proto_msg->set_temperature_1(msg->temperature_1);
-			proto_msg->set_temperature_2(msg->temperature_2);
-			proto_msg->set_temperature_3(msg->temperature_3);
 
 #ifdef CANLIB_TIMESTAMP
             proto_msg->set__inner_timestamp(msg->_timestamp);

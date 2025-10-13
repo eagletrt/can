@@ -1221,16 +1221,12 @@ int primary_fields_string_from_id(int id, char **v, size_t fields_size, size_t s
 
 		return 0;
 	case 1832:
-		if(9 > fields_size) return 1;
+		if(5 > fields_size) return 1;
 		snprintf(v[0], string_size, HV_CELLS_TEMPERATURE_CELLBOARD_ID);
 		snprintf(v[1], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_ID_0);
 		snprintf(v[2], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_ID_1);
-		snprintf(v[3], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_ID_2);
-		snprintf(v[4], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_ID_3);
-		snprintf(v[5], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_0);
-		snprintf(v[6], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_1);
-		snprintf(v[7], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_2);
-		snprintf(v[8], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_3);
+		snprintf(v[3], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_0);
+		snprintf(v[4], string_size, HV_CELLS_TEMPERATURE_TEMPERATURE_1);
 
 		return 0;
 	case 1840:
@@ -7312,40 +7308,24 @@ int primary_serialize_from_id(int id, char *s, uint8_t *data, size_t *size)
 		uint8_t r_cellboard_id;
 		uint8_t r_temperature_id_0;
 		uint8_t r_temperature_id_1;
-		uint8_t r_temperature_id_2;
-		uint8_t r_temperature_id_3;
 		float r_temperature_0;
 		float r_temperature_1;
-		float r_temperature_2;
-		float r_temperature_3;
 
 		sscanf(s, "%" SCNu8 ","  
 			"%" SCNu8 ","  
 			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%" SCNu8 ","  
-			"%f,"       
-			"%f,"       
 			"%f,"       
 			"%f,"       ,
 			&r_cellboard_id,
 			&r_temperature_id_0,
 			&r_temperature_id_1,
-			&r_temperature_id_2,
-			&r_temperature_id_3,
 			&r_temperature_0,
-			&r_temperature_1,
-			&r_temperature_2,
-			&r_temperature_3);
+			&r_temperature_1);
 		tmp_converted.cellboard_id = (primary_hv_cells_temperature_cellboard_id)r_cellboard_id;
 		tmp_converted.temperature_id_0 = (uint8_t)r_temperature_id_0;
 		tmp_converted.temperature_id_1 = (uint8_t)r_temperature_id_1;
-		tmp_converted.temperature_id_2 = (uint8_t)r_temperature_id_2;
-		tmp_converted.temperature_id_3 = (uint8_t)r_temperature_id_3;
 		tmp_converted.temperature_0 = (float)r_temperature_0;
 		tmp_converted.temperature_1 = (float)r_temperature_1;
-		tmp_converted.temperature_2 = (float)r_temperature_2;
-		tmp_converted.temperature_3 = (float)r_temperature_3;
 
 		primary_hv_cells_temperature_conversion_to_raw_struct(&tmp, &tmp_converted);
 		*size = PRIMARY_HV_CELLS_TEMPERATURE_BYTE_SIZE;
@@ -8559,7 +8539,7 @@ int primary_n_fields_from_id(int id)
 		case 50: return 2;
 		case 51: return 1;
 		case 1112: return 3;
-		case 1832: return 9;
+		case 1832: return 5;
 		case 1840: return 6;
 		case 1848: return 7;
 		case 256: return 8;
@@ -9704,17 +9684,13 @@ int primary_fields_types_from_id(int id, int* fields_types, int fields_types_siz
 		fields_types[2] = e_primary_float;
 		return 3;
 	case 1832:
-		if(fields_types_size < 9) return 0;
+		if(fields_types_size < 5) return 0;
 		fields_types[0] = e_primary_hv_cells_temperature_cellboard_id;
 		fields_types[1] = e_primary_uint8_t;
 		fields_types[2] = e_primary_uint8_t;
-		fields_types[3] = e_primary_uint8_t;
-		fields_types[4] = e_primary_uint8_t;
-		fields_types[5] = e_primary_float;
-		fields_types[6] = e_primary_float;
-		fields_types[7] = e_primary_float;
-		fields_types[8] = e_primary_float;
-		return 9;
+		fields_types[3] = e_primary_float;
+		fields_types[4] = e_primary_float;
+		return 5;
 	case 1840:
 		if(fields_types_size < 6) return 0;
 		fields_types[0] = e_primary_hv_discharge_temperature_cellboard_id;
